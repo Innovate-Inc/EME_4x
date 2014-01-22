@@ -1,0 +1,142 @@
+<?xml version="1.0" standalone="yes"?>
+<emeSettings>
+  <xs:schema id="emeSettings" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="emeControl">
+      <xs:complexType>
+        <xs:sequence>          
+          <xs:element name="controlName">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="50" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="Iso19115_2">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="500" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="Iso19115_1">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="500" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="Csdgm">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="500" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>          
+        </xs:sequence>
+      </xs:complexType>
+    </xs:element>
+    <xs:element name="emeSettings" msdata:IsDataSet="true" msdata:MainDataTable="emeControl" msdata:UseCurrentLocale="true" msdata:EnforceConstraints="False">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element ref="emeControl" />
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <emeControl>
+    <controlName>fileIdentifier</controlName>
+    <Iso19115_2>./*[local-name()='fileIdentifier']</Iso19115_2>
+	<Iso19115_1> </Iso19115_1>
+	<Csdgm> </Csdgm>    
+  </emeControl>
+  <emeControl>
+    <controlName>language</controlName>
+    <Iso19115_2>./*[local-name()='language']</Iso19115_2>
+	<Iso19115_1> </Iso19115_1>
+	<Csdgm> </Csdgm>    
+  </emeControl>
+  <emeControl>
+    <controlName>hierarchyLevel_MD_ScopeCode</controlName>
+    <Iso19115_2>./*[local-name()='hierarchyLevel']</Iso19115_2>
+	<Iso19115_1>./*[local-name()='hierarchyLevel']/*[local-name()='MD_ScopeCode']</Iso19115_1>
+	<Csdgm> </Csdgm>    
+  </emeControl>
+  <emeControl>
+    <controlName>dateStamp</controlName>
+    <Iso19115_2>./*[local-name()='dateStamp']</Iso19115_2>
+	<Iso19115_1>./*[local-name()='dateStamp']/*[[local-name()='Date'] or [local-name()='DateTime']] </Iso19115_1>
+	<Csdgm> </Csdgm>    
+  </emeControl>
+  <emeControl>
+    <controlName>contact_CI_ResponsibleParty</controlName>
+    <Iso19115_2>./*[local-name()='contact']</Iso19115_2>
+	<Iso19115_1> </Iso19115_1>
+	<Csdgm> </Csdgm>    
+  </emeControl>
+  <emeControl>
+    <controlName>idInfo_citation_citedResponsibleParty</controlName>
+    <Iso19115_2>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='citation']/*[local-name()='CI_Citation']/*[local-name()='citedResponsibleParty']</Iso19115_2>
+	<Iso19115_1> </Iso19115_1>
+	<Csdgm> </Csdgm>    
+  </emeControl>
+  <emeControl>
+    <controlName>idInfo_pointOfContact</controlName>
+    <Iso19115_2>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='pointOfContact']</Iso19115_2>
+	<Iso19115_1> </Iso19115_1>
+	<Csdgm> </Csdgm>    
+  </emeControl>
+  <emeControl>
+    <controlName>idInfo_citation_Title</controlName>
+    <Iso19115_2>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='citation']/*[local-name()='CI_Citation']/*[local-name()='title']</Iso19115_2>
+	<Iso19115_1>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='citation']/*[local-name()='CI_Citation']/*[local-name()='title']/*[local-name()='CharacterString']</Iso19115_1>
+	<Csdgm> </Csdgm>    
+  </emeControl>
+  <emeControl>
+    <controlName>idInfo_Abstract</controlName>
+    <Iso19115_2>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='abstract']</Iso19115_2>
+	<Iso19115_1> </Iso19115_1>
+	<Csdgm> </Csdgm>    
+  </emeControl>
+  <emeControl>
+    <controlName>idInfo_Purpose</controlName>
+    <Iso19115_2>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='purpose']</Iso19115_2>
+	<Iso19115_1> </Iso19115_1>
+	<Csdgm> </Csdgm>    
+  </emeControl>
+  <emeControl>
+    <controlName>idInfo_Status</controlName>
+    <Iso19115_2>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']</Iso19115_2>
+	<Iso19115_1> </Iso19115_1>
+	<Csdgm> </Csdgm>    
+  </emeControl>
+  <emeControl>
+    <controlName>idInfo_keywordsIsoTopicCategory</controlName>
+    <Iso19115_2>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='topicCategory']</Iso19115_2>
+	<Iso19115_1> </Iso19115_1>
+	<Csdgm> </Csdgm>    
+  </emeControl>  
+  <emeControl>
+    <controlName>idInfo_keywordsEpa</controlName>
+    <Iso19115_2>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='descriptiveKeywords']/*[local-name()='MD_Keywords']/*[local-name()='thesaurusName']/*[local-name()='CI_Citation']/*[local-name()='title'][*[local-name()='CharacterString']='EPA GIS Keyword Thesaurus']/../../../..</Iso19115_2>
+	<Iso19115_1> </Iso19115_1>
+	<Csdgm> </Csdgm>    
+  </emeControl>
+  <!--<emeControl>
+    <controlName>IdInfo_keywordsEpaListXpath</controlName>
+    <Iso19115_2>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='descriptiveKeywords']/*[local-name()='MD_Keywords']/*[local-name()='thesaurusName']/*[local-name()='CI_Citation']/*[local-name()='title'][*[local-name()='CharacterString']='EPA GIS Keyword Thesaurus']/../../..//*[local-name()='keyword']</Iso19115_2>
+	<Iso19115_1> </Iso19115_1>
+	<Csdgm> </Csdgm>    
+  </emeControl>-->
+  <emeControl>
+    <controlName>idInfo_keywordsUser</controlName>
+    <Iso19115_2>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='descriptiveKeywords']/*[local-name()='MD_Keywords']/*[local-name()='thesaurusName']/*[local-name()='CI_Citation']/*[local-name()='title'][*[local-name()='CharacterString']='User']/../../../..</Iso19115_2>
+	<Iso19115_1>./gmd:identificationInfo/gmd:MD_DataIdentification/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title[gco:CharacterString='User']/../../../..</Iso19115_1>
+	<Csdgm> </Csdgm>    
+  </emeControl>
+  <emeControl>
+    <controlName>idInfo_keywordsPlace</controlName>
+    <Iso19115_2>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='descriptiveKeywords']/*[local-name()='MD_Keywords']/*[local-name()='type'][*[local-name()='MD_KeywordTypeCode']='place']/../..</Iso19115_2>
+	<Iso19115_1>./gmd:identificationInfo/gmd:MD_DataIdentification/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:type[gmd:MD_KeywordTypeCode='place']/..</Iso19115_1>
+	<Csdgm> </Csdgm>    
+  </emeControl>
+</emeSettings>
