@@ -10,16 +10,22 @@
 		<gmd:MD_CharacterSetCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_CharacterSetCode" codeListValue="utf8" codeSpace="004">utf8</gmd:MD_CharacterSetCode>
 	</gmd:characterSet>
 	<gmd:hierarchyLevel>
-		<gmd:MD_ScopeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ScopeCode" codeListValue="*template*" codeSpace="*template*">*template*</gmd:MD_ScopeCode>
+		<gmd:MD_ScopeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ScopeCode" codeListValue="*template*">*template*</gmd:MD_ScopeCode>
 	</gmd:hierarchyLevel>
 	<gmd:hierarchyLevelName>
 		<gco:CharacterString>*template*</gco:CharacterString>
 	</gmd:hierarchyLevelName>
 	<gmd:contact>
-		<gmd:CI_ResponsibleParty>
+		<gmd:CI_ResponsibleParty>		
+			<gmd:individualName>
+				<gco:CharacterString>*template*</gco:CharacterString>
+			</gmd:individualName>
 			<gmd:organisationName>
 				<gco:CharacterString>*template*</gco:CharacterString>
 			</gmd:organisationName>
+			<gmd:positionName>
+				<gco:CharacterString>*template*</gco:CharacterString>
+			</gmd:positionName>
 			<gmd:contactInfo>
 				<gmd:CI_Contact>
 					<gmd:phone>
@@ -63,7 +69,7 @@
 				</gmd:CI_Contact>
 			</gmd:contactInfo>
 			<gmd:role>
-				<gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="pointOfContact" codeSpace="007">pointOfContact</gmd:CI_RoleCode>
+				<gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="pointOfContact">pointOfContact</gmd:CI_RoleCode>
 			</gmd:role>
 		</gmd:CI_ResponsibleParty>
 	</gmd:contact>
@@ -243,7 +249,7 @@
 								<gco:Date>*template*</gco:Date>
 							</gmd:date>
 							<gmd:dateType>
-								<gmd:CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="*template*" codeSpace="*template*">*template*</gmd:CI_DateTypeCode>
+								<gmd:CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="*template*">*template*</gmd:CI_DateTypeCode>
 							</gmd:dateType>
 						</gmd:CI_Date>
 					</gmd:date>
@@ -293,7 +299,7 @@
 								</gmd:CI_Contact>
 							</gmd:contactInfo>
 							<gmd:role>
-								<gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="originator" codeSpace="006">originator</gmd:CI_RoleCode>
+								<gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="originator">originator</gmd:CI_RoleCode>
 							</gmd:role>
 						</gmd:CI_ResponsibleParty>
 					</gmd:citedResponsibleParty>
@@ -311,6 +317,64 @@
 			<gmd:status>
 				<gmd:MD_ProgressCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ProgressCode" codeListValue="*template*" codeSpace="*template*">*template*</gmd:MD_ProgressCode>
 			</gmd:status>
+			<gmd:pointOfContact>
+				<gmd:CI_ResponsibleParty>		
+					<gmd:individualName>
+						<gco:CharacterString>*template*</gco:CharacterString>
+					</gmd:individualName>
+					<gmd:organisationName>
+						<gco:CharacterString>*template*</gco:CharacterString>
+					</gmd:organisationName>
+					<gmd:positionName>
+						<gco:CharacterString>*template*</gco:CharacterString>
+					</gmd:positionName>
+					<gmd:contactInfo>
+						<gmd:CI_Contact>
+							<gmd:phone>
+								<gmd:CI_Telephone>
+									<gmd:voice>
+										<gco:CharacterString>*template*</gco:CharacterString>
+									</gmd:voice>
+									<gmd:facsimile>
+										<gco:CharacterString>*template*</gco:CharacterString>
+									</gmd:facsimile>
+								</gmd:CI_Telephone>
+							</gmd:phone>
+							<gmd:address>
+								<gmd:CI_Address>
+									<gmd:deliveryPoint>
+										<gco:CharacterString>*template*</gco:CharacterString>
+									</gmd:deliveryPoint>
+									<gmd:city>
+										<gco:CharacterString>*template*</gco:CharacterString>
+									</gmd:city>
+									<gmd:administrativeArea>
+										<gco:CharacterString>*template*</gco:CharacterString>
+									</gmd:administrativeArea>
+									<gmd:postalCode>
+										<gco:CharacterString>*template*</gco:CharacterString>
+									</gmd:postalCode>
+									<gmd:country>
+										<gco:CharacterString>*template*</gco:CharacterString>
+									</gmd:country>
+									<gmd:electronicMailAddress>
+										<gco:CharacterString>*template*</gco:CharacterString>
+									</gmd:electronicMailAddress>
+								</gmd:CI_Address>
+							</gmd:address>
+							<gmd:hoursOfService>
+								<gco:CharacterString>*template*</gco:CharacterString>
+							</gmd:hoursOfService>
+							<gmd:contactInstructions>
+								<gco:CharacterString>*template*</gco:CharacterString>
+							</gmd:contactInstructions>
+						</gmd:CI_Contact>
+					</gmd:contactInfo>
+					<gmd:role>
+						<gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="pointOfContact">pointOfContact</gmd:CI_RoleCode>
+					</gmd:role>
+				</gmd:CI_ResponsibleParty>
+			</gmd:pointOfContact>
 			<gmd:resourceMaintenance>
 				<gmd:MD_MaintenanceInformation>
 					<gmd:maintenanceAndUpdateFrequency>
@@ -324,12 +388,12 @@
 						<gco:CharacterString>*template*</gco:CharacterString>
 					</gmd:keyword>
 					<gmd:type>
-						<gmd:MD_KeywordTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="theme" codeSpace="005">theme</gmd:MD_KeywordTypeCode>
+						<gmd:MD_KeywordTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="theme">theme</gmd:MD_KeywordTypeCode>
 					</gmd:type>
 					<gmd:thesaurusName>
 						<gmd:CI_Citation>
 							<gmd:title>
-								<gco:CharacterString>*template*</gco:CharacterString>
+								<gco:CharacterString>User</gco:CharacterString>
 							</gmd:title>
 							<gmd:date gco:nilReason="unknown"/>
 						</gmd:CI_Citation>
@@ -354,6 +418,24 @@
 					</gmd:thesaurusName>
 				</gmd:MD_Keywords>
 			  </gmd:descriptiveKeywords>
+			<gmd:descriptiveKeywords>
+				<gmd:MD_Keywords>
+					<gmd:keyword>
+						<gco:CharacterString>*template*</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:type>
+					<gmd:MD_KeywordTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="place" codeSpace="002">place</gmd:MD_KeywordTypeCode>
+					</gmd:type>
+					<gmd:thesaurusName>
+						<gmd:CI_Citation>
+						  <gmd:title>
+							<gco:CharacterString>None</gco:CharacterString>
+						  </gmd:title>
+						  <gmd:date gco:nilReason="unknown" />
+						</gmd:CI_Citation>
+					</gmd:thesaurusName>
+				</gmd:MD_Keywords>
+			</gmd:descriptiveKeywords>
 			<gmd:resourceConstraints>
 				<gmd:MD_LegalConstraints>
 					<gmd:accessConstraints>
