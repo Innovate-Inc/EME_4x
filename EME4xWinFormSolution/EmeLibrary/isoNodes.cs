@@ -247,6 +247,7 @@ namespace EmeLibrary
         {
             
             //Detect Medataformat and set fields, or detect with Page controller class and pass into this
+            //Making a comment for testing
 
             //Store inbound record.  Idea is to have both an inbound and outbound metadata record
             inboundMetadataRecord = xdoc;  
