@@ -77,7 +77,6 @@
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.group2_Pnl = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.dateStamp = new System.Windows.Forms.TextBox();
             this.lblModified = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -116,7 +115,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.textBox10 = new System.Windows.Forms.TextBox();
@@ -149,6 +147,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateStamp = new System.Windows.Forms.DateTimePicker();
             this.contact_CI_ResponsibleParty = new EmeLibrary.uc_ResponsibleParty();
             this.idInfo_citation_citedResponsibleParty = new EmeLibrary.uc_ResponsibleParty();
             this.idInfo_pointOfContact = new EmeLibrary.uc_ResponsibleParty();
@@ -328,6 +328,7 @@
             this.tcKeywords.Controls.Add(this.tpEPA);
             this.tcKeywords.Controls.Add(this.tpUser);
             this.tcKeywords.Controls.Add(this.tpPlace);
+            this.tcKeywords.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.tcKeywords.Location = new System.Drawing.Point(5, 18);
             this.tcKeywords.Name = "tcKeywords";
             this.tcKeywords.SelectedIndex = 0;
@@ -342,7 +343,6 @@
             this.tpISO.Controls.Add(this.idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____help);
             this.tpISO.Controls.Add(this.idInfo_keywordsIsoTopicCategory);
             this.tpISO.Location = new System.Drawing.Point(4, 25);
-            this.tpISO.Margin = new System.Windows.Forms.Padding(0);
             this.tpISO.Name = "tpISO";
             this.tpISO.Padding = new System.Windows.Forms.Padding(3);
             this.tpISO.Size = new System.Drawing.Size(310, 174);
@@ -392,7 +392,7 @@
             // 
             // tpEPA
             // 
-            this.tpEPA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.tpEPA.BackColor = System.Drawing.Color.LightGreen;
             this.tpEPA.Controls.Add(this.idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____default);
             this.tpEPA.Controls.Add(this.idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____help);
             this.tpEPA.Controls.Add(this.idInfo_keywordsEpa);
@@ -446,7 +446,7 @@
             // 
             // tpUser
             // 
-            this.tpUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.tpUser.BackColor = System.Drawing.Color.LightGreen;
             this.tpUser.Controls.Add(this.idinfo_keywords_theme_themekt__User___themekey_____default);
             this.tpUser.Controls.Add(this.idinfo_keywords_theme_themekt__User___themekey_____help);
             this.tpUser.Controls.Add(this.idInfo_keywordsUser);
@@ -498,11 +498,12 @@
             // 
             // tpPlace
             // 
-            this.tpPlace.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.tpPlace.BackColor = System.Drawing.Color.LightGreen;
             this.tpPlace.Controls.Add(this.idinfo_keywords_place_placekt__None___placekey_____default);
             this.tpPlace.Controls.Add(this.idinfo_keywords_place_placekt__None___placekey_____help);
             this.tpPlace.Controls.Add(this.idInfo_keywordsPlace);
             this.tpPlace.Location = new System.Drawing.Point(4, 25);
+            this.tpPlace.Margin = new System.Windows.Forms.Padding(0);
             this.tpPlace.Name = "tpPlace";
             this.tpPlace.Size = new System.Drawing.Size(310, 174);
             this.tpPlace.TabIndex = 3;
@@ -720,15 +721,6 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(476, 28);
             this.panel7.TabIndex = 30;
-            // 
-            // dateStamp
-            // 
-            this.dateStamp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.dateStamp.Location = new System.Drawing.Point(119, 4);
-            this.dateStamp.Margin = new System.Windows.Forms.Padding(3, 5, 5, 3);
-            this.dateStamp.Name = "dateStamp";
-            this.dateStamp.Size = new System.Drawing.Size(228, 20);
-            this.dateStamp.TabIndex = 2;
             // 
             // lblModified
             // 
@@ -1108,8 +1100,8 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.dateTimePicker1);
             this.groupBox3.Controls.Add(this.label12);
-            this.groupBox3.Controls.Add(this.textBox6);
             this.groupBox3.Controls.Add(this.textBox9);
             this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Controls.Add(this.textBox10);
@@ -1130,14 +1122,6 @@
             this.label12.Size = new System.Drawing.Size(48, 13);
             this.label12.TabIndex = 39;
             this.label12.Text = "Revision";
-            // 
-            // textBox6
-            // 
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox6.Location = new System.Drawing.Point(99, 19);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 0;
             // 
             // textBox9
             // 
@@ -1429,6 +1413,21 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "optional";
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(99, 17);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(162, 20);
+            this.dateTimePicker1.TabIndex = 37;
+            // 
+            // dateStamp
+            // 
+            this.dateStamp.Location = new System.Drawing.Point(119, 4);
+            this.dateStamp.Name = "dateStamp";
+            this.dateStamp.Size = new System.Drawing.Size(228, 20);
+            this.dateStamp.TabIndex = 9;
+            // 
             // contact_CI_ResponsibleParty
             // 
             this.contact_CI_ResponsibleParty.incomingCI_ResponsiblePartyList = null;
@@ -1599,7 +1598,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.Panel group2_Pnl;
-        private System.Windows.Forms.TextBox dateStamp;
         private System.Windows.Forms.Label group2_lbl;
         private System.Windows.Forms.Panel metadataAuthor_Pnl;
         private System.Windows.Forms.Label metaDataAuthor_lbl;
@@ -1649,10 +1647,11 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateStamp;
     }
 }

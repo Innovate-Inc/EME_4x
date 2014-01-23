@@ -147,6 +147,11 @@ namespace EmeLibrary
                         topic.SetSelected(i, true);
                     }  
                 }
+                else if (ctrl.GetType() == typeof(DateTimePicker))
+                {
+                    DateTimePicker dateControl = (DateTimePicker)ctrl;
+                    dateControl.Value = Convert.ToDateTime(frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null));
+                }
                 else
                 {
                     //ctrl.Text = frm.localXdoc.idInfo_citation_Title;
