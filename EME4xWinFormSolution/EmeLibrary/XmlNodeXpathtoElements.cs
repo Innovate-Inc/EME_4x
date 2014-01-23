@@ -1,0 +1,41 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace EmeLibrary
+{
+    public class XmlNodeXpathtoElements
+    {
+        //Metadata Information
+        public string fileIdentifierXpath { get; set; }
+        public string languageXpath { get; set; }
+        public string hierarchyLevel_MD_ScopeCodeXpath { get; set; }
+        public string contact_CI_ResponsiblePartyXpath { get; set; }
+        public string dateStampXpath { get; set; }//Could be date or datetime
+        public string metadataStandardNameXpath { get; set; }
+        public string metadataStandardVersionXpath { get; set; } //not sure we should load these values from the xml file.  We should control this from the database table
+        //metadta standard name and standard version
+
+        //identificationInfo Section
+        public string idInfo_citation_TitleXpath { get; set; }
+        public string idInfo_citation_date_creationXpath { get; set; } //This is a compound repeatable element.
+        public string idInfo_citation_date_publicationXpath { get; set; }
+        public string idInfo_citation_date_revisionXpath { get; set; }
+        public string idInfo_citation_citedResponsiblePartyXpath { get; set; }
+
+        public string idInfo_AbstractXpath { get; set; }
+        public string idInfo_PurposeXpath { get; set; }
+        public string idInfo_Status_MD_ProgressCodeXpath { get; set; }//Compound element with codelist values
+        public string idInfo_pointOfContactXpath { get; set; }
+
+        //public string IdInfo_keywordsIsoTopicCatListXpath { get; set; }
+        public string idInfo_keywordsIsoTopicCategoryXpath { get; set; }
+        //public string idInfo_keywordsEpaListXpath { get; set; }
+        public string idInfo_keywordsEpaXpath { get; set; }
+        //public string IdInfo_keywordsUserListXpath { get; set; }
+        public string idInfo_keywordsUserXpath { get; set; }
+        //public string IdInfo_keywordsPlaceListXpath { get; set; }
+        public string idInfo_keywordsPlaceXpath { get; set; }
+    }
+}
