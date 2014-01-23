@@ -744,10 +744,6 @@ namespace EmeLibrary
             
         }
 
-        
-
-        
-
         private void expander(Panel paneltoExpand)
         {
             if (paneltoExpand.Height > 30)
@@ -760,14 +756,10 @@ namespace EmeLibrary
             }
         }
 
-        
-
         private void EmeLT_Resize(object sender, EventArgs e)
         {
             
         }
-
-        
 
         private void Group2_btn_Click(object sender, EventArgs e)
         {
@@ -808,119 +800,7 @@ namespace EmeLibrary
         private void pointOfContact_btn_Click(object sender, EventArgs e)
         {
             expander(pointOfContact_Pnl);
-        }
-
-        private void textBox7_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblIdentifier_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void lblDownloadUrl_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblEndpoint_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblFormat_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblLicense_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblSpatial_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblTemporal_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtTemporal_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtSpatial_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtLicense_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtDataDictionary_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtFormat_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtAccessLevel_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtEndpoint_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtDownloadURL_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblDataDictionary_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblAccessLevel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-                       
+        }                    
 
     }
 }

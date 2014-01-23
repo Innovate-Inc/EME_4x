@@ -108,13 +108,20 @@
             this.citationGrp_btn = new System.Windows.Forms.Button();
             this.citationGrp_lbl = new System.Windows.Forms.Label();
             this.lblAbtract = new System.Windows.Forms.Label();
-            this.lblTitle = new System.Windows.Forms.Label();
             this.idInfo_Abstract = new System.Windows.Forms.TextBox();
             this.idInfo_citation_Title = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.idInfo_Purpose = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
@@ -142,13 +149,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.contact_CI_ResponsibleParty = new EmeLibrary.uc_ResponsibleParty();
             this.idInfo_citation_citedResponsibleParty = new EmeLibrary.uc_ResponsibleParty();
             this.idInfo_pointOfContact = new EmeLibrary.uc_ResponsibleParty();
@@ -175,13 +175,13 @@
             this.pointOfContact_Pnl.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel10.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -288,27 +288,24 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "DCAT Elements";
             this.tabPage1.UseVisualStyleBackColor = true;
-            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // lblDownloadUrl
             // 
             this.lblDownloadUrl.AutoSize = true;
-            this.lblDownloadUrl.Location = new System.Drawing.Point(603, 521);
+            this.lblDownloadUrl.Location = new System.Drawing.Point(584, 433);
             this.lblDownloadUrl.Name = "lblDownloadUrl";
             this.lblDownloadUrl.Size = new System.Drawing.Size(80, 13);
             this.lblDownloadUrl.TabIndex = 34;
             this.lblDownloadUrl.Text = "Download URL";
             this.lblDownloadUrl.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.lblDownloadUrl.Click += new System.EventHandler(this.lblDownloadUrl_Click);
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.groupBox1);
-            this.panel2.Location = new System.Drawing.Point(571, 9);
+            this.panel2.Location = new System.Drawing.Point(560, 9);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(377, 257);
             this.panel2.TabIndex = 6;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // groupBox1
             // 
@@ -326,6 +323,7 @@
             this.tcKeywords.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.tcKeywords.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.tcKeywords.Controls.Add(this.tpISO);
             this.tcKeywords.Controls.Add(this.tpEPA);
             this.tcKeywords.Controls.Add(this.tpUser);
@@ -339,14 +337,15 @@
             // tpISO
             // 
             this.tpISO.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.tpISO.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.tpISO.Controls.Add(this.idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____default);
             this.tpISO.Controls.Add(this.idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____help);
             this.tpISO.Controls.Add(this.idInfo_keywordsIsoTopicCategory);
-            this.tpISO.Location = new System.Drawing.Point(4, 22);
+            this.tpISO.Location = new System.Drawing.Point(4, 25);
             this.tpISO.Margin = new System.Windows.Forms.Padding(0);
             this.tpISO.Name = "tpISO";
             this.tpISO.Padding = new System.Windows.Forms.Padding(3);
-            this.tpISO.Size = new System.Drawing.Size(310, 177);
+            this.tpISO.Size = new System.Drawing.Size(310, 174);
             this.tpISO.TabIndex = 0;
             this.tpISO.Text = "ISO";
             // 
@@ -354,8 +353,9 @@
             // 
             this.idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____default.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____default.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____default.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____default.Font = new System.Drawing.Font("Tahoma", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____default.Location = new System.Drawing.Point(254, 145);
+            this.idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____default.Location = new System.Drawing.Point(254, 142);
             this.idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____default.Name = "idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____default";
             this.idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____default.Size = new System.Drawing.Size(33, 23);
             this.idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____default.TabIndex = 1;
@@ -369,7 +369,7 @@
             this.idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____help.AutoSize = true;
             this.idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____help.BackColor = System.Drawing.Color.Transparent;
             this.idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____help.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____help.Location = new System.Drawing.Point(254, 129);
+            this.idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____help.Location = new System.Drawing.Point(254, 126);
             this.idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____help.Name = "idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____help";
             this.idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____help.Size = new System.Drawing.Size(34, 13);
             this.idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____help.TabIndex = 46;
@@ -381,12 +381,13 @@
             this.idInfo_keywordsIsoTopicCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.idInfo_keywordsIsoTopicCategory.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.idInfo_keywordsIsoTopicCategory.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idInfo_keywordsIsoTopicCategory.FormattingEnabled = true;
             this.idInfo_keywordsIsoTopicCategory.Location = new System.Drawing.Point(3, 8);
             this.idInfo_keywordsIsoTopicCategory.Name = "idInfo_keywordsIsoTopicCategory";
             this.idInfo_keywordsIsoTopicCategory.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.idInfo_keywordsIsoTopicCategory.Size = new System.Drawing.Size(303, 160);
+            this.idInfo_keywordsIsoTopicCategory.Size = new System.Drawing.Size(303, 143);
             this.idInfo_keywordsIsoTopicCategory.TabIndex = 0;
             // 
             // tpEPA
@@ -395,10 +396,10 @@
             this.tpEPA.Controls.Add(this.idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____default);
             this.tpEPA.Controls.Add(this.idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____help);
             this.tpEPA.Controls.Add(this.idInfo_keywordsEpa);
-            this.tpEPA.Location = new System.Drawing.Point(4, 22);
+            this.tpEPA.Location = new System.Drawing.Point(4, 25);
             this.tpEPA.Name = "tpEPA";
             this.tpEPA.Padding = new System.Windows.Forms.Padding(3);
-            this.tpEPA.Size = new System.Drawing.Size(310, 177);
+            this.tpEPA.Size = new System.Drawing.Size(310, 174);
             this.tpEPA.TabIndex = 1;
             this.tpEPA.Text = "EPA";
             // 
@@ -406,8 +407,9 @@
             // 
             this.idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____default.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____default.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____default.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____default.Font = new System.Drawing.Font("Tahoma", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____default.Location = new System.Drawing.Point(251, 145);
+            this.idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____default.Location = new System.Drawing.Point(251, 142);
             this.idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____default.Name = "idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____default";
             this.idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____default.Size = new System.Drawing.Size(33, 23);
             this.idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____default.TabIndex = 1;
@@ -421,7 +423,7 @@
             this.idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____help.AutoSize = true;
             this.idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____help.BackColor = System.Drawing.Color.Transparent;
             this.idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____help.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____help.Location = new System.Drawing.Point(251, 129);
+            this.idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____help.Location = new System.Drawing.Point(251, 126);
             this.idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____help.Name = "idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____help";
             this.idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____help.Size = new System.Drawing.Size(34, 13);
             this.idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____help.TabIndex = 46;
@@ -433,12 +435,13 @@
             this.idInfo_keywordsEpa.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.idInfo_keywordsEpa.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.idInfo_keywordsEpa.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idInfo_keywordsEpa.FormattingEnabled = true;
             this.idInfo_keywordsEpa.Location = new System.Drawing.Point(3, 8);
             this.idInfo_keywordsEpa.Name = "idInfo_keywordsEpa";
             this.idInfo_keywordsEpa.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.idInfo_keywordsEpa.Size = new System.Drawing.Size(300, 160);
+            this.idInfo_keywordsEpa.Size = new System.Drawing.Size(300, 143);
             this.idInfo_keywordsEpa.TabIndex = 0;
             // 
             // tpUser
@@ -447,9 +450,9 @@
             this.tpUser.Controls.Add(this.idinfo_keywords_theme_themekt__User___themekey_____default);
             this.tpUser.Controls.Add(this.idinfo_keywords_theme_themekt__User___themekey_____help);
             this.tpUser.Controls.Add(this.idInfo_keywordsUser);
-            this.tpUser.Location = new System.Drawing.Point(4, 22);
+            this.tpUser.Location = new System.Drawing.Point(4, 25);
             this.tpUser.Name = "tpUser";
-            this.tpUser.Size = new System.Drawing.Size(310, 177);
+            this.tpUser.Size = new System.Drawing.Size(310, 174);
             this.tpUser.TabIndex = 2;
             this.tpUser.Text = "User";
             // 
@@ -457,8 +460,9 @@
             // 
             this.idinfo_keywords_theme_themekt__User___themekey_____default.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.idinfo_keywords_theme_themekt__User___themekey_____default.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.idinfo_keywords_theme_themekt__User___themekey_____default.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.idinfo_keywords_theme_themekt__User___themekey_____default.Font = new System.Drawing.Font("Tahoma", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idinfo_keywords_theme_themekt__User___themekey_____default.Location = new System.Drawing.Point(251, 145);
+            this.idinfo_keywords_theme_themekt__User___themekey_____default.Location = new System.Drawing.Point(251, 142);
             this.idinfo_keywords_theme_themekt__User___themekey_____default.Name = "idinfo_keywords_theme_themekt__User___themekey_____default";
             this.idinfo_keywords_theme_themekt__User___themekey_____default.Size = new System.Drawing.Size(33, 23);
             this.idinfo_keywords_theme_themekt__User___themekey_____default.TabIndex = 1;
@@ -472,7 +476,7 @@
             this.idinfo_keywords_theme_themekt__User___themekey_____help.AutoSize = true;
             this.idinfo_keywords_theme_themekt__User___themekey_____help.BackColor = System.Drawing.Color.Transparent;
             this.idinfo_keywords_theme_themekt__User___themekey_____help.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idinfo_keywords_theme_themekt__User___themekey_____help.Location = new System.Drawing.Point(251, 129);
+            this.idinfo_keywords_theme_themekt__User___themekey_____help.Location = new System.Drawing.Point(251, 126);
             this.idinfo_keywords_theme_themekt__User___themekey_____help.Name = "idinfo_keywords_theme_themekt__User___themekey_____help";
             this.idinfo_keywords_theme_themekt__User___themekey_____help.Size = new System.Drawing.Size(34, 13);
             this.idinfo_keywords_theme_themekt__User___themekey_____help.TabIndex = 46;
@@ -489,7 +493,7 @@
             this.idInfo_keywordsUser.Location = new System.Drawing.Point(3, 8);
             this.idInfo_keywordsUser.Name = "idInfo_keywordsUser";
             this.idInfo_keywordsUser.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.idInfo_keywordsUser.Size = new System.Drawing.Size(300, 160);
+            this.idInfo_keywordsUser.Size = new System.Drawing.Size(300, 147);
             this.idInfo_keywordsUser.TabIndex = 0;
             // 
             // tpPlace
@@ -498,9 +502,9 @@
             this.tpPlace.Controls.Add(this.idinfo_keywords_place_placekt__None___placekey_____default);
             this.tpPlace.Controls.Add(this.idinfo_keywords_place_placekt__None___placekey_____help);
             this.tpPlace.Controls.Add(this.idInfo_keywordsPlace);
-            this.tpPlace.Location = new System.Drawing.Point(4, 22);
+            this.tpPlace.Location = new System.Drawing.Point(4, 25);
             this.tpPlace.Name = "tpPlace";
-            this.tpPlace.Size = new System.Drawing.Size(310, 177);
+            this.tpPlace.Size = new System.Drawing.Size(310, 174);
             this.tpPlace.TabIndex = 3;
             this.tpPlace.Text = "Place";
             // 
@@ -508,8 +512,9 @@
             // 
             this.idinfo_keywords_place_placekt__None___placekey_____default.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.idinfo_keywords_place_placekt__None___placekey_____default.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.idinfo_keywords_place_placekt__None___placekey_____default.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.idinfo_keywords_place_placekt__None___placekey_____default.Font = new System.Drawing.Font("Tahoma", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idinfo_keywords_place_placekt__None___placekey_____default.Location = new System.Drawing.Point(251, 145);
+            this.idinfo_keywords_place_placekt__None___placekey_____default.Location = new System.Drawing.Point(251, 142);
             this.idinfo_keywords_place_placekt__None___placekey_____default.Name = "idinfo_keywords_place_placekt__None___placekey_____default";
             this.idinfo_keywords_place_placekt__None___placekey_____default.Size = new System.Drawing.Size(33, 23);
             this.idinfo_keywords_place_placekt__None___placekey_____default.TabIndex = 1;
@@ -523,7 +528,7 @@
             this.idinfo_keywords_place_placekt__None___placekey_____help.AutoSize = true;
             this.idinfo_keywords_place_placekt__None___placekey_____help.BackColor = System.Drawing.Color.Transparent;
             this.idinfo_keywords_place_placekt__None___placekey_____help.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idinfo_keywords_place_placekt__None___placekey_____help.Location = new System.Drawing.Point(251, 129);
+            this.idinfo_keywords_place_placekt__None___placekey_____help.Location = new System.Drawing.Point(251, 126);
             this.idinfo_keywords_place_placekt__None___placekey_____help.Name = "idinfo_keywords_place_placekt__None___placekey_____help";
             this.idinfo_keywords_place_placekt__None___placekey_____help.Size = new System.Drawing.Size(34, 13);
             this.idinfo_keywords_place_placekt__None___placekey_____help.TabIndex = 45;
@@ -540,157 +545,141 @@
             this.idInfo_keywordsPlace.Location = new System.Drawing.Point(3, 8);
             this.idInfo_keywordsPlace.Name = "idInfo_keywordsPlace";
             this.idInfo_keywordsPlace.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.idInfo_keywordsPlace.Size = new System.Drawing.Size(300, 160);
+            this.idInfo_keywordsPlace.Size = new System.Drawing.Size(300, 147);
             this.idInfo_keywordsPlace.TabIndex = 0;
             // 
             // lblEndpoint
             // 
             this.lblEndpoint.AutoSize = true;
-            this.lblEndpoint.Location = new System.Drawing.Point(634, 547);
+            this.lblEndpoint.Location = new System.Drawing.Point(615, 459);
             this.lblEndpoint.Name = "lblEndpoint";
             this.lblEndpoint.Size = new System.Drawing.Size(49, 13);
             this.lblEndpoint.TabIndex = 33;
             this.lblEndpoint.Text = "Endpoint";
             this.lblEndpoint.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.lblEndpoint.Click += new System.EventHandler(this.lblEndpoint_Click);
             // 
             // lblFormat
             // 
             this.lblFormat.AutoSize = true;
-            this.lblFormat.Location = new System.Drawing.Point(644, 577);
+            this.lblFormat.Location = new System.Drawing.Point(625, 489);
             this.lblFormat.Name = "lblFormat";
             this.lblFormat.Size = new System.Drawing.Size(39, 13);
             this.lblFormat.TabIndex = 32;
             this.lblFormat.Text = "Format";
             this.lblFormat.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.lblFormat.Click += new System.EventHandler(this.lblFormat_Click);
             // 
             // lblLicense
             // 
             this.lblLicense.AutoSize = true;
-            this.lblLicense.Location = new System.Drawing.Point(639, 603);
+            this.lblLicense.Location = new System.Drawing.Point(620, 515);
             this.lblLicense.Name = "lblLicense";
             this.lblLicense.Size = new System.Drawing.Size(44, 13);
             this.lblLicense.TabIndex = 31;
             this.lblLicense.Text = "License";
             this.lblLicense.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.lblLicense.Click += new System.EventHandler(this.lblLicense_Click);
             // 
             // lblSpatial
             // 
             this.lblSpatial.AutoSize = true;
-            this.lblSpatial.Location = new System.Drawing.Point(644, 629);
+            this.lblSpatial.Location = new System.Drawing.Point(625, 541);
             this.lblSpatial.Name = "lblSpatial";
             this.lblSpatial.Size = new System.Drawing.Size(39, 13);
             this.lblSpatial.TabIndex = 30;
             this.lblSpatial.Text = "Spatial";
             this.lblSpatial.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.lblSpatial.Click += new System.EventHandler(this.lblSpatial_Click);
             // 
             // lblTemporal
             // 
             this.lblTemporal.AutoSize = true;
-            this.lblTemporal.Location = new System.Drawing.Point(632, 651);
+            this.lblTemporal.Location = new System.Drawing.Point(613, 563);
             this.lblTemporal.Name = "lblTemporal";
             this.lblTemporal.Size = new System.Drawing.Size(51, 13);
             this.lblTemporal.TabIndex = 29;
             this.lblTemporal.Text = "Temporal";
             this.lblTemporal.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.lblTemporal.Click += new System.EventHandler(this.lblTemporal_Click);
             // 
             // txtTemporal
             // 
-            this.txtTemporal.Location = new System.Drawing.Point(689, 648);
+            this.txtTemporal.Location = new System.Drawing.Point(670, 560);
             this.txtTemporal.Name = "txtTemporal";
             this.txtTemporal.Size = new System.Drawing.Size(228, 20);
             this.txtTemporal.TabIndex = 27;
-            this.txtTemporal.TextChanged += new System.EventHandler(this.txtTemporal_TextChanged);
             // 
             // txtSpatial
             // 
-            this.txtSpatial.Location = new System.Drawing.Point(689, 622);
+            this.txtSpatial.Location = new System.Drawing.Point(670, 534);
             this.txtSpatial.Name = "txtSpatial";
             this.txtSpatial.Size = new System.Drawing.Size(228, 20);
             this.txtSpatial.TabIndex = 26;
-            this.txtSpatial.TextChanged += new System.EventHandler(this.txtSpatial_TextChanged);
             // 
             // txtLicense
             // 
-            this.txtLicense.Location = new System.Drawing.Point(689, 596);
+            this.txtLicense.Location = new System.Drawing.Point(670, 508);
             this.txtLicense.Name = "txtLicense";
             this.txtLicense.Size = new System.Drawing.Size(228, 20);
             this.txtLicense.TabIndex = 25;
-            this.txtLicense.TextChanged += new System.EventHandler(this.txtLicense_TextChanged);
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(689, 596);
+            this.textBox4.Location = new System.Drawing.Point(670, 508);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(228, 20);
             this.textBox4.TabIndex = 24;
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // txtDataDictionary
             // 
-            this.txtDataDictionary.Location = new System.Drawing.Point(689, 492);
+            this.txtDataDictionary.Location = new System.Drawing.Point(670, 404);
             this.txtDataDictionary.Name = "txtDataDictionary";
             this.txtDataDictionary.Size = new System.Drawing.Size(228, 20);
             this.txtDataDictionary.TabIndex = 9;
-            this.txtDataDictionary.TextChanged += new System.EventHandler(this.txtDataDictionary_TextChanged);
             // 
             // txtFormat
             // 
-            this.txtFormat.Location = new System.Drawing.Point(689, 570);
+            this.txtFormat.Location = new System.Drawing.Point(670, 482);
             this.txtFormat.Name = "txtFormat";
             this.txtFormat.Size = new System.Drawing.Size(228, 20);
             this.txtFormat.TabIndex = 23;
-            this.txtFormat.TextChanged += new System.EventHandler(this.txtFormat_TextChanged);
             // 
             // txtAccessLevel
             // 
-            this.txtAccessLevel.Location = new System.Drawing.Point(689, 447);
+            this.txtAccessLevel.Location = new System.Drawing.Point(670, 359);
             this.txtAccessLevel.Name = "txtAccessLevel";
             this.txtAccessLevel.Size = new System.Drawing.Size(228, 20);
             this.txtAccessLevel.TabIndex = 8;
-            this.txtAccessLevel.TextChanged += new System.EventHandler(this.txtAccessLevel_TextChanged);
             // 
             // txtEndpoint
             // 
-            this.txtEndpoint.Location = new System.Drawing.Point(689, 544);
+            this.txtEndpoint.Location = new System.Drawing.Point(670, 456);
             this.txtEndpoint.Name = "txtEndpoint";
             this.txtEndpoint.Size = new System.Drawing.Size(228, 20);
             this.txtEndpoint.TabIndex = 22;
-            this.txtEndpoint.TextChanged += new System.EventHandler(this.txtEndpoint_TextChanged);
             // 
             // txtDownloadURL
             // 
-            this.txtDownloadURL.Location = new System.Drawing.Point(689, 518);
+            this.txtDownloadURL.Location = new System.Drawing.Point(670, 430);
             this.txtDownloadURL.Name = "txtDownloadURL";
             this.txtDownloadURL.Size = new System.Drawing.Size(228, 20);
             this.txtDownloadURL.TabIndex = 21;
-            this.txtDownloadURL.TextChanged += new System.EventHandler(this.txtDownloadURL_TextChanged);
             // 
             // lblDataDictionary
             // 
             this.lblDataDictionary.AutoSize = true;
-            this.lblDataDictionary.Location = new System.Drawing.Point(603, 494);
+            this.lblDataDictionary.Location = new System.Drawing.Point(584, 406);
             this.lblDataDictionary.Name = "lblDataDictionary";
             this.lblDataDictionary.Size = new System.Drawing.Size(80, 13);
             this.lblDataDictionary.TabIndex = 17;
             this.lblDataDictionary.Text = "Data Dictionary";
             this.lblDataDictionary.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.lblDataDictionary.Click += new System.EventHandler(this.lblDataDictionary_Click);
             // 
             // lblAccessLevel
             // 
             this.lblAccessLevel.AutoSize = true;
-            this.lblAccessLevel.Location = new System.Drawing.Point(612, 450);
+            this.lblAccessLevel.Location = new System.Drawing.Point(593, 362);
             this.lblAccessLevel.Name = "lblAccessLevel";
             this.lblAccessLevel.Size = new System.Drawing.Size(71, 13);
             this.lblAccessLevel.TabIndex = 18;
             this.lblAccessLevel.Text = "Access Level";
             this.lblAccessLevel.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.lblAccessLevel.Click += new System.EventHandler(this.lblAccessLevel_Click);
             // 
             // flowLayoutPanel2
             // 
@@ -704,7 +693,6 @@
             this.flowLayoutPanel2.Size = new System.Drawing.Size(501, 705);
             this.flowLayoutPanel2.TabIndex = 36;
             this.flowLayoutPanel2.WrapContents = false;
-            this.flowLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel2_Paint);
             // 
             // group2_Pnl
             // 
@@ -941,7 +929,6 @@
             this.lblIdentifier.TabIndex = 19;
             this.lblIdentifier.Text = "Identifier";
             this.lblIdentifier.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.lblIdentifier.Click += new System.EventHandler(this.lblIdentifier_Click);
             // 
             // citationGrp_Pnl
             // 
@@ -1059,17 +1046,6 @@
             this.lblAbtract.Text = "Abstract";
             this.lblAbtract.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // lblTitle
-            // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.lblTitle.Location = new System.Drawing.Point(26, 10);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(27, 13);
-            this.lblTitle.TabIndex = 6;
-            this.lblTitle.Text = "Title";
-            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
             // idInfo_Abstract
             // 
             this.idInfo_Abstract.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -1129,6 +1105,84 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(477, 195);
             this.panel3.TabIndex = 19;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.label12);
+            this.groupBox3.Controls.Add(this.textBox6);
+            this.groupBox3.Controls.Add(this.textBox9);
+            this.groupBox3.Controls.Add(this.label11);
+            this.groupBox3.Controls.Add(this.textBox10);
+            this.groupBox3.Controls.Add(this.label10);
+            this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBox3.Location = new System.Drawing.Point(59, 32);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(297, 100);
+            this.groupBox3.TabIndex = 0;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Dates for Resource";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(45, 75);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(48, 13);
+            this.label12.TabIndex = 39;
+            this.label12.Text = "Revision";
+            // 
+            // textBox6
+            // 
+            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox6.Location = new System.Drawing.Point(99, 19);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(100, 20);
+            this.textBox6.TabIndex = 0;
+            // 
+            // textBox9
+            // 
+            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox9.Location = new System.Drawing.Point(99, 46);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(100, 20);
+            this.textBox9.TabIndex = 1;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(34, 48);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(59, 13);
+            this.label11.TabIndex = 38;
+            this.label11.Text = "Publication";
+            // 
+            // textBox10
+            // 
+            this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox10.Location = new System.Drawing.Point(99, 73);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(100, 20);
+            this.textBox10.TabIndex = 2;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(47, 21);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(46, 13);
+            this.label10.TabIndex = 37;
+            this.label10.Text = "Creation";
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.lblTitle.Location = new System.Drawing.Point(26, 10);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(27, 13);
+            this.lblTitle.TabIndex = 6;
+            this.lblTitle.Text = "Title";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // tabPage5
             // 
@@ -1375,73 +1429,6 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "optional";
             // 
-            // textBox6
-            // 
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox6.Location = new System.Drawing.Point(99, 19);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 0;
-            // 
-            // textBox9
-            // 
-            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox9.Location = new System.Drawing.Point(99, 46);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(100, 20);
-            this.textBox9.TabIndex = 1;
-            // 
-            // textBox10
-            // 
-            this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox10.Location = new System.Drawing.Point(99, 73);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(100, 20);
-            this.textBox10.TabIndex = 2;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(47, 21);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(46, 13);
-            this.label10.TabIndex = 37;
-            this.label10.Text = "Creation";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(34, 48);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(59, 13);
-            this.label11.TabIndex = 38;
-            this.label11.Text = "Publication";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(45, 75);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(48, 13);
-            this.label12.TabIndex = 39;
-            this.label12.Text = "Revision";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.label12);
-            this.groupBox3.Controls.Add(this.textBox6);
-            this.groupBox3.Controls.Add(this.textBox9);
-            this.groupBox3.Controls.Add(this.label11);
-            this.groupBox3.Controls.Add(this.textBox10);
-            this.groupBox3.Controls.Add(this.label10);
-            this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox3.Location = new System.Drawing.Point(59, 32);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(297, 100);
-            this.groupBox3.TabIndex = 0;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Dates";
-            // 
             // contact_CI_ResponsibleParty
             // 
             this.contact_CI_ResponsibleParty.incomingCI_ResponsiblePartyList = null;
@@ -1524,6 +1511,8 @@
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
@@ -1535,8 +1524,6 @@
             this.panel9.PerformLayout();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
