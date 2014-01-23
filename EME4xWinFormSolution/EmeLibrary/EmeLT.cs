@@ -111,21 +111,21 @@ namespace EmeLibrary
         private void bindFormtoEMEdatabases()
         {
 
-            idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey.DataSource = Utils1.emeDataSet.Tables["KeywordsISO"];
-            idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey.DisplayMember = "themekey";
-            idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey.ClearSelected();
+            idInfo_keywordsIsoTopicCategory.DataSource = Utils1.emeDataSet.Tables["KeywordsISO"];
+            idInfo_keywordsIsoTopicCategory.DisplayMember = "themekey";
+            idInfo_keywordsIsoTopicCategory.ClearSelected();
 
-            idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey.DataSource = Utils1.emeDataSet.Tables["KeywordsEPA"];
-            idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey.DisplayMember = "themekey";
-            idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey.ClearSelected();
+            idInfo_keywordsEpa.DataSource = Utils1.emeDataSet.Tables["KeywordsEPA"];
+            idInfo_keywordsEpa.DisplayMember = "themekey";
+            idInfo_keywordsEpa.ClearSelected();
 
-            idinfo_keywords_place_placekt__None___placekey.DataSource = Utils1.emeDataSet.Tables["KeywordsPlace"];
-            idinfo_keywords_place_placekt__None___placekey.DisplayMember = "placekey";
-            idinfo_keywords_place_placekt__None___placekey.ClearSelected();
+            idInfo_keywordsPlace.DataSource = Utils1.emeDataSet.Tables["KeywordsPlace"];
+            idInfo_keywordsPlace.DisplayMember = "placekey";
+            idInfo_keywordsPlace.ClearSelected();
 
-            idinfo_keywords_theme_themekt__User___themekey.DataSource = Utils1.emeDataSet.Tables["KeywordsUser"];
-            idinfo_keywords_theme_themekt__User___themekey.DisplayMember ="themekey";
-            idinfo_keywords_theme_themekt__User___themekey.ClearSelected();
+            idInfo_keywordsUser.DataSource = Utils1.emeDataSet.Tables["KeywordsUser"];
+            idInfo_keywordsUser.DisplayMember ="themekey";
+            idInfo_keywordsUser.ClearSelected();
         }
 
         private void OpenToolStripMenuItem_Click(object sender, EventArgs e)
@@ -176,54 +176,54 @@ namespace EmeLibrary
             //txtAbstract.Text = localXdoc.identificationInfo_Abstract;
             
             //Iso Topic Category
-            idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey.ClearSelected();
-            foreach (string s in localXdoc.idInfo_keywordsIsoTopicCategory)
-            {
-                int i = idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey.FindStringExact(s);
-                idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey.SetSelected(i, true);
-            }
+            //idInfo_keywordsIsoTopicCategory.ClearSelected();
+            //foreach (string s in localXdoc.idInfo_keywordsIsoTopicCategory)
+            //{
+            //    int i = idInfo_keywordsIsoTopicCategory.FindStringExact(s);
+            //    idInfo_keywordsIsoTopicCategory.SetSelected(i, true);
+            //}
 
             //Epa Keywords
-            idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey.ClearSelected();
-            foreach (string s in localXdoc.idInfo_keywordsEpa)
-            {
-                int epaitem = idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey.FindStringExact(s);
-                idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey.SetSelected(epaitem, true);
-            }
+            //idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey.ClearSelected();
+            //foreach (string s in localXdoc.idInfo_keywordsEpa)
+            //{
+            //    int epaitem = idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey.FindStringExact(s);
+            //    idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey.SetSelected(epaitem, true);
+            //}
 
             //User Keywords
-            idinfo_keywords_theme_themekt__User___themekey.BeginUpdate();
+            idInfo_keywordsUser.BeginUpdate();
             foreach (string s in localXdoc.idInfo_keywordsUser)
             {
                 //Check that the User Keyword exists.  
                 //If not, Add to the in-memmory database and then select
-                int keywordUser = idinfo_keywords_theme_themekt__User___themekey.FindStringExact(s);
+                int keywordUser = idInfo_keywordsUser.FindStringExact(s);
                 if (keywordUser == -1) { Utils1.emeDataSet.Tables["KeywordsUser"].Rows.Add("User", s, "false"); }
             }
-            idinfo_keywords_theme_themekt__User___themekey.EndUpdate();
+            idInfo_keywordsUser.EndUpdate();
             
-            idinfo_keywords_theme_themekt__User___themekey.ClearSelected();
-            foreach (string s in localXdoc.idInfo_keywordsUser)
-            {
-                int keywordUserindx = idinfo_keywords_theme_themekt__User___themekey.FindStringExact(s);
-                idinfo_keywords_theme_themekt__User___themekey.SetSelected(keywordUserindx, true);
-            }
+            //idinfo_keywords_theme_themekt__User___themekey.ClearSelected();
+            //foreach (string s in localXdoc.idInfo_keywordsUser)
+            //{
+            //    int keywordUserindx = idinfo_keywords_theme_themekt__User___themekey.FindStringExact(s);
+            //    idinfo_keywords_theme_themekt__User___themekey.SetSelected(keywordUserindx, true);
+            //}
 
             //Place Keywords
-            idinfo_keywords_place_placekt__None___placekey.BeginUpdate();
+            idInfo_keywordsPlace.BeginUpdate();
             foreach (string s in localXdoc.idInfo_keywordsPlace)
             {
-                int i = idinfo_keywords_place_placekt__None___placekey.FindStringExact(s);
+                int i = idInfo_keywordsPlace.FindStringExact(s);
                 if (i == -1) { Utils1.emeDataSet.Tables["KeywordsPlace"].Rows.Add("None", s, "false"); }
             }
-            idinfo_keywords_place_placekt__None___placekey.EndUpdate();
-            idinfo_keywords_place_placekt__None___placekey.ClearSelected();
-            foreach (string s in localXdoc.idInfo_keywordsPlace)
-            {
-                int i = idinfo_keywords_place_placekt__None___placekey.FindStringExact(s);
-                idinfo_keywords_place_placekt__None___placekey.SetSelected(i, true);
-            }
-            idinfo_keywords_place_placekt__None___placekey.TopIndex = 0;
+            idInfo_keywordsPlace.EndUpdate();
+            //idinfo_keywords_place_placekt__None___placekey.ClearSelected();
+            //foreach (string s in localXdoc.idInfo_keywordsPlace)
+            //{
+            //    int i = idinfo_keywords_place_placekt__None___placekey.FindStringExact(s);
+            //    idinfo_keywords_place_placekt__None___placekey.SetSelected(i, true);
+            //}
+            idInfo_keywordsPlace.TopIndex = 0;
 
 
             #region Testing Area for serialization
@@ -554,22 +554,22 @@ namespace EmeLibrary
 
         private void idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____default_Click(object sender, EventArgs e)
         {
-            setDefaultKeywordListBoxSelection(ref idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey);            
+            setDefaultKeywordListBoxSelection(ref idInfo_keywordsIsoTopicCategory);            
 
         }
         private void idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____default_Click(object sender, EventArgs e)
         {
-            setDefaultKeywordListBoxSelection(ref idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey);
+            setDefaultKeywordListBoxSelection(ref idInfo_keywordsEpa);
         }
 
         private void idinfo_keywords_theme_themekt__User___themekey_____default_Click(object sender, EventArgs e)
         {
-            setDefaultKeywordListBoxSelection(ref idinfo_keywords_theme_themekt__User___themekey);
+            setDefaultKeywordListBoxSelection(ref idInfo_keywordsUser);
         }
 
         private void idinfo_keywords_place_placekt__None___placekey_____default_Click(object sender, EventArgs e)
         {
-            setDefaultKeywordListBoxSelection(ref idinfo_keywords_place_placekt__None___placekey);
+            setDefaultKeywordListBoxSelection(ref idInfo_keywordsPlace);
         }
         private void setDefaultKeywordListBoxSelection(ref ListBox keywordListbox)
         {
@@ -608,30 +608,30 @@ namespace EmeLibrary
             //Check content for required content and validation of some kind
             
 
-            localXdoc.idInfo_citation_Title = IdInfo_citation_Title.Text;
-            localXdoc.idInfo_Abstract = IdInfo_abstract.Text;
+            localXdoc.idInfo_citation_Title = idInfo_citation_Title.Text;
+            localXdoc.idInfo_Abstract = idInfo_Abstract.Text;
                        
 
             localXdoc.idInfo_keywordsPlace.Clear();
-            foreach (DataRowView item in idinfo_keywords_place_placekt__None___placekey.SelectedItems)
+            foreach (DataRowView item in idInfo_keywordsPlace.SelectedItems)
             {
                 localXdoc.idInfo_keywordsPlace.Add(item["placekey"].ToString());
             }
             
             localXdoc.idInfo_keywordsEpa.Clear();
-            foreach (DataRowView item in idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey.SelectedItems)
+            foreach (DataRowView item in idInfo_keywordsEpa.SelectedItems)
             {
                 localXdoc.idInfo_keywordsEpa.Add(item["themekey"].ToString());
             }
 
             localXdoc.idInfo_keywordsIsoTopicCategory.Clear();
-            foreach (DataRowView item in idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey.SelectedItems)
+            foreach (DataRowView item in idInfo_keywordsIsoTopicCategory.SelectedItems)
             {
                 localXdoc.idInfo_keywordsIsoTopicCategory.Add(item["themekey"].ToString());
             }
 
             localXdoc.idInfo_keywordsUser.Clear();
-            foreach (DataRowView item in idinfo_keywords_theme_themekt__User___themekey.SelectedItems)
+            foreach (DataRowView item in idInfo_keywordsUser.SelectedItems)
             {
                 localXdoc.idInfo_keywordsUser.Add(item["themekey"].ToString());
             }
@@ -816,6 +816,106 @@ namespace EmeLibrary
         }
 
         private void lblIdentifier_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblDownloadUrl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblEndpoint_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblFormat_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblLicense_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblSpatial_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTemporal_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTemporal_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSpatial_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtLicense_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDataDictionary_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtFormat_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtAccessLevel_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEndpoint_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDownloadURL_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblDataDictionary_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblAccessLevel_Click(object sender, EventArgs e)
         {
 
         }

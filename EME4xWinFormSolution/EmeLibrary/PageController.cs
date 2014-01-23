@@ -122,6 +122,7 @@ namespace EmeLibrary
             Console.WriteLine(formFieldName_);
             Control ctrl;
             ctrl = frm.getControlForTag(formFieldName_);
+            object obj = frm.localXdoc;
             if (ctrl != null)
             {
                 //MessageBox.Show(ctrl.Name);
@@ -130,16 +131,27 @@ namespace EmeLibrary
                     uc_ResponsibleParty incoming_ResponsibleParty = (uc_ResponsibleParty)ctrl;
 
                    // PropertyInfo propInfo = frm.localXdoc.GetType().GetProperty(ctrl.Name);
-                    object obj = frm.localXdoc;
 
                     List<CI_ResponsibleParty> ci_RP = (List<CI_ResponsibleParty>)frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null);
                     incoming_ResponsibleParty.loadList(ci_RP);
                  
                 }
+                else if (ctrl.GetType() == typeof(ListBox))
+                {
+                    ListBox topic = (ListBox)ctrl;
+                    List<string> list = (List<string>)frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null);
+                    topic.ClearSelected();
+                    foreach (string s in list)
+                    {
+                        int i = topic.FindStringExact(s);
+                        topic.SetSelected(i, true);
+                    }  
+                }
                 else
                 {
-                    ctrl.Text = frm.localXdoc.idInfo_citation_Title;
+                    //ctrl.Text = frm.localXdoc.idInfo_citation_Title;
 
+                    ctrl.Text = frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null).ToString();
                     //MessageBox.Show(frm.localXdoc.ClassFieldNames[0].ToString());
                     //int index = frm.localXdoc.ClassFieldNames.FindIndex(x => x.Contains(ctrl.Name));
                     //object obj = frm.localXdoc;
@@ -151,7 +163,7 @@ namespace EmeLibrary
                     //if (frm.localXdoc.ClassFieldNames.Contains(ctrl.Name))
                     //    ctrl.Text = frm.localXdoc.ClassFieldNames.Find(x => x.Contains(ctrl.Name));
                     //ctrl.Text = frm.localXdoc.identificationInfo_citation_Title;
-                    
+
                 }
                 //ctrl.Text = "Dan Was Here";  //This pull value from IsoNodes Class
                 //MessageBox.Show(ctrl.Name);
