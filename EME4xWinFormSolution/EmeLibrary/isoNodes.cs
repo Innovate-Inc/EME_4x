@@ -14,32 +14,42 @@ using System.IO;
 
 namespace EmeLibrary
 {
-    public class XmlNodeXpathtoElements
-    {
-        public string fileIdentifierXpath { get; set; }
-        public string languageXpath { get; set; }
-        public string hierarchyLevel_MD_ScopeCodeXpath { get; set; }
-        public string dateStampXpath { get; set; }//Could be date or datetime
-        public string contact_CI_ResponsiblePartyXpath { get; set; }
-        
-        //identificationInfo Section
-        public string idInfo_citation_citedResponsiblePartyXpath { get; set; }
-        public string idInfo_pointOfContactXpath { get; set; }
-        public string idInfo_citation_TitleXpath { get; set; } //Also Need date and dateType (codeList)
-        public string idInfo_AbstractXpath { get; set; }
-        public string idInfo_PurposeXpath { get; set; }
-        public string idInfo_StatusXpath { get; set; }//Hmmmm Compound element with codelist values
-        //public string IdInfo_keywordsIsoTopicCatListXpath { get; set; }
-        public string idInfo_keywordsIsoTopicCategoryXpath { get; set; }
-        //public string idInfo_keywordsEpaListXpath { get; set; }
-        public string idInfo_keywordsEpaXpath { get; set; }
-        //public string IdInfo_keywordsUserListXpath { get; set; }
-        public string idInfo_keywordsUserXpath { get; set; }
-        //public string IdInfo_keywordsPlaceListXpath { get; set; }
-        public string idInfo_keywordsPlaceXpath { get; set; }
+    //public class XmlNodeXpathtoElementszzzzz
+    //{
+    //    //Metadata Information
+    //    public string fileIdentifierXpath { get; set; }
+    //    public string languageXpath { get; set; }
+    //    public string hierarchyLevel_MD_ScopeCodeXpath { get; set; }        
+    //    public string contact_CI_ResponsiblePartyXpath { get; set; }
+    //    public string dateStampXpath { get; set; }//Could be date or datetime
+    //    public string metadataStandardNameXpath { get; set; }
+    //    public string metadataStandardVersionXpath { get; set; } //not sure we should load these values from the xml file.  We should control this from the database table
+    //    //metadta standard name and standard version
 
-        //purpose, status, descriptiveKeywords
-    }
+    //    //identificationInfo Section
+    //    public string idInfo_citation_TitleXpath { get; set; }
+    //    public string idInfo_citation_date_creationXpath { get; set; } //This is a compound repeatable element.
+    //    public string idInfo_citation_date_publicationXpath { get; set; }
+    //    public string idInfo_citation_date_revisionXpath { get; set; }
+        
+    //    public string idInfo_citation_citedResponsiblePartyXpath { get; set; }
+        
+    //    public string idInfo_AbstractXpath { get; set; }
+    //    public string idInfo_PurposeXpath { get; set; }
+    //    public string idInfo_Status_MD_ProgressCodeXpath { get; set; }//Compound element with codelist values
+    //    public string idInfo_pointOfContactXpath { get; set; }
+
+    //    //public string IdInfo_keywordsIsoTopicCatListXpath { get; set; }
+    //    public string idInfo_keywordsIsoTopicCategoryXpath { get; set; }
+    //    //public string idInfo_keywordsEpaListXpath { get; set; }
+    //    public string idInfo_keywordsEpaXpath { get; set; }
+    //    //public string IdInfo_keywordsUserListXpath { get; set; }
+    //    public string idInfo_keywordsUserXpath { get; set; }
+    //    //public string IdInfo_keywordsPlaceListXpath { get; set; }
+    //    public string idInfo_keywordsPlaceXpath { get; set; }
+
+    //    //purpose, status, descriptiveKeywords
+    //}
 
     public class isoNodes
     {
@@ -53,46 +63,38 @@ namespace EmeLibrary
         //private XmlNode root19115;
         //private XmlNode root191152;
         private XmlNamespaceManager isoNsManager;
-
-        //private XmlNodeList gmdContact;
         
+        //Metadata Information
         private string fileid;
         private string _language;
-        private string hyLevel_md_scopeCode;
+        private string hyLevel_md_scopeCode;        
+        private List<CI_ResponsibleParty> contactRpSection;
         private string _dateStamp;
+        private string mdStandardName;
+        private string mdStandardVersion;
+
+        //idInfo Section
         private string _idInfo_citation_title;
+        private string _idInfo_citation_date_creation;
+        private string _idInfo_citation_date_publication;
+        private string _idInfo_citation_date_revision;
+        private List<CI_ResponsibleParty> idinfoCitationcitedResponsibleParty;
+
         private string _idInfo_abstract;
         private string _idInfo_purpose;
+        private string _idInfo_status_MD_ProgressCode;
+        private List<CI_ResponsibleParty> idinfoPointOfContact;
+
         private List<string> kwEpaList;
         private List<string> kwUserList;
         private List<string> kwPlaceList;
         private List<string> kwIsoTopicCatList;
-        //private List<string> responsiblePartySubSectionXpath;
-        private List<CI_ResponsibleParty> contactRpSection;
-        private List<CI_ResponsibleParty> idinfoCitationcitedResponsibleParty;
-        private List<CI_ResponsibleParty> idinfoPointOfContact;
                
         
         #region Public Properties Section
 
-        /// <summary>
-        /// This is derived from the table of xpathFields and expressions.  Use to bind with other class
-        /// properties and form controls via the PageController Class.
-        /// </summary>
         //public List<string> ClassFieldNames { get { return classFieldBindingNames; } }
-
-        //public CI_ResponsibleParty Metadata_contact
-        //{
-        //    get {return metadata_contactAuthor; }
-        //    set { metadata_contactAuthor = value; }
-        //}
-
-        //public XmlNodeList GmdContact
-        //{
-        //    get { return gmdContact; }
-        //    set { gmdContact = value; }
-        //}
-
+        
         public string baseURIFileName
         {
             get { return inboundMetadataRecord.BaseURI.ToString(); }
@@ -111,21 +113,38 @@ namespace EmeLibrary
         {
             get { return hyLevel_md_scopeCode; }
             set { hyLevel_md_scopeCode = value; }
+        }        
+        public List<CI_ResponsibleParty> contact_CI_ResponsibleParty
+        {
+            get { return contactRpSection; }
+            set { contactRpSection = value; }
         }
         public string dateStamp
         {
             get { return _dateStamp; }
             set { _dateStamp = value; }
         }
-        public List<CI_ResponsibleParty> contact_CI_ResponsibleParty
-        {
-            get { return contactRpSection; }
-            set { contactRpSection = value; }
-        }
+        public string metadataStandardName { get { return mdStandardName; } }  //Not sure how we should populate these... maybe always from the template!
+        public string metadataStandardVersion { get { return mdStandardVersion; } }
         public string idInfo_citation_Title
         {
             get { return _idInfo_citation_title; }
             set { _idInfo_citation_title = value; }
+        }
+        public string idInfo_citation_date_creation
+        {
+            get { return _idInfo_citation_date_creation; }
+            set { _idInfo_citation_date_creation = value; }
+        }
+        public string idInfo_citation_date_publication
+        {
+            get { return _idInfo_citation_date_publication; }
+            set { _idInfo_citation_date_publication = value; }
+        }
+        public string idInfo_citation_date_revision
+        {
+            get { return _idInfo_citation_date_revision; }
+            set { _idInfo_citation_date_revision = value; }
         }
         public List<CI_ResponsibleParty> idInfo_citation_citedResponsibleParty
         {
@@ -141,6 +160,11 @@ namespace EmeLibrary
         {
             get { return _idInfo_purpose; }
             set { _idInfo_purpose = value; }
+        }
+        public string idInfo_Status_MD_ProgressCode
+        {
+            get { return _idInfo_status_MD_ProgressCode; }
+            set { _idInfo_status_MD_ProgressCode = value; }
         }
         public List<CI_ResponsibleParty> idInfo_pointOfContact
         {
@@ -169,7 +193,6 @@ namespace EmeLibrary
         }
 
         //gmd:MD_Metadata or gmi:MI_Metadata
-
         //<gmd:language>
         ////<gmd:characterSet> *From more complete Record
         //<gmd:hierarchyLevel>
@@ -188,61 +211,6 @@ namespace EmeLibrary
         #endregion
         
 
-        #region xpath expressions and snippets
-
-        //gmi:MI_Metadata/gmd:identificationInfo/child::*/child::*
-
-
-        //private string idInfo_citation_TitleXpath = "//*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']" +
-        //    "/*[local-name()='citation']/*[local-name()='CI_Citation']" +
-        //    "/*[local-name()='title']/*[local-name()='CharacterString']";
-
-        //private string idInfo_AbstractXpath = "//*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']" +
-        //    "/*[local-name()='abstract']/*[local-name()='CharacterString']";
-
-        //private string keywordsIsoTopicCategoryListXpath =
-        //    "//gmd:identificationInfo/gmd:MD_DataIdentification/gmd:topicCategory/gmd:MD_TopicCategoryCode";
-
-        //private string keywordsIsoTopicCategorySectionXpath = "//gmd:identificationInfo/gmd:MD_DataIdentification/gmd:topicCategory/";
-
-        //private string keywordsPlaceListXpath = "//gmd:identificationInfo/gmd:MD_DataIdentification" +
-        //        "/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:type[gmd:MD_KeywordTypeCode='place']/..//gmd:keyword";
-
-        //private string keywordsPlaceSectionXpath = "//gmd:identificationInfo/gmd:MD_DataIdentification" +
-        //        "/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:type[gmd:MD_KeywordTypeCode='place']/..";
-
-        //private string keywordsPlaceBeginSnippet = "<gmd:MD_Keywords>";
-
-        //private string keywordsPlaceEndSnippet = @"<gmd:type><gmd:MD_KeywordTypeCode codeList=""http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode"" codeListValue=""place"" codeSpace=""002"">place</gmd:MD_KeywordTypeCode></gmd:type><gmd:thesaurusName><gmd:CI_Citation><gmd:title><gco:CharacterString>None</gco:CharacterString></gmd:title><gmd:date gco:nilReason=""unknown"" /></gmd:CI_Citation></gmd:thesaurusName></gmd:MD_Keywords>";
-
-        //private string keywordsUserListXpath = "//gmd:identificationInfo/gmd:MD_DataIdentification" +
-        //        "/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation" +
-        //        "/gmd:title[gco:CharacterString='User']/../../..//gmd:keyword";
-
-        //private string keywordsEPAListXpath = "//gmd:identificationInfo/gmd:MD_DataIdentification" +
-        //        "/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation" +
-        //        "/gmd:title[gco:CharacterString='EPA GIS Keyword Thesaurus']/../../..//gmd:keyword";
-        //private string keywordsEPAListXpath = "//*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']" +
-        //        "/*[local-name()='descriptiveKeywords']/*[local-name()='MD_Keywords']" +
-        //        "/*[local-name()='thesaurusName']/*[local-name()='CI_Citation']" +
-        //        "/*[local-name()='title'][*[local-name()='CharacterString']='EPA GIS Keyword Thesaurus']/../../..//*[local-name()='keyword']";
-        
-        //private string epaDescriptiveKeywordsSectionXpath = "//gmd:identificationInfo/gmd:MD_DataIdentification" +
-        //        "/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation" +
-        //        "/gmd:title[gco:CharacterString='EPA GIS Keyword Thesaurus']/../../../..";
-
-        //private string epaDescriptiveKeywordsSectionXpath = "//*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']" +
-        //        "/*[local-name()='descriptiveKeywords']/*[local-name()='MD_Keywords']" +
-        //        "/*[local-name()='thesaurusName']/*[local-name()='CI_Citation']" +
-        //        "/*[local-name()='title'][*[local-name()='CharacterString']='EPA GIS Keyword Thesaurus']/../../../..";
-
-        //private string epaDescriptiveKeywordsSectionSnippet1 = "<gmd:MD_Keywords>";
-        //private string epaDescriptiveKeywordsSectionSnippet2 = @"<gmd:type><gmd:MD_KeywordTypeCode codeList=""http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode"" codeListValue=""theme"" codeSpace=""005"">theme</gmd:MD_KeywordTypeCode></gmd:type><gmd:thesaurusName><gmd:CI_Citation><gmd:title><gco:CharacterString>EPA GIS Keyword Thesaurus</gco:CharacterString></gmd:title><gmd:date gco:nilReason=""unknown"" /></gmd:CI_Citation></gmd:thesaurusName></gmd:MD_Keywords>";
-        
-        
-        #endregion
-        
-        
         public isoNodes(XmlDocument xdoc)
         {
             
@@ -288,21 +256,25 @@ namespace EmeLibrary
             //gmdContact = inboundMetadataRecord.SelectNodes("//*[local-name()='contact']"); //not namespace specific
             //Contact might need an entire class dedicted to the values.
   
-            //Simple Non-repetable elements
-
+            //Metadata Information
             fileid = returnInnerTextfromNode(IsoNodeXpaths.fileIdentifierXpath);                
             _language = returnInnerTextfromNode(IsoNodeXpaths.languageXpath);
             hyLevel_md_scopeCode = returnInnerTextfromNode(IsoNodeXpaths.hierarchyLevel_MD_ScopeCodeXpath);
-            //ToDo: md_scopeCode Need to link with corresponding codelist, codelistValue and codespace
+            contactRpSection = returnCI_ResponsiblePartyList(IsoNodeXpaths.contact_CI_ResponsiblePartyXpath);           
             _dateStamp = returnInnerTextfromNode(IsoNodeXpaths.dateStampXpath);
-                      
-            _idInfo_citation_title = returnInnerTextfromNode(IsoNodeXpaths.idInfo_citation_TitleXpath);            
+            //mdStandardName;  //Might get this from template metadata instead
+            //mdStandardVersion
+                       
+            //IdInfo
+            _idInfo_citation_title = returnInnerTextfromNode(IsoNodeXpaths.idInfo_citation_TitleXpath);
+            _idInfo_citation_date_creation = returnInnerTextfromNode(IsoNodeXpaths.idInfo_citation_date_creationXpath);
+            _idInfo_citation_date_publication = returnInnerTextfromNode(IsoNodeXpaths.idInfo_citation_date_publicationXpath);
+            _idInfo_citation_date_revision = returnInnerTextfromNode(IsoNodeXpaths.idInfo_citation_date_revisionXpath);
+            idinfoCitationcitedResponsibleParty = returnCI_ResponsiblePartyList(IsoNodeXpaths.idInfo_citation_citedResponsiblePartyXpath);
+
             _idInfo_abstract = returnInnerTextfromNode(IsoNodeXpaths.idInfo_AbstractXpath);
             _idInfo_purpose = returnInnerTextfromNode(IsoNodeXpaths.idInfo_PurposeXpath);
-
-            //Repeatable sections with lists.
-            contactRpSection = returnCI_ResponsiblePartyList(IsoNodeXpaths.contact_CI_ResponsiblePartyXpath);
-            idinfoCitationcitedResponsibleParty = returnCI_ResponsiblePartyList(IsoNodeXpaths.idInfo_citation_citedResponsiblePartyXpath);
+            _idInfo_status_MD_ProgressCode = returnInnerTextfromNode(IsoNodeXpaths.idInfo_Status_MD_ProgressCodeXpath);
             idinfoPointOfContact = returnCI_ResponsiblePartyList(IsoNodeXpaths.idInfo_pointOfContactXpath);
 
             kwEpaList = returnListFromKeywordSection(IsoNodeXpaths.idInfo_keywordsEpaXpath, "./*[local-name()='MD_Keywords']/*[local-name()='keyword']");
@@ -312,7 +284,6 @@ namespace EmeLibrary
             kwIsoTopicCatList = returnListFromKeywordSection(IsoNodeXpaths.idInfo_keywordsIsoTopicCategoryXpath, "./*[local-name()='MD_TopicCategoryCode']");
                         
             //constructMI_MetadataMarkUp();
-
             
         }
         /// <summary>
@@ -324,8 +295,13 @@ namespace EmeLibrary
         /// <returns></returns>
         private string returnInnerTextfromNode(string XpathToSingleNode)
         {
-            XmlNode singleNode = inboundMetadataRecord.DocumentElement.SelectSingleNode(XpathToSingleNode).FirstChild;
-            return (singleNode != null) ? singleNode.InnerText : "";
+            string s = "";
+            if (inboundMetadataRecord.DocumentElement.SelectSingleNode(XpathToSingleNode) != null)
+            {
+                XmlNode singleNode = inboundMetadataRecord.DocumentElement.SelectSingleNode(XpathToSingleNode).FirstChild;
+                s = (singleNode != null) ? singleNode.InnerText : "";
+            }
+            return s;
         }
         /// <summary>
         /// Gets the list of keywords from the Parent keyword section.  Keywords can occur in several places and the 
@@ -1045,11 +1021,11 @@ namespace EmeLibrary
     //    public CI_Date date { get; set; }
 
     //}
-    //public class CI_Date
-    //{
-    //    public DateTime Date { get; set; }
-    //    public Enum dateType { get; set; }
-    //}
+    public class CI_Date
+    {
+        public DateTime Date { get; set; }
+        public Enum dateType { get; set; }
+    }
     
     [StructLayout(LayoutKind.Sequential)]
     public class CI_ResponsibleParty

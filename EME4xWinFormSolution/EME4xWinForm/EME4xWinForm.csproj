@@ -339,15 +339,8 @@
     <Content Include="Eme4xSystemFiles\EMEdb\DistributionLiability.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Eme4xSystemFiles\EMEdb\EME.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Eme4xSystemFiles\EMEdb\emeSettings.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Eme4xSystemFiles\EMEdb\emeToXpath.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <SubType>Designer</SubType>
     </Content>
     <Content Include="Eme4xSystemFiles\EMEdb\KeywordsEPA.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

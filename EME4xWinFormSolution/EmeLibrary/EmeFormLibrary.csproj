@@ -71,6 +71,7 @@
       <DependentUpon>EmeLT.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XmlNodeXpathtoElements.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="EmeDatabase.resx">
