@@ -35,8 +35,7 @@ namespace EmeLibrary
                 Utils1.setEmeDataSets();
             }
             bindFormtoEMEdatabases();
-
-
+            
             //setDefaultKeywordListBoxSelection(ref  idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey);
             //setDefaultKeywordListBoxSelection(ref idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey);
             //setDefaultKeywordListBoxSelection(ref idinfo_keywords_place_placekt__None___placekey);
@@ -130,7 +129,7 @@ namespace EmeLibrary
 
         private void OpenToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            openFileDialog1.Filter = "XML Metadata (*.XML|*.XML";
+            openFileDialog1.Filter = "XML Metadata (*.XML)|*.XML";
             openFileDialog1.Title = "Select a metadata record";
             openFileDialog1.Multiselect = false;
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
@@ -167,7 +166,7 @@ namespace EmeLibrary
             //Check the Format of the record before de-serializing
             
             //xDox Set when checking the metadata format
-            localXdoc = new isoNodes(xDoc);
+            localXdoc = new isoNodes(xDoc, sourceXmlFormat, filename);
 
             //Replace this with pagecontroller.ElementPopulator() method
             PageController.ElementPopulator(this);
@@ -449,7 +448,7 @@ namespace EmeLibrary
             xdoc.Load(filepath);
             //xdoc.Schemas = schemaSet;
             //isoNodes isoNodeTest = new isoNodes(xdoc);
-            localXdoc = new isoNodes(xdoc);
+            localXdoc = new isoNodes(xdoc, "junk","junk");
             textBox1.Text = localXdoc.idInfo_citation_Title;//Citation;
             textBox2.Text = localXdoc.baseURIFileName;
             
@@ -638,7 +637,7 @@ namespace EmeLibrary
 
             PageController.PageSaver(this);
 
-            localXdoc.saveChangestoRecord();
+            //localXdoc.saveChangestoRecord();
 
 
 
@@ -826,26 +825,29 @@ namespace EmeLibrary
             idInfo_citation_date_revision.Text = idInfo_citation_date_revision_dtP.Value.ToString("yyyy-MM-dd");
         }
 
-
-        private void idInfo_citation_date_creation_btn_Click(object sender, EventArgs e)
+        private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            idInfo_citation_date_creation.Clear();
-        }
+            //When the form loads, maybe the tabs should be grey'd out until something happens, like opening an existing file, or creating a new record.
+            //Kind of like with MS Word, New...
+            
+            //New Clicked, wire up page events, like when a file is open.
+            //1)
+            //2)
+            //3)
 
-        private void idInfo_citation_date_publication_btn_Click(object sender, EventArgs e)
-        {
-            idInfo_citation_date_publication.Clear();
-        }
+            //EME3x does have a tool to bind all the form controls to default settings.
 
-        private void idInfo_citation_date_revision_btn_Click(object sender, EventArgs e)
-        {
-            idInfo_citation_date_revision.Clear();
+            Utils1.setEmeDataSets();
+            bindFormtoEMEdatabases();
+            xDoc = new XmlDocument();
+            //Format picker... default should be -2
+            sourceXmlFormat = "ISO19115-2"; //  sourceXmlFormat ="ISO19115"
+            //xDox Set when checking the metadata format
+            filename = "New";
+            localXdoc = new isoNodes(xDoc, sourceXmlFormat, filename);
+            
         }
-
-        private void dateStamp_btn_Click(object sender, EventArgs e)
-        {
-            dateStamp.Clear();
-        }
+                
 
         
     }

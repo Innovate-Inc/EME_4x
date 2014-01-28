@@ -847,7 +847,7 @@
 			</gmd:contact>
 		</gmd:MD_MaintenanceInformation>
 	</gmd:metadataMaintenance>
-	<!--delete if this does not apply-->
+	<!--specific to 19115-2; delete if this does not apply-->
 	<gmi:acquisitionInformation>
 		<gmi:MI_AcquisitionInformation>
 			<!--instruments brought on board, may also use components-->
