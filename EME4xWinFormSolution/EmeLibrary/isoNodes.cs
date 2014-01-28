@@ -14,43 +14,6 @@ using System.IO;
 
 namespace EmeLibrary
 {
-    //public class XmlNodeXpathtoElementszzzzz
-    //{
-    //    //Metadata Information
-    //    public string fileIdentifierXpath { get; set; }
-    //    public string languageXpath { get; set; }
-    //    public string hierarchyLevel_MD_ScopeCodeXpath { get; set; }        
-    //    public string contact_CI_ResponsiblePartyXpath { get; set; }
-    //    public string dateStampXpath { get; set; }//Could be date or datetime
-    //    public string metadataStandardNameXpath { get; set; }
-    //    public string metadataStandardVersionXpath { get; set; } //not sure we should load these values from the xml file.  We should control this from the database table
-    //    //metadta standard name and standard version
-
-    //    //identificationInfo Section
-    //    public string idInfo_citation_TitleXpath { get; set; }
-    //    public string idInfo_citation_date_creationXpath { get; set; } //This is a compound repeatable element.
-    //    public string idInfo_citation_date_publicationXpath { get; set; }
-    //    public string idInfo_citation_date_revisionXpath { get; set; }
-        
-    //    public string idInfo_citation_citedResponsiblePartyXpath { get; set; }
-        
-    //    public string idInfo_AbstractXpath { get; set; }
-    //    public string idInfo_PurposeXpath { get; set; }
-    //    public string idInfo_Status_MD_ProgressCodeXpath { get; set; }//Compound element with codelist values
-    //    public string idInfo_pointOfContactXpath { get; set; }
-
-    //    //public string IdInfo_keywordsIsoTopicCatListXpath { get; set; }
-    //    public string idInfo_keywordsIsoTopicCategoryXpath { get; set; }
-    //    //public string idInfo_keywordsEpaListXpath { get; set; }
-    //    public string idInfo_keywordsEpaXpath { get; set; }
-    //    //public string IdInfo_keywordsUserListXpath { get; set; }
-    //    public string idInfo_keywordsUserXpath { get; set; }
-    //    //public string IdInfo_keywordsPlaceListXpath { get; set; }
-    //    public string idInfo_keywordsPlaceXpath { get; set; }
-
-    //    //purpose, status, descriptiveKeywords
-    //}
-
     public class isoNodes
     {
         public XmlNodeXpathtoElements IsoNodeXpaths = new XmlNodeXpathtoElements();
@@ -283,7 +246,7 @@ namespace EmeLibrary
             kwUserList = returnListFromKeywordSection(IsoNodeXpaths.idInfo_keywordsUserXpath, "./*[local-name()='MD_Keywords']/*[local-name()='keyword']");
             kwIsoTopicCatList = returnListFromKeywordSection(IsoNodeXpaths.idInfo_keywordsIsoTopicCategoryXpath, "./*[local-name()='MD_TopicCategoryCode']");
                         
-            //constructMI_MetadataMarkUp();
+            constructMI_MetadataMarkUp();
             
         }
         /// <summary>
@@ -485,7 +448,7 @@ namespace EmeLibrary
             constructChildNodeUnderParent(outboundMetadataRecord.DocumentElement, "./*[local-name()='metadataStandardVersion']",null,false,true,true);
             
             //Section 16 identificationInformation Section:  title, abstract, purpose, keywords, etc.
-            constructIdentificationInfo_MD_DataIdentificationSection();
+            constructIdInfo_MD_DataIdentificationSection();
                        
             //Clean up the document and remove empty nodes under the root node
             XmlNodeList emptyNodes = outboundMetadataRecord.DocumentElement.ChildNodes;
@@ -580,7 +543,20 @@ namespace EmeLibrary
         //    }
 
         //}
-                
+
+        private void construct_CI_DateSection(XmlNode outboundParentNode, string dateValue, string dateTypeCodeListValue, string XpathToTemplateCI_DateSection)
+        {
+            XmlNode nodeFromTemplateRecord = templateMetadataRecord.DocumentElement.SelectSingleNode(XpathToTemplateCI_DateSection).CloneNode(true);
+
+            nodeFromTemplateRecord.FirstChild.SelectSingleNode("./*[local-name()='date']").FirstChild.InnerText = dateValue;
+            nodeFromTemplateRecord.FirstChild.SelectSingleNode("./*[local-name()='dateType']").FirstChild.InnerText = dateTypeCodeListValue;
+            nodeFromTemplateRecord.FirstChild.SelectSingleNode("./*[local-name()='dateType']").FirstChild.Attributes["codeListValue"].Value = dateTypeCodeListValue;
+            
+            XmlNode nodeImporter = outboundMetadataRecord.ImportNode(nodeFromTemplateRecord, true);
+            outboundParentNode.AppendChild(nodeImporter);
+        
+        }
+
         private void constructCI_ResponsiblePartyMarkUp(List<CI_ResponsibleParty> CI_ResponsiblePartyList, string xpathToCI_ResponsiblePartySection)
         {
             //*This is a repeating section.  Grab one from the template and then repeat for each object in the list
@@ -622,8 +598,8 @@ namespace EmeLibrary
                         }
                         else
                         {
-
-                            targetNode.InnerText = nodeValue;
+                            if (targetNode.HasChildNodes == true) { targetNode.FirstChild.InnerText = nodeValue; }
+                            else { targetNode.InnerText = nodeValue; }
                             if (p.Name == "roleCode") { targetNode.Attributes["codeListValue"].Value = nodeValue; }
                             
                         }
@@ -639,9 +615,7 @@ namespace EmeLibrary
                 XmlNode ci_rpSectionImporter = outboundMetadataRecord.ImportNode(responsiblePartySectionTemplate, true);
                 if (i == 0)
                 {
-                    //Populate the first occurance                    
                     firstCiRpSection.ParentNode.ReplaceChild(ci_rpSectionImporter, firstCiRpSection);
-
                 }
                 else
                 {
@@ -717,7 +691,7 @@ namespace EmeLibrary
 
             outboundParentNode.AppendChild(nodeImporter);
         }    
-        private void constructIdentificationInfo_MD_DataIdentificationSection()
+        private void constructIdInfo_MD_DataIdentificationSection()
         {
             //Build this section in order.  Leave out elments that are not required if no content                        
             //Clone the MD_DataIdentification and insert and then start appending each subsection
@@ -730,31 +704,59 @@ namespace EmeLibrary
             //Work from this node and insert each section
             XmlNode outbound_md_DataIdSection = outboundMetadataRecord.DocumentElement.SelectSingleNode(MD_dataInfoNodeXpath);
             
-            //Section 1 citation (required) /CI_Citation package needs insertion, then each sub element
+            //CI_Citation package needs insertion, then each sub element
             string citationXpath = "./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='citation']";
+            string citationCIpackageXpath = citationXpath + "/*[local-name()='CI_Citation']";             
+            //constructChildNodeUnderParent(outbound_md_DataIdSection, citationXpath, null, false, true, false);            
+            constructChildNodeUnderParent(outbound_md_DataIdSection, citationXpath, null, false, false, false);
+            constructChildNodeUnderParent(outbound_md_DataIdSection.FirstChild, citationCIpackageXpath , null, false, false, false);
+            //outboundMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.idInfo_citation_TitleXpath).FirstChild.InnerText = _idInfo_citation_title;
+            XmlNode citationCiSectionNode = outboundMetadataRecord.DocumentElement.SelectSingleNode(citationCIpackageXpath);
+
+            //Section 1 Title (Required)
+            constructChildNodeUnderParent(citationCiSectionNode,IsoNodeXpaths.idInfo_citation_TitleXpath, _idInfo_citation_title, false, true, false);
             
-            //Performing a deep clone and then filling in and /or removing each section
-            constructChildNodeUnderParent(outbound_md_DataIdSection, citationXpath, null, false, true, false);            
-
-            outboundMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.idInfo_citation_TitleXpath).FirstChild.InnerText = _idInfo_citation_title;
-
-            //ToDo: editionDate:date & dateType (codelist), identifier, citedresponsibleParty, presentationForm
+            //Section 3 Date (Required)  Contains both Date and DateType Codelist (CI_DateTypeCode)
+            //Providing support for up to three occurances even though the standard does not specify a max
+            string idInfoCI_CitationDateXpath =
+                "./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='citation']/*[local-name()='CI_Citation']/*[local-name()='date']";
+            //ToDo: Maybe make an additional table of Xpath for key template nodes????
+            if (string.IsNullOrEmpty(_idInfo_citation_date_creation) != true)
+            {
+                construct_CI_DateSection(citationCiSectionNode, _idInfo_citation_date_creation, "creation", idInfoCI_CitationDateXpath);
+            }
+            if (string.IsNullOrEmpty(_idInfo_citation_date_publication) != true)
+            {
+                construct_CI_DateSection(citationCiSectionNode, _idInfo_citation_date_publication, "publication", idInfoCI_CitationDateXpath);
+            }
+            if (string.IsNullOrEmpty(_idInfo_citation_date_revision) != true)
+            {
+                construct_CI_DateSection(citationCiSectionNode, _idInfo_citation_date_revision, "revision", idInfoCI_CitationDateXpath);
+            }
+            
+            //Section 7 citedResponsibleParty
             if (idInfo_citation_citedResponsibleParty.Count > 0)
             {
+                //Must first insert the very first instance.  Other occurances will be inserted after the first item in the list.
+                constructChildNodeUnderParent(citationCiSectionNode, IsoNodeXpaths.idInfo_citation_citedResponsiblePartyXpath, null, false, true, false);
                 constructCI_ResponsiblePartyMarkUp(idInfo_citation_citedResponsibleParty, IsoNodeXpaths.idInfo_citation_citedResponsiblePartyXpath);
-            }
-            else
-            {
-                XmlNode ciRpToRemove = outboundMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.idInfo_citation_citedResponsiblePartyXpath);
-                //outboundMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.identificationInfo_citation_citedResponsiblePartyXpath).ParentNode.RemoveChild(
-                ciRpToRemove.ParentNode.RemoveChild(ciRpToRemove);
-            }
+            }            
 
             //Section 2 Abstract (required)
             constructChildNodeUnderParent(outbound_md_DataIdSection, IsoNodeXpaths.idInfo_AbstractXpath, _idInfo_abstract,false, true, false);
             
-            //Section 3 & 5 ToDo:Purpose & Status (optional)
-            constructChildNodeUnderParent(outbound_md_DataIdSection, IsoNodeXpaths.idInfo_PurposeXpath, _idInfo_purpose, false, true, false);
+            //Section 3 Purpose (optional)
+            
+            if (string.IsNullOrEmpty(_idInfo_purpose) != true)
+            {
+                constructChildNodeUnderParent(outbound_md_DataIdSection, IsoNodeXpaths.idInfo_PurposeXpath, _idInfo_purpose, false, true, false);
+            }
+
+            //Section 5 Status (optional)
+            if (string.IsNullOrEmpty(_idInfo_status_MD_ProgressCode) !=true)
+            {
+                constructChildNodeUnderParent(outbound_md_DataIdSection, IsoNodeXpaths.idInfo_Status_MD_ProgressCodeXpath, _idInfo_status_MD_ProgressCode, true, true, false);
+            }
 
             //Section 6
             if (idinfoPointOfContact.Count > 0)
