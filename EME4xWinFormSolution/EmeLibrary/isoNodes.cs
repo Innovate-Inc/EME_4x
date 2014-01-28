@@ -246,7 +246,7 @@ namespace EmeLibrary
             kwUserList = returnListFromKeywordSection(IsoNodeXpaths.idInfo_keywordsUserXpath, "./*[local-name()='MD_Keywords']/*[local-name()='keyword']");
             kwIsoTopicCatList = returnListFromKeywordSection(IsoNodeXpaths.idInfo_keywordsIsoTopicCategoryXpath, "./*[local-name()='MD_TopicCategoryCode']");
                         
-            constructMI_MetadataMarkUp();
+            //constructMI_MetadataMarkUp();
             
         }
         /// <summary>
@@ -328,6 +328,7 @@ namespace EmeLibrary
                         childNodeXpath += "/*[local-name()='" + entry + "']";
                     }
                     //responsiblePartySubSectionXpath.Add(childNodeXpath); //Adding the Xpath to list for later use                    
+                    Console.WriteLine(childNodeXpath);
                     string nodeValue = (n.FirstChild.SelectSingleNode(childNodeXpath) != null) ? n.FirstChild.SelectSingleNode(childNodeXpath).InnerText : "";
                     p.SetValue(rp, nodeValue, null);
                 }
@@ -589,7 +590,7 @@ namespace EmeLibrary
                     if (targetNode != null)
                     {
                         //If the value is null or empty from the class then remove it except for rolecode
-                        if (nodeValue == "" && p.Name != "roleCode")
+                        if (nodeValue == "" && p.Name != "role")
                         {
                             //Delete the node
                             //targetNode.ParentNode.RemoveChild(targetNode);
@@ -600,7 +601,7 @@ namespace EmeLibrary
                         {
                             if (targetNode.HasChildNodes == true) { targetNode.FirstChild.InnerText = nodeValue; }
                             else { targetNode.InnerText = nodeValue; }
-                            if (p.Name == "roleCode") { targetNode.Attributes["codeListValue"].Value = nodeValue; }
+                            if (p.Name == "role") { targetNode.FirstChild.Attributes["codeListValue"].Value = nodeValue; }
                             
                         }
                     }
@@ -1047,7 +1048,7 @@ namespace EmeLibrary
         public string contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode { get; set; } //link with CI_OnlineFunctionCode
         public string contactInfo__CI_Contact__hoursOfService { get; set; }
         public string contactInfo__CI_Contact__contactInstructions { get; set; }
-        public string roleCode { get; set; } //need to link with role-code values from codelist
+        public string role { get; set; } //need to link with role-code values from codelist
     }    
 
 }

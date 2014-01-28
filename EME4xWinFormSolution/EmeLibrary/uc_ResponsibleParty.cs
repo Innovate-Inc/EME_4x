@@ -38,7 +38,7 @@ namespace EmeLibrary
         {
             pagerLbl.Text = (incomingRPListIndex +1).ToString() + " of " + incomingRPList.Count;
 
-            roleCode.SelectedText = incomingCIRP.roleCode;
+            roleCode.SelectedText = incomingCIRP.role;
             individualName_txt.Text = incomingCIRP.individualName;
             organisationName_txt.Text = incomingCIRP.organisationName;
             positionName.Text = incomingCIRP.positionName;
