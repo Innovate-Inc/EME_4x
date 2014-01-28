@@ -94,7 +94,6 @@
             this.group2_lbl = new System.Windows.Forms.Label();
             this.metadataAuthor_Pnl = new System.Windows.Forms.Panel();
             this.metaDataAuthor_lbl = new System.Windows.Forms.Label();
-            this.contact_CI_ResponsibleParty = new EmeLibrary.uc_ResponsibleParty();
             this.expand_P1 = new System.Windows.Forms.Button();
             this.Group2_btn = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -102,11 +101,9 @@
             this.fileIdentifier_lbl = new System.Windows.Forms.Label();
             this.citationGrp_Pnl = new System.Windows.Forms.Panel();
             this.Citation_Pnl = new System.Windows.Forms.Panel();
-            this.idInfo_citation_citedResponsibleParty = new EmeLibrary.uc_ResponsibleParty();
             this.citatonExpand_lbl = new System.Windows.Forms.Label();
             this.citationExpand_btn = new System.Windows.Forms.Button();
             this.pointOfContact_Pnl = new System.Windows.Forms.Panel();
-            this.idInfo_pointOfContact = new EmeLibrary.uc_ResponsibleParty();
             this.pointOfContact_lbl = new System.Windows.Forms.Label();
             this.pointOfContact_btn = new System.Windows.Forms.Button();
             this.citationGrp_btn = new System.Windows.Forms.Button();
@@ -156,6 +153,10 @@
             this.label8 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
+            this.contact_CI_ResponsibleParty = new EmeLibrary.uc_ResponsibleParty();
+            this.idInfo_citation_citedResponsibleParty = new EmeLibrary.uc_ResponsibleParty();
+            this.idInfo_pointOfContact = new EmeLibrary.uc_ResponsibleParty();
+            this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -203,6 +204,7 @@
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newToolStripMenuItem,
             this.OpenToolStripMenuItem,
             this.saveToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
@@ -214,7 +216,7 @@
             this.OpenToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("OpenToolStripMenuItem.Image")));
             this.OpenToolStripMenuItem.Name = "OpenToolStripMenuItem";
             this.OpenToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.OpenToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.OpenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.OpenToolStripMenuItem.Text = "&Open";
             this.OpenToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItem_Click);
             // 
@@ -223,7 +225,7 @@
             this.saveToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripMenuItem.Image")));
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.saveToolStripMenuItem.Text = "&Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
@@ -905,14 +907,6 @@
             this.metaDataAuthor_lbl.TabIndex = 1;
             this.metaDataAuthor_lbl.Text = "Metadata Author";
             // 
-            // contact_CI_ResponsibleParty
-            // 
-            this.contact_CI_ResponsibleParty.incomingCI_ResponsiblePartyList = null;
-            this.contact_CI_ResponsibleParty.Location = new System.Drawing.Point(4, 33);
-            this.contact_CI_ResponsibleParty.Name = "contact_CI_ResponsibleParty";
-            this.contact_CI_ResponsibleParty.Size = new System.Drawing.Size(463, 491);
-            this.contact_CI_ResponsibleParty.TabIndex = 0;
-            // 
             // expand_P1
             // 
             this.expand_P1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -997,14 +991,6 @@
             this.Citation_Pnl.Size = new System.Drawing.Size(475, 30);
             this.Citation_Pnl.TabIndex = 16;
             // 
-            // idInfo_citation_citedResponsibleParty
-            // 
-            this.idInfo_citation_citedResponsibleParty.incomingCI_ResponsiblePartyList = null;
-            this.idInfo_citation_citedResponsibleParty.Location = new System.Drawing.Point(4, 32);
-            this.idInfo_citation_citedResponsibleParty.Name = "idInfo_citation_citedResponsibleParty";
-            this.idInfo_citation_citedResponsibleParty.Size = new System.Drawing.Size(449, 481);
-            this.idInfo_citation_citedResponsibleParty.TabIndex = 2;
-            // 
             // citatonExpand_lbl
             // 
             this.citatonExpand_lbl.AutoSize = true;
@@ -1037,14 +1023,6 @@
             this.pointOfContact_Pnl.Name = "pointOfContact_Pnl";
             this.pointOfContact_Pnl.Size = new System.Drawing.Size(475, 30);
             this.pointOfContact_Pnl.TabIndex = 17;
-            // 
-            // idInfo_pointOfContact
-            // 
-            this.idInfo_pointOfContact.incomingCI_ResponsiblePartyList = null;
-            this.idInfo_pointOfContact.Location = new System.Drawing.Point(4, 33);
-            this.idInfo_pointOfContact.Name = "idInfo_pointOfContact";
-            this.idInfo_pointOfContact.Size = new System.Drawing.Size(449, 481);
-            this.idInfo_pointOfContact.TabIndex = 2;
             // 
             // pointOfContact_lbl
             // 
@@ -1512,6 +1490,37 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "optional";
             // 
+            // contact_CI_ResponsibleParty
+            // 
+            this.contact_CI_ResponsibleParty.incomingCI_ResponsiblePartyList = null;
+            this.contact_CI_ResponsibleParty.Location = new System.Drawing.Point(4, 33);
+            this.contact_CI_ResponsibleParty.Name = "contact_CI_ResponsibleParty";
+            this.contact_CI_ResponsibleParty.Size = new System.Drawing.Size(463, 491);
+            this.contact_CI_ResponsibleParty.TabIndex = 0;
+            // 
+            // idInfo_citation_citedResponsibleParty
+            // 
+            this.idInfo_citation_citedResponsibleParty.incomingCI_ResponsiblePartyList = null;
+            this.idInfo_citation_citedResponsibleParty.Location = new System.Drawing.Point(4, 32);
+            this.idInfo_citation_citedResponsibleParty.Name = "idInfo_citation_citedResponsibleParty";
+            this.idInfo_citation_citedResponsibleParty.Size = new System.Drawing.Size(449, 481);
+            this.idInfo_citation_citedResponsibleParty.TabIndex = 2;
+            // 
+            // idInfo_pointOfContact
+            // 
+            this.idInfo_pointOfContact.incomingCI_ResponsiblePartyList = null;
+            this.idInfo_pointOfContact.Location = new System.Drawing.Point(4, 33);
+            this.idInfo_pointOfContact.Name = "idInfo_pointOfContact";
+            this.idInfo_pointOfContact.Size = new System.Drawing.Size(449, 481);
+            this.idInfo_pointOfContact.TabIndex = 2;
+            // 
+            // newToolStripMenuItem
+            // 
+            this.newToolStripMenuItem.Name = "newToolStripMenuItem";
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.newToolStripMenuItem.Text = "New";
+            this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
+            // 
             // EmeLT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1717,5 +1726,6 @@
         private uc_ResponsibleParty idInfo_pointOfContact;
         private System.Windows.Forms.Label pointOfContact_lbl;
         private System.Windows.Forms.Button pointOfContact_btn;
+        private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
     }
 }

@@ -20,6 +20,8 @@ namespace EmeLibrary
         
         //private List<string> classFieldBindingNames;
         private XmlDocument inboundMetadataRecord;
+        private string inboundMetadataFormat;
+        private string inboundMetadataFilePath;
         private XmlDocument outboundMetadataRecord;
         private XmlDocument templateMetadataRecord;
         //private XmlDocument codeListsArcISO;
@@ -174,29 +176,82 @@ namespace EmeLibrary
         #endregion
         
 
-        public isoNodes(XmlDocument xdoc)
+        public isoNodes(XmlDocument xdoc, string sourceXMLFormat, string fileNamewithFullPath)
         {
             
-            //Detect Medataformat and set fields, or detect with Page controller class and pass into this
-            //Making a comment for testing
+            //Set Metadata format and file path and then set fields
+            //ToDo:  Handle newly created files.  Will have to overload this method incase we are dealing with ArcObjects
 
             //Store inbound record.  Idea is to have both an inbound and outbound metadata record
-            inboundMetadataRecord = xdoc;  
+            inboundMetadataRecord = xdoc;
+            inboundMetadataFormat = sourceXMLFormat;
+            inboundMetadataFilePath = fileNamewithFullPath;
 
             //Depending on the format detected, load the correct template record to for the outgoing metadata record
             //(gmd:MD_Metdata = 19115, gmi:MI_Metadata = 19115-2; metadata = both CSDGM and ArcGIS)
-            //Might not need to load this record until later during the save process
             templateMetadataRecord = new XmlDocument();
-            templateMetadataRecord.Load(Directory.GetCurrentDirectory() + "\\Eme4xSystemFiles\\EMEdb\\MItemplate.xml");
+            if (inboundMetadataFormat == "ISO19115-2")
+            {
+                templateMetadataRecord.Load(Directory.GetCurrentDirectory() + "\\Eme4xSystemFiles\\EMEdb\\MItemplate.xml");
+            }
+            else if (inboundMetadataFormat == "ISO19115")
+            {
+                templateMetadataRecord.Load(Directory.GetCurrentDirectory() + "\\Eme4xSystemFiles\\EMEdb\\MDtemplate.xml");
+            }
+            else
+            {
+                //do something; not sure what yet  :-)
+            }
                         
             //NameSpace and schema specific to 19115 and -2.  Trying to avoid using this or some other work around for multiple standards.
             //setISONameSpaceManager();
             
             //codeListsArcISO = new XmlDocument();
-                     
 
-            //Code to populate class properties of all the required form fields and corresponding Xpath Expressions to select out the values
-            //depending on the MetadataStandard.            
+            bindclassXpathProperties();
+
+            if (fileNamewithFullPath != "New")
+            {
+
+                //Metadata Information
+                fileid = returnInnerTextfromNode(IsoNodeXpaths.fileIdentifierXpath);
+                _language = returnInnerTextfromNode(IsoNodeXpaths.languageXpath);
+                hyLevel_md_scopeCode = returnInnerTextfromNode(IsoNodeXpaths.hierarchyLevel_MD_ScopeCodeXpath);
+                contactRpSection = returnCI_ResponsiblePartyList(IsoNodeXpaths.contact_CI_ResponsiblePartyXpath);
+                _dateStamp = returnInnerTextfromNode(IsoNodeXpaths.dateStampXpath);
+                //Might get this from template metadata instead and leave as read-only
+                mdStandardName = templateMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.metadataStandardNameXpath).FirstChild.InnerText;
+                mdStandardVersion = templateMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.metadataStandardVersionXpath).FirstChild.InnerText;
+
+                //IdInfo
+                _idInfo_citation_title = returnInnerTextfromNode(IsoNodeXpaths.idInfo_citation_TitleXpath);
+                _idInfo_citation_date_creation = returnInnerTextfromNode(IsoNodeXpaths.idInfo_citation_date_creationXpath);
+                _idInfo_citation_date_publication = returnInnerTextfromNode(IsoNodeXpaths.idInfo_citation_date_publicationXpath);
+                _idInfo_citation_date_revision = returnInnerTextfromNode(IsoNodeXpaths.idInfo_citation_date_revisionXpath);
+                idinfoCitationcitedResponsibleParty = returnCI_ResponsiblePartyList(IsoNodeXpaths.idInfo_citation_citedResponsiblePartyXpath);
+
+                _idInfo_abstract = returnInnerTextfromNode(IsoNodeXpaths.idInfo_AbstractXpath);
+                _idInfo_purpose = returnInnerTextfromNode(IsoNodeXpaths.idInfo_PurposeXpath);
+                _idInfo_status_MD_ProgressCode = returnInnerTextfromNode(IsoNodeXpaths.idInfo_Status_MD_ProgressCodeXpath);
+                idinfoPointOfContact = returnCI_ResponsiblePartyList(IsoNodeXpaths.idInfo_pointOfContactXpath);
+
+                kwEpaList = returnListFromKeywordSection(IsoNodeXpaths.idInfo_keywordsEpaXpath, "./*[local-name()='MD_Keywords']/*[local-name()='keyword']");
+                //returnListFromNodeList(inboundMetadataRecord.DocumentElement.SelectNodes(IsoNodeXpaths.IdInfo_keywordsEpaListXpath));
+                kwPlaceList = returnListFromKeywordSection(IsoNodeXpaths.idInfo_keywordsPlaceXpath, "./*[local-name()='MD_Keywords']/*[local-name()='keyword']");
+                kwUserList = returnListFromKeywordSection(IsoNodeXpaths.idInfo_keywordsUserXpath, "./*[local-name()='MD_Keywords']/*[local-name()='keyword']");
+                kwIsoTopicCatList = returnListFromKeywordSection(IsoNodeXpaths.idInfo_keywordsIsoTopicCategoryXpath, "./*[local-name()='MD_TopicCategoryCode']");
+            }
+            //****************Testing
+            //constructMI_MetadataMarkUp();
+            
+        }
+
+        /// <summary>
+        /// Code to populate class properties of all the required form fields and corresponding Xpath Expressions to select out the values
+        /// depending on the MetadataStandard.
+        /// </summary>
+        private void bindclassXpathProperties()
+        {                        
             Utils1.setEmeSettingsDataset();
             DataTable subTable = Utils1.emeSettingsDataset.Tables["emeControl"].Select().CopyToDataTable();
             //.Select("cSource = 'ISO19115'").CopyToDataTable();
@@ -213,49 +268,15 @@ namespace EmeLibrary
                     //classFieldBindingNames.Add(dr["propName"].ToString());
                 }
             }
-                        
-            //not sure I need this property yet.
-            //root19115 = inboundMetadataRecord.SelectSingleNode("/");
-            //gmdContact = inboundMetadataRecord.SelectNodes("//*[local-name()='contact']"); //not namespace specific
-            //Contact might need an entire class dedicted to the values.
-  
-            //Metadata Information
-            fileid = returnInnerTextfromNode(IsoNodeXpaths.fileIdentifierXpath);                
-            _language = returnInnerTextfromNode(IsoNodeXpaths.languageXpath);
-            hyLevel_md_scopeCode = returnInnerTextfromNode(IsoNodeXpaths.hierarchyLevel_MD_ScopeCodeXpath);
-            contactRpSection = returnCI_ResponsiblePartyList(IsoNodeXpaths.contact_CI_ResponsiblePartyXpath);           
-            _dateStamp = returnInnerTextfromNode(IsoNodeXpaths.dateStampXpath);
-            //mdStandardName;  //Might get this from template metadata instead
-            //mdStandardVersion
-                       
-            //IdInfo
-            _idInfo_citation_title = returnInnerTextfromNode(IsoNodeXpaths.idInfo_citation_TitleXpath);
-            _idInfo_citation_date_creation = returnInnerTextfromNode(IsoNodeXpaths.idInfo_citation_date_creationXpath);
-            _idInfo_citation_date_publication = returnInnerTextfromNode(IsoNodeXpaths.idInfo_citation_date_publicationXpath);
-            _idInfo_citation_date_revision = returnInnerTextfromNode(IsoNodeXpaths.idInfo_citation_date_revisionXpath);
-            idinfoCitationcitedResponsibleParty = returnCI_ResponsiblePartyList(IsoNodeXpaths.idInfo_citation_citedResponsiblePartyXpath);
-
-            _idInfo_abstract = returnInnerTextfromNode(IsoNodeXpaths.idInfo_AbstractXpath);
-            _idInfo_purpose = returnInnerTextfromNode(IsoNodeXpaths.idInfo_PurposeXpath);
-            _idInfo_status_MD_ProgressCode = returnInnerTextfromNode(IsoNodeXpaths.idInfo_Status_MD_ProgressCodeXpath);
-            idinfoPointOfContact = returnCI_ResponsiblePartyList(IsoNodeXpaths.idInfo_pointOfContactXpath);
-
-            kwEpaList = returnListFromKeywordSection(IsoNodeXpaths.idInfo_keywordsEpaXpath, "./*[local-name()='MD_Keywords']/*[local-name()='keyword']");
-                //returnListFromNodeList(inboundMetadataRecord.DocumentElement.SelectNodes(IsoNodeXpaths.IdInfo_keywordsEpaListXpath));
-            kwPlaceList = returnListFromKeywordSection(IsoNodeXpaths.idInfo_keywordsPlaceXpath, "./*[local-name()='MD_Keywords']/*[local-name()='keyword']");
-            kwUserList = returnListFromKeywordSection(IsoNodeXpaths.idInfo_keywordsUserXpath, "./*[local-name()='MD_Keywords']/*[local-name()='keyword']");
-            kwIsoTopicCatList = returnListFromKeywordSection(IsoNodeXpaths.idInfo_keywordsIsoTopicCategoryXpath, "./*[local-name()='MD_TopicCategoryCode']");
-                        
-            //constructMI_MetadataMarkUp();
-            
         }
+
         /// <summary>
         /// Pass in the required Xpath to return the inner text value from the inboundMetadataRecord
         /// The Xpath should point to the parent element.  This will return the value from the firstChild
         /// since it is usually gco:CharacterString and a non-repeating element
         /// </summary>
         /// <param name="XpathToSingleNode">Xpath to inboundMetadataRecord Element</param>
-        /// <returns></returns>
+        /// <returns></returns>        
         private string returnInnerTextfromNode(string XpathToSingleNode)
         {
             string s = "";
@@ -344,6 +365,9 @@ namespace EmeLibrary
             //ToDo:  Create an outbound record that is a copy of inbound record, but with the modified sections.
 
             constructMI_MetadataMarkUp();
+
+            //outboundMetadataRecord.Save(@"C:\Users\dspinosa\Desktop\testMetadata\DCAT\testCommonCoreRecordFromGeoportal-2vJUNK.xml");
+            //outboundMetadataRecord.Save(
             
         }
 
