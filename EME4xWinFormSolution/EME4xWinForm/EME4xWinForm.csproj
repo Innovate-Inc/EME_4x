@@ -341,6 +341,7 @@
     </Content>
     <Content Include="Eme4xSystemFiles\EMEdb\emeSettings.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Eme4xSystemFiles\EMEdb\KeywordsEPA.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

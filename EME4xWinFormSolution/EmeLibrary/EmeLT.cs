@@ -85,7 +85,7 @@ namespace EmeLibrary
                     else
                     {
                         //allControlsIntoHashtable(cntrl);
-                        Console.WriteLine("Parent Control" + cntrl.Name);
+                        //Console.WriteLine("Parent Control" + cntrl.Name);
                         allControlsIntoHashtable(cntrl.Controls);
                     }                      
                 }
@@ -93,7 +93,7 @@ namespace EmeLibrary
                 {
                     //Ayhan has another sub method called registerControl... 
                     //allControlsColl.Add(cntrl.Name, cntrl);
-                    Console.WriteLine("  Child Control " + cntrl.Name);
+                    //Console.WriteLine("  Child Control " + cntrl.Name);
                     allControlsColl[cntrl.Name] = cntrl;                    
                 }
             }
@@ -176,20 +176,20 @@ namespace EmeLibrary
             //txtAbstract.Text = localXdoc.identificationInfo_Abstract;
             
             //Iso Topic Category
-            //idInfo_keywordsIsoTopicCategory.ClearSelected();
-            //foreach (string s in localXdoc.idInfo_keywordsIsoTopicCategory)
-            //{
-            //    int i = idInfo_keywordsIsoTopicCategory.FindStringExact(s);
-            //    idInfo_keywordsIsoTopicCategory.SetSelected(i, true);
-            //}
+            idInfo_keywordsIsoTopicCategory.ClearSelected();
+            foreach (string s in localXdoc.idInfo_keywordsIsoTopicCategory)
+            {
+                int i = idInfo_keywordsIsoTopicCategory.FindStringExact(s);
+                idInfo_keywordsIsoTopicCategory.SetSelected(i, true);
+            }
 
             //Epa Keywords
-            //idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey.ClearSelected();
-            //foreach (string s in localXdoc.idInfo_keywordsEpa)
-            //{
-            //    int epaitem = idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey.FindStringExact(s);
-            //    idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey.SetSelected(epaitem, true);
-            //}
+            idInfo_keywordsEpa.ClearSelected();
+            foreach (string s in localXdoc.idInfo_keywordsEpa)
+            {
+                int epaitem = idInfo_keywordsEpa.FindStringExact(s);
+                idInfo_keywordsEpa.SetSelected(epaitem, true);
+            }
 
             //User Keywords
             idInfo_keywordsUser.BeginUpdate();
@@ -201,13 +201,13 @@ namespace EmeLibrary
                 if (keywordUser == -1) { Utils1.emeDataSet.Tables["KeywordsUser"].Rows.Add("User", s, "false"); }
             }
             idInfo_keywordsUser.EndUpdate();
-            
-            //idinfo_keywords_theme_themekt__User___themekey.ClearSelected();
-            //foreach (string s in localXdoc.idInfo_keywordsUser)
-            //{
-            //    int keywordUserindx = idinfo_keywords_theme_themekt__User___themekey.FindStringExact(s);
-            //    idinfo_keywords_theme_themekt__User___themekey.SetSelected(keywordUserindx, true);
-            //}
+
+            idInfo_keywordsUser.ClearSelected();
+            foreach (string s in localXdoc.idInfo_keywordsUser)
+            {
+                int keywordUserindx = idInfo_keywordsUser.FindStringExact(s);
+                idInfo_keywordsUser.SetSelected(keywordUserindx, true);
+            }
 
             //Place Keywords
             idInfo_keywordsPlace.BeginUpdate();
@@ -217,12 +217,12 @@ namespace EmeLibrary
                 if (i == -1) { Utils1.emeDataSet.Tables["KeywordsPlace"].Rows.Add("None", s, "false"); }
             }
             idInfo_keywordsPlace.EndUpdate();
-            //idinfo_keywords_place_placekt__None___placekey.ClearSelected();
-            //foreach (string s in localXdoc.idInfo_keywordsPlace)
-            //{
-            //    int i = idinfo_keywords_place_placekt__None___placekey.FindStringExact(s);
-            //    idinfo_keywords_place_placekt__None___placekey.SetSelected(i, true);
-            //}
+            idInfo_keywordsPlace.ClearSelected();
+            foreach (string s in localXdoc.idInfo_keywordsPlace)
+            {
+                int i = idInfo_keywordsPlace.FindStringExact(s);
+                idInfo_keywordsPlace.SetSelected(i, true);
+            }
             idInfo_keywordsPlace.TopIndex = 0;
 
 
@@ -608,8 +608,8 @@ namespace EmeLibrary
             //Check content for required content and validation of some kind
             
 
-            localXdoc.idInfo_citation_Title = idInfo_citation_Title.Text;
-            localXdoc.idInfo_Abstract = idInfo_Abstract.Text;
+            //localXdoc.idInfo_citation_Title = idInfo_citation_Title.Text;
+            //localXdoc.idInfo_Abstract = idInfo_Abstract.Text;
                        
 
             localXdoc.idInfo_keywordsPlace.Clear();
@@ -636,10 +636,14 @@ namespace EmeLibrary
                 localXdoc.idInfo_keywordsUser.Add(item["themekey"].ToString());
             }
 
-            localXdoc.saveChangestoRecord();
+            PageController.PageSaver(this);
 
-            getXmlFormatType();
-            bindCCMFields();
+            //localXdoc.saveChangestoRecord();
+
+
+
+            //getXmlFormatType();
+            //bindCCMFields();
 
             MessageBox.Show("Done");
 
@@ -800,7 +804,28 @@ namespace EmeLibrary
         private void pointOfContact_btn_Click(object sender, EventArgs e)
         {
             expander(pointOfContact_Pnl);
-        }                  
+        }
 
+        private void idInfo_citation_date_creation_dtP_ValueChanged(object sender, EventArgs e)
+        {
+            idInfo_citation_date_creation.Text = idInfo_citation_date_creation_dtP.Value.ToString("yyyy-MM-dd");
+        }
+
+        private void dateStamp_dtP_ValueChanged(object sender, EventArgs e)
+        {
+            dateStamp.Text = dateStamp_dtP.Value.ToString("yyyy-MM-dd");
+        }
+
+        private void idInfo_citation_date_publication_dtP_ValueChanged(object sender, EventArgs e)
+        {
+            idInfo_citation_date_publication.Text = idInfo_citation_date_publication_dtP.Value.ToString("yyyy-MM-dd");
+        }
+
+        private void idInfo_citation_date_revision_dtP_ValueChanged(object sender, EventArgs e)
+        {
+            idInfo_citation_date_revision.Text = idInfo_citation_date_revision_dtP.Value.ToString("yyyy-MM-dd");
+        }
+
+        
     }
 }

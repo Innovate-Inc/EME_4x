@@ -74,25 +74,12 @@ namespace EmeLibrary
                     : dr["controlName"].ToString().Remove(index, "Xpath".Length);
                 cntrlName = cleanPath;
                 //MessageBox.Show(cntrlName);
-
+                
                 //Add new page controller object for each record in database
                 p = new PageController(i, cntrlName, "sourceField", "sourceField");
 
                 i++;
             }
-
-
-            //isoNodes junk = new isoNodes();
-
-            //Add new page controller object for each record in database
-            //Parse from the list so that IdInfo_citation_TitleXpath, becomes IdInfo_citation_Title and IdInfo_citation_TitleXpath_txt
-
-            //p = new PageController(0, "textBox1", "test", "sourceField");
-            //p = new PageController(1, "textBox2", "test", "sourceField");
-            //p = new PageController(1, "IdInfo_citation_Title_txt", "test", "sourceField");
-            //p = new PageController(1, "aaatextBox1", "test", "sourceField");
-
-
         }
 
         /// <summary>
@@ -105,6 +92,7 @@ namespace EmeLibrary
             {
                 foreach (PageController pc in HiveMind.Values)
                 {
+
                     pc.populate(frm);                   
                 }
             }
@@ -113,16 +101,16 @@ namespace EmeLibrary
 
             }
         }
+
         private void populate(EmeLT frm)
         {
-            //I'm thinking we bind to the class properties instead.
             
-            //frm.localXdoc.Metadata_contact
-
-            Console.WriteLine(formFieldName_);
+            //Console.WriteLine(formFieldName_);
             Control ctrl;
+            
             ctrl = frm.getControlForTag(formFieldName_);
             object obj = frm.localXdoc;
+
             if (ctrl != null)
             {
                 //MessageBox.Show(ctrl.Name);
@@ -130,45 +118,30 @@ namespace EmeLibrary
                 {
                     uc_ResponsibleParty incoming_ResponsibleParty = (uc_ResponsibleParty)ctrl;
 
-                   // PropertyInfo propInfo = frm.localXdoc.GetType().GetProperty(ctrl.Name);
-
                     List<CI_ResponsibleParty> ci_RP = (List<CI_ResponsibleParty>)frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null);
                     incoming_ResponsibleParty.loadList(ci_RP);
-                 
+                    
                 }
-                else if (ctrl.GetType() == typeof(ListBox))
+                //else if (ctrl.GetType() == typeof(ListBox))
+                //{
+                //    ListBox topic = (ListBox)ctrl;
+                //    List<string> list = (List<string>)frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null);
+                //    topic.ClearSelected();
+                //    foreach (string s in list)
+                //    {
+                //        int i = topic.FindStringExact(s);
+                //        topic.SetSelected(i, true);
+                //    }
+                //}
+                else if (ctrl.GetType() == typeof(ComboBox))
                 {
-                    ListBox topic = (ListBox)ctrl;
-                    List<string> list = (List<string>)frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null);
-                    topic.ClearSelected();
-                    foreach (string s in list)
-                    {
-                        int i = topic.FindStringExact(s);
-                        topic.SetSelected(i, true);
-                    }  
+                    ComboBox boxCbo = (ComboBox)ctrl;
+                    boxCbo.SelectedText = frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null).ToString();
+                    boxCbo.SelectedValue = frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null).ToString();
                 }
-                else if (ctrl.GetType() == typeof(DateTimePicker))
+                else if (ctrl.GetType() == typeof(TextBox))
                 {
-                    DateTimePicker dateControl = (DateTimePicker)ctrl;
-                    dateControl.Value = Convert.ToDateTime(frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null));
-                }
-                else
-                {
-                    //ctrl.Text = frm.localXdoc.idInfo_citation_Title;
-
                     ctrl.Text = frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null).ToString();
-                    //MessageBox.Show(frm.localXdoc.ClassFieldNames[0].ToString());
-                    //int index = frm.localXdoc.ClassFieldNames.FindIndex(x => x.Contains(ctrl.Name));
-                    //object obj = frm.localXdoc;
-                    //PropertyInfo propInfo = obj.GetType().GetProperty(ctrl.Name);
-
-                    //ctrl.Text = propInfo.GetValue(obj, null).ToString();
-
-                    //ctrl.Text = "David was here";
-                    //if (frm.localXdoc.ClassFieldNames.Contains(ctrl.Name))
-                    //    ctrl.Text = frm.localXdoc.ClassFieldNames.Find(x => x.Contains(ctrl.Name));
-                    //ctrl.Text = frm.localXdoc.identificationInfo_citation_Title;
-
                 }
                 //ctrl.Text = "Dan Was Here";  //This pull value from IsoNodes Class
                 //MessageBox.Show(ctrl.Name);
@@ -186,6 +159,53 @@ namespace EmeLibrary
             //    classFieldBindingNames.Add(dr["propName"].ToString());
             //}
 
+        }
+
+        /// <summary>
+        /// Save all PageControllers back to metadata record.
+        /// </summary>
+        /// <param name="frm">Editor form</param>
+        public static void PageSaver(EmeLT frm)
+        {
+            foreach (PageController pc in HiveMind.Values)
+            {
+                //Console.WriteLine(pc.formFieldName_);
+                pc.save(frm);
+            }
+        }
+
+        /// <summary>
+        /// Save this PageController back to metadata record.
+        /// </summary>
+        /// <param name="frm">the form</param>
+        private void save(EmeLT frm)
+        {
+            Control ctrl;
+            ctrl = frm.getControlForTag(formFieldName_);
+            object obj = frm.localXdoc;
+
+            if (ctrl != null)
+            {
+                if (ctrl.GetType() == typeof(uc_ResponsibleParty))
+                {
+                    uc_ResponsibleParty outgoing_ResponsibleParty = (uc_ResponsibleParty)ctrl;
+                    frm.localXdoc.GetType().GetProperty(ctrl.Name).SetValue(obj, outgoing_ResponsibleParty.incomingCI_ResponsiblePartyList, null);
+                    Console.WriteLine(outgoing_ResponsibleParty.incomingCI_ResponsiblePartyList.Count());
+                    //List<CI_ResponsibleParty> ci_RP = (List<CI_ResponsibleParty>)frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null);
+                }
+                else if (ctrl.GetType() == typeof(ComboBox))
+                {
+                    ComboBox boxCbo = (ComboBox)ctrl;
+                    frm.localXdoc.GetType().GetProperty(ctrl.Name).SetValue(obj, boxCbo.SelectedText, null);
+                    Console.WriteLine(boxCbo.SelectedText); 
+                }
+                else if (ctrl.GetType() == typeof(TextBox))
+                {
+                    //Console.WriteLine(frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null).ToString() + "   " + ctrl.Text);
+                    frm.localXdoc.GetType().GetProperty(ctrl.Name).SetValue(obj, ctrl.Text, null);
+                    //MessageBox.Show(frm.localXdoc.idInfo_citation_Title.ToString());
+                }
+            }
         }
 
         int IComparable.CompareTo(object obj)

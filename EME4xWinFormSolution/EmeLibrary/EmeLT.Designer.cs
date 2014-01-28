@@ -77,49 +77,58 @@
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.group2_Pnl = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.lblModified = new System.Windows.Forms.Label();
+            this.dateStamp_dtP = new System.Windows.Forms.DateTimePicker();
+            this.dateStamp = new System.Windows.Forms.TextBox();
+            this.dateStamp_lbl = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.metadataStandardVersion_lbl = new System.Windows.Forms.Label();
+            this.metadataStandardName_lbl = new System.Windows.Forms.Label();
+            this.XmetadataStandardName = new System.Windows.Forms.TextBox();
+            this.XmetadataStandardVersion = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.language = new System.Windows.Forms.TextBox();
-            this.hierarchyLevel_lbl = new System.Windows.Forms.Label();
+            this.hierarchyLevel_MD_ScopeCode_lbl = new System.Windows.Forms.Label();
             this.language_lbl = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.hierarchyLevel_MD_ScopeCode = new System.Windows.Forms.ComboBox();
             this.group2_lbl = new System.Windows.Forms.Label();
             this.metadataAuthor_Pnl = new System.Windows.Forms.Panel();
             this.metaDataAuthor_lbl = new System.Windows.Forms.Label();
+            this.contact_CI_ResponsibleParty = new EmeLibrary.uc_ResponsibleParty();
             this.expand_P1 = new System.Windows.Forms.Button();
             this.Group2_btn = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.fileIdentifier = new System.Windows.Forms.TextBox();
-            this.lblIdentifier = new System.Windows.Forms.Label();
+            this.fileIdentifier_lbl = new System.Windows.Forms.Label();
             this.citationGrp_Pnl = new System.Windows.Forms.Panel();
             this.Citation_Pnl = new System.Windows.Forms.Panel();
+            this.idInfo_citation_citedResponsibleParty = new EmeLibrary.uc_ResponsibleParty();
             this.citatonExpand_lbl = new System.Windows.Forms.Label();
             this.citationExpand_btn = new System.Windows.Forms.Button();
             this.pointOfContact_Pnl = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.idInfo_pointOfContact = new EmeLibrary.uc_ResponsibleParty();
+            this.pointOfContact_lbl = new System.Windows.Forms.Label();
             this.pointOfContact_btn = new System.Windows.Forms.Button();
             this.citationGrp_btn = new System.Windows.Forms.Button();
             this.citationGrp_lbl = new System.Windows.Forms.Label();
-            this.lblAbtract = new System.Windows.Forms.Label();
+            this.idInfo_Abstract_lbl = new System.Windows.Forms.Label();
             this.idInfo_Abstract = new System.Windows.Forms.TextBox();
             this.idInfo_citation_Title = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.idInfo_Purpose = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.idInfo_Purpose_lbl = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.lblTitle = new System.Windows.Forms.Label();
+            this.dates_for_resources_pnl = new System.Windows.Forms.GroupBox();
+            this.idInfo_citation_date_revision_dtP = new System.Windows.Forms.DateTimePicker();
+            this.idInfo_citation_date_publication_dtP = new System.Windows.Forms.DateTimePicker();
+            this.idInfo_citation_date_creation = new System.Windows.Forms.TextBox();
+            this.idInfo_citation_date_creation_dtP = new System.Windows.Forms.DateTimePicker();
+            this.idInfo_citation_date_revision_lbl = new System.Windows.Forms.Label();
+            this.idInfo_citation_date_publication = new System.Windows.Forms.TextBox();
+            this.idInfo_citation_date_publication_lbl = new System.Windows.Forms.Label();
+            this.idInfo_citation_date_revision = new System.Windows.Forms.TextBox();
+            this.idInfo_citation_date_creation_lbl = new System.Windows.Forms.Label();
+            this.idInfo_citation_Title_lbl = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
@@ -147,11 +156,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateStamp = new System.Windows.Forms.DateTimePicker();
-            this.contact_CI_ResponsibleParty = new EmeLibrary.uc_ResponsibleParty();
-            this.idInfo_citation_citedResponsibleParty = new EmeLibrary.uc_ResponsibleParty();
-            this.idInfo_pointOfContact = new EmeLibrary.uc_ResponsibleParty();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -175,7 +179,7 @@
             this.pointOfContact_Pnl.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.dates_for_resources_pnl.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
@@ -292,7 +296,7 @@
             // lblDownloadUrl
             // 
             this.lblDownloadUrl.AutoSize = true;
-            this.lblDownloadUrl.Location = new System.Drawing.Point(584, 433);
+            this.lblDownloadUrl.Location = new System.Drawing.Point(591, 471);
             this.lblDownloadUrl.Name = "lblDownloadUrl";
             this.lblDownloadUrl.Size = new System.Drawing.Size(80, 13);
             this.lblDownloadUrl.TabIndex = 34;
@@ -302,7 +306,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.groupBox1);
-            this.panel2.Location = new System.Drawing.Point(560, 9);
+            this.panel2.Location = new System.Drawing.Point(567, 17);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(377, 257);
             this.panel2.TabIndex = 6;
@@ -552,7 +556,7 @@
             // lblEndpoint
             // 
             this.lblEndpoint.AutoSize = true;
-            this.lblEndpoint.Location = new System.Drawing.Point(615, 459);
+            this.lblEndpoint.Location = new System.Drawing.Point(622, 497);
             this.lblEndpoint.Name = "lblEndpoint";
             this.lblEndpoint.Size = new System.Drawing.Size(49, 13);
             this.lblEndpoint.TabIndex = 33;
@@ -562,7 +566,7 @@
             // lblFormat
             // 
             this.lblFormat.AutoSize = true;
-            this.lblFormat.Location = new System.Drawing.Point(625, 489);
+            this.lblFormat.Location = new System.Drawing.Point(632, 527);
             this.lblFormat.Name = "lblFormat";
             this.lblFormat.Size = new System.Drawing.Size(39, 13);
             this.lblFormat.TabIndex = 32;
@@ -572,7 +576,7 @@
             // lblLicense
             // 
             this.lblLicense.AutoSize = true;
-            this.lblLicense.Location = new System.Drawing.Point(620, 515);
+            this.lblLicense.Location = new System.Drawing.Point(627, 553);
             this.lblLicense.Name = "lblLicense";
             this.lblLicense.Size = new System.Drawing.Size(44, 13);
             this.lblLicense.TabIndex = 31;
@@ -582,7 +586,7 @@
             // lblSpatial
             // 
             this.lblSpatial.AutoSize = true;
-            this.lblSpatial.Location = new System.Drawing.Point(625, 541);
+            this.lblSpatial.Location = new System.Drawing.Point(632, 579);
             this.lblSpatial.Name = "lblSpatial";
             this.lblSpatial.Size = new System.Drawing.Size(39, 13);
             this.lblSpatial.TabIndex = 30;
@@ -592,7 +596,7 @@
             // lblTemporal
             // 
             this.lblTemporal.AutoSize = true;
-            this.lblTemporal.Location = new System.Drawing.Point(613, 563);
+            this.lblTemporal.Location = new System.Drawing.Point(620, 601);
             this.lblTemporal.Name = "lblTemporal";
             this.lblTemporal.Size = new System.Drawing.Size(51, 13);
             this.lblTemporal.TabIndex = 29;
@@ -601,63 +605,63 @@
             // 
             // txtTemporal
             // 
-            this.txtTemporal.Location = new System.Drawing.Point(670, 560);
+            this.txtTemporal.Location = new System.Drawing.Point(677, 598);
             this.txtTemporal.Name = "txtTemporal";
             this.txtTemporal.Size = new System.Drawing.Size(228, 20);
             this.txtTemporal.TabIndex = 27;
             // 
             // txtSpatial
             // 
-            this.txtSpatial.Location = new System.Drawing.Point(670, 534);
+            this.txtSpatial.Location = new System.Drawing.Point(677, 572);
             this.txtSpatial.Name = "txtSpatial";
             this.txtSpatial.Size = new System.Drawing.Size(228, 20);
             this.txtSpatial.TabIndex = 26;
             // 
             // txtLicense
             // 
-            this.txtLicense.Location = new System.Drawing.Point(670, 508);
+            this.txtLicense.Location = new System.Drawing.Point(677, 546);
             this.txtLicense.Name = "txtLicense";
             this.txtLicense.Size = new System.Drawing.Size(228, 20);
             this.txtLicense.TabIndex = 25;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(670, 508);
+            this.textBox4.Location = new System.Drawing.Point(677, 546);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(228, 20);
             this.textBox4.TabIndex = 24;
             // 
             // txtDataDictionary
             // 
-            this.txtDataDictionary.Location = new System.Drawing.Point(670, 404);
+            this.txtDataDictionary.Location = new System.Drawing.Point(677, 442);
             this.txtDataDictionary.Name = "txtDataDictionary";
             this.txtDataDictionary.Size = new System.Drawing.Size(228, 20);
             this.txtDataDictionary.TabIndex = 9;
             // 
             // txtFormat
             // 
-            this.txtFormat.Location = new System.Drawing.Point(670, 482);
+            this.txtFormat.Location = new System.Drawing.Point(677, 520);
             this.txtFormat.Name = "txtFormat";
             this.txtFormat.Size = new System.Drawing.Size(228, 20);
             this.txtFormat.TabIndex = 23;
             // 
             // txtAccessLevel
             // 
-            this.txtAccessLevel.Location = new System.Drawing.Point(670, 359);
+            this.txtAccessLevel.Location = new System.Drawing.Point(677, 397);
             this.txtAccessLevel.Name = "txtAccessLevel";
             this.txtAccessLevel.Size = new System.Drawing.Size(228, 20);
             this.txtAccessLevel.TabIndex = 8;
             // 
             // txtEndpoint
             // 
-            this.txtEndpoint.Location = new System.Drawing.Point(670, 456);
+            this.txtEndpoint.Location = new System.Drawing.Point(677, 494);
             this.txtEndpoint.Name = "txtEndpoint";
             this.txtEndpoint.Size = new System.Drawing.Size(228, 20);
             this.txtEndpoint.TabIndex = 22;
             // 
             // txtDownloadURL
             // 
-            this.txtDownloadURL.Location = new System.Drawing.Point(670, 430);
+            this.txtDownloadURL.Location = new System.Drawing.Point(677, 468);
             this.txtDownloadURL.Name = "txtDownloadURL";
             this.txtDownloadURL.Size = new System.Drawing.Size(228, 20);
             this.txtDownloadURL.TabIndex = 21;
@@ -665,7 +669,7 @@
             // lblDataDictionary
             // 
             this.lblDataDictionary.AutoSize = true;
-            this.lblDataDictionary.Location = new System.Drawing.Point(584, 406);
+            this.lblDataDictionary.Location = new System.Drawing.Point(591, 444);
             this.lblDataDictionary.Name = "lblDataDictionary";
             this.lblDataDictionary.Size = new System.Drawing.Size(80, 13);
             this.lblDataDictionary.TabIndex = 17;
@@ -675,7 +679,7 @@
             // lblAccessLevel
             // 
             this.lblAccessLevel.AutoSize = true;
-            this.lblAccessLevel.Location = new System.Drawing.Point(593, 362);
+            this.lblAccessLevel.Location = new System.Drawing.Point(600, 400);
             this.lblAccessLevel.Name = "lblAccessLevel";
             this.lblAccessLevel.Size = new System.Drawing.Size(71, 13);
             this.lblAccessLevel.TabIndex = 18;
@@ -689,7 +693,7 @@
             this.flowLayoutPanel2.Controls.Add(this.group2_Pnl);
             this.flowLayoutPanel2.Controls.Add(this.citationGrp_Pnl);
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(6, 6);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 6);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(501, 705);
             this.flowLayoutPanel2.TabIndex = 36;
@@ -715,22 +719,39 @@
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.panel7.Controls.Add(this.dateStamp_dtP);
             this.panel7.Controls.Add(this.dateStamp);
-            this.panel7.Controls.Add(this.lblModified);
+            this.panel7.Controls.Add(this.dateStamp_lbl);
             this.panel7.Location = new System.Drawing.Point(11, 133);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(476, 28);
             this.panel7.TabIndex = 30;
             // 
-            // lblModified
+            // dateStamp_dtP
             // 
-            this.lblModified.AutoSize = true;
-            this.lblModified.Location = new System.Drawing.Point(42, 6);
-            this.lblModified.Name = "lblModified";
-            this.lblModified.Size = new System.Drawing.Size(70, 13);
-            this.lblModified.TabIndex = 8;
-            this.lblModified.Text = "Last Modified";
-            this.lblModified.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.dateStamp_dtP.Location = new System.Drawing.Point(329, 4);
+            this.dateStamp_dtP.Name = "dateStamp_dtP";
+            this.dateStamp_dtP.Size = new System.Drawing.Size(18, 20);
+            this.dateStamp_dtP.TabIndex = 10;
+            this.dateStamp_dtP.ValueChanged += new System.EventHandler(this.dateStamp_dtP_ValueChanged);
+            // 
+            // dateStamp
+            // 
+            this.dateStamp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.dateStamp.Location = new System.Drawing.Point(119, 4);
+            this.dateStamp.Name = "dateStamp";
+            this.dateStamp.Size = new System.Drawing.Size(204, 20);
+            this.dateStamp.TabIndex = 9;
+            // 
+            // dateStamp_lbl
+            // 
+            this.dateStamp_lbl.AutoSize = true;
+            this.dateStamp_lbl.Location = new System.Drawing.Point(42, 6);
+            this.dateStamp_lbl.Name = "dateStamp_lbl";
+            this.dateStamp_lbl.Size = new System.Drawing.Size(70, 13);
+            this.dateStamp_lbl.TabIndex = 8;
+            this.dateStamp_lbl.Text = "Last Modified";
+            this.dateStamp_lbl.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // panel6
             // 
@@ -743,10 +764,10 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.textBox7);
-            this.groupBox2.Controls.Add(this.textBox8);
+            this.groupBox2.Controls.Add(this.metadataStandardVersion_lbl);
+            this.groupBox2.Controls.Add(this.metadataStandardName_lbl);
+            this.groupBox2.Controls.Add(this.XmetadataStandardName);
+            this.groupBox2.Controls.Add(this.XmetadataStandardVersion);
             this.groupBox2.Location = new System.Drawing.Point(3, 5);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(469, 74);
@@ -754,47 +775,47 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Metadata Standard";
             // 
-            // label6
+            // metadataStandardVersion_lbl
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(20, 48);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(88, 13);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Standard Version";
+            this.metadataStandardVersion_lbl.AutoSize = true;
+            this.metadataStandardVersion_lbl.Location = new System.Drawing.Point(20, 48);
+            this.metadataStandardVersion_lbl.Name = "metadataStandardVersion_lbl";
+            this.metadataStandardVersion_lbl.Size = new System.Drawing.Size(88, 13);
+            this.metadataStandardVersion_lbl.TabIndex = 12;
+            this.metadataStandardVersion_lbl.Text = "Standard Version";
             // 
-            // label5
+            // metadataStandardName_lbl
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(27, 21);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(81, 13);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Standard Name";
+            this.metadataStandardName_lbl.AutoSize = true;
+            this.metadataStandardName_lbl.Location = new System.Drawing.Point(27, 21);
+            this.metadataStandardName_lbl.Name = "metadataStandardName_lbl";
+            this.metadataStandardName_lbl.Size = new System.Drawing.Size(81, 13);
+            this.metadataStandardName_lbl.TabIndex = 11;
+            this.metadataStandardName_lbl.Text = "Standard Name";
             // 
-            // textBox7
+            // XmetadataStandardName
             // 
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox7.Location = new System.Drawing.Point(115, 19);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(349, 20);
-            this.textBox7.TabIndex = 9;
+            this.XmetadataStandardName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.XmetadataStandardName.Location = new System.Drawing.Point(115, 19);
+            this.XmetadataStandardName.Name = "XmetadataStandardName";
+            this.XmetadataStandardName.Size = new System.Drawing.Size(349, 20);
+            this.XmetadataStandardName.TabIndex = 9;
             // 
-            // textBox8
+            // XmetadataStandardVersion
             // 
-            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox8.Location = new System.Drawing.Point(115, 46);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(349, 20);
-            this.textBox8.TabIndex = 10;
+            this.XmetadataStandardVersion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.XmetadataStandardVersion.Location = new System.Drawing.Point(115, 46);
+            this.XmetadataStandardVersion.Name = "XmetadataStandardVersion";
+            this.XmetadataStandardVersion.Size = new System.Drawing.Size(349, 20);
+            this.XmetadataStandardVersion.TabIndex = 10;
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.LightGreen;
             this.panel5.Controls.Add(this.language);
-            this.panel5.Controls.Add(this.hierarchyLevel_lbl);
+            this.panel5.Controls.Add(this.hierarchyLevel_MD_ScopeCode_lbl);
             this.panel5.Controls.Add(this.language_lbl);
-            this.panel5.Controls.Add(this.comboBox2);
+            this.panel5.Controls.Add(this.hierarchyLevel_MD_ScopeCode);
             this.panel5.Location = new System.Drawing.Point(12, 68);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(475, 59);
@@ -802,21 +823,19 @@
             // 
             // language
             // 
-            this.language.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.language.Location = new System.Drawing.Point(118, 5);
-            this.language.Margin = new System.Windows.Forms.Padding(3, 5, 5, 3);
+            this.language.Location = new System.Drawing.Point(118, 4);
             this.language.Name = "language";
             this.language.Size = new System.Drawing.Size(228, 20);
             this.language.TabIndex = 26;
             // 
-            // hierarchyLevel_lbl
+            // hierarchyLevel_MD_ScopeCode_lbl
             // 
-            this.hierarchyLevel_lbl.AutoSize = true;
-            this.hierarchyLevel_lbl.Location = new System.Drawing.Point(30, 33);
-            this.hierarchyLevel_lbl.Name = "hierarchyLevel_lbl";
-            this.hierarchyLevel_lbl.Size = new System.Drawing.Size(81, 13);
-            this.hierarchyLevel_lbl.TabIndex = 23;
-            this.hierarchyLevel_lbl.Text = "Hierarchy Level";
+            this.hierarchyLevel_MD_ScopeCode_lbl.AutoSize = true;
+            this.hierarchyLevel_MD_ScopeCode_lbl.Location = new System.Drawing.Point(19, 34);
+            this.hierarchyLevel_MD_ScopeCode_lbl.Name = "hierarchyLevel_MD_ScopeCode_lbl";
+            this.hierarchyLevel_MD_ScopeCode_lbl.Size = new System.Drawing.Size(92, 13);
+            this.hierarchyLevel_MD_ScopeCode_lbl.TabIndex = 23;
+            this.hierarchyLevel_MD_ScopeCode_lbl.Text = "Type of Resource";
             // 
             // language_lbl
             // 
@@ -827,15 +846,32 @@
             this.language_lbl.TabIndex = 25;
             this.language_lbl.Text = "Language";
             // 
-            // comboBox2
+            // hierarchyLevel_MD_ScopeCode
             // 
-            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(118, 31);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 3, 5, 5);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(228, 21);
-            this.comboBox2.TabIndex = 24;
+            this.hierarchyLevel_MD_ScopeCode.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.hierarchyLevel_MD_ScopeCode.FormattingEnabled = true;
+            this.hierarchyLevel_MD_ScopeCode.Items.AddRange(new object[] {
+            "attribute",
+            "attributeType",
+            "collectionHardware",
+            "collectionSession",
+            "dataset",
+            "series",
+            "nonGeographicDataset",
+            "dimensionGroup",
+            "feature",
+            "featureType",
+            "propertyType",
+            "fieldSession",
+            "software",
+            "service",
+            "model",
+            "tile"});
+            this.hierarchyLevel_MD_ScopeCode.Location = new System.Drawing.Point(118, 31);
+            this.hierarchyLevel_MD_ScopeCode.Margin = new System.Windows.Forms.Padding(3, 3, 5, 5);
+            this.hierarchyLevel_MD_ScopeCode.Name = "hierarchyLevel_MD_ScopeCode";
+            this.hierarchyLevel_MD_ScopeCode.Size = new System.Drawing.Size(228, 21);
+            this.hierarchyLevel_MD_ScopeCode.TabIndex = 24;
             // 
             // group2_lbl
             // 
@@ -869,6 +905,14 @@
             this.metaDataAuthor_lbl.TabIndex = 1;
             this.metaDataAuthor_lbl.Text = "Metadata Author";
             // 
+            // contact_CI_ResponsibleParty
+            // 
+            this.contact_CI_ResponsibleParty.incomingCI_ResponsiblePartyList = null;
+            this.contact_CI_ResponsibleParty.Location = new System.Drawing.Point(4, 33);
+            this.contact_CI_ResponsibleParty.Name = "contact_CI_ResponsibleParty";
+            this.contact_CI_ResponsibleParty.Size = new System.Drawing.Size(463, 491);
+            this.contact_CI_ResponsibleParty.TabIndex = 0;
+            // 
             // expand_P1
             // 
             this.expand_P1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -897,7 +941,7 @@
             this.panel4.AutoSize = true;
             this.panel4.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.panel4.Controls.Add(this.fileIdentifier);
-            this.panel4.Controls.Add(this.lblIdentifier);
+            this.panel4.Controls.Add(this.fileIdentifier_lbl);
             this.panel4.Location = new System.Drawing.Point(12, 32);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(475, 30);
@@ -912,26 +956,27 @@
             this.fileIdentifier.Size = new System.Drawing.Size(228, 20);
             this.fileIdentifier.TabIndex = 7;
             // 
-            // lblIdentifier
+            // fileIdentifier_lbl
             // 
-            this.lblIdentifier.AutoSize = true;
-            this.lblIdentifier.Location = new System.Drawing.Point(64, 7);
-            this.lblIdentifier.Name = "lblIdentifier";
-            this.lblIdentifier.Size = new System.Drawing.Size(47, 13);
-            this.lblIdentifier.TabIndex = 19;
-            this.lblIdentifier.Text = "Identifier";
-            this.lblIdentifier.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.fileIdentifier_lbl.AutoSize = true;
+            this.fileIdentifier_lbl.Location = new System.Drawing.Point(64, 7);
+            this.fileIdentifier_lbl.Name = "fileIdentifier_lbl";
+            this.fileIdentifier_lbl.Size = new System.Drawing.Size(47, 13);
+            this.fileIdentifier_lbl.TabIndex = 19;
+            this.fileIdentifier_lbl.Text = "Identifier";
+            this.fileIdentifier_lbl.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // citationGrp_Pnl
             // 
             this.citationGrp_Pnl.AutoSize = true;
+            this.citationGrp_Pnl.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.citationGrp_Pnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.citationGrp_Pnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.citationGrp_Pnl.Controls.Add(this.Citation_Pnl);
             this.citationGrp_Pnl.Controls.Add(this.pointOfContact_Pnl);
             this.citationGrp_Pnl.Controls.Add(this.citationGrp_btn);
             this.citationGrp_Pnl.Controls.Add(this.citationGrp_lbl);
-            this.citationGrp_Pnl.Controls.Add(this.lblAbtract);
+            this.citationGrp_Pnl.Controls.Add(this.idInfo_Abstract_lbl);
             this.citationGrp_Pnl.Controls.Add(this.idInfo_Abstract);
             this.citationGrp_Pnl.Controls.Add(this.idInfo_citation_Title);
             this.citationGrp_Pnl.Controls.Add(this.panel1);
@@ -951,6 +996,14 @@
             this.Citation_Pnl.Name = "Citation_Pnl";
             this.Citation_Pnl.Size = new System.Drawing.Size(475, 30);
             this.Citation_Pnl.TabIndex = 16;
+            // 
+            // idInfo_citation_citedResponsibleParty
+            // 
+            this.idInfo_citation_citedResponsibleParty.incomingCI_ResponsiblePartyList = null;
+            this.idInfo_citation_citedResponsibleParty.Location = new System.Drawing.Point(4, 32);
+            this.idInfo_citation_citedResponsibleParty.Name = "idInfo_citation_citedResponsibleParty";
+            this.idInfo_citation_citedResponsibleParty.Size = new System.Drawing.Size(449, 481);
+            this.idInfo_citation_citedResponsibleParty.TabIndex = 2;
             // 
             // citatonExpand_lbl
             // 
@@ -977,7 +1030,7 @@
             // 
             this.pointOfContact_Pnl.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.pointOfContact_Pnl.Controls.Add(this.idInfo_pointOfContact);
-            this.pointOfContact_Pnl.Controls.Add(this.label3);
+            this.pointOfContact_Pnl.Controls.Add(this.pointOfContact_lbl);
             this.pointOfContact_Pnl.Controls.Add(this.pointOfContact_btn);
             this.pointOfContact_Pnl.Location = new System.Drawing.Point(12, 356);
             this.pointOfContact_Pnl.Margin = new System.Windows.Forms.Padding(3, 3, 6, 6);
@@ -985,15 +1038,23 @@
             this.pointOfContact_Pnl.Size = new System.Drawing.Size(475, 30);
             this.pointOfContact_Pnl.TabIndex = 17;
             // 
-            // label3
+            // idInfo_pointOfContact
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(42, 7);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(108, 17);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Point of Contact";
+            this.idInfo_pointOfContact.incomingCI_ResponsiblePartyList = null;
+            this.idInfo_pointOfContact.Location = new System.Drawing.Point(4, 33);
+            this.idInfo_pointOfContact.Name = "idInfo_pointOfContact";
+            this.idInfo_pointOfContact.Size = new System.Drawing.Size(449, 481);
+            this.idInfo_pointOfContact.TabIndex = 2;
+            // 
+            // pointOfContact_lbl
+            // 
+            this.pointOfContact_lbl.AutoSize = true;
+            this.pointOfContact_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pointOfContact_lbl.Location = new System.Drawing.Point(42, 7);
+            this.pointOfContact_lbl.Name = "pointOfContact_lbl";
+            this.pointOfContact_lbl.Size = new System.Drawing.Size(108, 17);
+            this.pointOfContact_lbl.TabIndex = 1;
+            this.pointOfContact_lbl.Text = "Point of Contact";
             // 
             // pointOfContact_btn
             // 
@@ -1027,16 +1088,16 @@
             this.citationGrp_lbl.TabIndex = 11;
             this.citationGrp_lbl.Text = "Identification Info";
             // 
-            // lblAbtract
+            // idInfo_Abstract_lbl
             // 
-            this.lblAbtract.AutoSize = true;
-            this.lblAbtract.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.lblAbtract.Location = new System.Drawing.Point(17, 181);
-            this.lblAbtract.Name = "lblAbtract";
-            this.lblAbtract.Size = new System.Drawing.Size(46, 13);
-            this.lblAbtract.TabIndex = 10;
-            this.lblAbtract.Text = "Abstract";
-            this.lblAbtract.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.idInfo_Abstract_lbl.AutoSize = true;
+            this.idInfo_Abstract_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.idInfo_Abstract_lbl.Location = new System.Drawing.Point(17, 181);
+            this.idInfo_Abstract_lbl.Name = "idInfo_Abstract_lbl";
+            this.idInfo_Abstract_lbl.Size = new System.Drawing.Size(46, 13);
+            this.idInfo_Abstract_lbl.TabIndex = 10;
+            this.idInfo_Abstract_lbl.Text = "Abstract";
+            this.idInfo_Abstract_lbl.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // idInfo_Abstract
             // 
@@ -1061,7 +1122,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.panel1.Controls.Add(this.idInfo_Purpose);
-            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.idInfo_Purpose_lbl);
             this.panel1.Location = new System.Drawing.Point(12, 237);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(475, 76);
@@ -1077,96 +1138,134 @@
             this.idInfo_Purpose.Size = new System.Drawing.Size(410, 61);
             this.idInfo_Purpose.TabIndex = 14;
             // 
-            // label4
+            // idInfo_Purpose_lbl
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.label4.Location = new System.Drawing.Point(5, 24);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 13);
-            this.label4.TabIndex = 15;
-            this.label4.Text = "Purpose";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.idInfo_Purpose_lbl.AutoSize = true;
+            this.idInfo_Purpose_lbl.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.idInfo_Purpose_lbl.Location = new System.Drawing.Point(5, 24);
+            this.idInfo_Purpose_lbl.Name = "idInfo_Purpose_lbl";
+            this.idInfo_Purpose_lbl.Size = new System.Drawing.Size(46, 13);
+            this.idInfo_Purpose_lbl.TabIndex = 15;
+            this.idInfo_Purpose_lbl.Text = "Purpose";
+            this.idInfo_Purpose_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.panel3.Controls.Add(this.groupBox3);
-            this.panel3.Controls.Add(this.lblTitle);
+            this.panel3.Controls.Add(this.dates_for_resources_pnl);
+            this.panel3.Controls.Add(this.idInfo_citation_Title_lbl);
             this.panel3.Location = new System.Drawing.Point(10, 36);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(477, 195);
             this.panel3.TabIndex = 19;
             // 
-            // groupBox3
+            // dates_for_resources_pnl
             // 
-            this.groupBox3.Controls.Add(this.dateTimePicker1);
-            this.groupBox3.Controls.Add(this.label12);
-            this.groupBox3.Controls.Add(this.textBox9);
-            this.groupBox3.Controls.Add(this.label11);
-            this.groupBox3.Controls.Add(this.textBox10);
-            this.groupBox3.Controls.Add(this.label10);
-            this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox3.Location = new System.Drawing.Point(59, 32);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(297, 100);
-            this.groupBox3.TabIndex = 0;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Dates for Resource";
+            this.dates_for_resources_pnl.Controls.Add(this.idInfo_citation_date_revision_dtP);
+            this.dates_for_resources_pnl.Controls.Add(this.idInfo_citation_date_publication_dtP);
+            this.dates_for_resources_pnl.Controls.Add(this.idInfo_citation_date_creation);
+            this.dates_for_resources_pnl.Controls.Add(this.idInfo_citation_date_creation_dtP);
+            this.dates_for_resources_pnl.Controls.Add(this.idInfo_citation_date_revision_lbl);
+            this.dates_for_resources_pnl.Controls.Add(this.idInfo_citation_date_publication);
+            this.dates_for_resources_pnl.Controls.Add(this.idInfo_citation_date_publication_lbl);
+            this.dates_for_resources_pnl.Controls.Add(this.idInfo_citation_date_revision);
+            this.dates_for_resources_pnl.Controls.Add(this.idInfo_citation_date_creation_lbl);
+            this.dates_for_resources_pnl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dates_for_resources_pnl.Location = new System.Drawing.Point(59, 32);
+            this.dates_for_resources_pnl.Name = "dates_for_resources_pnl";
+            this.dates_for_resources_pnl.Size = new System.Drawing.Size(297, 100);
+            this.dates_for_resources_pnl.TabIndex = 0;
+            this.dates_for_resources_pnl.TabStop = false;
+            this.dates_for_resources_pnl.Text = "Dates for Resource";
             // 
-            // label12
+            // idInfo_citation_date_revision_dtP
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(45, 75);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(48, 13);
-            this.label12.TabIndex = 39;
-            this.label12.Text = "Revision";
+            this.idInfo_citation_date_revision_dtP.Location = new System.Drawing.Point(205, 71);
+            this.idInfo_citation_date_revision_dtP.Name = "idInfo_citation_date_revision_dtP";
+            this.idInfo_citation_date_revision_dtP.Size = new System.Drawing.Size(18, 20);
+            this.idInfo_citation_date_revision_dtP.TabIndex = 42;
+            this.idInfo_citation_date_revision_dtP.ValueChanged += new System.EventHandler(this.idInfo_citation_date_revision_dtP_ValueChanged);
             // 
-            // textBox9
+            // idInfo_citation_date_publication_dtP
             // 
-            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox9.Location = new System.Drawing.Point(99, 46);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(100, 20);
-            this.textBox9.TabIndex = 1;
+            this.idInfo_citation_date_publication_dtP.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.idInfo_citation_date_publication_dtP.Location = new System.Drawing.Point(205, 45);
+            this.idInfo_citation_date_publication_dtP.Name = "idInfo_citation_date_publication_dtP";
+            this.idInfo_citation_date_publication_dtP.Size = new System.Drawing.Size(18, 20);
+            this.idInfo_citation_date_publication_dtP.TabIndex = 41;
+            this.idInfo_citation_date_publication_dtP.ValueChanged += new System.EventHandler(this.idInfo_citation_date_publication_dtP_ValueChanged);
             // 
-            // label11
+            // idInfo_citation_date_creation
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(34, 48);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(59, 13);
-            this.label11.TabIndex = 38;
-            this.label11.Text = "Publication";
+            this.idInfo_citation_date_creation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.idInfo_citation_date_creation.Location = new System.Drawing.Point(99, 18);
+            this.idInfo_citation_date_creation.Name = "idInfo_citation_date_creation";
+            this.idInfo_citation_date_creation.Size = new System.Drawing.Size(100, 20);
+            this.idInfo_citation_date_creation.TabIndex = 40;
             // 
-            // textBox10
+            // idInfo_citation_date_creation_dtP
             // 
-            this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox10.Location = new System.Drawing.Point(99, 73);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(100, 20);
-            this.textBox10.TabIndex = 2;
+            this.idInfo_citation_date_creation_dtP.CustomFormat = "";
+            this.idInfo_citation_date_creation_dtP.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.idInfo_citation_date_creation_dtP.Location = new System.Drawing.Point(205, 18);
+            this.idInfo_citation_date_creation_dtP.Name = "idInfo_citation_date_creation_dtP";
+            this.idInfo_citation_date_creation_dtP.Size = new System.Drawing.Size(18, 20);
+            this.idInfo_citation_date_creation_dtP.TabIndex = 37;
+            this.idInfo_citation_date_creation_dtP.ValueChanged += new System.EventHandler(this.idInfo_citation_date_creation_dtP_ValueChanged);
             // 
-            // label10
+            // idInfo_citation_date_revision_lbl
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(47, 21);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(46, 13);
-            this.label10.TabIndex = 37;
-            this.label10.Text = "Creation";
+            this.idInfo_citation_date_revision_lbl.AutoSize = true;
+            this.idInfo_citation_date_revision_lbl.Location = new System.Drawing.Point(45, 75);
+            this.idInfo_citation_date_revision_lbl.Name = "idInfo_citation_date_revision_lbl";
+            this.idInfo_citation_date_revision_lbl.Size = new System.Drawing.Size(48, 13);
+            this.idInfo_citation_date_revision_lbl.TabIndex = 39;
+            this.idInfo_citation_date_revision_lbl.Text = "Revision";
             // 
-            // lblTitle
+            // idInfo_citation_date_publication
             // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.lblTitle.Location = new System.Drawing.Point(26, 10);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(27, 13);
-            this.lblTitle.TabIndex = 6;
-            this.lblTitle.Text = "Title";
-            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.idInfo_citation_date_publication.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.idInfo_citation_date_publication.Location = new System.Drawing.Point(99, 46);
+            this.idInfo_citation_date_publication.Name = "idInfo_citation_date_publication";
+            this.idInfo_citation_date_publication.Size = new System.Drawing.Size(100, 20);
+            this.idInfo_citation_date_publication.TabIndex = 1;
+            // 
+            // idInfo_citation_date_publication_lbl
+            // 
+            this.idInfo_citation_date_publication_lbl.AutoSize = true;
+            this.idInfo_citation_date_publication_lbl.Location = new System.Drawing.Point(34, 48);
+            this.idInfo_citation_date_publication_lbl.Name = "idInfo_citation_date_publication_lbl";
+            this.idInfo_citation_date_publication_lbl.Size = new System.Drawing.Size(59, 13);
+            this.idInfo_citation_date_publication_lbl.TabIndex = 38;
+            this.idInfo_citation_date_publication_lbl.Text = "Publication";
+            // 
+            // idInfo_citation_date_revision
+            // 
+            this.idInfo_citation_date_revision.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.idInfo_citation_date_revision.Location = new System.Drawing.Point(99, 73);
+            this.idInfo_citation_date_revision.Name = "idInfo_citation_date_revision";
+            this.idInfo_citation_date_revision.Size = new System.Drawing.Size(100, 20);
+            this.idInfo_citation_date_revision.TabIndex = 2;
+            // 
+            // idInfo_citation_date_creation_lbl
+            // 
+            this.idInfo_citation_date_creation_lbl.AutoSize = true;
+            this.idInfo_citation_date_creation_lbl.Location = new System.Drawing.Point(47, 21);
+            this.idInfo_citation_date_creation_lbl.Name = "idInfo_citation_date_creation_lbl";
+            this.idInfo_citation_date_creation_lbl.Size = new System.Drawing.Size(46, 13);
+            this.idInfo_citation_date_creation_lbl.TabIndex = 37;
+            this.idInfo_citation_date_creation_lbl.Text = "Creation";
+            // 
+            // idInfo_citation_Title_lbl
+            // 
+            this.idInfo_citation_Title_lbl.AutoSize = true;
+            this.idInfo_citation_Title_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.idInfo_citation_Title_lbl.Location = new System.Drawing.Point(26, 10);
+            this.idInfo_citation_Title_lbl.Name = "idInfo_citation_Title_lbl";
+            this.idInfo_citation_Title_lbl.Size = new System.Drawing.Size(27, 13);
+            this.idInfo_citation_Title_lbl.TabIndex = 6;
+            this.idInfo_citation_Title_lbl.Text = "Title";
+            this.idInfo_citation_Title_lbl.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // tabPage5
             // 
@@ -1413,45 +1512,6 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "optional";
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(99, 17);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(162, 20);
-            this.dateTimePicker1.TabIndex = 37;
-            // 
-            // dateStamp
-            // 
-            this.dateStamp.Location = new System.Drawing.Point(119, 4);
-            this.dateStamp.Name = "dateStamp";
-            this.dateStamp.Size = new System.Drawing.Size(228, 20);
-            this.dateStamp.TabIndex = 9;
-            // 
-            // contact_CI_ResponsibleParty
-            // 
-            this.contact_CI_ResponsibleParty.incomingCI_ResponsiblePartyList = null;
-            this.contact_CI_ResponsibleParty.Location = new System.Drawing.Point(4, 33);
-            this.contact_CI_ResponsibleParty.Name = "contact_CI_ResponsibleParty";
-            this.contact_CI_ResponsibleParty.Size = new System.Drawing.Size(463, 491);
-            this.contact_CI_ResponsibleParty.TabIndex = 0;
-            // 
-            // idInfo_citation_citedResponsibleParty
-            // 
-            this.idInfo_citation_citedResponsibleParty.incomingCI_ResponsiblePartyList = null;
-            this.idInfo_citation_citedResponsibleParty.Location = new System.Drawing.Point(4, 32);
-            this.idInfo_citation_citedResponsibleParty.Name = "idInfo_citation_citedResponsibleParty";
-            this.idInfo_citation_citedResponsibleParty.Size = new System.Drawing.Size(449, 481);
-            this.idInfo_citation_citedResponsibleParty.TabIndex = 2;
-            // 
-            // idInfo_pointOfContact
-            // 
-            this.idInfo_pointOfContact.incomingCI_ResponsiblePartyList = null;
-            this.idInfo_pointOfContact.Location = new System.Drawing.Point(4, 33);
-            this.idInfo_pointOfContact.Name = "idInfo_pointOfContact";
-            this.idInfo_pointOfContact.Size = new System.Drawing.Size(449, 481);
-            this.idInfo_pointOfContact.TabIndex = 2;
-            // 
             // EmeLT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1510,8 +1570,8 @@
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.dates_for_resources_pnl.ResumeLayout(false);
+            this.dates_for_resources_pnl.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
@@ -1605,29 +1665,20 @@
         private System.Windows.Forms.Button expand_P1;
         private System.Windows.Forms.Button Group2_btn;
         private System.Windows.Forms.TextBox fileIdentifier;
-        private System.Windows.Forms.Label lblIdentifier;
-        private System.Windows.Forms.Label lblModified;
+        private System.Windows.Forms.Label fileIdentifier_lbl;
+        private System.Windows.Forms.Label dateStamp_lbl;
         private System.Windows.Forms.Panel citationGrp_Pnl;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label idInfo_Purpose_lbl;
         private System.Windows.Forms.TextBox idInfo_Purpose;
         private System.Windows.Forms.Button citationGrp_btn;
         private System.Windows.Forms.Label citationGrp_lbl;
-        private System.Windows.Forms.Label lblAbtract;
-        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Label idInfo_Abstract_lbl;
+        private System.Windows.Forms.Label idInfo_citation_Title_lbl;
         private System.Windows.Forms.TextBox idInfo_Abstract;
         private System.Windows.Forms.TextBox idInfo_citation_Title;
-        private System.Windows.Forms.Panel Citation_Pnl;
-        private uc_ResponsibleParty idInfo_citation_citedResponsibleParty;
-        private System.Windows.Forms.Label citatonExpand_lbl;
-        private System.Windows.Forms.Button citationExpand_btn;
-        private System.Windows.Forms.Panel pointOfContact_Pnl;
-        private uc_ResponsibleParty idInfo_pointOfContact;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button pointOfContact_btn;
-        private System.Windows.Forms.Label hierarchyLevel_lbl;
-        private System.Windows.Forms.TextBox language;
+        private System.Windows.Forms.Label hierarchyLevel_MD_ScopeCode_lbl;
         private System.Windows.Forms.Label language_lbl;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox hierarchyLevel_MD_ScopeCode;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel6;
@@ -1635,23 +1686,36 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.Label metadataStandardVersion_lbl;
+        private System.Windows.Forms.Label metadataStandardName_lbl;
+        private System.Windows.Forms.TextBox XmetadataStandardName;
+        private System.Windows.Forms.TextBox XmetadataStandardVersion;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateStamp;
+        private System.Windows.Forms.GroupBox dates_for_resources_pnl;
+        private System.Windows.Forms.Label idInfo_citation_date_revision_lbl;
+        private System.Windows.Forms.TextBox idInfo_citation_date_publication;
+        private System.Windows.Forms.Label idInfo_citation_date_publication_lbl;
+        private System.Windows.Forms.TextBox idInfo_citation_date_revision;
+        private System.Windows.Forms.Label idInfo_citation_date_creation_lbl;
+        private System.Windows.Forms.DateTimePicker idInfo_citation_date_creation_dtP;
+        private System.Windows.Forms.TextBox language;
+        private System.Windows.Forms.TextBox idInfo_citation_date_creation;
+        private System.Windows.Forms.DateTimePicker idInfo_citation_date_publication_dtP;
+        private System.Windows.Forms.DateTimePicker dateStamp_dtP;
+        private System.Windows.Forms.TextBox dateStamp;
+        private System.Windows.Forms.DateTimePicker idInfo_citation_date_revision_dtP;
+        private System.Windows.Forms.Panel Citation_Pnl;
+        private uc_ResponsibleParty idInfo_citation_citedResponsibleParty;
+        private System.Windows.Forms.Label citatonExpand_lbl;
+        private System.Windows.Forms.Button citationExpand_btn;
+        private System.Windows.Forms.Panel pointOfContact_Pnl;
+        private uc_ResponsibleParty idInfo_pointOfContact;
+        private System.Windows.Forms.Label pointOfContact_lbl;
+        private System.Windows.Forms.Button pointOfContact_btn;
     }
 }

@@ -26,7 +26,7 @@ namespace EmeLibrary
         //    get { return contactRpSection; }
         //    set { contactRpSection = value; }
         //}
-        private CI_ResponsibleParty incomingCI_ResponsibleParty;
+       // private CI_ResponsibleParty incomingCI_ResponsibleParty;
 
         public uc_ResponsibleParty()
         {
@@ -38,7 +38,7 @@ namespace EmeLibrary
         {
             pagerLbl.Text = (incomingRPListIndex +1).ToString() + " of " + incomingRPList.Count;
 
-            roleCode.SelectedValue = incomingCIRP.roleCode;
+            roleCode.SelectedText = incomingCIRP.roleCode;
             individualName_txt.Text = incomingCIRP.individualName;
             organisationName_txt.Text = incomingCIRP.organisationName;
             positionName.Text = incomingCIRP.positionName;
@@ -52,7 +52,7 @@ namespace EmeLibrary
             contactInfo__CI_Contact__address__CI_Address__electronicMailAddress.Text = incomingCIRP.contactInfo__CI_Contact__address__CI_Address__electronicMailAddress;
             contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage.Text = incomingCIRP.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage;
 
-            contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode.Text = incomingCIRP.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode;
+            contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode.SelectedText = incomingCIRP.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode;
 
             contactInfo__CI_Contact__hoursOfService.Text = incomingCIRP.contactInfo__CI_Contact__hoursOfService;
             contactInfo__CI_Contact__contactInstructions.Text = incomingCIRP.contactInfo__CI_Contact__contactInstructions;
