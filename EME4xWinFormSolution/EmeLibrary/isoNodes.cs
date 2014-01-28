@@ -458,7 +458,7 @@ namespace EmeLibrary
                 if (emptyNodes[ii].HasChildNodes==false) { emptyNodes[ii].ParentNode.RemoveChild(emptyNodes[ii]); }
             }
 
-            outboundMetadataRecord.Save(@"C:\Users\dspinosa\Desktop\testMetadata\DCAT\testCommonCoreRecordFromGeoportal-2vJUNK.xml");
+            outboundMetadataRecord.Save(@"C:\Data\EME\testWriteMetaData\testCommonCoreRecordFromGeoportal-2vJUNK.xml");
             
         }
 

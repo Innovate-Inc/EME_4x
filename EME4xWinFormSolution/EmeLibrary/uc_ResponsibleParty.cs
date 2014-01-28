@@ -38,7 +38,7 @@ namespace EmeLibrary
         {
             pagerLbl.Text = (incomingRPListIndex +1).ToString() + " of " + incomingRPList.Count;
 
-            roleCode.SelectedText = incomingCIRP.role;
+            role.SelectedText = incomingCIRP.role;
             individualName_txt.Text = incomingCIRP.individualName;
             organisationName_txt.Text = incomingCIRP.organisationName;
             positionName.Text = incomingCIRP.positionName;
@@ -122,7 +122,8 @@ namespace EmeLibrary
         private void addRP_Btn_Click(object sender, EventArgs e)
         {
             //CI_ResponsibleParty newRP = new CI_ResponsibleParty();
-            incomingRPList.Add(new CI_ResponsibleParty());
+            CI_ResponsibleParty ci_RP = new CI_ResponsibleParty();
+            incomingRPList.Add(ci_RP);
             incomingRPListIndex = incomingRPList.Count - 1;
             bindToFields(incomingRPList[incomingRPListIndex]);
 

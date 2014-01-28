@@ -33,7 +33,7 @@
             this.organisationName_txt = new System.Windows.Forms.TextBox();
             this.contactInfo__CI_Contact__phone__CI_Telephone__voice = new System.Windows.Forms.TextBox();
             this.lblCI_RpListCount = new System.Windows.Forms.Label();
-            this.roleCode = new System.Windows.Forms.ComboBox();
+            this.role = new System.Windows.Forms.ComboBox();
             this.individualName_lbl = new System.Windows.Forms.Label();
             this.organisationName_lbl = new System.Windows.Forms.Label();
             this.positionName_lbl = new System.Windows.Forms.Label();
@@ -117,11 +117,11 @@
             this.lblCI_RpListCount.Size = new System.Drawing.Size(0, 13);
             this.lblCI_RpListCount.TabIndex = 6;
             // 
-            // roleCode
+            // role
             // 
-            this.roleCode.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.roleCode.FormattingEnabled = true;
-            this.roleCode.Items.AddRange(new object[] {
+            this.role.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.role.FormattingEnabled = true;
+            this.role.Items.AddRange(new object[] {
             "resourceProvider",
             "custodian",
             "owner",
@@ -135,10 +135,10 @@
             "publisher",
             "author",
             "scienceParty"});
-            this.roleCode.Location = new System.Drawing.Point(113, 15);
-            this.roleCode.Name = "roleCode";
-            this.roleCode.Size = new System.Drawing.Size(159, 21);
-            this.roleCode.TabIndex = 1;
+            this.role.Location = new System.Drawing.Point(113, 15);
+            this.role.Name = "role";
+            this.role.Size = new System.Drawing.Size(159, 21);
+            this.role.TabIndex = 1;
             // 
             // individualName_lbl
             // 
@@ -518,7 +518,7 @@
             this.Controls.Add(this.positionName_lbl);
             this.Controls.Add(this.organisationName_lbl);
             this.Controls.Add(this.individualName_lbl);
-            this.Controls.Add(this.roleCode);
+            this.Controls.Add(this.role);
             this.Controls.Add(this.lblCI_RpListCount);
             this.Controls.Add(this.organisationName_txt);
             this.Controls.Add(this.positionName);
@@ -542,7 +542,7 @@
         private System.Windows.Forms.TextBox organisationName_txt;
         private System.Windows.Forms.TextBox contactInfo__CI_Contact__phone__CI_Telephone__voice;
         private System.Windows.Forms.Label lblCI_RpListCount;
-        private System.Windows.Forms.ComboBox roleCode;
+        private System.Windows.Forms.ComboBox role;
         private System.Windows.Forms.Label individualName_lbl;
         private System.Windows.Forms.Label organisationName_lbl;
         private System.Windows.Forms.Label positionName_lbl;

@@ -136,15 +136,14 @@ namespace EmeLibrary
                 else if (ctrl.GetType() == typeof(ComboBox))
                 {
                     ComboBox boxCbo = (ComboBox)ctrl;
-                    boxCbo.SelectedText = frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null).ToString();
-                    boxCbo.SelectedValue = frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null).ToString();
+                    
+                    boxCbo.SelectedItem = frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null).ToString();
+                    //boxCbo.Focus();     //Need to figure out why it need focus to save
                 }
                 else if (ctrl.GetType() == typeof(TextBox))
                 {
                     ctrl.Text = frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null).ToString();
                 }
-                //ctrl.Text = "Dan Was Here";  //This pull value from IsoNodes Class
-                //MessageBox.Show(ctrl.Name);
             }
             
             //ctrl = frm.ge
@@ -196,14 +195,15 @@ namespace EmeLibrary
                 else if (ctrl.GetType() == typeof(ComboBox))
                 {
                     ComboBox boxCbo = (ComboBox)ctrl;
-                    frm.localXdoc.GetType().GetProperty(ctrl.Name).SetValue(obj, boxCbo.SelectedText, null);
-                    Console.WriteLine(boxCbo.SelectedText); 
+                    frm.localXdoc.GetType().GetProperty(ctrl.Name).SetValue(obj, boxCbo.SelectedItem.ToString(), null);
+                    Console.WriteLine(boxCbo.SelectedItem.ToString()); 
                 }
                 else if (ctrl.GetType() == typeof(TextBox))
                 {
                     //Console.WriteLine(frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null).ToString() + "   " + ctrl.Text);
                     frm.localXdoc.GetType().GetProperty(ctrl.Name).SetValue(obj, ctrl.Text, null);
                     //MessageBox.Show(frm.localXdoc.idInfo_citation_Title.ToString());
+                    Console.WriteLine(ctrl.Text);
                 }
             }
         }

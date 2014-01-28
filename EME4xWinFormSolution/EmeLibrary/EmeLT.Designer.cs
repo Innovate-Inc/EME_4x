@@ -94,7 +94,6 @@
             this.group2_lbl = new System.Windows.Forms.Label();
             this.metadataAuthor_Pnl = new System.Windows.Forms.Panel();
             this.metaDataAuthor_lbl = new System.Windows.Forms.Label();
-            this.contact_CI_ResponsibleParty = new EmeLibrary.uc_ResponsibleParty();
             this.expand_P1 = new System.Windows.Forms.Button();
             this.Group2_btn = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -102,11 +101,9 @@
             this.fileIdentifier_lbl = new System.Windows.Forms.Label();
             this.citationGrp_Pnl = new System.Windows.Forms.Panel();
             this.Citation_Pnl = new System.Windows.Forms.Panel();
-            this.idInfo_citation_citedResponsibleParty = new EmeLibrary.uc_ResponsibleParty();
             this.citatonExpand_lbl = new System.Windows.Forms.Label();
             this.citationExpand_btn = new System.Windows.Forms.Button();
             this.pointOfContact_Pnl = new System.Windows.Forms.Panel();
-            this.idInfo_pointOfContact = new EmeLibrary.uc_ResponsibleParty();
             this.pointOfContact_lbl = new System.Windows.Forms.Label();
             this.pointOfContact_btn = new System.Windows.Forms.Button();
             this.citationGrp_btn = new System.Windows.Forms.Button();
@@ -119,6 +116,9 @@
             this.idInfo_Purpose_lbl = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dates_for_resources_pnl = new System.Windows.Forms.GroupBox();
+            this.idInfo_citation_date_revision_btn = new System.Windows.Forms.Button();
+            this.idInfo_citation_date_publication_btn = new System.Windows.Forms.Button();
+            this.idInfo_citation_date_creation_btn = new System.Windows.Forms.Button();
             this.idInfo_citation_date_revision_dtP = new System.Windows.Forms.DateTimePicker();
             this.idInfo_citation_date_publication_dtP = new System.Windows.Forms.DateTimePicker();
             this.idInfo_citation_date_creation = new System.Windows.Forms.TextBox();
@@ -156,6 +156,10 @@
             this.label8 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
+            this.dateStamp_btn = new System.Windows.Forms.Button();
+            this.contact_CI_ResponsibleParty = new EmeLibrary.uc_ResponsibleParty();
+            this.idInfo_citation_citedResponsibleParty = new EmeLibrary.uc_ResponsibleParty();
+            this.idInfo_pointOfContact = new EmeLibrary.uc_ResponsibleParty();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -286,6 +290,7 @@
             this.tabPage1.Controls.Add(this.lblAccessLevel);
             this.tabPage1.Controls.Add(this.flowLayoutPanel2);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(1);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(984, 514);
@@ -296,7 +301,7 @@
             // lblDownloadUrl
             // 
             this.lblDownloadUrl.AutoSize = true;
-            this.lblDownloadUrl.Location = new System.Drawing.Point(591, 471);
+            this.lblDownloadUrl.Location = new System.Drawing.Point(594, 530);
             this.lblDownloadUrl.Name = "lblDownloadUrl";
             this.lblDownloadUrl.Size = new System.Drawing.Size(80, 13);
             this.lblDownloadUrl.TabIndex = 34;
@@ -306,7 +311,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.groupBox1);
-            this.panel2.Location = new System.Drawing.Point(567, 17);
+            this.panel2.Location = new System.Drawing.Point(554, 17);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(377, 257);
             this.panel2.TabIndex = 6;
@@ -556,7 +561,7 @@
             // lblEndpoint
             // 
             this.lblEndpoint.AutoSize = true;
-            this.lblEndpoint.Location = new System.Drawing.Point(622, 497);
+            this.lblEndpoint.Location = new System.Drawing.Point(625, 556);
             this.lblEndpoint.Name = "lblEndpoint";
             this.lblEndpoint.Size = new System.Drawing.Size(49, 13);
             this.lblEndpoint.TabIndex = 33;
@@ -566,7 +571,7 @@
             // lblFormat
             // 
             this.lblFormat.AutoSize = true;
-            this.lblFormat.Location = new System.Drawing.Point(632, 527);
+            this.lblFormat.Location = new System.Drawing.Point(635, 586);
             this.lblFormat.Name = "lblFormat";
             this.lblFormat.Size = new System.Drawing.Size(39, 13);
             this.lblFormat.TabIndex = 32;
@@ -576,7 +581,7 @@
             // lblLicense
             // 
             this.lblLicense.AutoSize = true;
-            this.lblLicense.Location = new System.Drawing.Point(627, 553);
+            this.lblLicense.Location = new System.Drawing.Point(630, 612);
             this.lblLicense.Name = "lblLicense";
             this.lblLicense.Size = new System.Drawing.Size(44, 13);
             this.lblLicense.TabIndex = 31;
@@ -586,7 +591,7 @@
             // lblSpatial
             // 
             this.lblSpatial.AutoSize = true;
-            this.lblSpatial.Location = new System.Drawing.Point(632, 579);
+            this.lblSpatial.Location = new System.Drawing.Point(635, 638);
             this.lblSpatial.Name = "lblSpatial";
             this.lblSpatial.Size = new System.Drawing.Size(39, 13);
             this.lblSpatial.TabIndex = 30;
@@ -596,7 +601,7 @@
             // lblTemporal
             // 
             this.lblTemporal.AutoSize = true;
-            this.lblTemporal.Location = new System.Drawing.Point(620, 601);
+            this.lblTemporal.Location = new System.Drawing.Point(623, 660);
             this.lblTemporal.Name = "lblTemporal";
             this.lblTemporal.Size = new System.Drawing.Size(51, 13);
             this.lblTemporal.TabIndex = 29;
@@ -605,63 +610,63 @@
             // 
             // txtTemporal
             // 
-            this.txtTemporal.Location = new System.Drawing.Point(677, 598);
+            this.txtTemporal.Location = new System.Drawing.Point(680, 657);
             this.txtTemporal.Name = "txtTemporal";
             this.txtTemporal.Size = new System.Drawing.Size(228, 20);
             this.txtTemporal.TabIndex = 27;
             // 
             // txtSpatial
             // 
-            this.txtSpatial.Location = new System.Drawing.Point(677, 572);
+            this.txtSpatial.Location = new System.Drawing.Point(680, 631);
             this.txtSpatial.Name = "txtSpatial";
             this.txtSpatial.Size = new System.Drawing.Size(228, 20);
             this.txtSpatial.TabIndex = 26;
             // 
             // txtLicense
             // 
-            this.txtLicense.Location = new System.Drawing.Point(677, 546);
+            this.txtLicense.Location = new System.Drawing.Point(680, 605);
             this.txtLicense.Name = "txtLicense";
             this.txtLicense.Size = new System.Drawing.Size(228, 20);
             this.txtLicense.TabIndex = 25;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(677, 546);
+            this.textBox4.Location = new System.Drawing.Point(680, 605);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(228, 20);
             this.textBox4.TabIndex = 24;
             // 
             // txtDataDictionary
             // 
-            this.txtDataDictionary.Location = new System.Drawing.Point(677, 442);
+            this.txtDataDictionary.Location = new System.Drawing.Point(680, 501);
             this.txtDataDictionary.Name = "txtDataDictionary";
             this.txtDataDictionary.Size = new System.Drawing.Size(228, 20);
             this.txtDataDictionary.TabIndex = 9;
             // 
             // txtFormat
             // 
-            this.txtFormat.Location = new System.Drawing.Point(677, 520);
+            this.txtFormat.Location = new System.Drawing.Point(680, 579);
             this.txtFormat.Name = "txtFormat";
             this.txtFormat.Size = new System.Drawing.Size(228, 20);
             this.txtFormat.TabIndex = 23;
             // 
             // txtAccessLevel
             // 
-            this.txtAccessLevel.Location = new System.Drawing.Point(677, 397);
+            this.txtAccessLevel.Location = new System.Drawing.Point(680, 456);
             this.txtAccessLevel.Name = "txtAccessLevel";
             this.txtAccessLevel.Size = new System.Drawing.Size(228, 20);
             this.txtAccessLevel.TabIndex = 8;
             // 
             // txtEndpoint
             // 
-            this.txtEndpoint.Location = new System.Drawing.Point(677, 494);
+            this.txtEndpoint.Location = new System.Drawing.Point(680, 553);
             this.txtEndpoint.Name = "txtEndpoint";
             this.txtEndpoint.Size = new System.Drawing.Size(228, 20);
             this.txtEndpoint.TabIndex = 22;
             // 
             // txtDownloadURL
             // 
-            this.txtDownloadURL.Location = new System.Drawing.Point(677, 468);
+            this.txtDownloadURL.Location = new System.Drawing.Point(680, 527);
             this.txtDownloadURL.Name = "txtDownloadURL";
             this.txtDownloadURL.Size = new System.Drawing.Size(228, 20);
             this.txtDownloadURL.TabIndex = 21;
@@ -669,7 +674,7 @@
             // lblDataDictionary
             // 
             this.lblDataDictionary.AutoSize = true;
-            this.lblDataDictionary.Location = new System.Drawing.Point(591, 444);
+            this.lblDataDictionary.Location = new System.Drawing.Point(594, 503);
             this.lblDataDictionary.Name = "lblDataDictionary";
             this.lblDataDictionary.Size = new System.Drawing.Size(80, 13);
             this.lblDataDictionary.TabIndex = 17;
@@ -679,7 +684,7 @@
             // lblAccessLevel
             // 
             this.lblAccessLevel.AutoSize = true;
-            this.lblAccessLevel.Location = new System.Drawing.Point(600, 400);
+            this.lblAccessLevel.Location = new System.Drawing.Point(603, 459);
             this.lblAccessLevel.Name = "lblAccessLevel";
             this.lblAccessLevel.Size = new System.Drawing.Size(71, 13);
             this.lblAccessLevel.TabIndex = 18;
@@ -693,7 +698,7 @@
             this.flowLayoutPanel2.Controls.Add(this.group2_Pnl);
             this.flowLayoutPanel2.Controls.Add(this.citationGrp_Pnl);
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 6);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(6, 6);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(501, 705);
             this.flowLayoutPanel2.TabIndex = 36;
@@ -719,6 +724,7 @@
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.panel7.Controls.Add(this.dateStamp_btn);
             this.panel7.Controls.Add(this.dateStamp_dtP);
             this.panel7.Controls.Add(this.dateStamp);
             this.panel7.Controls.Add(this.dateStamp_lbl);
@@ -740,6 +746,7 @@
             this.dateStamp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.dateStamp.Location = new System.Drawing.Point(119, 4);
             this.dateStamp.Name = "dateStamp";
+            this.dateStamp.ReadOnly = true;
             this.dateStamp.Size = new System.Drawing.Size(204, 20);
             this.dateStamp.TabIndex = 9;
             // 
@@ -905,14 +912,6 @@
             this.metaDataAuthor_lbl.TabIndex = 1;
             this.metaDataAuthor_lbl.Text = "Metadata Author";
             // 
-            // contact_CI_ResponsibleParty
-            // 
-            this.contact_CI_ResponsibleParty.incomingCI_ResponsiblePartyList = null;
-            this.contact_CI_ResponsibleParty.Location = new System.Drawing.Point(4, 33);
-            this.contact_CI_ResponsibleParty.Name = "contact_CI_ResponsibleParty";
-            this.contact_CI_ResponsibleParty.Size = new System.Drawing.Size(463, 491);
-            this.contact_CI_ResponsibleParty.TabIndex = 0;
-            // 
             // expand_P1
             // 
             this.expand_P1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -997,14 +996,6 @@
             this.Citation_Pnl.Size = new System.Drawing.Size(475, 30);
             this.Citation_Pnl.TabIndex = 16;
             // 
-            // idInfo_citation_citedResponsibleParty
-            // 
-            this.idInfo_citation_citedResponsibleParty.incomingCI_ResponsiblePartyList = null;
-            this.idInfo_citation_citedResponsibleParty.Location = new System.Drawing.Point(4, 32);
-            this.idInfo_citation_citedResponsibleParty.Name = "idInfo_citation_citedResponsibleParty";
-            this.idInfo_citation_citedResponsibleParty.Size = new System.Drawing.Size(449, 481);
-            this.idInfo_citation_citedResponsibleParty.TabIndex = 2;
-            // 
             // citatonExpand_lbl
             // 
             this.citatonExpand_lbl.AutoSize = true;
@@ -1037,14 +1028,6 @@
             this.pointOfContact_Pnl.Name = "pointOfContact_Pnl";
             this.pointOfContact_Pnl.Size = new System.Drawing.Size(475, 30);
             this.pointOfContact_Pnl.TabIndex = 17;
-            // 
-            // idInfo_pointOfContact
-            // 
-            this.idInfo_pointOfContact.incomingCI_ResponsiblePartyList = null;
-            this.idInfo_pointOfContact.Location = new System.Drawing.Point(4, 33);
-            this.idInfo_pointOfContact.Name = "idInfo_pointOfContact";
-            this.idInfo_pointOfContact.Size = new System.Drawing.Size(449, 481);
-            this.idInfo_pointOfContact.TabIndex = 2;
             // 
             // pointOfContact_lbl
             // 
@@ -1161,6 +1144,9 @@
             // 
             // dates_for_resources_pnl
             // 
+            this.dates_for_resources_pnl.Controls.Add(this.idInfo_citation_date_revision_btn);
+            this.dates_for_resources_pnl.Controls.Add(this.idInfo_citation_date_publication_btn);
+            this.dates_for_resources_pnl.Controls.Add(this.idInfo_citation_date_creation_btn);
             this.dates_for_resources_pnl.Controls.Add(this.idInfo_citation_date_revision_dtP);
             this.dates_for_resources_pnl.Controls.Add(this.idInfo_citation_date_publication_dtP);
             this.dates_for_resources_pnl.Controls.Add(this.idInfo_citation_date_creation);
@@ -1178,9 +1164,52 @@
             this.dates_for_resources_pnl.TabStop = false;
             this.dates_for_resources_pnl.Text = "Dates for Resource";
             // 
+            // idInfo_citation_date_revision_btn
+            // 
+            this.idInfo_citation_date_revision_btn.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.idInfo_citation_date_revision_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonFace;
+            this.idInfo_citation_date_revision_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.idInfo_citation_date_revision_btn.Image = ((System.Drawing.Image)(resources.GetObject("idInfo_citation_date_revision_btn.Image")));
+            this.idInfo_citation_date_revision_btn.Location = new System.Drawing.Point(203, 75);
+            this.idInfo_citation_date_revision_btn.Name = "idInfo_citation_date_revision_btn";
+            this.idInfo_citation_date_revision_btn.Size = new System.Drawing.Size(16, 16);
+            this.idInfo_citation_date_revision_btn.TabIndex = 37;
+            this.idInfo_citation_date_revision_btn.UseVisualStyleBackColor = false;
+            this.idInfo_citation_date_revision_btn.Click += new System.EventHandler(this.idInfo_citation_date_revision_btn_Click);
+            // 
+            // idInfo_citation_date_publication_btn
+            // 
+            this.idInfo_citation_date_publication_btn.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.idInfo_citation_date_publication_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonFace;
+            this.idInfo_citation_date_publication_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.idInfo_citation_date_publication_btn.Image = ((System.Drawing.Image)(resources.GetObject("idInfo_citation_date_publication_btn.Image")));
+            this.idInfo_citation_date_publication_btn.Location = new System.Drawing.Point(203, 48);
+            this.idInfo_citation_date_publication_btn.Name = "idInfo_citation_date_publication_btn";
+            this.idInfo_citation_date_publication_btn.Size = new System.Drawing.Size(16, 16);
+            this.idInfo_citation_date_publication_btn.TabIndex = 37;
+            this.idInfo_citation_date_publication_btn.UseVisualStyleBackColor = false;
+            this.idInfo_citation_date_publication_btn.Click += new System.EventHandler(this.idInfo_citation_date_publication_btn_Click);
+            // 
+            // idInfo_citation_date_creation_btn
+            // 
+            this.idInfo_citation_date_creation_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.idInfo_citation_date_creation_btn.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.idInfo_citation_date_creation_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonFace;
+            this.idInfo_citation_date_creation_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.idInfo_citation_date_creation_btn.Image = ((System.Drawing.Image)(resources.GetObject("idInfo_citation_date_creation_btn.Image")));
+            this.idInfo_citation_date_creation_btn.Location = new System.Drawing.Point(203, 20);
+            this.idInfo_citation_date_creation_btn.Margin = new System.Windows.Forms.Padding(0);
+            this.idInfo_citation_date_creation_btn.Name = "idInfo_citation_date_creation_btn";
+            this.idInfo_citation_date_creation_btn.Size = new System.Drawing.Size(16, 16);
+            this.idInfo_citation_date_creation_btn.TabIndex = 37;
+            this.idInfo_citation_date_creation_btn.UseVisualStyleBackColor = false;
+            this.idInfo_citation_date_creation_btn.Click += new System.EventHandler(this.idInfo_citation_date_creation_btn_Click);
+            // 
             // idInfo_citation_date_revision_dtP
             // 
-            this.idInfo_citation_date_revision_dtP.Location = new System.Drawing.Point(205, 71);
+            this.idInfo_citation_date_revision_dtP.Location = new System.Drawing.Point(227, 71);
             this.idInfo_citation_date_revision_dtP.Name = "idInfo_citation_date_revision_dtP";
             this.idInfo_citation_date_revision_dtP.Size = new System.Drawing.Size(18, 20);
             this.idInfo_citation_date_revision_dtP.TabIndex = 42;
@@ -1189,7 +1218,7 @@
             // idInfo_citation_date_publication_dtP
             // 
             this.idInfo_citation_date_publication_dtP.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.idInfo_citation_date_publication_dtP.Location = new System.Drawing.Point(205, 45);
+            this.idInfo_citation_date_publication_dtP.Location = new System.Drawing.Point(227, 45);
             this.idInfo_citation_date_publication_dtP.Name = "idInfo_citation_date_publication_dtP";
             this.idInfo_citation_date_publication_dtP.Size = new System.Drawing.Size(18, 20);
             this.idInfo_citation_date_publication_dtP.TabIndex = 41;
@@ -1200,14 +1229,15 @@
             this.idInfo_citation_date_creation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.idInfo_citation_date_creation.Location = new System.Drawing.Point(99, 18);
             this.idInfo_citation_date_creation.Name = "idInfo_citation_date_creation";
-            this.idInfo_citation_date_creation.Size = new System.Drawing.Size(100, 20);
+            this.idInfo_citation_date_creation.ReadOnly = true;
+            this.idInfo_citation_date_creation.Size = new System.Drawing.Size(122, 20);
             this.idInfo_citation_date_creation.TabIndex = 40;
             // 
             // idInfo_citation_date_creation_dtP
             // 
             this.idInfo_citation_date_creation_dtP.CustomFormat = "";
             this.idInfo_citation_date_creation_dtP.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.idInfo_citation_date_creation_dtP.Location = new System.Drawing.Point(205, 18);
+            this.idInfo_citation_date_creation_dtP.Location = new System.Drawing.Point(227, 18);
             this.idInfo_citation_date_creation_dtP.Name = "idInfo_citation_date_creation_dtP";
             this.idInfo_citation_date_creation_dtP.Size = new System.Drawing.Size(18, 20);
             this.idInfo_citation_date_creation_dtP.TabIndex = 37;
@@ -1227,7 +1257,8 @@
             this.idInfo_citation_date_publication.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.idInfo_citation_date_publication.Location = new System.Drawing.Point(99, 46);
             this.idInfo_citation_date_publication.Name = "idInfo_citation_date_publication";
-            this.idInfo_citation_date_publication.Size = new System.Drawing.Size(100, 20);
+            this.idInfo_citation_date_publication.ReadOnly = true;
+            this.idInfo_citation_date_publication.Size = new System.Drawing.Size(122, 20);
             this.idInfo_citation_date_publication.TabIndex = 1;
             // 
             // idInfo_citation_date_publication_lbl
@@ -1244,7 +1275,8 @@
             this.idInfo_citation_date_revision.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.idInfo_citation_date_revision.Location = new System.Drawing.Point(99, 73);
             this.idInfo_citation_date_revision.Name = "idInfo_citation_date_revision";
-            this.idInfo_citation_date_revision.Size = new System.Drawing.Size(100, 20);
+            this.idInfo_citation_date_revision.ReadOnly = true;
+            this.idInfo_citation_date_revision.Size = new System.Drawing.Size(122, 20);
             this.idInfo_citation_date_revision.TabIndex = 2;
             // 
             // idInfo_citation_date_creation_lbl
@@ -1512,6 +1544,43 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "optional";
             // 
+            // dateStamp_btn
+            // 
+            this.dateStamp_btn.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.dateStamp_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonFace;
+            this.dateStamp_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dateStamp_btn.Image = ((System.Drawing.Image)(resources.GetObject("dateStamp_btn.Image")));
+            this.dateStamp_btn.Location = new System.Drawing.Point(304, 5);
+            this.dateStamp_btn.Name = "dateStamp_btn";
+            this.dateStamp_btn.Size = new System.Drawing.Size(16, 16);
+            this.dateStamp_btn.TabIndex = 37;
+            this.dateStamp_btn.UseVisualStyleBackColor = false;
+            this.dateStamp_btn.Click += new System.EventHandler(this.dateStamp_btn_Click);
+            // 
+            // contact_CI_ResponsibleParty
+            // 
+            this.contact_CI_ResponsibleParty.incomingCI_ResponsiblePartyList = null;
+            this.contact_CI_ResponsibleParty.Location = new System.Drawing.Point(4, 33);
+            this.contact_CI_ResponsibleParty.Name = "contact_CI_ResponsibleParty";
+            this.contact_CI_ResponsibleParty.Size = new System.Drawing.Size(463, 491);
+            this.contact_CI_ResponsibleParty.TabIndex = 0;
+            // 
+            // idInfo_citation_citedResponsibleParty
+            // 
+            this.idInfo_citation_citedResponsibleParty.incomingCI_ResponsiblePartyList = null;
+            this.idInfo_citation_citedResponsibleParty.Location = new System.Drawing.Point(4, 32);
+            this.idInfo_citation_citedResponsibleParty.Name = "idInfo_citation_citedResponsibleParty";
+            this.idInfo_citation_citedResponsibleParty.Size = new System.Drawing.Size(449, 481);
+            this.idInfo_citation_citedResponsibleParty.TabIndex = 2;
+            // 
+            // idInfo_pointOfContact
+            // 
+            this.idInfo_pointOfContact.incomingCI_ResponsiblePartyList = null;
+            this.idInfo_pointOfContact.Location = new System.Drawing.Point(4, 33);
+            this.idInfo_pointOfContact.Name = "idInfo_pointOfContact";
+            this.idInfo_pointOfContact.Size = new System.Drawing.Size(449, 481);
+            this.idInfo_pointOfContact.TabIndex = 2;
+            // 
             // EmeLT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1717,5 +1786,9 @@
         private uc_ResponsibleParty idInfo_pointOfContact;
         private System.Windows.Forms.Label pointOfContact_lbl;
         private System.Windows.Forms.Button pointOfContact_btn;
+        private System.Windows.Forms.Button idInfo_citation_date_creation_btn;
+        private System.Windows.Forms.Button idInfo_citation_date_publication_btn;
+        private System.Windows.Forms.Button idInfo_citation_date_revision_btn;
+        private System.Windows.Forms.Button dateStamp_btn;
     }
 }

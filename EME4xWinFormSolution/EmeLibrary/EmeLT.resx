@@ -164,6 +164,58 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
 </value>
   </data>
+  <data name="dateStamp_btn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAABiklEQVQ4T6VRsWoCURAUhBSB
+        gOAPXGUtCAG7a6xCCnuLQCCd4Cfcv1gHIUECEhAstFA4OInwEOUQjZgrlBhJCIHNzvre4+6SKlmY4zG7
+        M+ztZIjoXzh+dJFSOYanUdQ0eFdzDUZO00kDNBg+rVYkUGrLKDKuaDolWq+JFgvwPkNMrAEIaUQR7YKA
+        Vp0O4c3cVsS7nXCfmw3RcikmaYMGGhDfVSp0Wy5T2GodTViMN7jHWu1oMp/DxLUG2+HwBuuhiSEMGxMj
+        ThjMZsSakjXw6nXnzfcVtkib/BDzzLLXu+c/OLUGXNkL1z3/GI+fcUAMPlSrVoy3Eb8MBl2edyCKG2Te
+        g+DaHCy+toG5yddk8sr/LxFbAxC/ibF2+iY2HSQXM/CwetTvJ8RYO30TJEVhmEzhqd2+xGVpv6eR5yUO
+        Fj8setgS27KmYA24zrrNpif5solAX9ukQ4eDFWOWNSdxA1ReTJSSIR2Vg3Q48xE4HFCL8xCkDVBolDQk
+        Kq4so8AAh+uLGGUN/g7KfAMZ7aZX37shcgAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="idInfo_citation_date_revision_btn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAABiklEQVQ4T6VRsWoCURAUhBSB
+        gOAPXGUtCAG7a6xCCnuLQCCd4Cfcv1gHIUECEhAstFA4OInwEOUQjZgrlBhJCIHNzvre4+6SKlmY4zG7
+        M+ztZIjoXzh+dJFSOYanUdQ0eFdzDUZO00kDNBg+rVYkUGrLKDKuaDolWq+JFgvwPkNMrAEIaUQR7YKA
+        Vp0O4c3cVsS7nXCfmw3RcikmaYMGGhDfVSp0Wy5T2GodTViMN7jHWu1oMp/DxLUG2+HwBuuhiSEMGxMj
+        ThjMZsSakjXw6nXnzfcVtkib/BDzzLLXu+c/OLUGXNkL1z3/GI+fcUAMPlSrVoy3Eb8MBl2edyCKG2Te
+        g+DaHCy+toG5yddk8sr/LxFbAxC/ibF2+iY2HSQXM/CwetTvJ8RYO30TJEVhmEzhqd2+xGVpv6eR5yUO
+        Fj8setgS27KmYA24zrrNpif5solAX9ukQ4eDFWOWNSdxA1ReTJSSIR2Vg3Q48xE4HFCL8xCkDVBolDQk
+        Kq4so8AAh+uLGGUN/g7KfAMZ7aZX37shcgAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="idInfo_citation_date_publication_btn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAABiklEQVQ4T6VRsWoCURAUhBSB
+        gOAPXGUtCAG7a6xCCnuLQCCd4Cfcv1gHIUECEhAstFA4OInwEOUQjZgrlBhJCIHNzvre4+6SKlmY4zG7
+        M+ztZIjoXzh+dJFSOYanUdQ0eFdzDUZO00kDNBg+rVYkUGrLKDKuaDolWq+JFgvwPkNMrAEIaUQR7YKA
+        Vp0O4c3cVsS7nXCfmw3RcikmaYMGGhDfVSp0Wy5T2GodTViMN7jHWu1oMp/DxLUG2+HwBuuhiSEMGxMj
+        ThjMZsSakjXw6nXnzfcVtkib/BDzzLLXu+c/OLUGXNkL1z3/GI+fcUAMPlSrVoy3Eb8MBl2edyCKG2Te
+        g+DaHCy+toG5yddk8sr/LxFbAxC/ibF2+iY2HSQXM/CwetTvJ8RYO30TJEVhmEzhqd2+xGVpv6eR5yUO
+        Fj8setgS27KmYA24zrrNpif5solAX9ukQ4eDFWOWNSdxA1ReTJSSIR2Vg3Q48xE4HFCL8xCkDVBolDQk
+        Kq4so8AAh+uLGGUN/g7KfAMZ7aZX37shcgAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="idInfo_citation_date_creation_btn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAABiklEQVQ4T6VRsWoCURAUhBSB
+        gOAPXGUtCAG7a6xCCnuLQCCd4Cfcv1gHIUECEhAstFA4OInwEOUQjZgrlBhJCIHNzvre4+6SKlmY4zG7
+        M+ztZIjoXzh+dJFSOYanUdQ0eFdzDUZO00kDNBg+rVYkUGrLKDKuaDolWq+JFgvwPkNMrAEIaUQR7YKA
+        Vp0O4c3cVsS7nXCfmw3RcikmaYMGGhDfVSp0Wy5T2GodTViMN7jHWu1oMp/DxLUG2+HwBuuhiSEMGxMj
+        ThjMZsSakjXw6nXnzfcVtkib/BDzzLLXu+c/OLUGXNkL1z3/GI+fcUAMPlSrVoy3Eb8MBl2edyCKG2Te
+        g+DaHCy+toG5yddk8sr/LxFbAxC/ibF2+iY2HSQXM/CwetTvJ8RYO30TJEVhmEzhqd2+xGVpv6eR5yUO
+        Fj8setgS27KmYA24zrrNpif5solAX9ukQ4eDFWOWNSdxA1ReTJSSIR2Vg3Q48xE4HFCL8xCkDVBolDQk
+        Kq4so8AAh+uLGGUN/g7KfAMZ7aZX37shcgAAAABJRU5ErkJggg==
+</value>
+  </data>
   <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>237, 17</value>
   </metadata>

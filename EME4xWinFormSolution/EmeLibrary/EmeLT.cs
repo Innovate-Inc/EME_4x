@@ -638,7 +638,7 @@ namespace EmeLibrary
 
             PageController.PageSaver(this);
 
-            //localXdoc.saveChangestoRecord();
+            localXdoc.saveChangestoRecord();
 
 
 
@@ -824,6 +824,27 @@ namespace EmeLibrary
         private void idInfo_citation_date_revision_dtP_ValueChanged(object sender, EventArgs e)
         {
             idInfo_citation_date_revision.Text = idInfo_citation_date_revision_dtP.Value.ToString("yyyy-MM-dd");
+        }
+
+
+        private void idInfo_citation_date_creation_btn_Click(object sender, EventArgs e)
+        {
+            idInfo_citation_date_creation.Clear();
+        }
+
+        private void idInfo_citation_date_publication_btn_Click(object sender, EventArgs e)
+        {
+            idInfo_citation_date_publication.Clear();
+        }
+
+        private void idInfo_citation_date_revision_btn_Click(object sender, EventArgs e)
+        {
+            idInfo_citation_date_revision.Clear();
+        }
+
+        private void dateStamp_btn_Click(object sender, EventArgs e)
+        {
+            dateStamp.Clear();
         }
 
         
