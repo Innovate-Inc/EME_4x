@@ -765,39 +765,15 @@ namespace EmeLibrary
             
         }
 
-        private void Group2_btn_Click(object sender, EventArgs e)
-        {
-            if (group2_Pnl.Height > 30)
-            {
-                group2_Pnl.AutoSize = false;
-                group2_Pnl.Height = 30;
-            }
-            else
-            {
-                group2_Pnl.AutoSize = true;
-            }
-        }
-
-        private void citationGrp_btn_Click(object sender, EventArgs e)
-        {
-            if(citationGrp_Pnl.Height > 30)
-            {
-                citationGrp_Pnl.AutoSize = false;
-                citationGrp_Pnl.Height = 30;
-            }
-            else
-            {
-                citationGrp_Pnl.AutoSize = true;
-            }
-        }
-
-        private void expand_P1_Click_1(object sender, EventArgs e)
-        {
-            expander(metadataAuthor_Pnl);
-        }
+        
 
         private void citationExpand_btn_Click(object sender, EventArgs e)
         {
+            if (citationExpand_btn.Text == "+")
+                citationExpand_btn.Text = "-";
+            else
+                citationExpand_btn.Text = "+";
+
             expander(Citation_Pnl);
         }
 
@@ -867,6 +843,16 @@ namespace EmeLibrary
         private void idInfo_citation_date_revision_btn_Click(object sender, EventArgs e)
         {
             idInfo_citation_date_revision.Clear();
+        }
+
+        private void expand_P1_Click(object sender, EventArgs e)
+        {
+            if (expand_P1.Text == "+")
+                expand_P1.Text = "-";
+            else
+                expand_P1.Text = "+";
+
+            expander(metadataAuthor_Pnl);
         }
                 
 
