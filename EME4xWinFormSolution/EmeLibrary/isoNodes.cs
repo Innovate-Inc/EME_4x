@@ -210,7 +210,19 @@ namespace EmeLibrary
 
             bindclassXpathProperties();
 
-            if (fileNamewithFullPath != "New")
+            if (fileNamewithFullPath == "New")
+            {
+                //Set new instances for object fields
+                kwEpaList = new List<string>();
+                kwIsoTopicCatList = new List<string>();
+                kwPlaceList = new List<string>();
+                kwUserList = new List<string>();
+                contactRpSection = new List<CI_ResponsibleParty>();
+                idinfoCitationcitedResponsibleParty = new List<CI_ResponsibleParty>();
+                idinfoPointOfContact = new List<CI_ResponsibleParty>();               
+
+            }
+            else
             {
 
                 //Metadata Information
