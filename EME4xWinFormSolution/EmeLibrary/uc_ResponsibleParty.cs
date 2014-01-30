@@ -32,13 +32,21 @@ namespace EmeLibrary
         {
             InitializeComponent();
 
+            
+
         }
 
         private void bindToFields(CI_ResponsibleParty incomingCIRP)
         {
             pagerLbl.Text = (incomingRPListIndex +1).ToString() + " of " + incomingRPList.Count;
 
-            role.SelectedText = incomingCIRP.role;
+            if (incomingCIRP.role == null)
+                role.SelectedIndex = -1;
+            else
+            {
+                role.SelectedItem = incomingCIRP.role;
+            }
+
             individualName_txt.Text = incomingCIRP.individualName;
             organisationName_txt.Text = incomingCIRP.organisationName;
             positionName.Text = incomingCIRP.positionName;
@@ -52,7 +60,7 @@ namespace EmeLibrary
             contactInfo__CI_Contact__address__CI_Address__electronicMailAddress.Text = incomingCIRP.contactInfo__CI_Contact__address__CI_Address__electronicMailAddress;
             contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage.Text = incomingCIRP.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage;
 
-            contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode.SelectedText = incomingCIRP.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode;
+            //contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode.SelectedText = incomingCIRP.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode;
 
             contactInfo__CI_Contact__hoursOfService.Text = incomingCIRP.contactInfo__CI_Contact__hoursOfService;
             contactInfo__CI_Contact__contactInstructions.Text = incomingCIRP.contactInfo__CI_Contact__contactInstructions;
@@ -60,9 +68,29 @@ namespace EmeLibrary
 
         }
 
-        private void bindToClass()
+        private void bindToClass(CI_ResponsibleParty outgoingCIRP)
         {
 
+            if (role.SelectedItem != null)
+            {
+               
+                outgoingCIRP.role = role.SelectedItem.ToString();
+            }
+            outgoingCIRP.individualName = individualName_txt.Text;
+            outgoingCIRP.organisationName = organisationName_txt.Text;
+            outgoingCIRP.contactInfo__CI_Contact__address__CI_Address__deliveryPoint = contactInfo__CI_Contact__address__CI_Address__deliveryPoint.Text;
+            outgoingCIRP.contactInfo__CI_Contact__address__CI_Address__city = contactInfo__CI_Contact__address__CI_Address__city.Text;
+            outgoingCIRP.contactInfo__CI_Contact__address__CI_Address__administrativeArea = contactInfo__CI_Contact__address__CI_Address__administrativeArea.Text;
+            outgoingCIRP.contactInfo__CI_Contact__address__CI_Address__postalCode = contactInfo__CI_Contact__address__CI_Address__postalCode.Text;
+            outgoingCIRP.contactInfo__CI_Contact__address__CI_Address__country = contactInfo__CI_Contact__address__CI_Address__county.Text;
+            outgoingCIRP.contactInfo__CI_Contact__phone__CI_Telephone__voice = contactInfo__CI_Contact__phone__CI_Telephone__voice.Text;
+            outgoingCIRP.contactInfo__CI_Contact__phone__CI_Telephone__facsimile = contactInfo__CI_Contact__phone__CI_Telephone__facsimile.Text;
+            outgoingCIRP.contactInfo__CI_Contact__address__CI_Address__electronicMailAddress = contactInfo__CI_Contact__address__CI_Address__electronicMailAddress.Text;
+            outgoingCIRP.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage = contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage.Text;
+            //outgoingCIRP.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode = contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode.SelectedItem.ToString();
+            outgoingCIRP.contactInfo__CI_Contact__hoursOfService = contactInfo__CI_Contact__hoursOfService.Text;
+            outgoingCIRP.contactInfo__CI_Contact__contactInstructions = contactInfo__CI_Contact__contactInstructions.Text;
+            incomingCI_ResponsiblePartyList = incomingRPList;
         }
     
         
@@ -96,6 +124,8 @@ namespace EmeLibrary
             }
             else
             {
+                bindToClass(incomingRPList[incomingRPListIndex]);
+                
                 incomingRPListIndex--;
                 pagerUpBtn.Enabled = true;
                 bindToFields(incomingRPList[incomingRPListIndex]);
@@ -112,6 +142,7 @@ namespace EmeLibrary
             }
             else
             {
+                bindToClass(incomingRPList[incomingRPListIndex]);
                 incomingRPListIndex++;
                 pagerDownBtn.Enabled = true;
                 bindToFields(incomingRPList[incomingRPListIndex]);
@@ -123,10 +154,14 @@ namespace EmeLibrary
         {
             //CI_ResponsibleParty newRP = new CI_ResponsibleParty();
             CI_ResponsibleParty ci_RP = new CI_ResponsibleParty();
+            if (incomingRPList == null)
+            {
+                incomingRPList = new List<CI_ResponsibleParty>();
+            }
+            
             incomingRPList.Add(ci_RP);
             incomingRPListIndex = incomingRPList.Count - 1;
             bindToFields(incomingRPList[incomingRPListIndex]);
-
         }
 
         private void deleteRP_Btn_Click(object sender, EventArgs e)
@@ -141,7 +176,6 @@ namespace EmeLibrary
                 incomingRPListIndex--;
                 bindToFields(incomingRPList[incomingRPListIndex - 1]);
             }     
-        }
-                     
+        }                 
     }
 }

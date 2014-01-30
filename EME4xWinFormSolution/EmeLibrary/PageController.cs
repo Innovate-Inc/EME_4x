@@ -189,7 +189,8 @@ namespace EmeLibrary
                 {
                     uc_ResponsibleParty outgoing_ResponsibleParty = (uc_ResponsibleParty)ctrl;
                     frm.localXdoc.GetType().GetProperty(ctrl.Name).SetValue(obj, outgoing_ResponsibleParty.incomingCI_ResponsiblePartyList, null);
-                    Console.WriteLine(outgoing_ResponsibleParty.incomingCI_ResponsiblePartyList.Count());
+                    //Console.WriteLine(outgoing_ResponsibleParty.incomingCI_ResponsiblePartyList.Count());
+                    //Console.WriteLine(outgoing_ResponsibleParty.incomingCI_ResponsiblePartyList[].individualName);
                     //List<CI_ResponsibleParty> ci_RP = (List<CI_ResponsibleParty>)frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null);
                 }
                 else if (ctrl.GetType() == typeof(ComboBox))
