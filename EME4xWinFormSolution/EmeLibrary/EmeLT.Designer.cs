@@ -38,6 +38,11 @@
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.databaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.lblDownloadUrl = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -95,6 +100,7 @@
             this.group2_lbl = new System.Windows.Forms.Label();
             this.metadataAuthor_Pnl = new System.Windows.Forms.Panel();
             this.metaDataAuthor_lbl = new System.Windows.Forms.Label();
+            this.contact_CI_ResponsibleParty = new EmeLibrary.uc_ResponsibleParty();
             this.expand_P1 = new System.Windows.Forms.Button();
             this.Group2_btn = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -102,9 +108,11 @@
             this.fileIdentifier_lbl = new System.Windows.Forms.Label();
             this.citationGrp_Pnl = new System.Windows.Forms.Panel();
             this.Citation_Pnl = new System.Windows.Forms.Panel();
+            this.idInfo_citation_citedResponsibleParty = new EmeLibrary.uc_ResponsibleParty();
             this.citatonExpand_lbl = new System.Windows.Forms.Label();
             this.citationExpand_btn = new System.Windows.Forms.Button();
             this.pointOfContact_Pnl = new System.Windows.Forms.Panel();
+            this.idInfo_pointOfContact = new EmeLibrary.uc_ResponsibleParty();
             this.pointOfContact_lbl = new System.Windows.Forms.Label();
             this.pointOfContact_btn = new System.Windows.Forms.Button();
             this.citationGrp_btn = new System.Windows.Forms.Button();
@@ -154,16 +162,13 @@
             this.label8 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
-            this.contact_CI_ResponsibleParty = new EmeLibrary.uc_ResponsibleParty();
-            this.idInfo_citation_citedResponsibleParty = new EmeLibrary.uc_ResponsibleParty();
-            this.idInfo_pointOfContact = new EmeLibrary.uc_ResponsibleParty();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.idInfo_citation_date_creation_btn = new System.Windows.Forms.Button();
+            this.idInfo_citation_date_publication_btn = new System.Windows.Forms.Button();
+            this.idInfo_citation_date_revision_btn = new System.Windows.Forms.Button();
+            this.dateStamp_btn = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
+            this.tabPage6.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -192,7 +197,6 @@
             this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel10.SuspendLayout();
-            this.tabPage6.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -277,6 +281,59 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(992, 540);
             this.tabControl1.TabIndex = 2;
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.Controls.Add(this.button8);
+            this.tabPage6.Controls.Add(this.button7);
+            this.tabPage6.Controls.Add(this.button4);
+            this.tabPage6.Controls.Add(this.label3);
+            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Size = new System.Drawing.Size(984, 514);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "EME Metadata Editor";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // button8
+            // 
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Location = new System.Drawing.Point(544, 125);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(95, 91);
+            this.button8.TabIndex = 3;
+            this.button8.Text = "button8";
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Location = new System.Drawing.Point(411, 125);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(95, 92);
+            this.button7.TabIndex = 2;
+            this.button7.Text = "button7";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Location = new System.Drawing.Point(279, 125);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(95, 92);
+            this.button4.TabIndex = 1;
+            this.button4.Text = "button4";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(311, 12);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(315, 37);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "EPA Metadate Editor";
             // 
             // tabPage1
             // 
@@ -735,6 +792,7 @@
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.panel7.Controls.Add(this.dateStamp_btn);
             this.panel7.Controls.Add(this.dateStamp_dtP);
             this.panel7.Controls.Add(this.dateStamp);
             this.panel7.Controls.Add(this.dateStamp_lbl);
@@ -756,6 +814,7 @@
             this.dateStamp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.dateStamp.Location = new System.Drawing.Point(119, 4);
             this.dateStamp.Name = "dateStamp";
+            this.dateStamp.ReadOnly = true;
             this.dateStamp.Size = new System.Drawing.Size(204, 20);
             this.dateStamp.TabIndex = 9;
             // 
@@ -921,6 +980,14 @@
             this.metaDataAuthor_lbl.TabIndex = 1;
             this.metaDataAuthor_lbl.Text = "Metadata Author";
             // 
+            // contact_CI_ResponsibleParty
+            // 
+            this.contact_CI_ResponsibleParty.incomingCI_ResponsiblePartyList = null;
+            this.contact_CI_ResponsibleParty.Location = new System.Drawing.Point(4, 33);
+            this.contact_CI_ResponsibleParty.Name = "contact_CI_ResponsibleParty";
+            this.contact_CI_ResponsibleParty.Size = new System.Drawing.Size(463, 491);
+            this.contact_CI_ResponsibleParty.TabIndex = 0;
+            // 
             // expand_P1
             // 
             this.expand_P1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1005,6 +1072,14 @@
             this.Citation_Pnl.Size = new System.Drawing.Size(475, 30);
             this.Citation_Pnl.TabIndex = 16;
             // 
+            // idInfo_citation_citedResponsibleParty
+            // 
+            this.idInfo_citation_citedResponsibleParty.incomingCI_ResponsiblePartyList = null;
+            this.idInfo_citation_citedResponsibleParty.Location = new System.Drawing.Point(4, 32);
+            this.idInfo_citation_citedResponsibleParty.Name = "idInfo_citation_citedResponsibleParty";
+            this.idInfo_citation_citedResponsibleParty.Size = new System.Drawing.Size(449, 481);
+            this.idInfo_citation_citedResponsibleParty.TabIndex = 2;
+            // 
             // citatonExpand_lbl
             // 
             this.citatonExpand_lbl.AutoSize = true;
@@ -1037,6 +1112,14 @@
             this.pointOfContact_Pnl.Name = "pointOfContact_Pnl";
             this.pointOfContact_Pnl.Size = new System.Drawing.Size(475, 30);
             this.pointOfContact_Pnl.TabIndex = 17;
+            // 
+            // idInfo_pointOfContact
+            // 
+            this.idInfo_pointOfContact.incomingCI_ResponsiblePartyList = null;
+            this.idInfo_pointOfContact.Location = new System.Drawing.Point(4, 33);
+            this.idInfo_pointOfContact.Name = "idInfo_pointOfContact";
+            this.idInfo_pointOfContact.Size = new System.Drawing.Size(449, 481);
+            this.idInfo_pointOfContact.TabIndex = 2;
             // 
             // pointOfContact_lbl
             // 
@@ -1154,7 +1237,10 @@
             // dates_for_resources_pnl
             // 
             this.dates_for_resources_pnl.Controls.Add(this.idInfo_citation_date_revision_dtP);
+            this.dates_for_resources_pnl.Controls.Add(this.idInfo_citation_date_revision_btn);
+            this.dates_for_resources_pnl.Controls.Add(this.idInfo_citation_date_publication_btn);
             this.dates_for_resources_pnl.Controls.Add(this.idInfo_citation_date_publication_dtP);
+            this.dates_for_resources_pnl.Controls.Add(this.idInfo_citation_date_creation_btn);
             this.dates_for_resources_pnl.Controls.Add(this.idInfo_citation_date_creation);
             this.dates_for_resources_pnl.Controls.Add(this.idInfo_citation_date_creation_dtP);
             this.dates_for_resources_pnl.Controls.Add(this.idInfo_citation_date_revision_lbl);
@@ -1192,6 +1278,7 @@
             this.idInfo_citation_date_creation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.idInfo_citation_date_creation.Location = new System.Drawing.Point(99, 18);
             this.idInfo_citation_date_creation.Name = "idInfo_citation_date_creation";
+            this.idInfo_citation_date_creation.ReadOnly = true;
             this.idInfo_citation_date_creation.Size = new System.Drawing.Size(100, 20);
             this.idInfo_citation_date_creation.TabIndex = 40;
             // 
@@ -1219,6 +1306,7 @@
             this.idInfo_citation_date_publication.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.idInfo_citation_date_publication.Location = new System.Drawing.Point(99, 46);
             this.idInfo_citation_date_publication.Name = "idInfo_citation_date_publication";
+            this.idInfo_citation_date_publication.ReadOnly = true;
             this.idInfo_citation_date_publication.Size = new System.Drawing.Size(100, 20);
             this.idInfo_citation_date_publication.TabIndex = 1;
             // 
@@ -1236,6 +1324,7 @@
             this.idInfo_citation_date_revision.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.idInfo_citation_date_revision.Location = new System.Drawing.Point(99, 73);
             this.idInfo_citation_date_revision.Name = "idInfo_citation_date_revision";
+            this.idInfo_citation_date_revision.ReadOnly = true;
             this.idInfo_citation_date_revision.Size = new System.Drawing.Size(100, 20);
             this.idInfo_citation_date_revision.TabIndex = 2;
             // 
@@ -1504,82 +1593,57 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "optional";
             // 
-            // contact_CI_ResponsibleParty
+            // idInfo_citation_date_creation_btn
             // 
-            this.contact_CI_ResponsibleParty.incomingCI_ResponsiblePartyList = null;
-            this.contact_CI_ResponsibleParty.Location = new System.Drawing.Point(4, 33);
-            this.contact_CI_ResponsibleParty.Name = "contact_CI_ResponsibleParty";
-            this.contact_CI_ResponsibleParty.Size = new System.Drawing.Size(463, 491);
-            this.contact_CI_ResponsibleParty.TabIndex = 0;
+            this.idInfo_citation_date_creation_btn.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.idInfo_citation_date_creation_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonFace;
+            this.idInfo_citation_date_creation_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.idInfo_citation_date_creation_btn.Image = ((System.Drawing.Image)(resources.GetObject("idInfo_citation_date_creation_btn.Image")));
+            this.idInfo_citation_date_creation_btn.Location = new System.Drawing.Point(181, 20);
+            this.idInfo_citation_date_creation_btn.Name = "idInfo_citation_date_creation_btn";
+            this.idInfo_citation_date_creation_btn.Size = new System.Drawing.Size(16, 16);
+            this.idInfo_citation_date_creation_btn.TabIndex = 37;
+            this.idInfo_citation_date_creation_btn.UseVisualStyleBackColor = false;
+            this.idInfo_citation_date_creation_btn.Click += new System.EventHandler(this.idInfo_citation_date_creation_btn_Click);
             // 
-            // idInfo_citation_citedResponsibleParty
+            // idInfo_citation_date_publication_btn
             // 
-            this.idInfo_citation_citedResponsibleParty.incomingCI_ResponsiblePartyList = null;
-            this.idInfo_citation_citedResponsibleParty.Location = new System.Drawing.Point(4, 32);
-            this.idInfo_citation_citedResponsibleParty.Name = "idInfo_citation_citedResponsibleParty";
-            this.idInfo_citation_citedResponsibleParty.Size = new System.Drawing.Size(449, 481);
-            this.idInfo_citation_citedResponsibleParty.TabIndex = 2;
+            this.idInfo_citation_date_publication_btn.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.idInfo_citation_date_publication_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonFace;
+            this.idInfo_citation_date_publication_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.idInfo_citation_date_publication_btn.Image = ((System.Drawing.Image)(resources.GetObject("idInfo_citation_date_publication_btn.Image")));
+            this.idInfo_citation_date_publication_btn.Location = new System.Drawing.Point(181, 48);
+            this.idInfo_citation_date_publication_btn.Name = "idInfo_citation_date_publication_btn";
+            this.idInfo_citation_date_publication_btn.Size = new System.Drawing.Size(16, 16);
+            this.idInfo_citation_date_publication_btn.TabIndex = 38;
+            this.idInfo_citation_date_publication_btn.UseVisualStyleBackColor = false;
+            this.idInfo_citation_date_publication_btn.Click += new System.EventHandler(this.idInfo_citation_date_publication_btn_Click);
             // 
-            // idInfo_pointOfContact
+            // idInfo_citation_date_revision_btn
             // 
-            this.idInfo_pointOfContact.incomingCI_ResponsiblePartyList = null;
-            this.idInfo_pointOfContact.Location = new System.Drawing.Point(4, 33);
-            this.idInfo_pointOfContact.Name = "idInfo_pointOfContact";
-            this.idInfo_pointOfContact.Size = new System.Drawing.Size(449, 481);
-            this.idInfo_pointOfContact.TabIndex = 2;
+            this.idInfo_citation_date_revision_btn.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.idInfo_citation_date_revision_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonFace;
+            this.idInfo_citation_date_revision_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.idInfo_citation_date_revision_btn.Image = ((System.Drawing.Image)(resources.GetObject("idInfo_citation_date_revision_btn.Image")));
+            this.idInfo_citation_date_revision_btn.Location = new System.Drawing.Point(181, 75);
+            this.idInfo_citation_date_revision_btn.Name = "idInfo_citation_date_revision_btn";
+            this.idInfo_citation_date_revision_btn.Size = new System.Drawing.Size(16, 16);
+            this.idInfo_citation_date_revision_btn.TabIndex = 39;
+            this.idInfo_citation_date_revision_btn.UseVisualStyleBackColor = false;
+            this.idInfo_citation_date_revision_btn.Click += new System.EventHandler(this.idInfo_citation_date_revision_btn_Click);
             // 
-            // tabPage6
+            // dateStamp_btn
             // 
-            this.tabPage6.Controls.Add(this.button8);
-            this.tabPage6.Controls.Add(this.button7);
-            this.tabPage6.Controls.Add(this.button4);
-            this.tabPage6.Controls.Add(this.label3);
-            this.tabPage6.Location = new System.Drawing.Point(4, 22);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(984, 514);
-            this.tabPage6.TabIndex = 5;
-            this.tabPage6.Text = "EME Metadata Editor";
-            this.tabPage6.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(311, 12);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(315, 37);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "EPA Metadate Editor";
-            // 
-            // button4
-            // 
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(279, 125);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(95, 92);
-            this.button4.TabIndex = 1;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Location = new System.Drawing.Point(411, 125);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(95, 92);
-            this.button7.TabIndex = 2;
-            this.button7.Text = "button7";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Location = new System.Drawing.Point(544, 125);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(95, 91);
-            this.button8.TabIndex = 3;
-            this.button8.Text = "button8";
-            this.button8.UseVisualStyleBackColor = true;
+            this.dateStamp_btn.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.dateStamp_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonFace;
+            this.dateStamp_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dateStamp_btn.Image = ((System.Drawing.Image)(resources.GetObject("dateStamp_btn.Image")));
+            this.dateStamp_btn.Location = new System.Drawing.Point(305, 6);
+            this.dateStamp_btn.Name = "dateStamp_btn";
+            this.dateStamp_btn.Size = new System.Drawing.Size(16, 16);
+            this.dateStamp_btn.TabIndex = 40;
+            this.dateStamp_btn.UseVisualStyleBackColor = false;
+            this.dateStamp_btn.Click += new System.EventHandler(this.dateStamp_btn_Click);
             // 
             // EmeLT
             // 
@@ -1601,6 +1665,8 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
+            this.tabPage6.ResumeLayout(false);
+            this.tabPage6.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -1652,8 +1718,6 @@
             this.panel9.PerformLayout();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
-            this.tabPage6.ResumeLayout(false);
-            this.tabPage6.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1794,5 +1858,9 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button dateStamp_btn;
+        private System.Windows.Forms.Button idInfo_citation_date_revision_btn;
+        private System.Windows.Forms.Button idInfo_citation_date_publication_btn;
+        private System.Windows.Forms.Button idInfo_citation_date_creation_btn;
     }
 }

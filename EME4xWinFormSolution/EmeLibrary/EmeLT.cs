@@ -847,6 +847,26 @@ namespace EmeLibrary
             localXdoc = new isoNodes(xDoc, sourceXmlFormat, filename);
             
         }
+
+        private void dateStamp_btn_Click(object sender, EventArgs e)
+        {
+            dateStamp.Clear();
+        }
+
+        private void idInfo_citation_date_creation_btn_Click(object sender, EventArgs e)
+        {
+            idInfo_citation_date_creation.Clear();
+        }
+
+        private void idInfo_citation_date_publication_btn_Click(object sender, EventArgs e)
+        {
+            idInfo_citation_date_publication.Clear();
+        }
+
+        private void idInfo_citation_date_revision_btn_Click(object sender, EventArgs e)
+        {
+            idInfo_citation_date_revision.Clear();
+        }
                 
 
         
