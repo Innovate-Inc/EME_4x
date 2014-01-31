@@ -176,6 +176,8 @@ namespace EmeLibrary
                 incomingRPListIndex--;
                 bindToFields(incomingRPList[incomingRPListIndex - 1]);
             }     
-        }                 
+        }
+
+                       
     }
 }
