@@ -79,19 +79,20 @@
             this.button1.BackColor = System.Drawing.Color.DarkOrange;
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(359, 15);
+            this.button1.Location = new System.Drawing.Point(313, 15);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(121, 23);
             this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
+            this.button1.Text = "Select From Contact List";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // positionName
             // 
             this.positionName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.positionName.Location = new System.Drawing.Point(113, 92);
             this.positionName.Name = "positionName";
-            this.positionName.Size = new System.Drawing.Size(150, 20);
+            this.positionName.Size = new System.Drawing.Size(178, 20);
             this.positionName.TabIndex = 4;
             // 
             // organisationName_txt
@@ -99,7 +100,7 @@
             this.organisationName_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.organisationName_txt.Location = new System.Drawing.Point(113, 66);
             this.organisationName_txt.Name = "organisationName_txt";
-            this.organisationName_txt.Size = new System.Drawing.Size(130, 20);
+            this.organisationName_txt.Size = new System.Drawing.Size(178, 20);
             this.organisationName_txt.TabIndex = 3;
             // 
             // contactInfo__CI_Contact__phone__CI_Telephone__voice
@@ -138,7 +139,7 @@
             "scienceParty"});
             this.role.Location = new System.Drawing.Point(113, 15);
             this.role.Name = "role";
-            this.role.Size = new System.Drawing.Size(159, 21);
+            this.role.Size = new System.Drawing.Size(178, 21);
             this.role.TabIndex = 1;
             // 
             // individualName_lbl
@@ -204,7 +205,7 @@
             this.individualName_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.individualName_txt.Location = new System.Drawing.Point(113, 42);
             this.individualName_txt.Name = "individualName_txt";
-            this.individualName_txt.Size = new System.Drawing.Size(159, 20);
+            this.individualName_txt.Size = new System.Drawing.Size(178, 20);
             this.individualName_txt.TabIndex = 2;
             // 
             // contactInfo__CI_Contact__address__CI_Address__deliveryPoint_lbl
@@ -510,12 +511,15 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownWidth = 400;
             this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(313, 41);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 41;
+            this.comboBox1.Visible = false;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
             // 
             // uc_ResponsibleParty
             // 

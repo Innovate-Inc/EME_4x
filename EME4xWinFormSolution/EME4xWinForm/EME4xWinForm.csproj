@@ -335,6 +335,7 @@
     </Content>
     <Content Include="Eme4xSystemFiles\EMEdb\Contact_Information.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Eme4xSystemFiles\EMEdb\DistributionLiability.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

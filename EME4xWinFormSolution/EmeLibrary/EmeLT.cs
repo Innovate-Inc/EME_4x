@@ -854,7 +854,8 @@ namespace EmeLibrary
 
             expander(metadataAuthor_Pnl);
         }
-                
+
+        
 
         
     }
