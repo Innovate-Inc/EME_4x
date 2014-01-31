@@ -637,7 +637,7 @@ namespace EmeLibrary
 
             PageController.PageSaver(this);
 
-            //localXdoc.saveChangestoRecord();
+            localXdoc.saveChangestoRecord();
 
 
 
@@ -855,7 +855,35 @@ namespace EmeLibrary
             expander(metadataAuthor_Pnl);
         }
 
-        
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Utils1.setEmeDataSets();
+            bindFormtoEMEdatabases();
+            xDoc = new XmlDocument();
+            //Format picker... default should be -2
+            //sourceXmlFormat = "ISO19115-2"; //  
+            sourceXmlFormat = "ISO19115";
+            //xDox Set when checking the metadata format
+            filename = "New";
+            localXdoc = new isoNodes(xDoc, sourceXmlFormat, filename);
+            tabControl1.SelectedIndex = 1;
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Utils1.setEmeDataSets();
+            bindFormtoEMEdatabases();
+            xDoc = new XmlDocument();
+            //Format picker... default should be -2
+            sourceXmlFormat = "ISO19115-2"; //  sourceXmlFormat ="ISO19115"
+            //xDox Set when checking the metadata format
+            filename = "New";
+            localXdoc = new isoNodes(xDoc, sourceXmlFormat, filename);
+            tabControl1.SelectedIndex = 1;
+
+        }
+                
 
         
     }

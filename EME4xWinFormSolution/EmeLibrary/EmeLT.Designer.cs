@@ -1665,6 +1665,7 @@
             this.button7.TabIndex = 2;
             this.button7.Text = "ISO 19115-2";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button4
             // 
@@ -1680,6 +1681,7 @@
             this.button4.TabIndex = 1;
             this.button4.Text = "ISO 19115";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // label3
             // 
