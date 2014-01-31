@@ -79,9 +79,9 @@
             this.button1.BackColor = System.Drawing.Color.DarkOrange;
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(313, 15);
+            this.button1.Location = new System.Drawing.Point(317, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(121, 23);
+            this.button1.Size = new System.Drawing.Size(112, 43);
             this.button1.TabIndex = 0;
             this.button1.Text = "Select From Contact List";
             this.button1.UseVisualStyleBackColor = false;
@@ -514,9 +514,9 @@
             this.comboBox1.DropDownWidth = 400;
             this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(313, 41);
+            this.comboBox1.Location = new System.Drawing.Point(317, 44);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.Size = new System.Drawing.Size(112, 21);
             this.comboBox1.TabIndex = 41;
             this.comboBox1.Visible = false;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);

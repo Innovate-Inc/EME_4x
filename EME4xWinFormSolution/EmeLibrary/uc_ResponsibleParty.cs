@@ -202,8 +202,6 @@ namespace EmeLibrary
             //Utils1.setEmeDataSets();
             DataTable subTable = Utils1.emeDataSet.Tables["Contact_Information"].Select().CopyToDataTable();
 
-            
-
             if (comboBox1.Visible == true)
             {
                 comboBox1.Visible = false;
