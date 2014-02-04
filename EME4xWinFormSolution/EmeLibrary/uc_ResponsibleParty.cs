@@ -103,7 +103,7 @@ namespace EmeLibrary
 
         private void uc_ResponsibleParty_Load(object sender, EventArgs e)
         {
-            
+           
         }
 
         public void loadList(List<CI_ResponsibleParty> CI_ResponsiblePartyList)
@@ -153,25 +153,37 @@ namespace EmeLibrary
 
         private void addRP_Btn_Click(object sender, EventArgs e)
         {
+            //Save the last added contact
+           
+
             //CI_ResponsibleParty newRP = new CI_ResponsibleParty();
             CI_ResponsibleParty ci_RP = new CI_ResponsibleParty();
             if (incomingRPList == null)
             {
                 incomingRPList = new List<CI_ResponsibleParty>();
                 incomingRPListIndex = 0;
+                incomingRPList.Add(ci_RP);
+            }
+            else
+            {
+                bindToClass(incomingRPList[incomingRPListIndex]);
+                incomingRPList.Add(ci_RP);
+                incomingRPListIndex++;
+                incomingRPListIndex = incomingRPList.Count - 1;
             }
             
-            incomingRPList.Add(ci_RP);
-            incomingRPListIndex = incomingRPList.Count - 1;
+            
             bindToFields(incomingRPList[incomingRPListIndex]);
         }
 
         private void deleteRP_Btn_Click(object sender, EventArgs e)
         {
             incomingRPList.RemoveAt(incomingRPListIndex);
-            if (incomingRPListIndex <= 0)
+            if (incomingRPList.Count == 0)
             {
-                pagerLbl.Text = (incomingRPListIndex + 1).ToString() + " of " + incomingRPList.Count;
+                incomingRPListIndex = 0;
+                incomingRPList = null;
+                pagerLbl.Text =   " of ";
                 role.SelectedIndex = -1;
                 individualName_txt.Text = "";
                 organisationName_txt.Text = "";
@@ -192,9 +204,19 @@ namespace EmeLibrary
             }
             else
             {
-                incomingRPListIndex--;
-                bindToFields(incomingRPList[incomingRPListIndex - 1]);
-            }     
+                //if you delete the first in list
+                if (incomingRPListIndex == 0)
+                {
+                    bindToFields(incomingRPList[incomingRPListIndex]);
+                }
+                else
+                {
+                    incomingRPListIndex--;
+                    bindToFields(incomingRPList[incomingRPListIndex]);
+                }
+                
+            }
+              
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -209,7 +231,7 @@ namespace EmeLibrary
             else
             {
                 comboBox1.Visible = true;
-                comboBox1.SelectedIndex = -1;
+                //comboBox1.SelectedIndex = -1;
                 comboBox1.DataSource = subTable;
                 comboBox1.ValueMember = "cntper";
                 comboBox1.DisplayMember = "cntper";
