@@ -224,18 +224,27 @@ namespace EmeLibrary
             //Utils1.setEmeDataSets();
             DataTable subTable = Utils1.emeDataSet.Tables["Contact_Information"].Select().CopyToDataTable();
 
+            //concatinate Name and oraganization so that we have a display field
+            subTable.Columns.Add("display", typeof(string));
+
+            //concatinate and add person and organization to new field
+            foreach(DataRow dr in subTable.Rows)
+            {
+                dr["display"] = dr["cntper"] + " | " + dr["cntorg"];
+            }
+
             if (comboBox1.Visible == true)
             {
                 comboBox1.Visible = false;
             }
             else
             {
-                comboBox1.Visible = true;
-                //comboBox1.SelectedIndex = -1;
-                comboBox1.DataSource = subTable;
-                comboBox1.ValueMember = "cntper";
-                comboBox1.DisplayMember = "cntper";
                 
+                comboBox1.DataSource = subTable;
+                comboBox1.ValueMember = "display";
+                comboBox1.DisplayMember = "display";
+                comboBox1.SelectedIndex = -1;
+                comboBox1.Visible = true;
             }
         }
 
@@ -243,9 +252,10 @@ namespace EmeLibrary
         {
             //DataTable subTable = Utils1.emeDataSet.Tables["Contact_Information"].Select().CopyToDataTable();
 
-            DataRowView drv = (DataRowView)comboBox1.SelectedItem;
-            if (comboBox1.SelectedIndex != -1)
+           
+            if (comboBox1.SelectedIndex != -1 && comboBox1.Visible == true)
             {
+                DataRowView drv = (DataRowView)comboBox1.SelectedItem;
                 Console.WriteLine(drv["cntper"].ToString());
 
                 //CI_ResponsibleParty newRP = new CI_ResponsibleParty();
