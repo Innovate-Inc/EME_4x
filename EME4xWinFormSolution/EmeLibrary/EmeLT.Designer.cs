@@ -80,7 +80,6 @@
             this.dateStamp_lbl = new System.Windows.Forms.Label();
             this.metadataAuthor_Pnl = new System.Windows.Forms.Panel();
             this.metaDataAuthor_lbl = new System.Windows.Forms.Label();
-            this.contact_CI_ResponsibleParty = new EmeLibrary.uc_ResponsibleParty();
             this.expand_P1 = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -132,7 +131,6 @@
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.Citation_Pnl = new System.Windows.Forms.Panel();
-            this.idInfo_citation_citedResponsibleParty = new EmeLibrary.uc_ResponsibleParty();
             this.citatonExpand_lbl = new System.Windows.Forms.Label();
             this.citationExpand_btn = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -160,7 +158,6 @@
             this.idInfo_Purpose_lbl = new System.Windows.Forms.Label();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.pointOfContact_Pnl = new System.Windows.Forms.Panel();
-            this.idInfo_pointOfContact = new EmeLibrary.uc_ResponsibleParty();
             this.pointOfContact_lbl = new System.Windows.Forms.Label();
             this.pointOfContact_btn = new System.Windows.Forms.Button();
             this.citationGrp_Pnl = new System.Windows.Forms.Panel();
@@ -170,6 +167,9 @@
             this.button4 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.idInfo_citation_citedResponsibleParty = new EmeLibrary.uc_ResponsibleParty();
+            this.idInfo_pointOfContact = new EmeLibrary.uc_ResponsibleParty();
+            this.contact_CI_ResponsibleParty = new EmeLibrary.uc_ResponsibleParty();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
@@ -706,14 +706,6 @@
             this.metaDataAuthor_lbl.Size = new System.Drawing.Size(113, 17);
             this.metaDataAuthor_lbl.TabIndex = 1;
             this.metaDataAuthor_lbl.Text = "Metadata Author";
-            // 
-            // contact_CI_ResponsibleParty
-            // 
-            this.contact_CI_ResponsibleParty.incomingCI_ResponsiblePartyList = null;
-            this.contact_CI_ResponsibleParty.Location = new System.Drawing.Point(4, 33);
-            this.contact_CI_ResponsibleParty.Name = "contact_CI_ResponsibleParty";
-            this.contact_CI_ResponsibleParty.Size = new System.Drawing.Size(463, 491);
-            this.contact_CI_ResponsibleParty.TabIndex = 0;
             // 
             // expand_P1
             // 
@@ -1289,14 +1281,6 @@
             this.Citation_Pnl.Size = new System.Drawing.Size(456, 30);
             this.Citation_Pnl.TabIndex = 16;
             // 
-            // idInfo_citation_citedResponsibleParty
-            // 
-            this.idInfo_citation_citedResponsibleParty.incomingCI_ResponsiblePartyList = null;
-            this.idInfo_citation_citedResponsibleParty.Location = new System.Drawing.Point(4, 32);
-            this.idInfo_citation_citedResponsibleParty.Name = "idInfo_citation_citedResponsibleParty";
-            this.idInfo_citation_citedResponsibleParty.Size = new System.Drawing.Size(449, 481);
-            this.idInfo_citation_citedResponsibleParty.TabIndex = 2;
-            // 
             // citatonExpand_lbl
             // 
             this.citatonExpand_lbl.AutoSize = true;
@@ -1587,14 +1571,6 @@
             this.pointOfContact_Pnl.Size = new System.Drawing.Size(453, 30);
             this.pointOfContact_Pnl.TabIndex = 17;
             // 
-            // idInfo_pointOfContact
-            // 
-            this.idInfo_pointOfContact.incomingCI_ResponsiblePartyList = null;
-            this.idInfo_pointOfContact.Location = new System.Drawing.Point(4, 33);
-            this.idInfo_pointOfContact.Name = "idInfo_pointOfContact";
-            this.idInfo_pointOfContact.Size = new System.Drawing.Size(449, 481);
-            this.idInfo_pointOfContact.TabIndex = 2;
-            // 
             // pointOfContact_lbl
             // 
             this.pointOfContact_lbl.AutoSize = true;
@@ -1689,9 +1665,10 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(311, 12);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(315, 37);
+            this.label3.Size = new System.Drawing.Size(316, 37);
             this.label3.TabIndex = 0;
-            this.label3.Text = "EPA Metadate Editor";
+            this.label3.Text = "EPA Metadata Editor";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // tabControl1
             // 
@@ -1705,6 +1682,30 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(992, 540);
             this.tabControl1.TabIndex = 2;
+            // 
+            // idInfo_citation_citedResponsibleParty
+            // 
+            this.idInfo_citation_citedResponsibleParty.incomingCI_ResponsiblePartyList = null;
+            this.idInfo_citation_citedResponsibleParty.Location = new System.Drawing.Point(4, 32);
+            this.idInfo_citation_citedResponsibleParty.Name = "idInfo_citation_citedResponsibleParty";
+            this.idInfo_citation_citedResponsibleParty.Size = new System.Drawing.Size(449, 481);
+            this.idInfo_citation_citedResponsibleParty.TabIndex = 2;
+            // 
+            // idInfo_pointOfContact
+            // 
+            this.idInfo_pointOfContact.incomingCI_ResponsiblePartyList = null;
+            this.idInfo_pointOfContact.Location = new System.Drawing.Point(4, 33);
+            this.idInfo_pointOfContact.Name = "idInfo_pointOfContact";
+            this.idInfo_pointOfContact.Size = new System.Drawing.Size(449, 481);
+            this.idInfo_pointOfContact.TabIndex = 2;
+            // 
+            // contact_CI_ResponsibleParty
+            // 
+            this.contact_CI_ResponsibleParty.incomingCI_ResponsiblePartyList = null;
+            this.contact_CI_ResponsibleParty.Location = new System.Drawing.Point(4, 33);
+            this.contact_CI_ResponsibleParty.Name = "contact_CI_ResponsibleParty";
+            this.contact_CI_ResponsibleParty.Size = new System.Drawing.Size(463, 491);
+            this.contact_CI_ResponsibleParty.TabIndex = 0;
             // 
             // EmeLT
             // 
