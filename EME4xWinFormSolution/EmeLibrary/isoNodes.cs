@@ -54,6 +54,11 @@ namespace EmeLibrary
         private List<string> kwUserList;
         private List<string> kwPlaceList;
         private List<string> kwIsoTopicCatList;
+
+        private double _idInfo_extent_geographicBoundingBox_westLongDD;
+        private double _idInfo_extent_geographicBoundingBox_eastLongDD;
+        private double _idInfo_extent_geographicBoundingBox_southLatDD;
+        private double _idInfo_extent_geographicBoundingBox_northLatDD;
                
         
         #region Public Properties Section
@@ -156,18 +161,28 @@ namespace EmeLibrary
             get { return kwIsoTopicCatList; }
             set { kwIsoTopicCatList = value; }
         }
+        public double idInfo_extent_geographicBoundingBox_westLongDD
+        {
+            get { return _idInfo_extent_geographicBoundingBox_westLongDD; }
+            set { _idInfo_extent_geographicBoundingBox_westLongDD = value; }
+        }
+        public double idInfo_extent_geographicBoundingBox_eastLongDD
+        {
+            get { return _idInfo_extent_geographicBoundingBox_eastLongDD; }
+            set { _idInfo_extent_geographicBoundingBox_eastLongDD = value; }
+        }
+        public double idInfo_extent_geographicBoundingBox_southLatDD
+        {
+            get { return _idInfo_extent_geographicBoundingBox_southLatDD; }
+            set { _idInfo_extent_geographicBoundingBox_southLatDD = value; }
+        }
+        public double idInfo_extent_geographicBoundingBox_northLatDD
+        {
+            get { return _idInfo_extent_geographicBoundingBox_northLatDD; }
+            set { _idInfo_extent_geographicBoundingBox_northLatDD = value; }
+        }
 
-        //gmd:MD_Metadata or gmi:MI_Metadata
-        //<gmd:language>
-        ////<gmd:characterSet> *From more complete Record
-        //<gmd:hierarchyLevel>
-        //<gmd:contact>
-        //<gmd:dateStamp>
-        //<gmd:metadataStandardName>
-        //<gmd:metadataStandardVersion>
-        ////<gmd:spatialRepresentationInfo>*repeated
-        ////<gmd:referenceSystemInfo>*repeated
-        //<gmd:identificationInfo>
+       
         ////<gmd:contentInfo>
         //<gmd:distributionInfo>
         ////<gmd:dataQualityInfo>
@@ -252,6 +267,12 @@ namespace EmeLibrary
                 kwPlaceList = returnListFromKeywordSection(IsoNodeXpaths.idInfo_keywordsPlaceXpath, "./*[local-name()='MD_Keywords']/*[local-name()='keyword']");
                 kwUserList = returnListFromKeywordSection(IsoNodeXpaths.idInfo_keywordsUserXpath, "./*[local-name()='MD_Keywords']/*[local-name()='keyword']");
                 kwIsoTopicCatList = returnListFromKeywordSection(IsoNodeXpaths.idInfo_keywordsIsoTopicCategoryXpath, "./*[local-name()='MD_TopicCategoryCode']");
+                
+                _idInfo_extent_geographicBoundingBox_eastLongDD = returnInnerTextfromNodeAsDouble(IsoNodeXpaths.idInfo_extent_geographicBoundingBox_eastLongDDXpath);
+                _idInfo_extent_geographicBoundingBox_westLongDD = returnInnerTextfromNodeAsDouble(IsoNodeXpaths.idInfo_extent_geographicBoundingBox_westLongDDXpath);
+                _idInfo_extent_geographicBoundingBox_northLatDD= returnInnerTextfromNodeAsDouble(IsoNodeXpaths.idInfo_extent_geographicBoundingBox_northLatDDXpath);
+                _idInfo_extent_geographicBoundingBox_southLatDD = returnInnerTextfromNodeAsDouble(IsoNodeXpaths.idInfo_extent_geographicBoundingBox_southLatDDXpath);
+
             }
             //****************Testing
             //constructMI_MetadataMarkUp();
@@ -298,6 +319,16 @@ namespace EmeLibrary
                 s = (singleNode != null) ? singleNode.InnerText : "";
             }
             return s;
+        }
+        private double returnInnerTextfromNodeAsDouble(string XpathToSingleNode)
+        {
+            double dd = 0;
+            if (inboundMetadataRecord.DocumentElement.SelectSingleNode(XpathToSingleNode) != null)
+            {
+                XmlNode singleNode = inboundMetadataRecord.DocumentElement.SelectSingleNode(XpathToSingleNode).FirstChild;
+                bool tf = double.TryParse(singleNode.InnerText,out dd);
+            }
+            return dd;
         }
         /// <summary>
         /// Gets the list of keywords from the Parent keyword section.  Keywords can occur in several places and the 
@@ -435,16 +466,21 @@ namespace EmeLibrary
             //Re-construct entire XML document to ensure proper structure
             //Document order determined by template Metadata record.  Each main section will be stubbed in
             outboundMetadataRecord = new XmlDocument();
+            //outboundMetadataRecord.PreserveWhitespace = false;
+            
             
             //Clone Node From Template; then insert into outgoing XmlDoc
-            XmlNode templateRecordRoot = templateMetadataRecord.DocumentElement;
+            XmlNode templateRecordRoot = templateMetadataRecord.DocumentElement;            
             XmlNode clonedNode = templateRecordRoot.CloneNode(false);
-            XmlNode cloneDeclaration = templateMetadataRecord.DocumentElement.ParentNode.FirstChild.CloneNode(false);//.FirstChild.CloneNode(false);
-
-            XmlNode cloneImportDec = outboundMetadataRecord.ImportNode(cloneDeclaration, true);
-            outboundMetadataRecord.AppendChild(cloneImportDec);
             XmlNode cloneImport = outboundMetadataRecord.ImportNode(clonedNode, true);
             outboundMetadataRecord.AppendChild(cloneImport);
+
+            ////Having Strange problems when I insert the xmlDeclaration.  Leaving it out for now.
+            ////Might need to create and ignore BOM
+            //XmlDeclaration xdec = outboundMetadataRecord.CreateXmlDeclaration("1.0","UTF-8", null);                        
+            //XmlElement xEml = outboundMetadataRecord.DocumentElement;
+            //outboundMetadataRecord.InsertBefore(xdec, xEml);
+            
             #region Code to create empty shell of Iso record
             XmlNodeList nodelist = templateMetadataRecord.DocumentElement.ChildNodes;
             foreach (XmlNode n in nodelist)
@@ -484,9 +520,13 @@ namespace EmeLibrary
             constructChildNodeUnderParent(outboundMetadataRecord.DocumentElement, "./*[local-name()='metadataStandardName']",null,false,true,true);
             constructChildNodeUnderParent(outboundMetadataRecord.DocumentElement, "./*[local-name()='metadataStandardVersion']",null,false,true,true);
             
-            //Section 16 identificationInformation Section:  title, abstract, purpose, keywords, etc.
+            //Section 16 identificationInfo Section:  title, abstract, purpose, keywords, etc.
             constructIdInfo_MD_DataIdentificationSection();
-                       
+            
+            //Section 18 distributionInfo Section
+           
+            //constructDistInfo_MD_Distribution
+
             //Clean up the document and remove empty nodes under the root node
             XmlNodeList emptyNodes = outboundMetadataRecord.DocumentElement.ChildNodes;
             for (int ii = emptyNodes.Count -1; ii >= 0; ii--)
@@ -494,244 +534,21 @@ namespace EmeLibrary
                 if (emptyNodes[ii].HasChildNodes==false) { emptyNodes[ii].ParentNode.RemoveChild(emptyNodes[ii]); }
             }
 
-            outboundMetadataRecord.Save(@"C:\Data\EME\testWriteMetaData\testCommonCoreRecordFromGeoportal-2vJUNK.xml");
+            outboundMetadataRecord.PreserveWhitespace = false;            
+            //Used this to insert the XML Declaration without BOM (byte order mark)
+            XmlTextWriter xw = new XmlTextWriter(@"C:\Data\EME\testWriteMetaData\testCommonCoreRecordFromGeoportal-2vJUNK.xml", new UTF8Encoding(false));
+            xw.Formatting = Formatting.Indented;
+            outboundMetadataRecord.Save(xw);
             
         }
 
-        /// <summary>
-        /// When deleting elements this recursively removes empty parent nodes including the node that is passed into this method.
-        /// </summary>
-        /// <param name="node"></param>
-        private void removeEmptyParentNodes(XmlNode node)
-        {
-            if (node.NodeType == XmlNodeType.Document) { return; }
-            else if (!node.HasChildNodes)
-            {
-                XmlNode pnode = node.ParentNode;
-                node.ParentNode.RemoveChild(node);
-                if (pnode.ParentNode != null)
-                {
-                    removeEmptyParentNodes(pnode);
-                }
-            }
-        }
         
-        ///// <summary>
-        ///// This appears to only insert under the root node.  Will copy an element from the template based on the Xpath and Append to end of outbound xml Doc
-        ///// or replaced the existing node.  This will not insert a new childnode without a deep clone of all 
-        ///// child nodes.
-        ///// </summary>
-        ///// <param name="xpathToElementToCopy"></param>
-        ///// <param name="deepClone">True = deep clone</param>
-        //private void constructSimpleElementTemplateCopy(string xpathToElementToCopy, bool deepClone, bool replaceExistingNode)
-        //{
-        //    XmlNode nodeFromTemplateRecord = templateMetadataRecord.DocumentElement.SelectSingleNode(xpathToElementToCopy).CloneNode(deepClone);                        
-        //    XmlNode nodeImporter = outboundMetadataRecord.ImportNode(nodeFromTemplateRecord, true);
-        //    //outboundMetadataRecord.DocumentElement.AppendChild(nodeImporter);
-        //    if (replaceExistingNode == true)
-        //    {
-        //        XmlNode nodeFromOutBoundDocToReplace = outboundMetadataRecord.DocumentElement.SelectSingleNode(xpathToElementToCopy);
-        //        nodeFromOutBoundDocToReplace.ParentNode.ReplaceChild(nodeImporter, nodeFromOutBoundDocToReplace);
-        //    }
-        //    else
-        //    {
-        //        outboundMetadataRecord.DocumentElement.AppendChild(nodeImporter);//This only inserts under root.  Need node ref to parent
-                
-        //    }
-        //}
-        //private void constructSimpleElement(string elementValue, string xpathToSimpleElement, bool replaceExistingNode)
-        //{
-        //    XmlNode nodeFromTemplateRecord = templateMetadataRecord.DocumentElement.SelectSingleNode(xpathToSimpleElement).CloneNode(true);
-        //    nodeFromTemplateRecord.FirstChild.InnerText = elementValue;            
-        //    XmlNode nodeImporter = outboundMetadataRecord.ImportNode(nodeFromTemplateRecord, true);
-        //    if (replaceExistingNode == true)
-        //    {
-        //        XmlNode nodeFromOutBoundDocToReplace = outboundMetadataRecord.DocumentElement.SelectSingleNode(xpathToSimpleElement);
-        //        nodeFromOutBoundDocToReplace.ParentNode.ReplaceChild(nodeImporter, nodeFromOutBoundDocToReplace);
-        //    }
-        //    else
-        //    {
-        //        outboundMetadataRecord.DocumentElement.AppendChild(nodeImporter);
-        //        //outboundParentNode.AppendChild(nodeImporter);
-        //    }
-            
-        //}
-        ///// <summary>
-        ///// Codelist elements need the codelist url, codelistValue and innerText (same as codelistValue)
-        ///// *codeSpace value optional and not included for simplicity since it is going to be deprecated in 19115-1
-        ///// </summary>
-        ///// <param name="codelistValue"></param>
-        ///// <param name="xpathToElement"></param>
-        //private void constructSimpleElementWithCodeList(string codelistValue, string xpathToElement, bool replaceExistingNode)
-        //{
-        //    XmlNode nodeFromTemplateRecord = templateMetadataRecord.DocumentElement.SelectSingleNode(xpathToElement).CloneNode(true);
-        //    nodeFromTemplateRecord.FirstChild.InnerText = codelistValue;
-        //    nodeFromTemplateRecord.FirstChild.Attributes["codeListValue"].Value = codelistValue;
-        //    XmlNode nodeImporter = outboundMetadataRecord.ImportNode(nodeFromTemplateRecord, true);
-        //    //outboundMetadataRecord.DocumentElement.AppendChild(nodeImporter);
-        //    if (replaceExistingNode == true)
-        //    {
-        //        XmlNode nodeFromOutBoundDocToReplace = outboundMetadataRecord.DocumentElement.SelectSingleNode(xpathToElement);
-        //        nodeFromOutBoundDocToReplace.ParentNode.ReplaceChild(nodeImporter, nodeFromOutBoundDocToReplace);
-        //    }
-        //    else
-        //    {
-        //        outboundMetadataRecord.DocumentElement.AppendChild(nodeImporter);
-        //    }
-
-        //}
-
-        private void construct_CI_DateSection(XmlNode outboundParentNode, string dateValue, string dateTypeCodeListValue, string XpathToTemplateCI_DateSection)
-        {
-            XmlNode nodeFromTemplateRecord = templateMetadataRecord.DocumentElement.SelectSingleNode(XpathToTemplateCI_DateSection).CloneNode(true);
-
-            nodeFromTemplateRecord.FirstChild.SelectSingleNode("./*[local-name()='date']").FirstChild.InnerText = dateValue;
-            nodeFromTemplateRecord.FirstChild.SelectSingleNode("./*[local-name()='dateType']").FirstChild.InnerText = dateTypeCodeListValue;
-            nodeFromTemplateRecord.FirstChild.SelectSingleNode("./*[local-name()='dateType']").FirstChild.Attributes["codeListValue"].Value = dateTypeCodeListValue;
-            
-            XmlNode nodeImporter = outboundMetadataRecord.ImportNode(nodeFromTemplateRecord, true);
-            outboundParentNode.AppendChild(nodeImporter);
         
-        }
-
-        private void constructCI_ResponsiblePartyMarkUp(List<CI_ResponsibleParty> CI_ResponsiblePartyList, string xpathToCI_ResponsiblePartySection)
-        {
-            //*This is a repeating section.  Grab one from the template and then repeat for each object in the list
-            //1. Grab the correct CI_RP section from the template metadata record
-            //2. Loop thru each sub-element and add the values.  Handle Codelist values
-            //3. Remove any un-populated elements (remove *template*)
-            //4. Append into the outgoing record.  **This assumes there are not nodes after this section.
-            //XmlNodeList nodeListforCI_RpSection; // = templateMetadataRecord.SelectSingleNode            
-            int i = 0;//use as insertion index for repeated sections.
-            foreach (CI_ResponsibleParty rpObject in CI_ResponsiblePartyList)
-            {
-                XmlNode responsiblePartySectionTemplate = templateMetadataRecord.DocumentElement.SelectSingleNode(xpathToCI_ResponsiblePartySection).CloneNode(true);
-                //XmlNodeList nodeListforCI_RpSection = responsiblePartySectionTemplate.                
-                //CI_ResponsibleParty rp = new CI_ResponsibleParty();
-                object rpobj = rpObject;
-                PropertyInfo[] propInfo2 = rpobj.GetType().GetProperties();
-                //ToDo:  Not sure if we need an Xpath expression List, but if so, we can do that here
-                //responsiblePartySubSectionXpath = new List<string>();
-                foreach (PropertyInfo p in propInfo2)
-                {
-                    string childNodeXpath = ".";
-                    string[] splitby = new string[] { "__" };
-                    string[] nameParts = p.Name.Split(splitby, StringSplitOptions.RemoveEmptyEntries);
-                    foreach (string entry in nameParts)
-                    {
-                        childNodeXpath += "/*[local-name()='" + entry + "']";
-                    }                    
-                    string nodeValue = (p.GetValue(rpObject,null) != null) ? p.GetValue(rpObject,null).ToString() : "";
-                    XmlNode targetNode = responsiblePartySectionTemplate.FirstChild.SelectSingleNode(childNodeXpath);
-                    if (targetNode != null)
-                    {
-                        //If the value is null or empty from the class then remove it except for rolecode
-                        if (nodeValue == "" && p.Name != "role")
-                        {
-                            //Delete the node
-                            //targetNode.ParentNode.RemoveChild(targetNode);
-                            targetNode.RemoveAll();
-                            removeEmptyParentNodes(targetNode);
-                        }
-                        else
-                        {
-                            if (targetNode.HasChildNodes == true) { targetNode.FirstChild.InnerText = nodeValue; }
-                            else { targetNode.InnerText = nodeValue; }
-                            if (p.Name == "role") { targetNode.FirstChild.Attributes["codeListValue"].Value = nodeValue; }
-                            
-                        }
-                    }
-                    
-                }
-                //All values Set.  Now insert into the outgoing document
-                //Based on the template record, there should be at least 1 occurance of a contact node.  The first CI_RP list item
-                //will replace the contents of that node.  Additional list items will be inserted after the last inserted item.  THis 
-                //is tracked by incrementing the int i variable
-                                
-                XmlNode firstCiRpSection = outboundMetadataRecord.DocumentElement.SelectSingleNode(xpathToCI_ResponsiblePartySection);                
-                XmlNode ci_rpSectionImporter = outboundMetadataRecord.ImportNode(responsiblePartySectionTemplate, true);
-                if (i == 0)
-                {
-                    firstCiRpSection.ParentNode.ReplaceChild(ci_rpSectionImporter, firstCiRpSection);
-                }
-                else
-                {
-                    //Append additional occurances after the last inserted
-                    XmlNode lastInsertedNodeRef = outboundMetadataRecord.DocumentElement.SelectNodes(xpathToCI_ResponsiblePartySection)[i - 1];
-                    firstCiRpSection.ParentNode.InsertAfter(ci_rpSectionImporter, lastInsertedNodeRef);
-
-                }
-                XmlNode ciSection = outboundMetadataRecord.DocumentElement.SelectNodes(xpathToCI_ResponsiblePartySection)[i];                
-                               
-                
-                i++;
-            }
-
-        }
-
-           
-        //private void constructChildNodeUnderParent(XmlNode outboundParentNode, string xpathToElementToCopy, bool deepClone, bool replaceExistingNode)
-        //{
-        //    XmlNode nodeFromTemplateRecord = templateMetadataRecord.DocumentElement.SelectSingleNode(xpathToElementToCopy).CloneNode(deepClone);            
-        //    XmlNode nodeImporter = outboundMetadataRecord.ImportNode(nodeFromTemplateRecord, true);
-        //    if (replaceExistingNode == true)
-        //    {
-        //        XmlNode nodeFromOutBoundDocToReplace = outboundMetadataRecord.DocumentElement.SelectSingleNode(xpathToElementToCopy);
-        //        nodeFromOutBoundDocToReplace.ParentNode.ReplaceChild(nodeImporter, nodeFromOutBoundDocToReplace);
-        //    }
-        //    else
-        //    {
-        //        outboundParentNode.AppendChild(nodeImporter);
-        //    }
-        //}
-        
-        /// <summary>
-        /// Clone a node from template and insert an element value if present.  Pass in null to skip adding element value
-        /// and just create a simple clone. 
-        /// </summary>
-        /// <param name="outboundParentNode">A reference to the insertion point for the node (parent node)</param>
-        /// <param name="xpathToElementToCopy"></param>
-        /// <param name="elementValue">null value will skip adding the elment value.  All other values will be added</param>
-        /// <param name="populateCodeListValue"></param>
-        /// <param name="deepClone"></param>
-        /// <param name="replaceExistingNode">false will append to the end</param>
-        private void constructChildNodeUnderParent(
-            XmlNode outboundParentNode, string xpathToElementToCopy, string elementValue, bool populateCodeListValue, bool deepClone, bool replaceExistingNode)
-        {
-            XmlNode nodeFromTemplateRecord = templateMetadataRecord.DocumentElement.SelectSingleNode(xpathToElementToCopy).CloneNode(deepClone);
-            if (elementValue != null) { nodeFromTemplateRecord.FirstChild.InnerText = elementValue; }
-            if (populateCodeListValue == true) { nodeFromTemplateRecord.FirstChild.Attributes["codeListValue"].Value = elementValue; }
-
-            XmlNode nodeImporter = outboundMetadataRecord.ImportNode(nodeFromTemplateRecord, true);
-            if (replaceExistingNode == true)
-            {
-                XmlNode nodeFromOutBoundDocToReplace = outboundMetadataRecord.DocumentElement.SelectSingleNode(xpathToElementToCopy);
-                nodeFromOutBoundDocToReplace.ParentNode.ReplaceChild(nodeImporter, nodeFromOutBoundDocToReplace);
-            }
-            else
-            {
-                outboundParentNode.AppendChild(nodeImporter);
-            }            
-        }
-
-        /// <summary>
-        /// Clone a node by passing in references to the target parent node and template node
-        /// The node will be appended to the end of the outboundParentNode
-        /// </summary>
-        /// <param name="outboundParentNode"></param>
-        /// <param name="nodeFromTemplateToClone"></param>
-        /// <param name="deepClone"></param>
-        private void constructChildNodeUnderParent(XmlNode outboundParentNode, XmlNode nodeFromTemplateToClone, bool deepClone)
-        {
-            XmlNode nodeFromTemplateRecord = nodeFromTemplateToClone.CloneNode(deepClone);
-            XmlNode nodeImporter = outboundMetadataRecord.ImportNode(nodeFromTemplateRecord, true);
-
-            outboundParentNode.AppendChild(nodeImporter);
-        }    
         private void constructIdInfo_MD_DataIdentificationSection()
         {
             //Build this section in order.  Leave out elments that are not required if no content                        
             //Clone the MD_DataIdentification and insert and then start appending each subsection
+            //identificationInfo/MD_DataIdentification | SV_ServiceIdentification (inherit and extend MD_Data???)
 
             string MD_dataInfoNodeXpath ="./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']";
             constructChildNodeUnderParent(
@@ -832,9 +649,35 @@ namespace EmeLibrary
             XmlNode isoTopicTemplateSection = constructIsoTopicCategorySection();            
             constructChildNodeUnderParent(outbound_md_DataIdSection, isoTopicTemplateSection, true);
 
-            //Sections 20 ToDo: Extent, spatial and temporal                       
+            //Sections 20 ToDo: Extent, spatial and temporal
+            //ToDo:  Handle null values. EPA makes this required, so make required?           
+
+            //constructChildNodeUnderParent(
+            //   outbound_md_DataIdSection,
+            //   "./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='extent']/*[local-name()='EX_Extent']",
+            //   null, false, false, false);
+            XmlNode extentNodeFromTemplate = templateMetadataRecord.DocumentElement.SelectSingleNode(
+                "./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='extent']");//*[local-name()='EX_Extent']");
+            XmlNode extentNodeOut = outbound_md_DataIdSection;//.SelectSingleNode("./*[local-name()='extent']");
+            constructChildNodeUnderParent(extentNodeOut, extentNodeFromTemplate, false); //extent
+            constructChildNodeUnderParent(extentNodeOut.LastChild, extentNodeFromTemplate.FirstChild, false); //EX_Extent
+            constructChildNodeUnderParent(extentNodeOut.LastChild.FirstChild, extentNodeFromTemplate.FirstChild.FirstChild, true); //geographicElement
+
+            outboundMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.idInfo_extent_geographicBoundingBox_eastLongDDXpath).FirstChild.InnerText =
+                _idInfo_extent_geographicBoundingBox_eastLongDD.ToString();
+            outboundMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.idInfo_extent_geographicBoundingBox_westLongDDXpath).FirstChild.InnerText =
+                _idInfo_extent_geographicBoundingBox_westLongDD.ToString();
+            outboundMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.idInfo_extent_geographicBoundingBox_northLatDDXpath).FirstChild.InnerText =
+                _idInfo_extent_geographicBoundingBox_northLatDD.ToString();
+            outboundMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.idInfo_extent_geographicBoundingBox_southLatDDXpath).FirstChild.InnerText =
+                _idInfo_extent_geographicBoundingBox_southLatDD.ToString();
+
+            //temporal
+            constructChildNodeUnderParent(extentNodeOut.LastChild.FirstChild, extentNodeFromTemplate.FirstChild.LastChild, true);
             
-            #region test area
+            
+            #region test area for checking for missing parent nodes and inserting the missing nodes
+
             //List<XmlNode> importNodeList = new List<XmlNode>();
             ////XPathNavigator xpNav = templateMetadataRecord.DocumentElement.SelectSingleNode("./*[local-name()='identificationInfo']").CreateNavigator();
             
@@ -862,30 +705,102 @@ namespace EmeLibrary
             //    outbound_md_DataIdSection = outbound_md_DataIdSection.FirstChild;
             //}
             
-            //idInfo_citation_title
-
-            //XmlNode j = outboundMetadataRecord.CreateElement("gmd:MD_DataIdentification"); //This Is not adding namespaces
-            //outboundMetadataRecord.DocumentElement.SelectSingleNode("./*[local-name()='identificationInfo']").AppendChild(j);
-
-            //XmlNode keywordsEpaTemplateSection = constructKeywordSection(this.kwEpaList, IsoNodeXpaths.IdInfo_keywordsEpaSectionXpath);
-            //XmlNode kwImporter = outboundMetadataRecord.ImportNode(keywordsEpaTemplateSection, true);
-            //outboundMetadataRecord.DocumentElement.SelectSingleNode
-            //    ("./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']").AppendChild(kwImporter);
                                                 
-            //identificationInfo/MD_DataIdentification | SV_ServiceIdentification (inherit and extend MD_Data???)
-            //citation 1
-            //abstract 1
-            //purpose 0-1
-            //
-            //pointOfContact
-            //descriptiveKeywords
-            //language 1..*
-            //topicCategory
-            //Need to check for each node, Add to tree if needed, then add markup (innerXml)
+            
+            
                        
             #endregion
             
         }
+
+
+        private void construct_CI_DateSection(XmlNode outboundParentNode, string dateValue, string dateTypeCodeListValue, string XpathToTemplateCI_DateSection)
+        {
+            XmlNode nodeFromTemplateRecord = templateMetadataRecord.DocumentElement.SelectSingleNode(XpathToTemplateCI_DateSection).CloneNode(true);
+
+            nodeFromTemplateRecord.FirstChild.SelectSingleNode("./*[local-name()='date']").FirstChild.InnerText = dateValue;
+            nodeFromTemplateRecord.FirstChild.SelectSingleNode("./*[local-name()='dateType']").FirstChild.InnerText = dateTypeCodeListValue;
+            nodeFromTemplateRecord.FirstChild.SelectSingleNode("./*[local-name()='dateType']").FirstChild.Attributes["codeListValue"].Value = dateTypeCodeListValue;
+
+            XmlNode nodeImporter = outboundMetadataRecord.ImportNode(nodeFromTemplateRecord, true);
+            outboundParentNode.AppendChild(nodeImporter);
+
+        }
+
+        private void constructCI_ResponsiblePartyMarkUp(List<CI_ResponsibleParty> CI_ResponsiblePartyList, string xpathToCI_ResponsiblePartySection)
+        {
+            //*This is a repeating section.  Grab one from the template and then repeat for each object in the list
+            //1. Grab the correct CI_RP section from the template metadata record
+            //2. Loop thru each sub-element and add the values.  Handle Codelist values
+            //3. Remove any un-populated elements (remove *template*)
+            //4. Append into the outgoing record.  **This assumes there are not nodes after this section.
+            //XmlNodeList nodeListforCI_RpSection; // = templateMetadataRecord.SelectSingleNode            
+            int i = 0;//use as insertion index for repeated sections.
+            foreach (CI_ResponsibleParty rpObject in CI_ResponsiblePartyList)
+            {
+                XmlNode responsiblePartySectionTemplate = templateMetadataRecord.DocumentElement.SelectSingleNode(xpathToCI_ResponsiblePartySection).CloneNode(true);
+                //XmlNodeList nodeListforCI_RpSection = responsiblePartySectionTemplate.                
+                //CI_ResponsibleParty rp = new CI_ResponsibleParty();
+                object rpobj = rpObject;
+                PropertyInfo[] propInfo2 = rpobj.GetType().GetProperties();
+                //ToDo:  Not sure if we need an Xpath expression List, but if so, we can do that here
+                //responsiblePartySubSectionXpath = new List<string>();
+                foreach (PropertyInfo p in propInfo2)
+                {
+                    string childNodeXpath = ".";
+                    string[] splitby = new string[] { "__" };
+                    string[] nameParts = p.Name.Split(splitby, StringSplitOptions.RemoveEmptyEntries);
+                    foreach (string entry in nameParts)
+                    {
+                        childNodeXpath += "/*[local-name()='" + entry + "']";
+                    }
+                    string nodeValue = (p.GetValue(rpObject, null) != null) ? p.GetValue(rpObject, null).ToString() : "";
+                    XmlNode targetNode = responsiblePartySectionTemplate.FirstChild.SelectSingleNode(childNodeXpath);
+                    if (targetNode != null)
+                    {
+                        //If the value is null or empty from the class then remove it except for rolecode
+                        if (nodeValue == "" && p.Name != "role")
+                        {
+                            //Delete the node
+                            //targetNode.ParentNode.RemoveChild(targetNode);
+                            targetNode.RemoveAll();
+                            removeEmptyParentNodes(targetNode);
+                        }
+                        else
+                        {
+                            if (targetNode.HasChildNodes == true) { targetNode.FirstChild.InnerText = nodeValue; }
+                            else { targetNode.InnerText = nodeValue; }
+                            if (p.Name == "role") { targetNode.FirstChild.Attributes["codeListValue"].Value = nodeValue; }
+
+                        }
+                    }
+
+                }
+                //All values Set.  Now insert into the outgoing document
+                //Based on the template record, there should be at least 1 occurance of a contact node.  The first CI_RP list item
+                //will replace the contents of that node.  Additional list items will be inserted after the last inserted item.  THis 
+                //is tracked by incrementing the int i variable
+
+                XmlNode firstCiRpSection = outboundMetadataRecord.DocumentElement.SelectSingleNode(xpathToCI_ResponsiblePartySection);
+                XmlNode ci_rpSectionImporter = outboundMetadataRecord.ImportNode(responsiblePartySectionTemplate, true);
+                if (i == 0)
+                {
+                    firstCiRpSection.ParentNode.ReplaceChild(ci_rpSectionImporter, firstCiRpSection);
+                }
+                else
+                {
+                    //Append additional occurances after the last inserted
+                    XmlNode lastInsertedNodeRef = outboundMetadataRecord.DocumentElement.SelectNodes(xpathToCI_ResponsiblePartySection)[i - 1];
+                    firstCiRpSection.ParentNode.InsertAfter(ci_rpSectionImporter, lastInsertedNodeRef);
+
+                }
+                XmlNode ciSection = outboundMetadataRecord.DocumentElement.SelectNodes(xpathToCI_ResponsiblePartySection)[i];
+
+
+                i++;
+            }
+
+        }                   
 
         private XmlNode constructIsoTopicCategorySection()
         {                        
@@ -949,47 +864,73 @@ namespace EmeLibrary
 
         }
 
-        //public void constructEpaKeywordSection()
-        //{
-        //    //ToDo:  Open a template metadata record and clone the generic keyword section and add EPA Specific attributes and keywords.
-        //    // The template would be the source for xml Fragments.
-        //    // Another approach could be having a xml Fragment
+        #region XML Utility Functions
 
-        //    //List<string> test = new List<string>();
-        //    //test.Add("Air");
-        //    //test.Add("Biology");
-        //    //test.Add("JunkString");
-        //    string kwMarkUp = "";
-        //    //foreach (string s in test)
-        //    foreach(string s in kwEpaList)
-        //    {
-        //        kwMarkUp += @"<gmd:keyword><gco:CharacterString>" + s + @"</gco:CharacterString></gmd:keyword>";
-        //    }
+        /// <summary>
+        /// When deleting elements this recursively removes empty parent nodes including the node that is passed into this method.
+        /// </summary>
+        /// <param name="node"></param>
+        private void removeEmptyParentNodes(XmlNode node)
+        {
+            if (node.NodeType == XmlNodeType.Document) { return; }
+            else if (!node.HasChildNodes)
+            {
+                XmlNode pnode = node.ParentNode;
+                node.ParentNode.RemoveChild(node);
+                if (pnode.ParentNode != null)
+                {
+                    removeEmptyParentNodes(pnode);
+                }
+            }
+        }               
 
-        //    //xdocDescriptiveKw.DocumentElement.FirstChild.PrependChild(xdocKeywordFrag);
-        //    XmlNode xn = inboundMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.IdInfo_keywordsEpaSectionXpath, isoNsManager);
-        //    xn.RemoveAll();                       
-        //    xn.InnerXml = epaDescriptiveKeywordsSectionSnippet1 + kwMarkUp + epaDescriptiveKeywordsSectionSnippet2;
-            
-        //    //targetRecord.Save(@"C:\Users\dspinosa\Desktop\testMetadata\DCAT\testCommonCoreRecordFromGeoportal-2vJUNK.xml");
-        //    //Console.WriteLine("sdfd");                    
-            
-        //}
+        /// <summary>
+        /// Clone a node from template and insert an element value if present.  Pass in null to skip adding element value
+        /// and just create a simple clone. 
+        /// </summary>
+        /// <param name="outboundParentNode">A reference to the insertion point for the node (parent node)</param>
+        /// <param name="xpathToElementToCopy"></param>
+        /// <param name="elementValue">null value will skip adding the elment value.  All other values will be added</param>
+        /// <param name="populateCodeListValue">if true then value in elementValue will populate codelist</param>
+        /// <param name="deepClone">true to copy all child nodes</param>
+        /// <param name="replaceExistingNode">false will append to the end</param>
+        private void constructChildNodeUnderParent(
+            XmlNode outboundParentNode, string xpathToElementToCopy, string elementValue, bool populateCodeListValue, bool deepClone, bool replaceExistingNode)
+        {
+            XmlNode nodeFromTemplateRecord = templateMetadataRecord.DocumentElement.SelectSingleNode(xpathToElementToCopy).CloneNode(deepClone);
+            if (elementValue != null) { nodeFromTemplateRecord.FirstChild.InnerText = elementValue; }
+            if (populateCodeListValue == true) { nodeFromTemplateRecord.FirstChild.Attributes["codeListValue"].Value = elementValue; }
 
-        //private void constructPlaceKeywordSection()
-        //{
-        //    string kwMarkUp = "";
-        //    foreach (string s in kwPlaceList)
-        //    {
-        //        kwMarkUp += "<gmd:keyword><gco:CharacterString>" + s + @"</gco:CharacterString></gmd:keyword>";
-        //    }
-        //    XmlNode xn = inboundMetadataRecord.SelectSingleNode(keywordsPlaceSectionXpath, isoNsManager);
-        //    xn.RemoveAll();
-        //    xn.InnerXml = keywordsPlaceBeginSnippet + kwMarkUp + keywordsPlaceEndSnippet;
+            XmlNode nodeImporter = outboundMetadataRecord.ImportNode(nodeFromTemplateRecord, true);
+            if (replaceExistingNode == true)
+            {
+                XmlNode nodeFromOutBoundDocToReplace = outboundMetadataRecord.DocumentElement.SelectSingleNode(xpathToElementToCopy);
+                nodeFromOutBoundDocToReplace.ParentNode.ReplaceChild(nodeImporter, nodeFromOutBoundDocToReplace);
+            }
+            else
+            {
+                outboundParentNode.AppendChild(nodeImporter);
+            }
+        }
 
-        
-        
-        
+        /// <summary>
+        /// Clone a node by passing in references to the target parent node and template node
+        /// The node will be appended to the end of the outboundParentNode
+        /// </summary>
+        /// <param name="outboundParentNode">reference to the target parent node</param>
+        /// <param name="nodeFromTemplateToClone">child node to copy and append under parent</param>
+        /// <param name="deepClone">true for a deep clone</param>
+        private void constructChildNodeUnderParent(XmlNode outboundParentNode, XmlNode nodeFromTemplateToClone, bool deepClone)
+        {
+            XmlNode nodeFromTemplateRecord = nodeFromTemplateToClone.CloneNode(deepClone);
+            XmlNode nodeImporter = outboundMetadataRecord.ImportNode(nodeFromTemplateRecord, true);
+
+            outboundParentNode.AppendChild(nodeImporter);
+        }
+
+        #endregion
+
+
         static void ValidationCallback(object sender, ValidationEventArgs args)
         {
             if (args.Severity == XmlSeverityType.Warning)
@@ -998,68 +939,11 @@ namespace EmeLibrary
                 Console.Write("ERROR: ");
 
             Console.WriteLine(args.Message);
-        }
-
-        //public void miToTexttest()
-        //{            
-        //    identificationInfoMD_DataIdentificationDescriptiveKeywords testDkySection = new identificationInfoMD_DataIdentificationDescriptiveKeywords();
-        //    testDkySection.MD_Keywords = new identificationInfoMD_DataIdentificationDescriptiveKeywordsMD_Keywords();
-        //    testDkySection.MD_Keywords.type.MD_KeywordTypeCode.codeList = "";
-        //    testDkySection.MD_Keywords.type.MD_KeywordTypeCode.codeListValue = "";
-        //    testDkySection.MD_Keywords.type.MD_KeywordTypeCode.codeSpace = "";
-        //    testDkySection.MD_Keywords.type.MD_KeywordTypeCode.Value = "theme";
-        //    testDkySection.MD_Keywords.thesaurusName.CI_Citation.title.CharacterString = "EPA GIS Keyword Thesaurus";
-        //    testDkySection.MD_Keywords.thesaurusName.CI_Citation.date.nilReason = "unknown";
-            
-        //    //identificationInfoMD_DataIdentificationDescriptiveKeywordsMD_KeywordsKeyword[] junk2 ; //=
-        //        //new identificationInfoMD_DataIdentificationDescriptiveKeywordsMD_KeywordsKeyword[];
-            
-
-        //    identificationInfoMD_DataIdentificationDescriptiveKeywordsMD_KeywordsKeyword kword = 
-        //        new identificationInfoMD_DataIdentificationDescriptiveKeywordsMD_KeywordsKeyword();
-
-        //    List<identificationInfoMD_DataIdentificationDescriptiveKeywordsMD_KeywordsKeyword> kwordlist =
-        //        new List<identificationInfoMD_DataIdentificationDescriptiveKeywordsMD_KeywordsKeyword>();
-
-        //    //List<identificationInfoMD_DataIdentificationDescriptiveKeywordsMD_KeywordsKeyword> junk =
-        //    //    new List<identificationInfoMD_DataIdentificationDescriptiveKeywordsMD_KeywordsKeyword>();
-        //    //identificationInfoMD_DataIdentificationDescriptiveKeywordsMD_KeywordsKeyword[] junk2; //= junk;
-                        
-        //    kword.CharacterString = "Air";
-        //    kwordlist.Add(kword);
-        //    kword.CharacterString = "Biology";
-        //    kwordlist.Add(kword);
-            
-        //    //kword.CharacterString = "afdsa";
-        //    //junk.Add(kword);
-        //    //junk.Add(kword);
-        //    //string j = "";
-        //    //junk.Add("sfds");
-        //    //junk.Add(
-
-        //    testDkySection.MD_Keywords.keyword = kwordlist.ToArray();
-
-        //    //XmlSerializer ds = new XmlSerializer(typeof(MI_Metadata));
-        //    //MI_Metadata mi_metadata = new MI_Metadata();
-        //    //System.IO.TextReader r = new System.IO.StreamReader(filename);//@"C:\Users\dspinosa\Desktop\testMetadata\test19115_2EDG.xml");
-        //    //mi_metadata = (MI_Metadata)ds.Deserialize(r);
-        //    //r.Close();
-        //    string filename = @"C:\Users\dspinosa\Desktop\testMetadata\xxxtestKeyWord.xml";
-        //    XmlSerializer ds = new XmlSerializer(typeof(identificationInfoMD_DataIdentificationDescriptiveKeywords));
-        //    System.IO.FileStream fs = new System.IO.FileStream(filename, System.IO.FileMode.Create);
-        //    System.IO.TextWriter writer = new System.IO.StreamWriter(fs, new UTF8Encoding());
-        //    ds.Serialize(writer, testDkySection);
-        //    writer.Close();
-        //}
+        }        
         
     }
 
-    //public class CI_Citation
-    //{
-    //    public string title { get; set; }
-    //    public CI_Date date { get; set; }
-
-    //}
+    
     public class CI_Date
     {
         public DateTime Date { get; set; }

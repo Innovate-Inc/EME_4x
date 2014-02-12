@@ -37,5 +37,9 @@ namespace EmeLibrary
         public string idInfo_keywordsUserXpath { get; set; }
         //public string IdInfo_keywordsPlaceListXpath { get; set; }
         public string idInfo_keywordsPlaceXpath { get; set; }
+        public string idInfo_extent_geographicBoundingBox_westLongDDXpath { get; set; }
+        public string idInfo_extent_geographicBoundingBox_eastLongDDXpath { get; set; }
+        public string idInfo_extent_geographicBoundingBox_southLatDDXpath { get; set; }
+        public string idInfo_extent_geographicBoundingBox_northLatDDXpath { get; set; }
     }
 }
