@@ -1,0 +1,144 @@
+<?xml version="1.0" standalone="yes"?>
+<emeGUI>
+  <xs:schema id="emeGUI" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="emeControl">
+      <xs:complexType>
+        <xs:sequence>          
+          <xs:element name="controlName">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="50" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+		      <xs:element name="TabNum">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="50" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="FGDC_Def">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="500" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="EPARequirementGuidance">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="500" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="HoverNote">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="500" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>          
+        </xs:sequence>
+      </xs:complexType>
+    </xs:element>
+    <xs:element name="emeGUI" msdata:IsDataSet="true" msdata:MainDataTable="emeControl" msdata:UseCurrentLocale="true" msdata:EnforceConstraints="False">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element ref="emeControl" />
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <emeControl>
+    <controlName>idInfo_citation_Title_lbl</controlName>
+    <TabNum>1</TabNum>
+	  <FGDC_Def></FGDC_Def>
+	  <EPARequirementGuidance></EPARequirementGuidance>
+	  <HoverNote>What to call the data set</HoverNote>  
+  </emeControl>
+  <emeControl>
+    <controlName>idInfo_citation_date_creation_lbl</controlName>
+    <TabNum>1</TabNum>
+    <FGDC_Def></FGDC_Def>
+    <EPARequirementGuidance></EPARequirementGuidance>
+    <HoverNote>When the resource was brought into existence</HoverNote>
+  </emeControl>
+  <emeControl>
+    <controlName>idInfo_citation_date_publication_lbl</controlName>
+    <TabNum>1</TabNum>
+    <FGDC_Def></FGDC_Def>
+    <EPARequirementGuidance></EPARequirementGuidance>
+    <HoverNote>When the resource was issued</HoverNote>
+  </emeControl>
+  <emeControl>
+    <controlName>idInfo_citation_date_revision_lbl</controlName>
+    <TabNum>1</TabNum>
+    <FGDC_Def></FGDC_Def>
+    <EPARequirementGuidance></EPARequirementGuidance>
+    <HoverNote>When the resource was examined or re-examined and improved or amended</HoverNote>
+  </emeControl>
+  <emeControl>
+    <controlName>citatonExpand_lbl</controlName>
+    <TabNum>1</TabNum>
+    <FGDC_Def></FGDC_Def>
+    <EPARequirementGuidance></EPARequirementGuidance>
+    <HoverNote>Who created the resource</HoverNote>
+  </emeControl>
+  <emeControl>
+    <controlName>idInfo_Abstract_lbl</controlName>
+    <TabNum>1</TabNum>
+    <FGDC_Def></FGDC_Def>
+    <EPARequirementGuidance></EPARequirementGuidance>
+    <HoverNote>Brief summary about the data</HoverNote>
+  </emeControl>
+  <emeControl>
+    <controlName>idInfo_Purpose_lbl</controlName>
+    <TabNum>1</TabNum>
+    <FGDC_Def></FGDC_Def>
+    <EPARequirementGuidance></EPARequirementGuidance>
+    <HoverNote>Why was the data set developed</HoverNote>
+  </emeControl>
+  <emeControl>
+    <controlName>pointOfContact_lbl</controlName>
+    <TabNum>1</TabNum>
+    <FGDC_Def></FGDC_Def>
+    <EPARequirementGuidance></EPARequirementGuidance>
+    <HoverNote>Who to contact about the data</HoverNote>
+  </emeControl>
+  <emeControl>
+    <controlName>groupBox1</controlName>
+    <TabNum>1</TabNum>
+    <FGDC_Def></FGDC_Def>
+    <EPARequirementGuidance></EPARequirementGuidance>
+    <HoverNote>Keywords about your data</HoverNote>
+  </emeControl>
+  <emeControl>
+    <controlName>fileIdentifier_lbl</controlName>
+    <TabNum>3</TabNum>
+    <FGDC_Def></FGDC_Def>
+    <EPARequirementGuidance></EPARequirementGuidance>
+    <HoverNote>A value that uniquely identifies this metadata record</HoverNote>
+  </emeControl>
+  <emeControl>
+    <controlName>language_lbl</controlName>
+    <TabNum>3</TabNum>
+    <FGDC_Def></FGDC_Def>
+    <EPARequirementGuidance></EPARequirementGuidance>
+    <HoverNote>Lanquage of the metadata record</HoverNote>
+  </emeControl>
+  <emeControl>
+    <controlName>dateStamp_lbl</controlName>
+    <TabNum>3</TabNum>
+    <FGDC_Def></FGDC_Def>
+    <EPARequirementGuidance></EPARequirementGuidance>
+    <HoverNote>The date that the metadata was last updated</HoverNote>
+  </emeControl>
+  <emeControl>
+    <controlName>metaDataAuthor_lbl</controlName>
+    <TabNum>3</TabNum>
+    <FGDC_Def></FGDC_Def>
+    <EPARequirementGuidance></EPARequirementGuidance>
+    <HoverNote>Autor of the metadata</HoverNote>
+  </emeControl>
+</emeGUI>

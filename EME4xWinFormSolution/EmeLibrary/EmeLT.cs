@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Schema;
 using System.Xml.Serialization;
+using System.IO;
 
 
 namespace EmeLibrary
@@ -28,6 +29,8 @@ namespace EmeLibrary
         public EmeLT()
         {
             InitializeComponent();
+
+            
             
             //Start instance of the eme dataset
             if (Utils1.emeDataSet == null)
@@ -35,7 +38,7 @@ namespace EmeLibrary
                 Utils1.setEmeDataSets();
             }
             bindFormtoEMEdatabases();
-            
+            hoverHelpInit();
             //setDefaultKeywordListBoxSelection(ref  idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey);
             //setDefaultKeywordListBoxSelection(ref idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey);
             //setDefaultKeywordListBoxSelection(ref idinfo_keywords_place_placekt__None___placekey);
@@ -744,8 +747,8 @@ namespace EmeLibrary
             PageController.readFromDB();
 
             //PageController.ElementPopulator(this);
-            
 
+            
         }
 
         private void expander(Panel paneltoExpand)
@@ -888,8 +891,97 @@ namespace EmeLibrary
         {
 
         }
-                
 
+
+        private void dates_for_resources_pnl_Validating(object sender, CancelEventArgs e)
+        {
+            Control ctrl = (Control)sender;
+
+            if(ctrl.Tag.ToString().Contains("required"))
+            {
+                
+                if (ctrl.GetType() == typeof(GroupBox) && ctrl.HasChildren == true)
+                {
+                    int requiredCount = 0;
+                    int index = ctrl.Tag.ToString().IndexOf("required");
+                    string cleanPath = (index < 0)
+                        ? ctrl.Tag.ToString()
+                        : ctrl.Tag.ToString().Remove(index, "required".Length);
+                    requiredCount = Convert.ToInt16(cleanPath);
+
+                    int count = 0; //count that have values
+                    foreach (Control childCrtl in ctrl.Controls)
+                    {
+                        if (childCrtl.Tag ==  ctrl.Tag && childCrtl.Text != string.Empty)
+                        {
+                            count++;
+                        }
+                    }
+                    if (count >= requiredCount)
+                    {
+                        errorProvider1.SetError(ctrl, "");
+                    }
+                    else
+                    {
+                        errorProvider1.SetError(ctrl, "Need atleast " + requiredCount.ToString());
+                    }
+                
+                }
+                else if (ctrl.GetType() == typeof(TextBox))
+                {
+                    if (ctrl.Text == string.Empty)
+                    {
+                        errorProvider1.SetError(ctrl, "This is a required Field");
+                    }
+                    else
+                    {
+                        errorProvider1.SetError(ctrl, "");
+                    }
+                }
+                else if(ctrl.GetType() == typeof(ListBox))
+                {
+                    ListBox lbox = (ListBox)ctrl;
+                    if (lbox.SelectedItems.Count >= 1)
+                    {
+                        errorProvider1.SetError(ctrl, "");
+                    }
+                    else
+                    {
+                        errorProvider1.SetError(ctrl, "Must select at least one");
+                    }
+                }
+            }
+        }
+        /// <summary>
+        /// adds hover tips to 
+        /// </summary>
+        private void hoverHelpInit()
+        {
+
+            DataSet cntrlData = new DataSet();
+            cntrlData.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            cntrlData.ReadXml(Directory.GetCurrentDirectory() + "\\Eme4xSystemFiles\\EMEdb\\emeGUI.xml");
+            cntrlData.DataSetName = "emeGUI";
+            DataTable dTable = new DataTable();
+            dTable = cntrlData.Tables["emeControl"].Select().CopyToDataTable();
+            //DataTable dTable = Utils1.emeDataSet.Tables["emeGUI"].Select().CopyToDataTable();
+
+            
+            //DataTable subTable = Utils1.emeSettingsDataset.Tables["emeControl"].Select().CopyToDataTable();
+            
+            foreach (DataRow dr in dTable.Rows)
+            {
+
+                Control[] ctrl = this.Controls.Find(dr["controlName"].ToString(), true);
+                
+                if (ctrl != null)
+                {
+                    //Console.WriteLine("found");
+                    tooltip1.SetToolTip(ctrl[0], dr["HoverNote"].ToString());
+                }
+               
+            }
+        }
         
     }
 }

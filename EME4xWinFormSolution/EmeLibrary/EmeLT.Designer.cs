@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmeLT));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -167,6 +168,8 @@
             this.button4 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.tooltip1 = new System.Windows.Forms.ToolTip(this.components);
             this.idInfo_citation_citedResponsibleParty = new EmeLibrary.uc_ResponsibleParty();
             this.idInfo_pointOfContact = new EmeLibrary.uc_ResponsibleParty();
             this.contact_CI_ResponsibleParty = new EmeLibrary.uc_ResponsibleParty();
@@ -208,6 +211,7 @@
             this.pointOfContact_Pnl.SuspendLayout();
             this.tabPage6.SuspendLayout();
             this.tabControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -1053,6 +1057,8 @@
             this.idInfo_keywordsIsoTopicCategory.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.idInfo_keywordsIsoTopicCategory.Size = new System.Drawing.Size(303, 143);
             this.idInfo_keywordsIsoTopicCategory.TabIndex = 0;
+            this.idInfo_keywordsIsoTopicCategory.Tag = "required";
+            this.idInfo_keywordsIsoTopicCategory.Validating += new System.ComponentModel.CancelEventHandler(this.dates_for_resources_pnl_Validating);
             // 
             // tpEPA
             // 
@@ -1333,7 +1339,9 @@
             this.dates_for_resources_pnl.Size = new System.Drawing.Size(297, 100);
             this.dates_for_resources_pnl.TabIndex = 0;
             this.dates_for_resources_pnl.TabStop = false;
+            this.dates_for_resources_pnl.Tag = "required1";
             this.dates_for_resources_pnl.Text = "Dates for Resource";
+            this.dates_for_resources_pnl.Validating += new System.ComponentModel.CancelEventHandler(this.dates_for_resources_pnl_Validating);
             // 
             // idInfo_citation_date_revision_dtP
             // 
@@ -1399,6 +1407,7 @@
             this.idInfo_citation_date_creation.ReadOnly = true;
             this.idInfo_citation_date_creation.Size = new System.Drawing.Size(100, 20);
             this.idInfo_citation_date_creation.TabIndex = 40;
+            this.idInfo_citation_date_creation.Tag = "required1";
             // 
             // idInfo_citation_date_creation_dtP
             // 
@@ -1427,6 +1436,7 @@
             this.idInfo_citation_date_publication.ReadOnly = true;
             this.idInfo_citation_date_publication.Size = new System.Drawing.Size(100, 20);
             this.idInfo_citation_date_publication.TabIndex = 1;
+            this.idInfo_citation_date_publication.Tag = "required1";
             // 
             // idInfo_citation_date_publication_lbl
             // 
@@ -1445,6 +1455,7 @@
             this.idInfo_citation_date_revision.ReadOnly = true;
             this.idInfo_citation_date_revision.Size = new System.Drawing.Size(100, 20);
             this.idInfo_citation_date_revision.TabIndex = 2;
+            this.idInfo_citation_date_revision.Tag = "required1";
             // 
             // idInfo_citation_date_creation_lbl
             // 
@@ -1472,8 +1483,10 @@
             this.idInfo_citation_Title.Location = new System.Drawing.Point(57, 6);
             this.idInfo_citation_Title.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
             this.idInfo_citation_Title.Name = "idInfo_citation_Title";
-            this.idInfo_citation_Title.Size = new System.Drawing.Size(392, 20);
+            this.idInfo_citation_Title.Size = new System.Drawing.Size(375, 20);
             this.idInfo_citation_Title.TabIndex = 0;
+            this.idInfo_citation_Title.Tag = "required";
+            this.idInfo_citation_Title.Validating += new System.ComponentModel.CancelEventHandler(this.dates_for_resources_pnl_Validating);
             // 
             // groupBox5
             // 
@@ -1683,6 +1696,10 @@
             this.tabControl1.Size = new System.Drawing.Size(992, 540);
             this.tabControl1.TabIndex = 2;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // idInfo_citation_citedResponsibleParty
             // 
             this.idInfo_citation_citedResponsibleParty.incomingCI_ResponsiblePartyList = null;
@@ -1791,6 +1808,7 @@
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
             this.tabControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1939,5 +1957,7 @@
         private System.Windows.Forms.TextBox txtEndpoint;
         private System.Windows.Forms.TextBox txtDownloadURL;
         private System.Windows.Forms.Label lblDataDictionary;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ToolTip tooltip1;
     }
 }
