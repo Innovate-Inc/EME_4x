@@ -150,13 +150,7 @@
     <Iso19115_2>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='descriptiveKeywords']/*[local-name()='MD_Keywords']/*[local-name()='thesaurusName']/*[local-name()='CI_Citation']/*[local-name()='title'][*[local-name()='CharacterString']='EPA GIS Keyword Thesaurus']/../../../..</Iso19115_2>
 	<Iso19115_1> </Iso19115_1>
 	<Csdgm> </Csdgm>    
-  </emeControl>
-  <!--<emeControl>
-    <controlName>IdInfo_keywordsEpaListXpath</controlName>
-    <Iso19115_2>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='descriptiveKeywords']/*[local-name()='MD_Keywords']/*[local-name()='thesaurusName']/*[local-name()='CI_Citation']/*[local-name()='title'][*[local-name()='CharacterString']='EPA GIS Keyword Thesaurus']/../../..//*[local-name()='keyword']</Iso19115_2>
-	<Iso19115_1> </Iso19115_1>
-	<Csdgm> </Csdgm>    
-  </emeControl>-->
+  </emeControl>  
   <emeControl>
     <controlName>idInfo_keywordsUser</controlName>
     <Iso19115_2>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='descriptiveKeywords']/*[local-name()='MD_Keywords']/*[local-name()='thesaurusName']/*[local-name()='CI_Citation']/*[local-name()='title'][*[local-name()='CharacterString']='User']/../../../..</Iso19115_2>
@@ -167,6 +161,30 @@
     <controlName>idInfo_keywordsPlace</controlName>
     <Iso19115_2>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='descriptiveKeywords']/*[local-name()='MD_Keywords']/*[local-name()='type'][*[local-name()='MD_KeywordTypeCode']='place']/../..</Iso19115_2>
 	<Iso19115_1>./gmd:identificationInfo/gmd:MD_DataIdentification/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:type[gmd:MD_KeywordTypeCode='place']/..</Iso19115_1>
+	<Csdgm> </Csdgm>    
+  </emeControl>
+  <emeControl>
+    <controlName>idInfo_extent_geographicBoundingBox_westLongDD</controlName>
+    <Iso19115_2>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='extent']/*[local-name()='EX_Extent']/*[local-name()='geographicElement']/*[local-name()='EX_GeographicBoundingBox']/*[local-name()='westBoundLongitude']</Iso19115_2>
+	<Iso19115_1> </Iso19115_1>
+	<Csdgm> </Csdgm>    
+  </emeControl>
+  <emeControl>
+    <controlName>idInfo_extent_geographicBoundingBox_eastLongDD</controlName>
+    <Iso19115_2>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='extent']/*[local-name()='EX_Extent']/*[local-name()='geographicElement']/*[local-name()='EX_GeographicBoundingBox']/*[local-name()='eastBoundLongitude']</Iso19115_2>
+	<Iso19115_1> </Iso19115_1>
+	<Csdgm> </Csdgm>    
+  </emeControl>
+  <emeControl>
+    <controlName>idInfo_extent_geographicBoundingBox_southLatDD</controlName>
+    <Iso19115_2>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='extent']/*[local-name()='EX_Extent']/*[local-name()='geographicElement']/*[local-name()='EX_GeographicBoundingBox']/*[local-name()='southBoundLatitude']</Iso19115_2>
+	<Iso19115_1> </Iso19115_1>
+	<Csdgm> </Csdgm>    
+  </emeControl>
+  <emeControl>
+    <controlName>idInfo_extent_geographicBoundingBox_northLatDD</controlName>
+    <Iso19115_2>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='extent']/*[local-name()='EX_Extent']/*[local-name()='geographicElement']/*[local-name()='EX_GeographicBoundingBox']/*[local-name()='northBoundLatitude']</Iso19115_2>
+	<Iso19115_1> </Iso19115_1>
 	<Csdgm> </Csdgm>    
   </emeControl>
 </emeSettings>
