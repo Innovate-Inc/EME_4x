@@ -784,25 +784,18 @@ namespace EmeLibrary
         {
             expander(pointOfContact_Pnl);
         }
-
-        private void idInfo_citation_date_creation_dtP_ValueChanged(object sender, EventArgs e)
+        /// <summary>
+        /// wirite the selected date from datetimepicker to its associated textbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dtP_ValueChanged(object sender, EventArgs e)
         {
-            idInfo_citation_date_creation.Text = idInfo_citation_date_creation_dtP.Value.ToString("yyyy-MM-dd");
-        }
-
-        private void dateStamp_dtP_ValueChanged(object sender, EventArgs e)
-        {
-            dateStamp.Text = dateStamp_dtP.Value.ToString("yyyy-MM-dd");
-        }
-
-        private void idInfo_citation_date_publication_dtP_ValueChanged(object sender, EventArgs e)
-        {
-            idInfo_citation_date_publication.Text = idInfo_citation_date_publication_dtP.Value.ToString("yyyy-MM-dd");
-        }
-
-        private void idInfo_citation_date_revision_dtP_ValueChanged(object sender, EventArgs e)
-        {
-            idInfo_citation_date_revision.Text = idInfo_citation_date_revision_dtP.Value.ToString("yyyy-MM-dd");
+            DateTimePicker ctrl = (DateTimePicker)sender;
+            string name = ctrl.Name.Substring(0, ctrl.Name.Length - 4);
+            TextBox tbox = (TextBox)this.getControlForTag(name);
+            tbox.Text = ctrl.Value.ToString("yyyy-MM-dd");
+            //idInfo_citation_date_creation.Text = idInfo_citation_date_creation_dtP.Value.ToString("yyyy-MM-dd");
         }
 
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
@@ -824,28 +817,50 @@ namespace EmeLibrary
             sourceXmlFormat = "ISO19115-2"; //  sourceXmlFormat ="ISO19115"
             //xDox Set when checking the metadata format
             filename = "New";
-            localXdoc = new isoNodes(xDoc, sourceXmlFormat, filename);
-            
+            //localXdoc = new isoNodes(xDoc, sourceXmlFormat, filename);
+            bindCCMFields();
+            frmctrls(this.Controls);
+            //foreach (Control c in this.Controls)
+            //{
+            //    validate_Controls(c);
+            //}
+
         }
 
-        private void dateStamp_btn_Click(object sender, EventArgs e)
+        /// <summary>
+        /// recursivly runs through all the controls and runs validation on those 
+        /// that have tag of required
+        /// </summary>
+        /// <param name="cControls"></param>
+        private void frmctrls(Control.ControlCollection cControls)
         {
-            dateStamp.Clear();
+            foreach (Control c in cControls)
+            {
+                if (c.HasChildren)
+                {
+                    frmctrls(c.Controls);
+                }
+                else
+                {
+                    if (c.Tag != null)
+                    {
+                        validate_Controls(c);
+                    }
+                }
+            }
         }
-
-        private void idInfo_citation_date_creation_btn_Click(object sender, EventArgs e)
+        
+        /// <summary>
+        /// generic event to clear a textbox associated by name to a button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ClearTextbox_Click(object sender, EventArgs e)
         {
-            idInfo_citation_date_creation.Clear();
-        }
-
-        private void idInfo_citation_date_publication_btn_Click(object sender, EventArgs e)
-        {
-            idInfo_citation_date_publication.Clear();
-        }
-
-        private void idInfo_citation_date_revision_btn_Click(object sender, EventArgs e)
-        {
-            idInfo_citation_date_revision.Clear();
+            Control ctrl = (Control)sender;
+            string name = ctrl.Name.Substring(0, ctrl.Name.Length - 4);
+            TextBox tbox = (TextBox) this.getControlForTag(name);
+            tbox.Clear();
         }
 
         private void expand_P1_Click(object sender, EventArgs e)
@@ -892,45 +907,34 @@ namespace EmeLibrary
 
         }
 
-
-        private void dates_for_resources_pnl_Validating(object sender, CancelEventArgs e)
+        /// <summary>
+        /// Event Handler for validating
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void cntrl_Validating(object sender, CancelEventArgs e)
         {
             Control ctrl = (Control)sender;
+            validate_Controls(ctrl);
+        }
+        /// <summary>
+        /// Form validation - emeSetting contains a field called DCATrequired this is populated on controls by the pagecontroller. If 
+        /// a control has a tag containing 'required' then it is a required field and validation will be performed. If the value is
+        /// ex 'required2' then 2 contorls out of the number of controls in the parent are required.
+        /// </summary>
+        /// <param name="ctrl"></param>
+        private void validate_Controls(Control ctrl)
+        {
+           // string tag = ctrl.Tag.ToString();
+            string tag = (ctrl.Tag != null) ? ctrl.Tag.ToString() : "";
 
-            if(ctrl.Tag.ToString().Contains("required"))
+            if (tag == "required")
             {
-                
-                if (ctrl.GetType() == typeof(GroupBox) && ctrl.HasChildren == true)
-                {
-                    int requiredCount = 0;
-                    int index = ctrl.Tag.ToString().IndexOf("required");
-                    string cleanPath = (index < 0)
-                        ? ctrl.Tag.ToString()
-                        : ctrl.Tag.ToString().Remove(index, "required".Length);
-                    requiredCount = Convert.ToInt16(cleanPath);
-
-                    int count = 0; //count that have values
-                    foreach (Control childCrtl in ctrl.Controls)
-                    {
-                        if (childCrtl.Tag ==  ctrl.Tag && childCrtl.Text != string.Empty)
-                        {
-                            count++;
-                        }
-                    }
-                    if (count >= requiredCount)
-                    {
-                        errorProvider1.SetError(ctrl, "");
-                    }
-                    else
-                    {
-                        errorProvider1.SetError(ctrl, "Need atleast " + requiredCount.ToString());
-                    }
-                
-                }
-                else if (ctrl.GetType() == typeof(TextBox))
+                if (ctrl.GetType() == typeof(TextBox))
                 {
                     if (ctrl.Text == string.Empty)
                     {
+                        
                         errorProvider1.SetError(ctrl, "This is a required Field");
                     }
                     else
@@ -938,7 +942,7 @@ namespace EmeLibrary
                         errorProvider1.SetError(ctrl, "");
                     }
                 }
-                else if(ctrl.GetType() == typeof(ListBox))
+                else if (ctrl.GetType() == typeof(ListBox))
                 {
                     ListBox lbox = (ListBox)ctrl;
                     if (lbox.SelectedItems.Count >= 1)
@@ -951,7 +955,44 @@ namespace EmeLibrary
                     }
                 }
             }
+            else if (tag.Contains("required"))
+            {
+                //get required control count
+                string requiredCount;
+                int index = ctrl.Tag.ToString().IndexOf("required");
+                string cleanPath = (index < 0)
+                    ? ctrl.Tag.ToString()
+                    : ctrl.Tag.ToString().Remove(index, "required".Length);
+                requiredCount = (cleanPath != null) ? cleanPath : "";
+                //Console.WriteLine(requiredCount.ToString());
+
+                if (requiredCount != "")
+                {
+                    int count = 0;
+                    Control parent = ctrl.Parent;
+                    foreach (Control c in parent.Controls)
+                    {
+                        if (c.Tag != null)
+                        {
+                            if (c.Tag.ToString() == tag && c.Text != string.Empty)
+                            {
+                                count++;
+                            }
+                        }
+                    }
+                    if (count >= Convert.ToInt16(requiredCount))
+                    {
+                        errorProvider1.SetError(parent, "");
+                    }
+                    else
+                    {
+                        errorProvider1.SetError(parent, "Need at least " + requiredCount.ToString());
+                    }
+                }
+            }
+
         }
+
         /// <summary>
         /// adds hover tips to 
         /// </summary>
@@ -982,6 +1023,8 @@ namespace EmeLibrary
                
             }
         }
+
+        
         
     }
 }

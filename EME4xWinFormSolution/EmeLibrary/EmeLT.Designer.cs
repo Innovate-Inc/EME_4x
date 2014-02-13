@@ -663,6 +663,7 @@
             this.dateStamp_btn.Size = new System.Drawing.Size(16, 16);
             this.dateStamp_btn.TabIndex = 40;
             this.dateStamp_btn.UseVisualStyleBackColor = false;
+            this.dateStamp_btn.Click += new System.EventHandler(this.ClearTextbox_Click);
             // 
             // dateStamp_dtP
             // 
@@ -670,6 +671,7 @@
             this.dateStamp_dtP.Name = "dateStamp_dtP";
             this.dateStamp_dtP.Size = new System.Drawing.Size(18, 20);
             this.dateStamp_dtP.TabIndex = 10;
+            this.dateStamp_dtP.ValueChanged += new System.EventHandler(this.dtP_ValueChanged);
             // 
             // dateStamp
             // 
@@ -768,7 +770,7 @@
             this.XmetadataStandardName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.XmetadataStandardName.Location = new System.Drawing.Point(115, 19);
             this.XmetadataStandardName.Name = "XmetadataStandardName";
-            this.XmetadataStandardName.Size = new System.Drawing.Size(349, 20);
+            this.XmetadataStandardName.Size = new System.Drawing.Size(334, 20);
             this.XmetadataStandardName.TabIndex = 9;
             // 
             // XmetadataStandardVersion
@@ -776,7 +778,7 @@
             this.XmetadataStandardVersion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.XmetadataStandardVersion.Location = new System.Drawing.Point(115, 46);
             this.XmetadataStandardVersion.Name = "XmetadataStandardVersion";
-            this.XmetadataStandardVersion.Size = new System.Drawing.Size(349, 20);
+            this.XmetadataStandardVersion.Size = new System.Drawing.Size(334, 20);
             this.XmetadataStandardVersion.TabIndex = 10;
             // 
             // tabPage2
@@ -981,7 +983,7 @@
             this.groupBox1.Controls.Add(this.tcKeywords);
             this.groupBox1.Location = new System.Drawing.Point(3, 160);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(330, 227);
+            this.groupBox1.Size = new System.Drawing.Size(352, 227);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Keywords";
@@ -1000,7 +1002,7 @@
             this.tcKeywords.Location = new System.Drawing.Point(5, 18);
             this.tcKeywords.Name = "tcKeywords";
             this.tcKeywords.SelectedIndex = 0;
-            this.tcKeywords.Size = new System.Drawing.Size(318, 203);
+            this.tcKeywords.Size = new System.Drawing.Size(340, 203);
             this.tcKeywords.TabIndex = 4;
             // 
             // tpISO
@@ -1013,7 +1015,7 @@
             this.tpISO.Location = new System.Drawing.Point(4, 25);
             this.tpISO.Name = "tpISO";
             this.tpISO.Padding = new System.Windows.Forms.Padding(3);
-            this.tpISO.Size = new System.Drawing.Size(310, 174);
+            this.tpISO.Size = new System.Drawing.Size(332, 174);
             this.tpISO.TabIndex = 0;
             this.tpISO.Text = "ISO";
             // 
@@ -1023,7 +1025,7 @@
             this.idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____default.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____default.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____default.Font = new System.Drawing.Font("Tahoma", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____default.Location = new System.Drawing.Point(254, 142);
+            this.idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____default.Location = new System.Drawing.Point(265, 142);
             this.idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____default.Name = "idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____default";
             this.idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____default.Size = new System.Drawing.Size(33, 23);
             this.idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____default.TabIndex = 1;
@@ -1037,7 +1039,7 @@
             this.idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____help.AutoSize = true;
             this.idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____help.BackColor = System.Drawing.Color.Transparent;
             this.idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____help.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____help.Location = new System.Drawing.Point(254, 126);
+            this.idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____help.Location = new System.Drawing.Point(265, 126);
             this.idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____help.Name = "idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____help";
             this.idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____help.Size = new System.Drawing.Size(34, 13);
             this.idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____help.TabIndex = 46;
@@ -1055,10 +1057,10 @@
             this.idInfo_keywordsIsoTopicCategory.Location = new System.Drawing.Point(3, 8);
             this.idInfo_keywordsIsoTopicCategory.Name = "idInfo_keywordsIsoTopicCategory";
             this.idInfo_keywordsIsoTopicCategory.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.idInfo_keywordsIsoTopicCategory.Size = new System.Drawing.Size(303, 143);
+            this.idInfo_keywordsIsoTopicCategory.Size = new System.Drawing.Size(307, 143);
             this.idInfo_keywordsIsoTopicCategory.TabIndex = 0;
             this.idInfo_keywordsIsoTopicCategory.Tag = "required";
-            this.idInfo_keywordsIsoTopicCategory.Validating += new System.ComponentModel.CancelEventHandler(this.dates_for_resources_pnl_Validating);
+            this.idInfo_keywordsIsoTopicCategory.Validating += new System.ComponentModel.CancelEventHandler(this.cntrl_Validating);
             // 
             // tpEPA
             // 
@@ -1069,7 +1071,7 @@
             this.tpEPA.Location = new System.Drawing.Point(4, 25);
             this.tpEPA.Name = "tpEPA";
             this.tpEPA.Padding = new System.Windows.Forms.Padding(3);
-            this.tpEPA.Size = new System.Drawing.Size(310, 174);
+            this.tpEPA.Size = new System.Drawing.Size(332, 174);
             this.tpEPA.TabIndex = 1;
             this.tpEPA.Text = "EPA";
             // 
@@ -1079,7 +1081,7 @@
             this.idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____default.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____default.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____default.Font = new System.Drawing.Font("Tahoma", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____default.Location = new System.Drawing.Point(251, 142);
+            this.idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____default.Location = new System.Drawing.Point(273, 142);
             this.idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____default.Name = "idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____default";
             this.idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____default.Size = new System.Drawing.Size(33, 23);
             this.idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____default.TabIndex = 1;
@@ -1093,7 +1095,7 @@
             this.idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____help.AutoSize = true;
             this.idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____help.BackColor = System.Drawing.Color.Transparent;
             this.idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____help.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____help.Location = new System.Drawing.Point(251, 126);
+            this.idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____help.Location = new System.Drawing.Point(273, 126);
             this.idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____help.Name = "idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____help";
             this.idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____help.Size = new System.Drawing.Size(34, 13);
             this.idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____help.TabIndex = 46;
@@ -1111,7 +1113,7 @@
             this.idInfo_keywordsEpa.Location = new System.Drawing.Point(3, 8);
             this.idInfo_keywordsEpa.Name = "idInfo_keywordsEpa";
             this.idInfo_keywordsEpa.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.idInfo_keywordsEpa.Size = new System.Drawing.Size(300, 143);
+            this.idInfo_keywordsEpa.Size = new System.Drawing.Size(322, 143);
             this.idInfo_keywordsEpa.TabIndex = 0;
             // 
             // tpUser
@@ -1122,7 +1124,7 @@
             this.tpUser.Controls.Add(this.idInfo_keywordsUser);
             this.tpUser.Location = new System.Drawing.Point(4, 25);
             this.tpUser.Name = "tpUser";
-            this.tpUser.Size = new System.Drawing.Size(310, 174);
+            this.tpUser.Size = new System.Drawing.Size(332, 174);
             this.tpUser.TabIndex = 2;
             this.tpUser.Text = "User";
             // 
@@ -1132,7 +1134,7 @@
             this.idinfo_keywords_theme_themekt__User___themekey_____default.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.idinfo_keywords_theme_themekt__User___themekey_____default.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.idinfo_keywords_theme_themekt__User___themekey_____default.Font = new System.Drawing.Font("Tahoma", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idinfo_keywords_theme_themekt__User___themekey_____default.Location = new System.Drawing.Point(251, 142);
+            this.idinfo_keywords_theme_themekt__User___themekey_____default.Location = new System.Drawing.Point(273, 142);
             this.idinfo_keywords_theme_themekt__User___themekey_____default.Name = "idinfo_keywords_theme_themekt__User___themekey_____default";
             this.idinfo_keywords_theme_themekt__User___themekey_____default.Size = new System.Drawing.Size(33, 23);
             this.idinfo_keywords_theme_themekt__User___themekey_____default.TabIndex = 1;
@@ -1146,7 +1148,7 @@
             this.idinfo_keywords_theme_themekt__User___themekey_____help.AutoSize = true;
             this.idinfo_keywords_theme_themekt__User___themekey_____help.BackColor = System.Drawing.Color.Transparent;
             this.idinfo_keywords_theme_themekt__User___themekey_____help.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idinfo_keywords_theme_themekt__User___themekey_____help.Location = new System.Drawing.Point(251, 126);
+            this.idinfo_keywords_theme_themekt__User___themekey_____help.Location = new System.Drawing.Point(273, 126);
             this.idinfo_keywords_theme_themekt__User___themekey_____help.Name = "idinfo_keywords_theme_themekt__User___themekey_____help";
             this.idinfo_keywords_theme_themekt__User___themekey_____help.Size = new System.Drawing.Size(34, 13);
             this.idinfo_keywords_theme_themekt__User___themekey_____help.TabIndex = 46;
@@ -1163,7 +1165,7 @@
             this.idInfo_keywordsUser.Location = new System.Drawing.Point(3, 8);
             this.idInfo_keywordsUser.Name = "idInfo_keywordsUser";
             this.idInfo_keywordsUser.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.idInfo_keywordsUser.Size = new System.Drawing.Size(300, 147);
+            this.idInfo_keywordsUser.Size = new System.Drawing.Size(322, 147);
             this.idInfo_keywordsUser.TabIndex = 0;
             // 
             // tpPlace
@@ -1175,7 +1177,7 @@
             this.tpPlace.Location = new System.Drawing.Point(4, 25);
             this.tpPlace.Margin = new System.Windows.Forms.Padding(0);
             this.tpPlace.Name = "tpPlace";
-            this.tpPlace.Size = new System.Drawing.Size(310, 174);
+            this.tpPlace.Size = new System.Drawing.Size(332, 174);
             this.tpPlace.TabIndex = 3;
             this.tpPlace.Text = "Place";
             // 
@@ -1185,7 +1187,7 @@
             this.idinfo_keywords_place_placekt__None___placekey_____default.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.idinfo_keywords_place_placekt__None___placekey_____default.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.idinfo_keywords_place_placekt__None___placekey_____default.Font = new System.Drawing.Font("Tahoma", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idinfo_keywords_place_placekt__None___placekey_____default.Location = new System.Drawing.Point(251, 142);
+            this.idinfo_keywords_place_placekt__None___placekey_____default.Location = new System.Drawing.Point(273, 142);
             this.idinfo_keywords_place_placekt__None___placekey_____default.Name = "idinfo_keywords_place_placekt__None___placekey_____default";
             this.idinfo_keywords_place_placekt__None___placekey_____default.Size = new System.Drawing.Size(33, 23);
             this.idinfo_keywords_place_placekt__None___placekey_____default.TabIndex = 1;
@@ -1199,7 +1201,7 @@
             this.idinfo_keywords_place_placekt__None___placekey_____help.AutoSize = true;
             this.idinfo_keywords_place_placekt__None___placekey_____help.BackColor = System.Drawing.Color.Transparent;
             this.idinfo_keywords_place_placekt__None___placekey_____help.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idinfo_keywords_place_placekt__None___placekey_____help.Location = new System.Drawing.Point(251, 126);
+            this.idinfo_keywords_place_placekt__None___placekey_____help.Location = new System.Drawing.Point(273, 126);
             this.idinfo_keywords_place_placekt__None___placekey_____help.Name = "idinfo_keywords_place_placekt__None___placekey_____help";
             this.idinfo_keywords_place_placekt__None___placekey_____help.Size = new System.Drawing.Size(34, 13);
             this.idinfo_keywords_place_placekt__None___placekey_____help.TabIndex = 45;
@@ -1216,7 +1218,7 @@
             this.idInfo_keywordsPlace.Location = new System.Drawing.Point(3, 8);
             this.idInfo_keywordsPlace.Name = "idInfo_keywordsPlace";
             this.idInfo_keywordsPlace.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.idInfo_keywordsPlace.Size = new System.Drawing.Size(300, 147);
+            this.idInfo_keywordsPlace.Size = new System.Drawing.Size(322, 147);
             this.idInfo_keywordsPlace.TabIndex = 0;
             // 
             // groupBox7
@@ -1339,9 +1341,8 @@
             this.dates_for_resources_pnl.Size = new System.Drawing.Size(297, 100);
             this.dates_for_resources_pnl.TabIndex = 0;
             this.dates_for_resources_pnl.TabStop = false;
-            this.dates_for_resources_pnl.Tag = "required1";
+            this.dates_for_resources_pnl.Tag = "";
             this.dates_for_resources_pnl.Text = "Dates for Resource";
-            this.dates_for_resources_pnl.Validating += new System.ComponentModel.CancelEventHandler(this.dates_for_resources_pnl_Validating);
             // 
             // idInfo_citation_date_revision_dtP
             // 
@@ -1349,7 +1350,7 @@
             this.idInfo_citation_date_revision_dtP.Name = "idInfo_citation_date_revision_dtP";
             this.idInfo_citation_date_revision_dtP.Size = new System.Drawing.Size(18, 20);
             this.idInfo_citation_date_revision_dtP.TabIndex = 42;
-            this.idInfo_citation_date_revision_dtP.ValueChanged += new System.EventHandler(this.idInfo_citation_date_revision_dtP_ValueChanged);
+            this.idInfo_citation_date_revision_dtP.ValueChanged += new System.EventHandler(this.dtP_ValueChanged);
             // 
             // idInfo_citation_date_revision_btn
             // 
@@ -1362,7 +1363,7 @@
             this.idInfo_citation_date_revision_btn.Size = new System.Drawing.Size(16, 16);
             this.idInfo_citation_date_revision_btn.TabIndex = 39;
             this.idInfo_citation_date_revision_btn.UseVisualStyleBackColor = false;
-            this.idInfo_citation_date_revision_btn.Click += new System.EventHandler(this.idInfo_citation_date_revision_btn_Click);
+            this.idInfo_citation_date_revision_btn.Click += new System.EventHandler(this.ClearTextbox_Click);
             // 
             // idInfo_citation_date_publication_btn
             // 
@@ -1375,7 +1376,7 @@
             this.idInfo_citation_date_publication_btn.Size = new System.Drawing.Size(16, 16);
             this.idInfo_citation_date_publication_btn.TabIndex = 38;
             this.idInfo_citation_date_publication_btn.UseVisualStyleBackColor = false;
-            this.idInfo_citation_date_publication_btn.Click += new System.EventHandler(this.idInfo_citation_date_publication_btn_Click);
+            this.idInfo_citation_date_publication_btn.Click += new System.EventHandler(this.ClearTextbox_Click);
             // 
             // idInfo_citation_date_publication_dtP
             // 
@@ -1384,7 +1385,7 @@
             this.idInfo_citation_date_publication_dtP.Name = "idInfo_citation_date_publication_dtP";
             this.idInfo_citation_date_publication_dtP.Size = new System.Drawing.Size(18, 20);
             this.idInfo_citation_date_publication_dtP.TabIndex = 41;
-            this.idInfo_citation_date_publication_dtP.ValueChanged += new System.EventHandler(this.idInfo_citation_date_publication_dtP_ValueChanged);
+            this.idInfo_citation_date_publication_dtP.ValueChanged += new System.EventHandler(this.dtP_ValueChanged);
             // 
             // idInfo_citation_date_creation_btn
             // 
@@ -1397,7 +1398,7 @@
             this.idInfo_citation_date_creation_btn.Size = new System.Drawing.Size(16, 16);
             this.idInfo_citation_date_creation_btn.TabIndex = 37;
             this.idInfo_citation_date_creation_btn.UseVisualStyleBackColor = false;
-            this.idInfo_citation_date_creation_btn.Click += new System.EventHandler(this.idInfo_citation_date_creation_btn_Click);
+            this.idInfo_citation_date_creation_btn.Click += new System.EventHandler(this.ClearTextbox_Click);
             // 
             // idInfo_citation_date_creation
             // 
@@ -1408,6 +1409,7 @@
             this.idInfo_citation_date_creation.Size = new System.Drawing.Size(100, 20);
             this.idInfo_citation_date_creation.TabIndex = 40;
             this.idInfo_citation_date_creation.Tag = "required1";
+            this.idInfo_citation_date_creation.Validating += new System.ComponentModel.CancelEventHandler(this.cntrl_Validating);
             // 
             // idInfo_citation_date_creation_dtP
             // 
@@ -1417,7 +1419,7 @@
             this.idInfo_citation_date_creation_dtP.Name = "idInfo_citation_date_creation_dtP";
             this.idInfo_citation_date_creation_dtP.Size = new System.Drawing.Size(18, 20);
             this.idInfo_citation_date_creation_dtP.TabIndex = 37;
-            this.idInfo_citation_date_creation_dtP.ValueChanged += new System.EventHandler(this.idInfo_citation_date_creation_dtP_ValueChanged);
+            this.idInfo_citation_date_creation_dtP.ValueChanged += new System.EventHandler(this.dtP_ValueChanged);
             // 
             // idInfo_citation_date_revision_lbl
             // 
@@ -1437,6 +1439,7 @@
             this.idInfo_citation_date_publication.Size = new System.Drawing.Size(100, 20);
             this.idInfo_citation_date_publication.TabIndex = 1;
             this.idInfo_citation_date_publication.Tag = "required1";
+            this.idInfo_citation_date_publication.Validating += new System.ComponentModel.CancelEventHandler(this.cntrl_Validating);
             // 
             // idInfo_citation_date_publication_lbl
             // 
@@ -1456,6 +1459,7 @@
             this.idInfo_citation_date_revision.Size = new System.Drawing.Size(100, 20);
             this.idInfo_citation_date_revision.TabIndex = 2;
             this.idInfo_citation_date_revision.Tag = "required1";
+            this.idInfo_citation_date_revision.Validating += new System.ComponentModel.CancelEventHandler(this.cntrl_Validating);
             // 
             // idInfo_citation_date_creation_lbl
             // 
@@ -1485,8 +1489,8 @@
             this.idInfo_citation_Title.Name = "idInfo_citation_Title";
             this.idInfo_citation_Title.Size = new System.Drawing.Size(375, 20);
             this.idInfo_citation_Title.TabIndex = 0;
-            this.idInfo_citation_Title.Tag = "required";
-            this.idInfo_citation_Title.Validating += new System.ComponentModel.CancelEventHandler(this.dates_for_resources_pnl_Validating);
+            this.idInfo_citation_Title.Tag = "";
+            this.idInfo_citation_Title.Validating += new System.ComponentModel.CancelEventHandler(this.cntrl_Validating);
             // 
             // groupBox5
             // 
@@ -1516,8 +1520,9 @@
             this.idInfo_Abstract.Multiline = true;
             this.idInfo_Abstract.Name = "idInfo_Abstract";
             this.idInfo_Abstract.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.idInfo_Abstract.Size = new System.Drawing.Size(392, 50);
+            this.idInfo_Abstract.Size = new System.Drawing.Size(375, 50);
             this.idInfo_Abstract.TabIndex = 1;
+            this.idInfo_Abstract.Validating += new System.ComponentModel.CancelEventHandler(this.cntrl_Validating);
             // 
             // idInfo_Abstract_lbl
             // 
@@ -1547,7 +1552,7 @@
             this.idInfo_Purpose.Multiline = true;
             this.idInfo_Purpose.Name = "idInfo_Purpose";
             this.idInfo_Purpose.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.idInfo_Purpose.Size = new System.Drawing.Size(392, 61);
+            this.idInfo_Purpose.Size = new System.Drawing.Size(375, 61);
             this.idInfo_Purpose.TabIndex = 14;
             // 
             // idInfo_Purpose_lbl

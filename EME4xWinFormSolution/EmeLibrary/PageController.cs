@@ -76,7 +76,7 @@ namespace EmeLibrary
                 //MessageBox.Show(cntrlName);
                 
                 //Add new page controller object for each record in database
-                p = new PageController(i, cntrlName, "sourceField", "sourceField");
+                p = new PageController(i, cntrlName, "sourceField", dr["DCATrequired"].ToString());
 
                 i++;
             }
@@ -119,7 +119,10 @@ namespace EmeLibrary
                     uc_ResponsibleParty incoming_ResponsibleParty = (uc_ResponsibleParty)ctrl;
 
                     List<CI_ResponsibleParty> ci_RP = (List<CI_ResponsibleParty>)frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null);
-                    incoming_ResponsibleParty.loadList(ci_RP);
+                    if (incoming_ResponsibleParty.incomingCI_ResponsiblePartyList != null)
+                    {
+                        incoming_ResponsibleParty.loadList(ci_RP);
+                    }
                     
                 }
                 //else if (ctrl.GetType() == typeof(ListBox))
@@ -136,13 +139,16 @@ namespace EmeLibrary
                 else if (ctrl.GetType() == typeof(ComboBox))
                 {
                     ComboBox boxCbo = (ComboBox)ctrl;
-                    
-                    boxCbo.SelectedItem = frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null).ToString();
+                    string c = (frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null) != null) ? frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null).ToString() : "";
+                    boxCbo.SelectedItem = c;
                     //boxCbo.Focus();     //Need to figure out why it need focus to save
                 }
                 else if (ctrl.GetType() == typeof(TextBox))
                 {
-                    ctrl.Text = frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null).ToString();
+                    string s = (frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null) != null) ? frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null).ToString() : "";
+                    ctrl.Text = s;
+                    ctrl.Tag = srcField;
+                    
                 }
             }
             
