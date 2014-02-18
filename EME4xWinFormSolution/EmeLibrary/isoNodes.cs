@@ -49,6 +49,8 @@ namespace EmeLibrary
         private string _idInfo_purpose;
         private string _idInfo_status_MD_ProgressCode;
         private List<CI_ResponsibleParty> idinfoPointOfContact;
+        //Section 7 resource Maintenance (repeatable
+
 
         private List<string> kwEpaList;
         private List<string> kwUserList;
@@ -234,7 +236,7 @@ namespace EmeLibrary
                 kwUserList = new List<string>();
                 contactRpSection = new List<CI_ResponsibleParty>();
                 idinfoCitationcitedResponsibleParty = new List<CI_ResponsibleParty>();
-                idinfoPointOfContact = new List<CI_ResponsibleParty>();
+                idinfoPointOfContact = new List<CI_ResponsibleParty>();                
 
             }
             else
