@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
             this.positionName = new System.Windows.Forms.TextBox();
             this.organisationName_txt = new System.Windows.Forms.TextBox();
@@ -67,11 +68,17 @@
             this.pagerDownBtn = new System.Windows.Forms.Button();
             this.pagerUpBtn = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.addRP_Btn = new System.Windows.Forms.Button();
             this.deleteRP_Btn = new System.Windows.Forms.Button();
+            this.addRP_Btn = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.errorProvider_RP = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_RP)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -79,7 +86,7 @@
             this.button1.BackColor = System.Drawing.Color.DarkOrange;
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(317, 3);
+            this.button1.Location = new System.Drawing.Point(322, 41);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(112, 43);
             this.button1.TabIndex = 0;
@@ -90,18 +97,22 @@
             // positionName
             // 
             this.positionName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.positionName.Location = new System.Drawing.Point(113, 92);
+            this.positionName.Location = new System.Drawing.Point(101, 63);
             this.positionName.Name = "positionName";
             this.positionName.Size = new System.Drawing.Size(178, 20);
             this.positionName.TabIndex = 4;
+            this.positionName.Tag = "required1";
+            this.positionName.Validating += new System.ComponentModel.CancelEventHandler(this.responsibleParty_Validating);
             // 
             // organisationName_txt
             // 
             this.organisationName_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.organisationName_txt.Location = new System.Drawing.Point(113, 66);
+            this.organisationName_txt.Location = new System.Drawing.Point(101, 37);
             this.organisationName_txt.Name = "organisationName_txt";
             this.organisationName_txt.Size = new System.Drawing.Size(178, 20);
             this.organisationName_txt.TabIndex = 3;
+            this.organisationName_txt.Tag = "required1";
+            this.organisationName_txt.Validating += new System.ComponentModel.CancelEventHandler(this.responsibleParty_Validating);
             // 
             // contactInfo__CI_Contact__phone__CI_Telephone__voice
             // 
@@ -137,15 +148,17 @@
             "publisher",
             "author",
             "scienceParty"});
-            this.role.Location = new System.Drawing.Point(113, 15);
+            this.role.Location = new System.Drawing.Point(101, 5);
             this.role.Name = "role";
             this.role.Size = new System.Drawing.Size(178, 21);
             this.role.TabIndex = 1;
+            this.role.Tag = "required";
+            this.role.Validating += new System.ComponentModel.CancelEventHandler(this.responsibleParty_Validating);
             // 
             // individualName_lbl
             // 
             this.individualName_lbl.AutoSize = true;
-            this.individualName_lbl.Location = new System.Drawing.Point(52, 44);
+            this.individualName_lbl.Location = new System.Drawing.Point(40, 15);
             this.individualName_lbl.Name = "individualName_lbl";
             this.individualName_lbl.Size = new System.Drawing.Size(52, 13);
             this.individualName_lbl.TabIndex = 8;
@@ -155,7 +168,7 @@
             // organisationName_lbl
             // 
             this.organisationName_lbl.AutoSize = true;
-            this.organisationName_lbl.Location = new System.Drawing.Point(38, 70);
+            this.organisationName_lbl.Location = new System.Drawing.Point(26, 41);
             this.organisationName_lbl.Name = "organisationName_lbl";
             this.organisationName_lbl.Size = new System.Drawing.Size(66, 13);
             this.organisationName_lbl.TabIndex = 9;
@@ -165,7 +178,7 @@
             // positionName_lbl
             // 
             this.positionName_lbl.AutoSize = true;
-            this.positionName_lbl.Location = new System.Drawing.Point(60, 94);
+            this.positionName_lbl.Location = new System.Drawing.Point(48, 65);
             this.positionName_lbl.Name = "positionName_lbl";
             this.positionName_lbl.Size = new System.Drawing.Size(44, 13);
             this.positionName_lbl.TabIndex = 10;
@@ -203,10 +216,12 @@
             // individualName_txt
             // 
             this.individualName_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.individualName_txt.Location = new System.Drawing.Point(113, 42);
+            this.individualName_txt.Location = new System.Drawing.Point(101, 13);
             this.individualName_txt.Name = "individualName_txt";
             this.individualName_txt.Size = new System.Drawing.Size(178, 20);
             this.individualName_txt.TabIndex = 2;
+            this.individualName_txt.Tag = "required1";
+            this.individualName_txt.Validating += new System.ComponentModel.CancelEventHandler(this.responsibleParty_Validating);
             // 
             // contactInfo__CI_Contact__address__CI_Address__deliveryPoint_lbl
             // 
@@ -382,7 +397,7 @@
             // roleCode_lbl
             // 
             this.roleCode_lbl.AutoSize = true;
-            this.roleCode_lbl.Location = new System.Drawing.Point(75, 18);
+            this.roleCode_lbl.Location = new System.Drawing.Point(63, 8);
             this.roleCode_lbl.Name = "roleCode_lbl";
             this.roleCode_lbl.Size = new System.Drawing.Size(29, 13);
             this.roleCode_lbl.TabIndex = 35;
@@ -415,7 +430,7 @@
             this.groupBox1.Controls.Add(this.contactInfo__CI_Contact__address__CI_Address__electronicMailAddress_lbl);
             this.groupBox1.Controls.Add(this.contactInfo__CI_Contact__address__CI_Address__electronicMailAddress);
             this.groupBox1.Controls.Add(this.contactInfo__CI_Contact__phone__CI_Telephone__voice);
-            this.groupBox1.Location = new System.Drawing.Point(12, 119);
+            this.groupBox1.Location = new System.Drawing.Point(12, 175);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(422, 314);
             this.groupBox1.TabIndex = 36;
@@ -442,7 +457,7 @@
             this.pagerLbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pagerLbl.AutoSize = true;
             this.pagerLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pagerLbl.Location = new System.Drawing.Point(201, 6);
+            this.pagerLbl.Location = new System.Drawing.Point(176, 6);
             this.pagerLbl.Name = "pagerLbl";
             this.pagerLbl.Size = new System.Drawing.Size(20, 17);
             this.pagerLbl.TabIndex = 37;
@@ -453,7 +468,7 @@
             // 
             this.pagerDownBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.pagerDownBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pagerDownBtn.Location = new System.Drawing.Point(171, 3);
+            this.pagerDownBtn.Location = new System.Drawing.Point(146, 3);
             this.pagerDownBtn.Name = "pagerDownBtn";
             this.pagerDownBtn.Size = new System.Drawing.Size(24, 23);
             this.pagerDownBtn.TabIndex = 38;
@@ -465,7 +480,7 @@
             // 
             this.pagerUpBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.pagerUpBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pagerUpBtn.Location = new System.Drawing.Point(227, 3);
+            this.pagerUpBtn.Location = new System.Drawing.Point(202, 3);
             this.pagerUpBtn.Name = "pagerUpBtn";
             this.pagerUpBtn.Size = new System.Drawing.Size(24, 23);
             this.pagerUpBtn.TabIndex = 38;
@@ -475,33 +490,21 @@
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.Controls.Add(this.deleteRP_Btn);
+            this.flowLayoutPanel1.Controls.Add(this.addRP_Btn);
             this.flowLayoutPanel1.Controls.Add(this.pagerUpBtn);
             this.flowLayoutPanel1.Controls.Add(this.pagerLbl);
             this.flowLayoutPanel1.Controls.Add(this.pagerDownBtn);
-            this.flowLayoutPanel1.Controls.Add(this.addRP_Btn);
-            this.flowLayoutPanel1.Controls.Add(this.deleteRP_Btn);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(174, 439);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(101, 5);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(254, 30);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(333, 30);
             this.flowLayoutPanel1.TabIndex = 40;
-            // 
-            // addRP_Btn
-            // 
-            this.addRP_Btn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.addRP_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addRP_Btn.Location = new System.Drawing.Point(123, 3);
-            this.addRP_Btn.Name = "addRP_Btn";
-            this.addRP_Btn.Size = new System.Drawing.Size(42, 23);
-            this.addRP_Btn.TabIndex = 39;
-            this.addRP_Btn.Text = "Add";
-            this.addRP_Btn.UseVisualStyleBackColor = true;
-            this.addRP_Btn.Click += new System.EventHandler(this.addRP_Btn_Click);
             // 
             // deleteRP_Btn
             // 
             this.deleteRP_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.deleteRP_Btn.Location = new System.Drawing.Point(67, 3);
+            this.deleteRP_Btn.Location = new System.Drawing.Point(280, 3);
             this.deleteRP_Btn.Name = "deleteRP_Btn";
             this.deleteRP_Btn.Size = new System.Drawing.Size(50, 23);
             this.deleteRP_Btn.TabIndex = 40;
@@ -509,42 +512,81 @@
             this.deleteRP_Btn.UseVisualStyleBackColor = true;
             this.deleteRP_Btn.Click += new System.EventHandler(this.deleteRP_Btn_Click);
             // 
+            // addRP_Btn
+            // 
+            this.addRP_Btn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.addRP_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addRP_Btn.Location = new System.Drawing.Point(232, 3);
+            this.addRP_Btn.Name = "addRP_Btn";
+            this.addRP_Btn.Size = new System.Drawing.Size(42, 23);
+            this.addRP_Btn.TabIndex = 39;
+            this.addRP_Btn.Text = "Add";
+            this.addRP_Btn.UseVisualStyleBackColor = true;
+            this.addRP_Btn.Click += new System.EventHandler(this.addRP_Btn_Click);
+            // 
             // comboBox1
             // 
             this.comboBox1.DropDownWidth = 400;
             this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(317, 44);
+            this.comboBox1.Location = new System.Drawing.Point(322, 82);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(112, 21);
             this.comboBox1.TabIndex = 41;
             this.comboBox1.Visible = false;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.panel1.Controls.Add(this.individualName_txt);
+            this.panel1.Controls.Add(this.positionName);
+            this.panel1.Controls.Add(this.positionName_lbl);
+            this.panel1.Controls.Add(this.organisationName_lbl);
+            this.panel1.Controls.Add(this.organisationName_txt);
+            this.panel1.Controls.Add(this.individualName_lbl);
+            this.panel1.Location = new System.Drawing.Point(12, 76);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(299, 94);
+            this.panel1.TabIndex = 42;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.panel2.Controls.Add(this.role);
+            this.panel2.Controls.Add(this.roleCode_lbl);
+            this.panel2.Location = new System.Drawing.Point(12, 43);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(299, 30);
+            this.panel2.TabIndex = 43;
+            // 
+            // errorProvider_RP
+            // 
+            this.errorProvider_RP.ContainerControl = this;
+            // 
             // uc_ResponsibleParty
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.roleCode_lbl);
-            this.Controls.Add(this.individualName_txt);
-            this.Controls.Add(this.positionName_lbl);
-            this.Controls.Add(this.organisationName_lbl);
-            this.Controls.Add(this.individualName_lbl);
-            this.Controls.Add(this.role);
             this.Controls.Add(this.lblCI_RpListCount);
-            this.Controls.Add(this.organisationName_txt);
-            this.Controls.Add(this.positionName);
             this.Controls.Add(this.button1);
             this.Name = "uc_ResponsibleParty";
-            this.Size = new System.Drawing.Size(449, 481);
+            this.Size = new System.Drawing.Size(445, 498);
             this.Load += new System.EventHandler(this.uc_ResponsibleParty_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_RP)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -594,5 +636,8 @@
         private System.Windows.Forms.Button addRP_Btn;
         private System.Windows.Forms.Button deleteRP_Btn;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.ErrorProvider errorProvider_RP;
     }
 }

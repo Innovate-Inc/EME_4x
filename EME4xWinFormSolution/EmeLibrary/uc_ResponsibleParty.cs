@@ -15,31 +15,31 @@ namespace EmeLibrary
         private int incomingRPListIndex;
 
         public List<CI_ResponsibleParty> incomingCI_ResponsiblePartyList
-            {
-                get { return incomingRPList; }
-                set { incomingRPList = value; }
-            }
-        
+        {
+            get { return incomingRPList; }
+            set { incomingRPList = value; }
+        }
+
 
         //public List<CI_ResponsibleParty> contact_CI_ResponsibleParty
         //{
         //    get { return contactRpSection; }
         //    set { contactRpSection = value; }
         //}
-       // private CI_ResponsibleParty incomingCI_ResponsibleParty;
+        // private CI_ResponsibleParty incomingCI_ResponsibleParty;
 
         public uc_ResponsibleParty()
         {
             InitializeComponent();
 
-            
-    
+
+
 
         }
 
         private void bindToFields(CI_ResponsibleParty incomingCIRP)
         {
-            pagerLbl.Text = (incomingRPListIndex +1).ToString() + " of " + incomingRPList.Count;
+            pagerLbl.Text = (incomingRPListIndex + 1).ToString() + " of " + incomingRPList.Count;
 
             if (incomingCIRP.role == null)
                 role.SelectedIndex = -1;
@@ -74,7 +74,7 @@ namespace EmeLibrary
 
             if (role.SelectedItem != null)
             {
-               
+
                 outgoingCIRP.role = role.SelectedItem.ToString();
             }
             outgoingCIRP.individualName = individualName_txt.Text;
@@ -93,31 +93,56 @@ namespace EmeLibrary
             outgoingCIRP.contactInfo__CI_Contact__contactInstructions = contactInfo__CI_Contact__contactInstructions.Text;
             incomingCI_ResponsiblePartyList = incomingRPList;
         }
-    
-        
+
+
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-                     
+
         }
 
         private void uc_ResponsibleParty_Load(object sender, EventArgs e)
         {
-           
+            //DataTable subTable = Utils1.emeDataSet.Tables["Contact_Information"].Select().CopyToDataTable();
+
+            ////concatinate Name and oraganization so that we have a display field
+            //subTable.Columns.Add("display", typeof(string));
+
+            ////concatinate and add person and organization to new field
+            //foreach (DataRow dr in subTable.Rows)
+            //{
+            //    dr["display"] = dr["cntper"] + " | " + dr["cntorg"];
+
+            //}
+
+            //if (comboBox1.Visible == true)
+            //{
+            //    comboBox1.Visible = false;
+            //}
+            //else
+            //{
+
+            //    comboBox1.DataSource = subTable;
+            //    comboBox1.ValueMember = "display";
+            //    comboBox1.DisplayMember = "display";
+            //    comboBox1.SelectedIndex = -1;
+            //    comboBox1.Visible = true;
+            //}
         }
+
 
         public void loadList(List<CI_ResponsibleParty> CI_ResponsiblePartyList)
         {
             incomingRPList = CI_ResponsiblePartyList;
 
             incomingRPListIndex = 0;
-            
+
             bindToFields(incomingRPList[incomingRPListIndex]);
         }
 
         private void pagerDownBtn_Click(object sender, EventArgs e)
         {
-            
+
             if (incomingRPListIndex == 0)
             {
                 pagerDownBtn.Enabled = false;
@@ -126,7 +151,7 @@ namespace EmeLibrary
             else
             {
                 bindToClass(incomingRPList[incomingRPListIndex]);
-                
+
                 incomingRPListIndex--;
                 pagerUpBtn.Enabled = true;
                 bindToFields(incomingRPList[incomingRPListIndex]);
@@ -135,8 +160,8 @@ namespace EmeLibrary
 
         private void pagerUpBtn_Click(object sender, EventArgs e)
         {
-            
-            if (incomingRPListIndex >= incomingRPList.Count-1)
+
+            if (incomingRPListIndex >= incomingRPList.Count - 1)
             {
                 pagerUpBtn.Enabled = false;
                 pagerDownBtn.Focus();
@@ -148,13 +173,13 @@ namespace EmeLibrary
                 pagerDownBtn.Enabled = true;
                 bindToFields(incomingRPList[incomingRPListIndex]);
             }
-            
+
         }
 
         private void addRP_Btn_Click(object sender, EventArgs e)
         {
             //Save the last added contact
-           
+
 
             //CI_ResponsibleParty newRP = new CI_ResponsibleParty();
             CI_ResponsibleParty ci_RP = new CI_ResponsibleParty();
@@ -171,8 +196,8 @@ namespace EmeLibrary
                 incomingRPListIndex++;
                 incomingRPListIndex = incomingRPList.Count - 1;
             }
-            
-            
+
+
             bindToFields(incomingRPList[incomingRPListIndex]);
         }
 
@@ -183,7 +208,7 @@ namespace EmeLibrary
             {
                 incomingRPListIndex = 0;
                 incomingRPList = null;
-                pagerLbl.Text =   " of ";
+                pagerLbl.Text = " of ";
                 role.SelectedIndex = -1;
                 individualName_txt.Text = "";
                 organisationName_txt.Text = "";
@@ -214,9 +239,9 @@ namespace EmeLibrary
                     incomingRPListIndex--;
                     bindToFields(incomingRPList[incomingRPListIndex]);
                 }
-                
+
             }
-              
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -228,7 +253,7 @@ namespace EmeLibrary
             subTable.Columns.Add("display", typeof(string));
 
             //concatinate and add person and organization to new field
-            foreach(DataRow dr in subTable.Rows)
+            foreach (DataRow dr in subTable.Rows)
             {
                 dr["display"] = dr["cntper"] + " | " + dr["cntorg"];
             }
@@ -239,7 +264,7 @@ namespace EmeLibrary
             }
             else
             {
-                
+
                 comboBox1.DataSource = subTable;
                 comboBox1.ValueMember = "display";
                 comboBox1.DisplayMember = "display";
@@ -252,7 +277,7 @@ namespace EmeLibrary
         {
             //DataTable subTable = Utils1.emeDataSet.Tables["Contact_Information"].Select().CopyToDataTable();
 
-           
+
             if (comboBox1.SelectedIndex != -1 && comboBox1.Visible == true)
             {
                 DataRowView drv = (DataRowView)comboBox1.SelectedItem;
@@ -262,7 +287,7 @@ namespace EmeLibrary
 
                 individualName_txt.Text = drv["cntper"].ToString();
                 organisationName_txt.Text = drv["cntorg"].ToString();
-                positionName.Text  = drv["cntpos"].ToString();
+                positionName.Text = drv["cntpos"].ToString();
                 contactInfo__CI_Contact__address__CI_Address__deliveryPoint.Text = drv["address1"].ToString();
                 contactInfo__CI_Contact__address__CI_Address__city.Text = drv["city"].ToString();
                 contactInfo__CI_Contact__address__CI_Address__administrativeArea.Text = drv["state"].ToString();
@@ -272,9 +297,112 @@ namespace EmeLibrary
                 contactInfo__CI_Contact__address__CI_Address__electronicMailAddress.Text = drv["cntemail"].ToString();
                 contactInfo__CI_Contact__contactInstructions.Text = drv["cntinst"].ToString();
             }
-            
+
         }
 
-                       
+        private void responsibleParty_Validating(object sender, CancelEventArgs e)
+        {
+            Control ctrl = (Control)sender;
+            rp_Validating(ctrl);
+        }
+
+        private void rp_Validating(Control ctrl)
+        {
+            string tag = (ctrl.Tag != null) ? ctrl.Tag.ToString() : "";
+            errorProvider_RP.BlinkStyle = ErrorBlinkStyle.NeverBlink;
+
+            if (tag == "required")
+            {
+                if (ctrl.GetType() == typeof(TextBox))
+                {
+                    if (ctrl.Text == string.Empty)
+                    {
+
+                        errorProvider_RP.SetError(ctrl, "This is a required Field");
+                    }
+                    else
+                    {
+                        errorProvider_RP.SetError(ctrl, "");
+                    }
+                }
+                if (ctrl.GetType() == typeof(ComboBox))
+                {
+                    ComboBox cbo = (ComboBox)ctrl;
+                    if (cbo.SelectedIndex == -1)
+                    {
+                        errorProvider_RP.SetError(ctrl, "This is a required Field");
+                    }
+                    else
+                    {
+                        errorProvider_RP.SetError(ctrl, "");
+                    }
+                }
+            }
+            else if (tag.Contains("required"))
+            {
+                //get required control count
+                string requiredCount;
+                int index = ctrl.Tag.ToString().IndexOf("required");
+                string cleanPath = (index < 0)
+                    ? ctrl.Tag.ToString()
+                    : ctrl.Tag.ToString().Remove(index, "required".Length);
+                requiredCount = (cleanPath != null) ? cleanPath : "";
+                //Console.WriteLine(requiredCount.ToString());
+
+                if (requiredCount != "")
+                {
+                    int count = 0;
+                    Control parent = ctrl.Parent;
+                    foreach (Control c in parent.Controls)
+                    {
+                        if (c.Tag != null)
+                        {
+                            if (c.Tag.ToString() == tag && c.Text != string.Empty)
+                            {
+                                count++;
+                            }
+                        }
+                    }
+                    if (count >= Convert.ToInt16(requiredCount))
+                    {
+                        errorProvider_RP.SetError(parent, "");
+                    }
+                    else
+                    {
+                        errorProvider_RP.SetError(parent, "Need at least " + requiredCount.ToString());
+                    }
+                }
+            }
+        }
+
+        public void val_RP_frmControls(Control.ControlCollection cControls)
+        {
+            foreach (Control c in cControls)
+            {
+                if (c.HasChildren)
+                {
+                    if (c.GetType() == typeof(uc_ResponsibleParty))
+                    {
+                        rp_Validating(c);
+                        uc_ResponsibleParty rp = (uc_ResponsibleParty)c;
+
+                    }
+                    else
+                    {
+                        rp_Validating(c);
+                        val_RP_frmControls(c.Controls);
+                    }
+
+                }
+                else
+                {
+                    //Console.WriteLine(c.Name);
+                    if (c.Tag != null)
+                    {
+                        rp_Validating(c);
+                    }
+                }
+            }
+        }
     }
 }

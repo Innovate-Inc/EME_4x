@@ -123,7 +123,7 @@ namespace EmeLibrary
                     {
                         incoming_ResponsibleParty.loadList(ci_RP);
                     }
-                    
+                    ctrl.Tag = srcField;
                 }
                 //else if (ctrl.GetType() == typeof(ListBox))
                 //{

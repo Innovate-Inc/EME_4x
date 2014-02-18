@@ -135,10 +135,17 @@
     <HoverNote>The date that the metadata was last updated</HoverNote>
   </emeControl>
   <emeControl>
-    <controlName>metaDataAuthor_lbl</controlName>
+    <controlName>contact_CI_ResponsibleParty_lbl</controlName>
     <TabNum>3</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>Autor of the metadata</HoverNote>
+  </emeControl>
+  <emeControl>
+    <controlName>roleCode_lbl</controlName>
+    <TabNum>3</TabNum>
+    <FGDC_Def></FGDC_Def>
+    <EPARequirementGuidance></EPARequirementGuidance>
+    <HoverNote> Function performed by the responsible party</HoverNote>
   </emeControl>
 </emeGUI>

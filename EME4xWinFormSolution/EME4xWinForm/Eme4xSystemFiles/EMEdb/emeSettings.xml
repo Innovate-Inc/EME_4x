@@ -72,7 +72,8 @@
 		<controlName>contact_CI_ResponsibleParty</controlName>
 		<Iso19115_2>./*[local-name()='contact']</Iso19115_2>
 		<Iso19115_1/>
-		<Csdgm/>    
+		<Csdgm/>
+    <DCATrequired>required</DCATrequired>
 	</emeControl>
 	<emeControl>
 		<controlName>dateStamp</controlName>

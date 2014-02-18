@@ -838,13 +838,26 @@ namespace EmeLibrary
             {
                 if (c.HasChildren)
                 {
-                    frmctrls(c.Controls);
+                    if (c.GetType() == typeof(uc_ResponsibleParty))
+                    {
+                        validate_Controls(c);
+                        uc_ResponsibleParty rp = (uc_ResponsibleParty)c;
+                        rp.val_RP_frmControls(rp.Controls);
+                    }
+                    else
+                    {
+                        validate_Controls(c);
+                        frmctrls(c.Controls);
+                    }
+                    
                 }
                 else
                 {
+                    //Console.WriteLine(c.Name);
                     if (c.Tag != null)
                     {
                         validate_Controls(c);
+
                     }
                 }
             }
@@ -917,6 +930,7 @@ namespace EmeLibrary
             Control ctrl = (Control)sender;
             validate_Controls(ctrl);
         }
+
         /// <summary>
         /// Form validation - emeSetting contains a field called DCATrequired this is populated on controls by the pagecontroller. If 
         /// a control has a tag containing 'required' then it is a required field and validation will be performed. If the value is
@@ -927,6 +941,7 @@ namespace EmeLibrary
         {
            // string tag = ctrl.Tag.ToString();
             string tag = (ctrl.Tag != null) ? ctrl.Tag.ToString() : "";
+            errorProvider1.BlinkStyle = ErrorBlinkStyle.NeverBlink;
 
             if (tag == "required")
             {
@@ -953,6 +968,26 @@ namespace EmeLibrary
                     {
                         errorProvider1.SetError(ctrl, "Must select at least one");
                     }
+                }
+                else if (ctrl.GetType() == typeof(uc_ResponsibleParty))
+                {
+                    uc_ResponsibleParty rp = (uc_ResponsibleParty)ctrl;
+                    string name = rp.Name + "_lbl";
+                    Label rp_lbl = (Label)this.getControlForTag(name);
+
+                    if (rp.incomingCI_ResponsiblePartyList != null)
+                    {
+                        foreach (Control rpc in rp.Controls)
+                        {
+                            Console.WriteLine(rpc.Name.ToString());
+                        }
+                        errorProvider1.SetError(rp_lbl, "");
+                    }
+                    else
+                    {
+                        errorProvider1.SetError(rp_lbl, "Must have at least one");
+                    }
+                    
                 }
             }
             else if (tag.Contains("required"))
@@ -994,7 +1029,7 @@ namespace EmeLibrary
         }
 
         /// <summary>
-        /// adds hover tips to 
+        /// adds hover tips to controld in the emeGUI table
         /// </summary>
         private void hoverHelpInit()
         {
@@ -1017,14 +1052,17 @@ namespace EmeLibrary
                 
                 if (ctrl != null)
                 {
-                    //Console.WriteLine("found");
-                    tooltip1.SetToolTip(ctrl[0], dr["HoverNote"].ToString());
+                    foreach (Control c in ctrl)
+                    {
+                        //Console.WriteLine(c.Name.ToString());
+                        tooltip1.SetToolTip(c, dr["HoverNote"].ToString());
+                    }
+                    
                 }
                
             }
-        }
+         }
 
-        
-        
+
     }
 }
