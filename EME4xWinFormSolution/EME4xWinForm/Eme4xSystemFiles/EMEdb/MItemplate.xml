@@ -406,7 +406,7 @@
 						<gco:CharacterString>*template*</gco:CharacterString>
 					</gmd:keyword>
 					<gmd:type>
-					<gmd:MD_KeywordTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="theme" codeSpace="005">theme</gmd:MD_KeywordTypeCode>
+						<gmd:MD_KeywordTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="theme" codeSpace="005">theme</gmd:MD_KeywordTypeCode>
 					</gmd:type>
 					<gmd:thesaurusName>
 						<gmd:CI_Citation>
@@ -417,21 +417,21 @@
 						</gmd:CI_Citation>
 					</gmd:thesaurusName>
 				</gmd:MD_Keywords>
-			  </gmd:descriptiveKeywords>
+			</gmd:descriptiveKeywords>
 			<gmd:descriptiveKeywords>
 				<gmd:MD_Keywords>
 					<gmd:keyword>
 						<gco:CharacterString>*template*</gco:CharacterString>
 					</gmd:keyword>
 					<gmd:type>
-					<gmd:MD_KeywordTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="place" codeSpace="002">place</gmd:MD_KeywordTypeCode>
+						<gmd:MD_KeywordTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="place" codeSpace="002">place</gmd:MD_KeywordTypeCode>
 					</gmd:type>
 					<gmd:thesaurusName>
 						<gmd:CI_Citation>
-						  <gmd:title>
-							<gco:CharacterString>None</gco:CharacterString>
-						  </gmd:title>
-						  <gmd:date gco:nilReason="unknown" />
+							<gmd:title>
+								<gco:CharacterString>None</gco:CharacterString>
+							</gmd:title>
+							<gmd:date gco:nilReason="unknown" />
 						</gmd:CI_Citation>
 					</gmd:thesaurusName>
 				</gmd:MD_Keywords>
@@ -685,21 +685,26 @@
 	<gmd:dataQualityInfo>
 		<gmd:DQ_DataQuality>
 			<gmd:scope gco:nilReason="unknown"/>
-			<gmd:report><!--may also use a report such as this:-->
+			<gmd:report>
+				<!--may also use a report such as this:-->
 				<gmi:QE_Usability>
 					<gmd:nameOfMeasure>
 						<gco:CharacterString>name of the test applied to the data to assure data quality</gco:CharacterString>
 					</gmd:nameOfMeasure>
-					<gmd:measureDescription><!--optional-->
+					<gmd:measureDescription>
+						<!--optional-->
 						<gco:CharacterString>description of the measure applied to the dataset to assure quality</gco:CharacterString>
 					</gmd:measureDescription>
-					<gmd:evaluationMethodDescription><!--optional-->
+					<gmd:evaluationMethodDescription>
+						<!--optional-->
 						<gco:CharacterString>description of the evaluation method applied to the dataset</gco:CharacterString>
 					</gmd:evaluationMethodDescription>
-					<gmd:evaluationProcedure><!--optional-->
-						<gmd:CI_Citation><!--citation for the evaluation procedure-->
-							<gmd:title></gmd:title>
-							<gmd:date></gmd:date>
+					<gmd:evaluationProcedure>
+						<!--optional-->
+						<gmd:CI_Citation>
+							<!--citation for the evaluation procedure-->
+							<gmd:title/>
+							<gmd:date/>
 						</gmd:CI_Citation>
 					</gmd:evaluationProcedure>
 					<gmd:result>
@@ -734,8 +739,8 @@
 						</gmd:DQ_QuantitativeResult>
 					</gmd:result>
 				</gmi:QE_Usability>
-				</gmd:report>
-				<gmd:report>
+			</gmd:report>
+			<gmd:report>
 				<gmd:DQ_CompletenessCommission>
 					<gmd:evaluationMethodDescription>
 						<gco:CharacterString>*template*</gco:CharacterString>
@@ -774,7 +779,8 @@
 			</gmd:report>
 			<gmd:lineage>
 				<gmd:LI_Lineage>
-					<gmd:processStep><!--repeat process step for each step in the process-->
+					<gmd:processStep>
+						<!--repeat process step for each step in the process-->
 						<gmd:LI_ProcessStep>
 							<gmd:description>
 								<gco:CharacterString>*template*</gco:CharacterString>
@@ -859,17 +865,17 @@
 								<gco:CharacterString>*Sensor name*</gco:CharacterString>
 							</gmd:code>-->
 					</gmd:MD_Identifier>
-					</gmi:identifier>
-					<gmi:type>
-						<gmx:Anchor xlink:href="http://www.rvdata.us/voc/devicetype/*devicetype*">*device type*</gmx:Anchor>
-					</gmi:type>
-					<!-- if you do not wish to use the UNOLS device type vocabulary and want to use free text, use this:
+				</gmi:identifier>
+				<gmi:type>
+					<gmx:Anchor xlink:href="http://www.rvdata.us/voc/devicetype/*devicetype*">*device type*</gmx:Anchor>
+				</gmi:type>
+				<!-- if you do not wish to use the UNOLS device type vocabulary and want to use free text, use this:
 				<gmi:type>
 					<gco:CharacterString>*Sensor type*</gco:CharacterString>
 				</gmi:type>-->
-				</gmi:MI_Instrument>
-			</gmi:instrument>
-			<!--example:
+			</gmi:MI_Instrument>
+		</gmi:instrument>
+		<!--example:
 			<gmi:instrument>
 				<gmi:MI_Instrument>
 					<gmi:identifier>
@@ -898,24 +904,24 @@
 					</gmi:type>
 				</gmi:MI_Instrument>
 			</gmi:instrument>-->
-			<!--may want to use platform components or look at UNOLS Vessel vocabulary (http://www.rvdata.us/voc/vessel)-->
-			<gmi:platform>
-				<gmi:MI_Platform>
-					<gmi:identifier>
-						<gmd:MD_Identifier>
-							<gmd:code>
-								<gco:CharacterString>*unique ship identifier such as EX1003, etc.*</gco:CharacterString>
-							</gmd:code>
-						</gmd:MD_Identifier>
-					</gmi:identifier>
-					<gmi:description>
-						<gco:CharacterString>*brief description of the vessel*</gco:CharacterString>
-					</gmi:description>
-					<!--instruments onboard ship-->
-					<gmi:instrument>*insert instrument section of instruments on vessel (bottled down to the ship)*</gmi:instrument>
-				</gmi:MI_Platform>
-			</gmi:platform>
-			<!--may use platform components and fuller documentation of instrumentation (brought onboard)-->
-		</gmi:MI_AcquisitionInformation>
-	</gmi:acquisitionInformation>
+		<!--may want to use platform components or look at UNOLS Vessel vocabulary (http://www.rvdata.us/voc/vessel)-->
+		<gmi:platform>
+			<gmi:MI_Platform>
+				<gmi:identifier>
+					<gmd:MD_Identifier>
+						<gmd:code>
+							<gco:CharacterString>*unique ship identifier such as EX1003, etc.*</gco:CharacterString>
+						</gmd:code>
+					</gmd:MD_Identifier>
+				</gmi:identifier>
+				<gmi:description>
+					<gco:CharacterString>*brief description of the vessel*</gco:CharacterString>
+				</gmi:description>
+				<!--instruments onboard ship-->
+				<gmi:instrument>*insert instrument section of instruments on vessel (bottled down to the ship)*</gmi:instrument>
+			</gmi:MI_Platform>
+		</gmi:platform>
+		<!--may use platform components and fuller documentation of instrumentation (brought onboard)-->
+	</gmi:MI_AcquisitionInformation>
+</gmi:acquisitionInformation>
 </gmi:MI_Metadata>
