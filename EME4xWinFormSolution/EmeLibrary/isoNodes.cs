@@ -61,6 +61,8 @@ namespace EmeLibrary
         private double _idInfo_extent_geographicBoundingBox_eastLongDD;
         private double _idInfo_extent_geographicBoundingBox_southLatDD;
         private double _idInfo_extent_geographicBoundingBox_northLatDD;
+
+        private List<MD_Distribution> _distributionInfo_MD_Distribution;
                
         
         #region Public Properties Section
@@ -183,6 +185,11 @@ namespace EmeLibrary
             get { return _idInfo_extent_geographicBoundingBox_northLatDD; }
             set { _idInfo_extent_geographicBoundingBox_northLatDD = value; }
         }
+        public List<MD_Distribution> distributionInfo_MD_Distribution
+        {
+            get { return _distributionInfo_MD_Distribution; }
+            set { _distributionInfo_MD_Distribution = value; }
+        }
 
        
         ////<gmd:contentInfo>
@@ -235,8 +242,9 @@ namespace EmeLibrary
                 kwPlaceList = new List<string>();
                 kwUserList = new List<string>();
                 contactRpSection = new List<CI_ResponsibleParty>();
-                idinfoCitationcitedResponsibleParty = new List<CI_ResponsibleParty>();
-                idinfoPointOfContact = new List<CI_ResponsibleParty>();                
+                idinfoCitationcitedResponsibleParty = new List<CI_ResponsibleParty>();                
+                idinfoPointOfContact = new List<CI_ResponsibleParty>();
+                _distributionInfo_MD_Distribution = new List<MD_Distribution>();
 
             }
             else
@@ -274,6 +282,8 @@ namespace EmeLibrary
                 _idInfo_extent_geographicBoundingBox_westLongDD = returnInnerTextfromNodeAsDouble(IsoNodeXpaths.idInfo_extent_geographicBoundingBox_westLongDDXpath);
                 _idInfo_extent_geographicBoundingBox_northLatDD= returnInnerTextfromNodeAsDouble(IsoNodeXpaths.idInfo_extent_geographicBoundingBox_northLatDDXpath);
                 _idInfo_extent_geographicBoundingBox_southLatDD = returnInnerTextfromNodeAsDouble(IsoNodeXpaths.idInfo_extent_geographicBoundingBox_southLatDDXpath);
+
+                _distributionInfo_MD_Distribution = new List<MD_Distribution>();
 
             }
             //****************Testing
@@ -971,6 +981,56 @@ namespace EmeLibrary
         public string contactInfo__CI_Contact__hoursOfService { get; set; }
         public string contactInfo__CI_Contact__contactInstructions { get; set; }
         public string role { get; set; } //need to link with role-code values from codelist
-    }    
+    }
+    
+    public class MD_Distribution
+    {
+        //Per distributor can have multiple distributionFormats and transfer options!
+        public List<MD_Format> distributionFormat { get; set; }
+        public MD_Distributor distributor { get; set; }
+        public List<MD_DigitalTransferOptions> transferOptions { get; set; }
+        //public string transferOptions__MD_DigitalTransferOptions__online__CI_OnlineResource__linkage { get; set; }
+    }
+
+    public class MD_Format
+    {
+        public string name { get; set; }
+        public string version { get; set; }
+        public string amendmentNumber { get; set; }
+        public string specification { get; set; }
+        public string fileDecompressionTechnique { get; set; }      
+
+    }
+    public class MD_Distributor
+    {
+        public CI_ResponsibleParty distributorContact { get; set; }
+        public List<MD_StandardOrderProcess> distributionOrderProcess { get; set; }
+        //public MD_Format distributorFormat { get; set; } //Use if distributionFormatNot Provided
+    }
+    public class MD_StandardOrderProcess
+    {
+        public string fees { get; set; }
+        public DateTime plannedAvailableDateTime { get; set; }
+        public string orderingInstructions { get; set; }
+        public string turnaround { get; set; }
+    }
+    public class MD_DigitalTransferOptions    
+    {
+        public string unitsOfDistribution { get; set; }
+        public string transferSize { get; set; }
+        public string onLine__CI_OnlineResource__linkage__URL { get; set; }
+        public string onLine__CI_OnlineResource__protocol { get; set; }
+        public string onLine__CI_OnlineResource__applicationProfile { get; set; }
+        public string onLine__CI_OnlineResource__name { get; set; }
+        public string onLine__CI_OnlineResource__description { get; set; }
+        public string onLine__CI_OnlineResource__function { get; set; } //link to the CI_OnlineFunctionCode CodeList
+        public string offLine__MD_Medium__name { get; set; } //link to the MD_MediumNameCode CodeList
+        public double offLine__MD_Medium__density__Real { get; set; } //double greater than 0.0
+        public string offLine__MD_Medium__densityUnits { get; set; }
+        public int offLine__MD_Medium__volumes { get; set; }
+        public string offLine__MD_Medium__mediumFormat { get; set; } //link to MD_MediumFormatCode Codelist
+        public string offLine__MD_Medium__mediumNode { get; set; }
+
+    }
 
 }
