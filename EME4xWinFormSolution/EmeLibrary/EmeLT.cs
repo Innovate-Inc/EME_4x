@@ -876,14 +876,15 @@ namespace EmeLibrary
             tbox.Clear();
         }
 
-        private void expand_P1_Click(object sender, EventArgs e)
+        private void expand_Click(object sender, EventArgs e)
         {
-            if (expand_P1.Text == "+")
-                expand_P1.Text = "-";
+            Button expand = (Button)sender;
+            if (expand.Text == "+")
+                expand.Text = "-";
             else
-                expand_P1.Text = "+";
+                expand.Text = "+";
 
-            expander(metadataAuthor_Pnl);
+            expander((Panel)expand.Parent);
         }
 
         private void button4_Click(object sender, EventArgs e)

@@ -56,6 +56,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="test19115Test.cs" />
+    <Compile Include="uc_distribution.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uc_distribution.Designer.cs">
+      <DependentUpon>uc_distribution.cs</DependentUpon>
+    </Compile>
     <Compile Include="uc_ResponsibleParty.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -83,6 +89,9 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uc_distribution.resx">
+      <DependentUpon>uc_distribution.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="uc_ResponsibleParty.resx">
       <DependentUpon>uc_ResponsibleParty.cs</DependentUpon>

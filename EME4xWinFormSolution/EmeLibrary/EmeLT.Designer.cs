@@ -222,7 +222,7 @@
             this.toolsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(989, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1000, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -289,7 +289,7 @@
             this.toolStripStatusLabel1});
             this.statusStrip1.Location = new System.Drawing.Point(0, 604);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(989, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1000, 22);
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -378,7 +378,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(984, 514);
+            this.tabPage4.Size = new System.Drawing.Size(995, 514);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Testing Area";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -506,16 +506,17 @@
             this.tabPage3.Controls.Add(this.groupBox3);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(984, 514);
+            this.tabPage3.Size = new System.Drawing.Size(995, 514);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Distribution & Metadata Information";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // groupBox10
             // 
-            this.groupBox10.Location = new System.Drawing.Point(3, 3);
+            this.groupBox10.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.groupBox10.Location = new System.Drawing.Point(4, 3);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(460, 300);
+            this.groupBox10.Size = new System.Drawing.Size(468, 300);
             this.groupBox10.TabIndex = 39;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Distribution Information";
@@ -523,10 +524,11 @@
             // groupBox3
             // 
             this.groupBox3.AutoSize = true;
+            this.groupBox3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBox3.Controls.Add(this.flowLayoutPanel1);
-            this.groupBox3.Location = new System.Drawing.Point(469, 3);
+            this.groupBox3.Location = new System.Drawing.Point(478, 3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(494, 570);
+            this.groupBox3.Size = new System.Drawing.Size(493, 300);
             this.groupBox3.TabIndex = 38;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Metadata Information";
@@ -696,8 +698,8 @@
             // 
             this.metadataAuthor_Pnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.metadataAuthor_Pnl.Controls.Add(this.contact_CI_ResponsibleParty_lbl);
-            this.metadataAuthor_Pnl.Controls.Add(this.contact_CI_ResponsibleParty);
             this.metadataAuthor_Pnl.Controls.Add(this.expand_P1);
+            this.metadataAuthor_Pnl.Controls.Add(this.contact_CI_ResponsibleParty);
             this.metadataAuthor_Pnl.Location = new System.Drawing.Point(3, 138);
             this.metadataAuthor_Pnl.Name = "metadataAuthor_Pnl";
             this.metadataAuthor_Pnl.Size = new System.Drawing.Size(475, 30);
@@ -723,7 +725,7 @@
             this.expand_P1.TabIndex = 0;
             this.expand_P1.Text = "+";
             this.expand_P1.UseVisualStyleBackColor = true;
-            this.expand_P1.Click += new System.EventHandler(this.expand_P1_Click);
+            this.expand_P1.Click += new System.EventHandler(this.expand_Click);
             // 
             // panel6
             // 
@@ -800,7 +802,7 @@
             this.tabPage2.Controls.Add(this.lblDataDictionary);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(984, 514);
+            this.tabPage2.Size = new System.Drawing.Size(995, 514);
             this.tabPage2.TabIndex = 3;
             this.tabPage2.Text = "Quality, Coordinate System, and Attribute Information";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -940,7 +942,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(984, 514);
+            this.tabPage1.Size = new System.Drawing.Size(995, 514);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Basic Data Information";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -1629,7 +1631,7 @@
             this.tabPage6.Controls.Add(this.label3);
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(984, 514);
+            this.tabPage6.Size = new System.Drawing.Size(995, 514);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "EME Metadata Editor";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -1698,7 +1700,7 @@
             this.tabControl1.Location = new System.Drawing.Point(-3, 28);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(992, 540);
+            this.tabControl1.Size = new System.Drawing.Size(1003, 540);
             this.tabControl1.TabIndex = 2;
             // 
             // errorProvider1
@@ -1707,6 +1709,7 @@
             // 
             // idInfo_citation_citedResponsibleParty
             // 
+            this.idInfo_citation_citedResponsibleParty.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.idInfo_citation_citedResponsibleParty.incomingCI_ResponsiblePartyList = null;
             this.idInfo_citation_citedResponsibleParty.Location = new System.Drawing.Point(4, 32);
             this.idInfo_citation_citedResponsibleParty.Name = "idInfo_citation_citedResponsibleParty";
@@ -1715,6 +1718,7 @@
             // 
             // idInfo_pointOfContact
             // 
+            this.idInfo_pointOfContact.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.idInfo_pointOfContact.incomingCI_ResponsiblePartyList = null;
             this.idInfo_pointOfContact.Location = new System.Drawing.Point(4, 33);
             this.idInfo_pointOfContact.Name = "idInfo_pointOfContact";
@@ -1723,8 +1727,9 @@
             // 
             // contact_CI_ResponsibleParty
             // 
+            this.contact_CI_ResponsibleParty.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.contact_CI_ResponsibleParty.incomingCI_ResponsiblePartyList = null;
-            this.contact_CI_ResponsibleParty.Location = new System.Drawing.Point(4, 33);
+            this.contact_CI_ResponsibleParty.Location = new System.Drawing.Point(6, 33);
             this.contact_CI_ResponsibleParty.Name = "contact_CI_ResponsibleParty";
             this.contact_CI_ResponsibleParty.Size = new System.Drawing.Size(463, 491);
             this.contact_CI_ResponsibleParty.TabIndex = 0;
@@ -1735,7 +1740,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(989, 626);
+            this.ClientSize = new System.Drawing.Size(1000, 626);
             this.Controls.Add(this.panel10);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.panel9);
