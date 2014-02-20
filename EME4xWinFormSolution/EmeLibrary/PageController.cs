@@ -119,7 +119,7 @@ namespace EmeLibrary
                     uc_ResponsibleParty incoming_ResponsibleParty = (uc_ResponsibleParty)ctrl;
 
                     List<CI_ResponsibleParty> ci_RP = (List<CI_ResponsibleParty>)frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null);
-                    if (incoming_ResponsibleParty.incomingCI_ResponsiblePartyList != null)
+                    if (ci_RP != null && ci_RP.Count != 0)
                     {
                         incoming_ResponsibleParty.loadList(ci_RP);
                     }
@@ -151,19 +151,6 @@ namespace EmeLibrary
                     
                 }
             }
-            
-            //ctrl = frm.ge
-            
-            //classFieldBindingNames = new List<string>();
-            //object obj = this.IsoNodeXpaths;
-            //foreach (DataRow dr in subTable.Rows)
-            //{
-            //    //string s = dr["propName"].ToString() + "  Value: " + dr["Iso19115_2"].ToString();
-            //    PropertyInfo propInfo = obj.GetType().GetProperty(dr["propName"].ToString());
-            //    propInfo.SetValue(obj, dr["Iso19115_2"].ToString(), null);
-            //    classFieldBindingNames.Add(dr["propName"].ToString());
-            //}
-
         }
 
         /// <summary>
