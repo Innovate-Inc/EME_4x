@@ -242,9 +242,12 @@ namespace EmeLibrary
                 kwPlaceList = new List<string>();
                 kwUserList = new List<string>();
                 contactRpSection = new List<CI_ResponsibleParty>();
-                idinfoCitationcitedResponsibleParty = new List<CI_ResponsibleParty>();                
+                idinfoCitationcitedResponsibleParty = new List<CI_ResponsibleParty>();
+                
                 idinfoPointOfContact = new List<CI_ResponsibleParty>();
                 _distributionInfo_MD_Distribution = new List<MD_Distribution>();
+                                              
+                
 
             }
             else
@@ -983,30 +986,40 @@ namespace EmeLibrary
         public string role { get; set; } //need to link with role-code values from codelist
     }
     
+    [StructLayout(LayoutKind.Sequential)]
     public class MD_Distribution
     {
         //Per distributor can have multiple distributionFormats and transfer options!
-        public List<MD_Format> distributionFormat { get; set; }
-        public MD_Distributor distributor { get; set; }
-        public List<MD_DigitalTransferOptions> transferOptions { get; set; }
-        //public string transferOptions__MD_DigitalTransferOptions__online__CI_OnlineResource__linkage { get; set; }
+        public List<MD_Format> distributionFormat__MD_Format { get; set; }
+        public CI_ResponsibleParty distributor__MD_Distributor__distributorContact__CI_ResponsibleParty { get; set; }
+        public List<MD_StandardOrderProcess> distributor__MD_Distributor__distributionOrderProcess__MD_StandardOrderProcess { get; set; }
+        //Public MD_Distributor distributor { get; set; }
+        public List<MD_DigitalTransferOptions> transferOptions__MD_DigitalTransferOptions { get; set; }
+        
+        public MD_Distribution()
+        {
+            distributionFormat__MD_Format = new List<MD_Format>();
+            distributor__MD_Distributor__distributorContact__CI_ResponsibleParty = new CI_ResponsibleParty();
+            distributor__MD_Distributor__distributionOrderProcess__MD_StandardOrderProcess = new List<MD_StandardOrderProcess>();            
+            transferOptions__MD_DigitalTransferOptions = new List<MD_DigitalTransferOptions>();
+        }
     }
-
+    [StructLayout(LayoutKind.Sequential)]
     public class MD_Format
     {
         public string name { get; set; }
         public string version { get; set; }
         public string amendmentNumber { get; set; }
         public string specification { get; set; }
-        public string fileDecompressionTechnique { get; set; }      
-
+        public string fileDecompressionTechnique { get; set; }
     }
-    public class MD_Distributor
-    {
-        public CI_ResponsibleParty distributorContact { get; set; }
-        public List<MD_StandardOrderProcess> distributionOrderProcess { get; set; }
-        //public MD_Format distributorFormat { get; set; } //Use if distributionFormatNot Provided
-    }
+    //public class MD_Distributor
+    //{
+    //    public CI_ResponsibleParty distributorContact { get; set; }
+    //    public List<MD_StandardOrderProcess> distributionOrderProcess { get; set; }
+    //    //public MD_Format distributorFormat { get; set; } //Use if distributionFormatNot Provided
+    //}
+    [StructLayout(LayoutKind.Sequential)]
     public class MD_StandardOrderProcess
     {
         public string fees { get; set; }
@@ -1014,6 +1027,7 @@ namespace EmeLibrary
         public string orderingInstructions { get; set; }
         public string turnaround { get; set; }
     }
+    [StructLayout(LayoutKind.Sequential)]
     public class MD_DigitalTransferOptions    
     {
         public string unitsOfDistribution { get; set; }
