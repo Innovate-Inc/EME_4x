@@ -74,6 +74,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.errorProvider_RP = new System.Windows.Forms.ErrorProvider(this.components);
+            this.button2 = new System.Windows.Forms.Button();
+            this.uc_ResponsibleParty_lbl = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -457,23 +459,24 @@
             this.pagerLbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pagerLbl.AutoSize = true;
             this.pagerLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pagerLbl.Location = new System.Drawing.Point(107, 6);
+            this.pagerLbl.Location = new System.Drawing.Point(83, 6);
             this.pagerLbl.Name = "pagerLbl";
-            this.pagerLbl.Size = new System.Drawing.Size(20, 17);
+            this.pagerLbl.Size = new System.Drawing.Size(44, 17);
             this.pagerLbl.TabIndex = 37;
-            this.pagerLbl.Text = "of";
+            this.pagerLbl.Text = "0 of 0";
             this.pagerLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pagerDownBtn
             // 
             this.pagerDownBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.pagerDownBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pagerDownBtn.Location = new System.Drawing.Point(77, 3);
+            this.pagerDownBtn.Location = new System.Drawing.Point(53, 3);
             this.pagerDownBtn.Name = "pagerDownBtn";
             this.pagerDownBtn.Size = new System.Drawing.Size(24, 23);
             this.pagerDownBtn.TabIndex = 38;
             this.pagerDownBtn.Text = "<";
             this.pagerDownBtn.UseVisualStyleBackColor = false;
+            this.pagerDownBtn.Visible = false;
             this.pagerDownBtn.Click += new System.EventHandler(this.pagerDownBtn_Click);
             // 
             // pagerUpBtn
@@ -486,6 +489,7 @@
             this.pagerUpBtn.TabIndex = 38;
             this.pagerUpBtn.Text = ">";
             this.pagerUpBtn.UseVisualStyleBackColor = false;
+            this.pagerUpBtn.Visible = false;
             this.pagerUpBtn.Click += new System.EventHandler(this.pagerUpBtn_Click);
             // 
             // flowLayoutPanel1
@@ -496,7 +500,7 @@
             this.flowLayoutPanel1.Controls.Add(this.pagerLbl);
             this.flowLayoutPanel1.Controls.Add(this.pagerDownBtn);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(170, 5);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(173, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(264, 30);
             this.flowLayoutPanel1.TabIndex = 40;
@@ -508,6 +512,7 @@
             this.deleteRP_Btn.Name = "deleteRP_Btn";
             this.deleteRP_Btn.Size = new System.Drawing.Size(50, 23);
             this.deleteRP_Btn.TabIndex = 40;
+            this.deleteRP_Btn.Tag = "required";
             this.deleteRP_Btn.Text = "Delete";
             this.deleteRP_Btn.UseVisualStyleBackColor = true;
             this.deleteRP_Btn.Click += new System.EventHandler(this.deleteRP_Btn_Click);
@@ -520,6 +525,7 @@
             this.addRP_Btn.Name = "addRP_Btn";
             this.addRP_Btn.Size = new System.Drawing.Size(42, 23);
             this.addRP_Btn.TabIndex = 39;
+            this.addRP_Btn.Tag = "required";
             this.addRP_Btn.Text = "Add";
             this.addRP_Btn.UseVisualStyleBackColor = true;
             this.addRP_Btn.Click += new System.EventHandler(this.addRP_Btn_Click);
@@ -564,10 +570,33 @@
             // 
             this.errorProvider_RP.ContainerControl = this;
             // 
+            // button2
+            // 
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(7, 6);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(22, 22);
+            this.button2.TabIndex = 44;
+            this.button2.Text = "+";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Expander_Click);
+            // 
+            // uc_ResponsibleParty_lbl
+            // 
+            this.uc_ResponsibleParty_lbl.AutoSize = true;
+            this.uc_ResponsibleParty_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uc_ResponsibleParty_lbl.Location = new System.Drawing.Point(41, 8);
+            this.uc_ResponsibleParty_lbl.Name = "uc_ResponsibleParty_lbl";
+            this.uc_ResponsibleParty_lbl.Size = new System.Drawing.Size(0, 17);
+            this.uc_ResponsibleParty_lbl.TabIndex = 45;
+            this.uc_ResponsibleParty_lbl.Tag = "";
+            // 
             // uc_ResponsibleParty
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.uc_ResponsibleParty_lbl);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.comboBox1);
@@ -576,7 +605,7 @@
             this.Controls.Add(this.lblCI_RpListCount);
             this.Controls.Add(this.button1);
             this.Name = "uc_ResponsibleParty";
-            this.Size = new System.Drawing.Size(439, 498);
+            this.Size = new System.Drawing.Size(439, 35);
             this.Load += new System.EventHandler(this.uc_ResponsibleParty_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -639,5 +668,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ErrorProvider errorProvider_RP;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label uc_ResponsibleParty_lbl;
     }
 }

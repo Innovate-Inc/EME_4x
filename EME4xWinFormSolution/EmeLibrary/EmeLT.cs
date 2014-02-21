@@ -39,6 +39,7 @@ namespace EmeLibrary
             }
             bindFormtoEMEdatabases();
             hoverHelpInit();
+            
             //setDefaultKeywordListBoxSelection(ref  idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey);
             //setDefaultKeywordListBoxSelection(ref idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey);
             //setDefaultKeywordListBoxSelection(ref idinfo_keywords_place_placekt__None___placekey);
@@ -768,22 +769,6 @@ namespace EmeLibrary
             
         }
 
-        
-
-        private void citationExpand_btn_Click(object sender, EventArgs e)
-        {
-            if (citationExpand_btn.Text == "+")
-                citationExpand_btn.Text = "-";
-            else
-                citationExpand_btn.Text = "+";
-
-            expander(Citation_Pnl);
-        }
-
-        private void pointOfContact_btn_Click(object sender, EventArgs e)
-        {
-            expander(pointOfContact_Pnl);
-        }
         /// <summary>
         /// wirite the selected date from datetimepicker to its associated textbox
         /// </summary>
@@ -950,7 +935,7 @@ namespace EmeLibrary
                 {
                     if (ctrl.Text == string.Empty)
                     {
-                        
+
                         errorProvider1.SetError(ctrl, "This is a required Field");
                     }
                     else
@@ -970,63 +955,42 @@ namespace EmeLibrary
                         errorProvider1.SetError(ctrl, "Must select at least one");
                     }
                 }
-                else if (ctrl.GetType() == typeof(uc_ResponsibleParty))
-                {
-                    uc_ResponsibleParty rp = (uc_ResponsibleParty)ctrl;
-                    string name = rp.Name + "_lbl";
-                    Label rp_lbl = (Label)this.getControlForTag(name);
-
-                    if (rp.incomingCI_ResponsiblePartyList != null)
-                    {
-                        foreach (Control rpc in rp.Controls)
-                        {
-                            Console.WriteLine(rpc.Name.ToString());
-                        }
-                        errorProvider1.SetError(rp_lbl, "");
-                    }
-                    else
-                    {
-                        errorProvider1.SetError(rp_lbl, "Must have at least one");
-                    }
-                    
-                }
             }
             else if (tag.Contains("required"))
             {
-                //get required control count
-                string requiredCount;
-                int index = ctrl.Tag.ToString().IndexOf("required");
-                string cleanPath = (index < 0)
-                    ? ctrl.Tag.ToString()
-                    : ctrl.Tag.ToString().Remove(index, "required".Length);
-                requiredCount = (cleanPath != null) ? cleanPath : "";
-                //Console.WriteLine(requiredCount.ToString());
+                    //get required control count
+                    string requiredCount;
+                    int index = ctrl.Tag.ToString().IndexOf("required");
+                    string cleanPath = (index < 0)
+                        ? ctrl.Tag.ToString()
+                        : ctrl.Tag.ToString().Remove(index, "required".Length);
+                    requiredCount = (cleanPath != null) ? cleanPath : "";
+                    //Console.WriteLine(requiredCount.ToString());
 
-                if (requiredCount != "")
-                {
-                    int count = 0;
-                    Control parent = ctrl.Parent;
-                    foreach (Control c in parent.Controls)
+                    if (requiredCount != "")
                     {
-                        if (c.Tag != null)
+                        int count = 0;
+                        Control parent = ctrl.Parent;
+                        foreach (Control c in parent.Controls)
                         {
-                            if (c.Tag.ToString() == tag && c.Text != string.Empty)
+                            if (c.Tag != null)
                             {
-                                count++;
+                                if (c.Tag.ToString() == tag && c.Text != string.Empty)
+                                {
+                                    count++;
+                                }
                             }
                         }
-                    }
-                    if (count >= Convert.ToInt16(requiredCount))
-                    {
-                        errorProvider1.SetError(parent, "");
-                    }
-                    else
-                    {
-                        errorProvider1.SetError(parent, "Need at least " + requiredCount.ToString());
-                    }
-                }
+                        if (count >= Convert.ToInt16(requiredCount))
+                        {
+                            errorProvider1.SetError(parent, "");
+                        }
+                        else
+                        {
+                            errorProvider1.SetError(parent, "Need at least " + requiredCount.ToString());
+                        }
+                   }
             }
-
         }
 
         /// <summary>

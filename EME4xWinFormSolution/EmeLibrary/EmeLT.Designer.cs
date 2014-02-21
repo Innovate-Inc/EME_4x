@@ -80,8 +80,6 @@
             this.dateStamp = new System.Windows.Forms.TextBox();
             this.dateStamp_lbl = new System.Windows.Forms.Label();
             this.metadataAuthor_Pnl = new System.Windows.Forms.Panel();
-            this.contact_CI_ResponsibleParty_lbl = new System.Windows.Forms.Label();
-            this.expand_P1 = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.metadataStandardVersion_lbl = new System.Windows.Forms.Label();
@@ -132,8 +130,6 @@
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.Citation_Pnl = new System.Windows.Forms.Panel();
-            this.citatonExpand_lbl = new System.Windows.Forms.Label();
-            this.citationExpand_btn = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dates_for_resources_pnl = new System.Windows.Forms.GroupBox();
             this.idInfo_citation_date_revision_dtP = new System.Windows.Forms.DateTimePicker();
@@ -159,8 +155,6 @@
             this.idInfo_Purpose_lbl = new System.Windows.Forms.Label();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.pointOfContact_Pnl = new System.Windows.Forms.Panel();
-            this.pointOfContact_lbl = new System.Windows.Forms.Label();
-            this.pointOfContact_btn = new System.Windows.Forms.Button();
             this.citationGrp_Pnl = new System.Windows.Forms.Panel();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.button8 = new System.Windows.Forms.Button();
@@ -173,6 +167,7 @@
             this.idInfo_citation_citedResponsibleParty = new EmeLibrary.uc_ResponsibleParty();
             this.idInfo_pointOfContact = new EmeLibrary.uc_ResponsibleParty();
             this.contact_CI_ResponsibleParty = new EmeLibrary.uc_ResponsibleParty();
+            this.uc_distribution1 = new EmeLibrary.uc_distribution();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
@@ -181,6 +176,7 @@
             this.panel10.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.groupBox10.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -514,7 +510,8 @@
             // groupBox10
             // 
             this.groupBox10.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBox10.Location = new System.Drawing.Point(4, 3);
+            this.groupBox10.Controls.Add(this.uc_distribution1);
+            this.groupBox10.Location = new System.Drawing.Point(3, 7);
             this.groupBox10.Name = "groupBox10";
             this.groupBox10.Size = new System.Drawing.Size(468, 300);
             this.groupBox10.TabIndex = 39;
@@ -526,9 +523,9 @@
             this.groupBox3.AutoSize = true;
             this.groupBox3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBox3.Controls.Add(this.flowLayoutPanel1);
-            this.groupBox3.Location = new System.Drawing.Point(478, 3);
+            this.groupBox3.Location = new System.Drawing.Point(481, 7);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(493, 300);
+            this.groupBox3.Size = new System.Drawing.Size(493, 310);
             this.groupBox3.TabIndex = 38;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Metadata Information";
@@ -545,7 +542,7 @@
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(6, 19);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(481, 262);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(481, 272);
             this.flowLayoutPanel1.TabIndex = 37;
             // 
             // panel4
@@ -696,42 +693,20 @@
             // 
             // metadataAuthor_Pnl
             // 
+            this.metadataAuthor_Pnl.AutoSize = true;
+            this.metadataAuthor_Pnl.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.metadataAuthor_Pnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.metadataAuthor_Pnl.Controls.Add(this.contact_CI_ResponsibleParty_lbl);
-            this.metadataAuthor_Pnl.Controls.Add(this.expand_P1);
             this.metadataAuthor_Pnl.Controls.Add(this.contact_CI_ResponsibleParty);
             this.metadataAuthor_Pnl.Location = new System.Drawing.Point(3, 138);
             this.metadataAuthor_Pnl.Name = "metadataAuthor_Pnl";
-            this.metadataAuthor_Pnl.Size = new System.Drawing.Size(475, 30);
+            this.metadataAuthor_Pnl.Size = new System.Drawing.Size(471, 40);
             this.metadataAuthor_Pnl.TabIndex = 13;
-            // 
-            // contact_CI_ResponsibleParty_lbl
-            // 
-            this.contact_CI_ResponsibleParty_lbl.AutoSize = true;
-            this.contact_CI_ResponsibleParty_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.contact_CI_ResponsibleParty_lbl.Location = new System.Drawing.Point(42, 7);
-            this.contact_CI_ResponsibleParty_lbl.Name = "contact_CI_ResponsibleParty_lbl";
-            this.contact_CI_ResponsibleParty_lbl.Size = new System.Drawing.Size(113, 17);
-            this.contact_CI_ResponsibleParty_lbl.TabIndex = 1;
-            this.contact_CI_ResponsibleParty_lbl.Text = "Metadata Author";
-            // 
-            // expand_P1
-            // 
-            this.expand_P1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.expand_P1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.expand_P1.Location = new System.Drawing.Point(4, 4);
-            this.expand_P1.Name = "expand_P1";
-            this.expand_P1.Size = new System.Drawing.Size(22, 22);
-            this.expand_P1.TabIndex = 0;
-            this.expand_P1.Text = "+";
-            this.expand_P1.UseVisualStyleBackColor = true;
-            this.expand_P1.Click += new System.EventHandler(this.expand_Click);
             // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.panel6.Controls.Add(this.groupBox2);
-            this.panel6.Location = new System.Drawing.Point(3, 174);
+            this.panel6.Location = new System.Drawing.Point(3, 184);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(475, 85);
             this.panel6.TabIndex = 29;
@@ -1263,7 +1238,7 @@
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(6, 6);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(474, 483);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(475, 507);
             this.flowLayoutPanel2.TabIndex = 36;
             this.flowLayoutPanel2.WrapContents = false;
             // 
@@ -1275,42 +1250,21 @@
             this.groupBox4.Controls.Add(this.panel3);
             this.groupBox4.Location = new System.Drawing.Point(3, 3);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(468, 211);
+            this.groupBox4.Size = new System.Drawing.Size(468, 222);
             this.groupBox4.TabIndex = 37;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Citation";
             // 
             // Citation_Pnl
             // 
+            this.Citation_Pnl.AutoSize = true;
+            this.Citation_Pnl.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Citation_Pnl.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.Citation_Pnl.Controls.Add(this.idInfo_citation_citedResponsibleParty);
-            this.Citation_Pnl.Controls.Add(this.citatonExpand_lbl);
-            this.Citation_Pnl.Controls.Add(this.citationExpand_btn);
             this.Citation_Pnl.Location = new System.Drawing.Point(6, 162);
             this.Citation_Pnl.Name = "Citation_Pnl";
-            this.Citation_Pnl.Size = new System.Drawing.Size(456, 30);
+            this.Citation_Pnl.Size = new System.Drawing.Size(456, 41);
             this.Citation_Pnl.TabIndex = 16;
-            // 
-            // citatonExpand_lbl
-            // 
-            this.citatonExpand_lbl.AutoSize = true;
-            this.citatonExpand_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.citatonExpand_lbl.Location = new System.Drawing.Point(42, 7);
-            this.citatonExpand_lbl.Name = "citatonExpand_lbl";
-            this.citatonExpand_lbl.Size = new System.Drawing.Size(214, 17);
-            this.citatonExpand_lbl.TabIndex = 1;
-            this.citatonExpand_lbl.Text = "Originator/Producer of Resource";
-            // 
-            // citationExpand_btn
-            // 
-            this.citationExpand_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.citationExpand_btn.Location = new System.Drawing.Point(4, 4);
-            this.citationExpand_btn.Name = "citationExpand_btn";
-            this.citationExpand_btn.Size = new System.Drawing.Size(22, 22);
-            this.citationExpand_btn.TabIndex = 0;
-            this.citationExpand_btn.Text = "+";
-            this.citationExpand_btn.UseVisualStyleBackColor = true;
-            this.citationExpand_btn.Click += new System.EventHandler(this.citationExpand_btn_Click);
             // 
             // panel3
             // 
@@ -1410,7 +1364,7 @@
             this.idInfo_citation_date_creation.ReadOnly = true;
             this.idInfo_citation_date_creation.Size = new System.Drawing.Size(100, 20);
             this.idInfo_citation_date_creation.TabIndex = 40;
-            this.idInfo_citation_date_creation.Tag = "required1";
+            this.idInfo_citation_date_creation.Tag = "";
             this.idInfo_citation_date_creation.Validating += new System.ComponentModel.CancelEventHandler(this.cntrl_Validating);
             // 
             // idInfo_citation_date_creation_dtP
@@ -1440,7 +1394,7 @@
             this.idInfo_citation_date_publication.ReadOnly = true;
             this.idInfo_citation_date_publication.Size = new System.Drawing.Size(100, 20);
             this.idInfo_citation_date_publication.TabIndex = 1;
-            this.idInfo_citation_date_publication.Tag = "required1";
+            this.idInfo_citation_date_publication.Tag = "";
             this.idInfo_citation_date_publication.Validating += new System.ComponentModel.CancelEventHandler(this.cntrl_Validating);
             // 
             // idInfo_citation_date_publication_lbl
@@ -1460,7 +1414,7 @@
             this.idInfo_citation_date_revision.ReadOnly = true;
             this.idInfo_citation_date_revision.Size = new System.Drawing.Size(100, 20);
             this.idInfo_citation_date_revision.TabIndex = 2;
-            this.idInfo_citation_date_revision.Tag = "required1";
+            this.idInfo_citation_date_revision.Tag = "";
             this.idInfo_citation_date_revision.Validating += new System.ComponentModel.CancelEventHandler(this.cntrl_Validating);
             // 
             // idInfo_citation_date_creation_lbl
@@ -1498,7 +1452,7 @@
             // 
             this.groupBox5.Controls.Add(this.panel11);
             this.groupBox5.Controls.Add(this.panel1);
-            this.groupBox5.Location = new System.Drawing.Point(3, 220);
+            this.groupBox5.Location = new System.Drawing.Point(3, 231);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(468, 178);
             this.groupBox5.TabIndex = 38;
@@ -1573,44 +1527,23 @@
             this.groupBox8.AutoSize = true;
             this.groupBox8.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBox8.Controls.Add(this.pointOfContact_Pnl);
-            this.groupBox8.Location = new System.Drawing.Point(3, 404);
+            this.groupBox8.Location = new System.Drawing.Point(3, 415);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(468, 68);
+            this.groupBox8.Size = new System.Drawing.Size(469, 81);
             this.groupBox8.TabIndex = 38;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Contact";
             // 
             // pointOfContact_Pnl
             // 
+            this.pointOfContact_Pnl.AutoSize = true;
+            this.pointOfContact_Pnl.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.pointOfContact_Pnl.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.pointOfContact_Pnl.Controls.Add(this.idInfo_pointOfContact);
-            this.pointOfContact_Pnl.Controls.Add(this.pointOfContact_lbl);
-            this.pointOfContact_Pnl.Controls.Add(this.pointOfContact_btn);
             this.pointOfContact_Pnl.Location = new System.Drawing.Point(9, 19);
             this.pointOfContact_Pnl.Name = "pointOfContact_Pnl";
-            this.pointOfContact_Pnl.Size = new System.Drawing.Size(453, 30);
+            this.pointOfContact_Pnl.Size = new System.Drawing.Size(454, 43);
             this.pointOfContact_Pnl.TabIndex = 17;
-            // 
-            // pointOfContact_lbl
-            // 
-            this.pointOfContact_lbl.AutoSize = true;
-            this.pointOfContact_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pointOfContact_lbl.Location = new System.Drawing.Point(42, 7);
-            this.pointOfContact_lbl.Name = "pointOfContact_lbl";
-            this.pointOfContact_lbl.Size = new System.Drawing.Size(108, 17);
-            this.pointOfContact_lbl.TabIndex = 1;
-            this.pointOfContact_lbl.Text = "Point of Contact";
-            // 
-            // pointOfContact_btn
-            // 
-            this.pointOfContact_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.pointOfContact_btn.Location = new System.Drawing.Point(4, 4);
-            this.pointOfContact_btn.Name = "pointOfContact_btn";
-            this.pointOfContact_btn.Size = new System.Drawing.Size(22, 22);
-            this.pointOfContact_btn.TabIndex = 0;
-            this.pointOfContact_btn.Text = "+";
-            this.pointOfContact_btn.UseVisualStyleBackColor = true;
-            this.pointOfContact_btn.Click += new System.EventHandler(this.pointOfContact_btn_Click);
             // 
             // citationGrp_Pnl
             // 
@@ -1618,7 +1551,7 @@
             this.citationGrp_Pnl.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.citationGrp_Pnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.citationGrp_Pnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.citationGrp_Pnl.Location = new System.Drawing.Point(3, 478);
+            this.citationGrp_Pnl.Location = new System.Drawing.Point(3, 502);
             this.citationGrp_Pnl.Name = "citationGrp_Pnl";
             this.citationGrp_Pnl.Size = new System.Drawing.Size(2, 2);
             this.citationGrp_Pnl.TabIndex = 1;
@@ -1711,29 +1644,47 @@
             // 
             this.idInfo_citation_citedResponsibleParty.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.idInfo_citation_citedResponsibleParty.incomingCI_ResponsiblePartyList = null;
-            this.idInfo_citation_citedResponsibleParty.Location = new System.Drawing.Point(4, 32);
+            this.idInfo_citation_citedResponsibleParty.Location = new System.Drawing.Point(4, 3);
+            this.idInfo_citation_citedResponsibleParty.mylabel = "Producer of Resource";
             this.idInfo_citation_citedResponsibleParty.Name = "idInfo_citation_citedResponsibleParty";
-            this.idInfo_citation_citedResponsibleParty.Size = new System.Drawing.Size(449, 481);
+            this.idInfo_citation_citedResponsibleParty.rp_mode = null;
+            this.idInfo_citation_citedResponsibleParty.Size = new System.Drawing.Size(449, 35);
             this.idInfo_citation_citedResponsibleParty.TabIndex = 2;
             // 
             // idInfo_pointOfContact
             // 
             this.idInfo_pointOfContact.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.idInfo_pointOfContact.incomingCI_ResponsiblePartyList = null;
-            this.idInfo_pointOfContact.Location = new System.Drawing.Point(4, 33);
+            this.idInfo_pointOfContact.Location = new System.Drawing.Point(2, 5);
+            this.idInfo_pointOfContact.mylabel = "Point of Contact";
             this.idInfo_pointOfContact.Name = "idInfo_pointOfContact";
-            this.idInfo_pointOfContact.Size = new System.Drawing.Size(449, 481);
+            this.idInfo_pointOfContact.rp_mode = null;
+            this.idInfo_pointOfContact.Size = new System.Drawing.Size(449, 35);
             this.idInfo_pointOfContact.TabIndex = 2;
             // 
             // contact_CI_ResponsibleParty
             // 
             this.contact_CI_ResponsibleParty.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.contact_CI_ResponsibleParty.incomingCI_ResponsiblePartyList = null;
-            this.contact_CI_ResponsibleParty.Location = new System.Drawing.Point(6, 33);
+            this.contact_CI_ResponsibleParty.Location = new System.Drawing.Point(5, 2);
+            this.contact_CI_ResponsibleParty.mylabel = "Metadata Author";
             this.contact_CI_ResponsibleParty.Name = "contact_CI_ResponsibleParty";
-            this.contact_CI_ResponsibleParty.Size = new System.Drawing.Size(463, 491);
+            this.contact_CI_ResponsibleParty.rp_mode = "dist";
+            this.contact_CI_ResponsibleParty.Size = new System.Drawing.Size(463, 35);
             this.contact_CI_ResponsibleParty.TabIndex = 0;
+            this.contact_CI_ResponsibleParty.Tag = "";
             this.contact_CI_ResponsibleParty.Validating += new System.ComponentModel.CancelEventHandler(this.cntrl_Validating);
+            // 
+            // uc_distribution1
+            // 
+            this.uc_distribution1.AutoSize = true;
+            this.uc_distribution1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.uc_distribution1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.uc_distribution1.distributionList = null;
+            this.uc_distribution1.Location = new System.Drawing.Point(3, 19);
+            this.uc_distribution1.Name = "uc_distribution1";
+            this.uc_distribution1.Size = new System.Drawing.Size(460, 368);
+            this.uc_distribution1.TabIndex = 0;
             // 
             // EmeLT
             // 
@@ -1767,6 +1718,8 @@
             this.tabPage4.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            this.groupBox10.ResumeLayout(false);
+            this.groupBox10.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
@@ -1778,7 +1731,6 @@
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.metadataAuthor_Pnl.ResumeLayout(false);
-            this.metadataAuthor_Pnl.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -1802,8 +1754,8 @@
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
             this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.Citation_Pnl.ResumeLayout(false);
-            this.Citation_Pnl.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.dates_for_resources_pnl.ResumeLayout(false);
@@ -1814,8 +1766,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
             this.pointOfContact_Pnl.ResumeLayout(false);
-            this.pointOfContact_Pnl.PerformLayout();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
             this.tabControl1.ResumeLayout(false);
@@ -1877,9 +1829,7 @@
         private System.Windows.Forms.TextBox dateStamp;
         private System.Windows.Forms.Label dateStamp_lbl;
         private System.Windows.Forms.Panel metadataAuthor_Pnl;
-        private System.Windows.Forms.Label contact_CI_ResponsibleParty_lbl;
         private uc_ResponsibleParty contact_CI_ResponsibleParty;
-        private System.Windows.Forms.Button expand_P1;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label metadataStandardVersion_lbl;
@@ -1914,14 +1864,10 @@
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.Panel pointOfContact_Pnl;
         private uc_ResponsibleParty idInfo_pointOfContact;
-        private System.Windows.Forms.Label pointOfContact_lbl;
-        private System.Windows.Forms.Button pointOfContact_btn;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Panel Citation_Pnl;
         private uc_ResponsibleParty idInfo_citation_citedResponsibleParty;
-        private System.Windows.Forms.Label citatonExpand_lbl;
-        private System.Windows.Forms.Button citationExpand_btn;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.GroupBox dates_for_resources_pnl;
         private System.Windows.Forms.DateTimePicker idInfo_citation_date_revision_dtP;
@@ -1970,5 +1916,6 @@
         private System.Windows.Forms.Label lblDataDictionary;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.ToolTip tooltip1;
+        private uc_distribution uc_distribution1;
     }
 }

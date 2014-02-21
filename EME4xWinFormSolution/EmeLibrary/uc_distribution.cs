@@ -24,6 +24,9 @@ namespace EmeLibrary
         public uc_distribution()
         {
             InitializeComponent();
+
+            distributorContact.mylabel = "Distributor Contact";
+
         }
 
         private void uc_distribution_Expander_Click(object sender, EventArgs e)
