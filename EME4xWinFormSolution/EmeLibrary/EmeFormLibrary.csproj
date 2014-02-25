@@ -101,7 +101,6 @@
     <Content Include="Resources\docBlack 2.jpg" />
     <Content Include="Resources\docBlack3.jpg" />
     <Content Include="Resources\fileIcon.jpg" />
-    <Content Include="Resources\GenericDeleteRed16.png" />
     <Content Include="Resources\open.gif" />
     <Content Include="Resources\save.bmp" />
     <Content Include="Resources\saveas.bmp" />

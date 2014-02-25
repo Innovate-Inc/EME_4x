@@ -282,6 +282,7 @@ namespace EmeLibrary
             {
                 pagerDownBtn.Visible = false;
                 pagerUpBtn.Visible = false;
+                incomingRPListIndex = 0;
                 bindToFields(incomingRPList[incomingRPListIndex]);
             }
             else

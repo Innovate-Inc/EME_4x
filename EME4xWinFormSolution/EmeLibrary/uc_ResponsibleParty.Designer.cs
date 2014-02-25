@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(uc_ResponsibleParty));
             this.button1 = new System.Windows.Forms.Button();
             this.positionName = new System.Windows.Forms.TextBox();
             this.organisationName_txt = new System.Windows.Forms.TextBox();
@@ -459,7 +460,7 @@
             this.pagerLbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pagerLbl.AutoSize = true;
             this.pagerLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pagerLbl.Location = new System.Drawing.Point(83, 6);
+            this.pagerLbl.Location = new System.Drawing.Point(101, 6);
             this.pagerLbl.Name = "pagerLbl";
             this.pagerLbl.Size = new System.Drawing.Size(44, 17);
             this.pagerLbl.TabIndex = 37;
@@ -468,11 +469,12 @@
             // 
             // pagerDownBtn
             // 
+            this.pagerDownBtn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.pagerDownBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.pagerDownBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pagerDownBtn.Location = new System.Drawing.Point(53, 3);
+            this.pagerDownBtn.Location = new System.Drawing.Point(72, 3);
             this.pagerDownBtn.Name = "pagerDownBtn";
-            this.pagerDownBtn.Size = new System.Drawing.Size(24, 23);
+            this.pagerDownBtn.Size = new System.Drawing.Size(23, 23);
             this.pagerDownBtn.TabIndex = 38;
             this.pagerDownBtn.Text = "<";
             this.pagerDownBtn.UseVisualStyleBackColor = false;
@@ -481,11 +483,12 @@
             // 
             // pagerUpBtn
             // 
+            this.pagerUpBtn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.pagerUpBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.pagerUpBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pagerUpBtn.Location = new System.Drawing.Point(133, 3);
+            this.pagerUpBtn.Location = new System.Drawing.Point(151, 3);
             this.pagerUpBtn.Name = "pagerUpBtn";
-            this.pagerUpBtn.Size = new System.Drawing.Size(24, 23);
+            this.pagerUpBtn.Size = new System.Drawing.Size(23, 23);
             this.pagerUpBtn.TabIndex = 38;
             this.pagerUpBtn.Text = ">";
             this.pagerUpBtn.UseVisualStyleBackColor = false;
@@ -500,33 +503,35 @@
             this.flowLayoutPanel1.Controls.Add(this.pagerLbl);
             this.flowLayoutPanel1.Controls.Add(this.pagerDownBtn);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(173, 2);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(201, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(264, 30);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(235, 30);
             this.flowLayoutPanel1.TabIndex = 40;
             // 
             // deleteRP_Btn
             // 
+            this.deleteRP_Btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.deleteRP_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.deleteRP_Btn.Location = new System.Drawing.Point(211, 3);
+            this.deleteRP_Btn.Image = ((System.Drawing.Image)(resources.GetObject("deleteRP_Btn.Image")));
+            this.deleteRP_Btn.Location = new System.Drawing.Point(209, 3);
             this.deleteRP_Btn.Name = "deleteRP_Btn";
-            this.deleteRP_Btn.Size = new System.Drawing.Size(50, 23);
+            this.deleteRP_Btn.Size = new System.Drawing.Size(23, 23);
             this.deleteRP_Btn.TabIndex = 40;
             this.deleteRP_Btn.Tag = "required";
-            this.deleteRP_Btn.Text = "Delete";
             this.deleteRP_Btn.UseVisualStyleBackColor = true;
             this.deleteRP_Btn.Click += new System.EventHandler(this.deleteRP_Btn_Click);
             // 
             // addRP_Btn
             // 
             this.addRP_Btn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.addRP_Btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.addRP_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addRP_Btn.Location = new System.Drawing.Point(163, 3);
+            this.addRP_Btn.Image = ((System.Drawing.Image)(resources.GetObject("addRP_Btn.Image")));
+            this.addRP_Btn.Location = new System.Drawing.Point(180, 3);
             this.addRP_Btn.Name = "addRP_Btn";
-            this.addRP_Btn.Size = new System.Drawing.Size(42, 23);
+            this.addRP_Btn.Size = new System.Drawing.Size(23, 23);
             this.addRP_Btn.TabIndex = 39;
             this.addRP_Btn.Tag = "required";
-            this.addRP_Btn.Text = "Add";
             this.addRP_Btn.UseVisualStyleBackColor = true;
             this.addRP_Btn.Click += new System.EventHandler(this.addRP_Btn_Click);
             // 
@@ -572,6 +577,7 @@
             // 
             // button2
             // 
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Location = new System.Drawing.Point(7, 6);
             this.button2.Name = "button2";

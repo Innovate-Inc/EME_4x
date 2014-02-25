@@ -64,6 +64,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.uc_distribution1 = new EmeLibrary.uc_distribution();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -80,6 +81,7 @@
             this.dateStamp = new System.Windows.Forms.TextBox();
             this.dateStamp_lbl = new System.Windows.Forms.Label();
             this.metadataAuthor_Pnl = new System.Windows.Forms.Panel();
+            this.contact_CI_ResponsibleParty = new EmeLibrary.uc_ResponsibleParty();
             this.panel6 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.metadataStandardVersion_lbl = new System.Windows.Forms.Label();
@@ -130,6 +132,7 @@
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.Citation_Pnl = new System.Windows.Forms.Panel();
+            this.idInfo_citation_citedResponsibleParty = new EmeLibrary.uc_ResponsibleParty();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dates_for_resources_pnl = new System.Windows.Forms.GroupBox();
             this.idInfo_citation_date_revision_dtP = new System.Windows.Forms.DateTimePicker();
@@ -155,6 +158,7 @@
             this.idInfo_Purpose_lbl = new System.Windows.Forms.Label();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.pointOfContact_Pnl = new System.Windows.Forms.Panel();
+            this.idInfo_pointOfContact = new EmeLibrary.uc_ResponsibleParty();
             this.citationGrp_Pnl = new System.Windows.Forms.Panel();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.button8 = new System.Windows.Forms.Button();
@@ -164,10 +168,6 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.tooltip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.idInfo_citation_citedResponsibleParty = new EmeLibrary.uc_ResponsibleParty();
-            this.idInfo_pointOfContact = new EmeLibrary.uc_ResponsibleParty();
-            this.contact_CI_ResponsibleParty = new EmeLibrary.uc_ResponsibleParty();
-            this.uc_distribution1 = new EmeLibrary.uc_distribution();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
@@ -509,14 +509,25 @@
             // 
             // groupBox10
             // 
+            this.groupBox10.AutoSize = true;
             this.groupBox10.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBox10.Controls.Add(this.uc_distribution1);
             this.groupBox10.Location = new System.Drawing.Point(3, 7);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(468, 300);
+            this.groupBox10.Size = new System.Drawing.Size(460, 247);
             this.groupBox10.TabIndex = 39;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Distribution Information";
+            // 
+            // uc_distribution1
+            // 
+            this.uc_distribution1.AutoSize = true;
+            this.uc_distribution1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.uc_distribution1.Location = new System.Drawing.Point(3, 19);
+            this.uc_distribution1.mylabel = "Distributors";
+            this.uc_distribution1.Name = "uc_distribution1";
+            this.uc_distribution1.Size = new System.Drawing.Size(451, 209);
+            this.uc_distribution1.TabIndex = 0;
             // 
             // groupBox3
             // 
@@ -701,6 +712,19 @@
             this.metadataAuthor_Pnl.Name = "metadataAuthor_Pnl";
             this.metadataAuthor_Pnl.Size = new System.Drawing.Size(471, 40);
             this.metadataAuthor_Pnl.TabIndex = 13;
+            // 
+            // contact_CI_ResponsibleParty
+            // 
+            this.contact_CI_ResponsibleParty.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.contact_CI_ResponsibleParty.incomingCI_ResponsiblePartyList = null;
+            this.contact_CI_ResponsibleParty.Location = new System.Drawing.Point(5, 2);
+            this.contact_CI_ResponsibleParty.mylabel = "Metadata Author";
+            this.contact_CI_ResponsibleParty.Name = "contact_CI_ResponsibleParty";
+            this.contact_CI_ResponsibleParty.rp_mode = "dist";
+            this.contact_CI_ResponsibleParty.Size = new System.Drawing.Size(463, 35);
+            this.contact_CI_ResponsibleParty.TabIndex = 0;
+            this.contact_CI_ResponsibleParty.Tag = "";
+            this.contact_CI_ResponsibleParty.Validating += new System.ComponentModel.CancelEventHandler(this.cntrl_Validating);
             // 
             // panel6
             // 
@@ -1266,6 +1290,17 @@
             this.Citation_Pnl.Size = new System.Drawing.Size(456, 41);
             this.Citation_Pnl.TabIndex = 16;
             // 
+            // idInfo_citation_citedResponsibleParty
+            // 
+            this.idInfo_citation_citedResponsibleParty.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.idInfo_citation_citedResponsibleParty.incomingCI_ResponsiblePartyList = null;
+            this.idInfo_citation_citedResponsibleParty.Location = new System.Drawing.Point(4, 3);
+            this.idInfo_citation_citedResponsibleParty.mylabel = "Producer of Resource";
+            this.idInfo_citation_citedResponsibleParty.Name = "idInfo_citation_citedResponsibleParty";
+            this.idInfo_citation_citedResponsibleParty.rp_mode = null;
+            this.idInfo_citation_citedResponsibleParty.Size = new System.Drawing.Size(449, 35);
+            this.idInfo_citation_citedResponsibleParty.TabIndex = 2;
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
@@ -1545,6 +1580,17 @@
             this.pointOfContact_Pnl.Size = new System.Drawing.Size(454, 43);
             this.pointOfContact_Pnl.TabIndex = 17;
             // 
+            // idInfo_pointOfContact
+            // 
+            this.idInfo_pointOfContact.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.idInfo_pointOfContact.incomingCI_ResponsiblePartyList = null;
+            this.idInfo_pointOfContact.Location = new System.Drawing.Point(2, 5);
+            this.idInfo_pointOfContact.mylabel = "Point of Contact";
+            this.idInfo_pointOfContact.Name = "idInfo_pointOfContact";
+            this.idInfo_pointOfContact.rp_mode = null;
+            this.idInfo_pointOfContact.Size = new System.Drawing.Size(449, 35);
+            this.idInfo_pointOfContact.TabIndex = 2;
+            // 
             // citationGrp_Pnl
             // 
             this.citationGrp_Pnl.AutoSize = true;
@@ -1639,52 +1685,6 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // idInfo_citation_citedResponsibleParty
-            // 
-            this.idInfo_citation_citedResponsibleParty.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.idInfo_citation_citedResponsibleParty.incomingCI_ResponsiblePartyList = null;
-            this.idInfo_citation_citedResponsibleParty.Location = new System.Drawing.Point(4, 3);
-            this.idInfo_citation_citedResponsibleParty.mylabel = "Producer of Resource";
-            this.idInfo_citation_citedResponsibleParty.Name = "idInfo_citation_citedResponsibleParty";
-            this.idInfo_citation_citedResponsibleParty.rp_mode = null;
-            this.idInfo_citation_citedResponsibleParty.Size = new System.Drawing.Size(449, 35);
-            this.idInfo_citation_citedResponsibleParty.TabIndex = 2;
-            // 
-            // idInfo_pointOfContact
-            // 
-            this.idInfo_pointOfContact.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.idInfo_pointOfContact.incomingCI_ResponsiblePartyList = null;
-            this.idInfo_pointOfContact.Location = new System.Drawing.Point(2, 5);
-            this.idInfo_pointOfContact.mylabel = "Point of Contact";
-            this.idInfo_pointOfContact.Name = "idInfo_pointOfContact";
-            this.idInfo_pointOfContact.rp_mode = null;
-            this.idInfo_pointOfContact.Size = new System.Drawing.Size(449, 35);
-            this.idInfo_pointOfContact.TabIndex = 2;
-            // 
-            // contact_CI_ResponsibleParty
-            // 
-            this.contact_CI_ResponsibleParty.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.contact_CI_ResponsibleParty.incomingCI_ResponsiblePartyList = null;
-            this.contact_CI_ResponsibleParty.Location = new System.Drawing.Point(5, 2);
-            this.contact_CI_ResponsibleParty.mylabel = "Metadata Author";
-            this.contact_CI_ResponsibleParty.Name = "contact_CI_ResponsibleParty";
-            this.contact_CI_ResponsibleParty.rp_mode = "dist";
-            this.contact_CI_ResponsibleParty.Size = new System.Drawing.Size(463, 35);
-            this.contact_CI_ResponsibleParty.TabIndex = 0;
-            this.contact_CI_ResponsibleParty.Tag = "";
-            this.contact_CI_ResponsibleParty.Validating += new System.ComponentModel.CancelEventHandler(this.cntrl_Validating);
-            // 
-            // uc_distribution1
-            // 
-            this.uc_distribution1.AutoSize = true;
-            this.uc_distribution1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.uc_distribution1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.uc_distribution1.distributionList = null;
-            this.uc_distribution1.Location = new System.Drawing.Point(3, 19);
-            this.uc_distribution1.Name = "uc_distribution1";
-            this.uc_distribution1.Size = new System.Drawing.Size(460, 368);
-            this.uc_distribution1.TabIndex = 0;
             // 
             // EmeLT
             // 
