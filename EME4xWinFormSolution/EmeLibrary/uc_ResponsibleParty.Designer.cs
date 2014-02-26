@@ -591,7 +591,7 @@
             // 
             this.uc_ResponsibleParty_lbl.AutoSize = true;
             this.uc_ResponsibleParty_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uc_ResponsibleParty_lbl.Location = new System.Drawing.Point(41, 8);
+            this.uc_ResponsibleParty_lbl.Location = new System.Drawing.Point(33, 9);
             this.uc_ResponsibleParty_lbl.Name = "uc_ResponsibleParty_lbl";
             this.uc_ResponsibleParty_lbl.Size = new System.Drawing.Size(0, 17);
             this.uc_ResponsibleParty_lbl.TabIndex = 45;

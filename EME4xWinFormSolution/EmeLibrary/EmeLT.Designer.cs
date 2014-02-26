@@ -89,6 +89,7 @@
             this.XmetadataStandardName = new System.Windows.Forms.TextBox();
             this.XmetadataStandardVersion = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.uc_ResponsibleParty1 = new EmeLibrary.uc_ResponsibleParty();
             this.lblDownloadUrl = new System.Windows.Forms.Label();
             this.lblEndpoint = new System.Windows.Forms.Label();
             this.lblFormat = new System.Windows.Forms.Label();
@@ -514,7 +515,7 @@
             this.groupBox10.Controls.Add(this.uc_distribution1);
             this.groupBox10.Location = new System.Drawing.Point(3, 7);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(460, 247);
+            this.groupBox10.Size = new System.Drawing.Size(474, 266);
             this.groupBox10.TabIndex = 39;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Distribution Information";
@@ -523,10 +524,11 @@
             // 
             this.uc_distribution1.AutoSize = true;
             this.uc_distribution1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.uc_distribution1.Location = new System.Drawing.Point(3, 19);
-            this.uc_distribution1.mylabel = "Distributors";
+            this.uc_distribution1.distributionFormat = null;
+            this.uc_distribution1.Location = new System.Drawing.Point(3, 17);
+            this.uc_distribution1.mylabel = "Distributor";
             this.uc_distribution1.Name = "uc_distribution1";
-            this.uc_distribution1.Size = new System.Drawing.Size(451, 209);
+            this.uc_distribution1.Size = new System.Drawing.Size(465, 230);
             this.uc_distribution1.TabIndex = 0;
             // 
             // groupBox3
@@ -534,7 +536,7 @@
             this.groupBox3.AutoSize = true;
             this.groupBox3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBox3.Controls.Add(this.flowLayoutPanel1);
-            this.groupBox3.Location = new System.Drawing.Point(481, 7);
+            this.groupBox3.Location = new System.Drawing.Point(485, 7);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(493, 310);
             this.groupBox3.TabIndex = 38;
@@ -784,6 +786,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.uc_ResponsibleParty1);
             this.tabPage2.Controls.Add(this.lblDownloadUrl);
             this.tabPage2.Controls.Add(this.lblEndpoint);
             this.tabPage2.Controls.Add(this.lblFormat);
@@ -805,6 +808,16 @@
             this.tabPage2.TabIndex = 3;
             this.tabPage2.Text = "Quality, Coordinate System, and Attribute Information";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // uc_ResponsibleParty1
+            // 
+            this.uc_ResponsibleParty1.incomingCI_ResponsiblePartyList = null;
+            this.uc_ResponsibleParty1.Location = new System.Drawing.Point(435, 68);
+            this.uc_ResponsibleParty1.mylabel = "";
+            this.uc_ResponsibleParty1.Name = "uc_ResponsibleParty1";
+            this.uc_ResponsibleParty1.rp_mode = null;
+            this.uc_ResponsibleParty1.Size = new System.Drawing.Size(439, 35);
+            this.uc_ResponsibleParty1.TabIndex = 50;
             // 
             // lblDownloadUrl
             // 
@@ -1917,5 +1930,6 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.ToolTip tooltip1;
         private uc_distribution uc_distribution1;
+        private uc_ResponsibleParty uc_ResponsibleParty1;
     }
 }

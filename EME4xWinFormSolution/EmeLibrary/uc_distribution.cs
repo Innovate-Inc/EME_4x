@@ -73,7 +73,7 @@ namespace EmeLibrary
             if (expand.Text == "+")
             {
                 expand.Text = "-";
-                expand.Parent.Height = 250;
+                expand.Parent.Height = 210;
                 //this.Height = 250;
             }
             else
@@ -86,7 +86,6 @@ namespace EmeLibrary
 
         private void Add_Click(object sender, EventArgs e)
         {
-            //CI_ResponsibleParty newRP = new CI_ResponsibleParty();
 
             MD_Format md_format = new MD_Format();
             if (_distributionFormat == null)
@@ -115,6 +114,7 @@ namespace EmeLibrary
 
         private void del_MD_Format_btn_Click(object sender, EventArgs e)
         {
+
             _distributionFormat.RemoveAt(_distributionFormat_idx);
             if (_distributionFormat.Count == 0)
             {
@@ -171,6 +171,11 @@ namespace EmeLibrary
                 pgD_MD_Format_btn.Enabled = true;
                 bindToFields(_distributionFormat[_distributionFormat_idx]);
             }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
 
        
