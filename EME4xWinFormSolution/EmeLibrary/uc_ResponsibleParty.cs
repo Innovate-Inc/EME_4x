@@ -488,5 +488,14 @@ namespace EmeLibrary
                 this.Height = 35;
             }
         }
+
+        private void uc_ResponsibleParty_Leave(object sender, EventArgs e)
+        {
+            MessageBox.Show("Leaving");
+            if (incomingRPList != null)
+            {
+                bindToClass(incomingRPList[incomingRPListIndex]);
+            }
+        }
     }
 }

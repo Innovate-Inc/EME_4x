@@ -50,57 +50,85 @@
             this.pgD_MD_Format_btn = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.distributionFormat__MD_Format_lbl = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.button15 = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.button11 = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
+            this.digitalTransferOptions_pnl = new System.Windows.Forms.Panel();
+            this.Online_pnl = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.button10 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
+            this.del_MD_DTO_btn = new System.Windows.Forms.Button();
+            this.add_DTO_btn = new System.Windows.Forms.Button();
+            this.pgU_MD_DTO_btn = new System.Windows.Forms.Button();
+            this.MD_DTO_lbl = new System.Windows.Forms.Label();
+            this.pgD_MD_DTO_btn = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.dTO_expand_tbn = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
+            this.MD_SOP_del_btn = new System.Windows.Forms.Button();
+            this.MD_SOP_add_btn = new System.Windows.Forms.Button();
+            this.MD_SOP_pgU_btn = new System.Windows.Forms.Button();
+            this.MD_SOP_pg_lbl = new System.Windows.Forms.Label();
+            this.MD_SOP_pgD_btn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.uc_distribution_lbl = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button16 = new System.Windows.Forms.Button();
+            this.MD_Dist_del_btn = new System.Windows.Forms.Button();
+            this.MD_Dist_add_btn = new System.Windows.Forms.Button();
+            this.MD_Dist_pgU_btn = new System.Windows.Forms.Button();
+            this.MD_Dist_lbl = new System.Windows.Forms.Label();
+            this.MD_Dist_pgD_btn = new System.Windows.Forms.Button();
             this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
             this.uc_ResponsibleParty1 = new EmeLibrary.uc_ResponsibleParty();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.distributionFormat__MD_Format_pnl.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.digitalTransferOptions_pnl.SuspendLayout();
+            this.Online_pnl.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.flowLayoutPanel5.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.flowLayoutPanel4.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel6.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // distributionFormat__MD_Format_pnl
@@ -241,6 +269,7 @@
             // 
             // del_MD_Format_btn
             // 
+            this.del_MD_Format_btn.Enabled = false;
             this.del_MD_Format_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.del_MD_Format_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.del_MD_Format_btn.Image = ((System.Drawing.Image)(resources.GetObject("del_MD_Format_btn.Image")));
@@ -261,7 +290,7 @@
             this.add_MD_Format_btn.Size = new System.Drawing.Size(23, 23);
             this.add_MD_Format_btn.TabIndex = 1;
             this.add_MD_Format_btn.UseVisualStyleBackColor = true;
-            this.add_MD_Format_btn.Click += new System.EventHandler(this.Add_Click);
+            this.add_MD_Format_btn.Click += new System.EventHandler(this.Add_MD_Format_Click);
             // 
             // pgU_MD_Format_btn
             // 
@@ -322,85 +351,348 @@
             this.distributionFormat__MD_Format_lbl.TabIndex = 0;
             this.distributionFormat__MD_Format_lbl.Text = "Distribution Format";
             // 
-            // panel3
+            // digitalTransferOptions_pnl
             // 
-            this.panel3.Controls.Add(this.flowLayoutPanel5);
-            this.panel3.Controls.Add(this.label5);
-            this.panel3.Controls.Add(this.button11);
-            this.panel3.Location = new System.Drawing.Point(3, 126);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(439, 35);
-            this.panel3.TabIndex = 4;
+            this.digitalTransferOptions_pnl.Controls.Add(this.Online_pnl);
+            this.digitalTransferOptions_pnl.Controls.Add(this.panel6);
+            this.digitalTransferOptions_pnl.Controls.Add(this.flowLayoutPanel5);
+            this.digitalTransferOptions_pnl.Controls.Add(this.label5);
+            this.digitalTransferOptions_pnl.Controls.Add(this.dTO_expand_tbn);
+            this.digitalTransferOptions_pnl.Location = new System.Drawing.Point(3, 126);
+            this.digitalTransferOptions_pnl.Name = "digitalTransferOptions_pnl";
+            this.digitalTransferOptions_pnl.Size = new System.Drawing.Size(439, 316);
+            this.digitalTransferOptions_pnl.TabIndex = 4;
+            // 
+            // Online_pnl
+            // 
+            this.Online_pnl.Controls.Add(this.button2);
+            this.Online_pnl.Controls.Add(this.flowLayoutPanel2);
+            this.Online_pnl.Controls.Add(this.label10);
+            this.Online_pnl.Controls.Add(this.label17);
+            this.Online_pnl.Controls.Add(this.textBox9);
+            this.Online_pnl.Controls.Add(this.label16);
+            this.Online_pnl.Controls.Add(this.label13);
+            this.Online_pnl.Controls.Add(this.label14);
+            this.Online_pnl.Controls.Add(this.comboBox1);
+            this.Online_pnl.Controls.Add(this.label12);
+            this.Online_pnl.Controls.Add(this.textBox7);
+            this.Online_pnl.Controls.Add(this.textBox10);
+            this.Online_pnl.Controls.Add(this.label15);
+            this.Online_pnl.Controls.Add(this.textBox8);
+            this.Online_pnl.Location = new System.Drawing.Point(6, 112);
+            this.Online_pnl.Name = "Online_pnl";
+            this.Online_pnl.Size = new System.Drawing.Size(427, 201);
+            this.Online_pnl.TabIndex = 7;
+            // 
+            // button2
+            // 
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(42, 8);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(23, 23);
+            this.button2.TabIndex = 14;
+            this.button2.Text = "-";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Controls.Add(this.button3);
+            this.flowLayoutPanel2.Controls.Add(this.button4);
+            this.flowLayoutPanel2.Controls.Add(this.button5);
+            this.flowLayoutPanel2.Controls.Add(this.label11);
+            this.flowLayoutPanel2.Controls.Add(this.button7);
+            this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(118, 7);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(198, 30);
+            this.flowLayoutPanel2.TabIndex = 2;
+            // 
+            // button3
+            // 
+            this.button3.Enabled = false;
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.Location = new System.Drawing.Point(172, 3);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(23, 23);
+            this.button3.TabIndex = 0;
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.SystemColors.Control;
+            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+            this.button4.Location = new System.Drawing.Point(143, 3);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(23, 23);
+            this.button4.TabIndex = 1;
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // button5
+            // 
+            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Location = new System.Drawing.Point(114, 3);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(23, 23);
+            this.button5.TabIndex = 2;
+            this.button5.Text = ">";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // label11
+            // 
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(74, 8);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(34, 13);
+            this.label11.TabIndex = 3;
+            this.label11.Text = "1 of 1";
+            // 
+            // button7
+            // 
+            this.button7.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Location = new System.Drawing.Point(45, 3);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(23, 23);
+            this.button7.TabIndex = 4;
+            this.button7.Text = "<";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(71, 14);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(37, 13);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "Online";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(60, 152);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(48, 13);
+            this.label17.TabIndex = 13;
+            this.label17.Text = "Function";
+            // 
+            // textBox9
+            // 
+            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox9.Location = new System.Drawing.Point(116, 96);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(205, 20);
+            this.textBox9.TabIndex = 7;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(67, 152);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(0, 13);
+            this.label16.TabIndex = 12;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(62, 72);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(46, 13);
+            this.label13.TabIndex = 6;
+            this.label13.Text = "Protocol";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(73, 98);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(35, 13);
+            this.label14.TabIndex = 8;
+            this.label14.Text = "Name";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "download",
+            "information",
+            "offlineAccess",
+            "order",
+            "search"});
+            this.comboBox1.Location = new System.Drawing.Point(116, 149);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(169, 21);
+            this.comboBox1.TabIndex = 11;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(63, 46);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(45, 13);
+            this.label12.TabIndex = 5;
+            this.label12.Text = "Linkage";
+            // 
+            // textBox7
+            // 
+            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox7.Location = new System.Drawing.Point(116, 43);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(205, 20);
+            this.textBox7.TabIndex = 3;
+            // 
+            // textBox10
+            // 
+            this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox10.Location = new System.Drawing.Point(116, 123);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(205, 20);
+            this.textBox10.TabIndex = 9;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(48, 125);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(60, 13);
+            this.label15.TabIndex = 10;
+            this.label15.Text = "Description";
+            // 
+            // textBox8
+            // 
+            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox8.Location = new System.Drawing.Point(116, 70);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(205, 20);
+            this.textBox8.TabIndex = 4;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.label4);
+            this.panel6.Controls.Add(this.label2);
+            this.panel6.Controls.Add(this.textBox6);
+            this.panel6.Controls.Add(this.textBox5);
+            this.panel6.Location = new System.Drawing.Point(7, 39);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(426, 67);
+            this.panel6.TabIndex = 4;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(38, 42);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(69, 13);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Transfer Size";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(9, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(98, 13);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Units of Distribution";
+            // 
+            // textBox6
+            // 
+            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox6.Location = new System.Drawing.Point(115, 39);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(205, 20);
+            this.textBox6.TabIndex = 4;
+            // 
+            // textBox5
+            // 
+            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox5.Location = new System.Drawing.Point(115, 13);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(205, 20);
+            this.textBox5.TabIndex = 3;
             // 
             // flowLayoutPanel5
             // 
-            this.flowLayoutPanel5.Controls.Add(this.button12);
-            this.flowLayoutPanel5.Controls.Add(this.button13);
-            this.flowLayoutPanel5.Controls.Add(this.button14);
-            this.flowLayoutPanel5.Controls.Add(this.label6);
-            this.flowLayoutPanel5.Controls.Add(this.button15);
+            this.flowLayoutPanel5.Controls.Add(this.del_MD_DTO_btn);
+            this.flowLayoutPanel5.Controls.Add(this.add_DTO_btn);
+            this.flowLayoutPanel5.Controls.Add(this.pgU_MD_DTO_btn);
+            this.flowLayoutPanel5.Controls.Add(this.MD_DTO_lbl);
+            this.flowLayoutPanel5.Controls.Add(this.pgD_MD_DTO_btn);
             this.flowLayoutPanel5.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel5.Location = new System.Drawing.Point(201, 3);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
             this.flowLayoutPanel5.Size = new System.Drawing.Size(235, 30);
             this.flowLayoutPanel5.TabIndex = 2;
             // 
-            // button12
+            // del_MD_DTO_btn
             // 
-            this.button12.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Image = ((System.Drawing.Image)(resources.GetObject("button12.Image")));
-            this.button12.Location = new System.Drawing.Point(209, 3);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(23, 23);
-            this.button12.TabIndex = 0;
-            this.button12.UseVisualStyleBackColor = true;
+            this.del_MD_DTO_btn.Enabled = false;
+            this.del_MD_DTO_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.del_MD_DTO_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.del_MD_DTO_btn.Image = ((System.Drawing.Image)(resources.GetObject("del_MD_DTO_btn.Image")));
+            this.del_MD_DTO_btn.Location = new System.Drawing.Point(209, 3);
+            this.del_MD_DTO_btn.Name = "del_MD_DTO_btn";
+            this.del_MD_DTO_btn.Size = new System.Drawing.Size(23, 23);
+            this.del_MD_DTO_btn.TabIndex = 0;
+            this.del_MD_DTO_btn.UseVisualStyleBackColor = true;
+            this.del_MD_DTO_btn.Click += new System.EventHandler(this.del_MD_DTO_Click);
             // 
-            // button13
+            // add_DTO_btn
             // 
-            this.button13.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.Image = ((System.Drawing.Image)(resources.GetObject("button13.Image")));
-            this.button13.Location = new System.Drawing.Point(180, 3);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(23, 23);
-            this.button13.TabIndex = 1;
-            this.button13.UseVisualStyleBackColor = true;
+            this.add_DTO_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.add_DTO_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.add_DTO_btn.Image = ((System.Drawing.Image)(resources.GetObject("add_DTO_btn.Image")));
+            this.add_DTO_btn.Location = new System.Drawing.Point(180, 3);
+            this.add_DTO_btn.Name = "add_DTO_btn";
+            this.add_DTO_btn.Size = new System.Drawing.Size(23, 23);
+            this.add_DTO_btn.TabIndex = 1;
+            this.add_DTO_btn.UseVisualStyleBackColor = true;
+            this.add_DTO_btn.Click += new System.EventHandler(this.add_DTO_Click);
             // 
-            // button14
+            // pgU_MD_DTO_btn
             // 
-            this.button14.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.Location = new System.Drawing.Point(151, 3);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(23, 23);
-            this.button14.TabIndex = 2;
-            this.button14.Text = ">";
-            this.button14.UseVisualStyleBackColor = true;
-            this.button14.Visible = false;
+            this.pgU_MD_DTO_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.pgU_MD_DTO_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.pgU_MD_DTO_btn.Location = new System.Drawing.Point(151, 3);
+            this.pgU_MD_DTO_btn.Name = "pgU_MD_DTO_btn";
+            this.pgU_MD_DTO_btn.Size = new System.Drawing.Size(23, 23);
+            this.pgU_MD_DTO_btn.TabIndex = 2;
+            this.pgU_MD_DTO_btn.Text = ">";
+            this.pgU_MD_DTO_btn.UseVisualStyleBackColor = true;
+            this.pgU_MD_DTO_btn.Visible = false;
+            this.pgU_MD_DTO_btn.Click += new System.EventHandler(this.pgU_MD_DTO_Click);
             // 
-            // label6
+            // MD_DTO_lbl
             // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(101, 6);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(44, 17);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "0 of 0";
+            this.MD_DTO_lbl.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.MD_DTO_lbl.AutoSize = true;
+            this.MD_DTO_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MD_DTO_lbl.Location = new System.Drawing.Point(101, 6);
+            this.MD_DTO_lbl.Name = "MD_DTO_lbl";
+            this.MD_DTO_lbl.Size = new System.Drawing.Size(44, 17);
+            this.MD_DTO_lbl.TabIndex = 3;
+            this.MD_DTO_lbl.Text = "0 of 0";
             // 
-            // button15
+            // pgD_MD_DTO_btn
             // 
-            this.button15.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button15.Location = new System.Drawing.Point(72, 3);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(23, 23);
-            this.button15.TabIndex = 4;
-            this.button15.Text = "<";
-            this.button15.UseVisualStyleBackColor = true;
-            this.button15.Visible = false;
+            this.pgD_MD_DTO_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.pgD_MD_DTO_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.pgD_MD_DTO_btn.Location = new System.Drawing.Point(72, 3);
+            this.pgD_MD_DTO_btn.Name = "pgD_MD_DTO_btn";
+            this.pgD_MD_DTO_btn.Size = new System.Drawing.Size(23, 23);
+            this.pgD_MD_DTO_btn.TabIndex = 4;
+            this.pgD_MD_DTO_btn.Text = "<";
+            this.pgD_MD_DTO_btn.UseVisualStyleBackColor = true;
+            this.pgD_MD_DTO_btn.Visible = false;
+            this.pgD_MD_DTO_btn.Click += new System.EventHandler(this.pgD_MD_DTO_Click);
             // 
             // label5
             // 
@@ -412,17 +704,17 @@
             this.label5.TabIndex = 1;
             this.label5.Text = "Digital Transfer Options";
             // 
-            // button11
+            // dTO_expand_tbn
             // 
-            this.button11.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Location = new System.Drawing.Point(7, 6);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(23, 23);
-            this.button11.TabIndex = 0;
-            this.button11.Text = "+";
-            this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.expand_Click);
+            this.dTO_expand_tbn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.dTO_expand_tbn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dTO_expand_tbn.Location = new System.Drawing.Point(7, 6);
+            this.dTO_expand_tbn.Name = "dTO_expand_tbn";
+            this.dTO_expand_tbn.Size = new System.Drawing.Size(23, 23);
+            this.dTO_expand_tbn.TabIndex = 0;
+            this.dTO_expand_tbn.Text = "+";
+            this.dTO_expand_tbn.UseVisualStyleBackColor = true;
+            this.dTO_expand_tbn.Click += new System.EventHandler(this.expand_Click);
             // 
             // panel2
             // 
@@ -435,75 +727,165 @@
             this.panel2.Size = new System.Drawing.Size(439, 35);
             this.panel2.TabIndex = 3;
             // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.panel5.Controls.Add(this.label9);
+            this.panel5.Controls.Add(this.label8);
+            this.panel5.Controls.Add(this.label7);
+            this.panel5.Controls.Add(this.label1);
+            this.panel5.Controls.Add(this.textBox4);
+            this.panel5.Controls.Add(this.textBox3);
+            this.panel5.Controls.Add(this.textBox2);
+            this.panel5.Controls.Add(this.textBox1);
+            this.panel5.Location = new System.Drawing.Point(24, 39);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(385, 157);
+            this.panel5.TabIndex = 3;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(52, 131);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(62, 13);
+            this.label9.TabIndex = 7;
+            this.label9.Text = "Turnaround";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(10, 64);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(104, 13);
+            this.label8.TabIndex = 6;
+            this.label8.Text = "Ordering Instructions";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(38, 38);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(76, 13);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "Available Date";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(84, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(30, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Fees";
+            // 
+            // textBox4
+            // 
+            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox4.Location = new System.Drawing.Point(122, 129);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(205, 20);
+            this.textBox4.TabIndex = 3;
+            // 
+            // textBox3
+            // 
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox3.Location = new System.Drawing.Point(122, 62);
+            this.textBox3.Multiline = true;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(255, 61);
+            this.textBox3.TabIndex = 2;
+            // 
+            // textBox2
+            // 
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox2.Location = new System.Drawing.Point(122, 36);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.TabIndex = 1;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.Location = new System.Drawing.Point(122, 10);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(205, 20);
+            this.textBox1.TabIndex = 0;
+            // 
             // flowLayoutPanel4
             // 
-            this.flowLayoutPanel4.Controls.Add(this.button7);
-            this.flowLayoutPanel4.Controls.Add(this.button8);
-            this.flowLayoutPanel4.Controls.Add(this.button9);
-            this.flowLayoutPanel4.Controls.Add(this.label4);
-            this.flowLayoutPanel4.Controls.Add(this.button10);
+            this.flowLayoutPanel4.Controls.Add(this.MD_SOP_del_btn);
+            this.flowLayoutPanel4.Controls.Add(this.MD_SOP_add_btn);
+            this.flowLayoutPanel4.Controls.Add(this.MD_SOP_pgU_btn);
+            this.flowLayoutPanel4.Controls.Add(this.MD_SOP_pg_lbl);
+            this.flowLayoutPanel4.Controls.Add(this.MD_SOP_pgD_btn);
             this.flowLayoutPanel4.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel4.Location = new System.Drawing.Point(201, 3);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
             this.flowLayoutPanel4.Size = new System.Drawing.Size(235, 30);
             this.flowLayoutPanel4.TabIndex = 2;
             // 
-            // button7
+            // MD_SOP_del_btn
             // 
-            this.button7.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
-            this.button7.Location = new System.Drawing.Point(209, 3);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(23, 23);
-            this.button7.TabIndex = 0;
-            this.button7.UseVisualStyleBackColor = true;
+            this.MD_SOP_del_btn.Enabled = false;
+            this.MD_SOP_del_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.MD_SOP_del_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MD_SOP_del_btn.Image = ((System.Drawing.Image)(resources.GetObject("MD_SOP_del_btn.Image")));
+            this.MD_SOP_del_btn.Location = new System.Drawing.Point(209, 3);
+            this.MD_SOP_del_btn.Name = "MD_SOP_del_btn";
+            this.MD_SOP_del_btn.Size = new System.Drawing.Size(23, 23);
+            this.MD_SOP_del_btn.TabIndex = 0;
+            this.MD_SOP_del_btn.UseVisualStyleBackColor = true;
+            this.MD_SOP_del_btn.Click += new System.EventHandler(this.MD_SOP_del_Click);
             // 
-            // button8
+            // MD_SOP_add_btn
             // 
-            this.button8.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
-            this.button8.Location = new System.Drawing.Point(180, 3);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(23, 23);
-            this.button8.TabIndex = 1;
-            this.button8.UseVisualStyleBackColor = true;
+            this.MD_SOP_add_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.MD_SOP_add_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MD_SOP_add_btn.Image = ((System.Drawing.Image)(resources.GetObject("MD_SOP_add_btn.Image")));
+            this.MD_SOP_add_btn.Location = new System.Drawing.Point(180, 3);
+            this.MD_SOP_add_btn.Name = "MD_SOP_add_btn";
+            this.MD_SOP_add_btn.Size = new System.Drawing.Size(23, 23);
+            this.MD_SOP_add_btn.TabIndex = 1;
+            this.MD_SOP_add_btn.UseVisualStyleBackColor = true;
+            this.MD_SOP_add_btn.Click += new System.EventHandler(this.md_SOP_add_Click);
             // 
-            // button9
+            // MD_SOP_pgU_btn
             // 
-            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Location = new System.Drawing.Point(151, 3);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(23, 23);
-            this.button9.TabIndex = 2;
-            this.button9.Text = ">";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Visible = false;
+            this.MD_SOP_pgU_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.MD_SOP_pgU_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MD_SOP_pgU_btn.Location = new System.Drawing.Point(151, 3);
+            this.MD_SOP_pgU_btn.Name = "MD_SOP_pgU_btn";
+            this.MD_SOP_pgU_btn.Size = new System.Drawing.Size(23, 23);
+            this.MD_SOP_pgU_btn.TabIndex = 2;
+            this.MD_SOP_pgU_btn.Text = ">";
+            this.MD_SOP_pgU_btn.UseVisualStyleBackColor = true;
+            this.MD_SOP_pgU_btn.Visible = false;
+            this.MD_SOP_pgU_btn.Click += new System.EventHandler(this.MD_SOP_pgU_Click);
             // 
-            // label4
+            // MD_SOP_pg_lbl
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(101, 6);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 17);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "0 of 0";
+            this.MD_SOP_pg_lbl.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.MD_SOP_pg_lbl.AutoSize = true;
+            this.MD_SOP_pg_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MD_SOP_pg_lbl.Location = new System.Drawing.Point(101, 6);
+            this.MD_SOP_pg_lbl.Name = "MD_SOP_pg_lbl";
+            this.MD_SOP_pg_lbl.Size = new System.Drawing.Size(44, 17);
+            this.MD_SOP_pg_lbl.TabIndex = 3;
+            this.MD_SOP_pg_lbl.Text = "0 of 0";
             // 
-            // button10
+            // MD_SOP_pgD_btn
             // 
-            this.button10.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Location = new System.Drawing.Point(72, 3);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(23, 23);
-            this.button10.TabIndex = 4;
-            this.button10.Text = "<";
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Visible = false;
+            this.MD_SOP_pgD_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.MD_SOP_pgD_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MD_SOP_pgD_btn.Location = new System.Drawing.Point(72, 3);
+            this.MD_SOP_pgD_btn.Name = "MD_SOP_pgD_btn";
+            this.MD_SOP_pgD_btn.Size = new System.Drawing.Size(23, 23);
+            this.MD_SOP_pgD_btn.TabIndex = 4;
+            this.MD_SOP_pgD_btn.Text = "<";
+            this.MD_SOP_pgD_btn.UseVisualStyleBackColor = true;
+            this.MD_SOP_pgD_btn.Visible = false;
+            this.MD_SOP_pgD_btn.Click += new System.EventHandler(this.MD_SOP_pgD_Click);
             // 
             // label3
             // 
@@ -547,17 +929,17 @@
             this.groupBox1.Size = new System.Drawing.Size(183, 47);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.flowLayoutPanel1.AutoSize = true;
             this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flowLayoutPanel1.Controls.Add(this.button3);
-            this.flowLayoutPanel1.Controls.Add(this.button4);
-            this.flowLayoutPanel1.Controls.Add(this.button5);
-            this.flowLayoutPanel1.Controls.Add(this.label2);
-            this.flowLayoutPanel1.Controls.Add(this.button16);
+            this.flowLayoutPanel1.Controls.Add(this.MD_Dist_del_btn);
+            this.flowLayoutPanel1.Controls.Add(this.MD_Dist_add_btn);
+            this.flowLayoutPanel1.Controls.Add(this.MD_Dist_pgU_btn);
+            this.flowLayoutPanel1.Controls.Add(this.MD_Dist_lbl);
+            this.flowLayoutPanel1.Controls.Add(this.MD_Dist_pgD_btn);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(8, 12);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
@@ -565,60 +947,63 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(166, 29);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
-            // button3
+            // MD_Dist_del_btn
             // 
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(140, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(23, 23);
-            this.button3.TabIndex = 0;
-            this.button3.UseVisualStyleBackColor = true;
+            this.MD_Dist_del_btn.Enabled = false;
+            this.MD_Dist_del_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.MD_Dist_del_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MD_Dist_del_btn.Image = ((System.Drawing.Image)(resources.GetObject("MD_Dist_del_btn.Image")));
+            this.MD_Dist_del_btn.Location = new System.Drawing.Point(140, 3);
+            this.MD_Dist_del_btn.Name = "MD_Dist_del_btn";
+            this.MD_Dist_del_btn.Size = new System.Drawing.Size(23, 23);
+            this.MD_Dist_del_btn.TabIndex = 0;
+            this.MD_Dist_del_btn.UseVisualStyleBackColor = true;
+            this.MD_Dist_del_btn.Click += new System.EventHandler(this.MD_Dist_del_btn_Click);
             // 
-            // button4
+            // MD_Dist_add_btn
             // 
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(111, 3);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(23, 23);
-            this.button4.TabIndex = 1;
-            this.button4.UseVisualStyleBackColor = true;
+            this.MD_Dist_add_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.MD_Dist_add_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MD_Dist_add_btn.Image = ((System.Drawing.Image)(resources.GetObject("MD_Dist_add_btn.Image")));
+            this.MD_Dist_add_btn.Location = new System.Drawing.Point(111, 3);
+            this.MD_Dist_add_btn.Name = "MD_Dist_add_btn";
+            this.MD_Dist_add_btn.Size = new System.Drawing.Size(23, 23);
+            this.MD_Dist_add_btn.TabIndex = 1;
+            this.MD_Dist_add_btn.UseVisualStyleBackColor = true;
+            this.MD_Dist_add_btn.Click += new System.EventHandler(this.MD_Dist_add_btn_Click);
             // 
-            // button5
+            // MD_Dist_pgU_btn
             // 
-            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Location = new System.Drawing.Point(82, 3);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(23, 23);
-            this.button5.TabIndex = 2;
-            this.button5.Text = ">";
-            this.button5.UseVisualStyleBackColor = true;
+            this.MD_Dist_pgU_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.MD_Dist_pgU_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MD_Dist_pgU_btn.Location = new System.Drawing.Point(82, 3);
+            this.MD_Dist_pgU_btn.Name = "MD_Dist_pgU_btn";
+            this.MD_Dist_pgU_btn.Size = new System.Drawing.Size(23, 23);
+            this.MD_Dist_pgU_btn.TabIndex = 2;
+            this.MD_Dist_pgU_btn.Text = ">";
+            this.MD_Dist_pgU_btn.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // MD_Dist_lbl
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(32, 6);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 17);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "1 of 2";
+            this.MD_Dist_lbl.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.MD_Dist_lbl.AutoSize = true;
+            this.MD_Dist_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MD_Dist_lbl.Location = new System.Drawing.Point(32, 6);
+            this.MD_Dist_lbl.Name = "MD_Dist_lbl";
+            this.MD_Dist_lbl.Size = new System.Drawing.Size(44, 17);
+            this.MD_Dist_lbl.TabIndex = 3;
+            this.MD_Dist_lbl.Text = "0 of 0";
             // 
-            // button16
+            // MD_Dist_pgD_btn
             // 
-            this.button16.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button16.Location = new System.Drawing.Point(3, 3);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(23, 23);
-            this.button16.TabIndex = 4;
-            this.button16.Text = "<";
-            this.button16.UseVisualStyleBackColor = true;
+            this.MD_Dist_pgD_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.MD_Dist_pgD_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MD_Dist_pgD_btn.Location = new System.Drawing.Point(3, 3);
+            this.MD_Dist_pgD_btn.Name = "MD_Dist_pgD_btn";
+            this.MD_Dist_pgD_btn.Size = new System.Drawing.Size(23, 23);
+            this.MD_Dist_pgD_btn.TabIndex = 4;
+            this.MD_Dist_pgD_btn.Text = "<";
+            this.MD_Dist_pgD_btn.UseVisualStyleBackColor = true;
             // 
             // flowLayoutPanel6
             // 
@@ -627,11 +1012,11 @@
             this.flowLayoutPanel6.Controls.Add(this.uc_ResponsibleParty1);
             this.flowLayoutPanel6.Controls.Add(this.panel2);
             this.flowLayoutPanel6.Controls.Add(this.distributionFormat__MD_Format_pnl);
-            this.flowLayoutPanel6.Controls.Add(this.panel3);
+            this.flowLayoutPanel6.Controls.Add(this.digitalTransferOptions_pnl);
             this.flowLayoutPanel6.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel6.Location = new System.Drawing.Point(6, 27);
             this.flowLayoutPanel6.Name = "flowLayoutPanel6";
-            this.flowLayoutPanel6.Size = new System.Drawing.Size(445, 164);
+            this.flowLayoutPanel6.Size = new System.Drawing.Size(445, 445);
             this.flowLayoutPanel6.TabIndex = 0;
             // 
             // uc_ResponsibleParty1
@@ -651,94 +1036,9 @@
             this.groupBox3.Controls.Add(this.flowLayoutPanel6);
             this.groupBox3.Location = new System.Drawing.Point(3, 25);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(457, 210);
+            this.groupBox3.Size = new System.Drawing.Size(457, 491);
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.panel5.Controls.Add(this.label9);
-            this.panel5.Controls.Add(this.label8);
-            this.panel5.Controls.Add(this.label7);
-            this.panel5.Controls.Add(this.label1);
-            this.panel5.Controls.Add(this.textBox4);
-            this.panel5.Controls.Add(this.textBox3);
-            this.panel5.Controls.Add(this.textBox2);
-            this.panel5.Controls.Add(this.textBox1);
-            this.panel5.Location = new System.Drawing.Point(24, 39);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(385, 157);
-            this.panel5.TabIndex = 3;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(122, 10);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(205, 20);
-            this.textBox1.TabIndex = 0;
-            // 
-            // textBox2
-            // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Location = new System.Drawing.Point(122, 36);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 1;
-            // 
-            // textBox3
-            // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Location = new System.Drawing.Point(122, 62);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(255, 61);
-            this.textBox3.TabIndex = 2;
-            // 
-            // textBox4
-            // 
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Location = new System.Drawing.Point(122, 129);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(205, 20);
-            this.textBox4.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(84, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(30, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Fees";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(38, 38);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(76, 13);
-            this.label7.TabIndex = 5;
-            this.label7.Text = "Available Date";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(10, 64);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(104, 13);
-            this.label8.TabIndex = 6;
-            this.label8.Text = "Ordering Instructions";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(52, 131);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(62, 13);
-            this.label9.TabIndex = 7;
-            this.label9.Text = "Turnaround";
             // 
             // uc_distribution
             // 
@@ -750,7 +1050,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox3);
             this.Name = "uc_distribution";
-            this.Size = new System.Drawing.Size(463, 238);
+            this.Size = new System.Drawing.Size(463, 519);
             this.distributionFormat__MD_Format_pnl.ResumeLayout(false);
             this.distributionFormat__MD_Format_pnl.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -759,12 +1059,20 @@
             this.panel1.PerformLayout();
             this.flowLayoutPanel3.ResumeLayout(false);
             this.flowLayoutPanel3.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.digitalTransferOptions_pnl.ResumeLayout(false);
+            this.digitalTransferOptions_pnl.PerformLayout();
+            this.Online_pnl.ResumeLayout(false);
+            this.Online_pnl.PerformLayout();
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel2.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.flowLayoutPanel5.ResumeLayout(false);
             this.flowLayoutPanel5.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.flowLayoutPanel4.ResumeLayout(false);
             this.flowLayoutPanel4.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -774,8 +1082,6 @@
             this.flowLayoutPanel6.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -795,22 +1101,22 @@
         private System.Windows.Forms.Button pgD_MD_Format_btn;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button MD_SOP_del_btn;
+        private System.Windows.Forms.Button MD_SOP_add_btn;
+        private System.Windows.Forms.Button MD_SOP_pgU_btn;
+        private System.Windows.Forms.Label MD_SOP_pg_lbl;
+        private System.Windows.Forms.Button MD_SOP_pgD_btn;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel digitalTransferOptions_pnl;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Button del_MD_DTO_btn;
+        private System.Windows.Forms.Button add_DTO_btn;
+        private System.Windows.Forms.Button pgU_MD_DTO_btn;
+        private System.Windows.Forms.Label MD_DTO_lbl;
+        private System.Windows.Forms.Button pgD_MD_DTO_btn;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button dTO_expand_tbn;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label md_format_version_lbl;
         private System.Windows.Forms.Label md_format_name_lbl;
@@ -825,11 +1131,11 @@
         private System.Windows.Forms.TextBox md_format_version_txt;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel6;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.Button MD_Dist_del_btn;
+        private System.Windows.Forms.Button MD_Dist_add_btn;
+        private System.Windows.Forms.Button MD_Dist_pgU_btn;
+        private System.Windows.Forms.Label MD_Dist_lbl;
+        private System.Windows.Forms.Button MD_Dist_pgD_btn;
         private System.Windows.Forms.GroupBox groupBox1;
         private uc_ResponsibleParty uc_ResponsibleParty1;
         private System.Windows.Forms.GroupBox groupBox3;
@@ -842,5 +1148,30 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel Online_pnl;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Button button2;
     }
 }

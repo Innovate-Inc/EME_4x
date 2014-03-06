@@ -510,6 +510,7 @@
             // 
             // deleteRP_Btn
             // 
+            this.deleteRP_Btn.Enabled = false;
             this.deleteRP_Btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.deleteRP_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.deleteRP_Btn.Image = ((System.Drawing.Image)(resources.GetObject("deleteRP_Btn.Image")));
@@ -613,6 +614,7 @@
             this.Name = "uc_ResponsibleParty";
             this.Size = new System.Drawing.Size(439, 35);
             this.Load += new System.EventHandler(this.uc_ResponsibleParty_Load);
+            this.Leave += new System.EventHandler(this.uc_ResponsibleParty_Leave);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
