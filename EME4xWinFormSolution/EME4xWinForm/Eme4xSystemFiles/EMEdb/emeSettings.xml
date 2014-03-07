@@ -178,6 +178,12 @@
 		<Csdgm/>    
 	</emeControl>
 	<emeControl>
+		<controlName>idInfo_extent_description</controlName>
+		<Iso19115_2>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='extent']/*[local-name()='EX_Extent']/*[local-name()='description']</Iso19115_2>
+		<Iso19115_1/>
+		<Csdgm/>    
+	</emeControl>
+	<emeControl>
 		<controlName>idInfo_extent_geographicBoundingBox_westLongDD</controlName>
 		<Iso19115_2>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='extent']/*[local-name()='EX_Extent']/*[local-name()='geographicElement']/*[local-name()='EX_GeographicBoundingBox']/*[local-name()='westBoundLongitude']</Iso19115_2>
 		<Iso19115_1/>
@@ -198,6 +204,12 @@
 	<emeControl>
 		<controlName>idInfo_extent_geographicBoundingBox_northLatDD</controlName>
 		<Iso19115_2>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='extent']/*[local-name()='EX_Extent']/*[local-name()='geographicElement']/*[local-name()='EX_GeographicBoundingBox']/*[local-name()='northBoundLatitude']</Iso19115_2>
+		<Iso19115_1/>
+		<Csdgm/>    
+	</emeControl>
+	<emeControl>
+		<controlName>distributionInfo__MD_Distribution</controlName>
+		<Iso19115_2>./*[local-name()='distributionInfo']/*[local-name()='MD_Distribution']/*[local-name()='distributor']</Iso19115_2>
 		<Iso19115_1/>
 		<Csdgm/>    
 	</emeControl>

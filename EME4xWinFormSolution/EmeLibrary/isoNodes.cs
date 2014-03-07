@@ -57,12 +57,13 @@ namespace EmeLibrary
         private List<string> kwPlaceList;
         private List<string> kwIsoTopicCatList;
 
+        private string _idInfo_extent_description;
         private double _idInfo_extent_geographicBoundingBox_westLongDD;
         private double _idInfo_extent_geographicBoundingBox_eastLongDD;
         private double _idInfo_extent_geographicBoundingBox_southLatDD;
         private double _idInfo_extent_geographicBoundingBox_northLatDD;
 
-        private List<MD_Distribution> _distributionInfo_MD_Distribution;
+        private List<MD_Distributor> _distributionInfo__MD_Distribution;
                
         
         #region Public Properties Section
@@ -165,6 +166,11 @@ namespace EmeLibrary
             get { return kwIsoTopicCatList; }
             set { kwIsoTopicCatList = value; }
         }
+        public string idInfo_extent_description
+        {
+            get { return _idInfo_extent_description; }
+            set { _idInfo_extent_description = value; }
+        }
         public double idInfo_extent_geographicBoundingBox_westLongDD
         {
             get { return _idInfo_extent_geographicBoundingBox_westLongDD; }
@@ -185,10 +191,10 @@ namespace EmeLibrary
             get { return _idInfo_extent_geographicBoundingBox_northLatDD; }
             set { _idInfo_extent_geographicBoundingBox_northLatDD = value; }
         }
-        public List<MD_Distribution> distributionInfo_MD_Distribution
+        public List<MD_Distributor> distributionInfo__MD_Distribution
         {
-            get { return _distributionInfo_MD_Distribution; }
-            set { _distributionInfo_MD_Distribution = value; }
+            get { return _distributionInfo__MD_Distribution; }
+            set { _distributionInfo__MD_Distribution = value; }
         }
 
        
@@ -245,7 +251,7 @@ namespace EmeLibrary
                 idinfoCitationcitedResponsibleParty = new List<CI_ResponsibleParty>();
                 
                 idinfoPointOfContact = new List<CI_ResponsibleParty>();
-                _distributionInfo_MD_Distribution = new List<MD_Distribution>();
+                _distributionInfo__MD_Distribution = new List<MD_Distributor>();
                                               
                 
 
@@ -281,12 +287,16 @@ namespace EmeLibrary
                 kwUserList = returnListFromKeywordSection(IsoNodeXpaths.idInfo_keywordsUserXpath, "./*[local-name()='MD_Keywords']/*[local-name()='keyword']");
                 kwIsoTopicCatList = returnListFromKeywordSection(IsoNodeXpaths.idInfo_keywordsIsoTopicCategoryXpath, "./*[local-name()='MD_TopicCategoryCode']");
                 
+                _idInfo_extent_description = returnInnerTextfromNode(IsoNodeXpaths.idInfo_extent_descriptionXpath);
                 _idInfo_extent_geographicBoundingBox_eastLongDD = returnInnerTextfromNodeAsDouble(IsoNodeXpaths.idInfo_extent_geographicBoundingBox_eastLongDDXpath);
                 _idInfo_extent_geographicBoundingBox_westLongDD = returnInnerTextfromNodeAsDouble(IsoNodeXpaths.idInfo_extent_geographicBoundingBox_westLongDDXpath);
                 _idInfo_extent_geographicBoundingBox_northLatDD= returnInnerTextfromNodeAsDouble(IsoNodeXpaths.idInfo_extent_geographicBoundingBox_northLatDDXpath);
                 _idInfo_extent_geographicBoundingBox_southLatDD = returnInnerTextfromNodeAsDouble(IsoNodeXpaths.idInfo_extent_geographicBoundingBox_southLatDDXpath);
 
-                _distributionInfo_MD_Distribution = new List<MD_Distribution>();
+                //_distributionInfo_MD_Distribution = new List<MD_Distribution>();
+                //set the private backing field directly in the method since this object only occurs in this section.
+                returnMD_DistributionSection();
+
 
             }
             //****************Testing
@@ -399,22 +409,212 @@ namespace EmeLibrary
                 //responsiblePartySubSectionXpath = new List<string>();
                 foreach (PropertyInfo p in propInfo2)
                 {
-                    string childNodeXpath = ".";
+                    //string childNodeXpath = ".";  //Use StringBuilder for loops
+                    StringBuilder childNodeXpath = new StringBuilder();
+                    childNodeXpath.Append(".");
+                    
                     string[] splitby = new string[] { "__" };
                     string[] nameParts = p.Name.Split(splitby, StringSplitOptions.RemoveEmptyEntries);
                     foreach (string entry in nameParts)
                     {
-                        childNodeXpath += "/*[local-name()='" + entry + "']";
+                        //childNodeXpath += "/*[local-name()='" + entry + "']";
+                        childNodeXpath.Append("/*[local-name()='" + entry + "']");
                     }
                     //responsiblePartySubSectionXpath.Add(childNodeXpath); //Adding the Xpath to list for later use                    
-                    Console.WriteLine(childNodeXpath);
-                    string nodeValue = (n.FirstChild.SelectSingleNode(childNodeXpath) != null) ? n.FirstChild.SelectSingleNode(childNodeXpath).InnerText : "";
+                    //Console.WriteLine(childNodeXpath.ToString());
+                    string nodeValue = 
+                        (n.FirstChild.SelectSingleNode(childNodeXpath.ToString()) != null) ?
+                        n.FirstChild.SelectSingleNode(childNodeXpath.ToString()).InnerText : "";
                     p.SetValue(rp, nodeValue, null);
                 }
                 //contactRpSection.Add(rp);
                 rpList.Add(rp);                
             }
             return rpList;
+        }
+        private void returnMD_DistributionSection()
+        {
+            _distributionInfo__MD_Distribution = new List<MD_Distributor>();
+            //MD_Distributor mdDistributor = new MD_Distributor();            
+            //MD_StandardOrderProcess mdSOP = new MD_StandardOrderProcess();
+            //MD_Format mdFormat = new MD_Format();
+            //MD_DigitalTransferOptions mdDigiTransfer = new MD_DigitalTransferOptions();
+            
+            //gmi:MI_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:distributor //list of distributors
+                   //gmd:MD_Distributor/gmd:distributorContact //only 1
+                   //gmd:MD_Distributor/gmd:distributionOrderProcess/MD_StandardOrderProcess  //NodeList
+                   //gmd:MD_Distributor/gmd:distributorFormat/gmd:MD_Format  //NodeList
+                   //gmd:MD_Distributor/gmd:distributorTransferOptions/gmd:MD_DigitalTransferOptions //NodeList
+
+            //ToDo: This assumes all elments are nested under the distributor element.  Need to handle exceptions to this when
+            //a section might have content outside the distributor.  We could force the content to be a sibling of the distributor???
+ 
+            XmlNodeList distInfoMD_DistributorSection = inboundMetadataRecord.DocumentElement.SelectNodes(IsoNodeXpaths.distributionInfo__MD_DistributionXpath);
+            foreach (XmlNode gmddistributor in distInfoMD_DistributorSection)
+            {
+                //Create a key,value pair to get to each child node
+                MD_Distributor mdDistributor = new MD_Distributor();
+                object distRP = mdDistributor;
+
+                List<KeyValuePair<string, string>> kvList = extractPartentXmlElementNameFromClass(distRP);
+                for (int i = 0; i < kvList.Count; i++)
+                {
+                    Console.WriteLine("Key " + kvList[i].Key.ToString()
+                        + "  Value: " + kvList[i].Value.ToString());
+                }
+                                                 
+                string pname = "distributorContact__CI_ResponsibleParty";
+                KeyValuePair<string, string> kv = kvList.Find(delegate(KeyValuePair<string, string> kv1) { return kv1.Key == pname; });
+
+                XmlNode contactInfo = gmddistributor.SelectSingleNode(kv.Value);
+                if (contactInfo != null)
+                {
+                    //mdDistributor.distributorContact__CI_ResponsibleParty =
+                    object ciRP = new CI_ResponsibleParty();
+                    extractXmlContentwReflection(ref ciRP, contactInfo);
+                    mdDistributor.distributorContact__CI_ResponsibleParty = (CI_ResponsibleParty)ciRP;
+                }
+
+                pname = "distributionOrderProcess__MD_StandardOrderProcess";
+                kv = kvList.Find(delegate(KeyValuePair<string, string> kv1){ return kv1.Key == pname; });
+                XmlNodeList mdSOPList = gmddistributor.SelectNodes(kv.Value);
+                if (mdSOPList != null)
+                {                    
+                    
+                    foreach (XmlNode mdSOPnode in mdSOPList)
+                    {
+                        object mdSOP = new MD_StandardOrderProcess();
+                        extractXmlContentwReflection(ref mdSOP, mdSOPnode);
+                        mdDistributor.distributionOrderProcess__MD_StandardOrderProcess.Add((MD_StandardOrderProcess)mdSOP);
+                    }
+                    
+                }
+                pname = "distributorFormat__MD_Format";
+                kv = kvList.Find(delegate(KeyValuePair<string, string> kv1) { return kv1.Key == pname; });
+                XmlNodeList mdFormatList = gmddistributor.SelectNodes(kv.Value);
+                if (mdFormatList != null)
+                {
+                    foreach (XmlNode mdFormatNode in mdFormatList)
+                    {
+                        object mdFormat = new MD_Format();
+                        extractXmlContentwReflection(ref mdFormat, mdFormatNode);
+                        mdDistributor.distributorFormat__MD_Format.Add((MD_Format)mdFormat);
+                    }
+                }
+
+                pname = "distributorTransferOptions__MD_DigitalTransferOptions";
+                kv = kvList.Find(delegate(KeyValuePair<string, string> kv1) { return kv1.Key == pname; });
+                XmlNodeList mdDigiTransferList = gmddistributor.SelectNodes(kv.Value);
+                if (mdDigiTransferList != null)
+                {
+                    foreach (XmlNode mdDigiTransferNode in mdDigiTransferList)
+                    {
+                        object mdDigiTransferOption = new MD_DigitalTransferOptions();
+                        extractXmlContentwReflection(ref mdDigiTransferOption, mdDigiTransferNode);
+                        mdDistributor.distributorTransferOptions__MD_DigitalTransferOptions.Add((MD_DigitalTransferOptions)mdDigiTransferOption);
+                    }
+                }
+
+                //object distRPobj = distRP;
+                //extractXmlContentwReflection(ref distRP, gmddistributor);
+                //mdDistributor.distributorContact__CI_ResponsibleParty = distRP as CI_ResponsibleParty;
+
+                _distributionInfo__MD_Distribution.Add(mdDistributor);
+            }
+            //Check for distribution format and transfer options not under distributor and place under an empty Distributor
+            MD_Distributor extraDistributor = new MD_Distributor();
+            XmlNodeList distFormatList = inboundMetadataRecord.DocumentElement.SelectNodes(
+                "./*[local-name()='distributionInfo']/*[local-name()='MD_Distribution']/*[local-name()='distributionFormat']/*[local-name()='MD_Format']");
+            if (distFormatList != null)
+            {                
+                foreach (XmlNode distFormatNode in distFormatList)
+                {
+                    object distFormat = new MD_Format();
+                    extractXmlContentwReflection(ref distFormat, distFormatNode);
+                    extraDistributor.distributorFormat__MD_Format.Add((MD_Format)distFormat);
+                }
+            }
+            XmlNodeList transferOptionsList = inboundMetadataRecord.DocumentElement.SelectNodes(
+                "./*[local-name()='distributionInfo']/*[local-name()='MD_Distribution']/*[local-name()='transferOptions']/*[local-name()='MD_DigitalTransferOptions']");
+            if (transferOptionsList != null)
+            {
+                foreach (XmlNode transferOptionsNode in transferOptionsList)
+                {
+                    object transferOption = new MD_DigitalTransferOptions();
+                    extractXmlContentwReflection(ref transferOption, transferOptionsNode);
+                    extraDistributor.distributorTransferOptions__MD_DigitalTransferOptions.Add((MD_DigitalTransferOptions)transferOption);
+                }
+            }
+            if (extraDistributor.distributorFormat__MD_Format.Count > 0 || extraDistributor.distributorTransferOptions__MD_DigitalTransferOptions.Count > 0)
+            {
+                extraDistributor.distributorContact__CI_ResponsibleParty.individualName = "Content Missing, Add A Contact";
+                extraDistributor.distributorContact__CI_ResponsibleParty.role = "distributor";
+                _distributionInfo__MD_Distribution.Add(extraDistributor);
+            }
+
+
+            
+           
+            
+        }
+
+        private List<KeyValuePair<string,string>> extractPartentXmlElementNameFromClass(object classToParseXmlParentNodeList)
+        {
+            List<KeyValuePair<string, string>> tempList = new List<KeyValuePair<string,string>>();
+            object rpobj = classToParseXmlParentNodeList;
+            string className = "/*[local-name()='" + rpobj.GetType().Name.ToString() + "']";
+
+            PropertyInfo[] propInfo2 = rpobj.GetType().GetProperties();            
+            foreach (PropertyInfo p in propInfo2)
+            {                
+                StringBuilder childNodeXpath = new StringBuilder();
+                childNodeXpath.Append("." + className);
+
+                string[] splitby = new string[] { "__" };
+                string[] nameParts = p.Name.Split(splitby, StringSplitOptions.RemoveEmptyEntries);
+                foreach (string entry in nameParts)
+                {                    
+                    childNodeXpath.Append("/*[local-name()='" + entry + "']");
+                }                
+                tempList.Add(new KeyValuePair<string, string>(p.Name, childNodeXpath.ToString()));  
+                //Console.WriteLine(p.Name +"  " + childNodeXpath.ToString());
+                
+            }         
+
+
+            return tempList;
+        }
+        private void extractXmlContentwReflection(ref object classToParseXmlNodeList, XmlNode nodeToParseIntoClass)
+        {
+            XmlNode n = nodeToParseIntoClass;
+           
+            object rpobj = classToParseXmlNodeList;
+            //string className = "/*[local-name()='" + rpobj.GetType().Name.ToString() + "']";
+
+            PropertyInfo[] propInfo2 = rpobj.GetType().GetProperties();
+            //ToDo:  Not sure if we need an Xpath expression List, but if so, we can do that here
+            //responsiblePartySubSectionXpath = new List<string>();
+            foreach (PropertyInfo p in propInfo2)
+            {
+                //string childNodeXpath = ".";  //Use StringBuilder for loops
+                StringBuilder childNodeXpath = new StringBuilder();
+                childNodeXpath.Append("."); //+ className);
+
+                string[] splitby = new string[] { "__" };
+                string[] nameParts = p.Name.Split(splitby, StringSplitOptions.RemoveEmptyEntries);
+                foreach (string entry in nameParts)
+                {
+                    //childNodeXpath += "/*[local-name()='" + entry + "']";
+                    childNodeXpath.Append("/*[local-name()='" + entry + "']");
+                }
+                //responsiblePartySubSectionXpath.Add(childNodeXpath); //Adding the Xpath to list for later use                    
+                //Console.WriteLine(childNodeXpath.ToString());
+                string nodeValue =
+                    (n.SelectSingleNode(childNodeXpath.ToString()) != null) ?
+                    n.SelectSingleNode(childNodeXpath.ToString()).InnerText : "";
+                //p.SetValue(rp, nodeValue, null);
+                p.SetValue(classToParseXmlNodeList, nodeValue, null);
+            }                
         }
 
         public void saveChangestoRecord()        
@@ -674,10 +874,13 @@ namespace EmeLibrary
             XmlNode extentNodeFromTemplate = templateMetadataRecord.DocumentElement.SelectSingleNode(
                 "./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='extent']");//*[local-name()='EX_Extent']");
             XmlNode extentNodeOut = outbound_md_DataIdSection;//.SelectSingleNode("./*[local-name()='extent']");
-            constructChildNodeUnderParent(extentNodeOut, extentNodeFromTemplate, false); //extent
+            constructChildNodeUnderParent(extentNodeOut, extentNodeFromTemplate, false); //extent            
             constructChildNodeUnderParent(extentNodeOut.LastChild, extentNodeFromTemplate.FirstChild, false); //EX_Extent
-            constructChildNodeUnderParent(extentNodeOut.LastChild.FirstChild, extentNodeFromTemplate.FirstChild.FirstChild, true); //geographicElement
+            constructChildNodeUnderParent(extentNodeOut.LastChild.FirstChild, extentNodeFromTemplate.FirstChild.ChildNodes[0], true); //description
+            constructChildNodeUnderParent(extentNodeOut.LastChild.FirstChild, extentNodeFromTemplate.FirstChild.ChildNodes[1], true); //geographicElement
 
+            outboundMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.idInfo_extent_descriptionXpath).FirstChild.InnerText =
+                _idInfo_extent_description;
             outboundMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.idInfo_extent_geographicBoundingBox_eastLongDDXpath).FirstChild.InnerText =
                 _idInfo_extent_geographicBoundingBox_eastLongDD.ToString();
             outboundMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.idInfo_extent_geographicBoundingBox_westLongDDXpath).FirstChild.InnerText =
@@ -687,7 +890,7 @@ namespace EmeLibrary
             outboundMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.idInfo_extent_geographicBoundingBox_southLatDDXpath).FirstChild.InnerText =
                 _idInfo_extent_geographicBoundingBox_southLatDD.ToString();
 
-            //temporal
+            //temporal  ToDo!!!
             constructChildNodeUnderParent(extentNodeOut.LastChild.FirstChild, extentNodeFromTemplate.FirstChild.LastChild, true);
             
             
@@ -987,21 +1190,20 @@ namespace EmeLibrary
     }
     
     [StructLayout(LayoutKind.Sequential)]
-    public class MD_Distribution
+    public class MD_Distributor
     {
         //Per distributor can have multiple distributionFormats and transfer options!
-        public List<MD_Format> distributionFormat__MD_Format { get; set; }
-        public CI_ResponsibleParty distributor__MD_Distributor__distributorContact__CI_ResponsibleParty { get; set; }
-        public List<MD_StandardOrderProcess> distributor__MD_Distributor__distributionOrderProcess__MD_StandardOrderProcess { get; set; }
-        //Public MD_Distributor distributor { get; set; }
-        public List<MD_DigitalTransferOptions> transferOptions__MD_DigitalTransferOptions { get; set; }
+        public CI_ResponsibleParty distributorContact__CI_ResponsibleParty { get; set; }
+        public List<MD_StandardOrderProcess> distributionOrderProcess__MD_StandardOrderProcess { get; set; }
+        public List<MD_Format> distributorFormat__MD_Format { get; set; }        
+        public List<MD_DigitalTransferOptions> distributorTransferOptions__MD_DigitalTransferOptions { get; set; }
         
-        public MD_Distribution()
+        public MD_Distributor()
         {
-            distributionFormat__MD_Format = new List<MD_Format>();
-            distributor__MD_Distributor__distributorContact__CI_ResponsibleParty = new CI_ResponsibleParty();
-            distributor__MD_Distributor__distributionOrderProcess__MD_StandardOrderProcess = new List<MD_StandardOrderProcess>();            
-            transferOptions__MD_DigitalTransferOptions = new List<MD_DigitalTransferOptions>();
+            distributorContact__CI_ResponsibleParty = new CI_ResponsibleParty();
+            distributionOrderProcess__MD_StandardOrderProcess = new List<MD_StandardOrderProcess>();
+            distributorFormat__MD_Format = new List<MD_Format>();
+            distributorTransferOptions__MD_DigitalTransferOptions = new List<MD_DigitalTransferOptions>();
         }
     }
     [StructLayout(LayoutKind.Sequential)]
@@ -1023,7 +1225,7 @@ namespace EmeLibrary
     public class MD_StandardOrderProcess
     {
         public string fees { get; set; }
-        public DateTime plannedAvailableDateTime { get; set; }
+        public string plannedAvailableDateTime { get; set; } //datetime
         public string orderingInstructions { get; set; }
         public string turnaround { get; set; }
     }
@@ -1039,9 +1241,9 @@ namespace EmeLibrary
         public string onLine__CI_OnlineResource__description { get; set; }
         public string onLine__CI_OnlineResource__function { get; set; } //link to the CI_OnlineFunctionCode CodeList
         public string offLine__MD_Medium__name { get; set; } //link to the MD_MediumNameCode CodeList
-        public double offLine__MD_Medium__density__Real { get; set; } //double greater than 0.0
+        public string offLine__MD_Medium__density__Real { get; set; } //double greater than 0.0
         public string offLine__MD_Medium__densityUnits { get; set; }
-        public int offLine__MD_Medium__volumes { get; set; }
+        public string offLine__MD_Medium__volumes { get; set; }  //Int
         public string offLine__MD_Medium__mediumFormat { get; set; } //link to MD_MediumFormatCode Codelist
         public string offLine__MD_Medium__mediumNode { get; set; }
 

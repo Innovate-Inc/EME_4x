@@ -457,6 +457,9 @@
 			</gmd:topicCategory>
 			<gmd:extent>
 				<gmd:EX_Extent id="boundingExtent">
+					<gmd:description>
+						<gco:CharacterString>*template*</gco:CharacterString>
+					</gmd:description>
 					<gmd:geographicElement>
 						<gmd:EX_GeographicBoundingBox id="boundingGeographicBoundingBox">
 							<gmd:westBoundLongitude>

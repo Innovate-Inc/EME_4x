@@ -5,6 +5,10 @@ using System.Text;
 
 namespace EmeLibrary
 {
+    /// <summary>
+    /// Class to store the Xpath Expressions used to retrieve xml content.  Names should match the public property of the ISONodes Class and
+    /// the name of the control within the EME GUI plus the addition of Xpath
+    /// </summary>
     public class XmlNodeXpathtoElements
     {
         //Metadata Information
@@ -37,9 +41,12 @@ namespace EmeLibrary
         public string idInfo_keywordsUserXpath { get; set; }
         //public string IdInfo_keywordsPlaceListXpath { get; set; }
         public string idInfo_keywordsPlaceXpath { get; set; }
+        public string idInfo_extent_descriptionXpath { get; set; }
         public string idInfo_extent_geographicBoundingBox_westLongDDXpath { get; set; }
         public string idInfo_extent_geographicBoundingBox_eastLongDDXpath { get; set; }
         public string idInfo_extent_geographicBoundingBox_southLatDDXpath { get; set; }
         public string idInfo_extent_geographicBoundingBox_northLatDDXpath { get; set; }
+        public string distributionInfo__MD_DistributionXpath { get; set; }
+        
     }
 }
