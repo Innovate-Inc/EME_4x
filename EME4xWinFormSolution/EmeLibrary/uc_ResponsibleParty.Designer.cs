@@ -457,7 +457,7 @@
             this.pagerLbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pagerLbl.AutoSize = true;
             this.pagerLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pagerLbl.Location = new System.Drawing.Point(176, 6);
+            this.pagerLbl.Location = new System.Drawing.Point(107, 6);
             this.pagerLbl.Name = "pagerLbl";
             this.pagerLbl.Size = new System.Drawing.Size(20, 17);
             this.pagerLbl.TabIndex = 37;
@@ -468,7 +468,7 @@
             // 
             this.pagerDownBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.pagerDownBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pagerDownBtn.Location = new System.Drawing.Point(146, 3);
+            this.pagerDownBtn.Location = new System.Drawing.Point(77, 3);
             this.pagerDownBtn.Name = "pagerDownBtn";
             this.pagerDownBtn.Size = new System.Drawing.Size(24, 23);
             this.pagerDownBtn.TabIndex = 38;
@@ -480,7 +480,7 @@
             // 
             this.pagerUpBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.pagerUpBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pagerUpBtn.Location = new System.Drawing.Point(202, 3);
+            this.pagerUpBtn.Location = new System.Drawing.Point(133, 3);
             this.pagerUpBtn.Name = "pagerUpBtn";
             this.pagerUpBtn.Size = new System.Drawing.Size(24, 23);
             this.pagerUpBtn.TabIndex = 38;
@@ -496,15 +496,15 @@
             this.flowLayoutPanel1.Controls.Add(this.pagerLbl);
             this.flowLayoutPanel1.Controls.Add(this.pagerDownBtn);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(101, 5);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(170, 5);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(333, 30);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(264, 30);
             this.flowLayoutPanel1.TabIndex = 40;
             // 
             // deleteRP_Btn
             // 
             this.deleteRP_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.deleteRP_Btn.Location = new System.Drawing.Point(280, 3);
+            this.deleteRP_Btn.Location = new System.Drawing.Point(211, 3);
             this.deleteRP_Btn.Name = "deleteRP_Btn";
             this.deleteRP_Btn.Size = new System.Drawing.Size(50, 23);
             this.deleteRP_Btn.TabIndex = 40;
@@ -516,7 +516,7 @@
             // 
             this.addRP_Btn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.addRP_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addRP_Btn.Location = new System.Drawing.Point(232, 3);
+            this.addRP_Btn.Location = new System.Drawing.Point(163, 3);
             this.addRP_Btn.Name = "addRP_Btn";
             this.addRP_Btn.Size = new System.Drawing.Size(42, 23);
             this.addRP_Btn.TabIndex = 39;
@@ -576,7 +576,7 @@
             this.Controls.Add(this.lblCI_RpListCount);
             this.Controls.Add(this.button1);
             this.Name = "uc_ResponsibleParty";
-            this.Size = new System.Drawing.Size(445, 498);
+            this.Size = new System.Drawing.Size(439, 498);
             this.Load += new System.EventHandler(this.uc_ResponsibleParty_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

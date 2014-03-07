@@ -20,7 +20,6 @@ namespace EmeLibrary
             set { incomingRPList = value; }
         }
 
-
         //public List<CI_ResponsibleParty> contact_CI_ResponsibleParty
         //{
         //    get { return contactRpSection; }
