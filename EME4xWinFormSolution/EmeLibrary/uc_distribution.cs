@@ -13,7 +13,7 @@ namespace EmeLibrary
     {
         //May need to change this one
         private int _distributorList_idx;
-        private List<MD_Distribution> _distributorList;
+        private List<MD_Distributor> _distributorList;
 
         //Distribution Formatt
         private int _distributionFormat_idx;
@@ -27,7 +27,7 @@ namespace EmeLibrary
         private int _digitalTransferOptions_idx;
         private List<MD_DigitalTransferOptions> _digitalTransferOptions;
 
-        public List<MD_Distribution> distributorList
+        public List<MD_Distributor> distributorList
         {
             get { return _distributorList; }
             set { _distributorList = value; }
@@ -77,10 +77,10 @@ namespace EmeLibrary
 
         private void MD_Dist_add_btn_Click(object sender, EventArgs e)
         {
-            MD_Distribution md_format = new MD_Distribution();
+            MD_Distributor md_format = new MD_Distributor();
             if (_distributorList == null)
             {
-                _distributorList = new List<MD_Distribution>();
+                _distributorList = new List<MD_Distributor>();
                 _distributorList_idx = 0;
                 _distributorList.Add(md_format);
                 //enable delete button
@@ -130,7 +130,7 @@ namespace EmeLibrary
             }
         }
 
-        private void bind_MD_Dist_Field(MD_Distribution dist)
+        private void bind_MD_Dist_Field(MD_Distributor dist)
         {
             MD_Dist_lbl.Text = (_distributorList_idx + 1).ToString() + " of " + _distributorList.Count().ToString();
         }
