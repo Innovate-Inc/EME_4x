@@ -211,6 +211,7 @@
 		<controlName>distributionInfo__MD_Distribution</controlName>
 		<Iso19115_2>./*[local-name()='distributionInfo']/*[local-name()='MD_Distribution']/*[local-name()='distributor']</Iso19115_2>
 		<Iso19115_1/>
-		<Csdgm/>    
+		<Csdgm/>
+    <DCATrequired>required</DCATrequired>
 	</emeControl>
 </emeSettings>

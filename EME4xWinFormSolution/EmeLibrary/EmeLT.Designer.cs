@@ -64,7 +64,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.uc_distribution1 = new EmeLibrary.uc_distribution();
+            this.distributionInfo__MD_Distribution = new EmeLibrary.uc_distribution();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -109,6 +109,7 @@
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button9 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -179,7 +180,6 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.tooltip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.button9 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
@@ -525,7 +525,7 @@
             // 
             this.groupBox10.AutoSize = true;
             this.groupBox10.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBox10.Controls.Add(this.uc_distribution1);
+            this.groupBox10.Controls.Add(this.distributionInfo__MD_Distribution);
             this.groupBox10.Location = new System.Drawing.Point(3, 7);
             this.groupBox10.Name = "groupBox10";
             this.groupBox10.Size = new System.Drawing.Size(472, 555);
@@ -533,19 +533,19 @@
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Distribution Information";
             // 
-            // uc_distribution1
+            // distributionInfo__MD_Distribution
             // 
-            this.uc_distribution1.AutoSize = true;
-            this.uc_distribution1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.uc_distribution1.digitalTransferOptions = null;
-            this.uc_distribution1.distributionFormat = null;
-            this.uc_distribution1.distributorList = null;
-            this.uc_distribution1.Location = new System.Drawing.Point(3, 17);
-            this.uc_distribution1.mylabel = "Distributor";
-            this.uc_distribution1.Name = "uc_distribution1";
-            this.uc_distribution1.Size = new System.Drawing.Size(463, 519);
-            this.uc_distribution1.standardOrderProcess = null;
-            this.uc_distribution1.TabIndex = 0;
+            this.distributionInfo__MD_Distribution.AutoSize = true;
+            this.distributionInfo__MD_Distribution.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.distributionInfo__MD_Distribution.digitalTransferOptions = null;
+            this.distributionInfo__MD_Distribution.distributionFormat = null;
+            this.distributionInfo__MD_Distribution.distributorList = null;
+            this.distributionInfo__MD_Distribution.Location = new System.Drawing.Point(3, 17);
+            this.distributionInfo__MD_Distribution.mylabel = "Distributor";
+            this.distributionInfo__MD_Distribution.Name = "distributionInfo__MD_Distribution";
+            this.distributionInfo__MD_Distribution.Size = new System.Drawing.Size(463, 519);
+            this.distributionInfo__MD_Distribution.standardOrderProcess = null;
+            this.distributionInfo__MD_Distribution.TabIndex = 0;
             // 
             // groupBox3
             // 
@@ -1016,6 +1016,18 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(456, 114);
             this.panel2.TabIndex = 0;
+            // 
+            // button9
+            // 
+            this.button9.BackColor = System.Drawing.SystemColors.Control;
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.Location = new System.Drawing.Point(230, 34);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(28, 23);
+            this.button9.TabIndex = 9;
+            this.button9.Text = "D";
+            this.button9.UseVisualStyleBackColor = false;
             // 
             // label10
             // 
@@ -1812,18 +1824,6 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // button9
-            // 
-            this.button9.BackColor = System.Drawing.SystemColors.Control;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Location = new System.Drawing.Point(230, 34);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(28, 23);
-            this.button9.TabIndex = 9;
-            this.button9.Text = "D";
-            this.button9.UseVisualStyleBackColor = false;
-            // 
             // EmeLT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2057,7 +2057,7 @@
         private System.Windows.Forms.Label lblDataDictionary;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.ToolTip tooltip1;
-        private uc_distribution uc_distribution1;
+        private uc_distribution distributionInfo__MD_Distribution;
         private uc_ResponsibleParty uc_ResponsibleParty1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ComboBox comboBox2;

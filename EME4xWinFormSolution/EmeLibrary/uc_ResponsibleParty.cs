@@ -171,6 +171,23 @@ namespace EmeLibrary
         public void loadList(List<CI_ResponsibleParty> CI_ResponsiblePartyList)
         {
             incomingRPList = CI_ResponsiblePartyList;
+            //MessageBox.Show(incomingRPList.Count().ToString());
+            if (incomingRPList.Count() < 1)
+            {
+                pagerUpBtn.Visible = false;
+                pagerDownBtn.Visible = false;
+                deleteRP_Btn.Enabled = false;
+            }
+            else if (incomingRPList.Count() == 1)
+            {
+                deleteRP_Btn.Enabled = true;
+            }
+            else if (incomingRPList.Count() > 1)
+            {
+                pagerUpBtn.Visible = true;
+                pagerDownBtn.Visible = true;
+                deleteRP_Btn.Enabled = true;
+            }
 
             incomingRPListIndex = 0;
 
@@ -288,7 +305,10 @@ namespace EmeLibrary
             else
             {
                 //Count is greater than 1
-                incomingRPListIndex--;
+                if (incomingRPListIndex > 0)
+                {
+                    incomingRPListIndex--;
+                }
                 bindToFields(incomingRPList[incomingRPListIndex]);
 
             }
@@ -491,7 +511,7 @@ namespace EmeLibrary
 
         private void uc_ResponsibleParty_Leave(object sender, EventArgs e)
         {
-            MessageBox.Show("Leaving");
+            //MessageBox.Show("Leaving");
             if (incomingRPList != null)
             {
                 bindToClass(incomingRPList[incomingRPListIndex]);

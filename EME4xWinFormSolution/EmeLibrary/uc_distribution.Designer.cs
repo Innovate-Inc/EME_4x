@@ -103,16 +103,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.uc_distribution_lbl = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.MD_Dist_del_btn = new System.Windows.Forms.Button();
-            this.MD_Dist_add_btn = new System.Windows.Forms.Button();
-            this.MD_Dist_pgU_btn = new System.Windows.Forms.Button();
             this.MD_Dist_lbl = new System.Windows.Forms.Label();
-            this.MD_Dist_pgD_btn = new System.Windows.Forms.Button();
+            this.MD_Dist_add_btn = new System.Windows.Forms.Button();
+            this.pgD_MD_Dist_btn = new System.Windows.Forms.Button();
+            this.pgU_MD_Dist_btn = new System.Windows.Forms.Button();
             this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
-            this.uc_ResponsibleParty1 = new EmeLibrary.uc_ResponsibleParty();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.uc_ResponsibleParty1 = new EmeLibrary.uc_ResponsibleParty();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.distributionFormat__MD_Format_pnl.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -125,10 +125,10 @@
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
             this.flowLayoutPanel4.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel6.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // distributionFormat__MD_Format_pnl
@@ -918,92 +918,65 @@
             this.uc_distribution_lbl.Size = new System.Drawing.Size(0, 17);
             this.uc_distribution_lbl.TabIndex = 3;
             // 
-            // groupBox1
-            // 
-            this.groupBox1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBox1.Controls.Add(this.flowLayoutPanel1);
-            this.groupBox1.Location = new System.Drawing.Point(125, 5);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(1);
-            this.groupBox1.Size = new System.Drawing.Size(183, 47);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.flowLayoutPanel1.AutoSize = true;
-            this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flowLayoutPanel1.Controls.Add(this.MD_Dist_del_btn);
-            this.flowLayoutPanel1.Controls.Add(this.MD_Dist_add_btn);
-            this.flowLayoutPanel1.Controls.Add(this.MD_Dist_pgU_btn);
-            this.flowLayoutPanel1.Controls.Add(this.MD_Dist_lbl);
-            this.flowLayoutPanel1.Controls.Add(this.MD_Dist_pgD_btn);
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(8, 12);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(166, 29);
-            this.flowLayoutPanel1.TabIndex = 2;
-            // 
             // MD_Dist_del_btn
             // 
             this.MD_Dist_del_btn.Enabled = false;
             this.MD_Dist_del_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.MD_Dist_del_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MD_Dist_del_btn.Image = ((System.Drawing.Image)(resources.GetObject("MD_Dist_del_btn.Image")));
-            this.MD_Dist_del_btn.Location = new System.Drawing.Point(140, 3);
+            this.MD_Dist_del_btn.Location = new System.Drawing.Point(156, 3);
             this.MD_Dist_del_btn.Name = "MD_Dist_del_btn";
             this.MD_Dist_del_btn.Size = new System.Drawing.Size(23, 23);
             this.MD_Dist_del_btn.TabIndex = 0;
             this.MD_Dist_del_btn.UseVisualStyleBackColor = true;
             this.MD_Dist_del_btn.Click += new System.EventHandler(this.MD_Dist_del_btn_Click);
             // 
+            // MD_Dist_lbl
+            // 
+            this.MD_Dist_lbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.MD_Dist_lbl.AutoSize = true;
+            this.MD_Dist_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MD_Dist_lbl.Location = new System.Drawing.Point(48, 6);
+            this.MD_Dist_lbl.Name = "MD_Dist_lbl";
+            this.MD_Dist_lbl.Size = new System.Drawing.Size(44, 17);
+            this.MD_Dist_lbl.TabIndex = 3;
+            this.MD_Dist_lbl.Text = "0 of 0";
+            // 
             // MD_Dist_add_btn
             // 
             this.MD_Dist_add_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.MD_Dist_add_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MD_Dist_add_btn.Image = ((System.Drawing.Image)(resources.GetObject("MD_Dist_add_btn.Image")));
-            this.MD_Dist_add_btn.Location = new System.Drawing.Point(111, 3);
+            this.MD_Dist_add_btn.Location = new System.Drawing.Point(127, 3);
             this.MD_Dist_add_btn.Name = "MD_Dist_add_btn";
             this.MD_Dist_add_btn.Size = new System.Drawing.Size(23, 23);
             this.MD_Dist_add_btn.TabIndex = 1;
             this.MD_Dist_add_btn.UseVisualStyleBackColor = true;
             this.MD_Dist_add_btn.Click += new System.EventHandler(this.MD_Dist_add_btn_Click);
             // 
-            // MD_Dist_pgU_btn
+            // pgD_MD_Dist_btn
             // 
-            this.MD_Dist_pgU_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.MD_Dist_pgU_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MD_Dist_pgU_btn.Location = new System.Drawing.Point(82, 3);
-            this.MD_Dist_pgU_btn.Name = "MD_Dist_pgU_btn";
-            this.MD_Dist_pgU_btn.Size = new System.Drawing.Size(23, 23);
-            this.MD_Dist_pgU_btn.TabIndex = 2;
-            this.MD_Dist_pgU_btn.Text = ">";
-            this.MD_Dist_pgU_btn.UseVisualStyleBackColor = true;
+            this.pgD_MD_Dist_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.pgD_MD_Dist_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.pgD_MD_Dist_btn.Location = new System.Drawing.Point(19, 3);
+            this.pgD_MD_Dist_btn.Name = "pgD_MD_Dist_btn";
+            this.pgD_MD_Dist_btn.Size = new System.Drawing.Size(23, 23);
+            this.pgD_MD_Dist_btn.TabIndex = 4;
+            this.pgD_MD_Dist_btn.Text = "<";
+            this.pgD_MD_Dist_btn.UseVisualStyleBackColor = true;
+            this.pgD_MD_Dist_btn.Click += new System.EventHandler(this.pgD_MD_Dist_Click);
             // 
-            // MD_Dist_lbl
+            // pgU_MD_Dist_btn
             // 
-            this.MD_Dist_lbl.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.MD_Dist_lbl.AutoSize = true;
-            this.MD_Dist_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MD_Dist_lbl.Location = new System.Drawing.Point(32, 6);
-            this.MD_Dist_lbl.Name = "MD_Dist_lbl";
-            this.MD_Dist_lbl.Size = new System.Drawing.Size(44, 17);
-            this.MD_Dist_lbl.TabIndex = 3;
-            this.MD_Dist_lbl.Text = "0 of 0";
-            // 
-            // MD_Dist_pgD_btn
-            // 
-            this.MD_Dist_pgD_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.MD_Dist_pgD_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MD_Dist_pgD_btn.Location = new System.Drawing.Point(3, 3);
-            this.MD_Dist_pgD_btn.Name = "MD_Dist_pgD_btn";
-            this.MD_Dist_pgD_btn.Size = new System.Drawing.Size(23, 23);
-            this.MD_Dist_pgD_btn.TabIndex = 4;
-            this.MD_Dist_pgD_btn.Text = "<";
-            this.MD_Dist_pgD_btn.UseVisualStyleBackColor = true;
+            this.pgU_MD_Dist_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.pgU_MD_Dist_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.pgU_MD_Dist_btn.Location = new System.Drawing.Point(98, 3);
+            this.pgU_MD_Dist_btn.Name = "pgU_MD_Dist_btn";
+            this.pgU_MD_Dist_btn.Size = new System.Drawing.Size(23, 23);
+            this.pgU_MD_Dist_btn.TabIndex = 2;
+            this.pgU_MD_Dist_btn.Text = ">";
+            this.pgU_MD_Dist_btn.UseVisualStyleBackColor = true;
+            this.pgU_MD_Dist_btn.Click += new System.EventHandler(this.pgU_MD_Dist_Click);
             // 
             // flowLayoutPanel6
             // 
@@ -1019,16 +992,6 @@
             this.flowLayoutPanel6.Size = new System.Drawing.Size(445, 445);
             this.flowLayoutPanel6.TabIndex = 0;
             // 
-            // uc_ResponsibleParty1
-            // 
-            this.uc_ResponsibleParty1.incomingCI_ResponsiblePartyList = null;
-            this.uc_ResponsibleParty1.Location = new System.Drawing.Point(3, 3);
-            this.uc_ResponsibleParty1.mylabel = "Contact";
-            this.uc_ResponsibleParty1.Name = "uc_ResponsibleParty1";
-            this.uc_ResponsibleParty1.rp_mode = null;
-            this.uc_ResponsibleParty1.Size = new System.Drawing.Size(439, 35);
-            this.uc_ResponsibleParty1.TabIndex = 7;
-            // 
             // groupBox3
             // 
             this.groupBox3.AutoSize = true;
@@ -1040,14 +1003,46 @@
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.MD_Dist_del_btn);
+            this.flowLayoutPanel1.Controls.Add(this.MD_Dist_add_btn);
+            this.flowLayoutPanel1.Controls.Add(this.pgU_MD_Dist_btn);
+            this.flowLayoutPanel1.Controls.Add(this.MD_Dist_lbl);
+            this.flowLayoutPanel1.Controls.Add(this.pgD_MD_Dist_btn);
+            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 12);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(182, 30);
+            this.flowLayoutPanel1.TabIndex = 7;
+            // 
+            // uc_ResponsibleParty1
+            // 
+            this.uc_ResponsibleParty1.incomingCI_ResponsiblePartyList = null;
+            this.uc_ResponsibleParty1.Location = new System.Drawing.Point(3, 3);
+            this.uc_ResponsibleParty1.mylabel = "Contact";
+            this.uc_ResponsibleParty1.Name = "uc_ResponsibleParty1";
+            this.uc_ResponsibleParty1.rp_mode = null;
+            this.uc_ResponsibleParty1.Size = new System.Drawing.Size(439, 35);
+            this.uc_ResponsibleParty1.TabIndex = 7;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.flowLayoutPanel1);
+            this.groupBox1.Location = new System.Drawing.Point(134, 4);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(200, 45);
+            this.groupBox1.TabIndex = 7;
+            this.groupBox1.TabStop = false;
+            // 
             // uc_distribution
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.Controls.Add(this.uc_distribution_lbl);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.uc_distribution_lbl);
             this.Controls.Add(this.groupBox3);
             this.Name = "uc_distribution";
             this.Size = new System.Drawing.Size(463, 519);
@@ -1075,13 +1070,12 @@
             this.panel5.PerformLayout();
             this.flowLayoutPanel4.ResumeLayout(false);
             this.flowLayoutPanel4.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
             this.flowLayoutPanel6.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1130,13 +1124,11 @@
         private System.Windows.Forms.TextBox md_format_AmendmentNumber_txt;
         private System.Windows.Forms.TextBox md_format_version_txt;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel6;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button MD_Dist_del_btn;
         private System.Windows.Forms.Button MD_Dist_add_btn;
-        private System.Windows.Forms.Button MD_Dist_pgU_btn;
+        private System.Windows.Forms.Button pgU_MD_Dist_btn;
         private System.Windows.Forms.Label MD_Dist_lbl;
-        private System.Windows.Forms.Button MD_Dist_pgD_btn;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button pgD_MD_Dist_btn;
         private uc_ResponsibleParty uc_ResponsibleParty1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Panel panel5;
@@ -1173,5 +1165,7 @@
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

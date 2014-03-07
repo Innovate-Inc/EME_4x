@@ -329,6 +329,7 @@
   <ItemGroup>
     <Content Include="Eme4xSystemFiles\EMEdb\BoundingBox.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Eme4xSystemFiles\EMEdb\Citation.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

@@ -39,7 +39,6 @@ namespace EmeLibrary
             }
             bindFormtoEMEdatabases();
             hoverHelpInit();
-            
             //setDefaultKeywordListBoxSelection(ref  idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey);
             //setDefaultKeywordListBoxSelection(ref idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey);
             //setDefaultKeywordListBoxSelection(ref idinfo_keywords_place_placekt__None___placekey);
@@ -80,7 +79,7 @@ namespace EmeLibrary
             {
                 if (cntrl.HasChildren == true)
                 {
-                    if (cntrl.GetType() == typeof(uc_ResponsibleParty))
+                    if (cntrl.GetType() == typeof(uc_ResponsibleParty) || cntrl.GetType() == typeof(uc_distribution))
                     {
                         //MessageBox.Show(cntrl.Name + " " + "here");
                         allControlsColl[cntrl.Name] = cntrl;

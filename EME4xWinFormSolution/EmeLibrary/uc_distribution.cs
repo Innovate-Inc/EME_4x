@@ -73,6 +73,13 @@ namespace EmeLibrary
 
         }
 
+        public void loadDistributors(List<MD_Distributor> distributors)
+        {
+            _distributorList = distributors;
+            _distributorList_idx = 1;
+            bind_MD_Dist_Field(_distributorList[_distributorList_idx]);
+        }
+
         #region MD_Distributor pager Events
 
         private void MD_Dist_add_btn_Click(object sender, EventArgs e)
@@ -90,8 +97,8 @@ namespace EmeLibrary
             {
 
                 //enable pager buttons
-                MD_Dist_pgD_btn.Visible = true;
-                MD_Dist_pgU_btn.Visible = true;
+                pgD_MD_Dist_btn.Visible = true;
+                pgU_MD_Dist_btn.Visible = true;
 
                 //bindToClass(incomingRPList[incomingRPListIndex]);
                 _distributorList.Add(md_format);
@@ -115,8 +122,8 @@ namespace EmeLibrary
             }
             else if (_distributorList.Count == 1)
             {
-                MD_Dist_pgD_btn.Visible = false;
-                MD_Dist_pgU_btn.Visible = false;
+                pgD_MD_Dist_btn.Visible = false;
+                pgU_MD_Dist_btn.Visible = false;
                 _distributorList_idx = 0;
                 bind_MD_Dist_Field(_distributorList[_distributorList_idx]);
             }
@@ -126,6 +133,38 @@ namespace EmeLibrary
                 {
                     _distributorList_idx--;
                 }
+                bind_MD_Dist_Field(_distributorList[_distributorList_idx]);
+            }
+        }
+
+        private void pgD_MD_Dist_Click(object sender, EventArgs e)
+        {
+            if (_distributorList_idx == 0)
+            {
+                pgD_MD_Dist_btn.Enabled = false;
+                pgU_MD_Dist_btn.Focus();
+            }
+            else
+            {
+                //bindToClass(incomingRPList[incomingRPListIndex]);
+                _distributorList_idx--;
+                pgU_MD_Dist_btn.Enabled = true;
+                bind_MD_Dist_Field(_distributorList[_distributorList_idx]);
+            }
+        }
+
+        private void pgU_MD_Dist_Click(object sender, EventArgs e)
+        {
+            if (_distributorList_idx >= _distributorList.Count - 1)
+            {
+                pgU_MD_Dist_btn.Enabled = false;
+                pgD_MD_Dist_btn.Focus();
+            }
+            else
+            {
+                //bindToClass(incomingRPList[incomingRPListIndex]);
+                _distributorList_idx++;
+                pgD_MD_Dist_btn.Enabled = true;
                 bind_MD_Dist_Field(_distributorList[_distributorList_idx]);
             }
         }
@@ -459,6 +498,10 @@ namespace EmeLibrary
         {
 
         }
+
+       
+
+        
 
         
 

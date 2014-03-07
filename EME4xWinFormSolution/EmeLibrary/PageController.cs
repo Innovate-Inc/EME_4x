@@ -125,6 +125,18 @@ namespace EmeLibrary
                     }
                     ctrl.Tag = srcField;
                 }
+                else if (ctrl.GetType() == typeof(uc_distribution))
+                {
+                    Console.WriteLine("Found Distribution");
+                    //uc_distribution distCtrl = (uc_distribution)ctrl;
+
+                    //List<MD_Distributor> distList = (List<MD_Distributor>)frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null);
+                    //if (distList != null && distList.Count != 0)
+                    //{
+                    //    distCtrl.loadDistributors(distList);
+                    //}
+                    //ctrl.Tag = srcField;
+                }
                 //else if (ctrl.GetType() == typeof(ListBox))
                 //{
                 //    ListBox topic = (ListBox)ctrl;
@@ -148,7 +160,7 @@ namespace EmeLibrary
                     string s = (frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null) != null) ? frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null).ToString() : "";
                     ctrl.Text = s;
                     ctrl.Tag = srcField;
-                    
+
                 }
             }
         }
