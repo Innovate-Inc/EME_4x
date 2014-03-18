@@ -365,13 +365,18 @@ namespace EmeLibrary
         private List<string> returnListFromKeywordSection(string XpathToDescriptiveKeyWordSection, string XpathToListWithinSection)
         {
             List<string> templist = new List<string>();
-            XmlNodeList targetKeywordList = inboundMetadataRecord.DocumentElement.SelectSingleNode(XpathToDescriptiveKeyWordSection).
-                SelectNodes(XpathToListWithinSection);//"./*[local-name()='keyword']");
-            if (targetKeywordList != null)
+            //The first Xpath Expression should return one descriptive keywords section.
+            //Then from that selection return a nodelist of keywords
+            XmlNode kwSection = inboundMetadataRecord.DocumentElement.SelectSingleNode(XpathToDescriptiveKeyWordSection);
+            if (kwSection != null)
             {
-                foreach (XmlNode n in targetKeywordList)
+                XmlNodeList targetKeywordList = kwSection.SelectNodes(XpathToListWithinSection);//"./*[local-name()='keyword']");
+                if (targetKeywordList != null)
                 {
-                    templist.Add(n.InnerText);
+                    foreach (XmlNode n in targetKeywordList)
+                    {
+                        templist.Add(n.InnerText);
+                    }
                 }
             }
             return templist;
@@ -1079,6 +1084,56 @@ namespace EmeLibrary
             
             //keywordsTemplateSection.FirstChild.PrependChild(keywordListFrag);
             return keywordsTemplateSection;
+
+        }
+
+        private void construct_distributionInfoSection()
+        {
+            //Create a key,value pair to get to each child node
+            MD_Distributor mdDistributor = new MD_Distributor();
+            object distRP = mdDistributor;
+
+            List<KeyValuePair<string, string>> kvList = extractPartentXmlElementNameFromClass(distRP);
+            for (int i = 0; i < kvList.Count; i++)
+            {
+                Console.WriteLine("Key " + kvList[i].Key.ToString()
+                    + "  Value: " + kvList[i].Value.ToString());
+            }
+
+            if (_distributionInfo__MD_Distribution.Count > 0)
+            {
+                foreach (MD_Distributor distributorItem in _distributionInfo__MD_Distribution)
+                {
+                    //Should be able to re-use the create CI_ResponsibleParty code Section
+                    //Requires a ciRP list, but could just pass in a one item list.
+                    List<CI_ResponsibleParty> tempCiRPList = new List<CI_ResponsibleParty>();
+                    tempCiRPList.Add(distributorItem.distributorContact__CI_ResponsibleParty);
+
+                    string pname = "distributorContact__CI_ResponsibleParty";
+                    KeyValuePair<string, string> kv = kvList.Find(delegate(KeyValuePair<string, string> kv1) { return kv1.Key == pname; });
+                    //Check the expath.  This might change the method below
+                    constructCI_ResponsiblePartyMarkUp(tempCiRPList, kv.Value);
+
+
+                    if (distributorItem.distributionOrderProcess__MD_StandardOrderProcess.Count > 0)
+                    {
+                    }
+                    if (distributorItem.distributorFormat__MD_Format.Count > 0)
+                    { }
+                    if (distributorItem.distributorTransferOptions__MD_DigitalTransferOptions.Count > 0)
+                    { }
+
+                    //Key distributorContact__CI_ResponsibleParty  
+                    //Value:./*[local-name()='MD_Distributor']/*[local-name()='distributorContact']/*[local-name()='CI_ResponsibleParty']
+                    //Key distributionOrderProcess__MD_StandardOrderProcess  
+                    //Value: ./*[local-name()='MD_Distributor']/*[local-name()='distributionOrderProcess']/*[local-name()='MD_StandardOrderProcess']
+                    //Key distributorFormat__MD_Format  
+                    //Value: ./*[local-name()='MD_Distributor']/*[local-name()='distributorFormat']/*[local-name()='MD_Format']
+                    //Key distributorTransferOptions__MD_DigitalTransferOptions  
+                    //Value: ./*[local-name()='MD_Distributor']/*[local-name()='distributorTransferOptions']/*[local-name()='MD_DigitalTransferOptions']
+
+                }
+            }
 
         }
 
