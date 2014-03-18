@@ -68,7 +68,7 @@
     <eastbc>-66</eastbc>
     <northbc>72</northbc>
     <southbc>18</southbc>
-    <default>1</default>
+    <default>true</default>
   </BoundingBox>
   <BoundingBox>
     <orderedId>10</orderedId>
@@ -77,7 +77,7 @@
     <eastbc>-66.969271</eastbc>
     <northbc>47.453335</northbc>
 	<southbc>40.998392</southbc>
-	<default>0</default>
+	<default>false</default>
   </BoundingBox>
   <BoundingBox>
     <orderedId>20</orderedId>
@@ -86,7 +86,7 @@
 	<eastbc>-74.700062</eastbc>
 	<northbc>42.267327</northbc>
 	<southbc>36.541623</southbc>
-	<default>0</default>
+	<default>false</default>
   </BoundingBox>
   <BoundingBox>
 	<orderedId>30</orderedId>
@@ -95,7 +95,7 @@
 	<eastbc>-71.869987</eastbc>
 	<northbc>45.006139</northbc>
 	<southbc>38.956682</southbc>
-	<default>0</default>
+	<default>false</default>
   </BoundingBox>
   <BoundingBox>
 	<orderedId>40</orderedId>
@@ -104,7 +104,7 @@
 	<eastbc>-75.456580</eastbc>
 	<northbc>39.142064</northbc>
 	<southbc>24.956376</southbc>
-	<default>0</default>
+	<default>false</default>
   </BoundingBox>
   <BoundingBox>
 	<orderedId>50</orderedId>
@@ -113,7 +113,7 @@
 	<eastbc>-80.519996</eastbc>
 	<northbc>49.371730</northbc>
 	<southbc>36.986822</southbc>
-	<default>0</default>
+	<default>false</default>
   </BoundingBox>
   <BoundingBox>
 	<orderedId>60</orderedId>
@@ -122,7 +122,7 @@
 	<eastbc>-89.021803</eastbc>
 	<northbc>37.001478</northbc>
 	<southbc>25.845557</southbc>
-	<default>0</default>
+	<default>false</default>
   </BoundingBox>
   <BoundingBox>
 	<orderedId>70</orderedId>
@@ -131,7 +131,7 @@
 	<eastbc>-89.105034</eastbc>
 	<northbc>43.501457</northbc>
 	<southbc>35.989656</southbc>
-	<default>0</default>
+	<default>false</default>
   </BoundingBox>
   <BoundingBox>
 	<orderedId>80</orderedId>
@@ -140,7 +140,7 @@
 	<eastbc>-96.439395</eastbc>
 	<northbc>49.000027</northbc>
 	<southbc>36.988994</southbc>
-	<default>0</default>
+	<default>false</default>
   </BoundingBox>
   <BoundingBox>
 	<orderedId>90</orderedId>
@@ -149,7 +149,7 @@
 	<eastbc>-109.045615</eastbc>
 	<northbc>42.002192</northbc>
 	<southbc>18.921786</southbc>
-	<default>0</default>
+	<default>false</default>
   </BoundingBox>
   <BoundingBox>
 	<orderedId>100</orderedId>
@@ -158,6 +158,6 @@
 	<eastbc>-111.046771</eastbc>
 	<northbc>71.406235</northbc>
 	<southbc>41.987672</southbc>
-	<default>0</default>
+	<default>false</default>
   </BoundingBox>
 </emeData>

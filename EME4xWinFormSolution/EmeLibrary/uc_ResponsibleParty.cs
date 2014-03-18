@@ -194,6 +194,22 @@ namespace EmeLibrary
             bindToFields(incomingRPList[incomingRPListIndex]);
         }
 
+        public void loadList(CI_ResponsibleParty ci_RP)
+        {
+            incomingRPList = new List<CI_ResponsibleParty>();
+            incomingRPList.Add(ci_RP);
+            //MessageBox.Show(incomingRPList.Count().ToString());
+
+            pagerUpBtn.Visible = false;
+            pagerDownBtn.Visible = false;
+            deleteRP_Btn.Enabled = false;
+            addRP_Btn.Enabled = false;
+
+            incomingRPListIndex = 0;
+
+            bindToFields(ci_RP);
+        }
+
         private void pagerDownBtn_Click(object sender, EventArgs e)
         {
 

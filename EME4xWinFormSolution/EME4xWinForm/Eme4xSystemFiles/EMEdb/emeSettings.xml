@@ -39,6 +39,20 @@
 							</xs:restriction>
 						</xs:simpleType>
 					</xs:element>
+          <xs:element name="sourceTable">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="50" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="sourceField">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="50" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
 				</xs:sequence>
 			</xs:complexType>
 		</xs:element>
@@ -158,30 +172,44 @@
 		<Iso19115_1/>
 		<Csdgm/>
     <DCATrequired>required</DCATrequired>
+    <sourceTable>KeywordsISO</sourceTable>
+    <sourceField>themekey</sourceField>
 	</emeControl>  
 	<emeControl>
 		<controlName>idInfo_keywordsEpa</controlName>
 		<Iso19115_2>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='descriptiveKeywords']/*[local-name()='MD_Keywords']/*[local-name()='thesaurusName']/*[local-name()='CI_Citation']/*[local-name()='title'][*[local-name()='CharacterString']='EPA GIS Keyword Thesaurus']/../../../..</Iso19115_2>
 		<Iso19115_1/>
-		<Csdgm/>    
+		<Csdgm/>
+    <DCATrequired/>
+    <sourceTable>KeywordsEPA</sourceTable>
+    <sourceField>themekey</sourceField>
 	</emeControl>  
 	<emeControl>
 		<controlName>idInfo_keywordsUser</controlName>
 		<Iso19115_2>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='descriptiveKeywords']/*[local-name()='MD_Keywords']/*[local-name()='thesaurusName']/*[local-name()='CI_Citation']/*[local-name()='title'][*[local-name()='CharacterString']='User']/../../../..</Iso19115_2>
 		<Iso19115_1>./gmd:identificationInfo/gmd:MD_DataIdentification/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title[gco:CharacterString='User']/../../../..</Iso19115_1>
-		<Csdgm/>    
+		<Csdgm/>
+    <DCATrequired/>
+    <sourceTable>KeywordsUser</sourceTable>
+    <sourceField>themekey</sourceField>
 	</emeControl>
 	<emeControl>
 		<controlName>idInfo_keywordsPlace</controlName>
 		<Iso19115_2>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='descriptiveKeywords']/*[local-name()='MD_Keywords']/*[local-name()='type'][*[local-name()='MD_KeywordTypeCode']='place']/../..</Iso19115_2>
 		<Iso19115_1>./gmd:identificationInfo/gmd:MD_DataIdentification/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:type[gmd:MD_KeywordTypeCode='place']/..</Iso19115_1>
-		<Csdgm/>    
+		<Csdgm/>
+    <DCATrequired/>
+    <sourceTable>KeywordsPlace</sourceTable>
+    <sourceField>placekey</sourceField>
 	</emeControl>
 	<emeControl>
 		<controlName>idInfo_extent_description</controlName>
 		<Iso19115_2>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='extent']/*[local-name()='EX_Extent']/*[local-name()='description']</Iso19115_2>
 		<Iso19115_1/>
-		<Csdgm/>    
+		<Csdgm/>
+    <DCATrequired/>
+    <sourceTable>BoundingBox</sourceTable>
+    <sourceField>Area</sourceField>
 	</emeControl>
 	<emeControl>
 		<controlName>idInfo_extent_geographicBoundingBox_westLongDD</controlName>

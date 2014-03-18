@@ -23,10 +23,11 @@ namespace EmeLibrary
         private string tag;
         private string scrTable;
         private string srcField;
+        private string requiredCtrl;
         private string formFieldName_;
 
 
-        public PageController(long orderedID, string tag, string srcTable, string srcField)
+        public PageController(long orderedID, string tag, string srcTable, string srcField, string requiredCtrl)
         :base()
         {
             //int tabNo, bool spellcheck, string cluster, bool clusterUpdate, string help
@@ -34,9 +35,17 @@ namespace EmeLibrary
             this.tag = tag;
             this.scrTable = srcTable;
             this.srcField = srcField;
+            this.requiredCtrl = requiredCtrl;
             this.formFieldName_ = tag;
             HiveMind.Add(formFieldName_, this);         
 
+        }
+
+        public static PageController thatControls(string ctrlName)
+        {
+            PageController pc;
+            HiveMind.TryGetValue(ctrlName, out pc);
+            return pc;
         }
         
         /// <summary>
@@ -73,10 +82,10 @@ namespace EmeLibrary
                     ? dr["controlName"].ToString()
                     : dr["controlName"].ToString().Remove(index, "Xpath".Length);
                 cntrlName = cleanPath;
-                //MessageBox.Show(cntrlName);
                 
+                //Console.WriteLine(cntrlName);
                 //Add new page controller object for each record in database
-                p = new PageController(i, cntrlName, "sourceField", dr["DCATrequired"].ToString());
+                p = new PageController(i, cntrlName, dr["sourceTable"].ToString(), dr["sourceField"].ToString(), dr["DCATrequired"].ToString());
 
                 i++;
             }
@@ -105,7 +114,7 @@ namespace EmeLibrary
         private void populate(EmeLT frm)
         {
             
-            //Console.WriteLine(formFieldName_);
+            Console.WriteLine(formFieldName_);
             Control ctrl;
             
             ctrl = frm.getControlForTag(formFieldName_);
@@ -123,43 +132,137 @@ namespace EmeLibrary
                     {
                         incoming_ResponsibleParty.loadList(ci_RP);
                     }
-                    ctrl.Tag = srcField;
+                    ctrl.Tag = requiredCtrl;
                 }
                 else if (ctrl.GetType() == typeof(uc_distribution))
                 {
-                    Console.WriteLine("Found Distribution");
-                    //uc_distribution distCtrl = (uc_distribution)ctrl;
+                    //Console.WriteLine("Found Distribution");
+                    //test
+                    //List<MD_Distributor> distList = new List<MD_Distributor>();
+                    //MD_Distributor dim1 = new MD_Distributor();
+                    //MD_Distributor dim2 = new MD_Distributor();
+                    //MD_Distributor dim3 = new MD_Distributor();
 
-                    //List<MD_Distributor> distList = (List<MD_Distributor>)frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null);
-                    //if (distList != null && distList.Count != 0)
-                    //{
-                    //    distCtrl.loadDistributors(distList);
-                    //}
-                    //ctrl.Tag = srcField;
+                    //CI_ResponsibleParty ci1 = new CI_ResponsibleParty();
+                    //ci1.individualName = "David Yarnell";
+                    //dim1.distributorContact__CI_ResponsibleParty = ci1;
+
+                    //List<MD_StandardOrderProcess> sopList = new List<MD_StandardOrderProcess>();
+                    //MD_StandardOrderProcess sop1 = new MD_StandardOrderProcess();
+                    //MD_StandardOrderProcess sop2 = new MD_StandardOrderProcess();
+                    //sopList.Add(sop1);
+                    //sopList.Add(sop2);
+                    //dim2.distributionOrderProcess__MD_StandardOrderProcess = sopList;
+
+                    //List<MD_Format> formatlist = new List<MD_Format>();
+                    //MD_Format format1 = new MD_Format();
+                    //MD_Format format2 = new MD_Format();
+                    //formatlist.Add(format1);
+                    //formatlist.Add(format2);
+                    //dim1.distributorFormat__MD_Format = formatlist;
+
+                    //List<MD_DigitalTransferOptions> dtoList = new List<MD_DigitalTransferOptions>();
+                    //MD_DigitalTransferOptions dto1 = new MD_DigitalTransferOptions();
+                    //MD_DigitalTransferOptions dto2 = new MD_DigitalTransferOptions();
+                    //MD_DigitalTransferOptions dto3 = new MD_DigitalTransferOptions();
+                    //dtoList.Add(dto1);
+                    //dtoList.Add(dto2);
+                    //dtoList.Add(dto3);
+                    //dim3.distributorTransferOptions__MD_DigitalTransferOptions = dtoList;
+
+                    //distList.Add(dim1);
+                    //distList.Add(dim2);
+                    //distList.Add(dim3);
+
+                    //end Test
+                    uc_distribution distCtrl = (uc_distribution)ctrl;
+
+                    List<MD_Distributor> distList = (List<MD_Distributor>)frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null);
+                    if (distList != null && distList.Count != 0)
+                    {
+                        distCtrl.loadDistributors(distList);
+                    }
+                    ctrl.Tag = requiredCtrl;
                 }
-                //else if (ctrl.GetType() == typeof(ListBox))
-                //{
-                //    ListBox topic = (ListBox)ctrl;
-                //    List<string> list = (List<string>)frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null);
-                //    topic.ClearSelected();
-                //    foreach (string s in list)
-                //    {
-                //        int i = topic.FindStringExact(s);
-                //        topic.SetSelected(i, true);
-                //    }
-                //}
+                else if (ctrl.GetType() == typeof(ListBox))
+                {
+                    ListBox topic = (ListBox)ctrl;
+                    List<string> list = (List<string>)frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null);
+
+                    if (scrTable != "")
+                    {
+                        //Bind system table to listbox
+                        topic.DataSource = Utils1.emeDataSet.Tables[scrTable];
+                        topic.DisplayMember = srcField;
+                        topic.ClearSelected();
+
+                        foreach (string k in list)
+                        {
+                            int w = topic.FindStringExact(k);
+                            if (w == -1)
+                            {
+                                topic.BeginUpdate();
+                                Utils1.emeDataSet.Tables[scrTable].Rows.Add(null, k, "false");
+                                topic.EndUpdate();
+                            }       
+                        }
+                        foreach (string k in list)
+                        {
+                            int w = topic.FindStringExact(k);
+                            topic.SetSelected(w, true);
+                        } 
+                    } 
+                }
                 else if (ctrl.GetType() == typeof(ComboBox))
                 {
+                    
                     ComboBox boxCbo = (ComboBox)ctrl;
                     string c = (frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null) != null) ? frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null).ToString() : "";
-                    boxCbo.SelectedItem = c;
+
+                    if (scrTable != "")
+                    {
+                        DataTable subTable = Utils1.emeDataSet.Tables[scrTable].Select().CopyToDataTable();
+                        
+                        if (c != "")
+                        {
+                            boxCbo.Text = c;
+                            foreach (DataRow dr in subTable.Rows)
+                            {
+                                if (dr["Area"].ToString() == c.ToString())
+                                {
+                                    //Console.WriteLine("Found");
+                                    boxCbo.DataSource = subTable;
+                                    boxCbo.ValueMember = srcField;
+                                    boxCbo.DisplayMember = srcField;
+                                    boxCbo.SelectedValue = dr[srcField].ToString();
+                                    break;
+                                }
+                            }
+                            DataRow row = subTable.NewRow();
+                            row[srcField] = c;
+                            subTable.Rows.Add(row);
+                            boxCbo.DataSource = subTable;
+                            boxCbo.ValueMember = srcField;
+                            boxCbo.DisplayMember = srcField;
+                            boxCbo.SelectedValue = c;
+                        }
+                        else
+                        {
+                            boxCbo.DataSource = subTable;
+                            boxCbo.ValueMember = srcField;
+                            boxCbo.DisplayMember = srcField;
+                            boxCbo.SelectedIndex = -1;
+                        }   
+                    }
+
+                    
                     //boxCbo.Focus();     //Need to figure out why it need focus to save
                 }
                 else if (ctrl.GetType() == typeof(TextBox))
                 {
                     string s = (frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null) != null) ? frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null).ToString() : "";
                     ctrl.Text = s;
-                    ctrl.Tag = srcField;
+                    ctrl.Tag = requiredCtrl;
 
                 }
             }
@@ -210,6 +313,29 @@ namespace EmeLibrary
                     frm.localXdoc.GetType().GetProperty(ctrl.Name).SetValue(obj, ctrl.Text, null);
                     //MessageBox.Show(frm.localXdoc.idInfo_citation_Title.ToString());
                     Console.WriteLine(ctrl.Text);
+                }
+            }
+        }
+
+        public void setDefault(EmeLT frm)
+        {
+            Control ctrl;
+            ctrl = frm.getControlForTag(formFieldName_);
+
+            if (scrTable != "")
+            {
+                if (ctrl.GetType() == typeof(ComboBox))
+                {
+                    ComboBox cbx = (ComboBox)ctrl;
+                    for (int i = 0; i < cbx.Items.Count-1; i++)
+                    {
+                        DataRowView dr = (DataRowView)cbx.Items[i];
+                        bool d = (bool)dr["default"];
+                        if (d)
+                        {
+                            cbx.SelectedIndex = i;
+                        }
+                    }
                 }
             }
         }
