@@ -30,14 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmeLT));
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.OpenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.databaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
@@ -63,8 +55,8 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.uc_distribution1 = new EmeLibrary.uc_distribution();
+            this.distributionInformation_gbx = new System.Windows.Forms.GroupBox();
+            this.distributionInfo__MD_Distribution = new EmeLibrary.uc_distribution();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -109,15 +101,17 @@
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.idInfo_extent_description_lbl = new System.Windows.Forms.Label();
+            this.idInfo_extent_description_d = new System.Windows.Forms.Button();
+            this.idInfo_extent_geographicBoundingBox_westLongDD_lbl = new System.Windows.Forms.Label();
+            this.idInfo_extent_geographicBoundingBox_eastLongDD_lbl = new System.Windows.Forms.Label();
+            this.idInfo_extent_geographicBoundingBox_southLatDD_lbl = new System.Windows.Forms.Label();
+            this.idInfo_extent_geographicBoundingBox_northLatDD_lbl = new System.Windows.Forms.Label();
+            this.idInfo_extent_geographicBoundingBox_westLongDD = new System.Windows.Forms.TextBox();
+            this.idInfo_extent_geographicBoundingBox_southLatDD = new System.Windows.Forms.TextBox();
+            this.idInfo_extent_geographicBoundingBox_northLatDD = new System.Windows.Forms.TextBox();
+            this.idInfo_extent_geographicBoundingBox_eastLongDD = new System.Windows.Forms.TextBox();
+            this.idInfo_extent_description = new System.Windows.Forms.ComboBox();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tcKeywords = new System.Windows.Forms.TabControl();
@@ -179,8 +173,15 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.tooltip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.button9 = new System.Windows.Forms.Button();
-            this.menuStrip1.SuspendLayout();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.OpenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.databaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.importTableFeaturesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.panel8.SuspendLayout();
@@ -188,7 +189,7 @@
             this.panel10.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            this.groupBox10.SuspendLayout();
+            this.distributionInformation_gbx.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -222,76 +223,8 @@
             this.tabPage6.SuspendLayout();
             this.tabControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
-            this.editToolStripMenuItem,
-            this.toolsToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1000, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newToolStripMenuItem,
-            this.OpenToolStripMenuItem,
-            this.saveToolStripMenuItem});
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(37, 20);
-            this.toolStripMenuItem1.Text = "&File";
-            // 
-            // newToolStripMenuItem
-            // 
-            this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
-            this.newToolStripMenuItem.Text = "New";
-            this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
-            // 
-            // OpenToolStripMenuItem
-            // 
-            this.OpenToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("OpenToolStripMenuItem.Image")));
-            this.OpenToolStripMenuItem.Name = "OpenToolStripMenuItem";
-            this.OpenToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.OpenToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
-            this.OpenToolStripMenuItem.Text = "&Open";
-            this.OpenToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItem_Click);
-            // 
-            // saveToolStripMenuItem
-            // 
-            this.saveToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripMenuItem.Image")));
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
-            this.saveToolStripMenuItem.Text = "&Save";
-            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
-            // 
-            // editToolStripMenuItem
-            // 
-            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
-            this.editToolStripMenuItem.Text = "&Edit";
-            // 
-            // toolsToolStripMenuItem
-            // 
-            this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.databaseToolStripMenuItem});
-            this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
-            this.toolsToolStripMenuItem.Text = "&Tools";
-            this.toolsToolStripMenuItem.Click += new System.EventHandler(this.toolsToolStripMenuItem_Click);
-            // 
-            // databaseToolStripMenuItem
-            // 
-            this.databaseToolStripMenuItem.Name = "databaseToolStripMenuItem";
-            this.databaseToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.databaseToolStripMenuItem.Text = "Open Database";
-            this.databaseToolStripMenuItem.Click += new System.EventHandler(this.databaseToolStripMenuItem_Click);
             // 
             // statusStrip1
             // 
@@ -512,7 +445,7 @@
             // tabPage3
             // 
             this.tabPage3.AutoScroll = true;
-            this.tabPage3.Controls.Add(this.groupBox10);
+            this.tabPage3.Controls.Add(this.distributionInformation_gbx);
             this.tabPage3.Controls.Add(this.groupBox3);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
@@ -521,31 +454,31 @@
             this.tabPage3.Text = "Distribution & Metadata Information";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // groupBox10
+            // distributionInformation_gbx
             // 
-            this.groupBox10.AutoSize = true;
-            this.groupBox10.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBox10.Controls.Add(this.uc_distribution1);
-            this.groupBox10.Location = new System.Drawing.Point(3, 7);
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(472, 555);
-            this.groupBox10.TabIndex = 39;
-            this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "Distribution Information";
+            this.distributionInformation_gbx.AutoSize = true;
+            this.distributionInformation_gbx.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.distributionInformation_gbx.Controls.Add(this.distributionInfo__MD_Distribution);
+            this.distributionInformation_gbx.Location = new System.Drawing.Point(3, 7);
+            this.distributionInformation_gbx.Name = "distributionInformation_gbx";
+            this.distributionInformation_gbx.Size = new System.Drawing.Size(472, 589);
+            this.distributionInformation_gbx.TabIndex = 39;
+            this.distributionInformation_gbx.TabStop = false;
+            this.distributionInformation_gbx.Text = "Distribution Information";
             // 
-            // uc_distribution1
+            // distributionInfo__MD_Distribution
             // 
-            this.uc_distribution1.AutoSize = true;
-            this.uc_distribution1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.uc_distribution1.digitalTransferOptions = null;
-            this.uc_distribution1.distributionFormat = null;
-            this.uc_distribution1.distributorList = null;
-            this.uc_distribution1.Location = new System.Drawing.Point(3, 17);
-            this.uc_distribution1.mylabel = "Distributor";
-            this.uc_distribution1.Name = "uc_distribution1";
-            this.uc_distribution1.Size = new System.Drawing.Size(463, 519);
-            this.uc_distribution1.standardOrderProcess = null;
-            this.uc_distribution1.TabIndex = 0;
+            this.distributionInfo__MD_Distribution.AutoSize = true;
+            this.distributionInfo__MD_Distribution.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.distributionInfo__MD_Distribution.digitalTransferOptions = null;
+            this.distributionInfo__MD_Distribution.distributionFormat = null;
+            this.distributionInfo__MD_Distribution.distributorList = null;
+            this.distributionInfo__MD_Distribution.Location = new System.Drawing.Point(3, 17);
+            this.distributionInfo__MD_Distribution.mylabel = "Distributor";
+            this.distributionInfo__MD_Distribution.Name = "distributionInfo__MD_Distribution";
+            this.distributionInfo__MD_Distribution.Size = new System.Drawing.Size(463, 553);
+            this.distributionInfo__MD_Distribution.standardOrderProcess = null;
+            this.distributionInfo__MD_Distribution.TabIndex = 0;
             // 
             // groupBox3
             // 
@@ -984,7 +917,7 @@
             this.flowLayoutPanel3.Controls.Add(this.groupBox1);
             this.flowLayoutPanel3.Controls.Add(this.groupBox7);
             this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(486, 7);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(485, 7);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(474, 557);
             this.flowLayoutPanel3.TabIndex = 37;
@@ -1002,98 +935,122 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.panel2.Controls.Add(this.button9);
-            this.panel2.Controls.Add(this.label10);
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.textBox9);
-            this.panel2.Controls.Add(this.textBox8);
-            this.panel2.Controls.Add(this.textBox7);
-            this.panel2.Controls.Add(this.textBox6);
-            this.panel2.Controls.Add(this.comboBox2);
+            this.panel2.Controls.Add(this.idInfo_extent_description_lbl);
+            this.panel2.Controls.Add(this.idInfo_extent_description_d);
+            this.panel2.Controls.Add(this.idInfo_extent_geographicBoundingBox_westLongDD_lbl);
+            this.panel2.Controls.Add(this.idInfo_extent_geographicBoundingBox_eastLongDD_lbl);
+            this.panel2.Controls.Add(this.idInfo_extent_geographicBoundingBox_southLatDD_lbl);
+            this.panel2.Controls.Add(this.idInfo_extent_geographicBoundingBox_northLatDD_lbl);
+            this.panel2.Controls.Add(this.idInfo_extent_geographicBoundingBox_westLongDD);
+            this.panel2.Controls.Add(this.idInfo_extent_geographicBoundingBox_southLatDD);
+            this.panel2.Controls.Add(this.idInfo_extent_geographicBoundingBox_northLatDD);
+            this.panel2.Controls.Add(this.idInfo_extent_geographicBoundingBox_eastLongDD);
+            this.panel2.Controls.Add(this.idInfo_extent_description);
             this.panel2.Location = new System.Drawing.Point(6, 19);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(456, 114);
             this.panel2.TabIndex = 0;
             // 
-            // label10
+            // idInfo_extent_description_lbl
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(140, 89);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(32, 13);
-            this.label10.TabIndex = 8;
-            this.label10.Text = "West";
+            this.idInfo_extent_description_lbl.AutoSize = true;
+            this.idInfo_extent_description_lbl.Location = new System.Drawing.Point(3, 37);
+            this.idInfo_extent_description_lbl.Name = "idInfo_extent_description_lbl";
+            this.idInfo_extent_description_lbl.Size = new System.Drawing.Size(60, 13);
+            this.idInfo_extent_description_lbl.TabIndex = 10;
+            this.idInfo_extent_description_lbl.Text = "Description";
             // 
-            // label6
+            // idInfo_extent_description_d
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(144, 63);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(28, 13);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "East";
+            this.idInfo_extent_description_d.BackColor = System.Drawing.SystemColors.Control;
+            this.idInfo_extent_description_d.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.idInfo_extent_description_d.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idInfo_extent_description_d.Location = new System.Drawing.Point(284, 34);
+            this.idInfo_extent_description_d.Name = "idInfo_extent_description_d";
+            this.idInfo_extent_description_d.Size = new System.Drawing.Size(28, 23);
+            this.idInfo_extent_description_d.TabIndex = 9;
+            this.idInfo_extent_description_d.Text = "D";
+            this.idInfo_extent_description_d.UseVisualStyleBackColor = false;
+            this.idInfo_extent_description_d.Click += new System.EventHandler(this.Default_Click);
             // 
-            // label5
+            // idInfo_extent_geographicBoundingBox_westLongDD_lbl
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(10, 89);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "South";
+            this.idInfo_extent_geographicBoundingBox_westLongDD_lbl.AutoSize = true;
+            this.idInfo_extent_geographicBoundingBox_westLongDD_lbl.Location = new System.Drawing.Point(140, 89);
+            this.idInfo_extent_geographicBoundingBox_westLongDD_lbl.Name = "idInfo_extent_geographicBoundingBox_westLongDD_lbl";
+            this.idInfo_extent_geographicBoundingBox_westLongDD_lbl.Size = new System.Drawing.Size(32, 13);
+            this.idInfo_extent_geographicBoundingBox_westLongDD_lbl.TabIndex = 8;
+            this.idInfo_extent_geographicBoundingBox_westLongDD_lbl.Text = "West";
             // 
-            // label4
+            // idInfo_extent_geographicBoundingBox_eastLongDD_lbl
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 63);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(33, 13);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "North";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            this.idInfo_extent_geographicBoundingBox_eastLongDD_lbl.AutoSize = true;
+            this.idInfo_extent_geographicBoundingBox_eastLongDD_lbl.Location = new System.Drawing.Point(144, 63);
+            this.idInfo_extent_geographicBoundingBox_eastLongDD_lbl.Name = "idInfo_extent_geographicBoundingBox_eastLongDD_lbl";
+            this.idInfo_extent_geographicBoundingBox_eastLongDD_lbl.Size = new System.Drawing.Size(28, 13);
+            this.idInfo_extent_geographicBoundingBox_eastLongDD_lbl.TabIndex = 7;
+            this.idInfo_extent_geographicBoundingBox_eastLongDD_lbl.Text = "East";
             // 
-            // textBox9
+            // idInfo_extent_geographicBoundingBox_southLatDD_lbl
             // 
-            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox9.Location = new System.Drawing.Point(181, 87);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(77, 20);
-            this.textBox9.TabIndex = 4;
+            this.idInfo_extent_geographicBoundingBox_southLatDD_lbl.AutoSize = true;
+            this.idInfo_extent_geographicBoundingBox_southLatDD_lbl.Location = new System.Drawing.Point(10, 89);
+            this.idInfo_extent_geographicBoundingBox_southLatDD_lbl.Name = "idInfo_extent_geographicBoundingBox_southLatDD_lbl";
+            this.idInfo_extent_geographicBoundingBox_southLatDD_lbl.Size = new System.Drawing.Size(35, 13);
+            this.idInfo_extent_geographicBoundingBox_southLatDD_lbl.TabIndex = 6;
+            this.idInfo_extent_geographicBoundingBox_southLatDD_lbl.Text = "South";
             // 
-            // textBox8
+            // idInfo_extent_geographicBoundingBox_northLatDD_lbl
             // 
-            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox8.Location = new System.Drawing.Point(51, 87);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(77, 20);
-            this.textBox8.TabIndex = 3;
+            this.idInfo_extent_geographicBoundingBox_northLatDD_lbl.AutoSize = true;
+            this.idInfo_extent_geographicBoundingBox_northLatDD_lbl.Location = new System.Drawing.Point(12, 63);
+            this.idInfo_extent_geographicBoundingBox_northLatDD_lbl.Name = "idInfo_extent_geographicBoundingBox_northLatDD_lbl";
+            this.idInfo_extent_geographicBoundingBox_northLatDD_lbl.Size = new System.Drawing.Size(33, 13);
+            this.idInfo_extent_geographicBoundingBox_northLatDD_lbl.TabIndex = 5;
+            this.idInfo_extent_geographicBoundingBox_northLatDD_lbl.Text = "North";
+            this.idInfo_extent_geographicBoundingBox_northLatDD_lbl.Click += new System.EventHandler(this.label4_Click);
             // 
-            // textBox7
+            // idInfo_extent_geographicBoundingBox_westLongDD
             // 
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox7.Location = new System.Drawing.Point(51, 61);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(77, 20);
-            this.textBox7.TabIndex = 2;
+            this.idInfo_extent_geographicBoundingBox_westLongDD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.idInfo_extent_geographicBoundingBox_westLongDD.Location = new System.Drawing.Point(181, 87);
+            this.idInfo_extent_geographicBoundingBox_westLongDD.Name = "idInfo_extent_geographicBoundingBox_westLongDD";
+            this.idInfo_extent_geographicBoundingBox_westLongDD.Size = new System.Drawing.Size(77, 20);
+            this.idInfo_extent_geographicBoundingBox_westLongDD.TabIndex = 4;
             // 
-            // textBox6
+            // idInfo_extent_geographicBoundingBox_southLatDD
             // 
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox6.Location = new System.Drawing.Point(181, 61);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(77, 20);
-            this.textBox6.TabIndex = 1;
+            this.idInfo_extent_geographicBoundingBox_southLatDD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.idInfo_extent_geographicBoundingBox_southLatDD.Location = new System.Drawing.Point(51, 87);
+            this.idInfo_extent_geographicBoundingBox_southLatDD.Name = "idInfo_extent_geographicBoundingBox_southLatDD";
+            this.idInfo_extent_geographicBoundingBox_southLatDD.Size = new System.Drawing.Size(77, 20);
+            this.idInfo_extent_geographicBoundingBox_southLatDD.TabIndex = 3;
             // 
-            // comboBox2
+            // idInfo_extent_geographicBoundingBox_northLatDD
             // 
-            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(13, 34);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(211, 21);
-            this.comboBox2.TabIndex = 0;
+            this.idInfo_extent_geographicBoundingBox_northLatDD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.idInfo_extent_geographicBoundingBox_northLatDD.Location = new System.Drawing.Point(51, 61);
+            this.idInfo_extent_geographicBoundingBox_northLatDD.Name = "idInfo_extent_geographicBoundingBox_northLatDD";
+            this.idInfo_extent_geographicBoundingBox_northLatDD.Size = new System.Drawing.Size(77, 20);
+            this.idInfo_extent_geographicBoundingBox_northLatDD.TabIndex = 2;
+            // 
+            // idInfo_extent_geographicBoundingBox_eastLongDD
+            // 
+            this.idInfo_extent_geographicBoundingBox_eastLongDD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.idInfo_extent_geographicBoundingBox_eastLongDD.Location = new System.Drawing.Point(181, 61);
+            this.idInfo_extent_geographicBoundingBox_eastLongDD.Name = "idInfo_extent_geographicBoundingBox_eastLongDD";
+            this.idInfo_extent_geographicBoundingBox_eastLongDD.Size = new System.Drawing.Size(77, 20);
+            this.idInfo_extent_geographicBoundingBox_eastLongDD.TabIndex = 1;
+            // 
+            // idInfo_extent_description
+            // 
+            this.idInfo_extent_description.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.idInfo_extent_description.FormattingEnabled = true;
+            this.idInfo_extent_description.Location = new System.Drawing.Point(69, 34);
+            this.idInfo_extent_description.Name = "idInfo_extent_description";
+            this.idInfo_extent_description.Size = new System.Drawing.Size(211, 21);
+            this.idInfo_extent_description.TabIndex = 0;
+            this.idInfo_extent_description.SelectedValueChanged += new System.EventHandler(this.idInfo_extent_description_SelectedValueChanged);
             // 
             // groupBox9
             // 
@@ -1386,7 +1343,7 @@
             this.flowLayoutPanel2.Controls.Add(this.groupBox8);
             this.flowLayoutPanel2.Controls.Add(this.citationGrp_Pnl);
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(6, 6);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(4, 7);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(475, 507);
             this.flowLayoutPanel2.TabIndex = 36;
@@ -1812,17 +1769,81 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // button9
+            // toolStripMenuItem1
             // 
-            this.button9.BackColor = System.Drawing.SystemColors.Control;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Location = new System.Drawing.Point(230, 34);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(28, 23);
-            this.button9.TabIndex = 9;
-            this.button9.Text = "D";
-            this.button9.UseVisualStyleBackColor = false;
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newToolStripMenuItem,
+            this.OpenToolStripMenuItem,
+            this.saveToolStripMenuItem});
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(37, 20);
+            this.toolStripMenuItem1.Text = "&File";
+            // 
+            // newToolStripMenuItem
+            // 
+            this.newToolStripMenuItem.Name = "newToolStripMenuItem";
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.newToolStripMenuItem.Text = "New";
+            this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
+            // 
+            // OpenToolStripMenuItem
+            // 
+            this.OpenToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("OpenToolStripMenuItem.Image")));
+            this.OpenToolStripMenuItem.Name = "OpenToolStripMenuItem";
+            this.OpenToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.OpenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.OpenToolStripMenuItem.Text = "&Open";
+            this.OpenToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItem_Click);
+            // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripMenuItem.Image")));
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveToolStripMenuItem.Text = "&Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.editToolStripMenuItem.Text = "&Edit";
+            // 
+            // toolsToolStripMenuItem
+            // 
+            this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.databaseToolStripMenuItem,
+            this.importTableFeaturesToolStripMenuItem});
+            this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.toolsToolStripMenuItem.Text = "&Tools";
+            this.toolsToolStripMenuItem.Click += new System.EventHandler(this.toolsToolStripMenuItem_Click);
+            // 
+            // databaseToolStripMenuItem
+            // 
+            this.databaseToolStripMenuItem.Name = "databaseToolStripMenuItem";
+            this.databaseToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.databaseToolStripMenuItem.Text = "Open Database";
+            this.databaseToolStripMenuItem.Click += new System.EventHandler(this.databaseToolStripMenuItem_Click);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.editToolStripMenuItem,
+            this.toolsToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1000, 24);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // importTableFeaturesToolStripMenuItem
+            // 
+            this.importTableFeaturesToolStripMenuItem.Name = "importTableFeaturesToolStripMenuItem";
+            this.importTableFeaturesToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.importTableFeaturesToolStripMenuItem.Text = "Import Table Features";
             // 
             // EmeLT
             // 
@@ -1841,8 +1862,6 @@
             this.Text = "<EmeLT/>";
             this.Load += new System.EventHandler(this.EmeLT_Load);
             this.Resize += new System.EventHandler(this.EmeLT_Resize);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
@@ -1856,8 +1875,8 @@
             this.tabPage4.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            this.groupBox10.ResumeLayout(false);
-            this.groupBox10.PerformLayout();
+            this.distributionInformation_gbx.ResumeLayout(false);
+            this.distributionInformation_gbx.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
@@ -1913,6 +1932,8 @@
             this.tabPage6.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1920,24 +1941,16 @@
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripMenuItem OpenToolStripMenuItem;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Data.DataSet dataSet1;
-        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem databaseToolStripMenuItem;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
-        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -1953,7 +1966,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.GroupBox groupBox10;
+        private System.Windows.Forms.GroupBox distributionInformation_gbx;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panel4;
@@ -2057,18 +2070,28 @@
         private System.Windows.Forms.Label lblDataDictionary;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.ToolTip tooltip1;
-        private uc_distribution uc_distribution1;
+        private uc_distribution distributionInfo__MD_Distribution;
         private uc_ResponsibleParty uc_ResponsibleParty1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.ComboBox idInfo_extent_description;
+        private System.Windows.Forms.Label idInfo_extent_geographicBoundingBox_northLatDD_lbl;
+        private System.Windows.Forms.TextBox idInfo_extent_geographicBoundingBox_westLongDD;
+        private System.Windows.Forms.TextBox idInfo_extent_geographicBoundingBox_southLatDD;
+        private System.Windows.Forms.TextBox idInfo_extent_geographicBoundingBox_northLatDD;
+        private System.Windows.Forms.TextBox idInfo_extent_geographicBoundingBox_eastLongDD;
+        private System.Windows.Forms.Label idInfo_extent_geographicBoundingBox_westLongDD_lbl;
+        private System.Windows.Forms.Label idInfo_extent_geographicBoundingBox_eastLongDD_lbl;
+        private System.Windows.Forms.Label idInfo_extent_geographicBoundingBox_southLatDD_lbl;
+        private System.Windows.Forms.Button idInfo_extent_description_d;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem OpenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem databaseToolStripMenuItem;
+        private System.Windows.Forms.Label idInfo_extent_description_lbl;
+        private System.Windows.Forms.ToolStripMenuItem importTableFeaturesToolStripMenuItem;
     }
 }

@@ -36,7 +36,7 @@ namespace EmeLibrary
 
             //use for databinding to drop list
             dataTableNames = new string[]{"Publisher", "OnlineLinkage", "KeywordsEPA", "KeywordsISO",
-                "KeywordsUser","KeywordsPlace","Contact_Information"};
+                "KeywordsUser","KeywordsPlace","Contact_Information", "BoundingBox", "Citation", "DistributionLiability"};
         }
 
         public static DataSet codeListValuesDataSet;       

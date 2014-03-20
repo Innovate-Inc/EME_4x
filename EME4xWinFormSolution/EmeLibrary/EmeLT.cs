@@ -39,7 +39,6 @@ namespace EmeLibrary
             }
             bindFormtoEMEdatabases();
             hoverHelpInit();
-            
             //setDefaultKeywordListBoxSelection(ref  idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey);
             //setDefaultKeywordListBoxSelection(ref idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey);
             //setDefaultKeywordListBoxSelection(ref idinfo_keywords_place_placekt__None___placekey);
@@ -80,7 +79,7 @@ namespace EmeLibrary
             {
                 if (cntrl.HasChildren == true)
                 {
-                    if (cntrl.GetType() == typeof(uc_ResponsibleParty))
+                    if (cntrl.GetType() == typeof(uc_ResponsibleParty) || cntrl.GetType() == typeof(uc_distribution))
                     {
                         //MessageBox.Show(cntrl.Name + " " + "here");
                         allControlsColl[cntrl.Name] = cntrl;
@@ -114,21 +113,21 @@ namespace EmeLibrary
         private void bindFormtoEMEdatabases()
         {
 
-            idInfo_keywordsIsoTopicCategory.DataSource = Utils1.emeDataSet.Tables["KeywordsISO"];
-            idInfo_keywordsIsoTopicCategory.DisplayMember = "themekey";
-            idInfo_keywordsIsoTopicCategory.ClearSelected();
+            //idInfo_keywordsIsoTopicCategory.DataSource = Utils1.emeDataSet.Tables["KeywordsISO"];
+            //idInfo_keywordsIsoTopicCategory.DisplayMember = "themekey";
+            //idInfo_keywordsIsoTopicCategory.ClearSelected();
 
-            idInfo_keywordsEpa.DataSource = Utils1.emeDataSet.Tables["KeywordsEPA"];
-            idInfo_keywordsEpa.DisplayMember = "themekey";
-            idInfo_keywordsEpa.ClearSelected();
+            //idInfo_keywordsEpa.DataSource = Utils1.emeDataSet.Tables["KeywordsEPA"];
+            //idInfo_keywordsEpa.DisplayMember = "themekey";
+            //idInfo_keywordsEpa.ClearSelected();
 
-            idInfo_keywordsPlace.DataSource = Utils1.emeDataSet.Tables["KeywordsPlace"];
-            idInfo_keywordsPlace.DisplayMember = "placekey";
-            idInfo_keywordsPlace.ClearSelected();
+            //idInfo_keywordsPlace.DataSource = Utils1.emeDataSet.Tables["KeywordsPlace"];
+            //idInfo_keywordsPlace.DisplayMember = "placekey";
+            //idInfo_keywordsPlace.ClearSelected();
 
-            idInfo_keywordsUser.DataSource = Utils1.emeDataSet.Tables["KeywordsUser"];
-            idInfo_keywordsUser.DisplayMember ="themekey";
-            idInfo_keywordsUser.ClearSelected();
+            //idInfo_keywordsUser.DataSource = Utils1.emeDataSet.Tables["KeywordsUser"];
+            //idInfo_keywordsUser.DisplayMember ="themekey";
+            //idInfo_keywordsUser.ClearSelected();
         }
 
         private void OpenToolStripMenuItem_Click(object sender, EventArgs e)
@@ -144,7 +143,7 @@ namespace EmeLibrary
                 if (sourceXmlFormat == "ISO19115-2" || sourceXmlFormat =="ISO19115")
                 {
                     Utils1.setEmeDataSets();
-                    bindFormtoEMEdatabases();
+                    //bindFormtoEMEdatabases();
                     bindCCMFields(); 
 
                     toolStripStatusLabel1.Text = "Opened File: " + filename;                    
@@ -179,54 +178,54 @@ namespace EmeLibrary
             //txtAbstract.Text = localXdoc.identificationInfo_Abstract;
             
             //Iso Topic Category
-            idInfo_keywordsIsoTopicCategory.ClearSelected();
-            foreach (string s in localXdoc.idInfo_keywordsIsoTopicCategory)
-            {
-                int i = idInfo_keywordsIsoTopicCategory.FindStringExact(s);
-                idInfo_keywordsIsoTopicCategory.SetSelected(i, true);
-            }
+            //idInfo_keywordsIsoTopicCategory.ClearSelected();
+            //foreach (string s in localXdoc.idInfo_keywordsIsoTopicCategory)
+            //{
+            //    int i = idInfo_keywordsIsoTopicCategory.FindStringExact(s);
+            //    idInfo_keywordsIsoTopicCategory.SetSelected(i, true);
+            //}
 
             //Epa Keywords
-            idInfo_keywordsEpa.ClearSelected();
-            foreach (string s in localXdoc.idInfo_keywordsEpa)
-            {
-                int epaitem = idInfo_keywordsEpa.FindStringExact(s);
-                idInfo_keywordsEpa.SetSelected(epaitem, true);
-            }
+            //idInfo_keywordsEpa.ClearSelected();
+            //foreach (string s in localXdoc.idInfo_keywordsEpa)
+            //{
+            //    int epaitem = idInfo_keywordsEpa.FindStringExact(s);
+            //    idInfo_keywordsEpa.SetSelected(epaitem, true);
+            //}
 
             //User Keywords
-            idInfo_keywordsUser.BeginUpdate();
-            foreach (string s in localXdoc.idInfo_keywordsUser)
-            {
-                //Check that the User Keyword exists.  
-                //If not, Add to the in-memmory database and then select
-                int keywordUser = idInfo_keywordsUser.FindStringExact(s);
-                if (keywordUser == -1) { Utils1.emeDataSet.Tables["KeywordsUser"].Rows.Add("User", s, "false"); }
-            }
-            idInfo_keywordsUser.EndUpdate();
+            //idInfo_keywordsUser.BeginUpdate();
+            //foreach (string s in localXdoc.idInfo_keywordsUser)
+            //{
+            //    //Check that the User Keyword exists.  
+            //    //If not, Add to the in-memmory database and then select
+            //    int keywordUser = idInfo_keywordsUser.FindStringExact(s);
+            //    if (keywordUser == -1) { Utils1.emeDataSet.Tables["KeywordsUser"].Rows.Add("User", s, "false"); }
+            //}
+            //idInfo_keywordsUser.EndUpdate();
 
-            idInfo_keywordsUser.ClearSelected();
-            foreach (string s in localXdoc.idInfo_keywordsUser)
-            {
-                int keywordUserindx = idInfo_keywordsUser.FindStringExact(s);
-                idInfo_keywordsUser.SetSelected(keywordUserindx, true);
-            }
+            //idInfo_keywordsUser.ClearSelected();
+            //foreach (string s in localXdoc.idInfo_keywordsUser)
+            //{
+            //    int keywordUserindx = idInfo_keywordsUser.FindStringExact(s);
+            //    idInfo_keywordsUser.SetSelected(keywordUserindx, true);
+            //}
 
             //Place Keywords
-            idInfo_keywordsPlace.BeginUpdate();
-            foreach (string s in localXdoc.idInfo_keywordsPlace)
-            {
-                int i = idInfo_keywordsPlace.FindStringExact(s);
-                if (i == -1) { Utils1.emeDataSet.Tables["KeywordsPlace"].Rows.Add("None", s, "false"); }
-            }
-            idInfo_keywordsPlace.EndUpdate();
-            idInfo_keywordsPlace.ClearSelected();
-            foreach (string s in localXdoc.idInfo_keywordsPlace)
-            {
-                int i = idInfo_keywordsPlace.FindStringExact(s);
-                idInfo_keywordsPlace.SetSelected(i, true);
-            }
-            idInfo_keywordsPlace.TopIndex = 0;
+            //idInfo_keywordsPlace.BeginUpdate();
+            //foreach (string s in localXdoc.idInfo_keywordsPlace)
+            //{
+            //    int i = idInfo_keywordsPlace.FindStringExact(s);
+            //    if (i == -1) { Utils1.emeDataSet.Tables["KeywordsPlace"].Rows.Add("None", s, "false"); }
+            //}
+            //idInfo_keywordsPlace.EndUpdate();
+            //idInfo_keywordsPlace.ClearSelected();
+            //foreach (string s in localXdoc.idInfo_keywordsPlace)
+            //{
+            //    int i = idInfo_keywordsPlace.FindStringExact(s);
+            //    idInfo_keywordsPlace.SetSelected(i, true);
+            //}
+            //idInfo_keywordsPlace.TopIndex = 0;
 
 
             #region Testing Area for serialization
@@ -796,7 +795,7 @@ namespace EmeLibrary
             //EME3x does have a tool to bind all the form controls to default settings.
 
             Utils1.setEmeDataSets();
-            bindFormtoEMEdatabases();
+            //bindFormtoEMEdatabases();
             xDoc = new XmlDocument();
             //Format picker... default should be -2
             sourceXmlFormat = "ISO19115-2"; //  sourceXmlFormat ="ISO19115"
@@ -804,7 +803,7 @@ namespace EmeLibrary
             filename = "New";
             //localXdoc = new isoNodes(xDoc, sourceXmlFormat, filename);
             bindCCMFields();
-            frmctrls(this.Controls);
+            //frmctrls(this.Controls); //validation
             //foreach (Control c in this.Controls)
             //{
             //    validate_Controls(c);
@@ -828,6 +827,12 @@ namespace EmeLibrary
                         validate_Controls(c);
                         uc_ResponsibleParty rp = (uc_ResponsibleParty)c;
                         rp.val_RP_frmControls(rp.Controls);
+                    }
+                    else if (c.GetType() == typeof(uc_distribution))
+                    {
+                        validate_Controls(c);
+                        uc_distribution dist = (uc_distribution)c;
+                        dist.val_Distribution_frmControls(dist.Controls);
                     }
                     else
                     {
@@ -1031,6 +1036,32 @@ namespace EmeLibrary
         private void label4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void idInfo_extent_description_SelectedValueChanged(object sender, EventArgs e)
+        {
+            ComboBox boundingbox = (ComboBox)sender;
+            if (boundingbox.SelectedIndex != -1)
+            {
+                DataRowView drv = (DataRowView)boundingbox.SelectedItem;
+                //Console.WriteLine(drv["westbc"].ToString());
+
+                idInfo_extent_geographicBoundingBox_northLatDD.Text = drv["northbc"].ToString();
+                idInfo_extent_geographicBoundingBox_southLatDD.Text = drv["southbc"].ToString();
+                idInfo_extent_geographicBoundingBox_eastLongDD.Text = drv["eastbc"].ToString();
+                idInfo_extent_geographicBoundingBox_westLongDD.Text = drv["westbc"].ToString();
+            }
+        }
+
+        private void Default_Click(object sender, EventArgs e)
+        {
+            //idInfo_extent_description__BoundingBox
+            Button defaultbutton = (Button)sender;
+            string senderName = defaultbutton.Name;
+            senderName = senderName.Remove(senderName.Length - 2);
+            Console.WriteLine(senderName);
+            PageController pc = PageController.thatControls(senderName);
+            pc.setDefault(this);
         }
 
 

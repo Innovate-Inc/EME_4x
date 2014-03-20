@@ -171,10 +171,43 @@ namespace EmeLibrary
         public void loadList(List<CI_ResponsibleParty> CI_ResponsiblePartyList)
         {
             incomingRPList = CI_ResponsiblePartyList;
+            //MessageBox.Show(incomingRPList.Count().ToString());
+            if (incomingRPList.Count() < 1)
+            {
+                pagerUpBtn.Visible = false;
+                pagerDownBtn.Visible = false;
+                deleteRP_Btn.Enabled = false;
+            }
+            else if (incomingRPList.Count() == 1)
+            {
+                deleteRP_Btn.Enabled = true;
+            }
+            else if (incomingRPList.Count() > 1)
+            {
+                pagerUpBtn.Visible = true;
+                pagerDownBtn.Visible = true;
+                deleteRP_Btn.Enabled = true;
+            }
 
             incomingRPListIndex = 0;
 
             bindToFields(incomingRPList[incomingRPListIndex]);
+        }
+
+        public void loadList(CI_ResponsibleParty ci_RP)
+        {
+            incomingRPList = new List<CI_ResponsibleParty>();
+            incomingRPList.Add(ci_RP);
+            //MessageBox.Show(incomingRPList.Count().ToString());
+
+            pagerUpBtn.Visible = false;
+            pagerDownBtn.Visible = false;
+            deleteRP_Btn.Enabled = false;
+            addRP_Btn.Enabled = false;
+
+            incomingRPListIndex = 0;
+
+            bindToFields(ci_RP);
         }
 
         private void pagerDownBtn_Click(object sender, EventArgs e)
@@ -288,7 +321,10 @@ namespace EmeLibrary
             else
             {
                 //Count is greater than 1
-                incomingRPListIndex--;
+                if (incomingRPListIndex > 0)
+                {
+                    incomingRPListIndex--;
+                }
                 bindToFields(incomingRPList[incomingRPListIndex]);
 
             }
@@ -307,7 +343,7 @@ namespace EmeLibrary
             //concatinate and add person and organization to new field
             foreach (DataRow dr in subTable.Rows)
             {
-                dr["display"] = dr["cntper"] + " | " + dr["cntorg"];
+                dr["display"] = dr["individualName"] + " | " + dr["organizationName"];
             }
 
             if (comboBox1.Visible == true)
@@ -333,21 +369,23 @@ namespace EmeLibrary
             if (comboBox1.SelectedIndex != -1 && comboBox1.Visible == true)
             {
                 DataRowView drv = (DataRowView)comboBox1.SelectedItem;
-                Console.WriteLine(drv["cntper"].ToString());
+                Console.WriteLine(drv["positionName"].ToString());
 
                 //CI_ResponsibleParty newRP = new CI_ResponsibleParty();
 
-                individualName_txt.Text = drv["cntper"].ToString();
-                organisationName_txt.Text = drv["cntorg"].ToString();
-                positionName.Text = drv["cntpos"].ToString();
-                contactInfo__CI_Contact__address__CI_Address__deliveryPoint.Text = drv["address1"].ToString();
+                individualName_txt.Text = drv["individualName"].ToString();
+                organisationName_txt.Text = drv["organizationName"].ToString();
+                positionName.Text = drv["positionName"].ToString();
+                contactInfo__CI_Contact__address__CI_Address__deliveryPoint.Text = drv["deliveryPoint"].ToString();
                 contactInfo__CI_Contact__address__CI_Address__city.Text = drv["city"].ToString();
-                contactInfo__CI_Contact__address__CI_Address__administrativeArea.Text = drv["state"].ToString();
-                contactInfo__CI_Contact__address__CI_Address__postalCode.Text = drv["postal"].ToString();
-                contactInfo__CI_Contact__phone__CI_Telephone__facsimile.Text = drv["cntfax"].ToString();
-                contactInfo__CI_Contact__phone__CI_Telephone__voice.Text = drv["cntvoice"].ToString();
-                contactInfo__CI_Contact__address__CI_Address__electronicMailAddress.Text = drv["cntemail"].ToString();
-                contactInfo__CI_Contact__contactInstructions.Text = drv["cntinst"].ToString();
+                contactInfo__CI_Contact__address__CI_Address__administrativeArea.Text = drv["administrativeArea"].ToString();
+                contactInfo__CI_Contact__address__CI_Address__postalCode.Text = drv["postalCode"].ToString();
+                contactInfo__CI_Contact__phone__CI_Telephone__facsimile.Text = drv["facsimile"].ToString();
+                contactInfo__CI_Contact__phone__CI_Telephone__voice.Text = drv["voice"].ToString();
+                contactInfo__CI_Contact__address__CI_Address__electronicMailAddress.Text = drv["electronicMailAddress"].ToString();
+                contactInfo__CI_Contact__hoursOfService.Text = drv["hoursOfService"].ToString();
+                contactInfo__CI_Contact__contactInstructions.Text = drv["contactInstructions"].ToString();
+                //contactInfo__CI_Contact__contactInstructions.Text = drv["cntinst"].ToString();
             }
 
         }
@@ -491,7 +529,7 @@ namespace EmeLibrary
 
         private void uc_ResponsibleParty_Leave(object sender, EventArgs e)
         {
-            MessageBox.Show("Leaving");
+            //MessageBox.Show("Leaving");
             if (incomingRPList != null)
             {
                 bindToClass(incomingRPList[incomingRPListIndex]);

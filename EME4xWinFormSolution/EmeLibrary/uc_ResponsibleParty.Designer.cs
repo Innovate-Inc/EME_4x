@@ -612,7 +612,7 @@
             this.Controls.Add(this.lblCI_RpListCount);
             this.Controls.Add(this.button1);
             this.Name = "uc_ResponsibleParty";
-            this.Size = new System.Drawing.Size(439, 35);
+            this.Size = new System.Drawing.Size(439, 500);
             this.Load += new System.EventHandler(this.uc_ResponsibleParty_Load);
             this.Leave += new System.EventHandler(this.uc_ResponsibleParty_Leave);
             this.groupBox1.ResumeLayout(false);

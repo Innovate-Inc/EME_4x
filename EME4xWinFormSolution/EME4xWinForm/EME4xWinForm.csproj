@@ -329,6 +329,7 @@
   <ItemGroup>
     <Content Include="Eme4xSystemFiles\EMEdb\BoundingBox.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Eme4xSystemFiles\EMEdb\Citation.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -346,18 +347,22 @@
     </Content>
     <Content Include="Eme4xSystemFiles\EMEdb\emeGUI.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Eme4xSystemFiles\EMEdb\KeywordsEPA.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Eme4xSystemFiles\EMEdb\KeywordsISO.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Eme4xSystemFiles\EMEdb\KeywordsPlace.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Eme4xSystemFiles\EMEdb\KeywordsUser.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Eme4xSystemFiles\EMEdb\MDtemplate.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
