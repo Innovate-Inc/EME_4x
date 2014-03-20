@@ -343,7 +343,7 @@ namespace EmeLibrary
             //concatinate and add person and organization to new field
             foreach (DataRow dr in subTable.Rows)
             {
-                dr["display"] = dr["cntper"] + " | " + dr["cntorg"];
+                dr["display"] = dr["individualName"] + " | " + dr["organizationName"];
             }
 
             if (comboBox1.Visible == true)
@@ -369,21 +369,23 @@ namespace EmeLibrary
             if (comboBox1.SelectedIndex != -1 && comboBox1.Visible == true)
             {
                 DataRowView drv = (DataRowView)comboBox1.SelectedItem;
-                Console.WriteLine(drv["cntper"].ToString());
+                Console.WriteLine(drv["positionName"].ToString());
 
                 //CI_ResponsibleParty newRP = new CI_ResponsibleParty();
 
-                individualName_txt.Text = drv["cntper"].ToString();
-                organisationName_txt.Text = drv["cntorg"].ToString();
-                positionName.Text = drv["cntpos"].ToString();
-                contactInfo__CI_Contact__address__CI_Address__deliveryPoint.Text = drv["address1"].ToString();
+                individualName_txt.Text = drv["individualName"].ToString();
+                organisationName_txt.Text = drv["organizationName"].ToString();
+                positionName.Text = drv["positionName"].ToString();
+                contactInfo__CI_Contact__address__CI_Address__deliveryPoint.Text = drv["deliveryPoint"].ToString();
                 contactInfo__CI_Contact__address__CI_Address__city.Text = drv["city"].ToString();
-                contactInfo__CI_Contact__address__CI_Address__administrativeArea.Text = drv["state"].ToString();
-                contactInfo__CI_Contact__address__CI_Address__postalCode.Text = drv["postal"].ToString();
-                contactInfo__CI_Contact__phone__CI_Telephone__facsimile.Text = drv["cntfax"].ToString();
-                contactInfo__CI_Contact__phone__CI_Telephone__voice.Text = drv["cntvoice"].ToString();
-                contactInfo__CI_Contact__address__CI_Address__electronicMailAddress.Text = drv["cntemail"].ToString();
-                contactInfo__CI_Contact__contactInstructions.Text = drv["cntinst"].ToString();
+                contactInfo__CI_Contact__address__CI_Address__administrativeArea.Text = drv["administrativeArea"].ToString();
+                contactInfo__CI_Contact__address__CI_Address__postalCode.Text = drv["postalCode"].ToString();
+                contactInfo__CI_Contact__phone__CI_Telephone__facsimile.Text = drv["facsimile"].ToString();
+                contactInfo__CI_Contact__phone__CI_Telephone__voice.Text = drv["voice"].ToString();
+                contactInfo__CI_Contact__address__CI_Address__electronicMailAddress.Text = drv["electronicMailAddress"].ToString();
+                contactInfo__CI_Contact__hoursOfService.Text = drv["hoursOfService"].ToString();
+                contactInfo__CI_Contact__contactInstructions.Text = drv["contactInstructions"].ToString();
+                //contactInfo__CI_Contact__contactInstructions.Text = drv["cntinst"].ToString();
             }
 
         }
