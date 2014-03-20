@@ -83,7 +83,7 @@ namespace EmeLibrary
                     : dr["controlName"].ToString().Remove(index, "Xpath".Length);
                 cntrlName = cleanPath;
                 
-                //Console.WriteLine(cntrlName);
+                Console.WriteLine(cntrlName);
                 //Add new page controller object for each record in database
                 p = new PageController(i, cntrlName, dr["sourceTable"].ToString(), dr["sourceField"].ToString(), dr["DCATrequired"].ToString());
 
@@ -136,6 +136,7 @@ namespace EmeLibrary
                 }
                 else if (ctrl.GetType() == typeof(uc_distribution))
                 {
+                    #region test uc_distribution
                     //Console.WriteLine("Found Distribution");
                     //test
                     //List<MD_Distributor> distList = new List<MD_Distributor>();
@@ -174,7 +175,8 @@ namespace EmeLibrary
                     //distList.Add(dim2);
                     //distList.Add(dim3);
 
-                    //end Test
+                    #endregion test uc_distribution
+
                     uc_distribution distCtrl = (uc_distribution)ctrl;
 
                     List<MD_Distributor> distList = (List<MD_Distributor>)frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null);
@@ -195,21 +197,25 @@ namespace EmeLibrary
                         topic.DataSource = Utils1.emeDataSet.Tables[scrTable];
                         topic.DisplayMember = srcField;
                         topic.ClearSelected();
-
-                        foreach (string k in list)
+                        if (ctrl.Name == "idInfo_keywordsUser" || ctrl.Name == "idInfo_keywordsPlace")
                         {
-                            int w = topic.FindStringExact(k);
-                            if (w == -1)
+                            foreach (string k in list)
                             {
-                                topic.BeginUpdate();
-                                Utils1.emeDataSet.Tables[scrTable].Rows.Add(null, k, "false");
-                                topic.EndUpdate();
-                            }       
+                                int w = topic.FindStringExact(k);
+                                if (w == -1)
+                                {
+                                    topic.BeginUpdate();
+                                    DataRow dr = Utils1.emeDataSet.Tables[scrTable].NewRow();
+                                    dr[srcField] = k;
+                                    Utils1.emeDataSet.Tables[scrTable].Rows.Add(dr);
+                                    topic.EndUpdate();
+                                }
+                            }
                         }
-                        foreach (string k in list)
+                        foreach (string r in list)
                         {
-                            int w = topic.FindStringExact(k);
-                            topic.SetSelected(w, true);
+                            int p = topic.FindStringExact(r);
+                            topic.SetSelected(p, true);
                         } 
                     } 
                 }
@@ -222,7 +228,7 @@ namespace EmeLibrary
                     if (scrTable != "")
                     {
                         DataTable subTable = Utils1.emeDataSet.Tables[scrTable].Select().CopyToDataTable();
-                        
+
                         if (c != "")
                         {
                             boxCbo.Text = c;
@@ -252,7 +258,13 @@ namespace EmeLibrary
                             boxCbo.ValueMember = srcField;
                             boxCbo.DisplayMember = srcField;
                             boxCbo.SelectedIndex = -1;
-                        }   
+                        }
+                    }
+                    else
+                    {
+                        int i = boxCbo.FindStringExact(c);
+                        boxCbo.SelectedIndex = i;
+
                     }
 
                     
@@ -304,16 +316,40 @@ namespace EmeLibrary
                 else if (ctrl.GetType() == typeof(ComboBox))
                 {
                     ComboBox boxCbo = (ComboBox)ctrl;
-                    frm.localXdoc.GetType().GetProperty(ctrl.Name).SetValue(obj, boxCbo.SelectedItem.ToString(), null);
-                    Console.WriteLine(boxCbo.SelectedItem.ToString()); 
+                    frm.localXdoc.GetType().GetProperty(ctrl.Name).SetValue(obj, boxCbo.SelectedText, null);
+                    Console.WriteLine(boxCbo.SelectedText); 
                 }
                 else if (ctrl.GetType() == typeof(TextBox))
                 {
-                    //Console.WriteLine(frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null).ToString() + "   " + ctrl.Text);
-                    frm.localXdoc.GetType().GetProperty(ctrl.Name).SetValue(obj, ctrl.Text, null);
-                    //MessageBox.Show(frm.localXdoc.idInfo_citation_Title.ToString());
+                    //idInfo_extent_geographicBoundingBox_northLatDD
+                    if (ctrl.Name.Contains("idInfo_extent_geographicBoundingBox"))
+                    {
+                        double v = Convert.ToDouble(ctrl.Text);
+                        frm.localXdoc.GetType().GetProperty(ctrl.Name).SetValue(obj, v, null);
+                    }
+                    else
+                    {
+                        //Console.WriteLine(frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null).ToString() + "   " + ctrl.Text);
+                        frm.localXdoc.GetType().GetProperty(ctrl.Name).SetValue(obj, ctrl.Text, null);
+                        //MessageBox.Show(frm.localXdoc.idInfo_citation_Title.ToString());
+                    }
+                    
                     Console.WriteLine(ctrl.Text);
                 }
+                else if (ctrl.GetType() == typeof(ListBox))
+                {
+                    ListBox lstBox = (ListBox)ctrl;
+                    
+                    List<string> saveList = (List<string>)frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null);
+                    saveList.Clear();
+                    foreach (DataRowView dRow in lstBox.SelectedItems)
+                    {
+                        saveList.Add(dRow[srcField].ToString());
+                    }
+                    
+                    frm.localXdoc.GetType().GetProperty(ctrl.Name).SetValue(obj, saveList, null);
+                }
+
             }
         }
 

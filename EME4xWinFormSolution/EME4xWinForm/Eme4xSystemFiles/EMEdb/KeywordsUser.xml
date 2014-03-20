@@ -4,7 +4,7 @@
     <xs:element name="KeywordsUser">
       <xs:complexType>
         <xs:sequence>
-          <xs:element name="themekt">
+          <xs:element name="themekt" default="User">
             <xs:simpleType>
               <xs:restriction base="xs:string">
                 <xs:maxLength value="255" />

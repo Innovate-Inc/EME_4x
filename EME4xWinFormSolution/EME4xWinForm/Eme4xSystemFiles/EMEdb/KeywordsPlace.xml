@@ -4,7 +4,7 @@
     <xs:element name="KeywordsPlace">
       <xs:complexType>
         <xs:sequence>
-          <xs:element name="placekt">
+          <xs:element name="placekt" default="None">
             <xs:simpleType>
               <xs:restriction base="xs:string">
                 <xs:maxLength value="255" />
@@ -18,7 +18,7 @@
               </xs:restriction>
             </xs:simpleType>
           </xs:element>
-          <xs:element name="default">
+          <xs:element name="default" default="false">
             <xs:simpleType>
               <xs:restriction base="xs:boolean" />
             </xs:simpleType>
