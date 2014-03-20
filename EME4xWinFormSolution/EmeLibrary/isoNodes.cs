@@ -1089,7 +1089,7 @@ namespace EmeLibrary
 
         private void construct_distributionInfoSection()
         {
-            //Create a key,value pair to get to each child node
+            //Create a key,value pair of element name and xpath to get to each child node
             MD_Distributor mdDistributor = new MD_Distributor();
             object distRP = mdDistributor;
 
@@ -1113,24 +1113,28 @@ namespace EmeLibrary
                     KeyValuePair<string, string> kv = kvList.Find(delegate(KeyValuePair<string, string> kv1) { return kv1.Key == pname; });
                     //Check the expath.  This might change the method below
                     constructCI_ResponsiblePartyMarkUp(tempCiRPList, kv.Value);
-
+                    //Key distributorContact__CI_ResponsibleParty  
+                    //Value:./*[local-name()='MD_Distributor']/*[local-name()='distributorContact']/*[local-name()='CI_ResponsibleParty']
 
                     if (distributorItem.distributionOrderProcess__MD_StandardOrderProcess.Count > 0)
                     {
+                        //Key distributionOrderProcess__MD_StandardOrderProcess  
+                        //Value: ./*[local-name()='MD_Distributor']/*[local-name()='distributionOrderProcess']/*[local-name()='MD_StandardOrderProcess']
+
                     }
                     if (distributorItem.distributorFormat__MD_Format.Count > 0)
-                    { }
-                    if (distributorItem.distributorTransferOptions__MD_DigitalTransferOptions.Count > 0)
-                    { }
+                    {
+                        //Key distributorFormat__MD_Format  
+                        //Value: ./*[local-name()='MD_Distributor']/*[local-name()='distributorFormat']/*[local-name()='MD_Format']
 
-                    //Key distributorContact__CI_ResponsibleParty  
-                    //Value:./*[local-name()='MD_Distributor']/*[local-name()='distributorContact']/*[local-name()='CI_ResponsibleParty']
-                    //Key distributionOrderProcess__MD_StandardOrderProcess  
-                    //Value: ./*[local-name()='MD_Distributor']/*[local-name()='distributionOrderProcess']/*[local-name()='MD_StandardOrderProcess']
-                    //Key distributorFormat__MD_Format  
-                    //Value: ./*[local-name()='MD_Distributor']/*[local-name()='distributorFormat']/*[local-name()='MD_Format']
-                    //Key distributorTransferOptions__MD_DigitalTransferOptions  
-                    //Value: ./*[local-name()='MD_Distributor']/*[local-name()='distributorTransferOptions']/*[local-name()='MD_DigitalTransferOptions']
+                    }
+                    if (distributorItem.distributorTransferOptions__MD_DigitalTransferOptions.Count > 0)
+                    {
+                        //Key distributorTransferOptions__MD_DigitalTransferOptions  
+                        //Value: ./*[local-name()='MD_Distributor']/*[local-name()='distributorTransferOptions']/*[local-name()='MD_DigitalTransferOptions']
+
+                    }
+                    
 
                 }
             }
