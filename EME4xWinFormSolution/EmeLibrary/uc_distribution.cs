@@ -194,7 +194,7 @@ namespace EmeLibrary
         private void bind_MD_Dist_Field(MD_Distributor dist)
         {
             MD_Dist_lbl.Text = (_distributorList_idx + 1).ToString() + " of " + _distributorList.Count().ToString();
-            distributor_Contact.loadList(dist.distributorContact__CI_ResponsibleParty);
+            distributor_Contact.loadList(dist.distributorContact);
             //Bind MD_Format list
             _distributionFormat = dist.distributorFormat__MD_Format;
             _standardOrderProcess = dist.distributionOrderProcess__MD_StandardOrderProcess;
@@ -585,7 +585,7 @@ namespace EmeLibrary
             offLine__MD_Medium__densityUnits_txt.Text = md_DTO.offLine__MD_Medium__densityUnits;
             offLine__MD_Medium__volumes_txt.Text = md_DTO.offLine__MD_Medium__volumes;
             offLine__MD_Medium__mediumFormat_txt.Text = md_DTO.offLine__MD_Medium__mediumFormat;
-            offLine__MD_Medium__mediumNode_txt.Text = md_DTO.offLine__MD_Medium__mediumNode;
+            offLine__MD_Medium__mediumNode_txt.Text = md_DTO.offLine__MD_Medium__mediumNote;
 
         }
 
