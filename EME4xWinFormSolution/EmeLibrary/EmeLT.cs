@@ -803,7 +803,7 @@ namespace EmeLibrary
             filename = "New";
             //localXdoc = new isoNodes(xDoc, sourceXmlFormat, filename);
             bindCCMFields();
-            //frmctrls(this.Controls); //validation
+            frmctrls(this.Controls); //validation
             //foreach (Control c in this.Controls)
             //{
             //    validate_Controls(c);

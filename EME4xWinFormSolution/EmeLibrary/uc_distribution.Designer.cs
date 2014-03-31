@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(uc_distribution));
-            this.distributionFormat__MD_Format_pnl = new System.Windows.Forms.Panel();
+            this.MD_Format_pnl = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.md_format_decompressionTechnique_lbl = new System.Windows.Forms.Label();
             this.md_format_Specification_lbl = new System.Windows.Forms.Label();
@@ -43,7 +43,7 @@
             this.md_format_version_lbl = new System.Windows.Forms.Label();
             this.md_format_name_lbl = new System.Windows.Forms.Label();
             this.md_format_name_txt = new System.Windows.Forms.TextBox();
-            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.MD_Format = new System.Windows.Forms.FlowLayoutPanel();
             this.del_MD_Format_btn = new System.Windows.Forms.Button();
             this.add_MD_Format_btn = new System.Windows.Forms.Button();
             this.pgU_MD_Format_btn = new System.Windows.Forms.Button();
@@ -84,9 +84,9 @@
             this.md_digitalTransferOptions_UnitsOfDistribution_lbl = new System.Windows.Forms.Label();
             this.md_digitalTransferOptions_transferSize_txt = new System.Windows.Forms.TextBox();
             this.md_digitalTransferOptions_UnitsOfDistribution_txt = new System.Windows.Forms.TextBox();
-            this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
+            this.MD_DTO = new System.Windows.Forms.FlowLayoutPanel();
             this.del_MD_DTO_btn = new System.Windows.Forms.Button();
-            this.add_DTO_btn = new System.Windows.Forms.Button();
+            this.add_MD_DTO_btn = new System.Windows.Forms.Button();
             this.pgU_MD_DTO_btn = new System.Windows.Forms.Button();
             this.MD_DTO_lbl = new System.Windows.Forms.Label();
             this.pgD_MD_DTO_btn = new System.Windows.Forms.Button();
@@ -104,56 +104,56 @@
             this.md_SOP_Ordering_txt = new System.Windows.Forms.TextBox();
             this.md_SOP_AvailableDate_txt = new System.Windows.Forms.TextBox();
             this.md_SOP_Fees_txt = new System.Windows.Forms.TextBox();
-            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
-            this.MD_SOP_del_btn = new System.Windows.Forms.Button();
-            this.MD_SOP_add_btn = new System.Windows.Forms.Button();
-            this.MD_SOP_pgU_btn = new System.Windows.Forms.Button();
-            this.MD_SOP_pg_lbl = new System.Windows.Forms.Label();
-            this.MD_SOP_pgD_btn = new System.Windows.Forms.Button();
+            this.MD_SOP = new System.Windows.Forms.FlowLayoutPanel();
+            this.del_MD_SOP_btn = new System.Windows.Forms.Button();
+            this.add_MD_SOP_btn = new System.Windows.Forms.Button();
+            this.pgU_MD_SOP_btn = new System.Windows.Forms.Button();
+            this.MD_SOP_lbl = new System.Windows.Forms.Label();
+            this.pgD_MD_SOP_btn = new System.Windows.Forms.Button();
             this.md_standardOrderProcess_lbl = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.uc_distribution_lbl = new System.Windows.Forms.Label();
-            this.MD_Dist_del_btn = new System.Windows.Forms.Button();
+            this.del_MD_Dist_btn = new System.Windows.Forms.Button();
             this.MD_Dist_lbl = new System.Windows.Forms.Label();
-            this.MD_Dist_add_btn = new System.Windows.Forms.Button();
+            this.add_MD_Dist_btn = new System.Windows.Forms.Button();
             this.pgD_MD_Dist_btn = new System.Windows.Forms.Button();
             this.pgU_MD_Dist_btn = new System.Windows.Forms.Button();
             this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
             this.distributor_Contact = new EmeLibrary.uc_ResponsibleParty();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.distributor_gbx = new System.Windows.Forms.GroupBox();
+            this.MD_Dist = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.errorProvider_Distribution = new System.Windows.Forms.ErrorProvider(this.components);
-            this.distributionFormat__MD_Format_pnl.SuspendLayout();
+            this.MD_Format_pnl.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.flowLayoutPanel3.SuspendLayout();
+            this.MD_Format.SuspendLayout();
             this.digitalTransferOptions_pnl.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.CI_OnlineResource.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.flowLayoutPanel5.SuspendLayout();
+            this.MD_DTO.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.flowLayoutPanel4.SuspendLayout();
+            this.MD_SOP.SuspendLayout();
             this.flowLayoutPanel6.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.distributor_gbx.SuspendLayout();
+            this.MD_Dist.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_Distribution)).BeginInit();
             this.SuspendLayout();
             // 
-            // distributionFormat__MD_Format_pnl
+            // MD_Format_pnl
             // 
-            this.distributionFormat__MD_Format_pnl.Controls.Add(this.panel4);
-            this.distributionFormat__MD_Format_pnl.Controls.Add(this.panel1);
-            this.distributionFormat__MD_Format_pnl.Controls.Add(this.flowLayoutPanel3);
-            this.distributionFormat__MD_Format_pnl.Controls.Add(this.button1);
-            this.distributionFormat__MD_Format_pnl.Controls.Add(this.md_distributionFormat_lbl);
-            this.distributionFormat__MD_Format_pnl.Location = new System.Drawing.Point(3, 400);
-            this.distributionFormat__MD_Format_pnl.Name = "distributionFormat__MD_Format_pnl";
-            this.distributionFormat__MD_Format_pnl.Size = new System.Drawing.Size(439, 35);
-            this.distributionFormat__MD_Format_pnl.TabIndex = 2;
+            this.MD_Format_pnl.Controls.Add(this.panel4);
+            this.MD_Format_pnl.Controls.Add(this.panel1);
+            this.MD_Format_pnl.Controls.Add(this.MD_Format);
+            this.MD_Format_pnl.Controls.Add(this.button1);
+            this.MD_Format_pnl.Controls.Add(this.md_distributionFormat_lbl);
+            this.MD_Format_pnl.Location = new System.Drawing.Point(3, 85);
+            this.MD_Format_pnl.Name = "MD_Format_pnl";
+            this.MD_Format_pnl.Size = new System.Drawing.Size(439, 35);
+            this.MD_Format_pnl.TabIndex = 2;
             // 
             // panel4
             // 
@@ -268,18 +268,18 @@
             this.md_format_name_txt.TabIndex = 3;
             this.md_format_name_txt.Tag = "required";
             // 
-            // flowLayoutPanel3
+            // MD_Format
             // 
-            this.flowLayoutPanel3.Controls.Add(this.del_MD_Format_btn);
-            this.flowLayoutPanel3.Controls.Add(this.add_MD_Format_btn);
-            this.flowLayoutPanel3.Controls.Add(this.pgU_MD_Format_btn);
-            this.flowLayoutPanel3.Controls.Add(this.MD_format_lbl);
-            this.flowLayoutPanel3.Controls.Add(this.pgD_MD_Format_btn);
-            this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(201, 3);
-            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(235, 30);
-            this.flowLayoutPanel3.TabIndex = 2;
+            this.MD_Format.Controls.Add(this.del_MD_Format_btn);
+            this.MD_Format.Controls.Add(this.add_MD_Format_btn);
+            this.MD_Format.Controls.Add(this.pgU_MD_Format_btn);
+            this.MD_Format.Controls.Add(this.MD_format_lbl);
+            this.MD_Format.Controls.Add(this.pgD_MD_Format_btn);
+            this.MD_Format.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.MD_Format.Location = new System.Drawing.Point(201, 3);
+            this.MD_Format.Name = "MD_Format";
+            this.MD_Format.Size = new System.Drawing.Size(235, 30);
+            this.MD_Format.TabIndex = 2;
             // 
             // del_MD_Format_btn
             // 
@@ -296,6 +296,7 @@
             // 
             // add_MD_Format_btn
             // 
+            this.add_MD_Format_btn.Enabled = false;
             this.add_MD_Format_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.add_MD_Format_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.add_MD_Format_btn.Image = ((System.Drawing.Image)(resources.GetObject("add_MD_Format_btn.Image")));
@@ -370,10 +371,10 @@
             this.digitalTransferOptions_pnl.Controls.Add(this.groupBox2);
             this.digitalTransferOptions_pnl.Controls.Add(this.CI_OnlineResource);
             this.digitalTransferOptions_pnl.Controls.Add(this.panel6);
-            this.digitalTransferOptions_pnl.Controls.Add(this.flowLayoutPanel5);
+            this.digitalTransferOptions_pnl.Controls.Add(this.MD_DTO);
             this.digitalTransferOptions_pnl.Controls.Add(this.md_digitalTranferOptions_lbl);
             this.digitalTransferOptions_pnl.Controls.Add(this.dTO_expand_tbn);
-            this.digitalTransferOptions_pnl.Location = new System.Drawing.Point(3, 441);
+            this.digitalTransferOptions_pnl.Location = new System.Drawing.Point(3, 126);
             this.digitalTransferOptions_pnl.Name = "digitalTransferOptions_pnl";
             this.digitalTransferOptions_pnl.Size = new System.Drawing.Size(439, 35);
             this.digitalTransferOptions_pnl.TabIndex = 4;
@@ -631,7 +632,6 @@
             this.onLine__CI_OnlineResource__function_txt.Name = "onLine__CI_OnlineResource__function_txt";
             this.onLine__CI_OnlineResource__function_txt.Size = new System.Drawing.Size(169, 21);
             this.onLine__CI_OnlineResource__function_txt.TabIndex = 11;
-            this.onLine__CI_OnlineResource__function_txt.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // onLine__CI_OnlineResource__name_lbl
             // 
@@ -687,18 +687,18 @@
             this.md_digitalTransferOptions_UnitsOfDistribution_txt.Size = new System.Drawing.Size(205, 20);
             this.md_digitalTransferOptions_UnitsOfDistribution_txt.TabIndex = 3;
             // 
-            // flowLayoutPanel5
+            // MD_DTO
             // 
-            this.flowLayoutPanel5.Controls.Add(this.del_MD_DTO_btn);
-            this.flowLayoutPanel5.Controls.Add(this.add_DTO_btn);
-            this.flowLayoutPanel5.Controls.Add(this.pgU_MD_DTO_btn);
-            this.flowLayoutPanel5.Controls.Add(this.MD_DTO_lbl);
-            this.flowLayoutPanel5.Controls.Add(this.pgD_MD_DTO_btn);
-            this.flowLayoutPanel5.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel5.Location = new System.Drawing.Point(201, 3);
-            this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(235, 30);
-            this.flowLayoutPanel5.TabIndex = 2;
+            this.MD_DTO.Controls.Add(this.del_MD_DTO_btn);
+            this.MD_DTO.Controls.Add(this.add_MD_DTO_btn);
+            this.MD_DTO.Controls.Add(this.pgU_MD_DTO_btn);
+            this.MD_DTO.Controls.Add(this.MD_DTO_lbl);
+            this.MD_DTO.Controls.Add(this.pgD_MD_DTO_btn);
+            this.MD_DTO.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.MD_DTO.Location = new System.Drawing.Point(201, 3);
+            this.MD_DTO.Name = "MD_DTO";
+            this.MD_DTO.Size = new System.Drawing.Size(235, 30);
+            this.MD_DTO.TabIndex = 2;
             // 
             // del_MD_DTO_btn
             // 
@@ -713,17 +713,18 @@
             this.del_MD_DTO_btn.UseVisualStyleBackColor = true;
             this.del_MD_DTO_btn.Click += new System.EventHandler(this.del_MD_DTO_Click);
             // 
-            // add_DTO_btn
+            // add_MD_DTO_btn
             // 
-            this.add_DTO_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.add_DTO_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.add_DTO_btn.Image = ((System.Drawing.Image)(resources.GetObject("add_DTO_btn.Image")));
-            this.add_DTO_btn.Location = new System.Drawing.Point(180, 3);
-            this.add_DTO_btn.Name = "add_DTO_btn";
-            this.add_DTO_btn.Size = new System.Drawing.Size(23, 23);
-            this.add_DTO_btn.TabIndex = 1;
-            this.add_DTO_btn.UseVisualStyleBackColor = true;
-            this.add_DTO_btn.Click += new System.EventHandler(this.add_DTO_Click);
+            this.add_MD_DTO_btn.Enabled = false;
+            this.add_MD_DTO_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.add_MD_DTO_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.add_MD_DTO_btn.Image = ((System.Drawing.Image)(resources.GetObject("add_MD_DTO_btn.Image")));
+            this.add_MD_DTO_btn.Location = new System.Drawing.Point(180, 3);
+            this.add_MD_DTO_btn.Name = "add_MD_DTO_btn";
+            this.add_MD_DTO_btn.Size = new System.Drawing.Size(23, 23);
+            this.add_MD_DTO_btn.TabIndex = 1;
+            this.add_MD_DTO_btn.UseVisualStyleBackColor = true;
+            this.add_MD_DTO_btn.Click += new System.EventHandler(this.add_DTO_Click);
             // 
             // pgU_MD_DTO_btn
             // 
@@ -787,12 +788,12 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.panel5);
-            this.panel2.Controls.Add(this.flowLayoutPanel4);
+            this.panel2.Controls.Add(this.MD_SOP);
             this.panel2.Controls.Add(this.md_standardOrderProcess_lbl);
             this.panel2.Controls.Add(this.button6);
             this.panel2.Location = new System.Drawing.Point(3, 44);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(439, 350);
+            this.panel2.Size = new System.Drawing.Size(439, 35);
             this.panel2.TabIndex = 3;
             // 
             // panel5
@@ -906,80 +907,81 @@
             this.md_SOP_Fees_txt.TabIndex = 0;
             this.md_SOP_Fees_txt.Tag = "";
             // 
-            // flowLayoutPanel4
+            // MD_SOP
             // 
-            this.flowLayoutPanel4.Controls.Add(this.MD_SOP_del_btn);
-            this.flowLayoutPanel4.Controls.Add(this.MD_SOP_add_btn);
-            this.flowLayoutPanel4.Controls.Add(this.MD_SOP_pgU_btn);
-            this.flowLayoutPanel4.Controls.Add(this.MD_SOP_pg_lbl);
-            this.flowLayoutPanel4.Controls.Add(this.MD_SOP_pgD_btn);
-            this.flowLayoutPanel4.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(201, 3);
-            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(235, 30);
-            this.flowLayoutPanel4.TabIndex = 2;
+            this.MD_SOP.Controls.Add(this.del_MD_SOP_btn);
+            this.MD_SOP.Controls.Add(this.add_MD_SOP_btn);
+            this.MD_SOP.Controls.Add(this.pgU_MD_SOP_btn);
+            this.MD_SOP.Controls.Add(this.MD_SOP_lbl);
+            this.MD_SOP.Controls.Add(this.pgD_MD_SOP_btn);
+            this.MD_SOP.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.MD_SOP.Location = new System.Drawing.Point(201, 3);
+            this.MD_SOP.Name = "MD_SOP";
+            this.MD_SOP.Size = new System.Drawing.Size(235, 30);
+            this.MD_SOP.TabIndex = 2;
             // 
-            // MD_SOP_del_btn
+            // del_MD_SOP_btn
             // 
-            this.MD_SOP_del_btn.Enabled = false;
-            this.MD_SOP_del_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.MD_SOP_del_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MD_SOP_del_btn.Image = ((System.Drawing.Image)(resources.GetObject("MD_SOP_del_btn.Image")));
-            this.MD_SOP_del_btn.Location = new System.Drawing.Point(209, 3);
-            this.MD_SOP_del_btn.Name = "MD_SOP_del_btn";
-            this.MD_SOP_del_btn.Size = new System.Drawing.Size(23, 23);
-            this.MD_SOP_del_btn.TabIndex = 0;
-            this.MD_SOP_del_btn.UseVisualStyleBackColor = true;
-            this.MD_SOP_del_btn.Click += new System.EventHandler(this.MD_SOP_del_Click);
+            this.del_MD_SOP_btn.Enabled = false;
+            this.del_MD_SOP_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.del_MD_SOP_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.del_MD_SOP_btn.Image = ((System.Drawing.Image)(resources.GetObject("del_MD_SOP_btn.Image")));
+            this.del_MD_SOP_btn.Location = new System.Drawing.Point(209, 3);
+            this.del_MD_SOP_btn.Name = "del_MD_SOP_btn";
+            this.del_MD_SOP_btn.Size = new System.Drawing.Size(23, 23);
+            this.del_MD_SOP_btn.TabIndex = 0;
+            this.del_MD_SOP_btn.UseVisualStyleBackColor = true;
+            this.del_MD_SOP_btn.Click += new System.EventHandler(this.del_MD_SOP_Click);
             // 
-            // MD_SOP_add_btn
+            // add_MD_SOP_btn
             // 
-            this.MD_SOP_add_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.MD_SOP_add_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MD_SOP_add_btn.Image = ((System.Drawing.Image)(resources.GetObject("MD_SOP_add_btn.Image")));
-            this.MD_SOP_add_btn.Location = new System.Drawing.Point(180, 3);
-            this.MD_SOP_add_btn.Name = "MD_SOP_add_btn";
-            this.MD_SOP_add_btn.Size = new System.Drawing.Size(23, 23);
-            this.MD_SOP_add_btn.TabIndex = 1;
-            this.MD_SOP_add_btn.UseVisualStyleBackColor = true;
-            this.MD_SOP_add_btn.Click += new System.EventHandler(this.md_SOP_add_Click);
+            this.add_MD_SOP_btn.Enabled = false;
+            this.add_MD_SOP_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.add_MD_SOP_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.add_MD_SOP_btn.Image = ((System.Drawing.Image)(resources.GetObject("add_MD_SOP_btn.Image")));
+            this.add_MD_SOP_btn.Location = new System.Drawing.Point(180, 3);
+            this.add_MD_SOP_btn.Name = "add_MD_SOP_btn";
+            this.add_MD_SOP_btn.Size = new System.Drawing.Size(23, 23);
+            this.add_MD_SOP_btn.TabIndex = 1;
+            this.add_MD_SOP_btn.UseVisualStyleBackColor = true;
+            this.add_MD_SOP_btn.Click += new System.EventHandler(this.add_md_SOP_Click);
             // 
-            // MD_SOP_pgU_btn
+            // pgU_MD_SOP_btn
             // 
-            this.MD_SOP_pgU_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.MD_SOP_pgU_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MD_SOP_pgU_btn.Location = new System.Drawing.Point(151, 3);
-            this.MD_SOP_pgU_btn.Name = "MD_SOP_pgU_btn";
-            this.MD_SOP_pgU_btn.Size = new System.Drawing.Size(23, 23);
-            this.MD_SOP_pgU_btn.TabIndex = 2;
-            this.MD_SOP_pgU_btn.Text = ">";
-            this.MD_SOP_pgU_btn.UseVisualStyleBackColor = true;
-            this.MD_SOP_pgU_btn.Visible = false;
-            this.MD_SOP_pgU_btn.Click += new System.EventHandler(this.MD_SOP_pgU_Click);
+            this.pgU_MD_SOP_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.pgU_MD_SOP_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.pgU_MD_SOP_btn.Location = new System.Drawing.Point(151, 3);
+            this.pgU_MD_SOP_btn.Name = "pgU_MD_SOP_btn";
+            this.pgU_MD_SOP_btn.Size = new System.Drawing.Size(23, 23);
+            this.pgU_MD_SOP_btn.TabIndex = 2;
+            this.pgU_MD_SOP_btn.Text = ">";
+            this.pgU_MD_SOP_btn.UseVisualStyleBackColor = true;
+            this.pgU_MD_SOP_btn.Visible = false;
+            this.pgU_MD_SOP_btn.Click += new System.EventHandler(this.pgU_MD_SOP_Click);
             // 
-            // MD_SOP_pg_lbl
+            // MD_SOP_lbl
             // 
-            this.MD_SOP_pg_lbl.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.MD_SOP_pg_lbl.AutoSize = true;
-            this.MD_SOP_pg_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MD_SOP_pg_lbl.Location = new System.Drawing.Point(101, 6);
-            this.MD_SOP_pg_lbl.Name = "MD_SOP_pg_lbl";
-            this.MD_SOP_pg_lbl.Size = new System.Drawing.Size(44, 17);
-            this.MD_SOP_pg_lbl.TabIndex = 3;
-            this.MD_SOP_pg_lbl.Text = "0 of 0";
+            this.MD_SOP_lbl.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.MD_SOP_lbl.AutoSize = true;
+            this.MD_SOP_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MD_SOP_lbl.Location = new System.Drawing.Point(101, 6);
+            this.MD_SOP_lbl.Name = "MD_SOP_lbl";
+            this.MD_SOP_lbl.Size = new System.Drawing.Size(44, 17);
+            this.MD_SOP_lbl.TabIndex = 3;
+            this.MD_SOP_lbl.Text = "0 of 0";
             // 
-            // MD_SOP_pgD_btn
+            // pgD_MD_SOP_btn
             // 
-            this.MD_SOP_pgD_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.MD_SOP_pgD_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MD_SOP_pgD_btn.Location = new System.Drawing.Point(72, 3);
-            this.MD_SOP_pgD_btn.Name = "MD_SOP_pgD_btn";
-            this.MD_SOP_pgD_btn.Size = new System.Drawing.Size(23, 23);
-            this.MD_SOP_pgD_btn.TabIndex = 4;
-            this.MD_SOP_pgD_btn.Text = "<";
-            this.MD_SOP_pgD_btn.UseVisualStyleBackColor = true;
-            this.MD_SOP_pgD_btn.Visible = false;
-            this.MD_SOP_pgD_btn.Click += new System.EventHandler(this.MD_SOP_pgD_Click);
+            this.pgD_MD_SOP_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.pgD_MD_SOP_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.pgD_MD_SOP_btn.Location = new System.Drawing.Point(72, 3);
+            this.pgD_MD_SOP_btn.Name = "pgD_MD_SOP_btn";
+            this.pgD_MD_SOP_btn.Size = new System.Drawing.Size(23, 23);
+            this.pgD_MD_SOP_btn.TabIndex = 4;
+            this.pgD_MD_SOP_btn.Text = "<";
+            this.pgD_MD_SOP_btn.UseVisualStyleBackColor = true;
+            this.pgD_MD_SOP_btn.Visible = false;
+            this.pgD_MD_SOP_btn.Click += new System.EventHandler(this.pgD_MD_SOP_Click);
             // 
             // md_standardOrderProcess_lbl
             // 
@@ -1012,18 +1014,18 @@
             this.uc_distribution_lbl.Size = new System.Drawing.Size(0, 17);
             this.uc_distribution_lbl.TabIndex = 3;
             // 
-            // MD_Dist_del_btn
+            // del_MD_Dist_btn
             // 
-            this.MD_Dist_del_btn.Enabled = false;
-            this.MD_Dist_del_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.MD_Dist_del_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MD_Dist_del_btn.Image = ((System.Drawing.Image)(resources.GetObject("MD_Dist_del_btn.Image")));
-            this.MD_Dist_del_btn.Location = new System.Drawing.Point(156, 3);
-            this.MD_Dist_del_btn.Name = "MD_Dist_del_btn";
-            this.MD_Dist_del_btn.Size = new System.Drawing.Size(23, 23);
-            this.MD_Dist_del_btn.TabIndex = 0;
-            this.MD_Dist_del_btn.UseVisualStyleBackColor = true;
-            this.MD_Dist_del_btn.Click += new System.EventHandler(this.MD_Dist_del_btn_Click);
+            this.del_MD_Dist_btn.Enabled = false;
+            this.del_MD_Dist_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.del_MD_Dist_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.del_MD_Dist_btn.Image = ((System.Drawing.Image)(resources.GetObject("del_MD_Dist_btn.Image")));
+            this.del_MD_Dist_btn.Location = new System.Drawing.Point(156, 3);
+            this.del_MD_Dist_btn.Name = "del_MD_Dist_btn";
+            this.del_MD_Dist_btn.Size = new System.Drawing.Size(23, 23);
+            this.del_MD_Dist_btn.TabIndex = 0;
+            this.del_MD_Dist_btn.UseVisualStyleBackColor = true;
+            this.del_MD_Dist_btn.Click += new System.EventHandler(this.del_MD_Dist_btn_Click);
             // 
             // MD_Dist_lbl
             // 
@@ -1036,17 +1038,17 @@
             this.MD_Dist_lbl.TabIndex = 3;
             this.MD_Dist_lbl.Text = "0 of 0";
             // 
-            // MD_Dist_add_btn
+            // add_MD_Dist_btn
             // 
-            this.MD_Dist_add_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.MD_Dist_add_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MD_Dist_add_btn.Image = ((System.Drawing.Image)(resources.GetObject("MD_Dist_add_btn.Image")));
-            this.MD_Dist_add_btn.Location = new System.Drawing.Point(127, 3);
-            this.MD_Dist_add_btn.Name = "MD_Dist_add_btn";
-            this.MD_Dist_add_btn.Size = new System.Drawing.Size(23, 23);
-            this.MD_Dist_add_btn.TabIndex = 1;
-            this.MD_Dist_add_btn.UseVisualStyleBackColor = true;
-            this.MD_Dist_add_btn.Click += new System.EventHandler(this.MD_Dist_add_btn_Click);
+            this.add_MD_Dist_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.add_MD_Dist_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.add_MD_Dist_btn.Image = ((System.Drawing.Image)(resources.GetObject("add_MD_Dist_btn.Image")));
+            this.add_MD_Dist_btn.Location = new System.Drawing.Point(127, 3);
+            this.add_MD_Dist_btn.Name = "add_MD_Dist_btn";
+            this.add_MD_Dist_btn.Size = new System.Drawing.Size(23, 23);
+            this.add_MD_Dist_btn.TabIndex = 1;
+            this.add_MD_Dist_btn.UseVisualStyleBackColor = true;
+            this.add_MD_Dist_btn.Click += new System.EventHandler(this.add_MD_Dist_btn_Click);
             // 
             // pgD_MD_Dist_btn
             // 
@@ -1058,6 +1060,7 @@
             this.pgD_MD_Dist_btn.TabIndex = 4;
             this.pgD_MD_Dist_btn.Text = "<";
             this.pgD_MD_Dist_btn.UseVisualStyleBackColor = true;
+            this.pgD_MD_Dist_btn.Visible = false;
             this.pgD_MD_Dist_btn.Click += new System.EventHandler(this.pgD_MD_Dist_Click);
             // 
             // pgU_MD_Dist_btn
@@ -1070,6 +1073,7 @@
             this.pgU_MD_Dist_btn.TabIndex = 2;
             this.pgU_MD_Dist_btn.Text = ">";
             this.pgU_MD_Dist_btn.UseVisualStyleBackColor = true;
+            this.pgU_MD_Dist_btn.Visible = false;
             this.pgU_MD_Dist_btn.Click += new System.EventHandler(this.pgU_MD_Dist_Click);
             // 
             // flowLayoutPanel6
@@ -1078,52 +1082,54 @@
             this.flowLayoutPanel6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flowLayoutPanel6.Controls.Add(this.distributor_Contact);
             this.flowLayoutPanel6.Controls.Add(this.panel2);
-            this.flowLayoutPanel6.Controls.Add(this.distributionFormat__MD_Format_pnl);
+            this.flowLayoutPanel6.Controls.Add(this.MD_Format_pnl);
             this.flowLayoutPanel6.Controls.Add(this.digitalTransferOptions_pnl);
             this.flowLayoutPanel6.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel6.Location = new System.Drawing.Point(6, 27);
             this.flowLayoutPanel6.Name = "flowLayoutPanel6";
-            this.flowLayoutPanel6.Size = new System.Drawing.Size(445, 479);
+            this.flowLayoutPanel6.Size = new System.Drawing.Size(445, 164);
             this.flowLayoutPanel6.TabIndex = 0;
             // 
             // distributor_Contact
             // 
+            this.distributor_Contact.BackColor = System.Drawing.Color.Transparent;
             this.distributor_Contact.incomingCI_ResponsiblePartyList = null;
             this.distributor_Contact.Location = new System.Drawing.Point(3, 3);
             this.distributor_Contact.mylabel = "Contact";
             this.distributor_Contact.Name = "distributor_Contact";
-            this.distributor_Contact.rp_mode = null;
+            this.distributor_Contact.rp_mode = "distribution";
             this.distributor_Contact.Size = new System.Drawing.Size(439, 35);
             this.distributor_Contact.TabIndex = 7;
-            this.distributor_Contact.Tag = "required";
+            this.distributor_Contact.Tag = "";
             // 
-            // groupBox3
+            // distributor_gbx
             // 
-            this.groupBox3.AutoSize = true;
-            this.groupBox3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBox3.Controls.Add(this.flowLayoutPanel6);
-            this.groupBox3.Location = new System.Drawing.Point(3, 25);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(457, 525);
-            this.groupBox3.TabIndex = 6;
-            this.groupBox3.TabStop = false;
+            this.distributor_gbx.AutoSize = true;
+            this.distributor_gbx.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.distributor_gbx.Controls.Add(this.flowLayoutPanel6);
+            this.distributor_gbx.Location = new System.Drawing.Point(3, 25);
+            this.distributor_gbx.Name = "distributor_gbx";
+            this.distributor_gbx.Size = new System.Drawing.Size(457, 210);
+            this.distributor_gbx.TabIndex = 6;
+            this.distributor_gbx.TabStop = false;
+            this.distributor_gbx.Leave += new System.EventHandler(this.distributor_gbx_Leave);
             // 
-            // flowLayoutPanel1
+            // MD_Dist
             // 
-            this.flowLayoutPanel1.Controls.Add(this.MD_Dist_del_btn);
-            this.flowLayoutPanel1.Controls.Add(this.MD_Dist_add_btn);
-            this.flowLayoutPanel1.Controls.Add(this.pgU_MD_Dist_btn);
-            this.flowLayoutPanel1.Controls.Add(this.MD_Dist_lbl);
-            this.flowLayoutPanel1.Controls.Add(this.pgD_MD_Dist_btn);
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 12);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(182, 30);
-            this.flowLayoutPanel1.TabIndex = 7;
+            this.MD_Dist.Controls.Add(this.del_MD_Dist_btn);
+            this.MD_Dist.Controls.Add(this.add_MD_Dist_btn);
+            this.MD_Dist.Controls.Add(this.pgU_MD_Dist_btn);
+            this.MD_Dist.Controls.Add(this.MD_Dist_lbl);
+            this.MD_Dist.Controls.Add(this.pgD_MD_Dist_btn);
+            this.MD_Dist.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.MD_Dist.Location = new System.Drawing.Point(12, 12);
+            this.MD_Dist.Name = "MD_Dist";
+            this.MD_Dist.Size = new System.Drawing.Size(182, 30);
+            this.MD_Dist.TabIndex = 7;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.flowLayoutPanel1);
+            this.groupBox1.Controls.Add(this.MD_Dist);
             this.groupBox1.Location = new System.Drawing.Point(134, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(200, 45);
@@ -1142,17 +1148,17 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.uc_distribution_lbl);
-            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.distributor_gbx);
             this.Name = "uc_distribution";
-            this.Size = new System.Drawing.Size(463, 553);
-            this.distributionFormat__MD_Format_pnl.ResumeLayout(false);
-            this.distributionFormat__MD_Format_pnl.PerformLayout();
+            this.Size = new System.Drawing.Size(463, 238);
+            this.MD_Format_pnl.ResumeLayout(false);
+            this.MD_Format_pnl.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.flowLayoutPanel3.ResumeLayout(false);
-            this.flowLayoutPanel3.PerformLayout();
+            this.MD_Format.ResumeLayout(false);
+            this.MD_Format.PerformLayout();
             this.digitalTransferOptions_pnl.ResumeLayout(false);
             this.digitalTransferOptions_pnl.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -1161,19 +1167,19 @@
             this.CI_OnlineResource.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            this.flowLayoutPanel5.ResumeLayout(false);
-            this.flowLayoutPanel5.PerformLayout();
+            this.MD_DTO.ResumeLayout(false);
+            this.MD_DTO.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            this.flowLayoutPanel4.ResumeLayout(false);
-            this.flowLayoutPanel4.PerformLayout();
+            this.MD_SOP.ResumeLayout(false);
+            this.MD_SOP.PerformLayout();
             this.flowLayoutPanel6.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
+            this.distributor_gbx.ResumeLayout(false);
+            this.distributor_gbx.PerformLayout();
+            this.MD_Dist.ResumeLayout(false);
+            this.MD_Dist.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_Distribution)).EndInit();
             this.ResumeLayout(false);
@@ -1184,9 +1190,9 @@
         #endregion
 
         private System.Windows.Forms.Label uc_distribution_lbl;
-        private System.Windows.Forms.Panel distributionFormat__MD_Format_pnl;
+        private System.Windows.Forms.Panel MD_Format_pnl;
         private System.Windows.Forms.Label md_distributionFormat_lbl;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
+        private System.Windows.Forms.FlowLayoutPanel MD_Format;
         private System.Windows.Forms.Button del_MD_Format_btn;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button add_MD_Format_btn;
@@ -1194,18 +1200,18 @@
         private System.Windows.Forms.Label MD_format_lbl;
         private System.Windows.Forms.Button pgD_MD_Format_btn;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
-        private System.Windows.Forms.Button MD_SOP_del_btn;
-        private System.Windows.Forms.Button MD_SOP_add_btn;
-        private System.Windows.Forms.Button MD_SOP_pgU_btn;
-        private System.Windows.Forms.Label MD_SOP_pg_lbl;
-        private System.Windows.Forms.Button MD_SOP_pgD_btn;
+        private System.Windows.Forms.FlowLayoutPanel MD_SOP;
+        private System.Windows.Forms.Button del_MD_SOP_btn;
+        private System.Windows.Forms.Button add_MD_SOP_btn;
+        private System.Windows.Forms.Button pgU_MD_SOP_btn;
+        private System.Windows.Forms.Label MD_SOP_lbl;
+        private System.Windows.Forms.Button pgD_MD_SOP_btn;
         private System.Windows.Forms.Label md_standardOrderProcess_lbl;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Panel digitalTransferOptions_pnl;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
+        private System.Windows.Forms.FlowLayoutPanel MD_DTO;
         private System.Windows.Forms.Button del_MD_DTO_btn;
-        private System.Windows.Forms.Button add_DTO_btn;
+        private System.Windows.Forms.Button add_MD_DTO_btn;
         private System.Windows.Forms.Button pgU_MD_DTO_btn;
         private System.Windows.Forms.Label MD_DTO_lbl;
         private System.Windows.Forms.Button pgD_MD_DTO_btn;
@@ -1224,13 +1230,13 @@
         private System.Windows.Forms.TextBox md_format_AmendmentNumber_txt;
         private System.Windows.Forms.TextBox md_format_version_txt;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel6;
-        private System.Windows.Forms.Button MD_Dist_del_btn;
-        private System.Windows.Forms.Button MD_Dist_add_btn;
+        private System.Windows.Forms.Button del_MD_Dist_btn;
+        private System.Windows.Forms.Button add_MD_Dist_btn;
         private System.Windows.Forms.Button pgU_MD_Dist_btn;
         private System.Windows.Forms.Label MD_Dist_lbl;
         private System.Windows.Forms.Button pgD_MD_Dist_btn;
         private uc_ResponsibleParty distributor_Contact;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox distributor_gbx;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label md_SOP_Turnaround_lbl;
         private System.Windows.Forms.Label md_SOP_Ordering_lbl;
@@ -1256,7 +1262,7 @@
         private System.Windows.Forms.Label md_digitalTransferOptions_UnitsOfDistribution_lbl;
         private System.Windows.Forms.TextBox md_digitalTransferOptions_transferSize_txt;
         private System.Windows.Forms.TextBox md_digitalTransferOptions_UnitsOfDistribution_txt;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel MD_Dist;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DateTimePicker availableDat_dtp;
         private System.Windows.Forms.Button availabelDate_clear_btn;
