@@ -148,7 +148,7 @@ namespace EmeLibrary
                 del_MD_Dist_btn.Enabled = false;
 
                 _distributorList.Clear();
-                
+                clearFields("All");
                 
             }
             else if (_distributorList.Count == 1)
@@ -210,6 +210,19 @@ namespace EmeLibrary
             {
                 dist.distributorContact__CI_ResponsibleParty = distributor_Contact.incomingCI_ResponsiblePartyList[0];
                 
+            }
+
+            if (_distributionFormat.Count != 0)
+            {
+                bind_MD_Format_Class(_distributionFormat[_distributionFormat_idx]);
+            }
+            if (_digitalTransferOptions.Count != 0)
+            {
+                bind_MD_DTO_Class(_digitalTransferOptions[_digitalTransferOptions_idx]);
+            }
+            if (_standardOrderProcess.Count != 0)
+            {
+                bind_MD_SOP_Class(_standardOrderProcess[_standardOrderProcess_idx]);
             }
             dist.distributorFormat__MD_Format = _distributionFormat;
             dist.distributionOrderProcess__MD_StandardOrderProcess = _standardOrderProcess;
@@ -383,14 +396,14 @@ namespace EmeLibrary
                 md_format_Specification_txt.Clear();
                 md_format_decompressionTechnique_txt.Clear();
             }
-            else if (section == "MD_SOP" || section == "All")
+            if (section == "MD_SOP" || section == "All")
             {
                 md_SOP_Fees_txt.Clear();
                 md_SOP_AvailableDate_txt.Clear();
                 md_SOP_Ordering_txt.Clear();
                 md_SOP_Turnaround_txt.Clear();
             }
-            else if (section == "MD_DTO" || section == "All")
+            if (section == "MD_DTO" || section == "All")
             {
                 md_digitalTransferOptions_UnitsOfDistribution_txt.Clear();
                 md_digitalTransferOptions_transferSize_txt.Clear();
@@ -526,7 +539,7 @@ namespace EmeLibrary
 
         private void load_MD_SOP()
         {
-            _standardOrderProcess_idx = 0; ;
+            _standardOrderProcess_idx = 0;
 
             if (_standardOrderProcess.Count >= 1)
             {
@@ -752,6 +765,11 @@ namespace EmeLibrary
             }
         }
 
+        private void expandCollapse(Button toChange, string openClose)
+        {
+
+        }
+
         private void adjustPagers<T>(Panel pager, List<T> pagerList)
         {
             //Console.WriteLine(_distributorList.Count().ToString());
@@ -788,6 +806,12 @@ namespace EmeLibrary
         }
 
         #region Validation
+
+        private void distribution_Validating(object sender, CancelEventArgs e)
+        {
+            Control ctrl = (Control)sender;
+            Dist_Validating(ctrl);
+        }
 
         private void Dist_Validating(Control ctrl)
         {
@@ -895,10 +919,17 @@ namespace EmeLibrary
         private void distributor_gbx_Leave(object sender, EventArgs e)
         {
             
-            //bind_MD_Format_Class(_distributionFormat[_distributionFormat_idx]);
-            //bind_MD_SOP_Class(_standardOrderProcess[_standardOrderProcess_idx]);
-            //bind_MD_DTO_Class(_digitalTransferOptions[_digitalTransferOptions_idx]);
+            
         }
+
+        private void flowLayoutPanel6_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        
+
+       
 
 
     }

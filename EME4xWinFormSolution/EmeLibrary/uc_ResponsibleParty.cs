@@ -221,8 +221,6 @@ namespace EmeLibrary
            
         }
 
-
-
         public void adjustRPControl(int distributorCount)
         {
             if (distributorCount < 1)
@@ -302,6 +300,8 @@ namespace EmeLibrary
                 if (rp_mode == "distribution")
                 {
                     addRP_Btn.Enabled = false;
+                    rp_expander_btn.Text = "-";
+                    this.Height = 200;
                 } 
             }
             else
@@ -335,7 +335,7 @@ namespace EmeLibrary
             if (incomingRPList.Count == 0)
             {
                 incomingRPListIndex = 0;
-                incomingRPList = null;
+                incomingRPList.Clear();
                 pagerLbl.Text = "0 of 0";
                 role.SelectedIndex = -1;
                 individualName_txt.Text = "";
@@ -356,6 +356,8 @@ namespace EmeLibrary
                 //bindToFields(incomingRPList[incomingRPListIndex]);
                 deleteRP_Btn.Enabled = false;
                 addRP_Btn.Enabled = true;
+                rp_expander_btn.Text = "+";
+                this.Height = 35;
                 
             }
             else if (incomingRPList.Count == 1)
@@ -602,7 +604,7 @@ namespace EmeLibrary
         private void uc_ResponsibleParty_Leave(object sender, EventArgs e)
         {
             //MessageBox.Show("Leaving");
-            if (incomingRPList != null)
+            if (incomingRPList != null || incomingRPList.Count() != 0)
             {
                 bindToClass(incomingRPList[incomingRPListIndex]);
             }
