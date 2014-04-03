@@ -11,21 +11,21 @@ namespace EmeLibrary
 {
     public partial class uc_distribution : UserControl
     {
-        //May need to change this one
+        //List that contains distributor objects and an index for the list
         private int _distributorList_idx;
         private List<MD_Distributor> _distributorList;
 
         private CI_ResponsibleParty _distributorContact;
 
-        //Distribution Formatt
+        //List of Distribution Formatts and an index for the list
         private int _distributionFormat_idx;
         private List<MD_Format> _distributionFormat;
 
-        //MD_StandardOrderProcess
+        //List of StandardOrderProcess objects and an index for the list
         private int _standardOrderProcess_idx;
         private List<MD_StandardOrderProcess> _standardOrderProcess;
 
-        //MD_DigitalTransferOptions
+        //List of DigitalTransferOptions objects and an index for the list
         private int _digitalTransferOptions_idx;
         private List<MD_DigitalTransferOptions> _digitalTransferOptions;
         
@@ -76,12 +76,18 @@ namespace EmeLibrary
 
         }   
 
+        //MD_Distributor region contains the events for the controls that control paging through distributors 
         #region MD_Distributor pager Events
 
+        /// <summary>
+        /// this method is used to load the distributor list coming from the metada into the gui (pager)
+        /// </summary>
+        /// <param name="distributors"></param>
         public void loadDistributors(List<MD_Distributor> distributors)
         {
+            //set user control list to list passed in
             _distributorList = distributors;
-
+            //Adjust pager controls based on the number of pagers
             if (_distributorList.Count() < 1)
             {
                 pgU_MD_Dist_btn.Visible = false;
@@ -98,82 +104,104 @@ namespace EmeLibrary
                 pgD_MD_Dist_btn.Visible = true;
                 del_MD_Dist_btn.Enabled = true;
             }
+            //set the current index to the beginning of the list
             _distributorList_idx = 0;
+            //populate the distributor contorls
             bind_MD_Dist_Field(_distributorList[_distributorList_idx]);
             //_distributorList[_distributorList_idx].distributorContact__CI_ResponsibleParty
 
         }
 
+        /// <summary>
+        /// This methon is an event fired when the user clicks on the add distributor button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void add_MD_Dist_btn_Click(object sender, EventArgs e)
         {
-            MD_Distributor md_format = new MD_Distributor();
-            md_format.distributorContact__CI_ResponsibleParty = null;
+            //Create new distributor
+            MD_Distributor d1 = new MD_Distributor();
+            d1.distributorContact__CI_ResponsibleParty = null;
+
+            //if first in list add to the list otherwise save current information in controls then add new to list
             if (_distributorList == null || _distributorList.Count == 0)
             {
                 _distributorList = new List<MD_Distributor>();
                 _distributorList_idx = 0;
-                _distributorList.Add(md_format);
-                //enable delete button
-                //del_MD_Dist_btn.Enabled = true;
+                _distributorList.Add(d1);
                
             }
             else
             {
+                //save existing
                 bind_MD_Dist_Class(_distributorList[_distributorList_idx]);
-                //enable pager buttons
-                //pgD_MD_Dist_btn.Visible = true;
-                //pgU_MD_Dist_btn.Visible = true;
-
-                //bindToClass(incomingRPList[incomingRPListIndex]);
-                _distributorList.Add(md_format);
-                //_distributionFormat_idx++;
+                //Add new distributor
+                _distributorList.Add(d1);
+                //Adjust index
                 _distributorList_idx = _distributorList.Count - 1;
-
             }
+            //Adjust controls in sub pagers based on the distributor list
             adjustPagers(MD_Dist, _distributorList);
+            //Bind new distributor to controls
             bind_MD_Dist_Field(_distributorList[_distributorList_idx]);
+            
             //distributor_Contact.Tag = "required";
             //val_Distribution_frmControls(this.Controls);
         }
 
+        /// <summary>
+        /// This method is an event that fires when user clicks to delete a distributor
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void del_MD_Dist_btn_Click(object sender, EventArgs e)
         {
+            //Remove the distributor from the list at the current index
             _distributorList.RemoveAt(_distributorList_idx);
+            //Depending on distributor list count adjust distributor pager controls
             if (_distributorList.Count == 0)
             {
-                _distributorList_idx = 0;
-                //_distributorList = null;
-                MD_Dist_lbl.Text = "0 of 0";
-
-                del_MD_Dist_btn.Enabled = false;
-
+                _distributorList_idx = 0;   //reset index
+                MD_Dist_lbl.Text = "0 of 0";    //reset label
+                del_MD_Dist_btn.Enabled = false;    
                 _distributorList.Clear();
+                //clear field in all sub pagers
                 clearFields("All");
-                
             }
-            else if (_distributorList.Count == 1)
+            else if (_distributorList.Count == 1) 
             {
+                //adjust pager elements for a list of 1
                 pgD_MD_Dist_btn.Visible = false;
                 pgU_MD_Dist_btn.Visible = false;
                 _distributorList_idx = 0;
+                //Load the next distributor in the list
                 bind_MD_Dist_Field(_distributorList[_distributorList_idx]);
             }
             else
             {
+                //Adjust index and load next distributor in the list
                 if (_distributorList_idx > 0)
                 {
                     _distributorList_idx--;
                 }
                 bind_MD_Dist_Field(_distributorList[_distributorList_idx]);
             }
+            //Adjust controls in sub pagers
             distributor_Contact.adjustRPControl(_distributorList.Count);
             adjustPagers(MD_Format, _distributionFormat);
             adjustPagers(MD_SOP, _standardOrderProcess);
             adjustPagers(MD_DTO, _digitalTransferOptions);
         }
 
+        /// <summary>
+        /// This Method is fired when the user clicks the page down button for the distributor
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pgD_MD_Dist_Click(object sender, EventArgs e)
         {
+            //If the index is currently at the bottom of the list adjust pager controls
+            //Otherwise save current vales and page down
             if (_distributorList_idx == 0)
             {
                 pgD_MD_Dist_btn.Enabled = false;
@@ -181,15 +209,24 @@ namespace EmeLibrary
             }
             else
             {
+                //Save current values
                 bind_MD_Dist_Class(_distributorList[_distributorList_idx]);
-                _distributorList_idx--;
+                _distributorList_idx--;     //decrease the index
                 pgU_MD_Dist_btn.Enabled = true;
+                //bind values of the next distributor to controls
                 bind_MD_Dist_Field(_distributorList[_distributorList_idx]);
             }
         }
 
+        /// <summary>
+        /// This method fires the page up event for the distribution pager
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pgU_MD_Dist_Click(object sender, EventArgs e)
         {
+            //If already to the top of the list adjust pager
+            //otherwise save current distributor and display the next
             if (_distributorList_idx >= _distributorList.Count - 1)
             {
                 pgU_MD_Dist_btn.Enabled = false;
@@ -197,61 +234,77 @@ namespace EmeLibrary
             }
             else
             {
+                //Save current distributor
                 bind_MD_Dist_Class(_distributorList[_distributorList_idx]);
-                _distributorList_idx++;
+                _distributorList_idx++;     //increase the index
                 pgD_MD_Dist_btn.Enabled = true;
+                //Display the next distributor
                 bind_MD_Dist_Field(_distributorList[_distributorList_idx]);
             }
         }
 
+        /// <summary>
+        /// This method binds the current values in the distributor contorls (sub-pagers) to the class
+        /// </summary>
+        /// <param name="dist"></param>
         private void bind_MD_Dist_Class(MD_Distributor dist)
         {
+            //If there is a distributor contact save to distributor class
             if (distributor_Contact.incomingCI_ResponsiblePartyList.Count == 1)
             {
                 dist.distributorContact__CI_ResponsibleParty = distributor_Contact.incomingCI_ResponsiblePartyList[0];
                 
             }
-
+            //If there is a distributor Formatt bind in the MD_Format pager
             if (_distributionFormat.Count != 0)
             {
                 bind_MD_Format_Class(_distributionFormat[_distributionFormat_idx]);
             }
+            //If there is a distributor digital transfer option call bind in MD_DTO pager
             if (_digitalTransferOptions.Count != 0)
             {
                 bind_MD_DTO_Class(_digitalTransferOptions[_digitalTransferOptions_idx]);
             }
+            //If ther is a distributor standard order process call bind in MD_SOP pager
             if (_standardOrderProcess.Count != 0)
             {
                 bind_MD_SOP_Class(_standardOrderProcess[_standardOrderProcess_idx]);
             }
+            //Save sub lists to the class
             dist.distributorFormat__MD_Format = _distributionFormat;
             dist.distributionOrderProcess__MD_StandardOrderProcess = _standardOrderProcess;
             dist.distributorTransferOptions__MD_DigitalTransferOptions = _digitalTransferOptions;
         }
 
+        /// <summary>
+        /// This method bind values in class to the distributor lists for contact, format, digital transfer options, and standard order process
+        /// </summary>
+        /// <param name="dist"></param>
         private void bind_MD_Dist_Field(MD_Distributor dist)
         {
+            //clear all field in the distribution user control
             clearFields("All");
-            distributor_Contact.reset();
+            distributor_Contact.reset();    //reset uc_ResponsibleParty control
+            //Set pager label
             MD_Dist_lbl.Text = (_distributorList_idx + 1).ToString() + " of " + _distributorList.Count().ToString();
             
             //Distributor contact -- ci_responsibleParty
+            //Set up the distributor contact control (uc_ResponsibleParty)
             List<CI_ResponsibleParty> dist_contactList = new List<CI_ResponsibleParty>();
             if(dist.distributorContact__CI_ResponsibleParty != null)
             {
                 dist_contactList.Add(dist.distributorContact__CI_ResponsibleParty);
             }
             
-
-            //Bind MD_Format list
+            //Bind lists for pagers
            _distributionFormat = dist.distributorFormat__MD_Format;
            _standardOrderProcess = dist.distributionOrderProcess__MD_StandardOrderProcess;
            _digitalTransferOptions = dist.distributorTransferOptions__MD_DigitalTransferOptions;
 
-           //distributor_Contact.loadList(dist.distributorContact__CI_ResponsibleParty);
+           //Load add distributor contact info to the distributor_contact control
             distributor_Contact.loadList(dist_contactList);
             distributor_Contact.adjustRPControl(_distributorList.Count);
-            //_distributionFormat_idx = 0;
+            //Call load methods for each pager, and call metthod to adjustPagers
             load_MD_format();
             adjustPagers(MD_Format, _distributionFormat);
             load_MD_SOP();
@@ -262,20 +315,23 @@ namespace EmeLibrary
         }
 
         #endregion 
-
+        //MD_Format region contains the events for the elements that control paging through formats for each distributor
         #region MD_Format Pager Events
 
+        /// <summary>
+        /// This method fire when the user clicks to add a distribution format for a distributor
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Add_MD_Format_Click(object sender, EventArgs e)
         {
-
             MD_Format md_format = new MD_Format();
+            //Adjust pager depending on count
             if (_distributionFormat.Count() == 0)
             {
                 _distributionFormat = new List<MD_Format>();
                 _distributionFormat_idx = 0;
                 _distributionFormat.Add(md_format);
-                //enable delete button
-                //del_MD_Format_btn.Enabled = true;
             }
             else
             {
@@ -285,13 +341,19 @@ namespace EmeLibrary
                 _distributionFormat_idx = _distributionFormat.Count - 1;
                 
             }
+            //Adjust pager and bind from class to controls
             adjustPagers(MD_Format, _distributionFormat);
             bind_MD_format_Fields( _distributionFormat[_distributionFormat_idx]);
         }
 
+        /// <summary>
+        /// This Method fires when user clicks to delete a distribution format for a distributor
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void del_MD_Format_btn_Click(object sender, EventArgs e)
         {
-
+            //remove the current MD_Format from the list
             _distributionFormat.RemoveAt(_distributionFormat_idx);
             if (_distributionFormat.Count == 0)
             {
@@ -300,14 +362,9 @@ namespace EmeLibrary
                 MD_format_lbl.Text = "0 of 0";
                 //delete all fields
                 clearFields("MD_Format");
-                
-                //del_MD_Format_btn.Enabled = false;
-   
             }
             else if (_distributionFormat.Count == 1)
             {
-                //pgD_MD_Format_btn.Visible = false;
-                //pgU_MD_Format_btn.Visible = false;
                 _distributionFormat_idx = 0;
                 bind_MD_format_Fields(_distributionFormat[_distributionFormat_idx]);
             }
@@ -319,9 +376,15 @@ namespace EmeLibrary
                 }
                 bind_MD_format_Fields(_distributionFormat[_distributionFormat_idx]);
             }
+            //Adjust MD_Format pager controls
             adjustPagers(MD_Format, _distributionFormat);
         }
 
+        /// <summary>
+        /// This method fired when user clicks to page down in the distribution format pager
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pgD_MD_Format_btn_Click(object sender, EventArgs e)
         {
             if (_distributionFormat_idx == 0)
@@ -331,13 +394,20 @@ namespace EmeLibrary
             }
             else
             {
+                //Bind currnet format values to class
                 bind_MD_Format_Class(_distributionFormat[_distributionFormat_idx]);
                 _distributionFormat_idx--;
                 pgU_MD_Format_btn.Enabled = true;
+                //Bind new value to controls
                 bind_MD_format_Fields(_distributionFormat[_distributionFormat_idx]);
             }
         }
 
+        /// <summary>
+        /// This method fires when user clicks to page up in the distribution format pager
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pgU_MD_Format_btn_Click(object sender, EventArgs e)
         {
             if (_distributionFormat_idx >= _distributionFormat.Count - 1)
@@ -347,18 +417,25 @@ namespace EmeLibrary
             }
             else
             {
+                //Bind current values to class
                 bind_MD_Format_Class(_distributionFormat[_distributionFormat_idx]);
-                _distributionFormat_idx++;
+                _distributionFormat_idx++;  //Increase index
                 pgD_MD_Format_btn.Enabled = true;
+                //Bind new values to controls
                 bind_MD_format_Fields(_distributionFormat[_distributionFormat_idx]);
             }
         }
 
+        /// <summary>
+        /// This method binds properties from MD_Format class to associated MD_Format controls.
+        /// </summary>
+        /// <param name="dist"></param>
         private void bind_MD_format_Fields(MD_Format dist)
         {
-            MD_format_lbl.Text = (_distributionFormat_idx + 1).ToString() + " of " + _distributionFormat.Count().ToString();
-            //distpager_lbl.Text = (_distribution_idx + 1).ToString() + " of " + _distributionList.Count; 
+            //Set MD_format pager label
+            MD_format_lbl.Text = (_distributionFormat_idx + 1).ToString() + " of " + _distributionFormat.Count().ToString(); 
 
+            //Bind
             md_format_name_txt.Text = dist.name;
             md_format_version_txt.Text = dist.version;
             md_format_AmendmentNumber_txt.Text = dist.amendmentNumber;
@@ -367,8 +444,13 @@ namespace EmeLibrary
 
         }
 
+        /// <summary>
+        /// This method binds values from MD_Format controls to their associated class properites
+        /// </summary>
+        /// <param name="data"></param>
         private void bind_MD_Format_Class(MD_Format data)
         {
+            //Bind
             data.name = md_format_name_txt.Text;
             data.version = md_format_version_txt.Text;
             data.amendmentNumber = md_format_AmendmentNumber_txt.Text;
@@ -376,6 +458,9 @@ namespace EmeLibrary
             data.fileDecompressionTechnique = md_format_decompressionTechnique_txt.Text;
         }
 
+        /// <summary>
+        /// This method loads an MD_format object into the pager
+        /// </summary>
         private void load_MD_format()
         {
             _distributionFormat_idx = 0;
@@ -386,43 +471,7 @@ namespace EmeLibrary
             } 
         }
 
-        private void clearFields(string section)
-        {
-            if (section == "MD_Format" || section == "All")
-            {
-                md_format_name_txt.Clear();
-                md_format_version_txt.Clear();
-                md_format_AmendmentNumber_txt.Clear();
-                md_format_Specification_txt.Clear();
-                md_format_decompressionTechnique_txt.Clear();
-            }
-            if (section == "MD_SOP" || section == "All")
-            {
-                md_SOP_Fees_txt.Clear();
-                md_SOP_AvailableDate_txt.Clear();
-                md_SOP_Ordering_txt.Clear();
-                md_SOP_Turnaround_txt.Clear();
-            }
-            if (section == "MD_DTO" || section == "All")
-            {
-                md_digitalTransferOptions_UnitsOfDistribution_txt.Clear();
-                md_digitalTransferOptions_transferSize_txt.Clear();
-
-                onLine__CI_OnlineResource__linkage__URL_txt.Clear();
-                onLine__CI_OnlineResource__protocol_txt.Clear();
-                onLine__CI_OnlineResource__applicationProfile_txt.Clear();
-                onLine__CI_OnlineResource__name_txt.Clear();
-                onLine__CI_OnlineResource__description_txt.Clear();
-                //onLine__CI_OnlineResource__function_txt.Clear();
-
-                offLine__MD_Medium__name_txt.Clear();
-                offLine__MD_Medium__density__Real_txt.Clear();
-                offLine__MD_Medium__densityUnits_txt.Clear();
-                offLine__MD_Medium__volumes_txt.Clear();
-                offLine__MD_Medium__mediumFormat_txt.Clear();
-                offLine__MD_Medium__mediumNode_txt.Clear();
-            }
-        }
+       
 
         #endregion
 
@@ -740,6 +789,55 @@ namespace EmeLibrary
 
         #endregion
 
+        /// <summary>
+        /// This method clear the text in the controls for the given section specified. The section string variable represent the grouping (pager) 
+        /// name. For example if the section string variable is set to "MD_Format" control in that section will be cleared.
+        /// </summary>
+        /// <param name="section"></param>
+        private void clearFields(string section)
+        {
+            if (section == "MD_Format" || section == "All")
+            {
+                md_format_name_txt.Clear();
+                md_format_version_txt.Clear();
+                md_format_AmendmentNumber_txt.Clear();
+                md_format_Specification_txt.Clear();
+                md_format_decompressionTechnique_txt.Clear();
+            }
+            if (section == "MD_SOP" || section == "All")
+            {
+                md_SOP_Fees_txt.Clear();
+                md_SOP_AvailableDate_txt.Clear();
+                md_SOP_Ordering_txt.Clear();
+                md_SOP_Turnaround_txt.Clear();
+            }
+            if (section == "MD_DTO" || section == "All")
+            {
+                md_digitalTransferOptions_UnitsOfDistribution_txt.Clear();
+                md_digitalTransferOptions_transferSize_txt.Clear();
+
+                onLine__CI_OnlineResource__linkage__URL_txt.Clear();
+                onLine__CI_OnlineResource__protocol_txt.Clear();
+                onLine__CI_OnlineResource__applicationProfile_txt.Clear();
+                onLine__CI_OnlineResource__name_txt.Clear();
+                onLine__CI_OnlineResource__description_txt.Clear();
+                //onLine__CI_OnlineResource__function_txt.Clear();
+
+                offLine__MD_Medium__name_txt.Clear();
+                offLine__MD_Medium__density__Real_txt.Clear();
+                offLine__MD_Medium__densityUnits_txt.Clear();
+                offLine__MD_Medium__volumes_txt.Clear();
+                offLine__MD_Medium__mediumFormat_txt.Clear();
+                offLine__MD_Medium__mediumNode_txt.Clear();
+            }
+        }
+
+        /// <summary>
+        /// This method is used as the generic event triggered by the expander buttons for each pager they expand and 
+        /// collapse the panel that contains the controls for each pager section
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void expand_Click(object sender, EventArgs e)
         {
             Button expand = (Button)sender;
@@ -765,14 +863,17 @@ namespace EmeLibrary
             }
         }
 
-        private void expandCollapse(Button toChange, string openClose)
-        {
-
-        }
-
+        /// <summary>
+        /// This method is a generic method to adjust the visibility, enable/diable, and reset pager controls based
+        /// on the name of the panel that the pager controls are contained and the name of the list associated to that
+        /// pager. This method is called regularly when user adds, deletes or pages one of the pagers.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="pager"></param>
+        /// <param name="pagerList"></param>
         private void adjustPagers<T>(Panel pager, List<T> pagerList)
         {
-            //Console.WriteLine(_distributorList.Count().ToString());
+            //Check if there
             if (_distributorList.Count == 0)
             {
                 pager.Controls["Add_" + pager.Name + "_btn"].Enabled = false;
