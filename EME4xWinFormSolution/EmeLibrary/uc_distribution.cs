@@ -287,6 +287,7 @@ namespace EmeLibrary
             distributor_Contact.reset();    //reset uc_ResponsibleParty control
             //Set pager label
             MD_Dist_lbl.Text = (_distributorList_idx + 1).ToString() + " of " + _distributorList.Count().ToString();
+<<<<<<< HEAD
             
             //Distributor contact -- ci_responsibleParty
             //Set up the distributor contact control (uc_ResponsibleParty)
@@ -305,6 +306,15 @@ namespace EmeLibrary
             distributor_Contact.loadList(dist_contactList);
             distributor_Contact.adjustRPControl(_distributorList.Count);
             //Call load methods for each pager, and call metthod to adjustPagers
+=======
+            distributor_Contact.loadList(dist.distributorContact);
+            //Bind MD_Format list
+            _distributionFormat = dist.distributorFormat__MD_Format;
+            _standardOrderProcess = dist.distributionOrderProcess__MD_StandardOrderProcess;
+            _digitalTransferOptions = dist.distributorTransferOptions__MD_DigitalTransferOptions;
+
+            //_distributionFormat_idx = 0;
+>>>>>>> ad7f5c29732ba686ff3fd1eca8123a9ac565c2ad
             load_MD_format();
             adjustPagers(MD_Format, _distributionFormat);
             load_MD_SOP();
@@ -733,7 +743,7 @@ namespace EmeLibrary
             offLine__MD_Medium__densityUnits_txt.Text = md_DTO.offLine__MD_Medium__densityUnits;
             offLine__MD_Medium__volumes_txt.Text = md_DTO.offLine__MD_Medium__volumes;
             offLine__MD_Medium__mediumFormat_txt.Text = md_DTO.offLine__MD_Medium__mediumFormat;
-            offLine__MD_Medium__mediumNode_txt.Text = md_DTO.offLine__MD_Medium__mediumNode;
+            offLine__MD_Medium__mediumNode_txt.Text = md_DTO.offLine__MD_Medium__mediumNote;
 
         }
 

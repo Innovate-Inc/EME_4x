@@ -468,21 +468,22 @@ namespace EmeLibrary
                         + "  Value: " + kvList[i].Value.ToString());
                 }
                                                  
-                string pname = "distributorContact__CI_ResponsibleParty";
+                //string pname = "distributorContact__CI_ResponsibleParty";
+                string pname = "distributorContact";
                 KeyValuePair<string, string> kv = kvList.Find(delegate(KeyValuePair<string, string> kv1) { return kv1.Key == pname; });
 
-                XmlNode contactInfo = gmddistributor.SelectSingleNode(kv.Value);
+                XmlNode contactInfo = gmddistributor.SelectSingleNode("."+kv.Value);
                 if (contactInfo != null)
                 {
                     //mdDistributor.distributorContact__CI_ResponsibleParty =
                     object ciRP = new CI_ResponsibleParty();
-                    extractXmlContentwReflection(ref ciRP, contactInfo);
-                    mdDistributor.distributorContact__CI_ResponsibleParty = (CI_ResponsibleParty)ciRP;
+                    extractXmlContentwReflection(ref ciRP, contactInfo.FirstChild);
+                    mdDistributor.distributorContact = (CI_ResponsibleParty)ciRP;
                 }
 
                 pname = "distributionOrderProcess__MD_StandardOrderProcess";
                 kv = kvList.Find(delegate(KeyValuePair<string, string> kv1){ return kv1.Key == pname; });
-                XmlNodeList mdSOPList = gmddistributor.SelectNodes(kv.Value);
+                XmlNodeList mdSOPList = gmddistributor.SelectNodes("." + kv.Value);
                 if (mdSOPList != null)
                 {                    
                     
@@ -496,7 +497,7 @@ namespace EmeLibrary
                 }
                 pname = "distributorFormat__MD_Format";
                 kv = kvList.Find(delegate(KeyValuePair<string, string> kv1) { return kv1.Key == pname; });
-                XmlNodeList mdFormatList = gmddistributor.SelectNodes(kv.Value);
+                XmlNodeList mdFormatList = gmddistributor.SelectNodes("." + kv.Value);
                 if (mdFormatList != null)
                 {
                     foreach (XmlNode mdFormatNode in mdFormatList)
@@ -509,7 +510,7 @@ namespace EmeLibrary
 
                 pname = "distributorTransferOptions__MD_DigitalTransferOptions";
                 kv = kvList.Find(delegate(KeyValuePair<string, string> kv1) { return kv1.Key == pname; });
-                XmlNodeList mdDigiTransferList = gmddistributor.SelectNodes(kv.Value);
+                XmlNodeList mdDigiTransferList = gmddistributor.SelectNodes("." + kv.Value);
                 if (mdDigiTransferList != null)
                 {
                     foreach (XmlNode mdDigiTransferNode in mdDigiTransferList)
@@ -552,17 +553,18 @@ namespace EmeLibrary
             }
             if (extraDistributor.distributorFormat__MD_Format.Count > 0 || extraDistributor.distributorTransferOptions__MD_DigitalTransferOptions.Count > 0)
             {
-                extraDistributor.distributorContact__CI_ResponsibleParty.individualName = "Content Missing, Add A Contact";
-                extraDistributor.distributorContact__CI_ResponsibleParty.role = "distributor";
+                extraDistributor.distributorContact.individualName = "Content Missing, Add A Contact";
+                extraDistributor.distributorContact.role = "distributor";
                 _distributionInfo__MD_Distribution.Add(extraDistributor);
-            }
-
-
-            
+            }           
            
             
         }
-
+        /// <summary>
+        /// Returns the xpath expression based on the structure of class property names.
+        /// </summary>
+        /// <param name="classToParseXmlParentNodeList"></param>
+        /// <returns></returns>
         private List<KeyValuePair<string,string>> extractPartentXmlElementNameFromClass(object classToParseXmlParentNodeList)
         {
             List<KeyValuePair<string, string>> tempList = new List<KeyValuePair<string,string>>();
@@ -573,8 +575,8 @@ namespace EmeLibrary
             foreach (PropertyInfo p in propInfo2)
             {                
                 StringBuilder childNodeXpath = new StringBuilder();
-                childNodeXpath.Append("." + className);
-
+                //childNodeXpath.Append("." + className);
+                childNodeXpath.Append(className);
                 string[] splitby = new string[] { "__" };
                 string[] nameParts = p.Name.Split(splitby, StringSplitOptions.RemoveEmptyEntries);
                 foreach (string entry in nameParts)
@@ -744,8 +746,8 @@ namespace EmeLibrary
             constructIdInfo_MD_DataIdentificationSection();
             
             //Section 18 distributionInfo Section
-           
-            //constructDistInfo_MD_Distribution
+
+            construct_distributionInfoSection();
 
             //Clean up the document and remove empty nodes under the root node
             XmlNodeList emptyNodes = outboundMetadataRecord.DocumentElement.ChildNodes;
@@ -950,6 +952,11 @@ namespace EmeLibrary
 
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="CI_ResponsiblePartyList"></param>
+        /// <param name="xpathToCI_ResponsiblePartySection">The Complete Xpath Expression from Root to the Parent section containing the CI_ResponsibleParty object</param>
         private void constructCI_ResponsiblePartyMarkUp(List<CI_ResponsibleParty> CI_ResponsiblePartyList, string xpathToCI_ResponsiblePartySection)
         {
             //*This is a repeating section.  Grab one from the template and then repeat for each object in the list
@@ -1018,12 +1025,151 @@ namespace EmeLibrary
 
                 }
                 XmlNode ciSection = outboundMetadataRecord.DocumentElement.SelectNodes(xpathToCI_ResponsiblePartySection)[i];
-
-
+                
                 i++;
             }
 
-        }                   
+        }
+        /// <summary>
+        /// Pass in a deep clone of the template node and the class containing values.  The class will be used to create the
+        /// Xpath and populate each corresponding Element.  Unpopulated elements will be removed.  The returned XmlNode
+        /// will need be handled.
+        /// </summary>
+        /// <param name="objectContainingValues"></param>
+        /// <param name="templateNodeClone"></param>
+        /// <returns></returns>
+        private XmlNode constructNodeFragment(object objectContainingValues, XmlNode templateNodeClone)
+        {
+            //XmlNode nodeFragment = templateNodeFromMetadataRecord;
+
+            object rpobj = objectContainingValues;
+            PropertyInfo[] propInfo2 = rpobj.GetType().GetProperties();
+            //ToDo:  Not sure if we need an Xpath expression List, but if so, we can do that here
+            //responsiblePartySubSectionXpath = new List<string>();
+            foreach (PropertyInfo p in propInfo2)
+            {
+                string childNodeXpath = ".";
+                string[] splitby = new string[] { "__" };
+                string[] nameParts = p.Name.Split(splitby, StringSplitOptions.RemoveEmptyEntries);
+                foreach (string entry in nameParts)
+                {
+                    childNodeXpath += "/*[local-name()='" + entry + "']";
+                }
+                string nodeValue = (p.GetValue(objectContainingValues, null) != null) ? p.GetValue(objectContainingValues, null).ToString() : "";
+                XmlNode targetNode = templateNodeClone.SelectSingleNode(childNodeXpath);
+                if (targetNode != null)
+                {
+                    //If the value is null or empty from the class then remove it except for rolecode
+                    if (nodeValue == "")
+                    {
+                        //Delete the node
+                        //targetNode.ParentNode.RemoveChild(targetNode);
+                        targetNode.RemoveAll();
+                        removeEmptyParentNodes(targetNode);
+                    }
+                    else
+                    {
+                        if (targetNode.HasChildNodes == true)
+                        {
+                            targetNode.FirstChild.InnerText = nodeValue;
+                            if (targetNode.FirstChild.NodeType != XmlNodeType.Text)
+                            {
+                                //Console.WriteLine("Parent NodeType: " + targetNode.NodeType.ToString() + " ChildNode Type: " + targetNode.FirstChild.NodeType.ToString());
+                                //XmlNode firstCNode = targetNode.FirstChild;
+                                XmlNode attributeNode = targetNode.FirstChild.Attributes["codeListValue"];
+                                if (attributeNode != null) { targetNode.FirstChild.Attributes["codeListValue"].Value = nodeValue; }
+                            }
+                        }
+                        else { targetNode.InnerText = nodeValue; }                        
+                    }
+                }
+
+            }            
+            return templateNodeClone;
+        }
+
+        /// <summary>
+        /// Overloaded Method to Replace an Existing CI_ResponsibleParty at the specified node
+        /// </summary>
+        /// <param name="CI_ResponsiblePartyItem"></param>
+        /// <param name="outboundResponsiblePartySection">Existing Node Refernce To be replaced</param>
+        /// <param name="xpathToCI_ResponsiblePartySection">Xpath to a template CI_Responsible Party Section</param>
+        private void constructCI_ResponsiblePartyMarkUp(CI_ResponsibleParty CI_ResponsiblePartyItem, XmlNode outboundResponsiblePartySection,
+            string xpathToCI_ResponsiblePartySection)
+        {
+            //*This is a repeating section.  Grab one from the template and then repeat for each object in the list
+            //1. Grab the correct CI_RP section from the template metadata record
+            //2. Loop thru each sub-element and add the values.  Handle Codelist values
+            //3. Remove any un-populated elements (remove *template*)
+            //4. Append into the outgoing record.  **This assumes there are not nodes after this section.
+            //XmlNodeList nodeListforCI_RpSection; // = templateMetadataRecord.SelectSingleNode            
+            
+            //int i = 0;//use as insertion index for repeated sections.
+            CI_ResponsibleParty rpObject = CI_ResponsiblePartyItem;
+            //foreach (CI_ResponsibleParty rpObject in CI_ResponsiblePartyList)
+            //{
+                XmlNode responsiblePartySectionTemplate = templateMetadataRecord.DocumentElement.SelectSingleNode(xpathToCI_ResponsiblePartySection).CloneNode(true);
+                //XmlNodeList nodeListforCI_RpSection = responsiblePartySectionTemplate.                
+                //CI_ResponsibleParty rp = new CI_ResponsibleParty();
+                object rpobj = rpObject;
+                PropertyInfo[] propInfo2 = rpobj.GetType().GetProperties();
+                //ToDo:  Not sure if we need an Xpath expression List, but if so, we can do that here
+                //responsiblePartySubSectionXpath = new List<string>();
+                foreach (PropertyInfo p in propInfo2)
+                {
+                    string childNodeXpath = ".";
+                    string[] splitby = new string[] { "__" };
+                    string[] nameParts = p.Name.Split(splitby, StringSplitOptions.RemoveEmptyEntries);
+                    foreach (string entry in nameParts)
+                    {
+                        childNodeXpath += "/*[local-name()='" + entry + "']";
+                    }
+                    string nodeValue = (p.GetValue(rpObject, null) != null) ? p.GetValue(rpObject, null).ToString() : "";
+                    XmlNode targetNode = responsiblePartySectionTemplate.FirstChild.SelectSingleNode(childNodeXpath);
+                    if (targetNode != null)
+                    {
+                        //If the value is null or empty from the class then remove it except for rolecode
+                        if (nodeValue == "" && p.Name != "role")
+                        {
+                            //Delete the node
+                            //targetNode.ParentNode.RemoveChild(targetNode);
+                            targetNode.RemoveAll();
+                            removeEmptyParentNodes(targetNode);
+                        }
+                        else
+                        {
+                            if (targetNode.HasChildNodes == true) { targetNode.FirstChild.InnerText = nodeValue; }
+                            else { targetNode.InnerText = nodeValue; }
+                            if (p.Name == "role") { targetNode.FirstChild.Attributes["codeListValue"].Value = nodeValue; }
+
+                        }
+                    }
+
+                }
+                //All values Set.  Now insert into the outgoing document
+                //Based on the template record, there should be at least 1 occurance of a contact node.  The first CI_RP list item
+                //will replace the contents of that node.  Additional list items will be inserted after the last inserted item.  THis 
+                //is tracked by incrementing the int i variable
+
+                XmlNode firstCiRpSection = outboundResponsiblePartySection;
+                    //outboundMetadataRecord.DocumentElement.SelectSingleNode(xpathToCI_ResponsiblePartySection);
+                XmlNode ci_rpSectionImporter = outboundMetadataRecord.ImportNode(responsiblePartySectionTemplate, true);
+                //if (i == 0)
+                //{
+                    firstCiRpSection.ParentNode.ReplaceChild(ci_rpSectionImporter, firstCiRpSection);
+                //}
+                //else
+                //{
+                //    //Append additional occurances after the last inserted
+                //    XmlNode lastInsertedNodeRef = outboundMetadataRecord.DocumentElement.SelectNodes(xpathToCI_ResponsiblePartySection)[i - 1];
+                //    firstCiRpSection.ParentNode.InsertAfter(ci_rpSectionImporter, lastInsertedNodeRef);
+
+                //}
+                //XmlNode ciSection = outboundMetadataRecord.DocumentElement.SelectNodes(xpathToCI_ResponsiblePartySection)[i];
+                //i++;
+            //}
+
+        }                  
 
         private XmlNode constructIsoTopicCategorySection()
         {                        
@@ -1089,53 +1235,156 @@ namespace EmeLibrary
 
         private void construct_distributionInfoSection()
         {
-            //Create a key,value pair of element name and xpath to get to each child node
-            MD_Distributor mdDistributor = new MD_Distributor();
-            object distRP = mdDistributor;
+            //The root section should already exist.  Start inserting each subsection as needed
 
-            List<KeyValuePair<string, string>> kvList = extractPartentXmlElementNameFromClass(distRP);
-            for (int i = 0; i < kvList.Count; i++)
-            {
-                Console.WriteLine("Key " + kvList[i].Key.ToString()
-                    + "  Value: " + kvList[i].Value.ToString());
-            }
+            //All child elements will be nested below the distributor parent element
+            //A document could have multiple distributor elements
+            //Will need to keep track the order in which they get inserted. 1 gmd:distributor for each CI_RP
+            ////<gmd:distributionInfo>
+            //      //<gmd:MD_Distribution>
+            //           //<gmd:distributor> [1-N]
+            //                //MD_Distributor [1-1]  Set of information per distributorContact
+            //                   //<gmd:distributorContact> 1-1!!
+            //                         //CiRP...
+            //                   //remaining sub elements per distributorContact
 
             if (_distributionInfo__MD_Distribution.Count > 0)
             {
+                //MD_Distribution
+                string distInfoChildNodeXpath = "./*[local-name()='distributionInfo']/*[local-name()='MD_Distribution']";
+                constructChildNodeUnderParent(
+                    outboundMetadataRecord.DocumentElement.SelectSingleNode("./*[local-name()='distributionInfo']"),
+                    distInfoChildNodeXpath,
+                    null, false, false, false);
+                
+                int distributorIndex = 0;
                 foreach (MD_Distributor distributorItem in _distributionInfo__MD_Distribution)
                 {
-                    //Should be able to re-use the create CI_ResponsibleParty code Section
-                    //Requires a ciRP list, but could just pass in a one item list.
-                    List<CI_ResponsibleParty> tempCiRPList = new List<CI_ResponsibleParty>();
-                    tempCiRPList.Add(distributorItem.distributorContact__CI_ResponsibleParty);
+                    //distributor;  Repeating.  Need to track the index of this element for all child elements for Xpath Expressions
+                    //              Each distributor will element will be appended after the last distributor section.
+                    constructChildNodeUnderParent(
+                        outboundMetadataRecord.DocumentElement.SelectSingleNode(distInfoChildNodeXpath),
+                        IsoNodeXpaths.distributionInfo__MD_DistributionXpath,
+                        null,false,false,false);
+                
+                    //MD_Distributor; Occurs once under the parent distributor.  Insert into corresponding distributor parent using distributorIndex
+                    constructChildNodeUnderParent(
+                      outboundMetadataRecord.DocumentElement.SelectNodes(IsoNodeXpaths.distributionInfo__MD_DistributionXpath)[distributorIndex],
+                      IsoNodeXpaths.distributionInfo__MD_DistributionXpath + "/*[local-name()='MD_Distributor']",
+                      null, false, false, false);
+                    
+                    
+                    //Create a key,value pair of element name and xpath to get to each child node
+                    MD_Distributor mdDistributor = new MD_Distributor();
+                    object distRP = mdDistributor;
 
-                    string pname = "distributorContact__CI_ResponsibleParty";
+                    List<KeyValuePair<string, string>> kvList = extractPartentXmlElementNameFromClass(distRP);
+                    //for (int i = 0; i < kvList.Count; i++)
+                    //{
+                    //    Console.WriteLine("Key " + kvList[i].Key.ToString()
+                    //        + "  Value: " + kvList[i].Value.ToString());
+                    //}
+                                  
+
+                    //Under this node include only one CI_Responsible Party Package
+                    //string pname = "distributorContact__CI_ResponsibleParty";
+                    string pname = "distributorContact";
                     KeyValuePair<string, string> kv = kvList.Find(delegate(KeyValuePair<string, string> kv1) { return kv1.Key == pname; });
-                    //Check the expath.  This might change the method below
-                    constructCI_ResponsiblePartyMarkUp(tempCiRPList, kv.Value);
-                    //Key distributorContact__CI_ResponsibleParty  
-                    //Value:./*[local-name()='MD_Distributor']/*[local-name()='distributorContact']/*[local-name()='CI_ResponsibleParty']
-
+                    
+                    XmlNode distributorContactAtIndex = outboundMetadataRecord.DocumentElement.SelectNodes(
+                        IsoNodeXpaths.distributionInfo__MD_DistributionXpath)[distributorIndex].SelectSingleNode("./*[local-name()='MD_Distributor']");
+                    
+                    constructChildNodeUnderParent(
+                        distributorContactAtIndex,
+                        IsoNodeXpaths.distributionInfo__MD_DistributionXpath + "/*[local-name()='MD_Distributor']/*[local-name()='distributorContact']",
+                        null, false, false, false);
+                    
+                    constructCI_ResponsiblePartyMarkUp(distributorItem.distributorContact, 
+                        distributorContactAtIndex.FirstChild, IsoNodeXpaths.distributionInfo__MD_DistributionXpath + kv.Value);
+                                        
+                    
                     if (distributorItem.distributionOrderProcess__MD_StandardOrderProcess.Count > 0)
                     {
                         //Key distributionOrderProcess__MD_StandardOrderProcess  
                         //Value: ./*[local-name()='MD_Distributor']/*[local-name()='distributionOrderProcess']/*[local-name()='MD_StandardOrderProcess']
+                        //Repeat the
+                        int SOPindex = 0;
+                        foreach (MD_StandardOrderProcess SOP in distributorItem.distributionOrderProcess__MD_StandardOrderProcess)
+                        {
+                            //For Each, clone, assign values, removed unused elements, then insert.
+                            string SOPXpath =
+                                "./*[local-name()='distributionInfo']/*[local-name()='MD_Distribution']/*[local-name()='distributor']/*[local-name()='MD_Distributor']/*[local-name()='distributionOrderProcess']";
+                            
+                            XmlNode templateSectionNodeClone = templateMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.distributionInfo__MD_DistributionXpath)
+                                .SelectSingleNode("./*[local-name()='MD_Distributor']/*[local-name()='distributionOrderProcess']/*[local-name()='MD_StandardOrderProcess']")
+                                .CloneNode(true);
+                            XmlNode processedSOPSection =  constructNodeFragment(SOP, templateSectionNodeClone);
+                            
+                            constructChildNodeUnderParent(distributorContactAtIndex,
+                                SOPXpath,
+                                null, false,false,false);
+                            XmlNode SOPElementAtIndex = distributorContactAtIndex.SelectNodes("./*[local-name()='distributionOrderProcess']")[SOPindex];
+                            
+                            constructChildNodeUnderParent(SOPElementAtIndex, processedSOPSection, true);
+
+                            SOPindex++;
+
+                            //string s = SOP.fees + SOP.plannedAvailableDateTime + SOP.orderingInstructions + SOP.turnaround;
+                        }
 
                     }
                     if (distributorItem.distributorFormat__MD_Format.Count > 0)
                     {
                         //Key distributorFormat__MD_Format  
                         //Value: ./*[local-name()='MD_Distributor']/*[local-name()='distributorFormat']/*[local-name()='MD_Format']
+                        int MDFindex = 0;
+                        foreach (MD_Format MDF in distributorItem.distributorFormat__MD_Format)
+                        {
+                            string MSFXpath =
+                                "./*[local-name()='distributionInfo']/*[local-name()='MD_Distribution']/*[local-name()='distributor']/*[local-name()='MD_Distributor']/*[local-name()='distributorFormat']";
+                            XmlNode templateSectionNodeClone = templateMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.distributionInfo__MD_DistributionXpath)
+                                .SelectSingleNode("./*[local-name()='MD_Distributor']/*[local-name()='distributorFormat']/*[local-name()='MD_Format']")
+                                .CloneNode(true);
+                            XmlNode processedSOPSection = constructNodeFragment(MDF, templateSectionNodeClone);
+
+                            constructChildNodeUnderParent(distributorContactAtIndex,
+                                MSFXpath,
+                                null, false, false, false);
+                            XmlNode SOPElementAtIndex = distributorContactAtIndex.SelectNodes("./*[local-name()='distributorFormat']")[MDFindex];
+
+                            constructChildNodeUnderParent(SOPElementAtIndex, processedSOPSection, true);
+                            
+                            MDFindex++;
+                            
+                        }
 
                     }
                     if (distributorItem.distributorTransferOptions__MD_DigitalTransferOptions.Count > 0)
                     {
                         //Key distributorTransferOptions__MD_DigitalTransferOptions  
                         //Value: ./*[local-name()='MD_Distributor']/*[local-name()='distributorTransferOptions']/*[local-name()='MD_DigitalTransferOptions']
+                        int DTOindex = 0;
+                        foreach (MD_DigitalTransferOptions DTO in distributorItem.distributorTransferOptions__MD_DigitalTransferOptions)
+                        {
+                            string DTOXpath =
+                                "./*[local-name()='distributionInfo']/*[local-name()='MD_Distribution']/*[local-name()='distributor']/*[local-name()='MD_Distributor']/*[local-name()='distributorTransferOptions']";
+                            XmlNode templateSectionNodeClone = templateMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.distributionInfo__MD_DistributionXpath)
+                                .SelectSingleNode("./*[local-name()='MD_Distributor']/*[local-name()='distributorTransferOptions']/*[local-name()='MD_DigitalTransferOptions']")
+                                .CloneNode(true);
+                            XmlNode processedDTOSection = constructNodeFragment(DTO, templateSectionNodeClone);
 
+                            constructChildNodeUnderParent(distributorContactAtIndex,
+                                DTOXpath,
+                                null, false, false, false);
+                            XmlNode DTOElementAtIndex = distributorContactAtIndex.SelectNodes("./*[local-name()='distributorTransferOptions']")[DTOindex];
+
+                            constructChildNodeUnderParent(DTOElementAtIndex, processedDTOSection, true);
+
+                            DTOindex++;
+                        }
                     }
-                    
 
+                    distributorIndex++;
                 }
             }
 
@@ -1252,14 +1501,14 @@ namespace EmeLibrary
     public class MD_Distributor
     {
         //Per distributor can have multiple distributionFormats and transfer options!
-        public CI_ResponsibleParty distributorContact__CI_ResponsibleParty { get; set; }
+        public CI_ResponsibleParty distributorContact { get; set; }
         public List<MD_StandardOrderProcess> distributionOrderProcess__MD_StandardOrderProcess { get; set; }
         public List<MD_Format> distributorFormat__MD_Format { get; set; }        
         public List<MD_DigitalTransferOptions> distributorTransferOptions__MD_DigitalTransferOptions { get; set; }
         
         public MD_Distributor()
         {
-            distributorContact__CI_ResponsibleParty = new CI_ResponsibleParty();
+            distributorContact = new CI_ResponsibleParty();
             distributionOrderProcess__MD_StandardOrderProcess = new List<MD_StandardOrderProcess>();
             distributorFormat__MD_Format = new List<MD_Format>();
             distributorTransferOptions__MD_DigitalTransferOptions = new List<MD_DigitalTransferOptions>();
@@ -1304,7 +1553,7 @@ namespace EmeLibrary
         public string offLine__MD_Medium__densityUnits { get; set; }
         public string offLine__MD_Medium__volumes { get; set; }  //Int
         public string offLine__MD_Medium__mediumFormat { get; set; } //link to MD_MediumFormatCode Codelist
-        public string offLine__MD_Medium__mediumNode { get; set; }
+        public string offLine__MD_Medium__mediumNote { get; set; }
 
     }
 
