@@ -46,6 +46,9 @@ namespace EmeLibrary
         public string idInfo_extent_geographicBoundingBox_eastLongDDXpath { get; set; }
         public string idInfo_extent_geographicBoundingBox_southLatDDXpath { get; set; }
         public string idInfo_extent_geographicBoundingBox_northLatDDXpath { get; set; }
+        public string idInfo_extent_temporalExtentXpath { get; set; }
+        //public string idInfo_extent_temporalExtent_timePeriodXpath { get; set; }
+        //public string idInfo_extent_temporalExtent_timeInstantXpath { get; set; }
         public string distributionInfo__MD_DistributionXpath { get; set; }
         
     }

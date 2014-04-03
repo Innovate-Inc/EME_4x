@@ -61,7 +61,10 @@ namespace EmeLibrary
         private double _idInfo_extent_geographicBoundingBox_westLongDD;
         private double _idInfo_extent_geographicBoundingBox_eastLongDD;
         private double _idInfo_extent_geographicBoundingBox_southLatDD;
-        private double _idInfo_extent_geographicBoundingBox_northLatDD;
+        private double _idInfo_extent_geographicBoundingBox_northLatDD;        
+
+        private temporalElement__EX_TemporalExtent _idInfo_extent_temporalExtent;
+
 
         private List<MD_Distributor> _distributionInfo__MD_Distribution;
                
@@ -191,6 +194,11 @@ namespace EmeLibrary
             get { return _idInfo_extent_geographicBoundingBox_northLatDD; }
             set { _idInfo_extent_geographicBoundingBox_northLatDD = value; }
         }
+        public temporalElement__EX_TemporalExtent idInfo_extent_temporalExtent
+        {
+            get { return _idInfo_extent_temporalExtent; }
+            set { _idInfo_extent_temporalExtent = value; }
+        }
         public List<MD_Distributor> distributionInfo__MD_Distribution
         {
             get { return _distributionInfo__MD_Distribution; }
@@ -292,6 +300,30 @@ namespace EmeLibrary
                 _idInfo_extent_geographicBoundingBox_westLongDD = returnInnerTextfromNodeAsDouble(IsoNodeXpaths.idInfo_extent_geographicBoundingBox_westLongDDXpath);
                 _idInfo_extent_geographicBoundingBox_northLatDD= returnInnerTextfromNodeAsDouble(IsoNodeXpaths.idInfo_extent_geographicBoundingBox_northLatDDXpath);
                 _idInfo_extent_geographicBoundingBox_southLatDD = returnInnerTextfromNodeAsDouble(IsoNodeXpaths.idInfo_extent_geographicBoundingBox_southLatDDXpath);
+
+                //Check which timeExtent is found in the document... if one is found.  If not found then leave each type null?
+                //Only populate one of the extents for now, even if more are present.
+                //This grabs the first occurance of time extent
+
+                XmlNode temporalExtentNL = inboundMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.idInfo_extent_temporalExtentXpath);
+
+
+                _idInfo_extent_temporalExtent = new temporalElement__EX_TemporalExtent();
+                
+                // ./gmi:MI_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:temporalElement/gmd:EX_TemporalExtent/gmd:extent/gml:TimePeriod
+                
+                //if (_idInfo_extent_temporalExtent.TimeInstant == null) { Console.WriteLine("null"); }
+
+                //_idInfo_extent_temporalExtent.TimeInstant.extent__TimeInstant__description = "sdfsd";
+                //_idInfo_extent_temporalExtent.TimePeriod.extent__TimePeriod__description = "sdfsd";
+                //_idInfo_extent_TimeInstant
+                
+                // public string extent__TimeInstant__id { get; set; } //TimePeriod Attribute ID, unique for the set
+                //public string extent__TimeInstant__description { get; set; }
+                //public string extent__TimeInstant__timePosition { get; set; }
+                //public string extent__TimeInstant__timeInterval { get; set; }
+                //public string extent__TimeInstant__timeIntervalUnit { get; set; }
+                //handle indeterminatePosition: If timePosition not a date, then set the attribute to unknown, after, before, now
 
                 //_distributionInfo_MD_Distribution = new List<MD_Distribution>();
                 //set the private backing field directly in the method since this object only occurs in this section.
@@ -462,11 +494,11 @@ namespace EmeLibrary
                 object distRP = mdDistributor;
 
                 List<KeyValuePair<string, string>> kvList = extractPartentXmlElementNameFromClass(distRP);
-                for (int i = 0; i < kvList.Count; i++)
-                {
-                    Console.WriteLine("Key " + kvList[i].Key.ToString()
-                        + "  Value: " + kvList[i].Value.ToString());
-                }
+                //for (int i = 0; i < kvList.Count; i++)
+                //{
+                //    Console.WriteLine("Key " + kvList[i].Key.ToString()
+                //        + "  Value: " + kvList[i].Value.ToString());
+                //}
                                                  
                 //string pname = "distributorContact__CI_ResponsibleParty";
                 string pname = "distributorContact";
@@ -1557,4 +1589,38 @@ namespace EmeLibrary
 
     }
 
+    public class temporalElement__EX_TemporalExtent
+    {
+        //Potenialy coudl be a list.  Need to chose one
+        public timePeriodExtent TimePeriod { get; set; }
+        public timeInstantExtent TimeInstant { get; set; }
+        
+        //Maybe can set these to new for the one that gets implemented.  The other will be null, and not used
+        //public temporalElement__EX_TemporalExtent()
+        //{
+        //    TimePeriod = new timePeriodExtent();
+        //    TimeInstant = new timeInstantExtent();
+        //}
+    }
+
+    [StructLayout(LayoutKind.Sequential)]
+    public class timeInstantExtent
+    {
+        public string extent__TimeInstant__id { get; set; } //TimePeriod Attribute ID, unique for the set
+        public string extent__TimeInstant__description { get; set; }
+        public string extent__TimeInstant__timePosition { get; set; }        
+        //handle indeterminatePosition: If timePosition not a date, then set the attribute to unknown, after, before, now
+    }
+
+    [StructLayout(LayoutKind.Sequential)]
+    public class timePeriodExtent
+    {
+        public string extent__TimePeriod__id { get; set; }  //TimePeriod Attribute ID, unique for the set
+        public string extent__TimePeriod__description { get; set; }
+        public string extent__TimePeriod__beginPosition { get; set; }
+        public string extent__TimePeriod__endPosition { get; set; }
+        public string extent__TimePeriod__timeInterval { get; set; }
+        public string extent__TimePeriod__timeIntervalUnit { get; set; }
+        //handle indeterminatePosition: If begin/end not a date, then set the attribute to unknown,after,before,now
+    }
 }
