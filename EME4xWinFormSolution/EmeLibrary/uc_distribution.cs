@@ -121,7 +121,7 @@ namespace EmeLibrary
         {
             //Create new distributor
             MD_Distributor d1 = new MD_Distributor();
-            d1.distributorContact__CI_ResponsibleParty = null;
+            d1.distributorContact = null;
 
             //if first in list add to the list otherwise save current information in controls then add new to list
             if (_distributorList == null || _distributorList.Count == 0)
@@ -252,7 +252,7 @@ namespace EmeLibrary
             //If there is a distributor contact save to distributor class
             if (distributor_Contact.incomingCI_ResponsiblePartyList.Count == 1)
             {
-                dist.distributorContact__CI_ResponsibleParty = distributor_Contact.incomingCI_ResponsiblePartyList[0];
+                dist.distributorContact = distributor_Contact.incomingCI_ResponsiblePartyList[0];
                 
             }
             //If there is a distributor Formatt bind in the MD_Format pager
@@ -287,14 +287,13 @@ namespace EmeLibrary
             distributor_Contact.reset();    //reset uc_ResponsibleParty control
             //Set pager label
             MD_Dist_lbl.Text = (_distributorList_idx + 1).ToString() + " of " + _distributorList.Count().ToString();
-<<<<<<< HEAD
             
             //Distributor contact -- ci_responsibleParty
             //Set up the distributor contact control (uc_ResponsibleParty)
             List<CI_ResponsibleParty> dist_contactList = new List<CI_ResponsibleParty>();
-            if(dist.distributorContact__CI_ResponsibleParty != null)
+            if(dist.distributorContact != null)
             {
-                dist_contactList.Add(dist.distributorContact__CI_ResponsibleParty);
+                dist_contactList.Add(dist.distributorContact);
             }
             
             //Bind lists for pagers
@@ -305,16 +304,12 @@ namespace EmeLibrary
            //Load add distributor contact info to the distributor_contact control
             distributor_Contact.loadList(dist_contactList);
             distributor_Contact.adjustRPControl(_distributorList.Count);
-            //Call load methods for each pager, and call metthod to adjustPagers
-=======
-            distributor_Contact.loadList(dist.distributorContact);
-            //Bind MD_Format list
+            //Call load methods for each pager, and call method to adjustPagers
             _distributionFormat = dist.distributorFormat__MD_Format;
             _standardOrderProcess = dist.distributionOrderProcess__MD_StandardOrderProcess;
             _digitalTransferOptions = dist.distributorTransferOptions__MD_DigitalTransferOptions;
 
             //_distributionFormat_idx = 0;
->>>>>>> ad7f5c29732ba686ff3fd1eca8123a9ac565c2ad
             load_MD_format();
             adjustPagers(MD_Format, _distributionFormat);
             load_MD_SOP();
@@ -764,7 +759,7 @@ namespace EmeLibrary
             data.offLine__MD_Medium__densityUnits = offLine__MD_Medium__densityUnits_txt.Text;
             data.offLine__MD_Medium__volumes = offLine__MD_Medium__volumes_txt.Text;
             data.offLine__MD_Medium__mediumFormat = offLine__MD_Medium__mediumFormat_txt.Text;
-            data.offLine__MD_Medium__mediumNode = offLine__MD_Medium__mediumNode_txt.Text;
+            //data.offLine__MD_Medium__mediumNode = offLine__MD_Medium__mediumNode_txt.Text;
         }
 
         private void load_MD_DTO()
