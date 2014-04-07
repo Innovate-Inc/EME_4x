@@ -305,8 +305,56 @@ namespace EmeLibrary
                 //Only populate one of the extents for now, even if more are present.
                 //This grabs the first occurance of time extent
 
-                XmlNode temporalExtentNL = inboundMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.idInfo_extent_temporalExtentXpath);
+                XmlNode temporalExtentNode = inboundMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.idInfo_extent_temporalExtentXpath);
+                if (temporalExtentNode != null)
+                {
+                    //check with section we have.  If both time instant and time period what do we do???
+                    string tExtentName = temporalExtentNode.FirstChild.Name;
+                    if (tExtentName == "gml:TimePeriod")
+                    {
+                        timePeriodExtent tp = new timePeriodExtent();
+                        
+                        tp.extent__TimePeriod__id = "boundingTimePeriodExtent";
+                        tp.extent__TimePeriod__description = (temporalExtentNode.FirstChild.SelectSingleNode("./*[local-name()='description']") != null) ?
+                            temporalExtentNode.FirstChild.SelectSingleNode("./*[local-name()='description']").InnerText : "";
+                        //These could have the indeterminantPosition Attribute
+                        //XmlNode attributeNode = targetNode.FirstChild.Attributes["codeListValue"];
+                        //if (attributeNode != null) { targetNode.FirstChild.Attributes["codeListValue"].Value = nodeValue; }
+                        XmlNode subNode = temporalExtentNode.FirstChild.SelectSingleNode("./*[local-name()='beginPosition']");
+                        if (subNode != null)
+                        {
+                            DateTime dt;
+                            bool valueTest = DateTime.TryParse(subNode.InnerText, out dt);
 
+                            //check if there is a date that can be parsed.  If not, then check that there is an attribute with a value.  If not, then assign the 
+                            //attribute an unknown value;
+                            //XmlElement el = subNode;
+                            //el.HasAttributes
+                            //    //if (subNode.Attributes
+                        }
+                        tp.extent__TimePeriod__beginPosition = (temporalExtentNode.FirstChild.SelectSingleNode("./*[local-name()='beginPosition']") != null) ?
+                            temporalExtentNode.FirstChild.SelectSingleNode("./*[local-name()='beginPosition']").InnerText : "";
+                        tp.extent__TimePeriod__endPosition = (temporalExtentNode.FirstChild.SelectSingleNode("./*[local-name()='endPosition']") != null) ?
+                            temporalExtentNode.FirstChild.SelectSingleNode("./*[local-name()='endPosition']").InnerText : "";
+                        tp.extent__TimePeriod__timeInterval = (temporalExtentNode.FirstChild.SelectSingleNode("./*[local-name()='timeInterval']") != null) ?
+                            temporalExtentNode.FirstChild.SelectSingleNode("./*[local-name()='timeInterval']").InnerText : "";
+                        //unit is an attribute of timeInterval
+                        tp.extent__TimePeriod__timeIntervalUnit = (temporalExtentNode.FirstChild.SelectSingleNode("./*[local-name()='timeIntervalUnit']") != null) ?
+                            temporalExtentNode.FirstChild.SelectSingleNode("./*[local-name()='timeIntervalUnit']").InnerText : "";
+
+                    }
+                    else if (tExtentName == "gml:TimeInstant")
+                    {
+                        timeInstantExtent ti = new timeInstantExtent();
+                        ti.extent__TimeInstant__id = "boundingTimeInstantExtent";
+                        //ti.extent__TimeInstant__description = 
+                        //ti.extent__TimeInstant__timePosition = 
+                            
+
+                    }
+                    Console.WriteLine(tExtentName);
+
+                }
 
                 _idInfo_extent_temporalExtent = new temporalElement__EX_TemporalExtent();
                 
