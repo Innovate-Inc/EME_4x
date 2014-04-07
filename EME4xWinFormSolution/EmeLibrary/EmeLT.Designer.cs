@@ -1822,14 +1822,11 @@
             // 
             this.distributionInfo__MD_Distribution.AutoSize = true;
             this.distributionInfo__MD_Distribution.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.distributionInfo__MD_Distribution.digitalTransferOptions = null;
-            this.distributionInfo__MD_Distribution.distributionFormat = null;
             this.distributionInfo__MD_Distribution.distributorList = null;
             this.distributionInfo__MD_Distribution.Location = new System.Drawing.Point(3, 17);
             this.distributionInfo__MD_Distribution.mylabel = "Distributor";
             this.distributionInfo__MD_Distribution.Name = "distributionInfo__MD_Distribution";
             this.distributionInfo__MD_Distribution.Size = new System.Drawing.Size(463, 553);
-            this.distributionInfo__MD_Distribution.standardOrderProcess = null;
             this.distributionInfo__MD_Distribution.TabIndex = 0;
             // 
             // contact_CI_ResponsibleParty

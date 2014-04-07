@@ -152,7 +152,7 @@
         Kq4so8AAh+uLGGUN/g7KfAMZ7aZX37shcgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="add_DTO_btn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="add_MD_DTO_btn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAACXSURBVDhPpYyxDYNQEEOdLaiySCZhESbJJMkgkeio6FJR0aW6xKcE+cgJ+GDpSXeWbZjZIVKz
@@ -173,7 +173,7 @@
         Kq4so8AAh+uLGGUN/g7KfAMZ7aZX37shcgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="MD_SOP_del_btn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="del_MD_SOP_btn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAABiklEQVQ4T6VRsWoCURAUhBSB
@@ -186,7 +186,7 @@
         Kq4so8AAh+uLGGUN/g7KfAMZ7aZX37shcgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="MD_SOP_add_btn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="add_MD_SOP_btn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAACXSURBVDhPpYyxDYNQEEOdLaiySCZhESbJJMkgkeio6FJR0aW6xKcE+cgJ+GDpSXeWbZjZIVKz
@@ -194,7 +194,7 @@
         ThhQMXjp4PD+2iHvnfCIWDq3cHYPKPQ0O3Uys4TULCE1t2N4AyM5bqmfP2woAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="MD_Dist_del_btn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="del_MD_Dist_btn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAABiklEQVQ4T6VRsWoCURAUhBSB
@@ -207,7 +207,7 @@
         Kq4so8AAh+uLGGUN/g7KfAMZ7aZX37shcgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="MD_Dist_add_btn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="add_MD_Dist_btn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAACXSURBVDhPpYyxDYNQEEOdLaiySCZhESbJJMkgkeio6FJR0aW6xKcE+cgJ+GDpSXeWbZjZIVKz
