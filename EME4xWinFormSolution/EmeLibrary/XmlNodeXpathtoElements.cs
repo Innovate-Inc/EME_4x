@@ -32,6 +32,7 @@ namespace EmeLibrary
         public string idInfo_PurposeXpath { get; set; }
         public string idInfo_Status_MD_ProgressCodeXpath { get; set; }//Compound element with codelist values
         public string idInfo_pointOfContactXpath { get; set; }
+        public string idInfo_resourceMaintenanceXpath { get; set; }
 
         //public string IdInfo_keywordsIsoTopicCatListXpath { get; set; }
         public string idInfo_keywordsIsoTopicCategoryXpath { get; set; }
@@ -41,6 +42,16 @@ namespace EmeLibrary
         public string idInfo_keywordsUserXpath { get; set; }
         //public string IdInfo_keywordsPlaceListXpath { get; set; }
         public string idInfo_keywordsPlaceXpath { get; set; }
+        //Section 12 resourceConstraints
+        public string idInfo_resourceConstraints_MD_Constraints_useLimitationXpath { get; set; }
+        public string idInfo_resourceConstraints_MD_LegalConstraints_useLimitationXpath { get; set; }
+        public string idInfo_resourceConstraints_MD_LegalConstraints_accessConstraintsXpath { get; set; }
+        public string idInfo_resourceConstraints_MD_LegalConstraints_useConstraintsXpath { get; set; }
+        public string idInfo_resourceConstraints_MD_LegalConstraints_otherConstraintsXpath { get; set; }
+        public string idInfo_resourceConstraints_MD_SecurityConstraints_useLimitationXpath { get; set; }
+        public string idInfo_resourceConstraints_MD_SecurityConstraints_classificationXpath { get; set; }
+        public string idInfo_resourceConstraints_MD_SecurityConstraints_userNoteXpath { get; set; }        
+        
         public string idInfo_extent_descriptionXpath { get; set; }
         public string idInfo_extent_geographicBoundingBox_westLongDDXpath { get; set; }
         public string idInfo_extent_geographicBoundingBox_eastLongDDXpath { get; set; }

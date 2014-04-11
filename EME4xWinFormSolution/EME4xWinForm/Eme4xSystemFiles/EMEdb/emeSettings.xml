@@ -167,6 +167,12 @@
 		<Csdgm/>    
 	</emeControl>
 	<emeControl>
+		<controlName>idInfo_resourceMaintenance</controlName>
+		<Iso19115_2>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='resourceMaintenance']/*[local-name()='MD_MaintenanceInformation']/*[local-name()='maintenanceAndUpdateFrequency']</Iso19115_2>
+		<Iso19115_1/>
+		<Csdgm/>    
+	</emeControl>
+	<emeControl>
 		<controlName>idInfo_keywordsIsoTopicCategory</controlName>
 		<Iso19115_2>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='topicCategory']</Iso19115_2>
 		<Iso19115_1/>
@@ -201,6 +207,54 @@
 		<DCATrequired/>
 		<sourceTable>KeywordsPlace</sourceTable>
 		<sourceField>placekey</sourceField>
+	</emeControl>
+	<emeControl>
+		<controlName>idInfo_resourceConstraints_MD_Constraints_useLimitation</controlName>
+		<Iso19115_2>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='resourceConstraints']/*[local-name()='MD_Constraints']/*[local-name()='useLimitation']</Iso19115_2>
+		<Iso19115_1/>
+		<Csdgm/>    
+	</emeControl>
+	<emeControl>
+		<controlName>idInfo_resourceConstraints_MD_LegalConstraints_useLimitation</controlName>
+		<Iso19115_2>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='resourceConstraints']/*[local-name()='MD_LegalConstraints']/*[local-name()='useLimitation']</Iso19115_2>
+		<Iso19115_1/>
+		<Csdgm/>    
+	</emeControl>
+	<emeControl>
+		<controlName>idInfo_resourceConstraints_MD_LegalConstraints_accessConstraints</controlName>
+		<Iso19115_2>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='resourceConstraints']/*[local-name()='MD_LegalConstraints']/*[local-name()='accessConstraints']</Iso19115_2>
+		<Iso19115_1/>
+		<Csdgm/>    
+	</emeControl>
+	<emeControl>
+		<controlName>idInfo_resourceConstraints_MD_LegalConstraints_useConstraints</controlName>
+		<Iso19115_2>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='resourceConstraints']/*[local-name()='MD_LegalConstraints']/*[local-name()='useConstraints']</Iso19115_2>
+		<Iso19115_1/>
+		<Csdgm/>    
+	</emeControl>
+	<emeControl>
+		<controlName>idInfo_resourceConstraints_MD_LegalConstraints_otherConstraints</controlName>
+		<Iso19115_2>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='resourceConstraints']/*[local-name()='MD_LegalConstraints']/*[local-name()='otherConstraints']</Iso19115_2>
+		<Iso19115_1/>
+		<Csdgm/>    
+	</emeControl>
+	<emeControl>
+		<controlName>idInfo_resourceConstraints_MD_SecurityConstraints_useLimitation</controlName>
+		<Iso19115_2>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='resourceConstraints']/*[local-name()='MD_SecurityConstraints']/*[local-name()='useLimitation']</Iso19115_2>
+		<Iso19115_1/>
+		<Csdgm/>    
+	</emeControl>
+	<emeControl>
+		<controlName>idInfo_resourceConstraints_MD_SecurityConstraints_classification</controlName>
+		<Iso19115_2>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='resourceConstraints']/*[local-name()='MD_SecurityConstraints']/*[local-name()='classification']</Iso19115_2>
+		<Iso19115_1/>
+		<Csdgm/>    
+	</emeControl>
+	<emeControl>
+		<controlName>idInfo_resourceConstraints_MD_SecurityConstraints_userNote </controlName>
+		<Iso19115_2>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='resourceConstraints']/*[local-name()='MD_SecurityConstraints']/*[local-name()='userNote']</Iso19115_2>
+		<Iso19115_1/>
+		<Csdgm/>    
 	</emeControl>
 	<emeControl>
 		<controlName>idInfo_extent_description</controlName>

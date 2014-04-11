@@ -378,7 +378,7 @@
 			<gmd:resourceMaintenance>
 				<gmd:MD_MaintenanceInformation>
 					<gmd:maintenanceAndUpdateFrequency>
-						<gmd:MD_MaintenanceFrequencyCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_MaintenanceFrequencyCode" codeListValue="*template*" codeSpace="*template*">*template*</gmd:MD_MaintenanceFrequencyCode>
+						<gmd:MD_MaintenanceFrequencyCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_MaintenanceFrequencyCode" codeListValue="*template*">*template*</gmd:MD_MaintenanceFrequencyCode>
 					</gmd:maintenanceAndUpdateFrequency>
 				</gmd:MD_MaintenanceInformation>
 			</gmd:resourceMaintenance>
@@ -437,17 +437,40 @@
 				</gmd:MD_Keywords>
 			</gmd:descriptiveKeywords>
 			<gmd:resourceConstraints>
+				<gmd:MD_Constraints>					
+					<gmd:useLimitation>
+						<gco:CharacterString>*template*</gco:CharacterString>
+					</gmd:useLimitation>
+				</gmd:MD_Constraints>
+			</gmd:resourceConstraints>
+			<gmd:resourceConstraints>
 				<gmd:MD_LegalConstraints>
+					<gmd:useLimitation>
+						<gco:CharacterString>*template*</gco:CharacterString>
+					</gmd:useLimitation>
 					<gmd:accessConstraints>
-						<gmd:MD_RestrictionCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_RestrictionCode" codeListValue="otherRestrictions" codeSpace="008">otherRestrictions</gmd:MD_RestrictionCode>
+						<gmd:MD_RestrictionCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_RestrictionCode" codeListValue="*template*">*template*</gmd:MD_RestrictionCode>
 					</gmd:accessConstraints>
 					<gmd:useConstraints>
-						<gmd:MD_RestrictionCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_RestrictionCode" codeListValue="otherRestrictions" codeSpace="008">otherRestrictions</gmd:MD_RestrictionCode>
+						<gmd:MD_RestrictionCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_RestrictionCode" codeListValue="*template*">*template*</gmd:MD_RestrictionCode>
 					</gmd:useConstraints>
 					<gmd:otherConstraints>
-						<gco:CharacterString>Access Constraints: *template*  Use Constraints: *template*</gco:CharacterString>
+						<gco:CharacterString>*template*</gco:CharacterString>
 					</gmd:otherConstraints>
 				</gmd:MD_LegalConstraints>
+			</gmd:resourceConstraints>
+			<gmd:resourceConstraints>
+				<gmd:MD_SecurityConstraints>
+					<gmd:useLimitation>
+						<gco:CharacterString>*template*</gco:CharacterString>
+					</gmd:useLimitation>
+					<gmd:classification>
+						<gmd:MD_ClassificationCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ClassificationCode" codeListValue="*template*">*template*</gmd:MD_ClassificationCode>
+					</gmd:classification>
+					<gmd:userNote>
+						<gco:CharacterString>*template*</gco:CharacterString>
+					</gmd:userNote>					
+				</gmd:MD_SecurityConstraints>
 			</gmd:resourceConstraints>
 			<gmd:language>
 				<gco:CharacterString>eng; USA</gco:CharacterString>
@@ -479,11 +502,22 @@
 					<gmd:temporalElement>
 						<gmd:EX_TemporalExtent>
 							<gmd:extent>
-								<gml:TimePeriod gml:id="boundingTemporalExtent">
-									<gml:description>ground condition</gml:description>
+								<gml:TimePeriod gml:id="boundingTimePeriodExtent">
+									<gml:description>*template*</gml:description>
 									<gml:beginPosition>*template*</gml:beginPosition>
 									<gml:endPosition>*template*</gml:endPosition>
+									<gml:timeInterval unit="UnitValue">*template*</gml:timeInterval>
 								</gml:TimePeriod>
+							</gmd:extent>
+						</gmd:EX_TemporalExtent>
+					</gmd:temporalElement>
+					<gmd:temporalElement>
+						<gmd:EX_TemporalExtent>
+							<gmd:extent>
+								<gml:TimeInstant gml:id="boundingTimeInstantExtent">
+									<gml:description>*template*</gml:description>
+									<gml:timePosition>*template*</gml:timePosition>
+								</gml:TimeInstant>
 							</gmd:extent>
 						</gmd:EX_TemporalExtent>
 					</gmd:temporalElement>

@@ -49,13 +49,21 @@ namespace EmeLibrary
         private string _idInfo_purpose;
         private string _idInfo_status_MD_ProgressCode;
         private List<CI_ResponsibleParty> idinfoPointOfContact;
-        //Section 7 resource Maintenance (repeatable
-
-
+        private string _idInfo_resourceMaintenance;
+        
         private List<string> kwEpaList;
         private List<string> kwUserList;
         private List<string> kwPlaceList;
         private List<string> kwIsoTopicCatList;
+
+        private string _idInfo_resourceConstraints_MD_Constraints_useLimitation;
+        private string _idInfo_resourceConstraints_MD_LegalConstraints_useLimitation;
+        private string _idInfo_resourceConstraints_MD_LegalConstraints_accessConstraints;
+        private string _idInfo_resourceConstraints_MD_LegalConstraints_useConstraints;
+        private string _idInfo_resourceConstraints_MD_LegalConstraints_otherConstraints;
+        private string _idInfo_resourceConstraints_MD_SecurityConstraints_useLimitation;
+        private string _idInfo_resourceConstraints_MD_SecurityConstraints_classification;
+        private string _idInfo_resourceConstraints_MD_SecurityConstraints_userNote;
 
         private string _idInfo_extent_description;
         private double _idInfo_extent_geographicBoundingBox_westLongDD;
@@ -149,6 +157,11 @@ namespace EmeLibrary
             get { return idinfoPointOfContact; }
             set { idinfoPointOfContact = value; }
         }
+        public string idInfo_resourceMaintenance
+        {
+            get { return _idInfo_resourceMaintenance; }
+            set { _idInfo_resourceMaintenance = value; }
+        }
         public List<string> idInfo_keywordsEpa
         {
             get { return kwEpaList; }
@@ -169,6 +182,43 @@ namespace EmeLibrary
             get { return kwIsoTopicCatList; }
             set { kwIsoTopicCatList = value; }
         }
+        //Section 12
+        public string idInfo_resourceConstraints_MD_Constraints_useLimitation
+        {
+            get { return _idInfo_resourceConstraints_MD_Constraints_useLimitation; }
+            set { _idInfo_resourceConstraints_MD_Constraints_useLimitation = value; }
+        }
+        public string idInfo_resourceConstraints_MD_LegalConstraints_accessConstraints
+        {
+            get {return _idInfo_resourceConstraints_MD_LegalConstraints_accessConstraints; }
+            set { _idInfo_resourceConstraints_MD_LegalConstraints_accessConstraints = value; }
+        }
+        public string idInfo_resourceConstraints_MD_LegalConstraints_useConstraints
+        {
+            get { return _idInfo_resourceConstraints_MD_LegalConstraints_useConstraints ; }
+            set { _idInfo_resourceConstraints_MD_LegalConstraints_useConstraints = value; }
+        }
+        public string idInfo_resourceConstraints_MD_LegalConstraints_otherConstraints
+        {
+            get { return _idInfo_resourceConstraints_MD_LegalConstraints_otherConstraints; }
+            set { _idInfo_resourceConstraints_MD_LegalConstraints_otherConstraints = value;}
+        }
+        public string idInfo_resourceConstraints_MD_SecurityConstraints_useLimitation
+        {
+            get { return _idInfo_resourceConstraints_MD_SecurityConstraints_useLimitation ; }
+            set {_idInfo_resourceConstraints_MD_SecurityConstraints_useLimitation  = value; }
+        }
+        public string idInfo_resourceConstraints_MD_SecurityConstraints_classification
+        {
+            get { return _idInfo_resourceConstraints_MD_SecurityConstraints_classification; }
+            set {_idInfo_resourceConstraints_MD_SecurityConstraints_classification  = value; }
+        }
+        public string idInfo_resourceConstraints_MD_SecurityConstraints_userNote
+        {
+            get { return _idInfo_resourceConstraints_MD_SecurityConstraints_userNote; }
+            set { _idInfo_resourceConstraints_MD_SecurityConstraints_userNote = value; }
+        }
+        //Section 20
         public string idInfo_extent_description
         {
             get { return _idInfo_extent_description; }
@@ -289,12 +339,33 @@ namespace EmeLibrary
                 _idInfo_status_MD_ProgressCode = returnInnerTextfromNode(IsoNodeXpaths.idInfo_Status_MD_ProgressCodeXpath);
                 idinfoPointOfContact = returnCI_ResponsiblePartyList(IsoNodeXpaths.idInfo_pointOfContactXpath);
 
+                //Section 7 resourceMaintenance
+                _idInfo_resourceMaintenance = returnInnerTextfromNode(IsoNodeXpaths.idInfo_resourceMaintenanceXpath);
+
                 kwEpaList = returnListFromKeywordSection(IsoNodeXpaths.idInfo_keywordsEpaXpath, "./*[local-name()='MD_Keywords']/*[local-name()='keyword']");
                 //returnListFromNodeList(inboundMetadataRecord.DocumentElement.SelectNodes(IsoNodeXpaths.IdInfo_keywordsEpaListXpath));
                 kwPlaceList = returnListFromKeywordSection(IsoNodeXpaths.idInfo_keywordsPlaceXpath, "./*[local-name()='MD_Keywords']/*[local-name()='keyword']");
                 kwUserList = returnListFromKeywordSection(IsoNodeXpaths.idInfo_keywordsUserXpath, "./*[local-name()='MD_Keywords']/*[local-name()='keyword']");
                 kwIsoTopicCatList = returnListFromKeywordSection(IsoNodeXpaths.idInfo_keywordsIsoTopicCategoryXpath, "./*[local-name()='MD_TopicCategoryCode']");
                 
+                //Section 12 resourceConstraints
+                _idInfo_resourceConstraints_MD_Constraints_useLimitation = 
+                    returnInnerTextfromNode(IsoNodeXpaths.idInfo_resourceConstraints_MD_Constraints_useLimitationXpath);
+                _idInfo_resourceConstraints_MD_LegalConstraints_useLimitation = 
+                    returnInnerTextfromNode(IsoNodeXpaths.idInfo_resourceConstraints_MD_LegalConstraints_useLimitationXpath);
+                _idInfo_resourceConstraints_MD_LegalConstraints_accessConstraints = 
+                    returnInnerTextfromNode(IsoNodeXpaths.idInfo_resourceConstraints_MD_LegalConstraints_accessConstraintsXpath);
+                _idInfo_resourceConstraints_MD_LegalConstraints_useConstraints =
+                    returnInnerTextfromNode(IsoNodeXpaths.idInfo_resourceConstraints_MD_LegalConstraints_useConstraintsXpath);
+                _idInfo_resourceConstraints_MD_LegalConstraints_otherConstraints =
+                    returnInnerTextfromNode(IsoNodeXpaths.idInfo_resourceConstraints_MD_LegalConstraints_otherConstraintsXpath);
+                _idInfo_resourceConstraints_MD_SecurityConstraints_useLimitation =
+                    returnInnerTextfromNode(IsoNodeXpaths.idInfo_resourceConstraints_MD_SecurityConstraints_useLimitationXpath);
+                _idInfo_resourceConstraints_MD_SecurityConstraints_classification =
+                    returnInnerTextfromNode(IsoNodeXpaths.idInfo_resourceConstraints_MD_SecurityConstraints_classificationXpath);
+                _idInfo_resourceConstraints_MD_SecurityConstraints_userNote =
+                    returnInnerTextfromNode(IsoNodeXpaths.idInfo_resourceConstraints_MD_SecurityConstraints_userNoteXpath);
+
                 _idInfo_extent_description = returnInnerTextfromNode(IsoNodeXpaths.idInfo_extent_descriptionXpath);
                 _idInfo_extent_geographicBoundingBox_eastLongDD = returnInnerTextfromNodeAsDouble(IsoNodeXpaths.idInfo_extent_geographicBoundingBox_eastLongDDXpath);
                 _idInfo_extent_geographicBoundingBox_westLongDD = returnInnerTextfromNodeAsDouble(IsoNodeXpaths.idInfo_extent_geographicBoundingBox_westLongDDXpath);
@@ -303,18 +374,19 @@ namespace EmeLibrary
 
                 //Check which timeExtent is found in the document... if one is found.  If not found then leave each type null?
                 //Only populate one of the extents for now, even if more are present.
-                //This grabs the first occurance of time extent
-
+                //This grabs the first occurance of time extent and populate timePeriod, or timeInstant
+                _idInfo_extent_temporalExtent = new temporalElement__EX_TemporalExtent();
+                #region temporalExtent Section
                 XmlNode temporalExtentNode = inboundMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.idInfo_extent_temporalExtentXpath);
                 if (temporalExtentNode != null)
                 {
-                    //check with section we have.  If both time instant and time period what do we do???
+                    //check which section we have.  If both time instant and time period what do we do???
                     string tExtentName = temporalExtentNode.FirstChild.Name;
                     if (tExtentName == "gml:TimePeriod")
                     {
                         timePeriodExtent tp = new timePeriodExtent();
                         
-                        tp.extent__TimePeriod__id = "boundingTimePeriodExtent";
+                        tp.extent__TimePeriod__id = "boundingTimePeriodExtent1";//Make sure it is unique. We are assigning our own id.
                         tp.extent__TimePeriod__description = (temporalExtentNode.FirstChild.SelectSingleNode("./*[local-name()='description']") != null) ?
                             temporalExtentNode.FirstChild.SelectSingleNode("./*[local-name()='description']").InnerText : "";
                         //These could have the indeterminantPosition Attribute
@@ -324,54 +396,77 @@ namespace EmeLibrary
                         if (subNode != null)
                         {
                             DateTime dt;
-                            bool valueTest = DateTime.TryParse(subNode.InnerText, out dt);
-
-                            //check if there is a date that can be parsed.  If not, then check that there is an attribute with a value.  If not, then assign the 
-                            //attribute an unknown value;
-                            //XmlElement el = subNode;
-                            //el.HasAttributes
-                            //    //if (subNode.Attributes
+                            bool isValueDate = DateTime.TryParse(subNode.InnerText, out dt);
+                            if (isValueDate) { tp.extent__TimePeriod__beginPosition = subNode.InnerText; }
+                            else
+                            {
+                                XmlNode attributeNode = subNode.Attributes["indeterminatePosition"];
+                                if (attributeNode != null)
+                                {
+                                    tp.extent__TimePeriod__beginPosition = (subNode.Attributes["indeterminatePosition"].Value != null) ?
+                                        subNode.Attributes["indeterminatePosition"].Value : "unknown";
+                                }                               
+                            }
                         }
-                        tp.extent__TimePeriod__beginPosition = (temporalExtentNode.FirstChild.SelectSingleNode("./*[local-name()='beginPosition']") != null) ?
-                            temporalExtentNode.FirstChild.SelectSingleNode("./*[local-name()='beginPosition']").InnerText : "";
-                        tp.extent__TimePeriod__endPosition = (temporalExtentNode.FirstChild.SelectSingleNode("./*[local-name()='endPosition']") != null) ?
-                            temporalExtentNode.FirstChild.SelectSingleNode("./*[local-name()='endPosition']").InnerText : "";
-                        tp.extent__TimePeriod__timeInterval = (temporalExtentNode.FirstChild.SelectSingleNode("./*[local-name()='timeInterval']") != null) ?
-                            temporalExtentNode.FirstChild.SelectSingleNode("./*[local-name()='timeInterval']").InnerText : "";
-                        //unit is an attribute of timeInterval
-                        tp.extent__TimePeriod__timeIntervalUnit = (temporalExtentNode.FirstChild.SelectSingleNode("./*[local-name()='timeIntervalUnit']") != null) ?
-                            temporalExtentNode.FirstChild.SelectSingleNode("./*[local-name()='timeIntervalUnit']").InnerText : "";
+                        subNode = temporalExtentNode.FirstChild.SelectSingleNode("./*[local-name()='endPosition']");
+                        if (subNode != null)
+                        {
+                            DateTime dt;
+                            bool isValueDate = DateTime.TryParse(subNode.InnerText, out dt);
+                            if (isValueDate) { tp.extent__TimePeriod__endPosition = subNode.InnerText; }
+                            else
+                            {
+                                XmlNode attributeNode = subNode.Attributes["indeterminatePosition"];
+                                if (attributeNode != null)
+                                {
+                                    tp.extent__TimePeriod__endPosition = (subNode.Attributes["indeterminatePosition"].Value != null) ?
+                                        subNode.Attributes["indeterminatePosition"].Value : "unknown";
+                                }
+                            }
 
+                        }                        
+                        subNode = temporalExtentNode.FirstChild.SelectSingleNode("./*[local-name()='timeInterval']");
+                        if (subNode != null)
+                        {
+                            tp.extent__TimePeriod__timeInterval = subNode.InnerText;
+                            tp.extent__TimePeriod__timeIntervalUnit = (subNode.Attributes["unit"] != null) ? subNode.Attributes["unit"].Value : "";
+                        }
+                        
+                        _idInfo_extent_temporalExtent.TimePeriod = tp;
                     }
                     else if (tExtentName == "gml:TimeInstant")
                     {
                         timeInstantExtent ti = new timeInstantExtent();
-                        ti.extent__TimeInstant__id = "boundingTimeInstantExtent";
+                        ti.extent__TimeInstant__id = "boundingTimeInstantExtent1";
                         //ti.extent__TimeInstant__description = 
                         //ti.extent__TimeInstant__timePosition = 
-                            
+                        ti.extent__TimeInstant__description = (temporalExtentNode.FirstChild.SelectSingleNode("./*[local-name()='description']") != null) ?
+                            temporalExtentNode.FirstChild.SelectSingleNode("./*[local-name()='description']").InnerText : "";
 
+                        XmlNode subNode = temporalExtentNode.FirstChild.SelectSingleNode("./*[local-name()='timePosition']");
+                        if (subNode != null)
+                        {
+                            DateTime dt;
+                            bool isValueDate = DateTime.TryParse(subNode.InnerText, out dt);
+                            if (isValueDate) { ti.extent__TimeInstant__timePosition = subNode.InnerText; }
+                            else
+                            {
+                                XmlNode attributeNode = subNode.Attributes["indeterminatePosition"];
+                                if (attributeNode != null)
+                                {
+                                    ti.extent__TimeInstant__timePosition = (subNode.Attributes["indeterminatePosition"].Value != null) ?
+                                        subNode.Attributes["indeterminatePosition"].Value : "unknown";
+                                }
+                            }
+                        }
+
+                        _idInfo_extent_temporalExtent.TimeInstant = ti;
                     }
                     Console.WriteLine(tExtentName);
 
                 }
+                #endregion
 
-                _idInfo_extent_temporalExtent = new temporalElement__EX_TemporalExtent();
-                
-                // ./gmi:MI_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:temporalElement/gmd:EX_TemporalExtent/gmd:extent/gml:TimePeriod
-                
-                //if (_idInfo_extent_temporalExtent.TimeInstant == null) { Console.WriteLine("null"); }
-
-                //_idInfo_extent_temporalExtent.TimeInstant.extent__TimeInstant__description = "sdfsd";
-                //_idInfo_extent_temporalExtent.TimePeriod.extent__TimePeriod__description = "sdfsd";
-                //_idInfo_extent_TimeInstant
-                
-                // public string extent__TimeInstant__id { get; set; } //TimePeriod Attribute ID, unique for the set
-                //public string extent__TimeInstant__description { get; set; }
-                //public string extent__TimeInstant__timePosition { get; set; }
-                //public string extent__TimeInstant__timeInterval { get; set; }
-                //public string extent__TimeInstant__timeIntervalUnit { get; set; }
-                //handle indeterminatePosition: If timePosition not a date, then set the attribute to unknown, after, before, now
 
                 //_distributionInfo_MD_Distribution = new List<MD_Distribution>();
                 //set the private backing field directly in the method since this object only occurs in this section.
@@ -869,10 +964,10 @@ namespace EmeLibrary
             //outboundMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.idInfo_citation_TitleXpath).FirstChild.InnerText = _idInfo_citation_title;
             XmlNode citationCiSectionNode = outboundMetadataRecord.DocumentElement.SelectSingleNode(citationCIpackageXpath);
 
-            //Section 1 Title (Required)
+            //Section 16.1.1 Title (Required)
             constructChildNodeUnderParent(citationCiSectionNode,IsoNodeXpaths.idInfo_citation_TitleXpath, _idInfo_citation_title, false, true, false);
             
-            //Section 3 Date (Required)  Contains both Date and DateType Codelist (CI_DateTypeCode)
+            //Section 16.1.3 Date (Required)  Contains both Date and DateType Codelist (CI_DateTypeCode)
             //Providing support for up to three occurances even though the standard does not specify a max
             string idInfoCI_CitationDateXpath =
                 "./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='citation']/*[local-name()='CI_Citation']/*[local-name()='date']";
@@ -890,7 +985,7 @@ namespace EmeLibrary
                 construct_CI_DateSection(citationCiSectionNode, _idInfo_citation_date_revision, "revision", idInfoCI_CitationDateXpath);
             }
             
-            //Section 7 citedResponsibleParty
+            //Section 16.1.7 citedResponsibleParty
             if (idInfo_citation_citedResponsibleParty.Count > 0)
             {
                 //Must first insert the very first instance.  Other occurances will be inserted after the first item in the list.
@@ -898,30 +993,34 @@ namespace EmeLibrary
                 constructCI_ResponsiblePartyMarkUp(idInfo_citation_citedResponsibleParty, IsoNodeXpaths.idInfo_citation_citedResponsiblePartyXpath);
             }            
 
-            //Section 2 Abstract (required)
+            //Section 16.2 Abstract (required)
             constructChildNodeUnderParent(outbound_md_DataIdSection, IsoNodeXpaths.idInfo_AbstractXpath, _idInfo_abstract,false, true, false);
             
-            //Section 3 Purpose (optional)
+            //Section 16.3 Purpose (optional)
             
             if (string.IsNullOrEmpty(_idInfo_purpose) != true)
             {
                 constructChildNodeUnderParent(outbound_md_DataIdSection, IsoNodeXpaths.idInfo_PurposeXpath, _idInfo_purpose, false, true, false);
             }
 
-            //Section 5 Status (optional)
+            //Section 16.5 Status (optional)
             if (string.IsNullOrEmpty(_idInfo_status_MD_ProgressCode) !=true)
             {
                 constructChildNodeUnderParent(outbound_md_DataIdSection, IsoNodeXpaths.idInfo_Status_MD_ProgressCodeXpath, _idInfo_status_MD_ProgressCode, true, true, false);
             }
 
-            //Section 6
+            //Section 16.6
             if (idinfoPointOfContact.Count > 0)
             {
                 constructChildNodeUnderParent(outbound_md_DataIdSection, IsoNodeXpaths.idInfo_pointOfContactXpath, null, false, false, false);
                 constructCI_ResponsiblePartyMarkUp(idinfoPointOfContact, IsoNodeXpaths.idInfo_pointOfContactXpath);
             }
 
-            //Section 10 Descriptive Keywords
+            //Section 16.7 resourceMaintenance
+
+
+
+            //Section 16.10 Descriptive Keywords
             if (kwUserList.Count > 0)
             {
                 XmlNode keywordsUserFrag = constructKeywordSection(kwUserList, IsoNodeXpaths.idInfo_keywordsUserXpath);
@@ -939,19 +1038,19 @@ namespace EmeLibrary
                 constructChildNodeUnderParent(outbound_md_DataIdSection, keywordsPlaceFrag, true);
             }
 
-            //Section 12 ToDo: resourceConstraints (optional)
+            //Section 16.12 ToDo: resourceConstraints (optional)
 
-            //Section 16 Language (required)  Copy from main language section under root
+            //Section 16.16 Language (required)  Copy from main language section under root
             constructChildNodeUnderParent(
                 outbound_md_DataIdSection,
                 "./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='language']",
                 _language, false, true, false);
 
-            //Section 18 IsoTopicCat  (Req'd for EPA)  Insert even if no list items
+            //Section 16.18 IsoTopicCat  (Req'd for EPA)  Insert even if no list items
             XmlNode isoTopicTemplateSection = constructIsoTopicCategorySection();            
             constructChildNodeUnderParent(outbound_md_DataIdSection, isoTopicTemplateSection, true);
 
-            //Sections 20 ToDo: Extent, spatial and temporal
+            //Sections 16.20 Extent, spatial and temporal
             //ToDo:  Handle null values. EPA makes this required, so make required?           
 
             //constructChildNodeUnderParent(
@@ -1666,7 +1765,9 @@ namespace EmeLibrary
         public string extent__TimePeriod__id { get; set; }  //TimePeriod Attribute ID, unique for the set
         public string extent__TimePeriod__description { get; set; }
         public string extent__TimePeriod__beginPosition { get; set; }
+        //public string extetn__TimePeriod__beginPosition_indeterminatePosition { get; set; }
         public string extent__TimePeriod__endPosition { get; set; }
+        //public string extent__TimePeriod__endPosition_indeterminatePosition { get; set; }
         public string extent__TimePeriod__timeInterval { get; set; }
         public string extent__TimePeriod__timeIntervalUnit { get; set; }
         //handle indeterminatePosition: If begin/end not a date, then set the attribute to unknown,after,before,now
