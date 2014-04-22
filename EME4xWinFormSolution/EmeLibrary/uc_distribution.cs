@@ -32,7 +32,11 @@ namespace EmeLibrary
 
         public List<MD_Distributor> distributorList
         {
-            get { return _distributorList; }
+            get 
+            {
+                //ToDo Call Save Method Here  bind_MD_Dist_Class(MD_Distributor dist)
+                return _distributorList;
+            }
             set { _distributorList = value; }
         }
 
@@ -72,6 +76,7 @@ namespace EmeLibrary
 
         public uc_distribution()
         {
+            //_distributorList = new List<MD_Distributor>(); 
             InitializeComponent();
 
         }   
@@ -93,22 +98,31 @@ namespace EmeLibrary
                 pgU_MD_Dist_btn.Visible = false;
                 pgD_MD_Dist_btn.Visible = false;
                 del_MD_Dist_btn.Enabled = false;
+
+                distributor_gbx.Enabled = false;
             }
             else if (_distributorList.Count() == 1)
             {
                 del_MD_Dist_btn.Enabled = true;
+                
+                distributor_gbx.Enabled = true;
             }
             else if (_distributorList.Count() > 1)
             {
                 pgU_MD_Dist_btn.Visible = true;
                 pgD_MD_Dist_btn.Visible = true;
                 del_MD_Dist_btn.Enabled = true;
+                
+                distributor_gbx.Enabled = true;
             }
             //set the current index to the beginning of the list
             _distributorList_idx = 0;
             //populate the distributor contorls
             bind_MD_Dist_Field(_distributorList[_distributorList_idx]);
             //_distributorList[_distributorList_idx].distributorContact__CI_ResponsibleParty
+            
+            //ds
+            distributor_Contact.adjustRPControl(_distributorList.Count);
 
         }
 
@@ -124,12 +138,18 @@ namespace EmeLibrary
             d1.distributorContact = null;
 
             //if first in list add to the list otherwise save current information in controls then add new to list
-            if (_distributorList == null || _distributorList.Count == 0)
+            if (_distributorList == null)
             {
                 _distributorList = new List<MD_Distributor>();
                 _distributorList_idx = 0;
                 _distributorList.Add(d1);
-               
+            }
+            else if(_distributorList.Count == 0)
+            {
+                _distributorList = new List<MD_Distributor>();
+                _distributorList_idx = 0;
+                _distributorList.Add(d1);
+                               
             }
             else
             {
@@ -144,6 +164,7 @@ namespace EmeLibrary
             adjustPagers(MD_Dist, _distributorList);
             //Bind new distributor to controls
             bind_MD_Dist_Field(_distributorList[_distributorList_idx]);
+            distributor_gbx.Enabled = true;
             
             //distributor_Contact.Tag = "required";
             //val_Distribution_frmControls(this.Controls);
@@ -167,6 +188,7 @@ namespace EmeLibrary
                 _distributorList.Clear();
                 //clear field in all sub pagers
                 clearFields("All");
+                distributor_gbx.Enabled = false;
             }
             else if (_distributorList.Count == 1) 
             {
@@ -176,6 +198,7 @@ namespace EmeLibrary
                 _distributorList_idx = 0;
                 //Load the next distributor in the list
                 bind_MD_Dist_Field(_distributorList[_distributorList_idx]);
+                distributor_gbx.Enabled = true;
             }
             else
             {
@@ -185,6 +208,7 @@ namespace EmeLibrary
                     _distributorList_idx--;
                 }
                 bind_MD_Dist_Field(_distributorList[_distributorList_idx]);
+                distributor_gbx.Enabled = true;
             }
             //Adjust controls in sub pagers
             distributor_Contact.adjustRPControl(_distributorList.Count);
@@ -250,9 +274,9 @@ namespace EmeLibrary
         private void bind_MD_Dist_Class(MD_Distributor dist)
         {
             //If there is a distributor contact save to distributor class
-            if (distributor_Contact.incomingCI_ResponsiblePartyList.Count == 1)
+            if (distributor_Contact.CI_ResponsiblePartyList.Count == 1)
             {
-                dist.distributorContact = distributor_Contact.incomingCI_ResponsiblePartyList[0];
+                dist.distributorContact = distributor_Contact.CI_ResponsiblePartyList[0];
                 
             }
             //If there is a distributor Formatt bind in the MD_Format pager
@@ -509,6 +533,8 @@ namespace EmeLibrary
             }
             adjustPagers(MD_SOP, _standardOrderProcess);
             bind_MD_SOP_Fields(_standardOrderProcess[_standardOrderProcess_idx]);
+            
+            //expand_MD_SOP_btn.Enabled = true;
         }
 
         private void bind_MD_SOP_Fields(MD_StandardOrderProcess md_sop)
@@ -848,7 +874,7 @@ namespace EmeLibrary
             Button expand = (Button)sender;
             int expHeight = 210;
             int cHeight = 35;
-            if (expand.Name == "dTO_expand_tbn")
+            if (expand.Name == "expand_MD_DTO_btn")
             {
                 expHeight = 470;
                 //cHeight = ;
@@ -886,6 +912,16 @@ namespace EmeLibrary
                 pager.Controls["del_" + pager.Name + "_btn"].Enabled = false;
                 pager.Controls["pgU_" + pager.Name + "_btn"].Visible = false;
                 pager.Controls["pgD_" + pager.Name + "_btn"].Visible = false;
+                
+                if (pager.Name != "MD_Dist")
+                {
+                    //expand_MD_Format_btn.Enabled = false;
+                    Button Expanderbtn = (Button)this.Controls.Find("expand_" + pager.Name + "_btn", true)[0];
+                    Expanderbtn.Enabled = false;
+                    Expanderbtn.Text = "+";
+                    Expanderbtn.Parent.Height = 35;
+                }
+
             }
             else
             {
@@ -896,10 +932,24 @@ namespace EmeLibrary
                     pager.Controls["pgD_" + pager.Name + "_btn"].Visible = false;
                     pager.Controls["del_" + pager.Name + "_btn"].Enabled = false;
                     pager.Controls[pager.Name + "_lbl"].Text = "0 of 0";
+                    if (pager.Name != "MD_Dist")
+                    {                        
+                        //expand_MD_Format_btn.Enabled = false;
+                        Button Expanderbtn = (Button) this.Controls.Find("expand_" + pager.Name + "_btn",true)[0];                        
+                        Expanderbtn.Enabled = false;                        
+                        Expanderbtn.Text = "+";
+                        Expanderbtn.Parent.Height = 35;
+                    }
                 }
                 else if (pagerList.Count() == 1)
                 {
                     pager.Controls["del_" + pager.Name + "_btn"].Enabled = true;
+                    if (pager.Name != "MD_Dist")
+                    {
+                        //expand_MD_Format_btn.Enabled = false;
+                        Button Expanderbtn = (Button)this.Controls.Find("expand_" + pager.Name + "_btn", true)[0];
+                        Expanderbtn.Enabled = true;                        
+                    }
 
                 }
                 else if (pagerList.Count() > 1)
@@ -907,6 +957,12 @@ namespace EmeLibrary
                     pager.Controls["pgU_" + pager.Name + "_btn"].Visible = true;
                     pager.Controls["pgD_" + pager.Name + "_btn"].Visible = true;
                     pager.Controls["del_" + pager.Name + "_btn"].Enabled = true;
+                    if (pager.Name != "MD_Dist")
+                    {
+                        //expand_MD_Format_btn.Enabled = false;
+                        Button Expanderbtn = (Button)this.Controls.Find("expand_" + pager.Name + "_btn", true)[0];
+                        Expanderbtn.Enabled = true;                        
+                    }
                 }
             }
         }

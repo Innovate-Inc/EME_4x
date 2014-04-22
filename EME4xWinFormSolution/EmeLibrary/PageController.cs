@@ -186,6 +186,14 @@ namespace EmeLibrary
                     }
                     ctrl.Tag = requiredCtrl;
                 }
+                else if (ctrl.GetType() == typeof(uc_extentTemporal))
+                {
+                    uc_extentTemporal temporalExtentCtrl = (uc_extentTemporal)ctrl;
+                    temporalElement__EX_TemporalExtent inboundExtentObject = (temporalElement__EX_TemporalExtent)frm.localXdoc.GetType().GetProperty
+                        (ctrl.Name).GetValue(obj, null);
+                    temporalExtentCtrl.loadTemporalExtent(inboundExtentObject);
+
+                }
                 else if (ctrl.GetType() == typeof(ListBox))
                 {
                     ListBox topic = (ListBox)ctrl;
@@ -216,12 +224,12 @@ namespace EmeLibrary
                         {
                             int p = topic.FindStringExact(r);
                             topic.SetSelected(p, true);
-                        } 
-                    } 
+                        }
+                    }
                 }
                 else if (ctrl.GetType() == typeof(ComboBox))
                 {
-                    
+
                     ComboBox boxCbo = (ComboBox)ctrl;
                     string c = (frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null) != null) ? frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null).ToString() : "";
 
@@ -267,7 +275,7 @@ namespace EmeLibrary
 
                     }
 
-                    
+
                     //boxCbo.Focus();     //Need to figure out why it need focus to save
                 }
                 else if (ctrl.GetType() == typeof(TextBox))
@@ -308,16 +316,21 @@ namespace EmeLibrary
                 if (ctrl.GetType() == typeof(uc_ResponsibleParty))
                 {
                     uc_ResponsibleParty outgoing_ResponsibleParty = (uc_ResponsibleParty)ctrl;
-                    frm.localXdoc.GetType().GetProperty(ctrl.Name).SetValue(obj, outgoing_ResponsibleParty.incomingCI_ResponsiblePartyList, null);
+                    frm.localXdoc.GetType().GetProperty(ctrl.Name).SetValue(obj, outgoing_ResponsibleParty.CI_ResponsiblePartyList, null);
                     //Console.WriteLine(outgoing_ResponsibleParty.incomingCI_ResponsiblePartyList.Count());
                     //Console.WriteLine(outgoing_ResponsibleParty.incomingCI_ResponsiblePartyList[].individualName);
                     //List<CI_ResponsibleParty> ci_RP = (List<CI_ResponsibleParty>)frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null);
+                }
+                else if (ctrl.GetType() == typeof(uc_extentTemporal))
+                {
+                    uc_extentTemporal outgoing_extentTemporal = (uc_extentTemporal)ctrl;
+                    frm.localXdoc.GetType().GetProperty(ctrl.Name).SetValue(obj, outgoing_extentTemporal.temporalElement, null);
                 }
                 else if (ctrl.GetType() == typeof(ComboBox))
                 {
                     ComboBox boxCbo = (ComboBox)ctrl;
                     frm.localXdoc.GetType().GetProperty(ctrl.Name).SetValue(obj, boxCbo.SelectedText, null);
-                    Console.WriteLine(boxCbo.SelectedText); 
+                    Console.WriteLine(boxCbo.SelectedText);
                 }
                 else if (ctrl.GetType() == typeof(TextBox))
                 {
@@ -333,20 +346,20 @@ namespace EmeLibrary
                         frm.localXdoc.GetType().GetProperty(ctrl.Name).SetValue(obj, ctrl.Text, null);
                         //MessageBox.Show(frm.localXdoc.idInfo_citation_Title.ToString());
                     }
-                    
+
                     Console.WriteLine(ctrl.Text);
                 }
                 else if (ctrl.GetType() == typeof(ListBox))
                 {
                     ListBox lstBox = (ListBox)ctrl;
-                    
+
                     List<string> saveList = (List<string>)frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null);
                     saveList.Clear();
                     foreach (DataRowView dRow in lstBox.SelectedItems)
                     {
                         saveList.Add(dRow[srcField].ToString());
                     }
-                    
+
                     frm.localXdoc.GetType().GetProperty(ctrl.Name).SetValue(obj, saveList, null);
                 }
 

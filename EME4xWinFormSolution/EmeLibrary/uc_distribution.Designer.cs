@@ -49,7 +49,7 @@
             this.pgU_MD_Format_btn = new System.Windows.Forms.Button();
             this.MD_format_lbl = new System.Windows.Forms.Label();
             this.pgD_MD_Format_btn = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.expand_MD_Format_btn = new System.Windows.Forms.Button();
             this.md_distributionFormat_lbl = new System.Windows.Forms.Label();
             this.digitalTransferOptions_pnl = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -91,7 +91,7 @@
             this.MD_DTO_lbl = new System.Windows.Forms.Label();
             this.pgD_MD_DTO_btn = new System.Windows.Forms.Button();
             this.md_digitalTranferOptions_lbl = new System.Windows.Forms.Label();
-            this.dTO_expand_tbn = new System.Windows.Forms.Button();
+            this.expand_MD_DTO_btn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.availabelDate_clear_btn = new System.Windows.Forms.Button();
@@ -111,7 +111,7 @@
             this.MD_SOP_lbl = new System.Windows.Forms.Label();
             this.pgD_MD_SOP_btn = new System.Windows.Forms.Button();
             this.md_standardOrderProcess_lbl = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
+            this.expand_MD_SOP_btn = new System.Windows.Forms.Button();
             this.uc_distribution_lbl = new System.Windows.Forms.Label();
             this.del_MD_Dist_btn = new System.Windows.Forms.Button();
             this.MD_Dist_lbl = new System.Windows.Forms.Label();
@@ -148,7 +148,7 @@
             this.MD_Format_pnl.Controls.Add(this.panel4);
             this.MD_Format_pnl.Controls.Add(this.panel1);
             this.MD_Format_pnl.Controls.Add(this.MD_Format);
-            this.MD_Format_pnl.Controls.Add(this.button1);
+            this.MD_Format_pnl.Controls.Add(this.expand_MD_Format_btn);
             this.MD_Format_pnl.Controls.Add(this.md_distributionFormat_lbl);
             this.MD_Format_pnl.Location = new System.Drawing.Point(3, 85);
             this.MD_Format_pnl.Name = "MD_Format_pnl";
@@ -346,17 +346,17 @@
             this.pgD_MD_Format_btn.Visible = false;
             this.pgD_MD_Format_btn.Click += new System.EventHandler(this.pgD_MD_Format_btn_Click);
             // 
-            // button1
+            // expand_MD_Format_btn
             // 
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(7, 6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(22, 22);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "+";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.expand_Click);
+            this.expand_MD_Format_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.expand_MD_Format_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.expand_MD_Format_btn.Location = new System.Drawing.Point(7, 6);
+            this.expand_MD_Format_btn.Name = "expand_MD_Format_btn";
+            this.expand_MD_Format_btn.Size = new System.Drawing.Size(22, 22);
+            this.expand_MD_Format_btn.TabIndex = 1;
+            this.expand_MD_Format_btn.Text = "+";
+            this.expand_MD_Format_btn.UseVisualStyleBackColor = true;
+            this.expand_MD_Format_btn.Click += new System.EventHandler(this.expand_Click);
             // 
             // md_distributionFormat_lbl
             // 
@@ -375,7 +375,7 @@
             this.digitalTransferOptions_pnl.Controls.Add(this.panel6);
             this.digitalTransferOptions_pnl.Controls.Add(this.MD_DTO);
             this.digitalTransferOptions_pnl.Controls.Add(this.md_digitalTranferOptions_lbl);
-            this.digitalTransferOptions_pnl.Controls.Add(this.dTO_expand_tbn);
+            this.digitalTransferOptions_pnl.Controls.Add(this.expand_MD_DTO_btn);
             this.digitalTransferOptions_pnl.Location = new System.Drawing.Point(3, 126);
             this.digitalTransferOptions_pnl.Name = "digitalTransferOptions_pnl";
             this.digitalTransferOptions_pnl.Size = new System.Drawing.Size(439, 35);
@@ -775,24 +775,24 @@
             this.md_digitalTranferOptions_lbl.TabIndex = 1;
             this.md_digitalTranferOptions_lbl.Text = "Digital Transfer Options";
             // 
-            // dTO_expand_tbn
+            // expand_MD_DTO_btn
             // 
-            this.dTO_expand_tbn.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.dTO_expand_tbn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.dTO_expand_tbn.Location = new System.Drawing.Point(7, 6);
-            this.dTO_expand_tbn.Name = "dTO_expand_tbn";
-            this.dTO_expand_tbn.Size = new System.Drawing.Size(23, 23);
-            this.dTO_expand_tbn.TabIndex = 0;
-            this.dTO_expand_tbn.Text = "+";
-            this.dTO_expand_tbn.UseVisualStyleBackColor = true;
-            this.dTO_expand_tbn.Click += new System.EventHandler(this.expand_Click);
+            this.expand_MD_DTO_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.expand_MD_DTO_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.expand_MD_DTO_btn.Location = new System.Drawing.Point(7, 6);
+            this.expand_MD_DTO_btn.Name = "expand_MD_DTO_btn";
+            this.expand_MD_DTO_btn.Size = new System.Drawing.Size(23, 23);
+            this.expand_MD_DTO_btn.TabIndex = 0;
+            this.expand_MD_DTO_btn.Text = "+";
+            this.expand_MD_DTO_btn.UseVisualStyleBackColor = true;
+            this.expand_MD_DTO_btn.Click += new System.EventHandler(this.expand_Click);
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.panel5);
             this.panel2.Controls.Add(this.MD_SOP);
             this.panel2.Controls.Add(this.md_standardOrderProcess_lbl);
-            this.panel2.Controls.Add(this.button6);
+            this.panel2.Controls.Add(this.expand_MD_SOP_btn);
             this.panel2.Location = new System.Drawing.Point(3, 44);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(439, 35);
@@ -995,17 +995,17 @@
             this.md_standardOrderProcess_lbl.TabIndex = 1;
             this.md_standardOrderProcess_lbl.Text = "Standard Order Process";
             // 
-            // button6
+            // expand_MD_SOP_btn
             // 
-            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Location = new System.Drawing.Point(7, 6);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(23, 23);
-            this.button6.TabIndex = 0;
-            this.button6.Text = "+";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.expand_Click);
+            this.expand_MD_SOP_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.expand_MD_SOP_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.expand_MD_SOP_btn.Location = new System.Drawing.Point(7, 6);
+            this.expand_MD_SOP_btn.Name = "expand_MD_SOP_btn";
+            this.expand_MD_SOP_btn.Size = new System.Drawing.Size(23, 23);
+            this.expand_MD_SOP_btn.TabIndex = 0;
+            this.expand_MD_SOP_btn.Text = "+";
+            this.expand_MD_SOP_btn.UseVisualStyleBackColor = true;
+            this.expand_MD_SOP_btn.Click += new System.EventHandler(this.expand_Click);
             // 
             // uc_distribution_lbl
             // 
@@ -1098,6 +1098,7 @@
             this.distributor_gbx.AutoSize = true;
             this.distributor_gbx.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.distributor_gbx.Controls.Add(this.flowLayoutPanel6);
+            this.distributor_gbx.Enabled = false;
             this.distributor_gbx.Location = new System.Drawing.Point(3, 25);
             this.distributor_gbx.Name = "distributor_gbx";
             this.distributor_gbx.Size = new System.Drawing.Size(457, 210);
@@ -1134,7 +1135,7 @@
             // distributor_Contact
             // 
             this.distributor_Contact.BackColor = System.Drawing.Color.Transparent;
-            this.distributor_Contact.incomingCI_ResponsiblePartyList = null;
+            this.distributor_Contact.CI_ResponsiblePartyList = null;
             this.distributor_Contact.Location = new System.Drawing.Point(3, 3);
             this.distributor_Contact.mylabel = "Contact";
             this.distributor_Contact.Name = "distributor_Contact";
@@ -1197,7 +1198,7 @@
         private System.Windows.Forms.Label md_distributionFormat_lbl;
         private System.Windows.Forms.FlowLayoutPanel MD_Format;
         private System.Windows.Forms.Button del_MD_Format_btn;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button expand_MD_Format_btn;
         private System.Windows.Forms.Button add_MD_Format_btn;
         private System.Windows.Forms.Button pgU_MD_Format_btn;
         private System.Windows.Forms.Label MD_format_lbl;
@@ -1210,7 +1211,7 @@
         private System.Windows.Forms.Label MD_SOP_lbl;
         private System.Windows.Forms.Button pgD_MD_SOP_btn;
         private System.Windows.Forms.Label md_standardOrderProcess_lbl;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button expand_MD_SOP_btn;
         private System.Windows.Forms.Panel digitalTransferOptions_pnl;
         private System.Windows.Forms.FlowLayoutPanel MD_DTO;
         private System.Windows.Forms.Button del_MD_DTO_btn;
@@ -1219,7 +1220,7 @@
         private System.Windows.Forms.Label MD_DTO_lbl;
         private System.Windows.Forms.Button pgD_MD_DTO_btn;
         private System.Windows.Forms.Label md_digitalTranferOptions_lbl;
-        private System.Windows.Forms.Button dTO_expand_tbn;
+        private System.Windows.Forms.Button expand_MD_DTO_btn;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label md_format_version_lbl;
         private System.Windows.Forms.Label md_format_name_lbl;

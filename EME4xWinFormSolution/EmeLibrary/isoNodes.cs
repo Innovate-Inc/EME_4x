@@ -443,6 +443,7 @@ namespace EmeLibrary
                         ti.extent__TimeInstant__description = (temporalExtentNode.FirstChild.SelectSingleNode("./*[local-name()='description']") != null) ?
                             temporalExtentNode.FirstChild.SelectSingleNode("./*[local-name()='description']").InnerText : "";
 
+                        //ti.extent__TimeInstant__timePosition = "unknown";
                         XmlNode subNode = temporalExtentNode.FirstChild.SelectSingleNode("./*[local-name()='timePosition']");
                         if (subNode != null)
                         {
@@ -474,6 +475,7 @@ namespace EmeLibrary
 
 
             }
+
             //****************Testing
             //constructMI_MetadataMarkUp();
             
@@ -923,12 +925,23 @@ namespace EmeLibrary
             //Section 18 distributionInfo Section
 
             construct_distributionInfoSection();
-
+            
+            //****************
             //Clean up the document and remove empty nodes under the root node
             XmlNodeList emptyNodes = outboundMetadataRecord.DocumentElement.ChildNodes;
             for (int ii = emptyNodes.Count -1; ii >= 0; ii--)
             {
                 if (emptyNodes[ii].HasChildNodes==false) { emptyNodes[ii].ParentNode.RemoveChild(emptyNodes[ii]); }
+            }
+
+            //****************
+            //Method to remove all child/parent nodes that containt the phrase *template*
+            XmlNodeList nodesToRemove = outboundMetadataRecord.DocumentElement.SelectNodes("//*[text()='*template*']");
+            int countofNodes = nodesToRemove.Count;
+            foreach (XmlNode removeMe in nodesToRemove)
+            {
+                removeMe.RemoveAll();
+                removeEmptyParentNodes(removeMe);
             }
 
             outboundMetadataRecord.PreserveWhitespace = false;            
@@ -1016,7 +1029,16 @@ namespace EmeLibrary
                 constructCI_ResponsiblePartyMarkUp(idinfoPointOfContact, IsoNodeXpaths.idInfo_pointOfContactXpath);
             }
 
-            //Section 16.7 resourceMaintenance
+            //Section 16.7 resourceMaintenance (optional)
+            if (string.IsNullOrEmpty(_idInfo_resourceMaintenance) != true)
+            {
+                string resMaintNodeXpath = "./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='resourceMaintenance']";
+                // ./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='resourceMaintenance']/*[local-name()='MD_MaintenanceInformation']
+                XmlNode tempNode = templateMetadataRecord.DocumentElement.SelectSingleNode(resMaintNodeXpath);                
+                constructChildNodeUnderParent(outbound_md_DataIdSection, tempNode, true);
+                XmlNode tempResMaintNode = outboundMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.idInfo_resourceMaintenanceXpath);
+                constructChildNodeUnderParent(tempResMaintNode, IsoNodeXpaths.idInfo_resourceMaintenanceXpath, _idInfo_resourceMaintenance, true, true,true);
+            }
 
 
 
@@ -1040,6 +1062,85 @@ namespace EmeLibrary
 
             //Section 16.12 ToDo: resourceConstraints (optional)
 
+            //MD_Constraints
+            if (!string.IsNullOrEmpty(_idInfo_resourceConstraints_MD_Constraints_useLimitation))
+            {
+                constructChildNodeUnderParent(outbound_md_DataIdSection,
+                    IsoNodeXpaths.idInfo_resourceConstraints_MD_Constraints_useLimitationXpath + "/../..",
+                    null, false, true, false);
+                outboundMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.idInfo_resourceConstraints_MD_Constraints_useLimitationXpath).InnerText =
+                    _idInfo_resourceConstraints_MD_Constraints_useLimitation;
+            }
+
+            //MD_LegalConstraints:  If any one has a value then populate the section
+            if (!string.IsNullOrEmpty(_idInfo_resourceConstraints_MD_LegalConstraints_useLimitation)
+                | !string.IsNullOrEmpty(_idInfo_resourceConstraints_MD_LegalConstraints_accessConstraints)
+                | !string.IsNullOrEmpty(_idInfo_resourceConstraints_MD_LegalConstraints_useConstraints)
+                | !string.IsNullOrEmpty(_idInfo_resourceConstraints_MD_LegalConstraints_otherConstraints))
+            {
+                //clone the entire section *template* sections removed later
+                constructChildNodeUnderParent(outbound_md_DataIdSection,
+                    IsoNodeXpaths.idInfo_resourceConstraints_MD_LegalConstraints_useLimitationXpath + "/../..",
+                    null, false, true, false);
+                if (!string.IsNullOrEmpty(_idInfo_resourceConstraints_MD_LegalConstraints_useLimitation))
+                {
+                    outboundMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.idInfo_resourceConstraints_MD_LegalConstraints_useLimitationXpath).InnerText =
+                        _idInfo_resourceConstraints_MD_LegalConstraints_useLimitation;
+                }
+                if (!string.IsNullOrEmpty(_idInfo_resourceConstraints_MD_LegalConstraints_accessConstraints))//CodeList
+                {
+                    outboundMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.idInfo_resourceConstraints_MD_LegalConstraints_accessConstraintsXpath).
+                        FirstChild.InnerText = _idInfo_resourceConstraints_MD_LegalConstraints_accessConstraints;
+                    outboundMetadataRecord.DocumentElement.SelectSingleNode(
+                        IsoNodeXpaths.idInfo_resourceConstraints_MD_LegalConstraints_accessConstraintsXpath).FirstChild.Attributes["codeListValue"].Value =
+                        _idInfo_resourceConstraints_MD_LegalConstraints_accessConstraints;
+                }
+                if (!string.IsNullOrEmpty(_idInfo_resourceConstraints_MD_LegalConstraints_useConstraints))//CodeList
+                {
+                    outboundMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.idInfo_resourceConstraints_MD_LegalConstraints_useConstraintsXpath).
+                        FirstChild.InnerText = _idInfo_resourceConstraints_MD_LegalConstraints_useConstraints;
+                    outboundMetadataRecord.DocumentElement.SelectSingleNode(
+                        IsoNodeXpaths.idInfo_resourceConstraints_MD_LegalConstraints_useConstraintsXpath).FirstChild.Attributes["codeListValue"].Value =
+                        _idInfo_resourceConstraints_MD_LegalConstraints_useConstraints;
+                }
+                if (!string.IsNullOrEmpty(_idInfo_resourceConstraints_MD_LegalConstraints_otherConstraints))
+                {
+                    outboundMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.idInfo_resourceConstraints_MD_LegalConstraints_otherConstraintsXpath).InnerText =
+                        _idInfo_resourceConstraints_MD_LegalConstraints_otherConstraints;
+                }
+            }
+
+            //MD_SecurityConstraints   If any one has a value then populate the section
+            if (!string.IsNullOrEmpty(_idInfo_resourceConstraints_MD_SecurityConstraints_useLimitation)
+                | !string.IsNullOrEmpty(_idInfo_resourceConstraints_MD_SecurityConstraints_classification)
+                | !string.IsNullOrEmpty(_idInfo_resourceConstraints_MD_SecurityConstraints_userNote))
+            {                
+                //clone the entire section *template* sections removed later
+                constructChildNodeUnderParent(outbound_md_DataIdSection,
+                    IsoNodeXpaths.idInfo_resourceConstraints_MD_SecurityConstraints_useLimitationXpath + "/../..",
+                    null, false, true, false);
+
+                if (!string.IsNullOrEmpty(_idInfo_resourceConstraints_MD_SecurityConstraints_useLimitation))                
+                {
+                    outboundMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.idInfo_resourceConstraints_MD_SecurityConstraints_useLimitationXpath).InnerText =
+                        _idInfo_resourceConstraints_MD_SecurityConstraints_useLimitation;
+                }
+                if (!string.IsNullOrEmpty(_idInfo_resourceConstraints_MD_SecurityConstraints_classification))  //Required and is a codeList
+                {
+                    outboundMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.idInfo_resourceConstraints_MD_SecurityConstraints_classificationXpath)
+                        .FirstChild.InnerText = _idInfo_resourceConstraints_MD_SecurityConstraints_classification;
+                    outboundMetadataRecord.DocumentElement.SelectSingleNode(
+                        IsoNodeXpaths.idInfo_resourceConstraints_MD_SecurityConstraints_classificationXpath).FirstChild.Attributes["codeListValue"].Value =
+                        _idInfo_resourceConstraints_MD_SecurityConstraints_classification;
+                }
+                if (!string.IsNullOrEmpty(_idInfo_resourceConstraints_MD_SecurityConstraints_userNote))
+                {
+                    outboundMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.idInfo_resourceConstraints_MD_SecurityConstraints_userNoteXpath).InnerText =
+                        _idInfo_resourceConstraints_MD_SecurityConstraints_userNote;
+                }              
+            }
+
+
             //Section 16.16 Language (required)  Copy from main language section under root
             constructChildNodeUnderParent(
                 outbound_md_DataIdSection,
@@ -1051,35 +1152,131 @@ namespace EmeLibrary
             constructChildNodeUnderParent(outbound_md_DataIdSection, isoTopicTemplateSection, true);
 
             //Sections 16.20 Extent, spatial and temporal
-            //ToDo:  Handle null values. EPA makes this required, so make required?           
 
-            //constructChildNodeUnderParent(
-            //   outbound_md_DataIdSection,
-            //   "./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='extent']/*[local-name()='EX_Extent']",
-            //   null, false, false, false);
+            #region  Section for spatial and temporal code
+            //Handle null values. EPA makes this required          
+            //Deep Clone the entire section.  Unused sections are removed later on.
+            //ToDo:  refactor! but works for now.
             XmlNode extentNodeFromTemplate = templateMetadataRecord.DocumentElement.SelectSingleNode(
                 "./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='extent']");//*[local-name()='EX_Extent']");
             XmlNode extentNodeOut = outbound_md_DataIdSection;//.SelectSingleNode("./*[local-name()='extent']");
-            constructChildNodeUnderParent(extentNodeOut, extentNodeFromTemplate, false); //extent            
-            constructChildNodeUnderParent(extentNodeOut.LastChild, extentNodeFromTemplate.FirstChild, false); //EX_Extent
-            constructChildNodeUnderParent(extentNodeOut.LastChild.FirstChild, extentNodeFromTemplate.FirstChild.ChildNodes[0], true); //description
-            constructChildNodeUnderParent(extentNodeOut.LastChild.FirstChild, extentNodeFromTemplate.FirstChild.ChildNodes[1], true); //geographicElement
+            constructChildNodeUnderParent(extentNodeOut, extentNodeFromTemplate, true); //extent            
+            //constructChildNodeUnderParent(extentNodeOut.LastChild, extentNodeFromTemplate.FirstChild, false); //EX_Extent
+            //constructChildNodeUnderParent(extentNodeOut.LastChild.FirstChild, extentNodeFromTemplate.FirstChild.ChildNodes[0], true); //description
+            //constructChildNodeUnderParent(extentNodeOut.LastChild.FirstChild, extentNodeFromTemplate.FirstChild.ChildNodes[1], true); //geographicElement
 
-            outboundMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.idInfo_extent_descriptionXpath).FirstChild.InnerText =
-                _idInfo_extent_description;
-            outboundMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.idInfo_extent_geographicBoundingBox_eastLongDDXpath).FirstChild.InnerText =
-                _idInfo_extent_geographicBoundingBox_eastLongDD.ToString();
-            outboundMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.idInfo_extent_geographicBoundingBox_westLongDDXpath).FirstChild.InnerText =
-                _idInfo_extent_geographicBoundingBox_westLongDD.ToString();
-            outboundMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.idInfo_extent_geographicBoundingBox_northLatDDXpath).FirstChild.InnerText =
-                _idInfo_extent_geographicBoundingBox_northLatDD.ToString();
-            outboundMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.idInfo_extent_geographicBoundingBox_southLatDDXpath).FirstChild.InnerText =
-                _idInfo_extent_geographicBoundingBox_southLatDD.ToString();
+            if (!string.IsNullOrEmpty(_idInfo_extent_description))
+            {                
+                outboundMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.idInfo_extent_descriptionXpath).FirstChild.InnerText =
+                    _idInfo_extent_description;
+            }
+            if (_idInfo_extent_geographicBoundingBox_eastLongDD == 0.0 
+                | _idInfo_extent_geographicBoundingBox_westLongDD == 0.0
+                |_idInfo_extent_geographicBoundingBox_northLatDD == 0.0
+                |_idInfo_extent_geographicBoundingBox_southLatDD == 0.0
+                )
+            {
+                //if any one of them are not completed, do not populate any of the remaining section.
+            }
+            else
+            {
+                outboundMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.idInfo_extent_geographicBoundingBox_eastLongDDXpath).FirstChild.InnerText =
+                    _idInfo_extent_geographicBoundingBox_eastLongDD.ToString();
+                outboundMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.idInfo_extent_geographicBoundingBox_westLongDDXpath).FirstChild.InnerText =
+                    _idInfo_extent_geographicBoundingBox_westLongDD.ToString();
+                outboundMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.idInfo_extent_geographicBoundingBox_northLatDDXpath).FirstChild.InnerText =
+                    _idInfo_extent_geographicBoundingBox_northLatDD.ToString();
+                outboundMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.idInfo_extent_geographicBoundingBox_southLatDDXpath).FirstChild.InnerText =
+                    _idInfo_extent_geographicBoundingBox_southLatDD.ToString();
+            }
+            
+            //TemporalExtent (this sections was part of the deep clone from above)
+            //First Check to see which type we have, if any and only implement one of them
+            //If both are null then don't do anything since anything with *template* will be removed later on
+            //Only one of the conditions will be implemented even there are both types.
+            if (_idInfo_extent_temporalExtent.TimeInstant != null)
+            {
+                XmlNode tiNode = outboundMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.idInfo_extent_temporalExtentXpath + "/*[local-name()='TimeInstant']");
 
-            //temporal  ToDo!!!
-            constructChildNodeUnderParent(extentNodeOut.LastChild.FirstChild, extentNodeFromTemplate.FirstChild.LastChild, true);
+                if (!string.IsNullOrEmpty(_idInfo_extent_temporalExtent.TimeInstant.extent__TimeInstant__description))
+                { tiNode.SelectSingleNode("./*[local-name()='description']").InnerText = _idInfo_extent_temporalExtent.TimeInstant.extent__TimeInstant__description; }
+
+
+                if (!string.IsNullOrEmpty(_idInfo_extent_temporalExtent.TimeInstant.extent__TimeInstant__timePosition))
+                { }
+                
+                DateTime dt;
+                bool isValueDate = DateTime.TryParse(_idInfo_extent_temporalExtent.TimeInstant.extent__TimeInstant__timePosition, out dt);
+                if (isValueDate)
+                {
+                    tiNode.SelectSingleNode("./*[local-name()='timePosition']").InnerText = _idInfo_extent_temporalExtent.TimeInstant.extent__TimeInstant__timePosition; 
+                }
+                else
+                {
+                    //Create the attribute
+                    XmlAttribute indTimeAtt = outboundMetadataRecord.CreateAttribute("indeterminatePosition");
+                    indTimeAtt.Value = (!string.IsNullOrEmpty(_idInfo_extent_temporalExtent.TimeInstant.extent__TimeInstant__timePosition)) ?
+                        _idInfo_extent_temporalExtent.TimeInstant.extent__TimeInstant__timePosition : "unknown";
+                    
+                    //Remove the *template* innerText and append the attribute
+                    tiNode.SelectSingleNode("./*[local-name()='timePosition']").InnerText = "";
+                    XmlAttributeCollection ac = tiNode.SelectSingleNode("./*[local-name()='timePosition']").Attributes;
+                    ac.Append(indTimeAtt);               
+                }
+            }
+            else if (_idInfo_extent_temporalExtent.TimePeriod != null)//This section will be skipped if TimeInstant is not null
+            {
+                XmlNode tpNode = outboundMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.idInfo_extent_temporalExtentXpath + "/*[local-name()='TimePeriod']");
+
+                if (!string.IsNullOrEmpty(_idInfo_extent_temporalExtent.TimePeriod.extent__TimePeriod__description))
+                { tpNode.SelectSingleNode("./*[local-name()='description']").InnerText = _idInfo_extent_temporalExtent.TimePeriod.extent__TimePeriod__description; }
+                
+                //ToDo: Refactor later!
+                DateTime dt;
+                bool isValueDate = DateTime.TryParse(_idInfo_extent_temporalExtent.TimePeriod.extent__TimePeriod__beginPosition, out dt);
+                if (isValueDate)
+                {
+                    tpNode.SelectSingleNode("./*[local-name()='beginPosition']").InnerText = idInfo_extent_temporalExtent.TimePeriod.extent__TimePeriod__beginPosition;
+                }
+                else
+                {
+                    
+                    XmlAttribute beginInde = outboundMetadataRecord.CreateAttribute("indeterminatePosition");
+                    beginInde.Value = (!string.IsNullOrEmpty(_idInfo_extent_temporalExtent.TimePeriod.extent__TimePeriod__beginPosition)) ?
+                        _idInfo_extent_temporalExtent.TimePeriod.extent__TimePeriod__beginPosition : "unknown";
+                    
+                    tpNode.SelectSingleNode("./*[local-name()='beginPosition']").InnerText = "";  //removes the *template* text
+                    XmlAttributeCollection ac = tpNode.SelectSingleNode("./*[local-name()='beginPosition']").Attributes;
+                    ac.Append(beginInde);
+                                        
+                }
+
+                isValueDate = DateTime.TryParse(_idInfo_extent_temporalExtent.TimePeriod.extent__TimePeriod__endPosition, out dt);
+                if (isValueDate)
+                {                    
+                    tpNode.SelectSingleNode("./*[local-name()='endPosition']").InnerText = idInfo_extent_temporalExtent.TimePeriod.extent__TimePeriod__endPosition;
+                }
+                else
+                {
+                    XmlAttribute endInde = outboundMetadataRecord.CreateAttribute("indeterminatePosition");
+                    endInde.Value = (!string.IsNullOrEmpty(_idInfo_extent_temporalExtent.TimePeriod.extent__TimePeriod__endPosition)) ?
+                        _idInfo_extent_temporalExtent.TimePeriod.extent__TimePeriod__endPosition : "unknown";
+                    
+                    tpNode.SelectSingleNode("./*[local-name()='endPosition']").InnerText = "";  //removes the *template* text
+                    XmlAttributeCollection ac = tpNode.SelectSingleNode("./*[local-name()='endPosition']").Attributes;
+                    ac.Append(endInde);
+                }
+
+                if (!string.IsNullOrEmpty(_idInfo_extent_temporalExtent.TimePeriod.extent__TimePeriod__timeInterval))
+                {
+                    tpNode.SelectSingleNode("./*[local-name()='timeInterval']").InnerText = _idInfo_extent_temporalExtent.TimePeriod.extent__TimePeriod__timeInterval;
+                    tpNode.SelectSingleNode("./*[local-name()='timeInterval']").Attributes["unit"].Value =
+                    _idInfo_extent_temporalExtent.TimePeriod.extent__TimePeriod__timeIntervalUnit;
+                }
+            }
+            #endregion
             
-            
+
             #region test area for checking for missing parent nodes and inserting the missing nodes
 
             //List<XmlNode> importNodeList = new List<XmlNode>();
@@ -1765,9 +1962,7 @@ namespace EmeLibrary
         public string extent__TimePeriod__id { get; set; }  //TimePeriod Attribute ID, unique for the set
         public string extent__TimePeriod__description { get; set; }
         public string extent__TimePeriod__beginPosition { get; set; }
-        //public string extetn__TimePeriod__beginPosition_indeterminatePosition { get; set; }
         public string extent__TimePeriod__endPosition { get; set; }
-        //public string extent__TimePeriod__endPosition_indeterminatePosition { get; set; }
         public string extent__TimePeriod__timeInterval { get; set; }
         public string extent__TimePeriod__timeIntervalUnit { get; set; }
         //handle indeterminatePosition: If begin/end not a date, then set the attribute to unknown,after,before,now

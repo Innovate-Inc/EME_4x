@@ -79,7 +79,9 @@ namespace EmeLibrary
             {
                 if (cntrl.HasChildren == true)
                 {
-                    if (cntrl.GetType() == typeof(uc_ResponsibleParty) || cntrl.GetType() == typeof(uc_distribution))
+                    if (cntrl.GetType() == typeof(uc_ResponsibleParty) 
+                        || cntrl.GetType() == typeof(uc_distribution)
+                        || cntrl.GetType()== typeof(uc_extentTemporal))
                     {
                         //MessageBox.Show(cntrl.Name + " " + "here");
                         allControlsColl[cntrl.Name] = cntrl;
@@ -1063,7 +1065,8 @@ namespace EmeLibrary
             PageController pc = PageController.thatControls(senderName);
             pc.setDefault(this);
         }
-
+            
+                
 
     }
 }

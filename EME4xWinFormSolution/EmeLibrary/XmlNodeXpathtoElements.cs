@@ -33,7 +33,7 @@ namespace EmeLibrary
         public string idInfo_Status_MD_ProgressCodeXpath { get; set; }//Compound element with codelist values
         public string idInfo_pointOfContactXpath { get; set; }
         public string idInfo_resourceMaintenanceXpath { get; set; }
-
+        
         //public string IdInfo_keywordsIsoTopicCatListXpath { get; set; }
         public string idInfo_keywordsIsoTopicCategoryXpath { get; set; }
         //public string idInfo_keywordsEpaListXpath { get; set; }

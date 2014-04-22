@@ -78,11 +78,13 @@
             this.errorProvider_RP = new System.Windows.Forms.ErrorProvider(this.components);
             this.rp_expander_btn = new System.Windows.Forms.Button();
             this.uc_ResponsibleParty_lbl = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_RP)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -90,7 +92,7 @@
             this.button1.BackColor = System.Drawing.Color.DarkOrange;
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(322, 41);
+            this.button1.Location = new System.Drawing.Point(313, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(112, 43);
             this.button1.TabIndex = 0;
@@ -435,7 +437,7 @@
             this.groupBox1.Controls.Add(this.contactInfo__CI_Contact__address__CI_Address__electronicMailAddress_lbl);
             this.groupBox1.Controls.Add(this.contactInfo__CI_Contact__address__CI_Address__electronicMailAddress);
             this.groupBox1.Controls.Add(this.contactInfo__CI_Contact__phone__CI_Telephone__voice);
-            this.groupBox1.Location = new System.Drawing.Point(12, 172);
+            this.groupBox1.Location = new System.Drawing.Point(3, 134);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(422, 22);
             this.groupBox1.TabIndex = 36;
@@ -556,7 +558,7 @@
             this.comboBox1.DropDownWidth = 400;
             this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(322, 82);
+            this.comboBox1.Location = new System.Drawing.Point(313, 44);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(112, 21);
             this.comboBox1.TabIndex = 41;
@@ -572,7 +574,7 @@
             this.panel1.Controls.Add(this.organisationName_lbl);
             this.panel1.Controls.Add(this.organisationName_txt);
             this.panel1.Controls.Add(this.individualName_lbl);
-            this.panel1.Location = new System.Drawing.Point(12, 76);
+            this.panel1.Location = new System.Drawing.Point(3, 38);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(299, 94);
             this.panel1.TabIndex = 42;
@@ -582,7 +584,7 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.panel2.Controls.Add(this.role);
             this.panel2.Controls.Add(this.roleCode_lbl);
-            this.panel2.Location = new System.Drawing.Point(12, 43);
+            this.panel2.Location = new System.Drawing.Point(3, 5);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(299, 30);
             this.panel2.TabIndex = 43;
@@ -613,20 +615,29 @@
             this.uc_ResponsibleParty_lbl.TabIndex = 45;
             this.uc_ResponsibleParty_lbl.Tag = "";
             // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.panel2);
+            this.panel3.Controls.Add(this.button1);
+            this.panel3.Controls.Add(this.groupBox1);
+            this.panel3.Controls.Add(this.comboBox1);
+            this.panel3.Controls.Add(this.panel1);
+            this.panel3.Enabled = false;
+            this.panel3.Location = new System.Drawing.Point(2, 36);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(435, 460);
+            this.panel3.TabIndex = 46;
+            // 
             // uc_ResponsibleParty
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.uc_ResponsibleParty_lbl);
             this.Controls.Add(this.rp_expander_btn);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblCI_RpListCount);
-            this.Controls.Add(this.button1);
             this.Name = "uc_ResponsibleParty";
             this.Size = new System.Drawing.Size(439, 500);
             this.Load += new System.EventHandler(this.uc_ResponsibleParty_Load);
@@ -640,6 +651,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_RP)).EndInit();
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -695,5 +707,6 @@
         private System.Windows.Forms.Button rp_expander_btn;
         private System.Windows.Forms.Label uc_ResponsibleParty_lbl;
         private System.Windows.Forms.Button CI_ContactExpand_btn;
+        private System.Windows.Forms.Panel panel3;
     }
 }

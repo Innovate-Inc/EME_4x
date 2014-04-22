@@ -11,13 +11,31 @@ namespace EmeLibrary
 {
     public partial class uc_ResponsibleParty : UserControl
     {
-        private List<CI_ResponsibleParty> incomingRPList;
+        private List<CI_ResponsibleParty> _incomingRPList;
         private int incomingRPListIndex;
 
         //Expanding
         private int expandHeight;
         private int collapseHeight;
-        
+
+        public List<CI_ResponsibleParty> CI_ResponsiblePartyList
+        {
+            get
+            {
+                //Call bindToClass here and pass in the index of the RP visible in the form to ensure it gets saved.
+                //binds the current responsibleParty visible in repeater to the class when save is called in pageController.
+                if (_incomingRPList != null)
+                {
+                    if (_incomingRPList.Count != 0)
+                    {
+                        bindToClass(_incomingRPList[incomingRPListIndex]);
+                    }
+                }
+                return _incomingRPList;
+            }
+            set { _incomingRPList = value; }
+        }
+
         //[Bindable(false)]
         //[EditorBrowsable(EditorBrowsableState.Always)]
         //[Browsable(true)]
@@ -39,16 +57,10 @@ namespace EmeLibrary
                 uc_ResponsibleParty_lbl.Text = value;
             }
         }
-
-        public string rp_mode { get; set; }
-       
+        public string rp_mode { get; set; }      
 
 
-        public List<CI_ResponsibleParty> incomingCI_ResponsiblePartyList
-        {
-            get { return incomingRPList; }
-            set { incomingRPList = value; }
-        }
+        
 
         //public List<CI_ResponsibleParty> contact_CI_ResponsibleParty
         //{
@@ -60,12 +72,13 @@ namespace EmeLibrary
         public uc_ResponsibleParty()
         {
             InitializeComponent();
+            //_incomingRPList = new List<CI_ResponsibleParty>();
 
         }
 
         private void bindToFields(CI_ResponsibleParty incomingCIRP)
         {
-            pagerLbl.Text = (incomingRPListIndex + 1).ToString() + " of " + incomingRPList.Count;
+            pagerLbl.Text = (incomingRPListIndex + 1).ToString() + " of " + _incomingRPList.Count;
 
             if (incomingCIRP.role == null)
                 role.SelectedIndex = -1;
@@ -117,7 +130,7 @@ namespace EmeLibrary
             //outgoingCIRP.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode = contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode.SelectedItem.ToString();
             outgoingCIRP.contactInfo__CI_Contact__hoursOfService = contactInfo__CI_Contact__hoursOfService.Text;
             outgoingCIRP.contactInfo__CI_Contact__contactInstructions = contactInfo__CI_Contact__contactInstructions.Text;
-            incomingCI_ResponsiblePartyList = incomingRPList;
+            CI_ResponsiblePartyList = _incomingRPList;
 
         }
 
@@ -130,8 +143,9 @@ namespace EmeLibrary
 
         private void uc_ResponsibleParty_Load(object sender, EventArgs e)
         {
-            
-             expandHeight = 530;
+            //MessageBox.Show("RP Load");
+             expandHeight = 500;
+            //intermediateHeight
              collapseHeight = 35;
              if (rp_mode != "distribution")
              {
@@ -143,27 +157,30 @@ namespace EmeLibrary
         public void loadList(List<CI_ResponsibleParty> CI_ResponsiblePartyList)
         {
             //reset();
-            incomingRPList = CI_ResponsiblePartyList;
+            _incomingRPList = CI_ResponsiblePartyList;
             //MessageBox.Show(incomingRPList.Count().ToString());
-            if (incomingRPList.Count() < 1)
+            if (_incomingRPList.Count < 1)
             {
                 pagerUpBtn.Visible = false;
                 pagerDownBtn.Visible = false;
                 deleteRP_Btn.Enabled = false;
+                panel3.Enabled = false;
             }
-            else if (incomingRPList.Count() == 1)
+            else if (_incomingRPList.Count == 1)
             {
                 deleteRP_Btn.Enabled = true;
                 incomingRPListIndex = 0;
-                bindToFields(incomingRPList[incomingRPListIndex]);
+                bindToFields(_incomingRPList[incomingRPListIndex]);
+                panel3.Enabled = true;
             }
-            else if (incomingRPList.Count() > 1)
+            else if (_incomingRPList.Count > 1)
             {
                 pagerUpBtn.Visible = true;
                 pagerDownBtn.Visible = true;
                 deleteRP_Btn.Enabled = true;
                 incomingRPListIndex = 0;
-                bindToFields(incomingRPList[incomingRPListIndex]);
+                bindToFields(_incomingRPList[incomingRPListIndex]);
+                panel3.Enabled = true;
             }
 
             
@@ -218,9 +235,15 @@ namespace EmeLibrary
             comboBox1.Visible = false;
             //deleteRP_Btn.Enabled = false;
             //addRP_Btn.Enabled = true;
+            
+            panel3.Enabled = false;
            
         }
 
+        /// <summary>
+        /// Use to control behavior while inside a distribution user control.  This enables and disables buttons.
+        /// </summary>
+        /// <param name="distributorCount"></param>
         public void adjustRPControl(int distributorCount)
         {
             if (distributorCount < 1)
@@ -228,16 +251,21 @@ namespace EmeLibrary
                 addRP_Btn.Enabled = false;
                 deleteRP_Btn.Enabled = false;
                 reset();
+                panel3.Enabled = false;
             }
             else
             {
-                if (incomingRPList.Count < 1)
+                
+                if (_incomingRPList.Count < 1)
                 {
+                    //User should be able to add one contact
                     addRP_Btn.Enabled = true;
                     deleteRP_Btn.Enabled = false;
                 }
                 else
                 {
+                    //Only get one contact, so they should not be able to add another if
+                    //one already exists
                     addRP_Btn.Enabled = false;
                     deleteRP_Btn.Enabled = true;
                 }
@@ -255,31 +283,35 @@ namespace EmeLibrary
             {
                 pagerDownBtn.Enabled = false;
                 pagerUpBtn.Focus();
+                panel3.Enabled = false;
             }
             else
             {
-                bindToClass(incomingRPList[incomingRPListIndex]);
+                bindToClass(_incomingRPList[incomingRPListIndex]);
 
                 incomingRPListIndex--;
                 pagerUpBtn.Enabled = true;
-                bindToFields(incomingRPList[incomingRPListIndex]);
+                bindToFields(_incomingRPList[incomingRPListIndex]);
+                panel3.Enabled = true;
             }
         }
 
         private void pagerUpBtn_Click(object sender, EventArgs e)
         {
 
-            if (incomingRPListIndex >= incomingRPList.Count - 1)
+            if (incomingRPListIndex >= _incomingRPList.Count - 1)
             {
                 pagerUpBtn.Enabled = false;
                 pagerDownBtn.Focus();
+                //panel3.Enabled = false;
             }
             else
             {
-                bindToClass(incomingRPList[incomingRPListIndex]);
+                bindToClass(_incomingRPList[incomingRPListIndex]);
                 incomingRPListIndex++;
                 pagerDownBtn.Enabled = true;
-                bindToFields(incomingRPList[incomingRPListIndex]);
+                bindToFields(_incomingRPList[incomingRPListIndex]);
+                //panel3.Enabled = true;
             }
 
         }
@@ -290,11 +322,11 @@ namespace EmeLibrary
             //CI_ResponsibleParty newRP = new CI_ResponsibleParty();
             CI_ResponsibleParty ci_RP = new CI_ResponsibleParty();
 
-            if (incomingRPList == null || incomingRPList.Count == 0)
+            if (_incomingRPList == null || _incomingRPList.Count == 0)
             { 
-                incomingRPList = new List<CI_ResponsibleParty>();
+                _incomingRPList = new List<CI_ResponsibleParty>();
                 incomingRPListIndex = 0;
-                incomingRPList.Add(ci_RP);
+                _incomingRPList.Add(ci_RP);
                 //enable delete button
                 deleteRP_Btn.Enabled = true;
                 if (rp_mode == "distribution")
@@ -316,26 +348,26 @@ namespace EmeLibrary
                     pagerDownBtn.Visible = true;
                     pagerUpBtn.Visible = true;
 
-                    bindToClass(incomingRPList[incomingRPListIndex]);
-                    incomingRPList.Add(ci_RP);
+                    bindToClass(_incomingRPList[incomingRPListIndex]);
+                    _incomingRPList.Add(ci_RP);
                     incomingRPListIndex++;
-                    incomingRPListIndex = incomingRPList.Count - 1;
+                    incomingRPListIndex = _incomingRPList.Count - 1;
                 }
             }
 
-
-            bindToFields(incomingRPList[incomingRPListIndex]);
+            panel3.Enabled = true;
+            bindToFields(_incomingRPList[incomingRPListIndex]);
             Control ctrl = (Control)sender;
             rp_Validating(ctrl);
         }
 
         private void deleteRP_Btn_Click(object sender, EventArgs e)
         {
-            incomingRPList.RemoveAt(incomingRPListIndex);
-            if (incomingRPList.Count == 0)
+            _incomingRPList.RemoveAt(incomingRPListIndex);
+            if (_incomingRPList.Count == 0)
             {
                 incomingRPListIndex = 0;
-                incomingRPList.Clear();
+                _incomingRPList.Clear();
                 pagerLbl.Text = "0 of 0";
                 role.SelectedIndex = -1;
                 individualName_txt.Text = "";
@@ -358,14 +390,16 @@ namespace EmeLibrary
                 addRP_Btn.Enabled = true;
                 rp_expander_btn.Text = "+";
                 this.Height = 35;
+                panel3.Enabled = false;
                 
             }
-            else if (incomingRPList.Count == 1)
+            else if (_incomingRPList.Count == 1)
             {
                 pagerDownBtn.Visible = false;
                 pagerUpBtn.Visible = false;
                 incomingRPListIndex = 0;
-                bindToFields(incomingRPList[incomingRPListIndex]);
+                bindToFields(_incomingRPList[incomingRPListIndex]);
+                panel3.Enabled = true;
             }
             else
             {
@@ -374,8 +408,8 @@ namespace EmeLibrary
                 {
                     incomingRPListIndex--;
                 }
-                bindToFields(incomingRPList[incomingRPListIndex]);
-
+                bindToFields(_incomingRPList[incomingRPListIndex]);
+                panel3.Enabled = true;
             }
             Control ctrl = (Control)sender;
             rp_Validating(ctrl);
@@ -482,7 +516,7 @@ namespace EmeLibrary
                     string responsiblePartyTag = (this.Tag != null) ? this.Tag.ToString() : "";
                     if (responsiblePartyTag == "required")
                     {
-                        if (incomingRPList == null || incomingRPList.Count == 0)
+                        if (_incomingRPList == null || _incomingRPList.Count == 0)
                         {
                             errorProvider_RP.SetError(this.uc_ResponsibleParty_lbl, "Need at least 1");
                         }
@@ -575,7 +609,7 @@ namespace EmeLibrary
                     }
                     else
                     {
-                        this.Height = 530;
+                        this.Height = 500;
                     }
                 }
                 else
@@ -589,7 +623,8 @@ namespace EmeLibrary
                 if (expand.Text == "+")
                 {
                     expand.Text = "-";
-                    this.Height = 530;
+                    this.Height = 500;
+                    //panel3.Height = 
                     groupBox1.Height = 325;
                 }
                 else
@@ -604,10 +639,14 @@ namespace EmeLibrary
         private void uc_ResponsibleParty_Leave(object sender, EventArgs e)
         {
             //MessageBox.Show("Leaving");
-            if (incomingRPList != null || incomingRPList.Count() != 0)
-            {
-                bindToClass(incomingRPList[incomingRPListIndex]);
-            }
+
+            //if (_incomingRPList != null)
+            //{
+            //    if (_incomingRPList.Count != 0)
+            //    {
+            //        bindToClass(_incomingRPList[incomingRPListIndex]);
+            //    }
+            //}
         }
 
     }

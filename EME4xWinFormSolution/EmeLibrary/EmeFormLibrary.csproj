@@ -62,6 +62,12 @@
     <Compile Include="uc_distribution.Designer.cs">
       <DependentUpon>uc_distribution.cs</DependentUpon>
     </Compile>
+    <Compile Include="uc_extentTemporal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uc_extentTemporal.Designer.cs">
+      <DependentUpon>uc_extentTemporal.cs</DependentUpon>
+    </Compile>
     <Compile Include="uc_ResponsibleParty.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -92,6 +98,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="uc_distribution.resx">
       <DependentUpon>uc_distribution.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uc_extentTemporal.resx">
+      <DependentUpon>uc_extentTemporal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="uc_ResponsibleParty.resx">
       <DependentUpon>uc_ResponsibleParty.cs</DependentUpon>

@@ -479,12 +479,12 @@
 				<gmd:MD_TopicCategoryCode>*template*</gmd:MD_TopicCategoryCode>
 			</gmd:topicCategory>
 			<gmd:extent>
-				<gmd:EX_Extent id="boundingExtent">
+				<gmd:EX_Extent id="boundingExtent1">
 					<gmd:description>
 						<gco:CharacterString>*template*</gco:CharacterString>
 					</gmd:description>
 					<gmd:geographicElement>
-						<gmd:EX_GeographicBoundingBox id="boundingGeographicBoundingBox">
+						<gmd:EX_GeographicBoundingBox id="boundingGeographicBoundingBox1">
 							<gmd:westBoundLongitude>
 								<gco:Decimal>*template*</gco:Decimal>
 							</gmd:westBoundLongitude>
@@ -502,7 +502,7 @@
 					<gmd:temporalElement>
 						<gmd:EX_TemporalExtent>
 							<gmd:extent>
-								<gml:TimePeriod gml:id="boundingTimePeriodExtent">
+								<gml:TimePeriod gml:id="boundingTimePeriodExtent1">
 									<gml:description>*template*</gml:description>
 									<gml:beginPosition>*template*</gml:beginPosition>
 									<gml:endPosition>*template*</gml:endPosition>
@@ -514,7 +514,7 @@
 					<gmd:temporalElement>
 						<gmd:EX_TemporalExtent>
 							<gmd:extent>
-								<gml:TimeInstant gml:id="boundingTimeInstantExtent">
+								<gml:TimeInstant gml:id="boundingTimeInstantExtent1">
 									<gml:description>*template*</gml:description>
 									<gml:timePosition>*template*</gml:timePosition>
 								</gml:TimeInstant>
