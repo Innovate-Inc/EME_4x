@@ -131,6 +131,34 @@ namespace EmeLibrary
             //idInfo_keywordsUser.DisplayMember ="themekey";
             //idInfo_keywordsUser.ClearSelected();
         }
+        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //When the form loads, maybe the tabs should be grey'd out until something happens, like opening an existing file, or creating a new record.
+            //Kind of like with MS Word, New...
+
+            //New Clicked, wire up page events, like when a file is open.
+            //1)
+            //2)
+            //3)
+
+            //EME3x does have a tool to bind all the form controls to default settings.
+
+            Utils1.setEmeDataSets();
+            //bindFormtoEMEdatabases();
+            xDoc = new XmlDocument();
+            //Format picker... default should be -2
+            sourceXmlFormat = "ISO19115-2"; //  sourceXmlFormat ="ISO19115"
+            //xDox Set when checking the metadata format
+            filename = "New";
+            //localXdoc = new isoNodes(xDoc, sourceXmlFormat, filename);
+            bindCCMFields();
+            frmctrls(this.Controls); //validation
+            foreach (Control c in this.Controls)
+            {
+                validate_Controls(c);
+            }
+
+        }
 
         private void OpenToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -784,34 +812,7 @@ namespace EmeLibrary
             //idInfo_citation_date_creation.Text = idInfo_citation_date_creation_dtP.Value.ToString("yyyy-MM-dd");
         }
 
-        private void newToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //When the form loads, maybe the tabs should be grey'd out until something happens, like opening an existing file, or creating a new record.
-            //Kind of like with MS Word, New...
-            
-            //New Clicked, wire up page events, like when a file is open.
-            //1)
-            //2)
-            //3)
-
-            //EME3x does have a tool to bind all the form controls to default settings.
-
-            Utils1.setEmeDataSets();
-            //bindFormtoEMEdatabases();
-            xDoc = new XmlDocument();
-            //Format picker... default should be -2
-            sourceXmlFormat = "ISO19115-2"; //  sourceXmlFormat ="ISO19115"
-            //xDox Set when checking the metadata format
-            filename = "New";
-            //localXdoc = new isoNodes(xDoc, sourceXmlFormat, filename);
-            bindCCMFields();
-            frmctrls(this.Controls); //validation
-            foreach (Control c in this.Controls)
-            {
-                validate_Controls(c);
-            }
-
-        }
+        
 
         /// <summary>
         /// recursivly runs through all the controls and runs validation on those 
@@ -866,6 +867,19 @@ namespace EmeLibrary
             string name = ctrl.Name.Substring(0, ctrl.Name.Length - 4);
             TextBox tbox = (TextBox) this.getControlForTag(name);
             tbox.Clear();
+        }
+        /// <summary>
+        /// generic event to clear a selection in a combo box.  The combo box is the main control
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ClearCombobox_Click(object sender, EventArgs e)
+        {
+            Control ctrl = (Control)sender;
+            string name = ctrl.Name.Substring(0, ctrl.Name.Length - 4);            
+            ComboBox cboCtrl = (ComboBox)this.Controls.Find(name, true)[0];
+            cboCtrl.SelectedIndex = -1;
+
         }
 
         private void expand_Click(object sender, EventArgs e)
@@ -1065,7 +1079,7 @@ namespace EmeLibrary
             PageController pc = PageController.thatControls(senderName);
             pc.setDefault(this);
         }
-            
+                            
                 
 
     }

@@ -257,6 +257,18 @@
 		<Csdgm/>    
 	</emeControl>
 	<emeControl>
+		<controlName>idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystem</controlName>
+		<Iso19115_2>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='resourceConstraints']/*[local-name()='MD_SecurityConstraints']/*[local-name()='classificationSystem']</Iso19115_2>
+		<Iso19115_1/>
+		<Csdgm/>    
+	</emeControl>
+	<emeControl>
+		<controlName>idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescription</controlName>
+		<Iso19115_2>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='resourceConstraints']/*[local-name()='MD_SecurityConstraints']/*[local-name()='handlingDescription']</Iso19115_2>
+		<Iso19115_1/>
+		<Csdgm/>    
+	</emeControl>
+	<emeControl>
 		<controlName>idInfo_extent_description</controlName>
 		<Iso19115_2>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='extent']/*[local-name()='EX_Extent']/*[local-name()='description']</Iso19115_2>
 		<Iso19115_1/>

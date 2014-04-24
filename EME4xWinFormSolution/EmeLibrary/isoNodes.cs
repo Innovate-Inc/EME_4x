@@ -64,6 +64,8 @@ namespace EmeLibrary
         private string _idInfo_resourceConstraints_MD_SecurityConstraints_useLimitation;
         private string _idInfo_resourceConstraints_MD_SecurityConstraints_classification;
         private string _idInfo_resourceConstraints_MD_SecurityConstraints_userNote;
+        private string _idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystem;
+        private string _idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescription;
 
         private string _idInfo_extent_description;
         private double _idInfo_extent_geographicBoundingBox_westLongDD;
@@ -188,6 +190,11 @@ namespace EmeLibrary
             get { return _idInfo_resourceConstraints_MD_Constraints_useLimitation; }
             set { _idInfo_resourceConstraints_MD_Constraints_useLimitation = value; }
         }
+        public string idInfo_resourceConstraints_MD_LegalConstraints_useLimitation
+        {
+            get { return _idInfo_resourceConstraints_MD_LegalConstraints_useLimitation; }
+            set { _idInfo_resourceConstraints_MD_LegalConstraints_useLimitation = value; }
+        }
         public string idInfo_resourceConstraints_MD_LegalConstraints_accessConstraints
         {
             get {return _idInfo_resourceConstraints_MD_LegalConstraints_accessConstraints; }
@@ -218,6 +225,17 @@ namespace EmeLibrary
             get { return _idInfo_resourceConstraints_MD_SecurityConstraints_userNote; }
             set { _idInfo_resourceConstraints_MD_SecurityConstraints_userNote = value; }
         }
+        public string idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystem
+        {
+            get { return _idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystem; }
+            set { _idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystem = value; }
+        }
+        public string idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescription
+        {
+            get { return _idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescription; }
+            set { _idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescription = value; }
+        }
+
         //Section 20
         public string idInfo_extent_description
         {
@@ -309,6 +327,7 @@ namespace EmeLibrary
                 idinfoCitationcitedResponsibleParty = new List<CI_ResponsibleParty>();
                 
                 idinfoPointOfContact = new List<CI_ResponsibleParty>();
+                _idInfo_extent_temporalExtent = new temporalElement__EX_TemporalExtent();
                 _distributionInfo__MD_Distribution = new List<MD_Distributor>();
                                               
                 
@@ -365,7 +384,11 @@ namespace EmeLibrary
                     returnInnerTextfromNode(IsoNodeXpaths.idInfo_resourceConstraints_MD_SecurityConstraints_classificationXpath);
                 _idInfo_resourceConstraints_MD_SecurityConstraints_userNote =
                     returnInnerTextfromNode(IsoNodeXpaths.idInfo_resourceConstraints_MD_SecurityConstraints_userNoteXpath);
-
+                _idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystem =
+                    returnInnerTextfromNode(IsoNodeXpaths.idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystemXpath);
+                _idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescription =
+                    returnInnerTextfromNode(IsoNodeXpaths.idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescriptionXpath);
+                
                 _idInfo_extent_description = returnInnerTextfromNode(IsoNodeXpaths.idInfo_extent_descriptionXpath);
                 _idInfo_extent_geographicBoundingBox_eastLongDD = returnInnerTextfromNodeAsDouble(IsoNodeXpaths.idInfo_extent_geographicBoundingBox_eastLongDDXpath);
                 _idInfo_extent_geographicBoundingBox_westLongDD = returnInnerTextfromNodeAsDouble(IsoNodeXpaths.idInfo_extent_geographicBoundingBox_westLongDDXpath);
@@ -1060,7 +1083,7 @@ namespace EmeLibrary
                 constructChildNodeUnderParent(outbound_md_DataIdSection, keywordsPlaceFrag, true);
             }
 
-            //Section 16.12 ToDo: resourceConstraints (optional)
+            //Section 16.12 resourceConstraints (optional)
 
             //MD_Constraints
             if (!string.IsNullOrEmpty(_idInfo_resourceConstraints_MD_Constraints_useLimitation))
@@ -1113,7 +1136,10 @@ namespace EmeLibrary
             //MD_SecurityConstraints   If any one has a value then populate the section
             if (!string.IsNullOrEmpty(_idInfo_resourceConstraints_MD_SecurityConstraints_useLimitation)
                 | !string.IsNullOrEmpty(_idInfo_resourceConstraints_MD_SecurityConstraints_classification)
-                | !string.IsNullOrEmpty(_idInfo_resourceConstraints_MD_SecurityConstraints_userNote))
+                | !string.IsNullOrEmpty(_idInfo_resourceConstraints_MD_SecurityConstraints_userNote)
+                | !string.IsNullOrEmpty(_idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystem)
+                | !string.IsNullOrEmpty(_idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescription)
+                )
             {                
                 //clone the entire section *template* sections removed later
                 constructChildNodeUnderParent(outbound_md_DataIdSection,
@@ -1137,7 +1163,19 @@ namespace EmeLibrary
                 {
                     outboundMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.idInfo_resourceConstraints_MD_SecurityConstraints_userNoteXpath).InnerText =
                         _idInfo_resourceConstraints_MD_SecurityConstraints_userNote;
-                }              
+                }
+                if (!string.IsNullOrEmpty(_idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystem))
+                {
+                    outboundMetadataRecord.DocumentElement.SelectSingleNode(
+                        IsoNodeXpaths.idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystemXpath).InnerText =
+                        _idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystem;
+                }
+                if (!string.IsNullOrEmpty(_idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescription))
+                {
+                    outboundMetadataRecord.DocumentElement.SelectSingleNode(
+                        IsoNodeXpaths.idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescriptionXpath).InnerText =
+                        _idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescription;
+                }                
             }
 
 

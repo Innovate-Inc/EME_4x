@@ -35,6 +35,13 @@ namespace EmeLibrary
             get 
             {
                 //ToDo Call Save Method Here  bind_MD_Dist_Class(MD_Distributor dist)
+                if (_distributorList != null)
+                {
+                    if (_distributorList.Count > 0)
+                    {
+                        bind_MD_Dist_Class(_distributorList[_distributorList_idx]);
+                    }
+                }
                 return _distributorList;
             }
             set { _distributorList = value; }

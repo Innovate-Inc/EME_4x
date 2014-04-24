@@ -231,7 +231,11 @@ namespace EmeLibrary
                 {
 
                     ComboBox boxCbo = (ComboBox)ctrl;
-                    string c = (frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null) != null) ? frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null).ToString() : "";
+                    string c = (frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null) != null) ?
+                        frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null).ToString().Trim() : "";
+                    
+                    boxCbo.SelectedIndex = -1;
+                    boxCbo.Text = ""; //clears free existing free text
 
                     if (scrTable != "")
                     {
@@ -270,8 +274,18 @@ namespace EmeLibrary
                     }
                     else
                     {
+                        
                         int i = boxCbo.FindStringExact(c);
-                        boxCbo.SelectedIndex = i;
+                        if (i > -1)
+                        {
+                            boxCbo.SelectedItem = c;
+                        }
+                        else 
+                        {
+                            //add the text to cbo if not found in list
+                            //This does not work if the cbo does not have an editable portion enabled.
+                            boxCbo.SelectedText = c;
+                        }
 
                     }
 
@@ -321,6 +335,11 @@ namespace EmeLibrary
                     //Console.WriteLine(outgoing_ResponsibleParty.incomingCI_ResponsiblePartyList[].individualName);
                     //List<CI_ResponsibleParty> ci_RP = (List<CI_ResponsibleParty>)frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null);
                 }
+                else if (ctrl.GetType() == typeof(uc_distribution))                
+                {
+                    uc_distribution outgoing_distribution = (uc_distribution)ctrl;
+                    frm.localXdoc.GetType().GetProperty(ctrl.Name).SetValue(obj, outgoing_distribution.distributorList, null);
+                }
                 else if (ctrl.GetType() == typeof(uc_extentTemporal))
                 {
                     uc_extentTemporal outgoing_extentTemporal = (uc_extentTemporal)ctrl;
@@ -329,8 +348,9 @@ namespace EmeLibrary
                 else if (ctrl.GetType() == typeof(ComboBox))
                 {
                     ComboBox boxCbo = (ComboBox)ctrl;
-                    frm.localXdoc.GetType().GetProperty(ctrl.Name).SetValue(obj, boxCbo.SelectedText, null);
-                    Console.WriteLine(boxCbo.SelectedText);
+                    //MessageBox.Show(boxCbo.Name + System.Environment.NewLine + "Text: " + boxCbo.Text + " SelectedText: " + boxCbo.SelectedText);
+                    frm.localXdoc.GetType().GetProperty(ctrl.Name).SetValue(obj, boxCbo.Text, null);
+                    //Console.WriteLine(boxCbo.SelectedText);
                 }
                 else if (ctrl.GetType() == typeof(TextBox))
                 {

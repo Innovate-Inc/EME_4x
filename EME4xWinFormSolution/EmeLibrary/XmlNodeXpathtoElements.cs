@@ -50,7 +50,9 @@ namespace EmeLibrary
         public string idInfo_resourceConstraints_MD_LegalConstraints_otherConstraintsXpath { get; set; }
         public string idInfo_resourceConstraints_MD_SecurityConstraints_useLimitationXpath { get; set; }
         public string idInfo_resourceConstraints_MD_SecurityConstraints_classificationXpath { get; set; }
-        public string idInfo_resourceConstraints_MD_SecurityConstraints_userNoteXpath { get; set; }        
+        public string idInfo_resourceConstraints_MD_SecurityConstraints_userNoteXpath { get; set; }
+        public string idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystemXpath { get; set; }
+        public string idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescriptionXpath { get; set; }
         
         public string idInfo_extent_descriptionXpath { get; set; }
         public string idInfo_extent_geographicBoundingBox_westLongDDXpath { get; set; }
