@@ -57,9 +57,8 @@ namespace EmeLibrary
                 uc_ResponsibleParty_lbl.Text = value;
             }
         }
-        public string rp_mode { get; set; }      
-
-
+        public string rp_mode { get; set; }                
+        
         
 
         //public List<CI_ResponsibleParty> contact_CI_ResponsibleParty
@@ -72,7 +71,29 @@ namespace EmeLibrary
         public uc_ResponsibleParty()
         {
             InitializeComponent();
-            //_incomingRPList = new List<CI_ResponsibleParty>();
+            
+            _incomingRPList = new List<CI_ResponsibleParty>();
+            
+            //Start instance of the eme dataset
+            //if (Utils1.emeDataSet == null)
+            //{
+            //    Utils1.setEmeDataSets();
+            //}
+            //MessageBox.Show(dcatProgramCode.DataSource.ToString());
+            //if (dcatProgramCode.DataSource == null)
+            //{
+            //    DataTable subTable2 = new DataTable();
+            //    subTable2 = Utils1.emeDataSet.Tables["ProgramCode"].Select().CopyToDataTable();
+            //    //dcatProgramCode.DataSource = subTable2;
+            //    //dcatProgramCode.DisplayMember = "programName";
+            //    //dcatProgramCode.ValueMember = "pCode";
+            //}
+            
+            
+            //codeListValuesDataSet.Tables["CI_RoleCode"].Select("cSource = 'ISO19115'").CopyToDataTable();
+            //comboBox1.DataSource = subTable; //Utils1.codeListValuesDataSet.Tables["CI_RoleCode"].Select("cSource=ISO19115").CopyToDataTable();
+            //comboBox1.ValueMember = "cStdValue";
+            //comboBox1.DisplayMember = "cDisplayValue";
 
         }
 
@@ -86,7 +107,14 @@ namespace EmeLibrary
             {
                 role.SelectedItem = incomingCIRP.role;
             }
-
+            if (incomingCIRP.dcatProgramCode == null)
+            {
+                dcatProgramCode.SelectedValue = -1;
+            }
+            else
+            {
+                dcatProgramCode.SelectedValue = incomingCIRP.dcatProgramCode;
+            }
             individualName_txt.Text = incomingCIRP.individualName;
             organisationName_txt.Text = incomingCIRP.organisationName;
             positionName.Text = incomingCIRP.positionName;
@@ -99,9 +127,15 @@ namespace EmeLibrary
             contactInfo__CI_Contact__phone__CI_Telephone__facsimile.Text = incomingCIRP.contactInfo__CI_Contact__phone__CI_Telephone__facsimile;
             contactInfo__CI_Contact__address__CI_Address__electronicMailAddress.Text = incomingCIRP.contactInfo__CI_Contact__address__CI_Address__electronicMailAddress;
             contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage.Text = incomingCIRP.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage;
-
-            //contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode.SelectedText = incomingCIRP.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode;
-
+            if (incomingCIRP.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode == null)
+            {
+                contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode.SelectedIndex = -1;
+            }
+            else
+            {
+                contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode.SelectedItem =
+                    incomingCIRP.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode;
+            }
             contactInfo__CI_Contact__hoursOfService.Text = incomingCIRP.contactInfo__CI_Contact__hoursOfService;
             contactInfo__CI_Contact__contactInstructions.Text = incomingCIRP.contactInfo__CI_Contact__contactInstructions;
 
@@ -113,9 +147,9 @@ namespace EmeLibrary
 
             if (role.SelectedItem != null)
             {
-
                 outgoingCIRP.role = role.SelectedItem.ToString();
             }
+            outgoingCIRP.dcatProgramCode = getSelectedProgramCode(dcatProgramCode.Text);
             outgoingCIRP.individualName = individualName_txt.Text;
             outgoingCIRP.organisationName = organisationName_txt.Text;
             outgoingCIRP.contactInfo__CI_Contact__address__CI_Address__deliveryPoint = contactInfo__CI_Contact__address__CI_Address__deliveryPoint.Text;
@@ -127,36 +161,52 @@ namespace EmeLibrary
             outgoingCIRP.contactInfo__CI_Contact__phone__CI_Telephone__facsimile = contactInfo__CI_Contact__phone__CI_Telephone__facsimile.Text;
             outgoingCIRP.contactInfo__CI_Contact__address__CI_Address__electronicMailAddress = contactInfo__CI_Contact__address__CI_Address__electronicMailAddress.Text;
             outgoingCIRP.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage = contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage.Text;
-            //outgoingCIRP.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode = contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode.SelectedItem.ToString();
+            if (contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode.SelectedItem != null)
+            {
+                outgoingCIRP.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode =
+                    contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode.SelectedItem.ToString();
+            }
             outgoingCIRP.contactInfo__CI_Contact__hoursOfService = contactInfo__CI_Contact__hoursOfService.Text;
             outgoingCIRP.contactInfo__CI_Contact__contactInstructions = contactInfo__CI_Contact__contactInstructions.Text;
             CI_ResponsiblePartyList = _incomingRPList;
 
         }
-
-
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+   
 
         private void uc_ResponsibleParty_Load(object sender, EventArgs e)
         {
             //MessageBox.Show("RP Load");
-             expandHeight = 500;
+            expandHeight = 500;
             //intermediateHeight
-             collapseHeight = 35;
-             if (rp_mode != "distribution")
-             {
+            
+            collapseHeight = 35;
+            
+            if (rp_mode != "distribution")            
+            {
                  addRP_Btn.Enabled = true;
-             }
+            }
+            
+            //if (Utils1.emeDataSet == null)
+            //{
+            //    Utils1.setEmeDataSets();
+            //}
+
+            //if (dcatProgramCode.DataSource == null)
+            //{
+            //    DataTable subTable2 = //new DataTable();
+            //    DataTable subTable2 = Utils1.emeDataSet.Tables["ProgramCode"].Select().CopyToDataTable();
+            //    dcatProgramCode.DataSource = subTable2;
+            //    dcatProgramCode.DisplayMember = "programName";
+            //    dcatProgramCode.ValueMember = "pCode";
+            //}
         }
 
 
         public void loadList(List<CI_ResponsibleParty> CI_ResponsiblePartyList)
         {
             //reset();
+            bindControlsToEMEdatabase();
+
             _incomingRPList = CI_ResponsiblePartyList;
             //MessageBox.Show(incomingRPList.Count().ToString());
             if (_incomingRPList.Count < 1)
@@ -215,6 +265,7 @@ namespace EmeLibrary
             incomingRPListIndex = 0;
             pagerLbl.Text = "0 of 0";
             role.SelectedIndex = -1;
+            dcatProgramCode.SelectedIndex = -1;
             individualName_txt.Text = "";
             organisationName_txt.Text = "";
             positionName.Text = "";
@@ -227,7 +278,8 @@ namespace EmeLibrary
             contactInfo__CI_Contact__phone__CI_Telephone__facsimile.Text = "";
             contactInfo__CI_Contact__address__CI_Address__electronicMailAddress.Text = "";
             contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage.Text = "";
-            //contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode.SelectedText = "";
+            contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode.Text = "";
+            contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode.SelectedIndex = -1;
             contactInfo__CI_Contact__hoursOfService.Text = "";
             contactInfo__CI_Contact__contactInstructions.Text = "";
             //bindToFields(incomingRPList[incomingRPListIndex]);
@@ -235,7 +287,6 @@ namespace EmeLibrary
             comboBox1.Visible = false;
             //deleteRP_Btn.Enabled = false;
             //addRP_Btn.Enabled = true;
-            
             panel3.Enabled = false;
            
         }
@@ -359,6 +410,8 @@ namespace EmeLibrary
             bindToFields(_incomingRPList[incomingRPListIndex]);
             Control ctrl = (Control)sender;
             rp_Validating(ctrl);
+
+            bindControlsToEMEdatabase();
         }
 
         private void deleteRP_Btn_Click(object sender, EventArgs e)
@@ -370,6 +423,7 @@ namespace EmeLibrary
                 _incomingRPList.Clear();
                 pagerLbl.Text = "0 of 0";
                 role.SelectedIndex = -1;
+                dcatProgramCode.SelectedIndex = -1;
                 individualName_txt.Text = "";
                 organisationName_txt.Text = "";
                 positionName.Text = "";
@@ -648,6 +702,34 @@ namespace EmeLibrary
             //    }
             //}
         }
+
+        
+        private void bindControlsToEMEdatabase()
+        {
+            if (Utils1.emeDataSet == null)
+            {
+                Utils1.setEmeDataSets();
+            }
+            if (dcatProgramCode.DataSource == null)
+            {
+                //DataTable subTable2 = //new DataTable();
+                DataTable subTable2 = Utils1.emeDataSet.Tables["ProgramCode"].Select().CopyToDataTable();
+                dcatProgramCode.DataSource = subTable2;
+                dcatProgramCode.DisplayMember = "programName";
+                dcatProgramCode.ValueMember = "pCode";
+            }
+            dcatProgramCode.SelectedIndex = -1;
+        }
+       
+        private string getSelectedProgramCode(string selectedDisplayValue)
+        {
+            int i = dcatProgramCode.FindStringExact(selectedDisplayValue);
+
+            DataRowView drv = (DataRowView)dcatProgramCode.Items[i];
+            string pcodeValue = drv["pCode"].ToString();
+            return pcodeValue;
+                
+        }       
 
     }
 }

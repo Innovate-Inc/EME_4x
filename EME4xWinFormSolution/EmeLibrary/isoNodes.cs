@@ -614,23 +614,37 @@ namespace EmeLibrary
                 //responsiblePartySubSectionXpath = new List<string>();
                 foreach (PropertyInfo p in propInfo2)
                 {
-                    //string childNodeXpath = ".";  //Use StringBuilder for loops
-                    StringBuilder childNodeXpath = new StringBuilder();
-                    childNodeXpath.Append(".");
-                    
-                    string[] splitby = new string[] { "__" };
-                    string[] nameParts = p.Name.Split(splitby, StringSplitOptions.RemoveEmptyEntries);
-                    foreach (string entry in nameParts)
+                    if (p.Name == "dcatProgramCode")
                     {
-                        //childNodeXpath += "/*[local-name()='" + entry + "']";
-                        childNodeXpath.Append("/*[local-name()='" + entry + "']");
+                        //Get the programCode if it exists
+                        //eg <gmd:contact xlink:title="020-072">
+                        XmlNode attributeNode = n.Attributes["xlink:title"]; //subNode.Attributes["indeterminatePosition"];
+                        if (attributeNode != null)
+                        {
+                            string pcode = (n.Attributes["xlink:title"].Value != null) ? n.Attributes["xlink:title"].Value : "";
+                            p.SetValue(rp, pcode, null);                            
+                        }
                     }
-                    //responsiblePartySubSectionXpath.Add(childNodeXpath); //Adding the Xpath to list for later use                    
-                    //Console.WriteLine(childNodeXpath.ToString());
-                    string nodeValue = 
-                        (n.FirstChild.SelectSingleNode(childNodeXpath.ToString()) != null) ?
-                        n.FirstChild.SelectSingleNode(childNodeXpath.ToString()).InnerText : "";
-                    p.SetValue(rp, nodeValue, null);
+                    else
+                    {
+                        //string childNodeXpath = ".";  //Use StringBuilder for loops
+                        StringBuilder childNodeXpath = new StringBuilder();
+                        childNodeXpath.Append(".");
+
+                        string[] splitby = new string[] { "__" };
+                        string[] nameParts = p.Name.Split(splitby, StringSplitOptions.RemoveEmptyEntries);
+                        foreach (string entry in nameParts)
+                        {
+                            //childNodeXpath += "/*[local-name()='" + entry + "']";
+                            childNodeXpath.Append("/*[local-name()='" + entry + "']");
+                        }
+                        //responsiblePartySubSectionXpath.Add(childNodeXpath); //Adding the Xpath to list for later use                    
+                        //Console.WriteLine(childNodeXpath.ToString());
+                        string nodeValue =
+                            (n.FirstChild.SelectSingleNode(childNodeXpath.ToString()) != null) ?
+                            n.FirstChild.SelectSingleNode(childNodeXpath.ToString()).InnerText : "";
+                        p.SetValue(rp, nodeValue, null);
+                    }
                 }
                 //contactRpSection.Add(rp);
                 rpList.Add(rp);                
@@ -1391,31 +1405,55 @@ namespace EmeLibrary
                 //responsiblePartySubSectionXpath = new List<string>();
                 foreach (PropertyInfo p in propInfo2)
                 {
-                    string childNodeXpath = ".";
-                    string[] splitby = new string[] { "__" };
-                    string[] nameParts = p.Name.Split(splitby, StringSplitOptions.RemoveEmptyEntries);
-                    foreach (string entry in nameParts)
+                    if (p.Name == "dcatProgramCode")
                     {
-                        childNodeXpath += "/*[local-name()='" + entry + "']";
-                    }
-                    string nodeValue = (p.GetValue(rpObject, null) != null) ? p.GetValue(rpObject, null).ToString() : "";
-                    XmlNode targetNode = responsiblePartySectionTemplate.FirstChild.SelectSingleNode(childNodeXpath);
-                    if (targetNode != null)
-                    {
-                        //If the value is null or empty from the class then remove it except for rolecode
-                        if (nodeValue == "" && p.Name != "role")
+                        ////Create the attribute
+                        string pCode = (p.GetValue(rpObject, null) != null) ? p.GetValue(rpObject, null).ToString() : "";
+                        if (pCode != "")
                         {
-                            //Delete the node
-                            //targetNode.ParentNode.RemoveChild(targetNode);
-                            targetNode.RemoveAll();
-                            removeEmptyParentNodes(targetNode);
-                        }
-                        else
-                        {
-                            if (targetNode.HasChildNodes == true) { targetNode.FirstChild.InnerText = nodeValue; }
-                            else { targetNode.InnerText = nodeValue; }
-                            if (p.Name == "role") { targetNode.FirstChild.Attributes["codeListValue"].Value = nodeValue; }
+                            XmlAttribute pcodeAttribut = responsiblePartySectionTemplate.OwnerDocument.CreateAttribute("xlink", "title", "http://www.w3.org/1999/xlink");
+                            pcodeAttribut.Value = pCode;
+                            XmlAttributeCollection ac = responsiblePartySectionTemplate.Attributes;
+                            ac.Append(pcodeAttribut);
 
+                            //XmlAttribute indTimeAtt = outboundMetadataRecord.CreateAttribute("indeterminatePosition");
+                            //indTimeAtt.Value = (!string.IsNullOrEmpty(_idInfo_extent_temporalExtent.TimeInstant.extent__TimeInstant__timePosition)) ?
+                            //    _idInfo_extent_temporalExtent.TimeInstant.extent__TimeInstant__timePosition : "unknown";
+
+                            ////Remove the *template* innerText and append the attribute
+                            //tiNode.SelectSingleNode("./*[local-name()='timePosition']").InnerText = "";
+                            //XmlAttributeCollection ac = tiNode.SelectSingleNode("./*[local-name()='timePosition']").Attributes;
+                            //ac.Append(indTimeAtt);
+                        }
+                    }
+                    else
+                    {
+                        string childNodeXpath = ".";
+                        string[] splitby = new string[] { "__" };
+                        string[] nameParts = p.Name.Split(splitby, StringSplitOptions.RemoveEmptyEntries);
+                        foreach (string entry in nameParts)
+                        {
+                            childNodeXpath += "/*[local-name()='" + entry + "']";
+                        }
+                        string nodeValue = (p.GetValue(rpObject, null) != null) ? p.GetValue(rpObject, null).ToString() : "";
+                        XmlNode targetNode = responsiblePartySectionTemplate.FirstChild.SelectSingleNode(childNodeXpath);
+                        if (targetNode != null)
+                        {
+                            //If the value is null or empty from the class then remove it except for rolecode
+                            if (nodeValue == "" && p.Name != "role")
+                            {
+                                //Delete the node
+                                //targetNode.ParentNode.RemoveChild(targetNode);
+                                targetNode.RemoveAll();
+                                removeEmptyParentNodes(targetNode);
+                            }
+                            else
+                            {
+                                if (targetNode.HasChildNodes == true) { targetNode.FirstChild.InnerText = nodeValue; }
+                                else { targetNode.InnerText = nodeValue; }
+                                if (p.Name == "role") { targetNode.FirstChild.Attributes["codeListValue"].Value = nodeValue; }
+
+                            }
                         }
                     }
 
@@ -1531,31 +1569,55 @@ namespace EmeLibrary
                 //responsiblePartySubSectionXpath = new List<string>();
                 foreach (PropertyInfo p in propInfo2)
                 {
-                    string childNodeXpath = ".";
-                    string[] splitby = new string[] { "__" };
-                    string[] nameParts = p.Name.Split(splitby, StringSplitOptions.RemoveEmptyEntries);
-                    foreach (string entry in nameParts)
+                    if (p.Name == "dcatProgramCode")
                     {
-                        childNodeXpath += "/*[local-name()='" + entry + "']";
-                    }
-                    string nodeValue = (p.GetValue(rpObject, null) != null) ? p.GetValue(rpObject, null).ToString() : "";
-                    XmlNode targetNode = responsiblePartySectionTemplate.FirstChild.SelectSingleNode(childNodeXpath);
-                    if (targetNode != null)
-                    {
-                        //If the value is null or empty from the class then remove it except for rolecode
-                        if (nodeValue == "" && p.Name != "role")
+                        ////Create the attribute
+                        string pCode = (p.GetValue(rpObject, null) != null) ? p.GetValue(rpObject, null).ToString() : "";
+                        if (pCode != "")
                         {
-                            //Delete the node
-                            //targetNode.ParentNode.RemoveChild(targetNode);
-                            targetNode.RemoveAll();
-                            removeEmptyParentNodes(targetNode);
-                        }
-                        else
-                        {
-                            if (targetNode.HasChildNodes == true) { targetNode.FirstChild.InnerText = nodeValue; }
-                            else { targetNode.InnerText = nodeValue; }
-                            if (p.Name == "role") { targetNode.FirstChild.Attributes["codeListValue"].Value = nodeValue; }
+                            XmlAttribute pcodeAttribut = responsiblePartySectionTemplate.OwnerDocument.CreateAttribute("xlink", "title", "http://www.w3.org/1999/xlink");
+                            pcodeAttribut.Value = pCode;
+                            XmlAttributeCollection ac = responsiblePartySectionTemplate.Attributes;
+                            ac.Append(pcodeAttribut);
 
+                            //XmlAttribute indTimeAtt = outboundMetadataRecord.CreateAttribute("indeterminatePosition");
+                            //indTimeAtt.Value = (!string.IsNullOrEmpty(_idInfo_extent_temporalExtent.TimeInstant.extent__TimeInstant__timePosition)) ?
+                            //    _idInfo_extent_temporalExtent.TimeInstant.extent__TimeInstant__timePosition : "unknown";
+
+                            ////Remove the *template* innerText and append the attribute
+                            //tiNode.SelectSingleNode("./*[local-name()='timePosition']").InnerText = "";
+                            //XmlAttributeCollection ac = tiNode.SelectSingleNode("./*[local-name()='timePosition']").Attributes;
+                            //ac.Append(indTimeAtt);
+                        }
+                    }
+                    else
+                    {
+                        string childNodeXpath = ".";
+                        string[] splitby = new string[] { "__" };
+                        string[] nameParts = p.Name.Split(splitby, StringSplitOptions.RemoveEmptyEntries);
+                        foreach (string entry in nameParts)
+                        {
+                            childNodeXpath += "/*[local-name()='" + entry + "']";
+                        }
+                        string nodeValue = (p.GetValue(rpObject, null) != null) ? p.GetValue(rpObject, null).ToString() : "";
+                        XmlNode targetNode = responsiblePartySectionTemplate.FirstChild.SelectSingleNode(childNodeXpath);
+                        if (targetNode != null)
+                        {
+                            //If the value is null or empty from the class then remove it except for rolecode
+                            if (nodeValue == "" && p.Name != "role")
+                            {
+                                //Delete the node
+                                //targetNode.ParentNode.RemoveChild(targetNode);
+                                targetNode.RemoveAll();
+                                removeEmptyParentNodes(targetNode);
+                            }
+                            else
+                            {
+                                if (targetNode.HasChildNodes == true) { targetNode.FirstChild.InnerText = nodeValue; }
+                                else { targetNode.InnerText = nodeValue; }
+                                if (p.Name == "role") { targetNode.FirstChild.Attributes["codeListValue"].Value = nodeValue; }
+
+                            }
                         }
                     }
 
@@ -1909,6 +1971,7 @@ namespace EmeLibrary
         public string contactInfo__CI_Contact__hoursOfService { get; set; }
         public string contactInfo__CI_Contact__contactInstructions { get; set; }
         public string role { get; set; } //need to link with role-code values from codelist
+        public string dcatProgramCode { get; set; }
     }
     
     [StructLayout(LayoutKind.Sequential)]

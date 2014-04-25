@@ -83,9 +83,15 @@ namespace EmeLibrary
 
         public uc_distribution()
         {
-            //_distributorList = new List<MD_Distributor>(); 
+            
             InitializeComponent();
+            //_distributorList = new List<MD_Distributor>(); 
+            //_distributorContact = new CI_ResponsibleParty();
 
+            //if (Utils1.emeDataSet == null)
+            //{
+            //    Utils1.setEmeDataSets();
+            //}
         }   
 
         //MD_Distributor region contains the events for the controls that control paging through distributors 

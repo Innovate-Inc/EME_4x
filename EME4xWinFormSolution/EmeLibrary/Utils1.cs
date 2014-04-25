@@ -28,6 +28,7 @@ namespace EmeLibrary
             emeDataSet.ReadXml(Directory.GetCurrentDirectory() + "\\Eme4xSystemFiles\\EMEdb\\BoundingBox.xml");
             emeDataSet.ReadXml(Directory.GetCurrentDirectory() + "\\Eme4xSystemFiles\\EMEdb\\Citation.xml");
             emeDataSet.ReadXml(Directory.GetCurrentDirectory() + "\\Eme4xSystemFiles\\EMEdb\\DistributionLiability.xml");
+            emeDataSet.ReadXml(Directory.GetCurrentDirectory() + "\\Eme4xSystemFiles\\EMEdb\\ProgramCode.xml");
             emeDataSet.DataSetName = "emeData";
 
             emeDataSetEditor = emeDataSet;
@@ -36,7 +37,7 @@ namespace EmeLibrary
 
             //use for databinding to drop list
             dataTableNames = new string[]{"Publisher", "OnlineLinkage", "KeywordsEPA", "KeywordsISO",
-                "KeywordsUser","KeywordsPlace","Contact_Information", "BoundingBox", "Citation", "DistributionLiability"};
+                "KeywordsUser","KeywordsPlace","Contact_Information", "BoundingBox", "Citation", "DistributionLiability", "ProgramCode"};
         }
 
         public static DataSet codeListValuesDataSet;       

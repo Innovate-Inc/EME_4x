@@ -373,6 +373,9 @@
     <Content Include="Eme4xSystemFiles\EMEdb\OnlineLinkage.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Eme4xSystemFiles\EMEdb\ProgramCode.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Eme4xSystemFiles\EMEdb\Publisher.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
