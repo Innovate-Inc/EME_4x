@@ -372,6 +372,7 @@ namespace EmeLibrary
                 else if (ctrl.GetType() == typeof(ListBox))
                 {
                     ListBox lstBox = (ListBox)ctrl;
+                    //MessageBox.Show(lstBox.Name);
 
                     List<string> saveList = (List<string>)frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null);
                     saveList.Clear();

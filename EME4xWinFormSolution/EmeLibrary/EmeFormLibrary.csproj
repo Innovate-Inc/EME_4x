@@ -48,6 +48,7 @@
     <Compile Include="EmeDatabase.Designer.cs">
       <DependentUpon>EmeDatabase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Events\SaveEvent.cs" />
     <Compile Include="isoNodes.cs" />
     <Compile Include="PageController.cs" />
     <Compile Include="Properties\Resources.Designer.cs">

@@ -14,10 +14,14 @@ using System.Xml.Serialization;
 using System.IO;
 
 
+
 namespace EmeLibrary
 {
     public partial class EmeLT : Form
     {
+        //delegate void LoadDocumentDelegate(string filenameDg);
+        private bool ESRIMode = false;
+
         private string filename;
         private string sourceXmlFormat;
         private string defaultSettingsTablePath;
@@ -30,7 +34,8 @@ namespace EmeLibrary
         {
             InitializeComponent();
 
-            
+
+            toolStripComboBox1.SelectedIndex = 0;
             
             //Start instance of the eme dataset
             if (Utils1.emeDataSet == null)
@@ -542,9 +547,7 @@ namespace EmeLibrary
             keyws.keyword = kw;
 
             identificationInfoMD_DataIdentificationPointOfContact poc = new identificationInfoMD_DataIdentificationPointOfContact();
-
-                      
-
+            
             contactCI_ResponsibleParty rp = new contactCI_ResponsibleParty();
             rp.individualName.CharacterString = "name";
             rp.organisationName.CharacterString = "org";
@@ -634,51 +637,105 @@ namespace EmeLibrary
 
         }
 
+        protected virtual void OnSaveEvent(SaveEventArgs e)
+        {
+
+        }
+
+        private void saveXmlChanges()
+        {
+            PageController.PageSaver(this);
+
+            string outPutFormat = toolStripComboBox1.SelectedItem.ToString();
+            XmlDocument xmlDocToSave = localXdoc.saveChangestoRecord(outPutFormat);
+            xmlDocToSave.PreserveWhitespace = false;
+            XmlTextWriter xw = new XmlTextWriter(filename, new UTF8Encoding(false));
+            xw.Formatting = Formatting.Indented;
+            xmlDocToSave.Save(xw);
+            MessageBox.Show("Saved: " + filename);
+        }
+
+        private string saveWithThisFileName()
+        {
+            string fn = "";
+            saveFileDialog1.Filter = "XML Metadata (*.xml)|*.xml";
+            saveFileDialog1.Title = "Save Metadata Record";
+            //saveFileDialog1.ShowDialog();
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                fn = saveFileDialog1.FileName;                
+            }
+            return fn;
+        }
+
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //Write from values back to the xml record            
+            //Write form values back to the xml record            
             //Check content for required content and validation of some kind
-            
+
+            #region OldStuff
 
             //localXdoc.idInfo_citation_Title = idInfo_citation_Title.Text;
             //localXdoc.idInfo_Abstract = idInfo_Abstract.Text;
-                       
 
-            localXdoc.idInfo_keywordsPlace.Clear();
-            foreach (DataRowView item in idInfo_keywordsPlace.SelectedItems)
+
+            //localXdoc.idInfo_keywordsPlace.Clear();
+            //foreach (DataRowView item in idInfo_keywordsPlace.SelectedItems)
+            //{
+            //    localXdoc.idInfo_keywordsPlace.Add(item["placekey"].ToString());
+            //}
+            
+            //localXdoc.idInfo_keywordsEpa.Clear();
+            //foreach (DataRowView item in idInfo_keywordsEpa.SelectedItems)
+            //{
+            //    localXdoc.idInfo_keywordsEpa.Add(item["themekey"].ToString());
+            //}
+
+            //localXdoc.idInfo_keywordsIsoTopicCategory.Clear();
+            //foreach (DataRowView item in idInfo_keywordsIsoTopicCategory.SelectedItems)
+            //{
+            //    localXdoc.idInfo_keywordsIsoTopicCategory.Add(item["themekey"].ToString());
+            //}
+
+            //localXdoc.idInfo_keywordsUser.Clear();
+            //foreach (DataRowView item in idInfo_keywordsUser.SelectedItems)
+            //{
+            //    localXdoc.idInfo_keywordsUser.Add(item["themekey"].ToString());
+            //}
+            #endregion
+            if (filename == "New")
             {
-                localXdoc.idInfo_keywordsPlace.Add(item["placekey"].ToString());
+                string newFileName = saveWithThisFileName();
+                if (!string.IsNullOrEmpty(newFileName))
+                { 
+                    filename = newFileName;
+                    saveXmlChanges();
+                }
+                else
+                {
+                    MessageBox.Show("File Not Saved.  Please Provide a File Name");
+                }                
+            }
+            else
+            {
+                saveXmlChanges();
+                //MessageBox.Show(filename);
             }
             
-            localXdoc.idInfo_keywordsEpa.Clear();
-            foreach (DataRowView item in idInfo_keywordsEpa.SelectedItems)
+        }
+
+        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string newFileName = saveWithThisFileName();
+            if (!string.IsNullOrEmpty(newFileName))
             {
-                localXdoc.idInfo_keywordsEpa.Add(item["themekey"].ToString());
+                filename = newFileName;
+                saveXmlChanges();
             }
-
-            localXdoc.idInfo_keywordsIsoTopicCategory.Clear();
-            foreach (DataRowView item in idInfo_keywordsIsoTopicCategory.SelectedItems)
+            else
             {
-                localXdoc.idInfo_keywordsIsoTopicCategory.Add(item["themekey"].ToString());
-            }
-
-            localXdoc.idInfo_keywordsUser.Clear();
-            foreach (DataRowView item in idInfo_keywordsUser.SelectedItems)
-            {
-                localXdoc.idInfo_keywordsUser.Add(item["themekey"].ToString());
-            }
-
-            PageController.PageSaver(this);
-
-            localXdoc.saveChangestoRecord();
-
-
-
-            //getXmlFormatType();
-            //bindCCMFields();
-
-            MessageBox.Show("Done");
-
+                MessageBox.Show("File Not Save.  Please Provide a File Name");
+            }     
 
         }
 
@@ -1079,6 +1136,8 @@ namespace EmeLibrary
             PageController pc = PageController.thatControls(senderName);
             pc.setDefault(this);
         }
+
+        
                             
                 
 

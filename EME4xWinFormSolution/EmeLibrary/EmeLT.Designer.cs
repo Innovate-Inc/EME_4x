@@ -57,7 +57,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.distributionInformation_gbx = new System.Windows.Forms.GroupBox();
-            this.distributionInfo__MD_Distribution = new EmeLibrary.uc_distribution();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -74,7 +73,6 @@
             this.dateStamp = new System.Windows.Forms.TextBox();
             this.dateStamp_lbl = new System.Windows.Forms.Label();
             this.metadataAuthor_Pnl = new System.Windows.Forms.Panel();
-            this.contact_CI_ResponsibleParty = new EmeLibrary.uc_ResponsibleParty();
             this.panel6 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.metadataStandardVersion_lbl = new System.Windows.Forms.Label();
@@ -82,6 +80,7 @@
             this.XmetadataStandardName = new System.Windows.Forms.TextBox();
             this.XmetadataStandardVersion = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.idInfo_extent_description_lbl = new System.Windows.Forms.Label();
@@ -118,8 +117,6 @@
             this.idInfo_resourceConstraints_MD_LegalConstraints_accessConstraints = new System.Windows.Forms.ComboBox();
             this.idInfo_resourceConstraints_MD_LegalConstraints_useConstraints = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.idInfo_extent_temporalExtent = new EmeLibrary.uc_extentTemporal();
-            this.uc_ResponsibleParty1 = new EmeLibrary.uc_ResponsibleParty();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
@@ -146,7 +143,6 @@
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.Citation_Pnl = new System.Windows.Forms.Panel();
-            this.idInfo_citation_citedResponsibleParty = new EmeLibrary.uc_ResponsibleParty();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dates_for_resources_pnl = new System.Windows.Forms.GroupBox();
             this.idInfo_citation_date_revision_dtP = new System.Windows.Forms.DateTimePicker();
@@ -172,7 +168,6 @@
             this.idInfo_Purpose_lbl = new System.Windows.Forms.Label();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.pointOfContact_Pnl = new System.Windows.Forms.Panel();
-            this.idInfo_pointOfContact = new EmeLibrary.uc_ResponsibleParty();
             this.citationGrp_Pnl = new System.Windows.Forms.Panel();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.button8 = new System.Windows.Forms.Button();
@@ -186,12 +181,21 @@
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.OpenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.databaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.importTableFeaturesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.defaultOutputFormatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.idInfo_citation_citedResponsibleParty = new EmeLibrary.uc_ResponsibleParty();
+            this.idInfo_pointOfContact = new EmeLibrary.uc_ResponsibleParty();
+            this.idInfo_extent_temporalExtent = new EmeLibrary.uc_extentTemporal();
+            this.uc_ResponsibleParty1 = new EmeLibrary.uc_ResponsibleParty();
+            this.distributionInfo__MD_Distribution = new EmeLibrary.uc_distribution();
+            this.contact_CI_ResponsibleParty = new EmeLibrary.uc_ResponsibleParty();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.panel8.SuspendLayout();
@@ -479,17 +483,6 @@
             this.distributionInformation_gbx.TabStop = false;
             this.distributionInformation_gbx.Text = "Distribution Information";
             // 
-            // distributionInfo__MD_Distribution
-            // 
-            this.distributionInfo__MD_Distribution.AutoSize = true;
-            this.distributionInfo__MD_Distribution.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.distributionInfo__MD_Distribution.distributorList = null;
-            this.distributionInfo__MD_Distribution.Location = new System.Drawing.Point(3, 17);
-            this.distributionInfo__MD_Distribution.mylabel = "Distributor";
-            this.distributionInfo__MD_Distribution.Name = "distributionInfo__MD_Distribution";
-            this.distributionInfo__MD_Distribution.Size = new System.Drawing.Size(463, 238);
-            this.distributionInfo__MD_Distribution.TabIndex = 0;
-            // 
             // groupBox3
             // 
             this.groupBox3.AutoSize = true;
@@ -675,20 +668,6 @@
             this.metadataAuthor_Pnl.Size = new System.Drawing.Size(471, 40);
             this.metadataAuthor_Pnl.TabIndex = 13;
             // 
-            // contact_CI_ResponsibleParty
-            // 
-            this.contact_CI_ResponsibleParty.BackColor = System.Drawing.Color.Transparent;
-            this.contact_CI_ResponsibleParty.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.contact_CI_ResponsibleParty.CI_ResponsiblePartyList = null;
-            this.contact_CI_ResponsibleParty.Location = new System.Drawing.Point(5, 2);
-            this.contact_CI_ResponsibleParty.mylabel = "Metadata Author";
-            this.contact_CI_ResponsibleParty.Name = "contact_CI_ResponsibleParty";
-            this.contact_CI_ResponsibleParty.rp_mode = "dist";
-            this.contact_CI_ResponsibleParty.Size = new System.Drawing.Size(463, 35);
-            this.contact_CI_ResponsibleParty.TabIndex = 0;
-            this.contact_CI_ResponsibleParty.Tag = "";
-            this.contact_CI_ResponsibleParty.Validating += new System.ComponentModel.CancelEventHandler(this.cntrl_Validating);
-            // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
@@ -734,6 +713,7 @@
             this.XmetadataStandardName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.XmetadataStandardName.Location = new System.Drawing.Point(115, 19);
             this.XmetadataStandardName.Name = "XmetadataStandardName";
+            this.XmetadataStandardName.ReadOnly = true;
             this.XmetadataStandardName.Size = new System.Drawing.Size(334, 20);
             this.XmetadataStandardName.TabIndex = 9;
             // 
@@ -742,6 +722,7 @@
             this.XmetadataStandardVersion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.XmetadataStandardVersion.Location = new System.Drawing.Point(115, 46);
             this.XmetadataStandardVersion.Name = "XmetadataStandardVersion";
+            this.XmetadataStandardVersion.ReadOnly = true;
             this.XmetadataStandardVersion.Size = new System.Drawing.Size(334, 20);
             this.XmetadataStandardVersion.TabIndex = 10;
             // 
@@ -758,6 +739,14 @@
             this.tabPage2.TabIndex = 3;
             this.tabPage2.Text = "Lets Call this Tab Something";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(34, 415);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(270, 21);
+            this.comboBox2.TabIndex = 54;
             // 
             // groupBox6
             // 
@@ -1217,28 +1206,6 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "General Constraints /\r\nSystem Of Records";
             // 
-            // idInfo_extent_temporalExtent
-            // 
-            this.idInfo_extent_temporalExtent.Location = new System.Drawing.Point(9, 210);
-            this.idInfo_extent_temporalExtent.Name = "idInfo_extent_temporalExtent";
-            this.idInfo_extent_temporalExtent.Size = new System.Drawing.Size(357, 174);
-            this.idInfo_extent_temporalExtent.TabIndex = 51;
-            temporalElement__EX_TemporalExtent1.TimeInstant = null;
-            temporalElement__EX_TemporalExtent1.TimePeriod = null;
-            this.idInfo_extent_temporalExtent.temporalElement = temporalElement__EX_TemporalExtent1;
-            // 
-            // uc_ResponsibleParty1
-            // 
-            this.uc_ResponsibleParty1.BackColor = System.Drawing.Color.Transparent;
-            this.uc_ResponsibleParty1.CI_ResponsiblePartyList = null;
-            this.uc_ResponsibleParty1.Location = new System.Drawing.Point(454, 15);
-            this.uc_ResponsibleParty1.mylabel = "My Label Name Here";
-            this.uc_ResponsibleParty1.Name = "uc_ResponsibleParty1";
-            this.uc_ResponsibleParty1.rp_mode = null;
-            this.uc_ResponsibleParty1.Size = new System.Drawing.Size(439, 35);
-            this.uc_ResponsibleParty1.TabIndex = 50;
-            this.uc_ResponsibleParty1.Visible = false;
-            // 
             // tabPage1
             // 
             this.tabPage1.AutoScroll = true;
@@ -1589,18 +1556,6 @@
             this.Citation_Pnl.Size = new System.Drawing.Size(456, 41);
             this.Citation_Pnl.TabIndex = 16;
             // 
-            // idInfo_citation_citedResponsibleParty
-            // 
-            this.idInfo_citation_citedResponsibleParty.BackColor = System.Drawing.Color.Transparent;
-            this.idInfo_citation_citedResponsibleParty.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.idInfo_citation_citedResponsibleParty.CI_ResponsiblePartyList = null;
-            this.idInfo_citation_citedResponsibleParty.Location = new System.Drawing.Point(4, 3);
-            this.idInfo_citation_citedResponsibleParty.mylabel = "Producer of Resource";
-            this.idInfo_citation_citedResponsibleParty.Name = "idInfo_citation_citedResponsibleParty";
-            this.idInfo_citation_citedResponsibleParty.rp_mode = null;
-            this.idInfo_citation_citedResponsibleParty.Size = new System.Drawing.Size(449, 35);
-            this.idInfo_citation_citedResponsibleParty.TabIndex = 2;
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
@@ -1880,18 +1835,6 @@
             this.pointOfContact_Pnl.Size = new System.Drawing.Size(454, 43);
             this.pointOfContact_Pnl.TabIndex = 17;
             // 
-            // idInfo_pointOfContact
-            // 
-            this.idInfo_pointOfContact.BackColor = System.Drawing.Color.Transparent;
-            this.idInfo_pointOfContact.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.idInfo_pointOfContact.CI_ResponsiblePartyList = null;
-            this.idInfo_pointOfContact.Location = new System.Drawing.Point(2, 5);
-            this.idInfo_pointOfContact.mylabel = "Point of Contact";
-            this.idInfo_pointOfContact.Name = "idInfo_pointOfContact";
-            this.idInfo_pointOfContact.rp_mode = null;
-            this.idInfo_pointOfContact.Size = new System.Drawing.Size(449, 35);
-            this.idInfo_pointOfContact.TabIndex = 2;
-            // 
             // citationGrp_Pnl
             // 
             this.citationGrp_Pnl.AutoSize = true;
@@ -1992,7 +1935,8 @@
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newToolStripMenuItem,
             this.OpenToolStripMenuItem,
-            this.saveToolStripMenuItem});
+            this.saveToolStripMenuItem,
+            this.saveAsToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(37, 20);
             this.toolStripMenuItem1.Text = "&File";
@@ -2000,7 +1944,7 @@
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.newToolStripMenuItem.Text = "New";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
             // 
@@ -2009,7 +1953,7 @@
             this.OpenToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("OpenToolStripMenuItem.Image")));
             this.OpenToolStripMenuItem.Name = "OpenToolStripMenuItem";
             this.OpenToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.OpenToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.OpenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.OpenToolStripMenuItem.Text = "&Open";
             this.OpenToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItem_Click);
             // 
@@ -2018,9 +1962,17 @@
             this.saveToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripMenuItem.Image")));
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.saveToolStripMenuItem.Text = "&Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+            // 
+            // saveAsToolStripMenuItem
+            // 
+            this.saveAsToolStripMenuItem.Image = global::EmeLibrary.Properties.Resources.saveas;
+            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveAsToolStripMenuItem.Text = "Save As";
+            this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
@@ -2032,7 +1984,8 @@
             // 
             this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.databaseToolStripMenuItem,
-            this.importTableFeaturesToolStripMenuItem});
+            this.importTableFeaturesToolStripMenuItem,
+            this.defaultOutputFormatToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
             this.toolsToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.toolsToolStripMenuItem.Text = "&Tools";
@@ -2041,15 +1994,32 @@
             // databaseToolStripMenuItem
             // 
             this.databaseToolStripMenuItem.Name = "databaseToolStripMenuItem";
-            this.databaseToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.databaseToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.databaseToolStripMenuItem.Text = "Open Database";
             this.databaseToolStripMenuItem.Click += new System.EventHandler(this.databaseToolStripMenuItem_Click);
             // 
             // importTableFeaturesToolStripMenuItem
             // 
             this.importTableFeaturesToolStripMenuItem.Name = "importTableFeaturesToolStripMenuItem";
-            this.importTableFeaturesToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.importTableFeaturesToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.importTableFeaturesToolStripMenuItem.Text = "Import Table Features";
+            // 
+            // defaultOutputFormatToolStripMenuItem
+            // 
+            this.defaultOutputFormatToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripComboBox1});
+            this.defaultOutputFormatToolStripMenuItem.Name = "defaultOutputFormatToolStripMenuItem";
+            this.defaultOutputFormatToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.defaultOutputFormatToolStripMenuItem.Text = "Default Output Format";
+            // 
+            // toolStripComboBox1
+            // 
+            this.toolStripComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.toolStripComboBox1.Items.AddRange(new object[] {
+            "Iso19115-2",
+            "Iso19115"});
+            this.toolStripComboBox1.Name = "toolStripComboBox1";
+            this.toolStripComboBox1.Size = new System.Drawing.Size(121, 23);
             // 
             // menuStrip1
             // 
@@ -2063,13 +2033,80 @@
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // comboBox2
+            // saveFileDialog1
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(34, 415);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(270, 21);
-            this.comboBox2.TabIndex = 54;
+            this.saveFileDialog1.DefaultExt = "xml";
+            // 
+            // idInfo_citation_citedResponsibleParty
+            // 
+            this.idInfo_citation_citedResponsibleParty.BackColor = System.Drawing.Color.Transparent;
+            this.idInfo_citation_citedResponsibleParty.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.idInfo_citation_citedResponsibleParty.CI_ResponsiblePartyList = null;
+            this.idInfo_citation_citedResponsibleParty.Location = new System.Drawing.Point(4, 3);
+            this.idInfo_citation_citedResponsibleParty.mylabel = "Producer of Resource";
+            this.idInfo_citation_citedResponsibleParty.Name = "idInfo_citation_citedResponsibleParty";
+            this.idInfo_citation_citedResponsibleParty.rp_mode = null;
+            this.idInfo_citation_citedResponsibleParty.Size = new System.Drawing.Size(449, 35);
+            this.idInfo_citation_citedResponsibleParty.TabIndex = 2;
+            // 
+            // idInfo_pointOfContact
+            // 
+            this.idInfo_pointOfContact.BackColor = System.Drawing.Color.Transparent;
+            this.idInfo_pointOfContact.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.idInfo_pointOfContact.CI_ResponsiblePartyList = null;
+            this.idInfo_pointOfContact.Location = new System.Drawing.Point(2, 5);
+            this.idInfo_pointOfContact.mylabel = "Point of Contact";
+            this.idInfo_pointOfContact.Name = "idInfo_pointOfContact";
+            this.idInfo_pointOfContact.rp_mode = null;
+            this.idInfo_pointOfContact.Size = new System.Drawing.Size(449, 35);
+            this.idInfo_pointOfContact.TabIndex = 2;
+            // 
+            // idInfo_extent_temporalExtent
+            // 
+            this.idInfo_extent_temporalExtent.Location = new System.Drawing.Point(9, 210);
+            this.idInfo_extent_temporalExtent.Name = "idInfo_extent_temporalExtent";
+            this.idInfo_extent_temporalExtent.Size = new System.Drawing.Size(357, 174);
+            this.idInfo_extent_temporalExtent.TabIndex = 51;
+            temporalElement__EX_TemporalExtent1.TimeInstant = null;
+            temporalElement__EX_TemporalExtent1.TimePeriod = null;
+            this.idInfo_extent_temporalExtent.temporalElement = temporalElement__EX_TemporalExtent1;
+            // 
+            // uc_ResponsibleParty1
+            // 
+            this.uc_ResponsibleParty1.BackColor = System.Drawing.Color.Transparent;
+            this.uc_ResponsibleParty1.CI_ResponsiblePartyList = null;
+            this.uc_ResponsibleParty1.Location = new System.Drawing.Point(454, 15);
+            this.uc_ResponsibleParty1.mylabel = "My Label Name Here";
+            this.uc_ResponsibleParty1.Name = "uc_ResponsibleParty1";
+            this.uc_ResponsibleParty1.rp_mode = null;
+            this.uc_ResponsibleParty1.Size = new System.Drawing.Size(439, 35);
+            this.uc_ResponsibleParty1.TabIndex = 50;
+            this.uc_ResponsibleParty1.Visible = false;
+            // 
+            // distributionInfo__MD_Distribution
+            // 
+            this.distributionInfo__MD_Distribution.AutoSize = true;
+            this.distributionInfo__MD_Distribution.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.distributionInfo__MD_Distribution.distributorList = null;
+            this.distributionInfo__MD_Distribution.Location = new System.Drawing.Point(3, 17);
+            this.distributionInfo__MD_Distribution.mylabel = "Distributor";
+            this.distributionInfo__MD_Distribution.Name = "distributionInfo__MD_Distribution";
+            this.distributionInfo__MD_Distribution.Size = new System.Drawing.Size(463, 238);
+            this.distributionInfo__MD_Distribution.TabIndex = 0;
+            // 
+            // contact_CI_ResponsibleParty
+            // 
+            this.contact_CI_ResponsibleParty.BackColor = System.Drawing.Color.Transparent;
+            this.contact_CI_ResponsibleParty.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.contact_CI_ResponsibleParty.CI_ResponsiblePartyList = null;
+            this.contact_CI_ResponsibleParty.Location = new System.Drawing.Point(5, 2);
+            this.contact_CI_ResponsibleParty.mylabel = "Metadata Author";
+            this.contact_CI_ResponsibleParty.Name = "contact_CI_ResponsibleParty";
+            this.contact_CI_ResponsibleParty.rp_mode = "dist";
+            this.contact_CI_ResponsibleParty.Size = new System.Drawing.Size(463, 35);
+            this.contact_CI_ResponsibleParty.TabIndex = 0;
+            this.contact_CI_ResponsibleParty.Tag = "";
+            this.contact_CI_ResponsibleParty.Validating += new System.ComponentModel.CancelEventHandler(this.cntrl_Validating);
             // 
             // EmeLT
             // 
@@ -2333,5 +2370,9 @@
         private System.Windows.Forms.TextBox idInfo_extent_geographicBoundingBox_eastLongDD;
         private System.Windows.Forms.ComboBox idInfo_extent_description;
         private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ToolStripMenuItem defaultOutputFormatToolStripMenuItem;
+        private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
+        private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }

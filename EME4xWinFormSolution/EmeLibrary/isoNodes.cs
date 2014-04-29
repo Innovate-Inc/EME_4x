@@ -838,13 +838,32 @@ namespace EmeLibrary
             }                
         }
 
-        public void saveChangestoRecord()        
+        public XmlDocument saveChangestoRecord(string outboundMetadataRecordFormatName)        
         {
             //Call private method to set each element value back into the target record
             //ToDo:  Create an outbound record that is a copy of inbound record, but with the modified sections.
 
+            //Depending on the format detected, load the correct template record to for the outgoing metadata record
+            //(gmd:MD_Metdata = 19115, gmi:MI_Metadata = 19115-2; metadata = both CSDGM and ArcGIS)
+            
+            templateMetadataRecord = new XmlDocument();
+            if (inboundMetadataFormat == "ISO19115-2")
+            {
+                templateMetadataRecord.Load(Directory.GetCurrentDirectory() + "\\Eme4xSystemFiles\\EMEdb\\MItemplate.xml");
+            }
+            else if (inboundMetadataFormat == "ISO19115")
+            {
+                templateMetadataRecord.Load(Directory.GetCurrentDirectory() + "\\Eme4xSystemFiles\\EMEdb\\MDtemplate.xml");
+            }
+            else
+            {
+                //do something; not sure what yet  :-)
+            }
+
+
             constructMI_MetadataMarkUp();
 
+            return outboundMetadataRecord;
             //outboundMetadataRecord.Save(@"C:\Users\dspinosa\Desktop\testMetadata\DCAT\testCommonCoreRecordFromGeoportal-2vJUNK.xml");
             //outboundMetadataRecord.Save(
             
@@ -981,11 +1000,11 @@ namespace EmeLibrary
                 removeEmptyParentNodes(removeMe);
             }
 
-            outboundMetadataRecord.PreserveWhitespace = false;            
-            //Used this to insert the XML Declaration without BOM (byte order mark)
-            XmlTextWriter xw = new XmlTextWriter(@"C:\Data\EME\testWriteMetaData\testCommonCoreRecordFromGeoportal-2vJUNK.xml", new UTF8Encoding(false));
-            xw.Formatting = Formatting.Indented;
-            outboundMetadataRecord.Save(xw);
+            //outboundMetadataRecord.PreserveWhitespace = false;            
+            ////Used this to insert the XML Declaration without BOM (byte order mark)
+            //XmlTextWriter xw = new XmlTextWriter(@"C:\Data\EME\testWriteMetaData\testCommonCoreRecordFromGeoportal-2vJUNK.xml", new UTF8Encoding(false));
+            //xw.Formatting = Formatting.Indented;
+            //outboundMetadataRecord.Save(xw);
             
         }
 
@@ -1105,7 +1124,7 @@ namespace EmeLibrary
                 constructChildNodeUnderParent(outbound_md_DataIdSection,
                     IsoNodeXpaths.idInfo_resourceConstraints_MD_Constraints_useLimitationXpath + "/../..",
                     null, false, true, false);
-                outboundMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.idInfo_resourceConstraints_MD_Constraints_useLimitationXpath).InnerText =
+                outboundMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.idInfo_resourceConstraints_MD_Constraints_useLimitationXpath).FirstChild.InnerText =
                     _idInfo_resourceConstraints_MD_Constraints_useLimitation;
             }
 
@@ -1121,7 +1140,8 @@ namespace EmeLibrary
                     null, false, true, false);
                 if (!string.IsNullOrEmpty(_idInfo_resourceConstraints_MD_LegalConstraints_useLimitation))
                 {
-                    outboundMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.idInfo_resourceConstraints_MD_LegalConstraints_useLimitationXpath).InnerText =
+                    outboundMetadataRecord.DocumentElement.SelectSingleNode
+                        (IsoNodeXpaths.idInfo_resourceConstraints_MD_LegalConstraints_useLimitationXpath).FirstChild.InnerText =
                         _idInfo_resourceConstraints_MD_LegalConstraints_useLimitation;
                 }
                 if (!string.IsNullOrEmpty(_idInfo_resourceConstraints_MD_LegalConstraints_accessConstraints))//CodeList
@@ -1142,7 +1162,8 @@ namespace EmeLibrary
                 }
                 if (!string.IsNullOrEmpty(_idInfo_resourceConstraints_MD_LegalConstraints_otherConstraints))
                 {
-                    outboundMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.idInfo_resourceConstraints_MD_LegalConstraints_otherConstraintsXpath).InnerText =
+                    outboundMetadataRecord.DocumentElement.SelectSingleNode
+                        (IsoNodeXpaths.idInfo_resourceConstraints_MD_LegalConstraints_otherConstraintsXpath).FirstChild.InnerText =
                         _idInfo_resourceConstraints_MD_LegalConstraints_otherConstraints;
                 }
             }
@@ -1162,7 +1183,8 @@ namespace EmeLibrary
 
                 if (!string.IsNullOrEmpty(_idInfo_resourceConstraints_MD_SecurityConstraints_useLimitation))                
                 {
-                    outboundMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.idInfo_resourceConstraints_MD_SecurityConstraints_useLimitationXpath).InnerText =
+                    outboundMetadataRecord.DocumentElement.SelectSingleNode
+                        (IsoNodeXpaths.idInfo_resourceConstraints_MD_SecurityConstraints_useLimitationXpath).FirstChild.InnerText =
                         _idInfo_resourceConstraints_MD_SecurityConstraints_useLimitation;
                 }
                 if (!string.IsNullOrEmpty(_idInfo_resourceConstraints_MD_SecurityConstraints_classification))  //Required and is a codeList
@@ -1175,19 +1197,20 @@ namespace EmeLibrary
                 }
                 if (!string.IsNullOrEmpty(_idInfo_resourceConstraints_MD_SecurityConstraints_userNote))
                 {
-                    outboundMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.idInfo_resourceConstraints_MD_SecurityConstraints_userNoteXpath).InnerText =
+                    outboundMetadataRecord.DocumentElement.SelectSingleNode
+                        (IsoNodeXpaths.idInfo_resourceConstraints_MD_SecurityConstraints_userNoteXpath).FirstChild.InnerText =
                         _idInfo_resourceConstraints_MD_SecurityConstraints_userNote;
                 }
                 if (!string.IsNullOrEmpty(_idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystem))
                 {
                     outboundMetadataRecord.DocumentElement.SelectSingleNode(
-                        IsoNodeXpaths.idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystemXpath).InnerText =
+                        IsoNodeXpaths.idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystemXpath).FirstChild.InnerText =
                         _idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystem;
                 }
                 if (!string.IsNullOrEmpty(_idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescription))
                 {
                     outboundMetadataRecord.DocumentElement.SelectSingleNode(
-                        IsoNodeXpaths.idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescriptionXpath).InnerText =
+                        IsoNodeXpaths.idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescriptionXpath).FirstChild.InnerText =
                         _idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescription;
                 }                
             }
