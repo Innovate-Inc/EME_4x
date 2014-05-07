@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmeLT));
-            EmeLibrary.temporalElement__EX_TemporalExtent temporalElement__EX_TemporalExtent1 = new EmeLibrary.temporalElement__EX_TemporalExtent();
+            EmeLibrary.temporalElement__EX_TemporalExtent temporalElement__EX_TemporalExtent2 = new EmeLibrary.temporalElement__EX_TemporalExtent();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
@@ -483,7 +483,7 @@
             this.flowLayoutPanel6.Controls.Add(this.metadataAuthor_Pnl);
             this.flowLayoutPanel6.Controls.Add(this.pointOfContact_Pnl);
             this.flowLayoutPanel6.Controls.Add(this.Citation_Pnl);
-            this.flowLayoutPanel6.Location = new System.Drawing.Point(481, 277);
+            this.flowLayoutPanel6.Location = new System.Drawing.Point(491, 277);
             this.flowLayoutPanel6.Name = "flowLayoutPanel6";
             this.flowLayoutPanel6.Size = new System.Drawing.Size(491, 194);
             this.flowLayoutPanel6.TabIndex = 41;
@@ -1512,13 +1512,13 @@
             // 
             // idInfo_extent_temporalExtent
             // 
-            this.idInfo_extent_temporalExtent.Location = new System.Drawing.Point(7, 17);
+            this.idInfo_extent_temporalExtent.Location = new System.Drawing.Point(9, 17);
             this.idInfo_extent_temporalExtent.Name = "idInfo_extent_temporalExtent";
             this.idInfo_extent_temporalExtent.Size = new System.Drawing.Size(299, 174);
             this.idInfo_extent_temporalExtent.TabIndex = 51;
-            temporalElement__EX_TemporalExtent1.TimeInstant = null;
-            temporalElement__EX_TemporalExtent1.TimePeriod = null;
-            this.idInfo_extent_temporalExtent.temporalElement = temporalElement__EX_TemporalExtent1;
+            temporalElement__EX_TemporalExtent2.TimeInstant = null;
+            temporalElement__EX_TemporalExtent2.TimePeriod = null;
+            this.idInfo_extent_temporalExtent.temporalElement = temporalElement__EX_TemporalExtent2;
             // 
             // label17
             // 
