@@ -20,6 +20,7 @@ namespace EmeLibrary
         
         //private List<string> classFieldBindingNames;
         private XmlDocument inboundMetadataRecord;
+        private XmlDocument inboundMetadataRecordSkippedElements;
         private string inboundMetadataFormat;
         private string inboundMetadataFilePath;
         private XmlDocument outboundMetadataRecord;
@@ -33,7 +34,7 @@ namespace EmeLibrary
         private string fileid;
         private string _language;
         private string hyLevel_md_scopeCode;        
-        private List<CI_ResponsibleParty> contactRpSection;
+        private List<CI_ResponsibleParty> _contactRpSection;
         private string _dateStamp;
         private string mdStandardName;
         private string mdStandardVersion;
@@ -104,8 +105,8 @@ namespace EmeLibrary
         }        
         public List<CI_ResponsibleParty> contact_CI_ResponsibleParty
         {
-            get { return contactRpSection; }
-            set { contactRpSection = value; }
+            get { return _contactRpSection; }
+            set { _contactRpSection = value; }
         }
         public string dateStamp
         {
@@ -323,7 +324,7 @@ namespace EmeLibrary
                 kwIsoTopicCatList = new List<string>();
                 kwPlaceList = new List<string>();
                 kwUserList = new List<string>();
-                contactRpSection = new List<CI_ResponsibleParty>();
+                _contactRpSection = new List<CI_ResponsibleParty>();
                 idinfoCitationcitedResponsibleParty = new List<CI_ResponsibleParty>();
                 
                 idinfoPointOfContact = new List<CI_ResponsibleParty>();
@@ -340,7 +341,8 @@ namespace EmeLibrary
                 fileid = returnInnerTextfromNode(IsoNodeXpaths.fileIdentifierXpath);
                 _language = returnInnerTextfromNode(IsoNodeXpaths.languageXpath);
                 hyLevel_md_scopeCode = returnInnerTextfromNode(IsoNodeXpaths.hierarchyLevel_MD_ScopeCodeXpath);
-                contactRpSection = returnCI_ResponsiblePartyList(IsoNodeXpaths.contact_CI_ResponsiblePartyXpath);
+                //check that there is a contact
+                _contactRpSection = returnCI_ResponsiblePartyList(IsoNodeXpaths.contact_CI_ResponsiblePartyXpath);
                 _dateStamp = returnInnerTextfromNode(IsoNodeXpaths.dateStampXpath);
                 //Might get this from template metadata instead and leave as read-only
                 mdStandardName = templateMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.metadataStandardNameXpath).FirstChild.InnerText;
@@ -542,6 +544,7 @@ namespace EmeLibrary
             {
                 XmlNode singleNode = inboundMetadataRecord.DocumentElement.SelectSingleNode(XpathToSingleNode).FirstChild;
                 s = (singleNode != null) ? singleNode.InnerText : "";
+                //inboundMetadataRecordSkippedElements.DocumentElement.SelectSingleNode(XpathToSingleNode).FirstChild
             }
             return s;
         }
@@ -607,47 +610,50 @@ namespace EmeLibrary
 
             foreach (XmlNode n in nodeListforCI_RpSection)
             {
-                CI_ResponsibleParty rp = new CI_ResponsibleParty();
-                object rpobj = rp;
-                PropertyInfo[] propInfo2 = rpobj.GetType().GetProperties();
-                //ToDo:  Not sure if we need an Xpath expression List, but if so, we can do that here
-                //responsiblePartySubSectionXpath = new List<string>();
-                foreach (PropertyInfo p in propInfo2)
+                if (n.HasChildNodes)
                 {
-                    if (p.Name == "dcatProgramCode")
+                    CI_ResponsibleParty rp = new CI_ResponsibleParty();
+                    object rpobj = rp;
+                    PropertyInfo[] propInfo2 = rpobj.GetType().GetProperties();
+                    //ToDo:  Not sure if we need an Xpath expression List, but if so, we can do that here
+                    //responsiblePartySubSectionXpath = new List<string>();
+                    foreach (PropertyInfo p in propInfo2)
                     {
-                        //Get the programCode if it exists
-                        //eg <gmd:contact xlink:title="020-072">
-                        XmlNode attributeNode = n.Attributes["xlink:title"]; //subNode.Attributes["indeterminatePosition"];
-                        if (attributeNode != null)
+                        if (p.Name == "dcatProgramCode")
                         {
-                            string pcode = (n.Attributes["xlink:title"].Value != null) ? n.Attributes["xlink:title"].Value : "";
-                            p.SetValue(rp, pcode, null);                            
+                            //Get the programCode if it exists
+                            //eg <gmd:contact xlink:title="020-072">
+                            XmlNode attributeNode = n.Attributes["xlink:title"]; //subNode.Attributes["indeterminatePosition"];
+                            if (attributeNode != null)
+                            {
+                                string pcode = (n.Attributes["xlink:title"].Value != null) ? n.Attributes["xlink:title"].Value : "";
+                                p.SetValue(rp, pcode, null);
+                            }
                         }
-                    }
-                    else
-                    {
-                        //string childNodeXpath = ".";  //Use StringBuilder for loops
-                        StringBuilder childNodeXpath = new StringBuilder();
-                        childNodeXpath.Append(".");
+                        else
+                        {
+                            //string childNodeXpath = ".";  //Use StringBuilder for loops
+                            StringBuilder childNodeXpath = new StringBuilder();
+                            childNodeXpath.Append(".");
 
-                        string[] splitby = new string[] { "__" };
-                        string[] nameParts = p.Name.Split(splitby, StringSplitOptions.RemoveEmptyEntries);
-                        foreach (string entry in nameParts)
-                        {
-                            //childNodeXpath += "/*[local-name()='" + entry + "']";
-                            childNodeXpath.Append("/*[local-name()='" + entry + "']");
+                            string[] splitby = new string[] { "__" };
+                            string[] nameParts = p.Name.Split(splitby, StringSplitOptions.RemoveEmptyEntries);
+                            foreach (string entry in nameParts)
+                            {
+                                //childNodeXpath += "/*[local-name()='" + entry + "']";
+                                childNodeXpath.Append("/*[local-name()='" + entry + "']");
+                            }
+                            //responsiblePartySubSectionXpath.Add(childNodeXpath); //Adding the Xpath to list for later use                    
+                            //Console.WriteLine(childNodeXpath.ToString());
+                            string nodeValue =
+                                (n.FirstChild.SelectSingleNode(childNodeXpath.ToString()) != null) ?
+                                n.FirstChild.SelectSingleNode(childNodeXpath.ToString()).InnerText : "";
+                            p.SetValue(rp, nodeValue, null);
                         }
-                        //responsiblePartySubSectionXpath.Add(childNodeXpath); //Adding the Xpath to list for later use                    
-                        //Console.WriteLine(childNodeXpath.ToString());
-                        string nodeValue =
-                            (n.FirstChild.SelectSingleNode(childNodeXpath.ToString()) != null) ?
-                            n.FirstChild.SelectSingleNode(childNodeXpath.ToString()).InnerText : "";
-                        p.SetValue(rp, nodeValue, null);
                     }
+                    //contactRpSection.Add(rp);
+                    rpList.Add(rp);
                 }
-                //contactRpSection.Add(rp);
-                rpList.Add(rp);                
             }
             return rpList;
         }
@@ -689,10 +695,13 @@ namespace EmeLibrary
                 XmlNode contactInfo = gmddistributor.SelectSingleNode("."+kv.Value);
                 if (contactInfo != null)
                 {
-                    //mdDistributor.distributorContact__CI_ResponsibleParty =
-                    object ciRP = new CI_ResponsibleParty();
-                    extractXmlContentwReflection(ref ciRP, contactInfo.FirstChild);
-                    mdDistributor.distributorContact = (CI_ResponsibleParty)ciRP;
+                    if (contactInfo.HasChildNodes)
+                    {
+                        //mdDistributor.distributorContact__CI_ResponsibleParty =
+                        object ciRP = new CI_ResponsibleParty();
+                        extractXmlContentwReflection(ref ciRP, contactInfo.FirstChild);
+                        mdDistributor.distributorContact = (CI_ResponsibleParty)ciRP;
+                    }                    
                 }
 
                 pname = "distributionOrderProcess__MD_StandardOrderProcess";
@@ -845,13 +854,13 @@ namespace EmeLibrary
 
             //Depending on the format detected, load the correct template record to for the outgoing metadata record
             //(gmd:MD_Metdata = 19115, gmi:MI_Metadata = 19115-2; metadata = both CSDGM and ArcGIS)
-            
+           
             templateMetadataRecord = new XmlDocument();
-            if (inboundMetadataFormat == "ISO19115-2")
+            if (outboundMetadataRecordFormatName == "ISO19115-2") //(inboundMetadataFormat == "ISO19115-2")
             {
                 templateMetadataRecord.Load(Directory.GetCurrentDirectory() + "\\Eme4xSystemFiles\\EMEdb\\MItemplate.xml");
             }
-            else if (inboundMetadataFormat == "ISO19115")
+            else if (outboundMetadataRecordFormatName == "ISO19115") //(inboundMetadataFormat == "ISO19115")
             {
                 templateMetadataRecord.Load(Directory.GetCurrentDirectory() + "\\Eme4xSystemFiles\\EMEdb\\MDtemplate.xml");
             }
@@ -866,6 +875,8 @@ namespace EmeLibrary
             return outboundMetadataRecord;
             //outboundMetadataRecord.Save(@"C:\Users\dspinosa\Desktop\testMetadata\DCAT\testCommonCoreRecordFromGeoportal-2vJUNK.xml");
             //outboundMetadataRecord.Save(
+           
+            
             
         }
 
@@ -968,8 +979,23 @@ namespace EmeLibrary
             constructChildNodeUnderParent(outboundMetadataRecord.DocumentElement, IsoNodeXpaths.hierarchyLevel_MD_ScopeCodeXpath, hyLevel_md_scopeCode, true, true, true);
             
             //Section 7, contact, Required  Should be at least one contact section in the outgoing document
-            constructCI_ResponsiblePartyMarkUp(contactRpSection, IsoNodeXpaths.contact_CI_ResponsiblePartyXpath);
-            
+            if (_contactRpSection.Count > 0)
+            {
+                constructCI_ResponsiblePartyMarkUp(_contactRpSection, IsoNodeXpaths.contact_CI_ResponsiblePartyXpath);
+            }
+            else
+            {
+                //add the attribute gco:nilReason="missing"
+
+                XmlAttribute nilReasonAttribute = outboundMetadataRecord.CreateAttribute("gco", "nilReason", "http://www.isotc211.org/2005/gco");
+                nilReasonAttribute.Value = "missing";
+                XmlAttributeCollection ac = outboundMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.contact_CI_ResponsiblePartyXpath).Attributes;
+                ac.Append(nilReasonAttribute);
+                //responsiblePartySectionTemplate.Attributes;
+                //ac.Append(pcodeAttribut);
+
+
+            }
             //Sections 8, 9, and 10
             constructChildNodeUnderParent(outboundMetadataRecord.DocumentElement, IsoNodeXpaths.dateStampXpath, _dateStamp, false, true, true);
             constructChildNodeUnderParent(outboundMetadataRecord.DocumentElement, "./*[local-name()='metadataStandardName']",null,false,true,true);
@@ -987,7 +1013,14 @@ namespace EmeLibrary
             XmlNodeList emptyNodes = outboundMetadataRecord.DocumentElement.ChildNodes;
             for (int ii = emptyNodes.Count -1; ii >= 0; ii--)
             {
-                if (emptyNodes[ii].HasChildNodes==false) { emptyNodes[ii].ParentNode.RemoveChild(emptyNodes[ii]); }
+
+                //Don't Delete if has the nillReason Attribute
+                XmlElement xe = (XmlElement)emptyNodes[ii];
+                if (!xe.HasAttributes)
+                {
+                    if (emptyNodes[ii].HasChildNodes == false)
+                    { emptyNodes[ii].ParentNode.RemoveChild(emptyNodes[ii]); }
+                }
             }
 
             //****************

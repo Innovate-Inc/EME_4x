@@ -107,7 +107,7 @@ namespace EmeLibrary
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
         }
 

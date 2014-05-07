@@ -9,6 +9,7 @@ using System.Windows.Forms;
 
 namespace EmeLibrary
 {
+    
     public partial class uc_ResponsibleParty : UserControl
     {
         private List<CI_ResponsibleParty> _incomingRPList;
@@ -18,23 +19,7 @@ namespace EmeLibrary
         private int expandHeight;
         private int collapseHeight;
 
-        public List<CI_ResponsibleParty> CI_ResponsiblePartyList
-        {
-            get
-            {
-                //Call bindToClass here and pass in the index of the RP visible in the form to ensure it gets saved.
-                //binds the current responsibleParty visible in repeater to the class when save is called in pageController.
-                if (_incomingRPList != null)
-                {
-                    if (_incomingRPList.Count != 0)
-                    {
-                        bindToClass(_incomingRPList[incomingRPListIndex]);
-                    }
-                }
-                return _incomingRPList;
-            }
-            set { _incomingRPList = value; }
-        }
+       
 
         //[Bindable(false)]
         //[EditorBrowsable(EditorBrowsableState.Always)]
@@ -57,9 +42,26 @@ namespace EmeLibrary
                 uc_ResponsibleParty_lbl.Text = value;
             }
         }
-        public string rp_mode { get; set; }                
+        public string rp_mode { get; set; }
         
-        
+        public List<CI_ResponsibleParty> CI_ResponsiblePartyList
+        {
+            get
+            {
+                //Call bindToClass here and pass in the index of the RP visible in the form to ensure it gets saved.
+                //binds the current responsibleParty visible in repeater to the class when save is called in pageController.
+                //if (_incomingRPList != null)
+                //{
+                //    if (_incomingRPList.Count != 0)
+                //    {
+                //        bindToClass(_incomingRPList[incomingRPListIndex]);
+                //    }
+                //}
+                //else { _incomingRPList = new List<CI_ResponsibleParty>(); }
+                return _incomingRPList;
+            }
+            set { _incomingRPList = value; }
+        }        
 
         //public List<CI_ResponsibleParty> contact_CI_ResponsibleParty
         //{
@@ -72,7 +74,7 @@ namespace EmeLibrary
         {
             InitializeComponent();
             
-            _incomingRPList = new List<CI_ResponsibleParty>();
+            //_incomingRPList = new List<CI_ResponsibleParty>();
             
             //Start instance of the eme dataset
             //if (Utils1.emeDataSet == null)

@@ -769,7 +769,7 @@ namespace EmeLibrary
             onLine__CI_OnlineResource__linkage__URL_txt.Text = md_DTO.onLine__CI_OnlineResource__linkage__URL;
             onLine__CI_OnlineResource__protocol_txt.Text = md_DTO.onLine__CI_OnlineResource__protocol; 
             onLine__CI_OnlineResource__applicationProfile_txt.Text = md_DTO.onLine__CI_OnlineResource__applicationProfile;
-            onLine__CI_OnlineResource__name_txt.Text = md_DTO.offLine__MD_Medium__name;
+            onLine__CI_OnlineResource__name_txt.Text = md_DTO.onLine__CI_OnlineResource__name;
             onLine__CI_OnlineResource__description_txt.Text = md_DTO.onLine__CI_OnlineResource__description;
             onLine__CI_OnlineResource__function_txt.Text = md_DTO.onLine__CI_OnlineResource__function;
             offLine__MD_Medium__name_txt.Text = md_DTO.offLine__MD_Medium__name;

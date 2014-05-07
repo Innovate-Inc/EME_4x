@@ -30,9 +30,13 @@ namespace EmeLibrary
         private XmlDocument xDoc;
         public isoNodes localXdoc;
 
+        public event SaveEventHandler SaveEvent;
+
         public EmeLT()
         {
             InitializeComponent();
+
+            //MessageBox.Show("FormDir: " + Directory.GetCurrentDirectory());
 
 
             toolStripComboBox1.SelectedIndex = 0;
@@ -42,7 +46,7 @@ namespace EmeLibrary
             {
                 Utils1.setEmeDataSets();
             }
-            bindFormtoEMEdatabases();
+            //bindFormtoEMEdatabases();
             hoverHelpInit();
             //setDefaultKeywordListBoxSelection(ref  idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey);
             //setDefaultKeywordListBoxSelection(ref idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey);
@@ -165,6 +169,52 @@ namespace EmeLibrary
 
         }
 
+        public void AddDocument(ref string xml, string gxObjectName)
+        {
+            try
+            {
+                ESRIMode = true;
+                xDoc = new XmlDocument();                
+                xDoc.LoadXml(xml);                
+                filename = gxObjectName;
+
+                string isoRootNode = xDoc.DocumentElement.Name;
+                if (isoRootNode.ToLower() == "gmi:mi_metadata")
+                {
+                    PageController.readFromDB();
+                    sourceXmlFormat = "ISO19115-2";
+                    //toolStripComboBox1.SelectedItem = sourceXmlFormat;
+                    Utils1.setEmeDataSets();
+                    bindCCMFields();
+                    toolStripStatusLabel1.Text = "Opened File: " + filename;                    
+                    this.Show();
+
+                }
+                else if (isoRootNode.ToLower() == "gmd:md_metadata")
+                {
+                    PageController.readFromDB();
+                    sourceXmlFormat = "ISO19115";
+                    //toolStripComboBox1.SelectedItem = sourceXmlFormat;
+                    Utils1.setEmeDataSets();
+                    bindCCMFields();
+                    toolStripStatusLabel1.Text = "Opened File: " + filename;                    
+                    this.Show();
+                }
+                else
+                {
+                    sourceXmlFormat = "Format not supported. Please load an ISO 19115 or 19115-2 record.";
+                    toolStripStatusLabel1.Text = sourceXmlFormat;
+                    MessageBox.Show(sourceXmlFormat);
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                this.Hide();
+            }
+
+        }
+
         private void OpenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             openFileDialog1.Filter = "XML Metadata (*.XML)|*.XML";
@@ -204,6 +254,8 @@ namespace EmeLibrary
             //Check the Format of the record before de-serializing
             
             //xDox Set when checking the metadata format
+
+            toolStripComboBox1.SelectedItem = sourceXmlFormat;
             localXdoc = new isoNodes(xDoc, sourceXmlFormat, filename);
 
             //Replace this with pagecontroller.ElementPopulator() method
@@ -532,27 +584,27 @@ namespace EmeLibrary
             //isoNodes createNodes = new isoNodes(doc);
             //string test = createNodes.contact[0].OuterXml.ToString();
                         
-            XmlSerializer ds = new XmlSerializer(typeof(MI_Metadata));
-            MI_Metadata mi_metadata;
-            System.IO.TextReader r = new System.IO.StreamReader(@"C:\Users\dspinosa\Desktop\testMetadata\test19115_2EDG.xml");
-            mi_metadata = (MI_Metadata)ds.Deserialize(r); r.Close();
+            //XmlSerializer ds = new XmlSerializer(typeof(MI_Metadata));
+            //MI_Metadata mi_metadata;
+            //System.IO.TextReader r = new System.IO.StreamReader(@"C:\Users\dspinosa\Desktop\testMetadata\test19115_2EDG.xml");
+            //mi_metadata = (MI_Metadata)ds.Deserialize(r); r.Close();
 
-            Console.WriteLine(mi_metadata.contact.CI_ResponsibleParty.individualName.CharacterString.ToString());
+            //Console.WriteLine(mi_metadata.contact.CI_ResponsibleParty.individualName.CharacterString.ToString());
 
-            identificationInfoMD_DataIdentificationDescriptiveKeywordsMD_Keywords keyws = new identificationInfoMD_DataIdentificationDescriptiveKeywordsMD_Keywords();
-            identificationInfoMD_DataIdentificationDescriptiveKeywordsMD_KeywordsKeyword[] kw = 
-                new identificationInfoMD_DataIdentificationDescriptiveKeywordsMD_KeywordsKeyword[5];
+            //identificationInfoMD_DataIdentificationDescriptiveKeywordsMD_Keywords keyws = new identificationInfoMD_DataIdentificationDescriptiveKeywordsMD_Keywords();
+            //identificationInfoMD_DataIdentificationDescriptiveKeywordsMD_KeywordsKeyword[] kw = 
+            //    new identificationInfoMD_DataIdentificationDescriptiveKeywordsMD_KeywordsKeyword[5];
 
-            kw[0].CharacterString = "sdfsd";
-            keyws.keyword = kw;
+            //kw[0].CharacterString = "sdfsd";
+            //keyws.keyword = kw;
 
-            identificationInfoMD_DataIdentificationPointOfContact poc = new identificationInfoMD_DataIdentificationPointOfContact();
+            //identificationInfoMD_DataIdentificationPointOfContact poc = new identificationInfoMD_DataIdentificationPointOfContact();
             
-            contactCI_ResponsibleParty rp = new contactCI_ResponsibleParty();
-            rp.individualName.CharacterString = "name";
-            rp.organisationName.CharacterString = "org";
-            rp.positionName.CharacterString = "pos";
-            rp.role.CI_RoleCode.codeList = "sdfsd";
+            //contactCI_ResponsibleParty rp = new contactCI_ResponsibleParty();
+            //rp.individualName.CharacterString = "name";
+            //rp.organisationName.CharacterString = "org";
+            //rp.positionName.CharacterString = "pos";
+            //rp.role.CI_RoleCode.codeList = "sdfsd";
 
 
             ////Create a document fragment.
@@ -639,7 +691,7 @@ namespace EmeLibrary
 
         protected virtual void OnSaveEvent(SaveEventArgs e)
         {
-
+            SaveEvent(this, e);
         }
 
         private void saveXmlChanges()
@@ -672,7 +724,9 @@ namespace EmeLibrary
         {
             //Write form values back to the xml record            
             //Check content for required content and validation of some kind
-
+            //ToDo:  Handle the output format and test if it can be changed based on user selection.  Once a document is loaded, set the selection for output so it matches
+            //the input value.  If then check again on save.   Need to handle for New Records also.
+            
             #region OldStuff
 
             //localXdoc.idInfo_citation_Title = idInfo_citation_Title.Text;
@@ -703,23 +757,61 @@ namespace EmeLibrary
             //    localXdoc.idInfo_keywordsUser.Add(item["themekey"].ToString());
             //}
             #endregion
-            if (filename == "New")
+            if (!ESRIMode)
             {
-                string newFileName = saveWithThisFileName();
-                if (!string.IsNullOrEmpty(newFileName))
-                { 
-                    filename = newFileName;
-                    saveXmlChanges();
+                if (filename == "New")
+                {
+                    string newFileName = saveWithThisFileName();
+                    if (!string.IsNullOrEmpty(newFileName))
+                    {
+                        filename = newFileName;
+                        saveXmlChanges();
+                    }
+                    else
+                    {
+                        MessageBox.Show("File Not Saved.  Please Provide a File Name");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("File Not Saved.  Please Provide a File Name");
-                }                
+                    saveXmlChanges();
+                }
+                //else
+                //{
+                //    PageController.PageSaver(this);
+
+                //    string outPutFormat = toolStripComboBox1.SelectedItem.ToString();
+                //    XmlDocument xmlDocToSave = localXdoc.saveChangestoRecord(outPutFormat);
+                //    xmlDocToSave.PreserveWhitespace = false;
+
+                //    StringWriter sw = new StringWriter();
+                //    XmlTextWriter xw = new XmlTextWriter(sw);
+                //    xmlDocToSave.WriteTo(xw);
+                //    OnSaveEvent(new SaveEventArgs(sw.ToString()));
+                //    this.Hide();
+                                        
+                //    //XmlTextWriter xw = new XmlTextWriter(filename, new UTF8Encoding(false));
+                //    //xw.Formatting = Formatting.Indented;
+                //    //xmlDocToSave.Save(xw);
+                //    //MessageBox.Show("Saved: " + filename);
+                    
+                //    //MessageBox.Show(filename);
+                //}
             }
             else
             {
-                saveXmlChanges();
-                //MessageBox.Show(filename);
+                PageController.PageSaver(this);
+
+                string outPutFormat = toolStripComboBox1.SelectedItem.ToString();
+                XmlDocument xmlDocToSave = localXdoc.saveChangestoRecord(outPutFormat);
+                xmlDocToSave.PreserveWhitespace = false;
+
+                StringWriter sw = new StringWriter();
+                XmlTextWriter xw = new XmlTextWriter(sw);
+                xmlDocToSave.WriteTo(xw);
+                OnSaveEvent(new SaveEventArgs(sw.ToString()));
+                this.Hide();
+
             }
             
         }
@@ -1135,6 +1227,11 @@ namespace EmeLibrary
             Console.WriteLine(senderName);
             PageController pc = PageController.thatControls(senderName);
             pc.setDefault(this);
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
         

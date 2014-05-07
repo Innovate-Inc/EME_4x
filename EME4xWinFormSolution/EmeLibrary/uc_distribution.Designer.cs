@@ -119,11 +119,11 @@
             this.pgD_MD_Dist_btn = new System.Windows.Forms.Button();
             this.pgU_MD_Dist_btn = new System.Windows.Forms.Button();
             this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
+            this.distributor_Contact = new EmeLibrary.uc_ResponsibleParty();
             this.distributor_gbx = new System.Windows.Forms.GroupBox();
             this.MD_Dist = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.errorProvider_Distribution = new System.Windows.Forms.ErrorProvider(this.components);
-            this.distributor_Contact = new EmeLibrary.uc_ResponsibleParty();
             this.MD_Format_pnl.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -150,7 +150,7 @@
             this.MD_Format_pnl.Controls.Add(this.MD_Format);
             this.MD_Format_pnl.Controls.Add(this.expand_MD_Format_btn);
             this.MD_Format_pnl.Controls.Add(this.md_distributionFormat_lbl);
-            this.MD_Format_pnl.Location = new System.Drawing.Point(3, 85);
+            this.MD_Format_pnl.Location = new System.Drawing.Point(3, 126);
             this.MD_Format_pnl.Name = "MD_Format_pnl";
             this.MD_Format_pnl.Size = new System.Drawing.Size(439, 35);
             this.MD_Format_pnl.TabIndex = 2;
@@ -376,7 +376,7 @@
             this.digitalTransferOptions_pnl.Controls.Add(this.MD_DTO);
             this.digitalTransferOptions_pnl.Controls.Add(this.md_digitalTranferOptions_lbl);
             this.digitalTransferOptions_pnl.Controls.Add(this.expand_MD_DTO_btn);
-            this.digitalTransferOptions_pnl.Location = new System.Drawing.Point(3, 126);
+            this.digitalTransferOptions_pnl.Location = new System.Drawing.Point(3, 44);
             this.digitalTransferOptions_pnl.Name = "digitalTransferOptions_pnl";
             this.digitalTransferOptions_pnl.Size = new System.Drawing.Size(439, 35);
             this.digitalTransferOptions_pnl.TabIndex = 4;
@@ -793,7 +793,7 @@
             this.panel2.Controls.Add(this.MD_SOP);
             this.panel2.Controls.Add(this.md_standardOrderProcess_lbl);
             this.panel2.Controls.Add(this.expand_MD_SOP_btn);
-            this.panel2.Location = new System.Drawing.Point(3, 44);
+            this.panel2.Location = new System.Drawing.Point(3, 85);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(439, 35);
             this.panel2.TabIndex = 3;
@@ -1083,15 +1083,26 @@
             this.flowLayoutPanel6.AutoSize = true;
             this.flowLayoutPanel6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flowLayoutPanel6.Controls.Add(this.distributor_Contact);
+            this.flowLayoutPanel6.Controls.Add(this.digitalTransferOptions_pnl);
             this.flowLayoutPanel6.Controls.Add(this.panel2);
             this.flowLayoutPanel6.Controls.Add(this.MD_Format_pnl);
-            this.flowLayoutPanel6.Controls.Add(this.digitalTransferOptions_pnl);
             this.flowLayoutPanel6.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel6.Location = new System.Drawing.Point(6, 27);
             this.flowLayoutPanel6.Name = "flowLayoutPanel6";
             this.flowLayoutPanel6.Size = new System.Drawing.Size(445, 164);
             this.flowLayoutPanel6.TabIndex = 0;
             this.flowLayoutPanel6.Leave += new System.EventHandler(this.flowLayoutPanel6_Leave);
+            // 
+            // distributor_Contact
+            // 
+            this.distributor_Contact.BackColor = System.Drawing.Color.Transparent;
+            this.distributor_Contact.Location = new System.Drawing.Point(3, 3);
+            this.distributor_Contact.mylabel = "Contact";
+            this.distributor_Contact.Name = "distributor_Contact";
+            this.distributor_Contact.rp_mode = "distribution";
+            this.distributor_Contact.Size = new System.Drawing.Size(439, 35);
+            this.distributor_Contact.TabIndex = 7;
+            this.distributor_Contact.Tag = "";
             // 
             // distributor_gbx
             // 
@@ -1131,18 +1142,6 @@
             // errorProvider_Distribution
             // 
             this.errorProvider_Distribution.ContainerControl = this;
-            // 
-            // distributor_Contact
-            // 
-            this.distributor_Contact.BackColor = System.Drawing.Color.Transparent;
-            this.distributor_Contact.CI_ResponsiblePartyList = null;
-            this.distributor_Contact.Location = new System.Drawing.Point(3, 3);
-            this.distributor_Contact.mylabel = "Contact";
-            this.distributor_Contact.Name = "distributor_Contact";
-            this.distributor_Contact.rp_mode = "distribution";
-            this.distributor_Contact.Size = new System.Drawing.Size(439, 35);
-            this.distributor_Contact.TabIndex = 7;
-            this.distributor_Contact.Tag = "";
             // 
             // uc_distribution
             // 

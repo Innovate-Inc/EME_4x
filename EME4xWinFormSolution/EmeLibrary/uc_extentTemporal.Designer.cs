@@ -69,10 +69,10 @@
             this.groupBox1.Controls.Add(this.tabControl1);
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(351, 161);
+            this.groupBox1.Size = new System.Drawing.Size(290, 161);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Date of Dataset";
+            this.groupBox1.Text = "Temporal Extent of Data";
             // 
             // tabControl1
             // 
@@ -83,7 +83,7 @@
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.ShowToolTips = true;
-            this.tabControl1.Size = new System.Drawing.Size(349, 138);
+            this.tabControl1.Size = new System.Drawing.Size(283, 138);
             this.tabControl1.TabIndex = 6;
             this.toolTip1.SetToolTip(this.tabControl1, "Chose One Date Type");
             // 
@@ -107,7 +107,7 @@
             this.timePeriod.Location = new System.Drawing.Point(4, 22);
             this.timePeriod.Name = "timePeriod";
             this.timePeriod.Padding = new System.Windows.Forms.Padding(3);
-            this.timePeriod.Size = new System.Drawing.Size(341, 112);
+            this.timePeriod.Size = new System.Drawing.Size(275, 112);
             this.timePeriod.TabIndex = 1;
             this.timePeriod.Text = "Time Period";
             this.timePeriod.UseVisualStyleBackColor = true;
@@ -290,7 +290,7 @@
             this.timeInstant.Location = new System.Drawing.Point(4, 22);
             this.timeInstant.Name = "timeInstant";
             this.timeInstant.Padding = new System.Windows.Forms.Padding(3);
-            this.timeInstant.Size = new System.Drawing.Size(341, 112);
+            this.timeInstant.Size = new System.Drawing.Size(275, 112);
             this.timeInstant.TabIndex = 0;
             this.timeInstant.Text = "Single Date";
             // 
@@ -382,7 +382,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox1);
             this.Name = "uc_extentTemporal";
-            this.Size = new System.Drawing.Size(357, 167);
+            this.Size = new System.Drawing.Size(296, 167);
             this.groupBox1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.timePeriod.ResumeLayout(false);
