@@ -21,6 +21,7 @@ namespace EmeLibrary
         //private List<string> classFieldBindingNames;
         private XmlDocument inboundMetadataRecord;
         private XmlDocument inboundMetadataRecordSkippedElements;
+        private string _inboundMetadataRecordSkippedElementsXmlString;
         private string inboundMetadataFormat;
         private string inboundMetadataFilePath;
         private XmlDocument outboundMetadataRecord;
@@ -87,6 +88,10 @@ namespace EmeLibrary
         public string baseURIFileName
         {
             get { return inboundMetadataRecord.BaseURI.ToString(); }
+        }
+        public string elementsNotEditedByEME
+        {
+            get { return _inboundMetadataRecordSkippedElementsXmlString; }
         }
         public string fileIdentifier
         {
@@ -298,9 +303,8 @@ namespace EmeLibrary
             xdoc.WriteTo(xw);
             string xdocCopy = sw.ToString();
             inboundMetadataRecordSkippedElements = new XmlDocument();
-            inboundMetadataRecordSkippedElements.LoadXml(xdocCopy);            
-            //inboundMetadataRecordSkippedElements.DocumentElement.RemoveAll();
-            
+            inboundMetadataRecordSkippedElements.LoadXml(xdocCopy);
+                       
 
             // = xdoc;
             inboundMetadataFormat = sourceXMLFormat;
@@ -564,7 +568,7 @@ namespace EmeLibrary
 
                         _idInfo_extent_temporalExtent.TimeInstant = ti;
                     }
-                    Console.WriteLine(tExtentName);
+                    //Console.WriteLine(tExtentName);
 
                 }
                 #endregion
@@ -573,7 +577,13 @@ namespace EmeLibrary
                 //_distributionInfo_MD_Distribution = new List<MD_Distribution>();
                 //set the private backing field directly in the method since this object only occurs in this section.
                 returnMD_DistributionSection();
-                Console.WriteLine("done");
+                //Console.WriteLine("done");
+
+                StringWriter sw2 = new StringWriter();
+                XmlTextWriter xw2 = new XmlTextWriter(sw2);
+                xw2.Formatting = Formatting.Indented;
+                inboundMetadataRecordSkippedElements.WriteTo(xw2);
+                _inboundMetadataRecordSkippedElementsXmlString = sw2.ToString();
 
             }
 

@@ -260,7 +260,7 @@ namespace EmeLibrary
 
             //Replace this with pagecontroller.ElementPopulator() method
             PageController.ElementPopulator(this);
-            
+            elementsNotSupportedByEME.Text = localXdoc.elementsNotEditedByEME;            
             //IdInfo_citation_Title_txt.Text = localXdoc.IdInfo_citation_Title;
             //txtAbstract.Text = localXdoc.identificationInfo_Abstract;
             
