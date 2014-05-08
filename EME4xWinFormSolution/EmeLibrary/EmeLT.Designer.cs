@@ -496,7 +496,7 @@
             this.metadataAuthor_Pnl.Controls.Add(this.contact_CI_ResponsibleParty);
             this.metadataAuthor_Pnl.Location = new System.Drawing.Point(3, 3);
             this.metadataAuthor_Pnl.Name = "metadataAuthor_Pnl";
-            this.metadataAuthor_Pnl.Size = new System.Drawing.Size(471, 40);
+            this.metadataAuthor_Pnl.Size = new System.Drawing.Size(457, 40);
             this.metadataAuthor_Pnl.TabIndex = 13;
             // 
             // contact_CI_ResponsibleParty
@@ -508,7 +508,7 @@
             this.contact_CI_ResponsibleParty.mylabel = "Metadata Author";
             this.contact_CI_ResponsibleParty.Name = "contact_CI_ResponsibleParty";
             this.contact_CI_ResponsibleParty.rp_mode = "dist";
-            this.contact_CI_ResponsibleParty.Size = new System.Drawing.Size(463, 35);
+            this.contact_CI_ResponsibleParty.Size = new System.Drawing.Size(449, 35);
             this.contact_CI_ResponsibleParty.TabIndex = 0;
             this.contact_CI_ResponsibleParty.Tag = "";
             this.contact_CI_ResponsibleParty.Validating += new System.ComponentModel.CancelEventHandler(this.cntrl_Validating);
@@ -1353,7 +1353,7 @@
             this.dates_for_resources_pnl.Controls.Add(this.idInfo_citation_date_revision);
             this.dates_for_resources_pnl.Controls.Add(this.idInfo_citation_date_creation_lbl);
             this.dates_for_resources_pnl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.dates_for_resources_pnl.Location = new System.Drawing.Point(224, 208);
+            this.dates_for_resources_pnl.Location = new System.Drawing.Point(232, 213);
             this.dates_for_resources_pnl.Name = "dates_for_resources_pnl";
             this.dates_for_resources_pnl.Size = new System.Drawing.Size(201, 100);
             this.dates_for_resources_pnl.TabIndex = 0;
@@ -1512,7 +1512,7 @@
             // 
             // idInfo_extent_temporalExtent
             // 
-            this.idInfo_extent_temporalExtent.Location = new System.Drawing.Point(9, 17);
+            this.idInfo_extent_temporalExtent.Location = new System.Drawing.Point(6, 19);
             this.idInfo_extent_temporalExtent.Name = "idInfo_extent_temporalExtent";
             this.idInfo_extent_temporalExtent.Size = new System.Drawing.Size(299, 174);
             this.idInfo_extent_temporalExtent.TabIndex = 51;

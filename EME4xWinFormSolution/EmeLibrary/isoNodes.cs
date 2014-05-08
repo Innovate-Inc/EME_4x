@@ -282,15 +282,27 @@ namespace EmeLibrary
 
         #endregion
         
-
         public isoNodes(XmlDocument xdoc, string sourceXMLFormat, string fileNamewithFullPath)
         {
             
             //Set Metadata format and file path and then set fields
             //ToDo:  Handle newly created files.  Will have to overload this method incase we are dealing with ArcObjects
 
-            //Store inbound record.  Idea is to have both an inbound and outbound metadata record
+            //Store inbound record.  Idea is to have both an inbound and outbound metadata record           
             inboundMetadataRecord = xdoc;
+
+            //Make a copy and remove the elements that were handeled.
+            StringWriter sw = new StringWriter();
+            XmlTextWriter xw = new XmlTextWriter(sw);
+            xw.Formatting = Formatting.Indented;
+            xdoc.WriteTo(xw);
+            string xdocCopy = sw.ToString();
+            inboundMetadataRecordSkippedElements = new XmlDocument();
+            inboundMetadataRecordSkippedElements.LoadXml(xdocCopy);            
+            //inboundMetadataRecordSkippedElements.DocumentElement.RemoveAll();
+            
+
+            // = xdoc;
             inboundMetadataFormat = sourceXMLFormat;
             inboundMetadataFilePath = fileNamewithFullPath;
 
@@ -347,12 +359,59 @@ namespace EmeLibrary
                 //Might get this from template metadata instead and leave as read-only
                 mdStandardName = templateMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.metadataStandardNameXpath).FirstChild.InnerText;
                 mdStandardVersion = templateMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.metadataStandardVersionXpath).FirstChild.InnerText;
+                
+                XmlNode deleteMDInfo = inboundMetadataRecordSkippedElements.DocumentElement.SelectSingleNode("./*[local-name()='characterSet']");
+                if (deleteMDInfo != null)
+                {
+                    deleteMDInfo.RemoveAll();
+                    removeEmptyParentNodes(deleteMDInfo);
+                }
+                deleteMDInfo = inboundMetadataRecordSkippedElements.DocumentElement.SelectSingleNode("./*[local-name()='metadataStandardName']");
+                if (deleteMDInfo != null)
+                {
+                    deleteMDInfo.RemoveAll();
+                    removeEmptyParentNodes(deleteMDInfo);
+                }
+                deleteMDInfo = inboundMetadataRecordSkippedElements.DocumentElement.SelectSingleNode("./*[local-name()='metadataStandardVersion']");
+                if (deleteMDInfo != null)
+                {
+                    deleteMDInfo.RemoveAll();
+                    removeEmptyParentNodes(deleteMDInfo);
+                }
 
                 //IdInfo
                 _idInfo_citation_title = returnInnerTextfromNode(IsoNodeXpaths.idInfo_citation_TitleXpath);
+                
+                //Remove the compound dates first, then set class fields
+                XmlNode deleteCompoundElement = inboundMetadataRecordSkippedElements.DocumentElement.SelectSingleNode
+                    (IsoNodeXpaths.idInfo_citation_date_creationXpath);
+                if (deleteCompoundElement != null)
+                {
+                    XmlNode pNode = deleteCompoundElement.ParentNode;
+                    pNode.RemoveAll();
+                    removeEmptyParentNodes(pNode);
+                }                
+                deleteCompoundElement = inboundMetadataRecordSkippedElements.DocumentElement.SelectSingleNode
+                    (IsoNodeXpaths.idInfo_citation_date_publicationXpath);
+                if (deleteCompoundElement != null)
+                {
+                    XmlNode pNode = deleteCompoundElement.ParentNode;
+                    pNode.RemoveAll();
+                    removeEmptyParentNodes(pNode);
+                }
+                deleteCompoundElement = inboundMetadataRecordSkippedElements.DocumentElement.SelectSingleNode
+                    (IsoNodeXpaths.idInfo_citation_date_revisionXpath);
+                if (deleteCompoundElement != null)
+                {
+                    XmlNode pNode = deleteCompoundElement.ParentNode;
+                    pNode.RemoveAll();
+                    removeEmptyParentNodes(pNode);
+                }
+
                 _idInfo_citation_date_creation = returnInnerTextfromNode(IsoNodeXpaths.idInfo_citation_date_creationXpath);
                 _idInfo_citation_date_publication = returnInnerTextfromNode(IsoNodeXpaths.idInfo_citation_date_publicationXpath);
                 _idInfo_citation_date_revision = returnInnerTextfromNode(IsoNodeXpaths.idInfo_citation_date_revisionXpath);
+
                 idinfoCitationcitedResponsibleParty = returnCI_ResponsiblePartyList(IsoNodeXpaths.idInfo_citation_citedResponsiblePartyXpath);
 
                 _idInfo_abstract = returnInnerTextfromNode(IsoNodeXpaths.idInfo_AbstractXpath);
@@ -391,6 +450,15 @@ namespace EmeLibrary
                 _idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescription =
                     returnInnerTextfromNode(IsoNodeXpaths.idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescriptionXpath);
                 
+                //Section 16  //just remove the lanuague section
+                XmlNode delLan = inboundMetadataRecordSkippedElements.DocumentElement.SelectSingleNode(
+                    "./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='language']");
+                if (delLan != null)
+                {
+                    delLan.RemoveAll();
+                    removeEmptyParentNodes(delLan);
+                }
+
                 _idInfo_extent_description = returnInnerTextfromNode(IsoNodeXpaths.idInfo_extent_descriptionXpath);
                 _idInfo_extent_geographicBoundingBox_eastLongDD = returnInnerTextfromNodeAsDouble(IsoNodeXpaths.idInfo_extent_geographicBoundingBox_eastLongDDXpath);
                 _idInfo_extent_geographicBoundingBox_westLongDD = returnInnerTextfromNodeAsDouble(IsoNodeXpaths.idInfo_extent_geographicBoundingBox_westLongDDXpath);
@@ -405,7 +473,15 @@ namespace EmeLibrary
                 XmlNode temporalExtentNode = inboundMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.idInfo_extent_temporalExtentXpath);
                 if (temporalExtentNode != null)
                 {
-                    //check which section we have.  If both time instant and time period what do we do???
+                    //check which section we have.
+                    //If both time instant and time period what do we do???
+                    //For now this will grab a timePeriod and skip time instant if they both exist
+                    //First one grabbed will be removed from the tree.
+
+                    XmlNode nodeToDelete = inboundMetadataRecordSkippedElements.DocumentElement.SelectSingleNode(IsoNodeXpaths.idInfo_extent_temporalExtentXpath);
+                    nodeToDelete.RemoveAll();
+                    removeEmptyParentNodes(nodeToDelete);
+
                     string tExtentName = temporalExtentNode.FirstChild.Name;
                     if (tExtentName == "gml:TimePeriod")
                     {
@@ -497,7 +573,7 @@ namespace EmeLibrary
                 //_distributionInfo_MD_Distribution = new List<MD_Distribution>();
                 //set the private backing field directly in the method since this object only occurs in this section.
                 returnMD_DistributionSection();
-
+                Console.WriteLine("done");
 
             }
 
@@ -544,7 +620,13 @@ namespace EmeLibrary
             {
                 XmlNode singleNode = inboundMetadataRecord.DocumentElement.SelectSingleNode(XpathToSingleNode).FirstChild;
                 s = (singleNode != null) ? singleNode.InnerText : "";
-                //inboundMetadataRecordSkippedElements.DocumentElement.SelectSingleNode(XpathToSingleNode).FirstChild
+                XmlNode deleteThisNode = inboundMetadataRecordSkippedElements.DocumentElement.SelectSingleNode(XpathToSingleNode);
+                if (deleteThisNode != null)
+                {
+                    //node may be removed at a different point in time.
+                    deleteThisNode.RemoveAll();
+                    removeEmptyParentNodes(deleteThisNode);
+                }
             }
             return s;
         }
@@ -555,6 +637,11 @@ namespace EmeLibrary
             {
                 XmlNode singleNode = inboundMetadataRecord.DocumentElement.SelectSingleNode(XpathToSingleNode).FirstChild;
                 bool tf = double.TryParse(singleNode.InnerText,out dd);
+
+                XmlNode deleteThisNode = inboundMetadataRecordSkippedElements.DocumentElement.SelectSingleNode(XpathToSingleNode);
+                deleteThisNode.RemoveAll();
+                removeEmptyParentNodes(deleteThisNode);
+                
             }
             return dd;
         }
@@ -581,7 +668,15 @@ namespace EmeLibrary
                         templist.Add(n.InnerText);
                     }
                 }
+
+                XmlNode kwSectionToDelete = inboundMetadataRecordSkippedElements.DocumentElement.SelectSingleNode(XpathToDescriptiveKeyWordSection);
+                if (kwSectionToDelete != null)
+                {
+                    kwSectionToDelete.RemoveAll();
+                    removeEmptyParentNodes(kwSectionToDelete);
+                }
             }
+
             return templist;
             
         }
@@ -605,6 +700,14 @@ namespace EmeLibrary
         /// <returns></returns>
         private List<CI_ResponsibleParty> returnCI_ResponsiblePartyList (string XpathToCI_RpSection)//(XmlNodeList nodeListforCI_RpSection)
         {
+            
+            XmlNodeList nodeListToDelete = inboundMetadataRecordSkippedElements.DocumentElement.SelectNodes(XpathToCI_RpSection);
+            foreach (XmlNode nd in nodeListToDelete)
+            {
+                nd.RemoveAll();
+                removeEmptyParentNodes(nd);
+            }
+            
             XmlNodeList nodeListforCI_RpSection = inboundMetadataRecord.DocumentElement.SelectNodes(XpathToCI_RpSection);
             List<CI_ResponsibleParty> rpList = new List<CI_ResponsibleParty>();
 
@@ -672,7 +775,15 @@ namespace EmeLibrary
                    //gmd:MD_Distributor/gmd:distributorTransferOptions/gmd:MD_DigitalTransferOptions //NodeList
 
             //ToDo: This assumes all elments are nested under the distributor element.  Need to handle exceptions to this when
-            //a section might have content outside the distributor.  We could force the content to be a sibling of the distributor???
+            //a section might have content outside the distributor.  For now we force the content to be a sibling of the distributor
+
+            XmlNode nodeToDelete = inboundMetadataRecordSkippedElements.DocumentElement.SelectSingleNode("./*[local-name()='distributionInfo']");
+            if (nodeToDelete != null)
+            {
+                nodeToDelete.RemoveAll();
+                removeEmptyParentNodes(nodeToDelete);
+            }
+
  
             XmlNodeList distInfoMD_DistributorSection = inboundMetadataRecord.DocumentElement.SelectNodes(IsoNodeXpaths.distributionInfo__MD_DistributionXpath);
             foreach (XmlNode gmddistributor in distInfoMD_DistributorSection)
@@ -979,22 +1090,23 @@ namespace EmeLibrary
             constructChildNodeUnderParent(outboundMetadataRecord.DocumentElement, IsoNodeXpaths.hierarchyLevel_MD_ScopeCodeXpath, hyLevel_md_scopeCode, true, true, true);
             
             //Section 7, contact, Required  Should be at least one contact section in the outgoing document
-            if (_contactRpSection.Count > 0)
+            if (_contactRpSection != null)
             {
-                constructCI_ResponsiblePartyMarkUp(_contactRpSection, IsoNodeXpaths.contact_CI_ResponsiblePartyXpath);
-            }
-            else
-            {
-                //add the attribute gco:nilReason="missing"
+                if (_contactRpSection.Count > 0)
+                {
+                    constructCI_ResponsiblePartyMarkUp(_contactRpSection, IsoNodeXpaths.contact_CI_ResponsiblePartyXpath);
+                }
+                else
+                {
+                    //add the attribute gco:nilReason="missing"
 
-                XmlAttribute nilReasonAttribute = outboundMetadataRecord.CreateAttribute("gco", "nilReason", "http://www.isotc211.org/2005/gco");
-                nilReasonAttribute.Value = "missing";
-                XmlAttributeCollection ac = outboundMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.contact_CI_ResponsiblePartyXpath).Attributes;
-                ac.Append(nilReasonAttribute);
-                //responsiblePartySectionTemplate.Attributes;
-                //ac.Append(pcodeAttribut);
-
-
+                    XmlAttribute nilReasonAttribute = outboundMetadataRecord.CreateAttribute("gco", "nilReason", "http://www.isotc211.org/2005/gco");
+                    nilReasonAttribute.Value = "missing";
+                    XmlAttributeCollection ac = outboundMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.contact_CI_ResponsiblePartyXpath).Attributes;
+                    ac.Append(nilReasonAttribute);
+                    //responsiblePartySectionTemplate.Attributes;
+                    //ac.Append(pcodeAttribut);
+                }
             }
             //Sections 8, 9, and 10
             constructChildNodeUnderParent(outboundMetadataRecord.DocumentElement, IsoNodeXpaths.dateStampXpath, _dateStamp, false, true, true);
@@ -1088,12 +1200,17 @@ namespace EmeLibrary
             }
             
             //Section 16.1.7 citedResponsibleParty
-            if (idInfo_citation_citedResponsibleParty.Count > 0)
+            if (idInfo_citation_citedResponsibleParty != null)
             {
-                //Must first insert the very first instance.  Other occurances will be inserted after the first item in the list.
-                constructChildNodeUnderParent(citationCiSectionNode, IsoNodeXpaths.idInfo_citation_citedResponsiblePartyXpath, null, false, true, false);
-                constructCI_ResponsiblePartyMarkUp(idInfo_citation_citedResponsibleParty, IsoNodeXpaths.idInfo_citation_citedResponsiblePartyXpath);
-            }            
+                if (idInfo_citation_citedResponsibleParty.Count > 0)
+                {
+                    //Must first insert the very first instance.  Other occurances will be inserted after the first item in the list.
+                    constructChildNodeUnderParent(citationCiSectionNode, IsoNodeXpaths.idInfo_citation_citedResponsiblePartyXpath, null, false, true, false);
+                    constructCI_ResponsiblePartyMarkUp(idInfo_citation_citedResponsibleParty, IsoNodeXpaths.idInfo_citation_citedResponsiblePartyXpath);
+                }
+            }
+
+            
 
             //Section 16.2 Abstract (required)
             constructChildNodeUnderParent(outbound_md_DataIdSection, IsoNodeXpaths.idInfo_AbstractXpath, _idInfo_abstract,false, true, false);
@@ -1112,10 +1229,13 @@ namespace EmeLibrary
             }
 
             //Section 16.6
-            if (idinfoPointOfContact.Count > 0)
+            if (idInfo_pointOfContact != null)
             {
-                constructChildNodeUnderParent(outbound_md_DataIdSection, IsoNodeXpaths.idInfo_pointOfContactXpath, null, false, false, false);
-                constructCI_ResponsiblePartyMarkUp(idinfoPointOfContact, IsoNodeXpaths.idInfo_pointOfContactXpath);
+                if (idinfoPointOfContact.Count > 0)
+                {
+                    constructChildNodeUnderParent(outbound_md_DataIdSection, IsoNodeXpaths.idInfo_pointOfContactXpath, null, false, false, false);
+                    constructCI_ResponsiblePartyMarkUp(idinfoPointOfContact, IsoNodeXpaths.idInfo_pointOfContactXpath);
+                }
             }
 
             //Section 16.7 resourceMaintenance (optional)
@@ -1255,10 +1375,16 @@ namespace EmeLibrary
                 "./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='language']",
                 _language, false, true, false);
 
-            //Section 16.18 IsoTopicCat  (Req'd for EPA)  Insert even if no list items
-            XmlNode isoTopicTemplateSection = constructIsoTopicCategorySection();            
-            constructChildNodeUnderParent(outbound_md_DataIdSection, isoTopicTemplateSection, true);
+            //Section 16.18 IsoTopicCat  (Req'd for EPA)
 
+            if (kwIsoTopicCatList != null)
+            {
+                if (kwIsoTopicCatList.Count > 0)
+                {
+                    XmlNode isoTopicTemplateSection = constructIsoTopicCategorySection();
+                    constructChildNodeUnderParent(outbound_md_DataIdSection, isoTopicTemplateSection, true);
+                }
+            }
             //Sections 16.20 Extent, spatial and temporal
 
             #region  Section for spatial and temporal code
@@ -1383,7 +1509,9 @@ namespace EmeLibrary
                 }
             }
             #endregion
-            
+
+            //Clean up and remove citation section if there are not values that get inserted.
+            if (!citationCiSectionNode.HasChildNodes) { removeEmptyParentNodes(citationCiSectionNode); }
 
             #region test area for checking for missing parent nodes and inserting the missing nodes
 
@@ -1779,144 +1907,146 @@ namespace EmeLibrary
             //                   //<gmd:distributorContact> 1-1!!
             //                         //CiRP...
             //                   //remaining sub elements per distributorContact
-
-            if (_distributionInfo__MD_Distribution.Count > 0)
+            if (_distributionInfo__MD_Distribution != null)
             {
-                //MD_Distribution
-                string distInfoChildNodeXpath = "./*[local-name()='distributionInfo']/*[local-name()='MD_Distribution']";
-                constructChildNodeUnderParent(
-                    outboundMetadataRecord.DocumentElement.SelectSingleNode("./*[local-name()='distributionInfo']"),
-                    distInfoChildNodeXpath,
-                    null, false, false, false);
-                
-                int distributorIndex = 0;
-                foreach (MD_Distributor distributorItem in _distributionInfo__MD_Distribution)
+                if (_distributionInfo__MD_Distribution.Count > 0)
                 {
-                    //distributor;  Repeating.  Need to track the index of this element for all child elements for Xpath Expressions
-                    //              Each distributor will element will be appended after the last distributor section.
+                    //MD_Distribution
+                    string distInfoChildNodeXpath = "./*[local-name()='distributionInfo']/*[local-name()='MD_Distribution']";
                     constructChildNodeUnderParent(
-                        outboundMetadataRecord.DocumentElement.SelectSingleNode(distInfoChildNodeXpath),
-                        IsoNodeXpaths.distributionInfo__MD_DistributionXpath,
-                        null,false,false,false);
-                
-                    //MD_Distributor; Occurs once under the parent distributor.  Insert into corresponding distributor parent using distributorIndex
-                    constructChildNodeUnderParent(
-                      outboundMetadataRecord.DocumentElement.SelectNodes(IsoNodeXpaths.distributionInfo__MD_DistributionXpath)[distributorIndex],
-                      IsoNodeXpaths.distributionInfo__MD_DistributionXpath + "/*[local-name()='MD_Distributor']",
-                      null, false, false, false);
-                    
-                    
-                    //Create a key,value pair of element name and xpath to get to each child node
-                    MD_Distributor mdDistributor = new MD_Distributor();
-                    object distRP = mdDistributor;
-
-                    List<KeyValuePair<string, string>> kvList = extractPartentXmlElementNameFromClass(distRP);
-                    //for (int i = 0; i < kvList.Count; i++)
-                    //{
-                    //    Console.WriteLine("Key " + kvList[i].Key.ToString()
-                    //        + "  Value: " + kvList[i].Value.ToString());
-                    //}
-                                  
-
-                    //Under this node include only one CI_Responsible Party Package
-                    //string pname = "distributorContact__CI_ResponsibleParty";
-                    string pname = "distributorContact";
-                    KeyValuePair<string, string> kv = kvList.Find(delegate(KeyValuePair<string, string> kv1) { return kv1.Key == pname; });
-                    
-                    XmlNode distributorContactAtIndex = outboundMetadataRecord.DocumentElement.SelectNodes(
-                        IsoNodeXpaths.distributionInfo__MD_DistributionXpath)[distributorIndex].SelectSingleNode("./*[local-name()='MD_Distributor']");
-                    
-                    constructChildNodeUnderParent(
-                        distributorContactAtIndex,
-                        IsoNodeXpaths.distributionInfo__MD_DistributionXpath + "/*[local-name()='MD_Distributor']/*[local-name()='distributorContact']",
+                        outboundMetadataRecord.DocumentElement.SelectSingleNode("./*[local-name()='distributionInfo']"),
+                        distInfoChildNodeXpath,
                         null, false, false, false);
-                    
-                    constructCI_ResponsiblePartyMarkUp(distributorItem.distributorContact, 
-                        distributorContactAtIndex.FirstChild, IsoNodeXpaths.distributionInfo__MD_DistributionXpath + kv.Value);
-                                        
-                    
-                    if (distributorItem.distributionOrderProcess__MD_StandardOrderProcess.Count > 0)
+
+                    int distributorIndex = 0;
+                    foreach (MD_Distributor distributorItem in _distributionInfo__MD_Distribution)
                     {
-                        //Key distributionOrderProcess__MD_StandardOrderProcess  
-                        //Value: ./*[local-name()='MD_Distributor']/*[local-name()='distributionOrderProcess']/*[local-name()='MD_StandardOrderProcess']
-                        //Repeat the
-                        int SOPindex = 0;
-                        foreach (MD_StandardOrderProcess SOP in distributorItem.distributionOrderProcess__MD_StandardOrderProcess)
+                        //distributor;  Repeating.  Need to track the index of this element for all child elements for Xpath Expressions
+                        //              Each distributor will element will be appended after the last distributor section.
+                        constructChildNodeUnderParent(
+                            outboundMetadataRecord.DocumentElement.SelectSingleNode(distInfoChildNodeXpath),
+                            IsoNodeXpaths.distributionInfo__MD_DistributionXpath,
+                            null, false, false, false);
+
+                        //MD_Distributor; Occurs once under the parent distributor.  Insert into corresponding distributor parent using distributorIndex
+                        constructChildNodeUnderParent(
+                          outboundMetadataRecord.DocumentElement.SelectNodes(IsoNodeXpaths.distributionInfo__MD_DistributionXpath)[distributorIndex],
+                          IsoNodeXpaths.distributionInfo__MD_DistributionXpath + "/*[local-name()='MD_Distributor']",
+                          null, false, false, false);
+
+
+                        //Create a key,value pair of element name and xpath to get to each child node
+                        MD_Distributor mdDistributor = new MD_Distributor();
+                        object distRP = mdDistributor;
+
+                        List<KeyValuePair<string, string>> kvList = extractPartentXmlElementNameFromClass(distRP);
+                        //for (int i = 0; i < kvList.Count; i++)
+                        //{
+                        //    Console.WriteLine("Key " + kvList[i].Key.ToString()
+                        //        + "  Value: " + kvList[i].Value.ToString());
+                        //}
+
+
+                        //Under this node include only one CI_Responsible Party Package
+                        //string pname = "distributorContact__CI_ResponsibleParty";
+                        string pname = "distributorContact";
+                        KeyValuePair<string, string> kv = kvList.Find(delegate(KeyValuePair<string, string> kv1) { return kv1.Key == pname; });
+
+                        XmlNode distributorContactAtIndex = outboundMetadataRecord.DocumentElement.SelectNodes(
+                            IsoNodeXpaths.distributionInfo__MD_DistributionXpath)[distributorIndex].SelectSingleNode("./*[local-name()='MD_Distributor']");
+
+                        constructChildNodeUnderParent(
+                            distributorContactAtIndex,
+                            IsoNodeXpaths.distributionInfo__MD_DistributionXpath + "/*[local-name()='MD_Distributor']/*[local-name()='distributorContact']",
+                            null, false, false, false);
+
+                        constructCI_ResponsiblePartyMarkUp(distributorItem.distributorContact,
+                            distributorContactAtIndex.FirstChild, IsoNodeXpaths.distributionInfo__MD_DistributionXpath + kv.Value);
+
+
+                        if (distributorItem.distributionOrderProcess__MD_StandardOrderProcess.Count > 0)
                         {
-                            //For Each, clone, assign values, removed unused elements, then insert.
-                            string SOPXpath =
-                                "./*[local-name()='distributionInfo']/*[local-name()='MD_Distribution']/*[local-name()='distributor']/*[local-name()='MD_Distributor']/*[local-name()='distributionOrderProcess']";
-                            
-                            XmlNode templateSectionNodeClone = templateMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.distributionInfo__MD_DistributionXpath)
-                                .SelectSingleNode("./*[local-name()='MD_Distributor']/*[local-name()='distributionOrderProcess']/*[local-name()='MD_StandardOrderProcess']")
-                                .CloneNode(true);
-                            XmlNode processedSOPSection =  constructNodeFragment(SOP, templateSectionNodeClone);
-                            
-                            constructChildNodeUnderParent(distributorContactAtIndex,
-                                SOPXpath,
-                                null, false,false,false);
-                            XmlNode SOPElementAtIndex = distributorContactAtIndex.SelectNodes("./*[local-name()='distributionOrderProcess']")[SOPindex];
-                            
-                            constructChildNodeUnderParent(SOPElementAtIndex, processedSOPSection, true);
+                            //Key distributionOrderProcess__MD_StandardOrderProcess  
+                            //Value: ./*[local-name()='MD_Distributor']/*[local-name()='distributionOrderProcess']/*[local-name()='MD_StandardOrderProcess']
+                            //Repeat the
+                            int SOPindex = 0;
+                            foreach (MD_StandardOrderProcess SOP in distributorItem.distributionOrderProcess__MD_StandardOrderProcess)
+                            {
+                                //For Each, clone, assign values, removed unused elements, then insert.
+                                string SOPXpath =
+                                    "./*[local-name()='distributionInfo']/*[local-name()='MD_Distribution']/*[local-name()='distributor']/*[local-name()='MD_Distributor']/*[local-name()='distributionOrderProcess']";
 
-                            SOPindex++;
+                                XmlNode templateSectionNodeClone = templateMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.distributionInfo__MD_DistributionXpath)
+                                    .SelectSingleNode("./*[local-name()='MD_Distributor']/*[local-name()='distributionOrderProcess']/*[local-name()='MD_StandardOrderProcess']")
+                                    .CloneNode(true);
+                                XmlNode processedSOPSection = constructNodeFragment(SOP, templateSectionNodeClone);
 
-                            //string s = SOP.fees + SOP.plannedAvailableDateTime + SOP.orderingInstructions + SOP.turnaround;
+                                constructChildNodeUnderParent(distributorContactAtIndex,
+                                    SOPXpath,
+                                    null, false, false, false);
+                                XmlNode SOPElementAtIndex = distributorContactAtIndex.SelectNodes("./*[local-name()='distributionOrderProcess']")[SOPindex];
+
+                                constructChildNodeUnderParent(SOPElementAtIndex, processedSOPSection, true);
+
+                                SOPindex++;
+
+                                //string s = SOP.fees + SOP.plannedAvailableDateTime + SOP.orderingInstructions + SOP.turnaround;
+                            }
+
+                        }
+                        if (distributorItem.distributorFormat__MD_Format.Count > 0)
+                        {
+                            //Key distributorFormat__MD_Format  
+                            //Value: ./*[local-name()='MD_Distributor']/*[local-name()='distributorFormat']/*[local-name()='MD_Format']
+                            int MDFindex = 0;
+                            foreach (MD_Format MDF in distributorItem.distributorFormat__MD_Format)
+                            {
+                                string MSFXpath =
+                                    "./*[local-name()='distributionInfo']/*[local-name()='MD_Distribution']/*[local-name()='distributor']/*[local-name()='MD_Distributor']/*[local-name()='distributorFormat']";
+                                XmlNode templateSectionNodeClone = templateMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.distributionInfo__MD_DistributionXpath)
+                                    .SelectSingleNode("./*[local-name()='MD_Distributor']/*[local-name()='distributorFormat']/*[local-name()='MD_Format']")
+                                    .CloneNode(true);
+                                XmlNode processedSOPSection = constructNodeFragment(MDF, templateSectionNodeClone);
+
+                                constructChildNodeUnderParent(distributorContactAtIndex,
+                                    MSFXpath,
+                                    null, false, false, false);
+                                XmlNode SOPElementAtIndex = distributorContactAtIndex.SelectNodes("./*[local-name()='distributorFormat']")[MDFindex];
+
+                                constructChildNodeUnderParent(SOPElementAtIndex, processedSOPSection, true);
+
+                                MDFindex++;
+
+                            }
+
+                        }
+                        if (distributorItem.distributorTransferOptions__MD_DigitalTransferOptions.Count > 0)
+                        {
+                            //Key distributorTransferOptions__MD_DigitalTransferOptions  
+                            //Value: ./*[local-name()='MD_Distributor']/*[local-name()='distributorTransferOptions']/*[local-name()='MD_DigitalTransferOptions']
+                            int DTOindex = 0;
+                            foreach (MD_DigitalTransferOptions DTO in distributorItem.distributorTransferOptions__MD_DigitalTransferOptions)
+                            {
+                                string DTOXpath =
+                                    "./*[local-name()='distributionInfo']/*[local-name()='MD_Distribution']/*[local-name()='distributor']/*[local-name()='MD_Distributor']/*[local-name()='distributorTransferOptions']";
+                                XmlNode templateSectionNodeClone = templateMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.distributionInfo__MD_DistributionXpath)
+                                    .SelectSingleNode("./*[local-name()='MD_Distributor']/*[local-name()='distributorTransferOptions']/*[local-name()='MD_DigitalTransferOptions']")
+                                    .CloneNode(true);
+                                XmlNode processedDTOSection = constructNodeFragment(DTO, templateSectionNodeClone);
+
+                                constructChildNodeUnderParent(distributorContactAtIndex,
+                                    DTOXpath,
+                                    null, false, false, false);
+                                XmlNode DTOElementAtIndex = distributorContactAtIndex.SelectNodes("./*[local-name()='distributorTransferOptions']")[DTOindex];
+
+                                constructChildNodeUnderParent(DTOElementAtIndex, processedDTOSection, true);
+
+                                DTOindex++;
+                            }
                         }
 
+                        distributorIndex++;
                     }
-                    if (distributorItem.distributorFormat__MD_Format.Count > 0)
-                    {
-                        //Key distributorFormat__MD_Format  
-                        //Value: ./*[local-name()='MD_Distributor']/*[local-name()='distributorFormat']/*[local-name()='MD_Format']
-                        int MDFindex = 0;
-                        foreach (MD_Format MDF in distributorItem.distributorFormat__MD_Format)
-                        {
-                            string MSFXpath =
-                                "./*[local-name()='distributionInfo']/*[local-name()='MD_Distribution']/*[local-name()='distributor']/*[local-name()='MD_Distributor']/*[local-name()='distributorFormat']";
-                            XmlNode templateSectionNodeClone = templateMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.distributionInfo__MD_DistributionXpath)
-                                .SelectSingleNode("./*[local-name()='MD_Distributor']/*[local-name()='distributorFormat']/*[local-name()='MD_Format']")
-                                .CloneNode(true);
-                            XmlNode processedSOPSection = constructNodeFragment(MDF, templateSectionNodeClone);
-
-                            constructChildNodeUnderParent(distributorContactAtIndex,
-                                MSFXpath,
-                                null, false, false, false);
-                            XmlNode SOPElementAtIndex = distributorContactAtIndex.SelectNodes("./*[local-name()='distributorFormat']")[MDFindex];
-
-                            constructChildNodeUnderParent(SOPElementAtIndex, processedSOPSection, true);
-                            
-                            MDFindex++;
-                            
-                        }
-
-                    }
-                    if (distributorItem.distributorTransferOptions__MD_DigitalTransferOptions.Count > 0)
-                    {
-                        //Key distributorTransferOptions__MD_DigitalTransferOptions  
-                        //Value: ./*[local-name()='MD_Distributor']/*[local-name()='distributorTransferOptions']/*[local-name()='MD_DigitalTransferOptions']
-                        int DTOindex = 0;
-                        foreach (MD_DigitalTransferOptions DTO in distributorItem.distributorTransferOptions__MD_DigitalTransferOptions)
-                        {
-                            string DTOXpath =
-                                "./*[local-name()='distributionInfo']/*[local-name()='MD_Distribution']/*[local-name()='distributor']/*[local-name()='MD_Distributor']/*[local-name()='distributorTransferOptions']";
-                            XmlNode templateSectionNodeClone = templateMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.distributionInfo__MD_DistributionXpath)
-                                .SelectSingleNode("./*[local-name()='MD_Distributor']/*[local-name()='distributorTransferOptions']/*[local-name()='MD_DigitalTransferOptions']")
-                                .CloneNode(true);
-                            XmlNode processedDTOSection = constructNodeFragment(DTO, templateSectionNodeClone);
-
-                            constructChildNodeUnderParent(distributorContactAtIndex,
-                                DTOXpath,
-                                null, false, false, false);
-                            XmlNode DTOElementAtIndex = distributorContactAtIndex.SelectNodes("./*[local-name()='distributorTransferOptions']")[DTOindex];
-
-                            constructChildNodeUnderParent(DTOElementAtIndex, processedDTOSection, true);
-
-                            DTOindex++;
-                        }
-                    }
-
-                    distributorIndex++;
                 }
             }
 
@@ -1937,37 +2067,43 @@ namespace EmeLibrary
                 node.ParentNode.RemoveChild(node);
                 if (pnode.ParentNode != null)
                 {
-                    removeEmptyParentNodes(pnode);
+                    if (pnode.ParentNode.NodeType != XmlNodeType.Document)
+                    {
+                        removeEmptyParentNodes(pnode);
+                    }
                 }
             }
         }               
 
         /// <summary>
         /// Clone a node from template and insert an element value if present.  Pass in null to skip adding element value
-        /// and just create a simple clone. 
+        /// and just create a simple clone. And EmptyString value for elementValue will result in the methoded not running.
         /// </summary>
         /// <param name="outboundParentNode">A reference to the insertion point for the node (parent node)</param>
         /// <param name="xpathToElementToCopy"></param>
-        /// <param name="elementValue">null value will skip adding the elment value.  All other values will be added</param>
+        /// <param name="elementValue">null value will skip adding the elment value. EmptyString value will skip entire method.  All other values will be added</param>
         /// <param name="populateCodeListValue">if true then value in elementValue will populate codelist</param>
         /// <param name="deepClone">true to copy all child nodes</param>
         /// <param name="replaceExistingNode">false will append to the end</param>
         private void constructChildNodeUnderParent(
             XmlNode outboundParentNode, string xpathToElementToCopy, string elementValue, bool populateCodeListValue, bool deepClone, bool replaceExistingNode)
         {
-            XmlNode nodeFromTemplateRecord = templateMetadataRecord.DocumentElement.SelectSingleNode(xpathToElementToCopy).CloneNode(deepClone);
-            if (elementValue != null) { nodeFromTemplateRecord.FirstChild.InnerText = elementValue; }
-            if (populateCodeListValue == true) { nodeFromTemplateRecord.FirstChild.Attributes["codeListValue"].Value = elementValue; }
+            if (elementValue != "")
+            {
+                XmlNode nodeFromTemplateRecord = templateMetadataRecord.DocumentElement.SelectSingleNode(xpathToElementToCopy).CloneNode(deepClone);
+                if (elementValue != null) { nodeFromTemplateRecord.FirstChild.InnerText = elementValue; }
+                if (populateCodeListValue == true) { nodeFromTemplateRecord.FirstChild.Attributes["codeListValue"].Value = elementValue; }
 
-            XmlNode nodeImporter = outboundMetadataRecord.ImportNode(nodeFromTemplateRecord, true);
-            if (replaceExistingNode == true)
-            {
-                XmlNode nodeFromOutBoundDocToReplace = outboundMetadataRecord.DocumentElement.SelectSingleNode(xpathToElementToCopy);
-                nodeFromOutBoundDocToReplace.ParentNode.ReplaceChild(nodeImporter, nodeFromOutBoundDocToReplace);
-            }
-            else
-            {
-                outboundParentNode.AppendChild(nodeImporter);
+                XmlNode nodeImporter = outboundMetadataRecord.ImportNode(nodeFromTemplateRecord, true);
+                if (replaceExistingNode == true)
+                {
+                    XmlNode nodeFromOutBoundDocToReplace = outboundMetadataRecord.DocumentElement.SelectSingleNode(xpathToElementToCopy);
+                    nodeFromOutBoundDocToReplace.ParentNode.ReplaceChild(nodeImporter, nodeFromOutBoundDocToReplace);
+                }
+                else
+                {
+                    outboundParentNode.AppendChild(nodeImporter);
+                }
             }
         }
 
