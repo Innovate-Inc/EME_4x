@@ -1234,6 +1234,13 @@ namespace EmeLibrary
 
         }
 
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Guid g = Guid.NewGuid();
+            fileIdentifier.Text = g.ToString();
+
+        }
+
         
                             
                 
