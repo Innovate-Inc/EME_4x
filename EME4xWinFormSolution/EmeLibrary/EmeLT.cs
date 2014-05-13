@@ -1241,6 +1241,16 @@ namespace EmeLibrary
 
         }
 
+        private void idInfo_extent_temporalExtent_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
         
                             
                 

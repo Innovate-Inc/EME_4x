@@ -151,7 +151,7 @@
             this.MD_Format_pnl.Controls.Add(this.expand_MD_Format_btn);
             this.MD_Format_pnl.Controls.Add(this.md_distributionFormat_lbl);
             this.MD_Format_pnl.Location = new System.Drawing.Point(0, 105);
-            this.MD_Format_pnl.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.MD_Format_pnl.Margin = new System.Windows.Forms.Padding(0);
             this.MD_Format_pnl.Name = "MD_Format_pnl";
             this.MD_Format_pnl.Size = new System.Drawing.Size(439, 35);
             this.MD_Format_pnl.TabIndex = 2;
@@ -378,7 +378,7 @@
             this.digitalTransferOptions_pnl.Controls.Add(this.md_digitalTranferOptions_lbl);
             this.digitalTransferOptions_pnl.Controls.Add(this.expand_MD_DTO_btn);
             this.digitalTransferOptions_pnl.Location = new System.Drawing.Point(0, 35);
-            this.digitalTransferOptions_pnl.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.digitalTransferOptions_pnl.Margin = new System.Windows.Forms.Padding(0);
             this.digitalTransferOptions_pnl.Name = "digitalTransferOptions_pnl";
             this.digitalTransferOptions_pnl.Size = new System.Drawing.Size(439, 35);
             this.digitalTransferOptions_pnl.TabIndex = 4;
@@ -796,7 +796,7 @@
             this.panel2.Controls.Add(this.md_standardOrderProcess_lbl);
             this.panel2.Controls.Add(this.expand_MD_SOP_btn);
             this.panel2.Location = new System.Drawing.Point(0, 70);
-            this.panel2.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(439, 35);
             this.panel2.TabIndex = 3;
@@ -1101,7 +1101,7 @@
             this.distributor_Contact.BackColor = System.Drawing.Color.Transparent;
             this.distributor_Contact.CI_ResponsiblePartyList = null;
             this.distributor_Contact.Location = new System.Drawing.Point(0, 0);
-            this.distributor_Contact.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.distributor_Contact.Margin = new System.Windows.Forms.Padding(0);
             this.distributor_Contact.mylabel = "Contact";
             this.distributor_Contact.Name = "distributor_Contact";
             this.distributor_Contact.rp_mode = "distribution";
@@ -1115,8 +1115,8 @@
             this.distributor_gbx.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.distributor_gbx.Controls.Add(this.flowLayoutPanel6);
             this.distributor_gbx.Enabled = false;
-            this.distributor_gbx.Location = new System.Drawing.Point(3, 25);
-            this.distributor_gbx.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.distributor_gbx.Location = new System.Drawing.Point(3, 22);
+            this.distributor_gbx.Margin = new System.Windows.Forms.Padding(0);
             this.distributor_gbx.Name = "distributor_gbx";
             this.distributor_gbx.Size = new System.Drawing.Size(451, 186);
             this.distributor_gbx.TabIndex = 6;
@@ -1139,7 +1139,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.MD_Dist);
-            this.groupBox1.Location = new System.Drawing.Point(134, 4);
+            this.groupBox1.Location = new System.Drawing.Point(134, -1);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(200, 45);
             this.groupBox1.TabIndex = 7;
@@ -1158,9 +1158,9 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.uc_distribution_lbl);
             this.Controls.Add(this.distributor_gbx);
-            this.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "uc_distribution";
-            this.Size = new System.Drawing.Size(454, 211);
+            this.Size = new System.Drawing.Size(454, 208);
             this.MD_Format_pnl.ResumeLayout(false);
             this.MD_Format_pnl.PerformLayout();
             this.panel4.ResumeLayout(false);
