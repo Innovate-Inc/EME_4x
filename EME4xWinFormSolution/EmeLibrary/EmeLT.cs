@@ -1251,6 +1251,11 @@ namespace EmeLibrary
 
         }
 
+        private void distributionInformation_gbx_Enter(object sender, EventArgs e)
+        {
+
+        }
+
         
                             
                 

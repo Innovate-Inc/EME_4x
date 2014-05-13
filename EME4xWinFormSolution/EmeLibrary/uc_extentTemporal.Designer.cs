@@ -30,21 +30,21 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(uc_extentTemporal));
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.temporalExtent = new System.Windows.Forms.GroupBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.timePeriod = new System.Windows.Forms.TabPage();
-            this.label4 = new System.Windows.Forms.Label();
+            this.tempTimePeriod_Desc_lbl = new System.Windows.Forms.Label();
             this.extent__TimePeriod__description = new System.Windows.Forms.TextBox();
             this.extent__TimePeriod__endPosition_btn = new System.Windows.Forms.Button();
             this.extent__TimePeriod__beginPosition_cbo = new System.Windows.Forms.ComboBox();
             this.extent__TimePeriod__endPosition_dtP = new System.Windows.Forms.DateTimePicker();
             this.extent__TimePeriod__timeIntervalUnit_cbo = new System.Windows.Forms.ComboBox();
             this.extent__TimePeriod__endPosition = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.timePeriod_Begin_lbl = new System.Windows.Forms.Label();
             this.extent__TimePeriod__endPosition_cbo = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.timePeriod_End_lbl = new System.Windows.Forms.Label();
             this.extent__TimePeriod__beginPosition_btn = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
+            this.timePeriod_Interval_lbl = new System.Windows.Forms.Label();
             this.extent__TimePeriod__beginPosition_dtP = new System.Windows.Forms.DateTimePicker();
             this.extent__TimePeriod__timeInterval = new System.Windows.Forms.TextBox();
             this.extent__TimePeriod__beginPosition = new System.Windows.Forms.TextBox();
@@ -58,22 +58,22 @@
             this.label8 = new System.Windows.Forms.Label();
             this.extent__TimeInstant__timePosition = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.groupBox1.SuspendLayout();
+            this.temporalExtent.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.timePeriod.SuspendLayout();
             this.timeInstant.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // temporalExtent
             // 
-            this.groupBox1.Controls.Add(this.tabControl1);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(3, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(309, 161);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Temporal Extent of Data";
+            this.temporalExtent.Controls.Add(this.tabControl1);
+            this.temporalExtent.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.temporalExtent.Location = new System.Drawing.Point(3, 3);
+            this.temporalExtent.Name = "temporalExtent";
+            this.temporalExtent.Size = new System.Drawing.Size(309, 161);
+            this.temporalExtent.TabIndex = 0;
+            this.temporalExtent.TabStop = false;
+            this.temporalExtent.Text = "Temporal Extent of Data";
             // 
             // tabControl1
             // 
@@ -91,18 +91,19 @@
             // 
             // timePeriod
             // 
-            this.timePeriod.Controls.Add(this.label4);
+            this.timePeriod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.timePeriod.Controls.Add(this.tempTimePeriod_Desc_lbl);
             this.timePeriod.Controls.Add(this.extent__TimePeriod__description);
             this.timePeriod.Controls.Add(this.extent__TimePeriod__endPosition_btn);
             this.timePeriod.Controls.Add(this.extent__TimePeriod__beginPosition_cbo);
             this.timePeriod.Controls.Add(this.extent__TimePeriod__endPosition_dtP);
             this.timePeriod.Controls.Add(this.extent__TimePeriod__timeIntervalUnit_cbo);
             this.timePeriod.Controls.Add(this.extent__TimePeriod__endPosition);
-            this.timePeriod.Controls.Add(this.label1);
+            this.timePeriod.Controls.Add(this.timePeriod_Begin_lbl);
             this.timePeriod.Controls.Add(this.extent__TimePeriod__endPosition_cbo);
-            this.timePeriod.Controls.Add(this.label2);
+            this.timePeriod.Controls.Add(this.timePeriod_End_lbl);
             this.timePeriod.Controls.Add(this.extent__TimePeriod__beginPosition_btn);
-            this.timePeriod.Controls.Add(this.label3);
+            this.timePeriod.Controls.Add(this.timePeriod_Interval_lbl);
             this.timePeriod.Controls.Add(this.extent__TimePeriod__beginPosition_dtP);
             this.timePeriod.Controls.Add(this.extent__TimePeriod__timeInterval);
             this.timePeriod.Controls.Add(this.extent__TimePeriod__beginPosition);
@@ -112,16 +113,15 @@
             this.timePeriod.Size = new System.Drawing.Size(280, 112);
             this.timePeriod.TabIndex = 1;
             this.timePeriod.Text = "Time Period";
-            this.timePeriod.UseVisualStyleBackColor = true;
             // 
-            // label4
+            // tempTimePeriod_Desc_lbl
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(5, 9);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 13);
-            this.label4.TabIndex = 45;
-            this.label4.Text = "Description";
+            this.tempTimePeriod_Desc_lbl.AutoSize = true;
+            this.tempTimePeriod_Desc_lbl.Location = new System.Drawing.Point(5, 9);
+            this.tempTimePeriod_Desc_lbl.Name = "tempTimePeriod_Desc_lbl";
+            this.tempTimePeriod_Desc_lbl.Size = new System.Drawing.Size(60, 13);
+            this.tempTimePeriod_Desc_lbl.TabIndex = 45;
+            this.tempTimePeriod_Desc_lbl.Text = "Description";
             // 
             // extent__TimePeriod__description
             // 
@@ -196,14 +196,14 @@
             this.extent__TimePeriod__endPosition.TabIndex = 41;
             this.toolTip1.SetToolTip(this.extent__TimePeriod__endPosition, "Choose an Exact Date or Indeterminate Value");
             // 
-            // label1
+            // timePeriod_Begin_lbl
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(31, 35);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Begin";
+            this.timePeriod_Begin_lbl.AutoSize = true;
+            this.timePeriod_Begin_lbl.Location = new System.Drawing.Point(31, 35);
+            this.timePeriod_Begin_lbl.Name = "timePeriod_Begin_lbl";
+            this.timePeriod_Begin_lbl.Size = new System.Drawing.Size(34, 13);
+            this.timePeriod_Begin_lbl.TabIndex = 3;
+            this.timePeriod_Begin_lbl.Text = "Begin";
             // 
             // extent__TimePeriod__endPosition_cbo
             // 
@@ -221,14 +221,14 @@
             this.toolTip1.SetToolTip(this.extent__TimePeriod__endPosition_cbo, "Choose an Indeterminate Date");
             this.extent__TimePeriod__endPosition_cbo.SelectedIndexChanged += new System.EventHandler(this.cbo_ValueChanged);
             // 
-            // label2
+            // timePeriod_End_lbl
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(39, 58);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(26, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "End";
+            this.timePeriod_End_lbl.AutoSize = true;
+            this.timePeriod_End_lbl.Location = new System.Drawing.Point(39, 58);
+            this.timePeriod_End_lbl.Name = "timePeriod_End_lbl";
+            this.timePeriod_End_lbl.Size = new System.Drawing.Size(26, 13);
+            this.timePeriod_End_lbl.TabIndex = 4;
+            this.timePeriod_End_lbl.Text = "End";
             // 
             // extent__TimePeriod__beginPosition_btn
             // 
@@ -243,14 +243,14 @@
             this.extent__TimePeriod__beginPosition_btn.UseVisualStyleBackColor = false;
             this.extent__TimePeriod__beginPosition_btn.Click += new System.EventHandler(this.ClearTextbox_Click);
             // 
-            // label3
+            // timePeriod_Interval_lbl
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(23, 88);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(42, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Interval";
+            this.timePeriod_Interval_lbl.AutoSize = true;
+            this.timePeriod_Interval_lbl.Location = new System.Drawing.Point(23, 88);
+            this.timePeriod_Interval_lbl.Name = "timePeriod_Interval_lbl";
+            this.timePeriod_Interval_lbl.Size = new System.Drawing.Size(42, 13);
+            this.timePeriod_Interval_lbl.TabIndex = 5;
+            this.timePeriod_Interval_lbl.Text = "Interval";
             // 
             // extent__TimePeriod__beginPosition_dtP
             // 
@@ -296,7 +296,7 @@
             this.timeInstant.Location = new System.Drawing.Point(4, 22);
             this.timeInstant.Name = "timeInstant";
             this.timeInstant.Padding = new System.Windows.Forms.Padding(3);
-            this.timeInstant.Size = new System.Drawing.Size(297, 112);
+            this.timeInstant.Size = new System.Drawing.Size(280, 112);
             this.timeInstant.TabIndex = 0;
             this.timeInstant.Text = "Single Date";
             // 
@@ -388,10 +388,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.temporalExtent);
             this.Name = "uc_extentTemporal";
             this.Size = new System.Drawing.Size(315, 167);
-            this.groupBox1.ResumeLayout(false);
+            this.temporalExtent.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.timePeriod.ResumeLayout(false);
             this.timePeriod.PerformLayout();
@@ -403,13 +403,13 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox temporalExtent;
         private System.Windows.Forms.ComboBox extent__TimePeriod__beginPosition_cbo;
         private System.Windows.Forms.ComboBox extent__TimePeriod__timeIntervalUnit_cbo;
         private System.Windows.Forms.TextBox extent__TimePeriod__timeInterval;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label timePeriod_Interval_lbl;
+        private System.Windows.Forms.Label timePeriod_End_lbl;
+        private System.Windows.Forms.Label timePeriod_Begin_lbl;
         private System.Windows.Forms.TextBox extent__TimePeriod__beginPosition;
         private System.Windows.Forms.DateTimePicker extent__TimePeriod__beginPosition_dtP;
         private System.Windows.Forms.Button extent__TimePeriod__beginPosition_btn;
@@ -418,7 +418,7 @@
         private System.Windows.Forms.DateTimePicker extent__TimePeriod__endPosition_dtP;
         private System.Windows.Forms.TextBox extent__TimePeriod__endPosition;
         private System.Windows.Forms.ComboBox extent__TimePeriod__endPosition_cbo;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label tempTimePeriod_Desc_lbl;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox extent__TimeInstant__description;
