@@ -118,8 +118,16 @@ namespace EmeLibrary
             get { return _dateStamp; }
             set { _dateStamp = value; }
         }
-        public string metadataStandardName { get { return mdStandardName; } }  //Not sure how we should populate these... maybe always from the template!
-        public string metadataStandardVersion { get { return mdStandardVersion; } }
+        public string metadataStandardName
+        {
+            get { return mdStandardName; }
+            set { mdStandardName = value; }
+        }  //Not sure how we should populate these... maybe always from the template!
+        public string metadataStandardVersion
+        { 
+            get { return mdStandardVersion; }
+            set { mdStandardVersion = value; }
+        }
         public string idInfo_citation_Title
         {
             get { return _idInfo_citation_title; }
@@ -303,7 +311,10 @@ namespace EmeLibrary
             xdoc.WriteTo(xw);
             string xdocCopy = sw.ToString();
             inboundMetadataRecordSkippedElements = new XmlDocument();
-            inboundMetadataRecordSkippedElements.LoadXml(xdocCopy);
+            if (!string.IsNullOrEmpty(xdocCopy))
+            {
+                inboundMetadataRecordSkippedElements.LoadXml(xdocCopy);
+            }
                        
 
             // = xdoc;

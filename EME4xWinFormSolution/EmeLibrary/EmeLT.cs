@@ -40,6 +40,7 @@ namespace EmeLibrary
 
 
             toolStripComboBox1.SelectedIndex = 0;
+            toolStripCboValidationType.SelectedIndex = 0;
             
             //Start instance of the eme dataset
             if (Utils1.emeDataSet == null)
@@ -229,8 +230,13 @@ namespace EmeLibrary
                 {
                     Utils1.setEmeDataSets();
                     //bindFormtoEMEdatabases();
-                    bindCCMFields(); 
+                    bindCCMFields();
 
+                    frmctrls(this.Controls); //validation
+                    foreach (Control c in this.Controls)
+                    {
+                        validate_Controls(c);
+                    }
                     toolStripStatusLabel1.Text = "Opened File: " + filename;                    
                 }
                 else
