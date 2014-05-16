@@ -304,7 +304,7 @@ namespace EmeLibrary
             //Store inbound record.  Idea is to have both an inbound and outbound metadata record           
             inboundMetadataRecord = xdoc;
 
-            //Make a copy and remove the elements that were handeled.
+            //Make a copy and remove the elements that were handeled so we have a document of all the unsupported elements.
             StringWriter sw = new StringWriter();
             XmlTextWriter xw = new XmlTextWriter(sw);
             xw.Formatting = Formatting.Indented;
@@ -1146,13 +1146,63 @@ namespace EmeLibrary
             XmlNodeList emptyNodes = outboundMetadataRecord.DocumentElement.ChildNodes;
             for (int ii = emptyNodes.Count -1; ii >= 0; ii--)
             {
-
+               
                 //Don't Delete if has the nillReason Attribute
                 XmlElement xe = (XmlElement)emptyNodes[ii];
                 if (!xe.HasAttributes)
                 {
                     if (emptyNodes[ii].HasChildNodes == false)
-                    { emptyNodes[ii].ParentNode.RemoveChild(emptyNodes[ii]); }
+                    {
+                        //emptyNodes[ii].ParentNode.RemoveChild(emptyNodes[ii]); //add this back in later
+                        
+                        string nodeName = emptyNodes[ii].LocalName;
+                        //Console.WriteLine("Processing: " + nodeName);
+                        
+                        //Check the skippedElements Doc and add remaining sections back int.
+                        //Some of these sections could be repeated, so need to get node list and then insert each repeated sequentially
+                        //Similar code in the CI_Responsible Party Section
+                        string xpathForMissing = "./*[local-name()='" + nodeName + "']";
+                        XmlNode outboundNodeToReplaceOrDelete = outboundMetadataRecord.DocumentElement.SelectSingleNode(xpathForMissing);
+                        XmlNodeList unsupportedNodesToInsert = inboundMetadataRecordSkippedElements.DocumentElement.SelectNodes(xpathForMissing);
+                        if (unsupportedNodesToInsert != null)
+                        {
+                            int missingNodeCount = unsupportedNodesToInsert.Count;
+                            if (missingNodeCount > 0)
+                            {
+                                int nodePostion = 0;
+                                foreach (XmlNode insertThisNode in unsupportedNodesToInsert)
+                                {
+                                    XmlNode nodeCopy = insertThisNode.CloneNode(true);
+                                    XmlNode nodeImport = outboundMetadataRecord.ImportNode(nodeCopy, true);
+                                    if (nodePostion == 0)
+                                    {
+                                        //Replace the first occurance
+                                        outboundNodeToReplaceOrDelete.ParentNode.ReplaceChild(nodeImport, outboundNodeToReplaceOrDelete);
+                                    }
+                                    else
+                                    {
+                                        //Append additional
+                                        outboundNodeToReplaceOrDelete = outboundMetadataRecord.DocumentElement.SelectSingleNode(xpathForMissing);
+                                        XmlNode lastinsertedNodeRef = outboundMetadataRecord.DocumentElement.SelectNodes(xpathForMissing)[nodePostion - 1];
+
+                                        outboundNodeToReplaceOrDelete.ParentNode.InsertAfter(nodeImport, lastinsertedNodeRef);
+                                    }
+                                    nodePostion++;
+                                    //inboundMetadataRecordSkippedElements.DocumentElement(sel
+                                    insertThisNode.RemoveAll();
+                                    removeEmptyParentNodes(insertThisNode);
+                                }                                
+                            }
+                            else
+                            {
+                                emptyNodes[ii].ParentNode.RemoveChild(emptyNodes[ii]); //add this back in later
+                            }
+                        }
+                        else
+                        {
+                            emptyNodes[ii].ParentNode.RemoveChild(emptyNodes[ii]); //add this back in here
+                        }
+                    }
                 }
             }
 
@@ -1201,6 +1251,15 @@ namespace EmeLibrary
 
             //Section 16.1.1 Title (Required)
             constructChildNodeUnderParent(citationCiSectionNode,IsoNodeXpaths.idInfo_citation_TitleXpath, _idInfo_citation_title, false, true, false);
+
+            //Section 16.1.2 alternateTitle 0..*
+            XmlNodeList altTitleNL = inboundMetadataRecordSkippedElements.DocumentElement.SelectNodes(citationCIpackageXpath + "/*[local-name()='alternateTitle']");
+            foreach (XmlNode altTitle in altTitleNL)
+            {
+                constructChildNodeUnderParent(citationCiSectionNode, altTitle, true);
+                altTitle.RemoveAll();
+                removeEmptyParentNodes(altTitle);
+            }            
             
             //Section 16.1.3 Date (Required)  Contains both Date and DateType Codelist (CI_DateTypeCode)
             //Providing support for up to three occurances even though the standard does not specify a max
@@ -1220,6 +1279,33 @@ namespace EmeLibrary
                 construct_CI_DateSection(citationCiSectionNode, _idInfo_citation_date_revision, "revision", idInfoCI_CitationDateXpath);
             }
             
+            //Section 16.1.4 edition 0..1
+            XmlNode ciEdition = inboundMetadataRecordSkippedElements.SelectSingleNode(citationCIpackageXpath + "/*[local-name()='edition']");
+            if (ciEdition != null)
+            {
+                constructChildNodeUnderParent(citationCiSectionNode, ciEdition, true);
+                ciEdition.RemoveAll();
+                removeEmptyParentNodes(ciEdition);
+            }
+
+            //Section 16.1.5 edtionDate 0..1
+            XmlNode ciEditionDate = inboundMetadataRecordSkippedElements.SelectSingleNode(citationCIpackageXpath + "/*[local-name()='editionDate']");
+            if (ciEditionDate != null)
+            {
+                constructChildNodeUnderParent(citationCiSectionNode, ciEditionDate, true);
+                ciEditionDate.RemoveAll();
+                removeEmptyParentNodes(ciEditionDate);
+            }
+
+            //Section 16.1.6 identifier 0..*
+            XmlNodeList ciIDnl = inboundMetadataRecordSkippedElements.DocumentElement.SelectNodes(citationCIpackageXpath + "/*[local-name()='identifier']");
+            foreach (XmlNode ciID in ciIDnl)
+            {
+                constructChildNodeUnderParent(citationCiSectionNode, ciID, true);
+                ciID.RemoveAll();
+                removeEmptyParentNodes(ciID);
+            }   
+
             //Section 16.1.7 citedResponsibleParty
             if (idInfo_citation_citedResponsibleParty != null)
             {
@@ -1230,7 +1316,18 @@ namespace EmeLibrary
                     constructCI_ResponsiblePartyMarkUp(idInfo_citation_citedResponsibleParty, IsoNodeXpaths.idInfo_citation_citedResponsiblePartyXpath);
                 }
             }
-
+                                    
+            //Process any other possible other CI_Citation elements not supported by EME and insert after citedResponsibleParty
+            XmlNodeList skippedCitationElements =  inboundMetadataRecordSkippedElements.DocumentElement.SelectNodes(citationCIpackageXpath);
+            if (skippedCitationElements.Count > 0)
+            {
+                foreach (XmlNode otherCitationElement in skippedCitationElements)
+                {
+                    constructChildNodeUnderParent(citationCiSectionNode, otherCitationElement, true);
+                    otherCitationElement.RemoveAll();
+                    removeEmptyParentNodes(otherCitationElement);
+                }
+            }           
             
 
             //Section 16.2 Abstract (required)
@@ -1533,6 +1630,11 @@ namespace EmeLibrary
 
             //Clean up and remove citation section if there are not values that get inserted.
             if (!citationCiSectionNode.HasChildNodes) { removeEmptyParentNodes(citationCiSectionNode); }
+
+            //TODO:  Add code to insert all the other possible remaining IdentificationInfo elements not supported by EME
+            //       Need to find them, determine where they go in the tree, and insert.
+            //       Maybe insert each root element, then grab all the empty ones?  Not that won't work since some are repeating.
+
 
             #region test area for checking for missing parent nodes and inserting the missing nodes
 
@@ -2130,7 +2232,7 @@ namespace EmeLibrary
 
         /// <summary>
         /// Clone a node by passing in references to the target parent node and template node
-        /// The node will be appended to the end of the outboundParentNode
+        /// The node will be appended to the end of the list of child nodes for the outboundParentNode
         /// </summary>
         /// <param name="outboundParentNode">reference to the target parent node</param>
         /// <param name="nodeFromTemplateToClone">child node to copy and append under parent</param>
