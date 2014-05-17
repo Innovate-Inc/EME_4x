@@ -140,7 +140,7 @@ namespace EmeLibrary
             }
             contactInfo__CI_Contact__hoursOfService.Text = incomingCIRP.contactInfo__CI_Contact__hoursOfService;
             contactInfo__CI_Contact__contactInstructions.Text = incomingCIRP.contactInfo__CI_Contact__contactInstructions;
-
+            val_RP_frmControls(this.Controls);
 
         }
 
@@ -177,6 +177,7 @@ namespace EmeLibrary
 
         private void uc_ResponsibleParty_Load(object sender, EventArgs e)
         {
+            
             //MessageBox.Show("RP Load");
             expandHeight = 500;
             //intermediateHeight
@@ -208,9 +209,9 @@ namespace EmeLibrary
         {
             //reset();
             bindControlsToEMEdatabase();
-
+            
             _incomingRPList = CI_ResponsiblePartyList;
-            //MessageBox.Show(incomingRPList.Count().ToString());
+            //MessageBox.Show(_incomingRPList.Count().ToString());
             if (_incomingRPList.Count < 1)
             {
                 pagerUpBtn.Visible = false;
@@ -264,6 +265,7 @@ namespace EmeLibrary
 
         public void reset()
         {
+            _incomingRPList = null;
             incomingRPListIndex = 0;
             pagerLbl.Text = "0 of 0";
             role.SelectedIndex = -1;
@@ -287,9 +289,11 @@ namespace EmeLibrary
             //bindToFields(incomingRPList[incomingRPListIndex]);
             comboBox1.SelectedIndex = -1;
             comboBox1.Visible = false;
-            //deleteRP_Btn.Enabled = false;
-            //addRP_Btn.Enabled = true;
+            deleteRP_Btn.Enabled = false;
+            addRP_Btn.Enabled = true;
             panel3.Enabled = false;
+            pagerDownBtn.Visible = false;
+            pagerUpBtn.Visible = false;
            
         }
 
@@ -299,6 +303,7 @@ namespace EmeLibrary
         /// <param name="distributorCount"></param>
         public void adjustRPControl(int distributorCount)
         {
+            
             if (distributorCount < 1)
             {
                 addRP_Btn.Enabled = false;
@@ -526,7 +531,7 @@ namespace EmeLibrary
                 contactInfo__CI_Contact__contactInstructions.Text = drv["contactInstructions"].ToString();
                 //contactInfo__CI_Contact__contactInstructions.Text = drv["cntinst"].ToString();
             }
-
+            val_RP_frmControls(this.Controls);
         }
 
         private void responsibleParty_Validating(object sender, CancelEventArgs e)
@@ -623,6 +628,7 @@ namespace EmeLibrary
 
         public void val_RP_frmControls(Control.ControlCollection cControls)
         {
+            //MessageBox.Show(cControls.Count.ToString());
             foreach (Control c in cControls)
             {
                 if (c.HasChildren)

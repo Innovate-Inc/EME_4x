@@ -833,6 +833,34 @@ namespace EmeLibrary
 
         #endregion
 
+
+        public void resetDist()
+        {
+            //distributor
+            _distributorList_idx = 0;
+            _distributorList = new List<MD_Distributor>();
+            adjustPagers(MD_Dist, _distributorList);
+            add_MD_Dist_btn.Enabled = true;
+            //contact
+            _distributorContact = null;
+            distributor_Contact.reset();
+            distributor_Contact.adjustRPControl(0);
+            //distribution format
+            _distributionFormat_idx = 0;
+            _distributionFormat = new List<MD_Format>();
+            adjustPagers(MD_Format, _distributionFormat); 
+            //Standard Order Process
+            _standardOrderProcess_idx = 0;
+            _standardOrderProcess = new List<MD_StandardOrderProcess>();
+            adjustPagers(MD_SOP, _standardOrderProcess);
+            //digital Transfer Options
+            _digitalTransferOptions_idx = 0;
+            _digitalTransferOptions = new List<MD_DigitalTransferOptions>();
+            adjustPagers(MD_DTO, _digitalTransferOptions);
+
+            clearFields("All");
+        }
+
         /// <summary>
         /// This method clear the text in the controls for the given section specified. The section string variable represent the grouping (pager) 
         /// name. For example if the section string variable is set to "MD_Format" control in that section will be cleared.

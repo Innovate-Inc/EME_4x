@@ -162,6 +162,7 @@ namespace EmeLibrary
             filename = "New";
             //localXdoc = new isoNodes(xDoc, sourceXmlFormat, filename);
             bindCCMFields();
+
             frmctrls(this.Controls); //validation
             foreach (Control c in this.Controls)
             {
@@ -258,9 +259,9 @@ namespace EmeLibrary
             //dataGridView1.DataMember = "Contact_Information";
 
             //Check the Format of the record before de-serializing
-            
-            //xDox Set when checking the metadata format
 
+            //toolStripCboValidationType
+            //xDox Set when checking the metadata format
             toolStripComboBox1.SelectedItem = sourceXmlFormat;
             localXdoc = new isoNodes(xDoc, sourceXmlFormat, filename);
 
@@ -1260,6 +1261,12 @@ namespace EmeLibrary
         private void distributionInformation_gbx_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void toolStripCboValidationType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //ToolStripComboBox validate_type = (ToolStripComboBox)sender;
+            //MessageBox.Show(validate_type.SelectedItem.ToString());
         }
 
         
