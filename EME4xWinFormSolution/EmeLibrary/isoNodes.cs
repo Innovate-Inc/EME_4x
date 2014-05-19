@@ -986,7 +986,7 @@ namespace EmeLibrary
 
             //Depending on the format detected, load the correct template record to for the outgoing metadata record
             //(gmd:MD_Metdata = 19115, gmi:MI_Metadata = 19115-2; metadata = both CSDGM and ArcGIS)
-           
+            
             templateMetadataRecord = new XmlDocument();
             if (outboundMetadataRecordFormatName == "ISO19115-2") //(inboundMetadataFormat == "ISO19115-2")
             {
@@ -1000,15 +1000,12 @@ namespace EmeLibrary
             {
                 //do something; not sure what yet  :-)
             }
-
-
+            
             constructMI_MetadataMarkUp();
 
             return outboundMetadataRecord;
             //outboundMetadataRecord.Save(@"C:\Users\dspinosa\Desktop\testMetadata\DCAT\testCommonCoreRecordFromGeoportal-2vJUNK.xml");
-            //outboundMetadataRecord.Save(
-           
-            
+            //outboundMetadataRecord.Save(           
             
         }
 
