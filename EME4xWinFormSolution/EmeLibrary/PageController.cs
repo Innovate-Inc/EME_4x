@@ -126,7 +126,7 @@ namespace EmeLibrary
                 if (ctrl.GetType() == typeof(uc_ResponsibleParty))
                 {
                     uc_ResponsibleParty incoming_ResponsibleParty = (uc_ResponsibleParty)ctrl;
-
+                    incoming_ResponsibleParty.reset();
                     List<CI_ResponsibleParty> ci_RP = (List<CI_ResponsibleParty>)frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null);
                     if (ci_RP != null && ci_RP.Count != 0)
                     {
@@ -178,7 +178,7 @@ namespace EmeLibrary
                     #endregion test uc_distribution
 
                     uc_distribution distCtrl = (uc_distribution)ctrl;
-
+                    distCtrl.resetDist();
                     List<MD_Distributor> distList = (List<MD_Distributor>)frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null);
                     if (distList != null && distList.Count != 0)
                     {
