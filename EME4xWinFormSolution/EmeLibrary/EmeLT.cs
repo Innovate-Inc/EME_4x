@@ -29,6 +29,7 @@ namespace EmeLibrary
         private xmlFieldMaps xmlFieldMappings;
         private XmlDocument xDoc;
         public isoNodes localXdoc;
+        public string validationSetting;
 
         public event SaveEventHandler SaveEvent;
 
@@ -41,7 +42,7 @@ namespace EmeLibrary
 
             toolStripComboBox1.SelectedIndex = 0;
             toolStripCboValidationType.SelectedIndex = 0;
-            
+            validationSetting = toolStripCboValidationType.SelectedItem.ToString();
             //Start instance of the eme dataset
             if (Utils1.emeDataSet == null)
             {
@@ -1265,8 +1266,9 @@ namespace EmeLibrary
 
         private void toolStripCboValidationType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //ToolStripComboBox validate_type = (ToolStripComboBox)sender;
-            //MessageBox.Show(validate_type.SelectedItem.ToString());
+            ToolStripComboBox validate_type = (ToolStripComboBox)sender;
+            validationSetting = validate_type.SelectedItem.ToString();
+            //MessageBox.Show(validationSetting);
         }
 
         
