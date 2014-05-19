@@ -291,6 +291,10 @@ namespace EmeLibrary
             comboBox1.Visible = false;
             deleteRP_Btn.Enabled = false;
             addRP_Btn.Enabled = true;
+            if (rp_mode != "distribution")
+            {
+                addRP_Btn.Enabled = false;
+            }
             panel3.Enabled = false;
             pagerDownBtn.Visible = false;
             pagerUpBtn.Visible = false;
@@ -306,9 +310,10 @@ namespace EmeLibrary
             
             if (distributorCount < 1)
             {
+               // MessageBox.Show("made it");
+                reset();
                 addRP_Btn.Enabled = false;
                 deleteRP_Btn.Enabled = false;
-                reset();
                 panel3.Enabled = false;
             }
             else
