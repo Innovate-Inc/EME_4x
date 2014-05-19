@@ -1142,70 +1142,130 @@ namespace EmeLibrary
             construct_distributionInfoSection();
             
             //****************
-            //Clean up the document and remove empty nodes under the root node
-            XmlNodeList emptyNodes = outboundMetadataRecord.DocumentElement.ChildNodes;
-            for (int ii = emptyNodes.Count -1; ii >= 0; ii--)
+            //Add Content Back in that is not suppored by EME.  Some sections repeat.  Insert after the last occurance of the matching
+            //sibling even if it is empty.  The method after this will remove any rootChild that does not have children.  This will ensure
+            //content in the correct order based on the template metadata record.
+            //This method will support inserting content after metadataStandardName
+
+            string currentNode = "";
+            string nextNode = "" ;
+            
+            XmlNodeList rootChildNodes = outboundMetadataRecord.DocumentElement.ChildNodes;
+            for (int ii = 0; ii< rootChildNodes.Count; ii++)
+            //for (int ii = rootChildNodes.Count -1; ii >= 0; ii--)  //Reverse Loop
             {
-               
-                //Don't Delete if has the nillReason Attribute
+                currentNode = rootChildNodes[ii].LocalName;
+                nextNode = (ii < rootChildNodes.Count - 1) ? rootChildNodes[ii + 1].LocalName : "end";
+                //lastNode = rootChildNodes[rootChildNodes.Count - 1].LocalName;
+
+                if (currentNode != nextNode) //if repeated this will stop at the last position of the repeated node
+                {
+                    //If repeated this will stop at the last position of the repeated node.
+                    //Check skipped document and insert after this position if it exists.
+                    //What about the last node?!!!!!
+                    string xpathForMissing = "./*[local-name()='" + currentNode + "']";
+                    XmlNode outboundNodeToReplaceOrDelete = outboundMetadataRecord.DocumentElement.SelectSingleNode(xpathForMissing);
+                    XmlNodeList unsupportedNodesToInsert = inboundMetadataRecordSkippedElements.DocumentElement.SelectNodes(xpathForMissing);
+                    if (unsupportedNodesToInsert != null)
+                    {
+                        int missingNodeCount = unsupportedNodesToInsert.Count;
+                        if (missingNodeCount > 0)
+                        {
+                            int nodePostion = 1;
+                            foreach (XmlNode insertThisNode in unsupportedNodesToInsert)
+                            {
+                                XmlNode nodeCopy = insertThisNode.CloneNode(true);
+                                XmlNode nodeImport = outboundMetadataRecord.ImportNode(nodeCopy, true);
+
+                                //outboundNodeToReplaceOrDelete = outboundMetadataRecord.DocumentElement.SelectSingleNode(xpathForMissing);
+                                XmlNode lastinsertedNodeRef = outboundMetadataRecord.DocumentElement.SelectNodes(xpathForMissing)[nodePostion - 1];
+                                outboundNodeToReplaceOrDelete.ParentNode.InsertAfter(nodeImport, lastinsertedNodeRef);
+                                Console.WriteLine("Inserted " + currentNode);
+                                nodePostion++;                                
+                                insertThisNode.RemoveAll();
+                                removeEmptyParentNodes(insertThisNode);
+                            }
+                        }
+                    }
+                }
+
+                ////Don't Delete if has the nillReason Attribute
+                //XmlElement xe = (XmlElement)rootChildNodes[ii];
+                //if (!xe.HasAttributes)
+                //{
+                //    if (rootChildNodes[ii].HasChildNodes == false)
+                //    {
+                //        //emptyNodes[ii].ParentNode.RemoveChild(emptyNodes[ii]); //add this back in later
+                        
+                //        string nodeName = rootChildNodes[ii].LocalName;
+                //        //Console.WriteLine("Processing: " + nodeName);
+                        
+                //        //Check the skippedElements Doc and add remaining sections back int.
+                //        //Some of these sections could be repeated, so need to get node list and then insert each repeated sequentially
+                //        //Similar code in the CI_Responsible Party Section
+                //        string xpathForMissing = "./*[local-name()='" + nodeName + "']";
+                //        XmlNode outboundNodeToReplaceOrDelete = outboundMetadataRecord.DocumentElement.SelectSingleNode(xpathForMissing);
+                //        XmlNodeList unsupportedNodesToInsert = inboundMetadataRecordSkippedElements.DocumentElement.SelectNodes(xpathForMissing);
+                //        if (unsupportedNodesToInsert != null)
+                //        {
+                //            int missingNodeCount = unsupportedNodesToInsert.Count;
+                //            if (missingNodeCount > 0)
+                //            {
+                //                int nodePostion = 0;
+                //                foreach (XmlNode insertThisNode in unsupportedNodesToInsert)
+                //                {
+                //                    XmlNode nodeCopy = insertThisNode.CloneNode(true);
+                //                    XmlNode nodeImport = outboundMetadataRecord.ImportNode(nodeCopy, true);
+                //                    if (nodePostion == 0)
+                //                    {
+                //                        //Replace the first occurance
+                //                        outboundNodeToReplaceOrDelete.ParentNode.ReplaceChild(nodeImport, outboundNodeToReplaceOrDelete);
+                //                    }
+                //                    else
+                //                    {
+                //                        //Append additional
+                //                        outboundNodeToReplaceOrDelete = outboundMetadataRecord.DocumentElement.SelectSingleNode(xpathForMissing);
+                //                        XmlNode lastinsertedNodeRef = outboundMetadataRecord.DocumentElement.SelectNodes(xpathForMissing)[nodePostion - 1];
+
+                //                        outboundNodeToReplaceOrDelete.ParentNode.InsertAfter(nodeImport, lastinsertedNodeRef);
+                //                    }
+                //                    nodePostion++;
+                //                    //inboundMetadataRecordSkippedElements.DocumentElement(sel
+                //                    insertThisNode.RemoveAll();
+                //                    removeEmptyParentNodes(insertThisNode);
+                //                }                                
+                //            }
+                //            else
+                //            {
+                //                rootChildNodes[ii].ParentNode.RemoveChild(rootChildNodes[ii]); //add this back in later
+                //            }
+                //        }
+                //        else
+                //        {
+                //            rootChildNodes[ii].ParentNode.RemoveChild(rootChildNodes[ii]); //add this back in here
+                //        }
+                //    }
+                //}
+            }
+
+            //****************
+            //Clean up the document and remove empty nodes under the root node.  Note, this loop run backwards.
+            XmlNodeList emptyNodes = outboundMetadataRecord.DocumentElement.ChildNodes;
+            for (int ii = emptyNodes.Count - 1; ii >= 0; ii--)
+            {
+                //Don't Delete if has the nillReason Attribute, or any kind of attribute since EME or unsupported 
+                //elements may contain them.
                 XmlElement xe = (XmlElement)emptyNodes[ii];
                 if (!xe.HasAttributes)
                 {
                     if (emptyNodes[ii].HasChildNodes == false)
                     {
-                        //emptyNodes[ii].ParentNode.RemoveChild(emptyNodes[ii]); //add this back in later
-                        
-                        string nodeName = emptyNodes[ii].LocalName;
-                        //Console.WriteLine("Processing: " + nodeName);
-                        
-                        //Check the skippedElements Doc and add remaining sections back int.
-                        //Some of these sections could be repeated, so need to get node list and then insert each repeated sequentially
-                        //Similar code in the CI_Responsible Party Section
-                        string xpathForMissing = "./*[local-name()='" + nodeName + "']";
-                        XmlNode outboundNodeToReplaceOrDelete = outboundMetadataRecord.DocumentElement.SelectSingleNode(xpathForMissing);
-                        XmlNodeList unsupportedNodesToInsert = inboundMetadataRecordSkippedElements.DocumentElement.SelectNodes(xpathForMissing);
-                        if (unsupportedNodesToInsert != null)
-                        {
-                            int missingNodeCount = unsupportedNodesToInsert.Count;
-                            if (missingNodeCount > 0)
-                            {
-                                int nodePostion = 0;
-                                foreach (XmlNode insertThisNode in unsupportedNodesToInsert)
-                                {
-                                    XmlNode nodeCopy = insertThisNode.CloneNode(true);
-                                    XmlNode nodeImport = outboundMetadataRecord.ImportNode(nodeCopy, true);
-                                    if (nodePostion == 0)
-                                    {
-                                        //Replace the first occurance
-                                        outboundNodeToReplaceOrDelete.ParentNode.ReplaceChild(nodeImport, outboundNodeToReplaceOrDelete);
-                                    }
-                                    else
-                                    {
-                                        //Append additional
-                                        outboundNodeToReplaceOrDelete = outboundMetadataRecord.DocumentElement.SelectSingleNode(xpathForMissing);
-                                        XmlNode lastinsertedNodeRef = outboundMetadataRecord.DocumentElement.SelectNodes(xpathForMissing)[nodePostion - 1];
-
-                                        outboundNodeToReplaceOrDelete.ParentNode.InsertAfter(nodeImport, lastinsertedNodeRef);
-                                    }
-                                    nodePostion++;
-                                    //inboundMetadataRecordSkippedElements.DocumentElement(sel
-                                    insertThisNode.RemoveAll();
-                                    removeEmptyParentNodes(insertThisNode);
-                                }                                
-                            }
-                            else
-                            {
-                                emptyNodes[ii].ParentNode.RemoveChild(emptyNodes[ii]); //add this back in later
-                            }
-                        }
-                        else
-                        {
-                            emptyNodes[ii].ParentNode.RemoveChild(emptyNodes[ii]); //add this back in here
-                        }
+                        emptyNodes[ii].ParentNode.RemoveChild(emptyNodes[ii]);
                     }
                 }
             }
-
+            
+            
             //****************
             //Method to remove all child/parent nodes that containt the phrase *template*
             XmlNodeList nodesToRemove = outboundMetadataRecord.DocumentElement.SelectNodes("//*[text()='*template*']");
@@ -1228,7 +1288,7 @@ namespace EmeLibrary
         
         private void constructIdInfo_MD_DataIdentificationSection()
         {
-            //Build this section in order.  Leave out elments that are not required if no content                        
+            //Build this section in order.  Leave out elements that are not required if no content                        
             //Clone the MD_DataIdentification and insert and then start appending each subsection
             //identificationInfo/MD_DataIdentification | SV_ServiceIdentification (inherit and extend MD_Data???)
 
@@ -1239,8 +1299,10 @@ namespace EmeLibrary
             
             //Work from this node and insert each section
             XmlNode outbound_md_DataIdSection = outboundMetadataRecord.DocumentElement.SelectSingleNode(MD_dataInfoNodeXpath);
-            
+
             //CI_Citation package needs insertion, then each sub element
+            #region CI_Citation Package 16.1
+
             string citationXpath = "./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='citation']";
             string citationCIpackageXpath = citationXpath + "/*[local-name()='CI_Citation']";             
             //constructChildNodeUnderParent(outbound_md_DataIdSection, citationXpath, null, false, true, false);            
@@ -1280,7 +1342,7 @@ namespace EmeLibrary
             }
             
             //Section 16.1.4 edition 0..1
-            XmlNode ciEdition = inboundMetadataRecordSkippedElements.SelectSingleNode(citationCIpackageXpath + "/*[local-name()='edition']");
+            XmlNode ciEdition = inboundMetadataRecordSkippedElements.DocumentElement.SelectSingleNode(citationCIpackageXpath + "/*[local-name()='edition']");
             if (ciEdition != null)
             {
                 constructChildNodeUnderParent(citationCiSectionNode, ciEdition, true);
@@ -1289,7 +1351,7 @@ namespace EmeLibrary
             }
 
             //Section 16.1.5 edtionDate 0..1
-            XmlNode ciEditionDate = inboundMetadataRecordSkippedElements.SelectSingleNode(citationCIpackageXpath + "/*[local-name()='editionDate']");
+            XmlNode ciEditionDate = inboundMetadataRecordSkippedElements.DocumentElement.SelectSingleNode(citationCIpackageXpath + "/*[local-name()='editionDate']");
             if (ciEditionDate != null)
             {
                 constructChildNodeUnderParent(citationCiSectionNode, ciEditionDate, true);
@@ -1318,7 +1380,7 @@ namespace EmeLibrary
             }
                                     
             //Process any other possible other CI_Citation elements not supported by EME and insert after citedResponsibleParty
-            XmlNodeList skippedCitationElements =  inboundMetadataRecordSkippedElements.DocumentElement.SelectNodes(citationCIpackageXpath);
+            XmlNodeList skippedCitationElements =  inboundMetadataRecordSkippedElements.DocumentElement.SelectSingleNode(citationCIpackageXpath).ChildNodes;
             if (skippedCitationElements.Count > 0)
             {
                 foreach (XmlNode otherCitationElement in skippedCitationElements)
@@ -1327,7 +1389,8 @@ namespace EmeLibrary
                     otherCitationElement.RemoveAll();
                     removeEmptyParentNodes(otherCitationElement);
                 }
-            }           
+            }
+            #endregion
             
 
             //Section 16.2 Abstract (required)
@@ -1340,13 +1403,23 @@ namespace EmeLibrary
                 constructChildNodeUnderParent(outbound_md_DataIdSection, IsoNodeXpaths.idInfo_PurposeXpath, _idInfo_purpose, false, true, false);
             }
 
+            //Section 16.4 Credit 0..*
+            XmlNodeList idInfoCredit = inboundMetadataRecordSkippedElements.DocumentElement.SelectNodes(MD_dataInfoNodeXpath + "/*[local-name()='credit']");
+            foreach (XmlNode skippedNode in idInfoCredit)
+            {
+                constructChildNodeUnderParent(outbound_md_DataIdSection, skippedNode, true);
+                skippedNode.RemoveAll();
+                removeEmptyParentNodes(skippedNode);
+            }  
+
+
             //Section 16.5 Status (optional)
             if (string.IsNullOrEmpty(_idInfo_status_MD_ProgressCode) !=true)
             {
                 constructChildNodeUnderParent(outbound_md_DataIdSection, IsoNodeXpaths.idInfo_Status_MD_ProgressCodeXpath, _idInfo_status_MD_ProgressCode, true, true, false);
             }
 
-            //Section 16.6
+            //Section 16.6 Point of Contact aka Owner of the data
             if (idInfo_pointOfContact != null)
             {
                 if (idinfoPointOfContact.Count > 0)
@@ -1356,7 +1429,7 @@ namespace EmeLibrary
                 }
             }
 
-            //Section 16.7 resourceMaintenance (optional)
+            //Section 16.7.1 resourceMaintenance (optional)  !!!!Only Section 1
             if (string.IsNullOrEmpty(_idInfo_resourceMaintenance) != true)
             {
                 string resMaintNodeXpath = "./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='resourceMaintenance']";
@@ -1367,7 +1440,32 @@ namespace EmeLibrary
                 constructChildNodeUnderParent(tempResMaintNode, IsoNodeXpaths.idInfo_resourceMaintenanceXpath, _idInfo_resourceMaintenance, true, true,true);
             }
 
+            //Section 16.7 resourceMaintenance from SkippedDoc.  Insert after 16.7.1  0..*            
+            XmlNodeList resMaint = inboundMetadataRecordSkippedElements.DocumentElement.SelectNodes(MD_dataInfoNodeXpath + "/*[local-name()='resourceMaintenance']");
+            foreach (XmlNode skippedNode in resMaint)
+            {
+                constructChildNodeUnderParent(outbound_md_DataIdSection, skippedNode, true);
+                skippedNode.RemoveAll();
+                removeEmptyParentNodes(skippedNode);
+            }
 
+            //Section 16.8 graphicOverview from SkippedDoc.  0..*            
+            XmlNodeList graphOv = inboundMetadataRecordSkippedElements.DocumentElement.SelectNodes(MD_dataInfoNodeXpath + "/*[local-name()='graphicOverview']");
+            foreach (XmlNode skippedNode in graphOv)
+            {
+                constructChildNodeUnderParent(outbound_md_DataIdSection, skippedNode, true);
+                skippedNode.RemoveAll();
+                removeEmptyParentNodes(skippedNode);
+            }
+
+            //Section 16.9 resourceFormat from SkippedDoc.  0..*            
+            XmlNodeList resourceFm = inboundMetadataRecordSkippedElements.DocumentElement.SelectNodes(MD_dataInfoNodeXpath + "/*[local-name()='resourceFormat']");
+            foreach (XmlNode skippedNode in resourceFm)
+            {
+                constructChildNodeUnderParent(outbound_md_DataIdSection, skippedNode, true);
+                skippedNode.RemoveAll();
+                removeEmptyParentNodes(skippedNode);
+            }
 
             //Section 16.10 Descriptive Keywords
             if (kwUserList.Count > 0)
@@ -1387,7 +1485,27 @@ namespace EmeLibrary
                 constructChildNodeUnderParent(outbound_md_DataIdSection, keywordsPlaceFrag, true);
             }
 
+            //Section 16.10 Keyword Section from SkippedDoc.  0..*            
+            XmlNodeList otherKeyWords = inboundMetadataRecordSkippedElements.DocumentElement.SelectNodes(MD_dataInfoNodeXpath + "/*[local-name()='descriptiveKeywords']");
+            foreach (XmlNode skippedNode in otherKeyWords)
+            {
+                constructChildNodeUnderParent(outbound_md_DataIdSection, skippedNode, true);
+                skippedNode.RemoveAll();
+                removeEmptyParentNodes(skippedNode);
+            }
+            
+            //Section 16.11 resourceSpecificUsage Section from SkippedDoc.  0..*            
+            XmlNodeList resUsage = inboundMetadataRecordSkippedElements.DocumentElement.SelectNodes(MD_dataInfoNodeXpath + "/*[local-name()='resourceSpecificUsage']");
+            foreach (XmlNode skippedNode in resUsage)
+            {
+                constructChildNodeUnderParent(outbound_md_DataIdSection, skippedNode, true);
+                skippedNode.RemoveAll();
+                removeEmptyParentNodes(skippedNode);
+            }
+
             //Section 16.12 resourceConstraints (optional)
+
+            #region 16.12 in EME
 
             //MD_Constraints
             if (!string.IsNullOrEmpty(_idInfo_resourceConstraints_MD_Constraints_useLimitation))
@@ -1483,11 +1601,50 @@ namespace EmeLibrary
                     outboundMetadataRecord.DocumentElement.SelectSingleNode(
                         IsoNodeXpaths.idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescriptionXpath).FirstChild.InnerText =
                         _idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescription;
-                }                
+                }
             }
 
+            #endregion
 
-            //Section 16.16 Language (required)  Copy from main language section under root
+            //Section 16.12 resourceConstraints Section from SkippedDoc.  0..*            
+            XmlNodeList resConstraints = inboundMetadataRecordSkippedElements.DocumentElement.SelectNodes(MD_dataInfoNodeXpath + "/*[local-name()='resourceConstraints']");
+            foreach (XmlNode skippedNode in resConstraints)
+            {
+                constructChildNodeUnderParent(outbound_md_DataIdSection, skippedNode, true);
+                skippedNode.RemoveAll();
+                removeEmptyParentNodes(skippedNode);
+            }
+
+            //Section 16.13 aggregationInfo Section from SkippedDoc.  0..*            
+            XmlNodeList agInfo = inboundMetadataRecordSkippedElements.DocumentElement.SelectNodes(MD_dataInfoNodeXpath + "/*[local-name()='aggregationInfo']");
+            foreach (XmlNode skippedNode in agInfo)
+            {
+                constructChildNodeUnderParent(outbound_md_DataIdSection, skippedNode, true);
+                skippedNode.RemoveAll();
+                removeEmptyParentNodes(skippedNode);
+            }
+
+            //Section 16.14 spatialRepresentationType Section from SkippedDoc.  0..*            
+            XmlNodeList spatialRep = inboundMetadataRecordSkippedElements.DocumentElement.SelectNodes(
+                MD_dataInfoNodeXpath + "/*[local-name()='spatialRepresentationType']");
+            foreach (XmlNode skippedNode in spatialRep)
+            {
+                constructChildNodeUnderParent(outbound_md_DataIdSection, skippedNode, true);
+                skippedNode.RemoveAll();
+                removeEmptyParentNodes(skippedNode);
+            }
+
+            //Section 16.15 spatialResolution Section from SkippedDoc.  0..*            
+            XmlNodeList spatialRes = inboundMetadataRecordSkippedElements.DocumentElement.SelectNodes(MD_dataInfoNodeXpath + "/*[local-name()='spatialResolution']");
+            foreach (XmlNode skippedNode in spatialRes)
+            {
+                constructChildNodeUnderParent(outbound_md_DataIdSection, skippedNode, true);
+                skippedNode.RemoveAll();
+                removeEmptyParentNodes(skippedNode);
+            }
+
+            //Section 16.16 Language (required) Copy from main language section under root
+            //Cannot see a use case for multiple occurances
             constructChildNodeUnderParent(
                 outbound_md_DataIdSection,
                 "./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='language']",
@@ -1503,6 +1660,16 @@ namespace EmeLibrary
                     constructChildNodeUnderParent(outbound_md_DataIdSection, isoTopicTemplateSection, true);
                 }
             }
+
+            //Section 16.19 environmentalDescription Section from SkippedDoc.  0..1            
+            XmlNode enviroDes = inboundMetadataRecordSkippedElements.DocumentElement.SelectSingleNode(MD_dataInfoNodeXpath + "/*[local-name()='environmentDescription']");
+            if (enviroDes !=null)
+            {
+                constructChildNodeUnderParent(outbound_md_DataIdSection, enviroDes, true);
+                enviroDes.RemoveAll();
+                removeEmptyParentNodes(enviroDes);
+            }
+
             //Sections 16.20 Extent, spatial and temporal
 
             #region  Section for spatial and temporal code
@@ -1628,13 +1795,35 @@ namespace EmeLibrary
             }
             #endregion
 
+            //Section 16.20 Extent Section from SkippedDoc.  0..*            
+            XmlNodeList otherExtent = inboundMetadataRecordSkippedElements.DocumentElement.SelectNodes(MD_dataInfoNodeXpath + "/*[local-name()='extent']");
+            foreach (XmlNode skippedNode in otherExtent)
+            {
+                constructChildNodeUnderParent(outbound_md_DataIdSection, skippedNode, true);
+                skippedNode.RemoveAll();
+                removeEmptyParentNodes(skippedNode);
+            }
+
+            //Section 16.21 environmentalDescription Section from SkippedDoc.  0..1            
+            XmlNode supInfo = inboundMetadataRecordSkippedElements.DocumentElement.SelectSingleNode(MD_dataInfoNodeXpath + "/*[local-name()='supplementalInformation']");
+            if (supInfo != null)
+            {
+                constructChildNodeUnderParent(outbound_md_DataIdSection, supInfo, true);
+                supInfo.RemoveAll();
+                removeEmptyParentNodes(supInfo);
+            }
+                       
+            //Section 16  0..*  Add Any additional repeating MD or SV sections from the skipped document.            
+            //XmlNodeList otherMDandSvInfo = inboundMetadataRecordSkippedElements.DocumentElement.SelectNodes("./*[local-name()='identificationInfo'");
+            //foreach (XmlNode skippedNode in otherExtent)
+            //{
+            //    constructChildNodeUnderParent(outbound_md_DataIdSection, skippedNode, true);
+            //    skippedNode.RemoveAll();
+            //    removeEmptyParentNodes(skippedNode);
+            //}
+
             //Clean up and remove citation section if there are not values that get inserted.
             if (!citationCiSectionNode.HasChildNodes) { removeEmptyParentNodes(citationCiSectionNode); }
-
-            //TODO:  Add code to insert all the other possible remaining IdentificationInfo elements not supported by EME
-            //       Need to find them, determine where they go in the tree, and insert.
-            //       Maybe insert each root element, then grab all the empty ones?  Not that won't work since some are repeating.
-
 
             #region test area for checking for missing parent nodes and inserting the missing nodes
 

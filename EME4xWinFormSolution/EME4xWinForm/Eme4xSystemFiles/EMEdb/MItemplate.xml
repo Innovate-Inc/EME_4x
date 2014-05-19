@@ -835,7 +835,7 @@
 			</gmd:transferOptions>
 		</gmd:MD_Distribution>
 	</gmd:distributionInfo>
-	<!--remove this section if it does not apply-->
+	<!--remove this section if it does not apply-->	
 	<gmd:dataQualityInfo>
 		<gmd:DQ_DataQuality>
 			<gmd:scope gco:nilReason="unknown"/>
@@ -949,6 +949,9 @@
 			</gmd:lineage>
 		</gmd:DQ_DataQuality>
 	</gmd:dataQualityInfo>
+	<gmd:portrayalCatalogueInfo/>
+	<gmd:metadataConstraints/>
+	<gmd:applicationSchemaInfo/>	
 	<gmd:metadataMaintenance>
 		<gmd:MD_MaintenanceInformation>
 			<gmd:maintenanceAndUpdateFrequency gco:nilReason="unknown"/>
