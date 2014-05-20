@@ -83,6 +83,7 @@
 	<gmd:metadataStandardVersion>
 		<gco:CharacterString>ISO 19115:2003(E)</gco:CharacterString>
 	</gmd:metadataStandardVersion>
+	<!--delete this section if it does not apply-->
 	<gmd:dataSetURI/>
 	<gmd:locale/>
 	<gmd:spatialRepresentationInfo>
@@ -246,6 +247,7 @@
 					<gmd:title>
 						<gco:CharacterString>*template*</gco:CharacterString>
 					</gmd:title>
+					<gmd:alternateTitle/>
 					<gmd:date>
 						<gmd:CI_Date>
 							<gmd:date>
@@ -256,6 +258,9 @@
 							</gmd:dateType>
 						</gmd:CI_Date>
 					</gmd:date>
+					<gmd:edition/>
+					<gmd:editionDate/>
+					<gmd:identifier/>
 					<gmd:citedResponsibleParty>
 						<gmd:CI_ResponsibleParty>
 							<gmd:organisationName>
@@ -309,6 +314,11 @@
 					<gmd:presentationForm>
 						<gmd:CI_PresentationFormCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_PresentationFormCode" codeListValue="*template*">*template*</gmd:CI_PresentationFormCode>
 					</gmd:presentationForm>
+					<gmd:series/>
+					<gmd:otherCitationDetails/>
+					<gmd:collectiveTitle/>
+					<gmd:ISBN/>
+					<gmd:ISSN/>					
 				</gmd:CI_Citation>
 			</gmd:citation>
 			<gmd:abstract>
@@ -317,6 +327,7 @@
 			<gmd:purpose>
 				<gco:CharacterString>*template*</gco:CharacterString>
 			</gmd:purpose>
+			<gmd:credit/>
 			<gmd:status>
 				<gmd:MD_ProgressCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ProgressCode" codeListValue="*template*">*template*</gmd:MD_ProgressCode>
 			</gmd:status>
@@ -385,6 +396,8 @@
 					</gmd:maintenanceAndUpdateFrequency>
 				</gmd:MD_MaintenanceInformation>
 			</gmd:resourceMaintenance>
+			<gmd:graphicOverview/>
+			<gmd:resourceFormat/>
 			<gmd:descriptiveKeywords>
 				<gmd:MD_Keywords>
 					<gmd:keyword>
@@ -439,6 +452,7 @@
 					</gmd:thesaurusName>
 				</gmd:MD_Keywords>
 			</gmd:descriptiveKeywords>
+			<gmd:resourceSpecificUsage/>
 			<gmd:resourceConstraints>
 				<gmd:MD_Constraints>					
 					<gmd:useLimitation>
@@ -487,6 +501,7 @@
 			<gmd:topicCategory>
 				<gmd:MD_TopicCategoryCode>*template*</gmd:MD_TopicCategoryCode>
 			</gmd:topicCategory>
+			<gmd:environmentDescription/>
 			<gmd:extent>
 				<gmd:EX_Extent id="boundingExtent1">
 					<gmd:description>
@@ -532,6 +547,7 @@
 					</gmd:temporalElement>
 				</gmd:EX_Extent>
 			</gmd:extent>
+			<gmd:supplementalInformation/>
 		</gmd:MD_DataIdentification>
 	</gmd:identificationInfo>
 	<gmd:contentInfo>
@@ -819,25 +835,30 @@
 			</gmd:transferOptions>
 		</gmd:MD_Distribution>
 	</gmd:distributionInfo>
-	<!--remove this section if it does not apply-->
+	<!--remove this section if it does not apply-->	
 	<gmd:dataQualityInfo>
 		<gmd:DQ_DataQuality>
 			<gmd:scope gco:nilReason="unknown"/>
-			<gmd:report><!--may also use a report such as this:-->
+			<gmd:report>
+				<!--may also use a report such as this:-->
 				<gmi:QE_Usability>
 					<gmd:nameOfMeasure>
 						<gco:CharacterString>name of the test applied to the data to assure data quality</gco:CharacterString>
 					</gmd:nameOfMeasure>
-					<gmd:measureDescription><!--optional-->
+					<gmd:measureDescription>
+						<!--optional-->
 						<gco:CharacterString>description of the measure applied to the dataset to assure quality</gco:CharacterString>
 					</gmd:measureDescription>
-					<gmd:evaluationMethodDescription><!--optional-->
+					<gmd:evaluationMethodDescription>
+						<!--optional-->
 						<gco:CharacterString>description of the evaluation method applied to the dataset</gco:CharacterString>
 					</gmd:evaluationMethodDescription>
-					<gmd:evaluationProcedure><!--optional-->
-						<gmd:CI_Citation><!--citation for the evaluation procedure-->
-							<gmd:title></gmd:title>
-							<gmd:date></gmd:date>
+					<gmd:evaluationProcedure>
+						<!--optional-->
+						<gmd:CI_Citation>
+							<!--citation for the evaluation procedure-->
+							<gmd:title/>
+							<gmd:date/>
 						</gmd:CI_Citation>
 					</gmd:evaluationProcedure>
 					<gmd:result>
@@ -872,8 +893,8 @@
 						</gmd:DQ_QuantitativeResult>
 					</gmd:result>
 				</gmi:QE_Usability>
-				</gmd:report>
-				<gmd:report>
+			</gmd:report>
+			<gmd:report>
 				<gmd:DQ_CompletenessCommission>
 					<gmd:evaluationMethodDescription>
 						<gco:CharacterString>*template*</gco:CharacterString>
@@ -912,7 +933,8 @@
 			</gmd:report>
 			<gmd:lineage>
 				<gmd:LI_Lineage>
-					<gmd:processStep><!--repeat process step for each step in the process-->
+					<gmd:processStep>
+						<!--repeat process step for each step in the process-->
 						<gmd:LI_ProcessStep>
 							<gmd:description>
 								<gco:CharacterString>*template*</gco:CharacterString>
@@ -927,9 +949,15 @@
 			</gmd:lineage>
 		</gmd:DQ_DataQuality>
 	</gmd:dataQualityInfo>
+	<gmd:portrayalCatalogueInfo/>
+	<gmd:metadataConstraints/>
+	<gmd:applicationSchemaInfo/>	
 	<gmd:metadataMaintenance>
 		<gmd:MD_MaintenanceInformation>
-			<gmd:maintenanceAndUpdateFrequency gco:nilReason="Unknown"/>
+			<gmd:maintenanceAndUpdateFrequency gco:nilReason="unknown"/>
+			<gmd:maintenanceNote>
+				<gco:CharacterString>*template*</gco:CharacterString>
+			</gmd:maintenanceNote>
 			<gmd:contact>
 				<gmd:CI_ResponsibleParty>
 					<gmd:organisationName>
@@ -981,5 +1009,5 @@
 				</gmd:CI_ResponsibleParty>
 			</gmd:contact>
 		</gmd:MD_MaintenanceInformation>
-	</gmd:metadataMaintenance>
+	</gmd:metadataMaintenance>	
 </gmd:MD_Metadata>
