@@ -23,11 +23,12 @@ namespace EmeLibrary
         private string tag;
         private string scrTable;
         private string srcField;
-        private string requiredCtrl;
+        private string DCATrequiredCtrl;
+        private string EPArequiredCtrl;
         private string formFieldName_;
 
 
-        public PageController(long orderedID, string tag, string srcTable, string srcField, string requiredCtrl)
+        public PageController(long orderedID, string tag, string srcTable, string srcField, string DCATrequiredCtrl, string EPArequiredCtrl)
         :base()
         {
             //int tabNo, bool spellcheck, string cluster, bool clusterUpdate, string help
@@ -35,7 +36,8 @@ namespace EmeLibrary
             this.tag = tag;
             this.scrTable = srcTable;
             this.srcField = srcField;
-            this.requiredCtrl = requiredCtrl;
+            this.DCATrequiredCtrl = DCATrequiredCtrl;
+            this.EPArequiredCtrl = EPArequiredCtrl;
             this.formFieldName_ = tag;
             HiveMind.Add(formFieldName_, this);         
 
@@ -85,7 +87,7 @@ namespace EmeLibrary
                 
                 Console.WriteLine(cntrlName);
                 //Add new page controller object for each record in database
-                p = new PageController(i, cntrlName, dr["sourceTable"].ToString(), dr["sourceField"].ToString(), dr["DCATrequired"].ToString());
+                p = new PageController(i, cntrlName, dr["sourceTable"].ToString(), dr["sourceField"].ToString(), dr["DCATrequired"].ToString(), dr["EPArequired"].ToString());
 
                 i++;
             }
@@ -120,6 +122,8 @@ namespace EmeLibrary
             ctrl = frm.getControlForTag(formFieldName_);
             object obj = frm.localXdoc;
 
+            
+            
             if (ctrl != null)
             {
                 //MessageBox.Show(ctrl.Name);
@@ -132,7 +136,7 @@ namespace EmeLibrary
                     {
                         incoming_ResponsibleParty.loadList(ci_RP);
                     }
-                    ctrl.Tag = requiredCtrl;
+                    ctrl.Tag = DCATrequiredCtrl;
                 }
                 else if (ctrl.GetType() == typeof(uc_distribution))
                 {
@@ -184,7 +188,7 @@ namespace EmeLibrary
                     {
                         distCtrl.loadDistributors(distList);
                     }
-                    ctrl.Tag = requiredCtrl;
+                    ctrl.Tag = DCATrequiredCtrl;
                 }
                 else if (ctrl.GetType() == typeof(uc_extentTemporal))
                 {
@@ -296,7 +300,7 @@ namespace EmeLibrary
                 {
                     string s = (frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null) != null) ? frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null).ToString() : "";
                     ctrl.Text = s;
-                    ctrl.Tag = requiredCtrl;
+                    ctrl.Tag = DCATrequiredCtrl;
 
                 }
             }
