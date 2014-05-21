@@ -917,7 +917,7 @@ namespace EmeLibrary
             int cHeight = 35;
             if (expand.Name == "expand_MD_DTO_btn")
             {
-                expHeight = 470;
+                expHeight = 500;
                 //cHeight = ;
             }
             

@@ -217,6 +217,7 @@ namespace EmeLibrary
                 pagerUpBtn.Visible = false;
                 pagerDownBtn.Visible = false;
                 deleteRP_Btn.Enabled = false;
+                addRP_Btn.Enabled = true;
                 panel3.Enabled = false;
             }
             else if (_incomingRPList.Count == 1)
@@ -291,7 +292,7 @@ namespace EmeLibrary
             comboBox1.Visible = false;
             deleteRP_Btn.Enabled = false;
             addRP_Btn.Enabled = true;
-            if (rp_mode != "distribution")
+            if (rp_mode == "distribution")
             {
                 addRP_Btn.Enabled = false;
             }
@@ -312,7 +313,7 @@ namespace EmeLibrary
             {
                // MessageBox.Show("made it");
                 reset();
-                addRP_Btn.Enabled = false;
+                //addRP_Btn.Enabled = false;
                 deleteRP_Btn.Enabled = false;
                 panel3.Enabled = false;
             }

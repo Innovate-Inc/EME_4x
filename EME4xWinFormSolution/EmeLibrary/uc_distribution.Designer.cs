@@ -119,11 +119,14 @@
             this.pgD_MD_Dist_btn = new System.Windows.Forms.Button();
             this.pgU_MD_Dist_btn = new System.Windows.Forms.Button();
             this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
-            this.distributor_Contact = new EmeLibrary.uc_ResponsibleParty();
             this.distributor_gbx = new System.Windows.Forms.GroupBox();
             this.MD_Dist = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.errorProvider_Distribution = new System.Windows.Forms.ErrorProvider(this.components);
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.distributor_Contact = new EmeLibrary.uc_ResponsibleParty();
             this.MD_Format_pnl.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -158,7 +161,7 @@
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.panel4.Controls.Add(this.md_format_decompressionTechnique_lbl);
             this.panel4.Controls.Add(this.md_format_Specification_lbl);
             this.panel4.Controls.Add(this.md_format_AmendmentNumber_lbl);
@@ -223,7 +226,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.panel1.Controls.Add(this.md_format_version_txt);
             this.panel1.Controls.Add(this.md_format_version_lbl);
             this.panel1.Controls.Add(this.md_format_name_lbl);
@@ -240,7 +243,7 @@
             this.md_format_version_txt.Name = "md_format_version_txt";
             this.md_format_version_txt.Size = new System.Drawing.Size(205, 20);
             this.md_format_version_txt.TabIndex = 6;
-            this.md_format_version_txt.Tag = "required";
+            this.md_format_version_txt.Tag = "";
             this.md_format_version_txt.Validating += new System.ComponentModel.CancelEventHandler(this.distribution_Validating);
             // 
             // md_format_version_lbl
@@ -268,7 +271,7 @@
             this.md_format_name_txt.Name = "md_format_name_txt";
             this.md_format_name_txt.Size = new System.Drawing.Size(205, 20);
             this.md_format_name_txt.TabIndex = 3;
-            this.md_format_name_txt.Tag = "required";
+            this.md_format_name_txt.Tag = "";
             this.md_format_name_txt.Validating += new System.ComponentModel.CancelEventHandler(this.distribution_Validating);
             // 
             // MD_Format
@@ -385,6 +388,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.offLine__MD_Medium__mediumNode_lbl);
             this.groupBox2.Controls.Add(this.offLine__MD_Medium__mediumFormat_lbl);
             this.groupBox2.Controls.Add(this.offLine__MD_Medium__volumes_lbl);
@@ -397,9 +401,10 @@
             this.groupBox2.Controls.Add(this.offLine__MD_Medium__densityUnits_txt);
             this.groupBox2.Controls.Add(this.offLine__MD_Medium__density__Real_txt);
             this.groupBox2.Controls.Add(this.offLine__MD_Medium__name_txt);
-            this.groupBox2.Location = new System.Drawing.Point(7, 291);
+            this.groupBox2.Controls.Add(this.panel8);
+            this.groupBox2.Location = new System.Drawing.Point(7, 315);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(426, 176);
+            this.groupBox2.Size = new System.Drawing.Size(426, 185);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Offline Resource";
@@ -407,7 +412,8 @@
             // offLine__MD_Medium__mediumNode_lbl
             // 
             this.offLine__MD_Medium__mediumNode_lbl.AutoSize = true;
-            this.offLine__MD_Medium__mediumNode_lbl.Location = new System.Drawing.Point(39, 152);
+            this.offLine__MD_Medium__mediumNode_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.offLine__MD_Medium__mediumNode_lbl.Location = new System.Drawing.Point(39, 155);
             this.offLine__MD_Medium__mediumNode_lbl.Name = "offLine__MD_Medium__mediumNode_lbl";
             this.offLine__MD_Medium__mediumNode_lbl.Size = new System.Drawing.Size(70, 13);
             this.offLine__MD_Medium__mediumNode_lbl.TabIndex = 11;
@@ -416,7 +422,8 @@
             // offLine__MD_Medium__mediumFormat_lbl
             // 
             this.offLine__MD_Medium__mediumFormat_lbl.AutoSize = true;
-            this.offLine__MD_Medium__mediumFormat_lbl.Location = new System.Drawing.Point(29, 126);
+            this.offLine__MD_Medium__mediumFormat_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.offLine__MD_Medium__mediumFormat_lbl.Location = new System.Drawing.Point(29, 129);
             this.offLine__MD_Medium__mediumFormat_lbl.Name = "offLine__MD_Medium__mediumFormat_lbl";
             this.offLine__MD_Medium__mediumFormat_lbl.Size = new System.Drawing.Size(79, 13);
             this.offLine__MD_Medium__mediumFormat_lbl.TabIndex = 10;
@@ -425,7 +432,8 @@
             // offLine__MD_Medium__volumes_lbl
             // 
             this.offLine__MD_Medium__volumes_lbl.AutoSize = true;
-            this.offLine__MD_Medium__volumes_lbl.Location = new System.Drawing.Point(60, 100);
+            this.offLine__MD_Medium__volumes_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.offLine__MD_Medium__volumes_lbl.Location = new System.Drawing.Point(60, 103);
             this.offLine__MD_Medium__volumes_lbl.Name = "offLine__MD_Medium__volumes_lbl";
             this.offLine__MD_Medium__volumes_lbl.Size = new System.Drawing.Size(47, 13);
             this.offLine__MD_Medium__volumes_lbl.TabIndex = 9;
@@ -434,7 +442,8 @@
             // offLine__MD_Medium__densityUnits_lbl
             // 
             this.offLine__MD_Medium__densityUnits_lbl.AutoSize = true;
-            this.offLine__MD_Medium__densityUnits_lbl.Location = new System.Drawing.Point(39, 74);
+            this.offLine__MD_Medium__densityUnits_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.offLine__MD_Medium__densityUnits_lbl.Location = new System.Drawing.Point(39, 77);
             this.offLine__MD_Medium__densityUnits_lbl.Name = "offLine__MD_Medium__densityUnits_lbl";
             this.offLine__MD_Medium__densityUnits_lbl.Size = new System.Drawing.Size(69, 13);
             this.offLine__MD_Medium__densityUnits_lbl.TabIndex = 8;
@@ -443,7 +452,8 @@
             // offLine__MD_Medium__density__Real_lbl
             // 
             this.offLine__MD_Medium__density__Real_lbl.AutoSize = true;
-            this.offLine__MD_Medium__density__Real_lbl.Location = new System.Drawing.Point(66, 48);
+            this.offLine__MD_Medium__density__Real_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.offLine__MD_Medium__density__Real_lbl.Location = new System.Drawing.Point(66, 51);
             this.offLine__MD_Medium__density__Real_lbl.Name = "offLine__MD_Medium__density__Real_lbl";
             this.offLine__MD_Medium__density__Real_lbl.Size = new System.Drawing.Size(42, 13);
             this.offLine__MD_Medium__density__Real_lbl.TabIndex = 7;
@@ -452,7 +462,8 @@
             // offLine__MD_Medium__name_lbl
             // 
             this.offLine__MD_Medium__name_lbl.AutoSize = true;
-            this.offLine__MD_Medium__name_lbl.Location = new System.Drawing.Point(72, 22);
+            this.offLine__MD_Medium__name_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.offLine__MD_Medium__name_lbl.Location = new System.Drawing.Point(72, 25);
             this.offLine__MD_Medium__name_lbl.Name = "offLine__MD_Medium__name_lbl";
             this.offLine__MD_Medium__name_lbl.Size = new System.Drawing.Size(35, 13);
             this.offLine__MD_Medium__name_lbl.TabIndex = 6;
@@ -461,7 +472,7 @@
             // offLine__MD_Medium__mediumNode_txt
             // 
             this.offLine__MD_Medium__mediumNode_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.offLine__MD_Medium__mediumNode_txt.Location = new System.Drawing.Point(115, 149);
+            this.offLine__MD_Medium__mediumNode_txt.Location = new System.Drawing.Point(115, 152);
             this.offLine__MD_Medium__mediumNode_txt.Name = "offLine__MD_Medium__mediumNode_txt";
             this.offLine__MD_Medium__mediumNode_txt.Size = new System.Drawing.Size(279, 20);
             this.offLine__MD_Medium__mediumNode_txt.TabIndex = 5;
@@ -469,7 +480,7 @@
             // offLine__MD_Medium__mediumFormat_txt
             // 
             this.offLine__MD_Medium__mediumFormat_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.offLine__MD_Medium__mediumFormat_txt.Location = new System.Drawing.Point(116, 123);
+            this.offLine__MD_Medium__mediumFormat_txt.Location = new System.Drawing.Point(116, 126);
             this.offLine__MD_Medium__mediumFormat_txt.Name = "offLine__MD_Medium__mediumFormat_txt";
             this.offLine__MD_Medium__mediumFormat_txt.Size = new System.Drawing.Size(279, 20);
             this.offLine__MD_Medium__mediumFormat_txt.TabIndex = 4;
@@ -477,7 +488,7 @@
             // offLine__MD_Medium__volumes_txt
             // 
             this.offLine__MD_Medium__volumes_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.offLine__MD_Medium__volumes_txt.Location = new System.Drawing.Point(115, 97);
+            this.offLine__MD_Medium__volumes_txt.Location = new System.Drawing.Point(115, 100);
             this.offLine__MD_Medium__volumes_txt.Name = "offLine__MD_Medium__volumes_txt";
             this.offLine__MD_Medium__volumes_txt.Size = new System.Drawing.Size(279, 20);
             this.offLine__MD_Medium__volumes_txt.TabIndex = 3;
@@ -485,7 +496,7 @@
             // offLine__MD_Medium__densityUnits_txt
             // 
             this.offLine__MD_Medium__densityUnits_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.offLine__MD_Medium__densityUnits_txt.Location = new System.Drawing.Point(115, 71);
+            this.offLine__MD_Medium__densityUnits_txt.Location = new System.Drawing.Point(115, 74);
             this.offLine__MD_Medium__densityUnits_txt.Name = "offLine__MD_Medium__densityUnits_txt";
             this.offLine__MD_Medium__densityUnits_txt.Size = new System.Drawing.Size(279, 20);
             this.offLine__MD_Medium__densityUnits_txt.TabIndex = 2;
@@ -493,7 +504,7 @@
             // offLine__MD_Medium__density__Real_txt
             // 
             this.offLine__MD_Medium__density__Real_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.offLine__MD_Medium__density__Real_txt.Location = new System.Drawing.Point(115, 45);
+            this.offLine__MD_Medium__density__Real_txt.Location = new System.Drawing.Point(115, 48);
             this.offLine__MD_Medium__density__Real_txt.Name = "offLine__MD_Medium__density__Real_txt";
             this.offLine__MD_Medium__density__Real_txt.Size = new System.Drawing.Size(279, 20);
             this.offLine__MD_Medium__density__Real_txt.TabIndex = 1;
@@ -501,13 +512,14 @@
             // offLine__MD_Medium__name_txt
             // 
             this.offLine__MD_Medium__name_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.offLine__MD_Medium__name_txt.Location = new System.Drawing.Point(115, 19);
+            this.offLine__MD_Medium__name_txt.Location = new System.Drawing.Point(115, 22);
             this.offLine__MD_Medium__name_txt.Name = "offLine__MD_Medium__name_txt";
             this.offLine__MD_Medium__name_txt.Size = new System.Drawing.Size(279, 20);
             this.offLine__MD_Medium__name_txt.TabIndex = 0;
             // 
             // CI_OnlineResource
             // 
+            this.CI_OnlineResource.BackColor = System.Drawing.Color.Transparent;
             this.CI_OnlineResource.Controls.Add(this.onLine__CI_OnlineResource__applicationProfile_lbl);
             this.CI_OnlineResource.Controls.Add(this.onLine__CI_OnlineResource__linkage__URL_lbl);
             this.CI_OnlineResource.Controls.Add(this.onLine__CI_OnlineResource__applicationProfile_txt);
@@ -521,9 +533,11 @@
             this.CI_OnlineResource.Controls.Add(this.onLine__CI_OnlineResource__protocol_lbl);
             this.CI_OnlineResource.Controls.Add(this.onLine__CI_OnlineResource__function_txt);
             this.CI_OnlineResource.Controls.Add(this.onLine__CI_OnlineResource__name_lbl);
+            this.CI_OnlineResource.Controls.Add(this.panel3);
+            this.CI_OnlineResource.Controls.Add(this.panel7);
             this.CI_OnlineResource.Location = new System.Drawing.Point(7, 107);
             this.CI_OnlineResource.Name = "CI_OnlineResource";
-            this.CI_OnlineResource.Size = new System.Drawing.Size(426, 178);
+            this.CI_OnlineResource.Size = new System.Drawing.Size(426, 202);
             this.CI_OnlineResource.TabIndex = 5;
             this.CI_OnlineResource.TabStop = false;
             this.CI_OnlineResource.Text = "Online Resource";
@@ -531,7 +545,8 @@
             // onLine__CI_OnlineResource__applicationProfile_lbl
             // 
             this.onLine__CI_OnlineResource__applicationProfile_lbl.AutoSize = true;
-            this.onLine__CI_OnlineResource__applicationProfile_lbl.Location = new System.Drawing.Point(19, 75);
+            this.onLine__CI_OnlineResource__applicationProfile_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.onLine__CI_OnlineResource__applicationProfile_lbl.Location = new System.Drawing.Point(19, 89);
             this.onLine__CI_OnlineResource__applicationProfile_lbl.Name = "onLine__CI_OnlineResource__applicationProfile_lbl";
             this.onLine__CI_OnlineResource__applicationProfile_lbl.Size = new System.Drawing.Size(89, 13);
             this.onLine__CI_OnlineResource__applicationProfile_lbl.TabIndex = 16;
@@ -549,7 +564,7 @@
             // onLine__CI_OnlineResource__applicationProfile_txt
             // 
             this.onLine__CI_OnlineResource__applicationProfile_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.onLine__CI_OnlineResource__applicationProfile_txt.Location = new System.Drawing.Point(115, 72);
+            this.onLine__CI_OnlineResource__applicationProfile_txt.Location = new System.Drawing.Point(115, 86);
             this.onLine__CI_OnlineResource__applicationProfile_txt.Name = "onLine__CI_OnlineResource__applicationProfile_txt";
             this.onLine__CI_OnlineResource__applicationProfile_txt.Size = new System.Drawing.Size(279, 20);
             this.onLine__CI_OnlineResource__applicationProfile_txt.TabIndex = 15;
@@ -557,7 +572,7 @@
             // onLine__CI_OnlineResource__protocol_txt
             // 
             this.onLine__CI_OnlineResource__protocol_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.onLine__CI_OnlineResource__protocol_txt.Location = new System.Drawing.Point(115, 46);
+            this.onLine__CI_OnlineResource__protocol_txt.Location = new System.Drawing.Point(115, 60);
             this.onLine__CI_OnlineResource__protocol_txt.Name = "onLine__CI_OnlineResource__protocol_txt";
             this.onLine__CI_OnlineResource__protocol_txt.Size = new System.Drawing.Size(279, 20);
             this.onLine__CI_OnlineResource__protocol_txt.TabIndex = 4;
@@ -565,7 +580,8 @@
             // onLine__CI_OnlineResource__function_lbl
             // 
             this.onLine__CI_OnlineResource__function_lbl.AutoSize = true;
-            this.onLine__CI_OnlineResource__function_lbl.Location = new System.Drawing.Point(59, 155);
+            this.onLine__CI_OnlineResource__function_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.onLine__CI_OnlineResource__function_lbl.Location = new System.Drawing.Point(59, 169);
             this.onLine__CI_OnlineResource__function_lbl.Name = "onLine__CI_OnlineResource__function_lbl";
             this.onLine__CI_OnlineResource__function_lbl.Size = new System.Drawing.Size(48, 13);
             this.onLine__CI_OnlineResource__function_lbl.TabIndex = 13;
@@ -574,7 +590,8 @@
             // onLine__CI_OnlineResource__description_lbl
             // 
             this.onLine__CI_OnlineResource__description_lbl.AutoSize = true;
-            this.onLine__CI_OnlineResource__description_lbl.Location = new System.Drawing.Point(47, 128);
+            this.onLine__CI_OnlineResource__description_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.onLine__CI_OnlineResource__description_lbl.Location = new System.Drawing.Point(47, 142);
             this.onLine__CI_OnlineResource__description_lbl.Name = "onLine__CI_OnlineResource__description_lbl";
             this.onLine__CI_OnlineResource__description_lbl.Size = new System.Drawing.Size(60, 13);
             this.onLine__CI_OnlineResource__description_lbl.TabIndex = 10;
@@ -583,7 +600,7 @@
             // onLine__CI_OnlineResource__name_txt
             // 
             this.onLine__CI_OnlineResource__name_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.onLine__CI_OnlineResource__name_txt.Location = new System.Drawing.Point(115, 99);
+            this.onLine__CI_OnlineResource__name_txt.Location = new System.Drawing.Point(115, 113);
             this.onLine__CI_OnlineResource__name_txt.Name = "onLine__CI_OnlineResource__name_txt";
             this.onLine__CI_OnlineResource__name_txt.Size = new System.Drawing.Size(279, 20);
             this.onLine__CI_OnlineResource__name_txt.TabIndex = 7;
@@ -591,7 +608,7 @@
             // onLine__CI_OnlineResource__description_txt
             // 
             this.onLine__CI_OnlineResource__description_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.onLine__CI_OnlineResource__description_txt.Location = new System.Drawing.Point(115, 126);
+            this.onLine__CI_OnlineResource__description_txt.Location = new System.Drawing.Point(115, 140);
             this.onLine__CI_OnlineResource__description_txt.Name = "onLine__CI_OnlineResource__description_txt";
             this.onLine__CI_OnlineResource__description_txt.Size = new System.Drawing.Size(279, 20);
             this.onLine__CI_OnlineResource__description_txt.TabIndex = 9;
@@ -611,12 +628,13 @@
             this.onLine__CI_OnlineResource__linkage__URL_txt.Name = "onLine__CI_OnlineResource__linkage__URL_txt";
             this.onLine__CI_OnlineResource__linkage__URL_txt.Size = new System.Drawing.Size(279, 20);
             this.onLine__CI_OnlineResource__linkage__URL_txt.TabIndex = 3;
-            this.onLine__CI_OnlineResource__linkage__URL_txt.Tag = "required";
+            this.onLine__CI_OnlineResource__linkage__URL_txt.Tag = "";
             // 
             // onLine__CI_OnlineResource__protocol_lbl
             // 
             this.onLine__CI_OnlineResource__protocol_lbl.AutoSize = true;
-            this.onLine__CI_OnlineResource__protocol_lbl.Location = new System.Drawing.Point(61, 48);
+            this.onLine__CI_OnlineResource__protocol_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.onLine__CI_OnlineResource__protocol_lbl.Location = new System.Drawing.Point(61, 62);
             this.onLine__CI_OnlineResource__protocol_lbl.Name = "onLine__CI_OnlineResource__protocol_lbl";
             this.onLine__CI_OnlineResource__protocol_lbl.Size = new System.Drawing.Size(46, 13);
             this.onLine__CI_OnlineResource__protocol_lbl.TabIndex = 6;
@@ -632,7 +650,7 @@
             "offlineAccess",
             "order",
             "search"});
-            this.onLine__CI_OnlineResource__function_txt.Location = new System.Drawing.Point(115, 152);
+            this.onLine__CI_OnlineResource__function_txt.Location = new System.Drawing.Point(115, 166);
             this.onLine__CI_OnlineResource__function_txt.Name = "onLine__CI_OnlineResource__function_txt";
             this.onLine__CI_OnlineResource__function_txt.Size = new System.Drawing.Size(169, 21);
             this.onLine__CI_OnlineResource__function_txt.TabIndex = 11;
@@ -640,7 +658,8 @@
             // onLine__CI_OnlineResource__name_lbl
             // 
             this.onLine__CI_OnlineResource__name_lbl.AutoSize = true;
-            this.onLine__CI_OnlineResource__name_lbl.Location = new System.Drawing.Point(72, 101);
+            this.onLine__CI_OnlineResource__name_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.onLine__CI_OnlineResource__name_lbl.Location = new System.Drawing.Point(72, 115);
             this.onLine__CI_OnlineResource__name_lbl.Name = "onLine__CI_OnlineResource__name_lbl";
             this.onLine__CI_OnlineResource__name_lbl.Size = new System.Drawing.Size(35, 13);
             this.onLine__CI_OnlineResource__name_lbl.TabIndex = 8;
@@ -803,7 +822,7 @@
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.panel5.Controls.Add(this.availabelDate_clear_btn);
             this.panel5.Controls.Add(this.availableDat_dtp);
             this.panel5.Controls.Add(this.md_SOP_Turnaround_lbl);
@@ -1096,19 +1115,6 @@
             this.flowLayoutPanel6.TabIndex = 0;
             this.flowLayoutPanel6.Leave += new System.EventHandler(this.flowLayoutPanel6_Leave);
             // 
-            // distributor_Contact
-            // 
-            this.distributor_Contact.BackColor = System.Drawing.Color.Transparent;
-            this.distributor_Contact.CI_ResponsiblePartyList = null;
-            this.distributor_Contact.Location = new System.Drawing.Point(0, 0);
-            this.distributor_Contact.Margin = new System.Windows.Forms.Padding(0);
-            this.distributor_Contact.mylabel = "Contact";
-            this.distributor_Contact.Name = "distributor_Contact";
-            this.distributor_Contact.rp_mode = "distribution";
-            this.distributor_Contact.Size = new System.Drawing.Size(439, 35);
-            this.distributor_Contact.TabIndex = 7;
-            this.distributor_Contact.Tag = "";
-            // 
             // distributor_gbx
             // 
             this.distributor_gbx.AutoSize = true;
@@ -1148,6 +1154,43 @@
             // errorProvider_Distribution
             // 
             this.errorProvider_Distribution.ContainerControl = this;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.panel3.Location = new System.Drawing.Point(12, 53);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(399, 143);
+            this.panel3.TabIndex = 17;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.panel7.Location = new System.Drawing.Point(11, 13);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(400, 32);
+            this.panel7.TabIndex = 18;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.panel8.Location = new System.Drawing.Point(12, 17);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(399, 162);
+            this.panel8.TabIndex = 12;
+            // 
+            // distributor_Contact
+            // 
+            this.distributor_Contact.BackColor = System.Drawing.Color.Transparent;
+            this.distributor_Contact.CI_ResponsiblePartyList = null;
+            this.distributor_Contact.Location = new System.Drawing.Point(0, 0);
+            this.distributor_Contact.Margin = new System.Windows.Forms.Padding(0);
+            this.distributor_Contact.mylabel = "Contact";
+            this.distributor_Contact.Name = "distributor_Contact";
+            this.distributor_Contact.rp_mode = "distribution";
+            this.distributor_Contact.Size = new System.Drawing.Size(439, 35);
+            this.distributor_Contact.TabIndex = 7;
+            this.distributor_Contact.Tag = "";
             // 
             // uc_distribution
             // 
@@ -1293,5 +1336,8 @@
         private System.Windows.Forms.Label offLine__MD_Medium__density__Real_lbl;
         private System.Windows.Forms.Label offLine__MD_Medium__mediumNode_lbl;
         private System.Windows.Forms.Label offLine__MD_Medium__mediumFormat_lbl;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel8;
     }
 }
