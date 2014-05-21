@@ -109,6 +109,10 @@
   <ItemGroup>
     <Content Include="Resources\docBlack 2.jpg" />
     <Content Include="Resources\docBlack3.jpg" />
+    <Content Include="Resources\Eme4xv2.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\EmeIcon.PNG" />
     <Content Include="Resources\fileIcon.jpg" />
     <Content Include="Resources\open.gif" />
     <Content Include="Resources\save.bmp" />
