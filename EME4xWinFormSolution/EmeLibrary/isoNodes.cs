@@ -315,6 +315,10 @@ namespace EmeLibrary
             {
                 inboundMetadataRecordSkippedElements.LoadXml(xdocCopy);
             }
+            else
+            {
+                inboundMetadataRecordSkippedElements.LoadXml("<Empty/>");
+            }
                        
 
             // = xdoc;
@@ -326,11 +330,11 @@ namespace EmeLibrary
             templateMetadataRecord = new XmlDocument();
             if (inboundMetadataFormat == "ISO19115-2")
             {
-                templateMetadataRecord.Load(Directory.GetCurrentDirectory() + "\\Eme4xSystemFiles\\EMEdb\\MItemplate.xml");
+                templateMetadataRecord.Load(Utils1.EmeUserAppDataFolder + "\\Eme4xSystemFiles\\EMEdb\\MItemplate.xml");
             }
             else if (inboundMetadataFormat == "ISO19115")
             {
-                templateMetadataRecord.Load(Directory.GetCurrentDirectory() + "\\Eme4xSystemFiles\\EMEdb\\MDtemplate.xml");
+                templateMetadataRecord.Load(Utils1.EmeUserAppDataFolder + "\\Eme4xSystemFiles\\EMEdb\\MDtemplate.xml");
             }
             else
             {
@@ -990,11 +994,11 @@ namespace EmeLibrary
             templateMetadataRecord = new XmlDocument();
             if (outboundMetadataRecordFormatName == "ISO19115-2") //(inboundMetadataFormat == "ISO19115-2")
             {
-                templateMetadataRecord.Load(Directory.GetCurrentDirectory() + "\\Eme4xSystemFiles\\EMEdb\\MItemplate.xml");
+                templateMetadataRecord.Load(Utils1.EmeUserAppDataFolder + "\\Eme4xSystemFiles\\EMEdb\\MItemplate.xml");
             }
             else if (outboundMetadataRecordFormatName == "ISO19115") //(inboundMetadataFormat == "ISO19115")
             {
-                templateMetadataRecord.Load(Directory.GetCurrentDirectory() + "\\Eme4xSystemFiles\\EMEdb\\MDtemplate.xml");
+                templateMetadataRecord.Load(Utils1.EmeUserAppDataFolder + "\\Eme4xSystemFiles\\EMEdb\\MDtemplate.xml");
             }
             else
             {
@@ -1029,7 +1033,7 @@ namespace EmeLibrary
             //string validationXSD = @"http://www.ngdc.noaa.gov/metadata/published/xsd/schema.xsd";
             //string validationXSD = @"http://www.isotc211.org/2005/gmd/gmd.xsd";
 
-            string validationXSD = Directory.GetCurrentDirectory() + "\\Eme4xSystemFiles\\MetadataSchema\\NOAA_19115_2\\schema.xsd";
+            string validationXSD = Utils1.EmeUserAppDataFolder + "\\Eme4xSystemFiles\\MetadataSchema\\NOAA_19115_2\\schema.xsd";
             XmlReaderSettings readerSettings = new XmlReaderSettings();
             readerSettings.IgnoreComments = true;
             XmlSchema xs = XmlSchema.Read(XmlReader.Create(validationXSD, readerSettings), null);
@@ -1313,12 +1317,15 @@ namespace EmeLibrary
 
             //Section 16.1.2 alternateTitle 0..*
             XmlNodeList altTitleNL = inboundMetadataRecordSkippedElements.DocumentElement.SelectNodes(citationCIpackageXpath + "/*[local-name()='alternateTitle']");
-            foreach (XmlNode altTitle in altTitleNL)
+            if (altTitleNL != null)
             {
-                constructChildNodeUnderParent(citationCiSectionNode, altTitle, true);
-                altTitle.RemoveAll();
-                removeEmptyParentNodes(altTitle);
-            }            
+                foreach (XmlNode altTitle in altTitleNL)
+                {
+                    constructChildNodeUnderParent(citationCiSectionNode, altTitle, true);
+                    altTitle.RemoveAll();
+                    removeEmptyParentNodes(altTitle);
+                }
+            }
             
             //Section 16.1.3 Date (Required)  Contains both Date and DateType Codelist (CI_DateTypeCode)
             //Providing support for up to three occurances even though the standard does not specify a max
@@ -1377,14 +1384,17 @@ namespace EmeLibrary
             }
                                     
             //Process any other possible other CI_Citation elements not supported by EME and insert after citedResponsibleParty
-            XmlNodeList skippedCitationElements =  inboundMetadataRecordSkippedElements.DocumentElement.SelectSingleNode(citationCIpackageXpath).ChildNodes;
-            if (skippedCitationElements.Count > 0)
+            XmlNodeList skippedCitationElements = inboundMetadataRecordSkippedElements.DocumentElement.SelectNodes(citationCIpackageXpath+"/child::node()");            
+            if (skippedCitationElements != null)
             {
-                foreach (XmlNode otherCitationElement in skippedCitationElements)
+                if (skippedCitationElements.Count > 0)
                 {
-                    constructChildNodeUnderParent(citationCiSectionNode, otherCitationElement, true);
-                    otherCitationElement.RemoveAll();
-                    removeEmptyParentNodes(otherCitationElement);
+                    foreach (XmlNode otherCitationElement in skippedCitationElements)
+                    {
+                        constructChildNodeUnderParent(citationCiSectionNode, otherCitationElement, true);
+                        otherCitationElement.RemoveAll();
+                        removeEmptyParentNodes(otherCitationElement);
+                    }
                 }
             }
             #endregion

@@ -1179,7 +1179,7 @@ namespace EmeLibrary
 
             DataSet cntrlData = new DataSet();
             cntrlData.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            cntrlData.ReadXml(Directory.GetCurrentDirectory() + "\\Eme4xSystemFiles\\EMEdb\\emeGUI.xml");
+            cntrlData.ReadXml(Utils1.EmeUserAppDataFolder + "\\Eme4xSystemFiles\\EMEdb\\emeGUI.xml");
             cntrlData.DataSetName = "emeGUI";
             DataTable dTable = new DataTable();
             dTable = cntrlData.Tables["emeControl"].Select().CopyToDataTable();

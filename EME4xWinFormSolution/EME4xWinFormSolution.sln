@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmeFormLibrary", "EmeLibrar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArcCatalogAddinEme4Tools", "ArcCatalogAddinEme4Tools\ArcCatalogAddinEme4Tools.csproj", "{0FDFA6C2-8656-47EF-91B5-DF74A4487AF9}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "EMESetup", "EMESetup\EMESetup.vdproj", "{8BE09673-E62B-489A-9312-4D19B3A9697B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,12 @@ Global
 		{0FDFA6C2-8656-47EF-91B5-DF74A4487AF9}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{0FDFA6C2-8656-47EF-91B5-DF74A4487AF9}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{0FDFA6C2-8656-47EF-91B5-DF74A4487AF9}.Release|x86.ActiveCfg = Release|Any CPU
+		{8BE09673-E62B-489A-9312-4D19B3A9697B}.Debug|Any CPU.ActiveCfg = Debug
+		{8BE09673-E62B-489A-9312-4D19B3A9697B}.Debug|Mixed Platforms.ActiveCfg = Debug
+		{8BE09673-E62B-489A-9312-4D19B3A9697B}.Debug|x86.ActiveCfg = Debug
+		{8BE09673-E62B-489A-9312-4D19B3A9697B}.Release|Any CPU.ActiveCfg = Release
+		{8BE09673-E62B-489A-9312-4D19B3A9697B}.Release|Mixed Platforms.ActiveCfg = Release
+		{8BE09673-E62B-489A-9312-4D19B3A9697B}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
