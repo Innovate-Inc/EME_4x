@@ -122,7 +122,16 @@ namespace EmeLibrary
             ctrl = frm.getControlForTag(formFieldName_);
             object obj = frm.localXdoc;
 
-            
+            //get validation type from user setting
+            string validateVal = DCATrequiredCtrl;
+            if (frm.validationSetting == "EPA/EDG (ISO19115)")
+            {
+                validateVal = EPArequiredCtrl;
+            }
+            else if (frm.validationSetting == "DCAT/Common Core")
+            {
+                validateVal = DCATrequiredCtrl;
+            }
             
             if (ctrl != null)
             {
@@ -136,7 +145,7 @@ namespace EmeLibrary
                     {
                         incoming_ResponsibleParty.loadList(ci_RP);
                     }
-                    ctrl.Tag = DCATrequiredCtrl;
+                    ctrl.Tag = validateVal;
                 }
                 else if (ctrl.GetType() == typeof(uc_distribution))
                 {
@@ -188,21 +197,23 @@ namespace EmeLibrary
                     {
                         distCtrl.loadDistributors(distList);
                     }
-                    ctrl.Tag = DCATrequiredCtrl;
+                    ctrl.Tag = validateVal;
                 }
                 else if (ctrl.GetType() == typeof(uc_extentTemporal))
                 {
                     uc_extentTemporal temporalExtentCtrl = (uc_extentTemporal)ctrl;
+                    //need to reset to clear controls
+                    //temporalExtentCtrl.reset();
                     temporalElement__EX_TemporalExtent inboundExtentObject = (temporalElement__EX_TemporalExtent)frm.localXdoc.GetType().GetProperty
                         (ctrl.Name).GetValue(obj, null);
                     temporalExtentCtrl.loadTemporalExtent(inboundExtentObject);
-
+                    ctrl.Tag = validateVal;
                 }
                 else if (ctrl.GetType() == typeof(ListBox))
                 {
                     ListBox topic = (ListBox)ctrl;
                     List<string> list = (List<string>)frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null);
-
+                    ctrl.Tag = validateVal;
                     if (scrTable != "")
                     {
                         //Bind system table to listbox
@@ -237,7 +248,7 @@ namespace EmeLibrary
                     ComboBox boxCbo = (ComboBox)ctrl;
                     string c = (frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null) != null) ?
                         frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null).ToString().Trim() : "";
-                    
+                    ctrl.Tag = validateVal;
                     boxCbo.SelectedIndex = -1;
                     boxCbo.Text = ""; //clears free existing free text
 
@@ -300,7 +311,7 @@ namespace EmeLibrary
                 {
                     string s = (frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null) != null) ? frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null).ToString() : "";
                     ctrl.Text = s;
-                    ctrl.Tag = DCATrequiredCtrl;
+                    ctrl.Tag = validateVal;
 
                 }
             }
@@ -417,6 +428,81 @@ namespace EmeLibrary
         int IComparable.CompareTo(object obj)
         {
             throw new NotImplementedException();
+        }
+
+        public static void validatePopulator(EmeLT frm)
+        {
+            try
+            {
+                foreach (PageController pc in HiveMind.Values)
+                {
+
+                    pc.populateVal(frm);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void populateVal(EmeLT frm)
+        {
+
+            Console.WriteLine(formFieldName_ + "val");
+            Control ctrl;
+
+            ctrl = frm.getControlForTag(formFieldName_);
+            object obj = frm.localXdoc;
+
+            //get validation type from user setting
+            string validateVal = DCATrequiredCtrl;
+            if (frm.validationSetting == "EPA/EDG (ISO19115)")
+            {
+                validateVal = EPArequiredCtrl;
+            }
+            else if (frm.validationSetting == "DCAT/Common Core")
+            {
+                validateVal = DCATrequiredCtrl;
+            }
+
+            if (ctrl != null)
+            {
+                //MessageBox.Show(ctrl.Name);
+                if (ctrl.GetType() == typeof(uc_ResponsibleParty))
+                {
+                    uc_ResponsibleParty incoming_ResponsibleParty = (uc_ResponsibleParty)ctrl;
+                    
+                    ctrl.Tag = validateVal;
+                }
+                else if (ctrl.GetType() == typeof(uc_distribution))
+                {
+                   
+                    uc_distribution distCtrl = (uc_distribution)ctrl;
+                    
+                    ctrl.Tag = validateVal;
+                }
+                else if (ctrl.GetType() == typeof(uc_extentTemporal))
+                {
+                    
+                }
+                else if (ctrl.GetType() == typeof(ListBox))
+                {
+                    ListBox topic = (ListBox)ctrl;
+                    ctrl.Tag = validateVal;
+                }
+                else if (ctrl.GetType() == typeof(ComboBox))
+                {
+
+                    ComboBox boxCbo = (ComboBox)ctrl;
+                    ctrl.Tag = validateVal;
+                    
+                }
+                else if (ctrl.GetType() == typeof(TextBox))
+                {
+                    ctrl.Tag = validateVal;
+
+                }
+            }
         }
     }   
 }

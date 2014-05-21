@@ -346,7 +346,7 @@ namespace EmeLibrary
             {
                 pagerDownBtn.Enabled = false;
                 pagerUpBtn.Focus();
-                panel3.Enabled = false;
+                //panel3.Enabled = false; 
             }
             else
             {
@@ -381,7 +381,7 @@ namespace EmeLibrary
 
         private void addRP_Btn_Click(object sender, EventArgs e)
         {
-
+            
             //CI_ResponsibleParty newRP = new CI_ResponsibleParty();
             CI_ResponsibleParty ci_RP = new CI_ResponsibleParty();
 
@@ -422,7 +422,7 @@ namespace EmeLibrary
             bindToFields(_incomingRPList[incomingRPListIndex]);
             Control ctrl = (Control)sender;
             rp_Validating(ctrl);
-
+            
             bindControlsToEMEdatabase();
         }
 
@@ -628,27 +628,34 @@ namespace EmeLibrary
                     }
                 }
             }
-
+            else
+            {
+                errorProvider_RP.SetError(ctrl, "");
+            }
         }
 
         public void val_RP_frmControls(Control.ControlCollection cControls)
         {
             //MessageBox.Show(cControls.Count.ToString());
+            //errorProvider_RP.Clear();
             foreach (Control c in cControls)
             {
                 if (c.HasChildren)
                 {
-                    if (c.GetType() == typeof(uc_ResponsibleParty))
-                    {
-                        rp_Validating(c);
-                        uc_ResponsibleParty rp = (uc_ResponsibleParty)c;
+                    rp_Validating(c);
+                    val_RP_frmControls(c.Controls);
 
-                    }
-                    else
-                    {
-                        rp_Validating(c);
-                        val_RP_frmControls(c.Controls);
-                    }
+                    //if (c.GetType() == typeof(uc_ResponsibleParty))
+                    //{
+                    //    rp_Validating(c);
+                    //    uc_ResponsibleParty rp = (uc_ResponsibleParty)c;
+
+                    //}
+                    //else
+                    //{
+                    //    rp_Validating(c);
+                    //    val_RP_frmControls(c.Controls);
+                    //}
 
                 }
                 else

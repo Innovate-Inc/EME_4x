@@ -75,7 +75,9 @@
 		<controlName>fileIdentifier</controlName>
 		<Iso19115_2>./*[local-name()='fileIdentifier']</Iso19115_2>
 		<Iso19115_1/>
-		<Csdgm/>    
+		<Csdgm/>
+    <DCATrequired>required</DCATrequired>
+    <EPArequired></EPArequired>
 	</emeControl>
 	<emeControl>
 		<controlName>language</controlName>
@@ -87,32 +89,41 @@
 		<controlName>hierarchyLevel_MD_ScopeCode</controlName>
 		<Iso19115_2>./*[local-name()='hierarchyLevel']</Iso19115_2>
 		<Iso19115_1>./*[local-name()='hierarchyLevel']/*[local-name()='MD_ScopeCode']</Iso19115_1>
-		<Csdgm/>    
+		<Csdgm/>
+    <DCATrequired></DCATrequired>
+    <EPArequired>required</EPArequired>
 	</emeControl>  
 	<emeControl>
 		<controlName>contact_CI_ResponsibleParty</controlName>
 		<Iso19115_2>./*[local-name()='contact']</Iso19115_2>
 		<Iso19115_1/>
 		<Csdgm/>
-		<DCATrequired>required</DCATrequired>
+		<DCATrequired></DCATrequired>
+    <EPArequired>required</EPArequired>
 	</emeControl>
 	<emeControl>
 		<controlName>dateStamp</controlName>
 		<Iso19115_2>./*[local-name()='dateStamp']</Iso19115_2>
 		<Iso19115_1>./*[local-name()='dateStamp']/*[[local-name()='Date'] or [local-name()='DateTime']] </Iso19115_1>
-		<Csdgm/>    
+		<Csdgm/>
+    <DCATrequired>required</DCATrequired>
+    <EPArequired>required</EPArequired>
 	</emeControl> 
 	<emeControl>
 		<controlName>metadataStandardName</controlName>
 		<Iso19115_2>./*[local-name()='metadataStandardName']</Iso19115_2>
 		<Iso19115_1/>
-		<Csdgm/>    
+		<Csdgm/>
+    <DCATrequired></DCATrequired>
+    <EPArequired></EPArequired>
 	</emeControl>
 	<emeControl>
 		<controlName>metadataStandardVersion</controlName>
 		<Iso19115_2>./*[local-name()='metadataStandardVersion']</Iso19115_2>
 		<Iso19115_1/>
-		<Csdgm/>    
+		<Csdgm/>
+    <DCATrequired></DCATrequired>
+    <EPArequired></EPArequired>
 	</emeControl>
 	<emeControl>
 		<controlName>idInfo_citation_Title</controlName>
@@ -127,21 +138,24 @@
 		<Iso19115_2>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='citation']/*[local-name()='CI_Citation']/*[local-name()='date']/*[local-name()='CI_Date']/*[local-name()='dateType'][*[local-name()='CI_DateTypeCode']='creation']/../..//*[local-name()='date']</Iso19115_2>
 		<Iso19115_1/>
 		<Csdgm/>
-		<DCATrequired>required1</DCATrequired>
+		<DCATrequired></DCATrequired>
+    <EPArequired>required1</EPArequired>
 	</emeControl>
 	<emeControl>
 		<controlName>idInfo_citation_date_publication</controlName>
 		<Iso19115_2>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='citation']/*[local-name()='CI_Citation']/*[local-name()='date']/*[local-name()='CI_Date']/*[local-name()='dateType'][*[local-name()='CI_DateTypeCode']='publication']/../..//*[local-name()='date']</Iso19115_2>
 		<Iso19115_1/>
 		<Csdgm/>
-		<DCATrequired>required1</DCATrequired>
+		<DCATrequired>required</DCATrequired>
+    <EPArequired>required1</EPArequired>
 	</emeControl>
 	<emeControl>
 		<controlName>idInfo_citation_date_revision</controlName>
 		<Iso19115_2>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='citation']/*[local-name()='CI_Citation']/*[local-name()='date']/*[local-name()='CI_Date']/*[local-name()='dateType'][*[local-name()='CI_DateTypeCode']='revision']/../..//*[local-name()='date']</Iso19115_2>
 		<Iso19115_1/>
 		<Csdgm/>
-		<DCATrequired>required1</DCATrequired>
+		<DCATrequired></DCATrequired>
+    <EPArequired>required1</EPArequired>
 	</emeControl>  
 	<emeControl>
 		<controlName>idInfo_citation_citedResponsibleParty</controlName>
@@ -173,7 +187,9 @@
 		<controlName>idInfo_pointOfContact</controlName>
 		<Iso19115_2>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='pointOfContact']</Iso19115_2>
 		<Iso19115_1/>
-		<Csdgm/>    
+		<Csdgm/>
+    <DCATrequired>required</DCATrequired>
+    <EPArequired></EPArequired>
 	</emeControl>
 	<emeControl>
 		<controlName>idInfo_resourceMaintenance</controlName>
@@ -187,6 +203,7 @@
 		<Iso19115_1/>
 		<Csdgm/>
 		<DCATrequired>required</DCATrequired>
+    <EPArequired>required</EPArequired>
 		<sourceTable>KeywordsISO</sourceTable>
 		<sourceField>themekey</sourceField>
 	</emeControl>  
@@ -221,25 +238,33 @@
 		<controlName>idInfo_resourceConstraints_MD_Constraints_useLimitation</controlName>
 		<Iso19115_2>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='resourceConstraints']/*[local-name()='MD_Constraints']/*[local-name()='useLimitation']</Iso19115_2>
 		<Iso19115_1/>
-		<Csdgm/>    
+		<Csdgm/>
+    <DCATrequired></DCATrequired>
+    <EPArequired></EPArequired>
 	</emeControl>
 	<emeControl>
 		<controlName>idInfo_resourceConstraints_MD_LegalConstraints_useLimitation</controlName>
 		<Iso19115_2>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='resourceConstraints']/*[local-name()='MD_LegalConstraints']/*[local-name()='useLimitation']</Iso19115_2>
 		<Iso19115_1/>
-		<Csdgm/>    
+		<Csdgm/>
+    <DCATrequired></DCATrequired>
+    <EPArequired></EPArequired>
 	</emeControl>
 	<emeControl>
 		<controlName>idInfo_resourceConstraints_MD_LegalConstraints_accessConstraints</controlName>
 		<Iso19115_2>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='resourceConstraints']/*[local-name()='MD_LegalConstraints']/*[local-name()='accessConstraints']</Iso19115_2>
 		<Iso19115_1/>
-		<Csdgm/>    
+		<Csdgm/>
+    <DCATrequired></DCATrequired>
+    <EPArequired></EPArequired>
 	</emeControl>
 	<emeControl>
 		<controlName>idInfo_resourceConstraints_MD_LegalConstraints_useConstraints</controlName>
 		<Iso19115_2>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='resourceConstraints']/*[local-name()='MD_LegalConstraints']/*[local-name()='useConstraints']</Iso19115_2>
 		<Iso19115_1/>
-		<Csdgm/>    
+		<Csdgm/>
+    <DCATrequired></DCATrequired>
+    <EPArequired></EPArequired>
 	</emeControl>
 	<emeControl>
 		<controlName>idInfo_resourceConstraints_MD_LegalConstraints_otherConstraints</controlName>
@@ -251,13 +276,17 @@
 		<controlName>idInfo_resourceConstraints_MD_SecurityConstraints_useLimitation</controlName>
 		<Iso19115_2>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='resourceConstraints']/*[local-name()='MD_SecurityConstraints']/*[local-name()='useLimitation']</Iso19115_2>
 		<Iso19115_1/>
-		<Csdgm/>    
+		<Csdgm/>
+    <DCATrequired></DCATrequired>
+    <EPArequired>required</EPArequired>
 	</emeControl>
 	<emeControl>
 		<controlName>idInfo_resourceConstraints_MD_SecurityConstraints_classification</controlName>
 		<Iso19115_2>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='resourceConstraints']/*[local-name()='MD_SecurityConstraints']/*[local-name()='classification']</Iso19115_2>
 		<Iso19115_1/>
-		<Csdgm/>    
+		<Csdgm/>
+    <DCATrequired></DCATrequired>
+    <EPArequired></EPArequired>
 	</emeControl>
 	<emeControl>
 		<controlName>idInfo_resourceConstraints_MD_SecurityConstraints_userNote</controlName>
@@ -283,6 +312,7 @@
 		<Iso19115_1/>
 		<Csdgm/>
 		<DCATrequired/>
+    <EPArequired>required</EPArequired>
 		<sourceTable>BoundingBox</sourceTable>
 		<sourceField>Area</sourceField>
 	</emeControl>
@@ -290,37 +320,45 @@
 		<controlName>idInfo_extent_geographicBoundingBox_westLongDD</controlName>
 		<Iso19115_2>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='extent']/*[local-name()='EX_Extent']/*[local-name()='geographicElement']/*[local-name()='EX_GeographicBoundingBox']/*[local-name()='westBoundLongitude']</Iso19115_2>
 		<Iso19115_1/>
-		<Csdgm/>    
+		<Csdgm/>
+    <DCATrequired></DCATrequired>
+    <EPArequired></EPArequired>
 	</emeControl>
 	<emeControl>
 		<controlName>idInfo_extent_geographicBoundingBox_eastLongDD</controlName>
 		<Iso19115_2>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='extent']/*[local-name()='EX_Extent']/*[local-name()='geographicElement']/*[local-name()='EX_GeographicBoundingBox']/*[local-name()='eastBoundLongitude']</Iso19115_2>
 		<Iso19115_1/>
-		<Csdgm/>    
+		<Csdgm/>
+    <EPArequired></EPArequired>
 	</emeControl>
 	<emeControl>
 		<controlName>idInfo_extent_geographicBoundingBox_southLatDD</controlName>
 		<Iso19115_2>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='extent']/*[local-name()='EX_Extent']/*[local-name()='geographicElement']/*[local-name()='EX_GeographicBoundingBox']/*[local-name()='southBoundLatitude']</Iso19115_2>
 		<Iso19115_1/>
-		<Csdgm/>    
+		<Csdgm/>
+    <EPArequired></EPArequired>
 	</emeControl>
 	<emeControl>
 		<controlName>idInfo_extent_geographicBoundingBox_northLatDD</controlName>
 		<Iso19115_2>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='extent']/*[local-name()='EX_Extent']/*[local-name()='geographicElement']/*[local-name()='EX_GeographicBoundingBox']/*[local-name()='northBoundLatitude']</Iso19115_2>
 		<Iso19115_1/>
-		<Csdgm/>    
+		<Csdgm/>
+    <EPArequired></EPArequired>
 	</emeControl>
 	<emeControl>
 		<controlName>idInfo_extent_temporalExtent</controlName>
 		<Iso19115_2>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='extent']/*[local-name()='EX_Extent']/*[local-name()='temporalElement']/*[local-name()='EX_TemporalExtent']/*[local-name()='extent']</Iso19115_2>
 		<Iso19115_1/>
-		<Csdgm/>    
+		<Csdgm/>
+    <DCATrequired></DCATrequired>
+    <EPArequired>required</EPArequired>
 	</emeControl>	
 	<emeControl>
 		<controlName>distributionInfo__MD_Distribution</controlName>
 		<Iso19115_2>./*[local-name()='distributionInfo']/*[local-name()='MD_Distribution']/*[local-name()='distributor']</Iso19115_2>
 		<Iso19115_1/>
 		<Csdgm/>
-		<DCATrequired>required</DCATrequired>
+		<DCATrequired></DCATrequired>
+    <EPArequired>required</EPArequired>
 	</emeControl>
 </emeSettings>

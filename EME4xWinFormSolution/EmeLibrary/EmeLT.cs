@@ -471,7 +471,8 @@ namespace EmeLibrary
             }
             catch (Exception e)
             {
-                MessageBox.Show("Error Loading XML Document: " + e.Message);
+                //MessageBox.Show("Error Loading XML Document: " + e.Message);
+                sourceXmlFormat = "Error Loading XML Document: " + e.Message;
             }
 
         }
@@ -994,6 +995,11 @@ namespace EmeLibrary
                         uc_distribution dist = (uc_distribution)c;
                         dist.val_Distribution_frmControls(dist.Controls);
                     }
+                    else if(c.GetType() == typeof(uc_extentTemporal))
+                    {
+                        validate_Controls(c);
+                        
+                    }
                     else
                     {
                         validate_Controls(c);
@@ -1106,6 +1112,7 @@ namespace EmeLibrary
            // string tag = ctrl.Tag.ToString();
             string tag = (ctrl.Tag != null) ? ctrl.Tag.ToString() : "";
             errorProvider1.BlinkStyle = ErrorBlinkStyle.NeverBlink;
+            errorProvider1.SetError(ctrl, null);
 
             if (tag == "required")
             {
@@ -1133,42 +1140,75 @@ namespace EmeLibrary
                         errorProvider1.SetError(ctrl, "Must select at least one");
                     }
                 }
+                else if (ctrl.GetType() == typeof(ComboBox))
+                {
+                    ComboBox cbox = (ComboBox)ctrl;
+
+                    if (cbox.SelectedIndex == -1 ||cbox.SelectedItem.ToString() == string.Empty)
+                    {
+                        errorProvider1.SetError(ctrl, "This is a required Field");
+                    }
+                    else
+                    {
+                        errorProvider1.SetError(ctrl, "");
+                    }
+                }
+                else if (ctrl.GetType() == typeof(uc_extentTemporal))
+                {
+                   //MessageBox.Show("uc_extentTemporal");
+                    uc_extentTemporal tmp = (uc_extentTemporal)ctrl;
+                    temporalElement__EX_TemporalExtent tmporal = tmp.temporalElement;
+                    if (tmp.temporalElement.TimeInstant == null && tmp.temporalElement.TimePeriod == null)
+                    {
+                        errorProvider1.SetError(ctrl, "This is a required element");
+                    }
+                    else
+                    {
+                        errorProvider1.SetError(ctrl, "");
+                    }
+
+                }
             }
             else if (tag.Contains("required"))
             {
-                    //get required control count
-                    string requiredCount;
-                    int index = ctrl.Tag.ToString().IndexOf("required");
-                    string cleanPath = (index < 0)
-                        ? ctrl.Tag.ToString()
-                        : ctrl.Tag.ToString().Remove(index, "required".Length);
-                    requiredCount = (cleanPath != null) ? cleanPath : "";
-                    //Console.WriteLine(requiredCount.ToString());
+                //get required control count
+                string requiredCount;
+                int index = ctrl.Tag.ToString().IndexOf("required");
+                string cleanPath = (index < 0)
+                    ? ctrl.Tag.ToString()
+                    : ctrl.Tag.ToString().Remove(index, "required".Length);
+                requiredCount = (cleanPath != null) ? cleanPath : "";
+                //Console.WriteLine(requiredCount.ToString());
 
-                    if (requiredCount != "")
+                if (requiredCount != "")
+                {
+                    int count = 0;
+                    Control parent = ctrl.Parent;
+                    foreach (Control c in parent.Controls)
                     {
-                        int count = 0;
-                        Control parent = ctrl.Parent;
-                        foreach (Control c in parent.Controls)
+                        if (c.Tag != null)
                         {
-                            if (c.Tag != null)
+                            if (c.Tag.ToString() == tag && c.Text != string.Empty)
                             {
-                                if (c.Tag.ToString() == tag && c.Text != string.Empty)
-                                {
-                                    count++;
-                                }
+                                count++;
                             }
                         }
-                        if (count >= Convert.ToInt16(requiredCount))
-                        {
-                            errorProvider1.SetError(parent, "");
-                        }
-                        else
-                        {
-                            errorProvider1.SetError(parent, "Need at least " + requiredCount.ToString());
-                        }
-                   }
+                    }
+                    if (count >= Convert.ToInt16(requiredCount))
+                    {
+                        errorProvider1.SetError(parent, "");
+                    }
+                    else
+                    {
+                        errorProvider1.SetError(parent, "Need at least " + requiredCount.ToString());
+                    }
+                }
             }
+            else
+            {
+                errorProvider1.SetError(ctrl, null);
+            }
+            
         }
 
         /// <summary>
@@ -1268,7 +1308,16 @@ namespace EmeLibrary
         {
             ToolStripComboBox validate_type = (ToolStripComboBox)sender;
             validationSetting = validate_type.SelectedItem.ToString();
-            //MessageBox.Show(validationSetting);
+            PageController.validatePopulator(this);
+           
+            //MessageBox.Show(idInfo_citation_Title.Tag.ToString());
+            //errorProvider1.Clear();
+            frmctrls(this.Controls);
+ 
+            //foreach (Control c in this.Controls)
+            //{
+            //    validate_Controls(c);
+            //}
         }
 
         

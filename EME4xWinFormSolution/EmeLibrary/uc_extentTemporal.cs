@@ -50,7 +50,11 @@ namespace EmeLibrary
             }
             else
             {
-
+                //red blinky
+                clearTimePeriod();
+                clearTimeInstant();
+                tabControl1.SelectTab("timePeriod");
+                //setTimePeriodtoForm();
             }
 
             //Set the event to fire
@@ -238,7 +242,23 @@ namespace EmeLibrary
                 e.Cancel = true;
             }
         }
-        
+
+        public void reset()
+        {
+            clearTimePeriod();
+            clearTimeInstant();
+            tabControl1.SelectedIndex = 0;
+        }
+
+        public void validateControls()
+        {
+             
+        // _timePeriodExtent;
+            if (_timeInstantExtent == null)
+            {
+                //MessageBox.Show("hey its got null");
+            }
+        }
 
         
     }
