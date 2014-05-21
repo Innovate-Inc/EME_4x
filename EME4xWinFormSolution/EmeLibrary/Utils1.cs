@@ -5,6 +5,9 @@ using System.Text;
 using System.Data;
 using System.Xml;
 using System.IO;
+using System.Reflection;
+using System.Windows.Forms;
+using System.Configuration;
 
 namespace EmeLibrary
 {
@@ -14,21 +17,32 @@ namespace EmeLibrary
         public static DataSet emeDataSet;
         public static DataSet emeDataSetEditor;
         public static string[] dataTableNames;
+        
+        public static string EmeUserAppDataFolder
+        {
+            get
+            {                
+                return System.Environment.GetFolderPath(System.Environment.SpecialFolder.ApplicationData) + "\\Innovate! Inc\\EPA Metadata Edtior 4x\\";
+            }
+            //get { return Path.GetDirectoryName(Assembly.GetCallingAssembly().Location); }
+        }
+        
         public static void setEmeDataSets()
         {
             emeDataSet = new DataSet();
             emeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            emeDataSet.ReadXml(Directory.GetCurrentDirectory() + "\\Eme4xSystemFiles\\EMEdb\\Publisher.xml");
-            emeDataSet.ReadXml(Directory.GetCurrentDirectory() + "\\Eme4xSystemFiles\\EMEdb\\OnlineLinkage.xml");
-            emeDataSet.ReadXml(Directory.GetCurrentDirectory() + "\\Eme4xSystemFiles\\EMEdb\\KeywordsEPA.xml");
-            emeDataSet.ReadXml(Directory.GetCurrentDirectory() + "\\Eme4xSystemFiles\\EMEdb\\KeywordsISO.xml");
-            emeDataSet.ReadXml(Directory.GetCurrentDirectory() + "\\Eme4xSystemFiles\\EMEdb\\KeywordsUser.xml");
-            emeDataSet.ReadXml(Directory.GetCurrentDirectory() + "\\Eme4xSystemFiles\\EMEdb\\KeywordsPlace.xml");
-            emeDataSet.ReadXml(Directory.GetCurrentDirectory() + "\\Eme4xSystemFiles\\EMEdb\\Contact_Information.xml");
-            emeDataSet.ReadXml(Directory.GetCurrentDirectory() + "\\Eme4xSystemFiles\\EMEdb\\BoundingBox.xml");
-            emeDataSet.ReadXml(Directory.GetCurrentDirectory() + "\\Eme4xSystemFiles\\EMEdb\\Citation.xml");
-            emeDataSet.ReadXml(Directory.GetCurrentDirectory() + "\\Eme4xSystemFiles\\EMEdb\\DistributionLiability.xml");
-            emeDataSet.ReadXml(Directory.GetCurrentDirectory() + "\\Eme4xSystemFiles\\EMEdb\\ProgramCode.xml");
+            //emeDataSet.ReadXml(Directory.GetCurrentDirectory() + "\\Eme4xSystemFiles\\EMEdb\\Publisher.xml");            
+            emeDataSet.ReadXml(EmeUserAppDataFolder + "\\Eme4xSystemFiles\\EMEdb\\Publisher.xml");
+            emeDataSet.ReadXml(EmeUserAppDataFolder + "\\Eme4xSystemFiles\\EMEdb\\OnlineLinkage.xml");
+            emeDataSet.ReadXml(EmeUserAppDataFolder + "\\Eme4xSystemFiles\\EMEdb\\KeywordsEPA.xml");
+            emeDataSet.ReadXml(EmeUserAppDataFolder + "\\Eme4xSystemFiles\\EMEdb\\KeywordsISO.xml");
+            emeDataSet.ReadXml(EmeUserAppDataFolder + "\\Eme4xSystemFiles\\EMEdb\\KeywordsUser.xml");
+            emeDataSet.ReadXml(EmeUserAppDataFolder + "\\Eme4xSystemFiles\\EMEdb\\KeywordsPlace.xml");
+            emeDataSet.ReadXml(EmeUserAppDataFolder + "\\Eme4xSystemFiles\\EMEdb\\Contact_Information.xml");
+            emeDataSet.ReadXml(EmeUserAppDataFolder + "\\Eme4xSystemFiles\\EMEdb\\BoundingBox.xml");
+            emeDataSet.ReadXml(EmeUserAppDataFolder + "\\Eme4xSystemFiles\\EMEdb\\Citation.xml");
+            emeDataSet.ReadXml(EmeUserAppDataFolder + "\\Eme4xSystemFiles\\EMEdb\\DistributionLiability.xml");
+            emeDataSet.ReadXml(EmeUserAppDataFolder + "\\Eme4xSystemFiles\\EMEdb\\ProgramCode.xml");
             emeDataSet.DataSetName = "emeData";
 
             emeDataSetEditor = emeDataSet;
@@ -96,7 +110,8 @@ namespace EmeLibrary
         {
             emeSettingsDataset = new DataSet();
             emeSettingsDataset.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            emeSettingsDataset.ReadXml(Directory.GetCurrentDirectory() + "\\Eme4xSystemFiles\\EMEdb\\emeSettings.xml");
+            //emeSettingsDataset.ReadXml(Directory.GetCurrentDirectory() + "\\Eme4xSystemFiles\\EMEdb\\emeSettings.xml");
+            emeSettingsDataset.ReadXml(EmeUserAppDataFolder + "\\Eme4xSystemFiles\\EMEdb\\emeSettings.xml");
             emeSettingsDataset.DataSetName = "emeSettings";
         }
     }

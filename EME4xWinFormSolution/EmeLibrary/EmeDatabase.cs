@@ -44,7 +44,7 @@ namespace EmeLibrary
 
         private void bindCCMFields(string tableName)
         {
-            dbfilePath = Directory.GetCurrentDirectory() + "\\Eme4xSystemFiles\\EMEdb\\" + tableName + ".xml";
+            dbfilePath = Utils1.EmeUserAppDataFolder + "\\Eme4xSystemFiles\\EMEdb\\" + tableName + ".xml";
             dataSetTableName = tableName;
             dataGridView1.Columns.Clear();
             BindingSource testBindingSource = new BindingSource(Utils1.emeDataSet, tableName);            

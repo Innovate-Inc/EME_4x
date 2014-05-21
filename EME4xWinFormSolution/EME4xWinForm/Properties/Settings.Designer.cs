@@ -22,5 +22,17 @@ namespace EME4xWinForm.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("FullyQualifiedPathNameForEMESystemFiles")]
+        public string EmeSystemFilesPath {
+            get {
+                return ((string)(this["EmeSystemFilesPath"]));
+            }
+            set {
+                this["EmeSystemFilesPath"] = value;
+            }
+        }
     }
 }

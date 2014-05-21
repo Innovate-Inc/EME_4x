@@ -1864,7 +1864,10 @@
             temporalElement__EX_TemporalExtent1.TimePeriod = null;
             this.idInfo_extent_temporalExtent.temporalElement = temporalElement__EX_TemporalExtent1;
             this.idInfo_extent_temporalExtent.Load += new System.EventHandler(this.idInfo_extent_temporalExtent_Load);
+<<<<<<< HEAD
             this.idInfo_extent_temporalExtent.Validating += new System.ComponentModel.CancelEventHandler(this.cntrl_Validating);
+=======
+>>>>>>> 2e5c0d972b76c6e5994232c31bef61e6f73a0cce
             // 
             // panel4
             // 
@@ -2344,7 +2347,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "EmeLT";
-            this.Text = "<EmeLT/>";
+            this.Text = "<EME 4.0 Beta/>";
             this.Load += new System.EventHandler(this.EmeLT_Load);
             this.Resize += new System.EventHandler(this.EmeLT_Resize);
             this.statusStrip1.ResumeLayout(false);
