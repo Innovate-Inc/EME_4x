@@ -95,10 +95,12 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.label4 = new System.Windows.Forms.Label();
             this.elementsNotSupportedByEME = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.distributionInformation_gbx = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
+            this.distributionInfo__MD_Distribution = new EmeLibrary.uc_distribution();
             this.idInfo_resourceConstraints_gbx = new System.Windows.Forms.GroupBox();
             this.idInfo_resourceConstraints_MD_Constraints_useLimitation = new System.Windows.Forms.ComboBox();
             this.securityConstraints_gbx = new System.Windows.Forms.GroupBox();
@@ -126,8 +128,11 @@
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
             this.metadataAuthor_Pnl = new System.Windows.Forms.Panel();
+            this.contact_CI_ResponsibleParty = new EmeLibrary.uc_ResponsibleParty();
             this.pointOfContact_Pnl = new System.Windows.Forms.Panel();
+            this.idInfo_pointOfContact = new EmeLibrary.uc_ResponsibleParty();
             this.Citation_Pnl = new System.Windows.Forms.Panel();
+            this.idInfo_citation_citedResponsibleParty = new EmeLibrary.uc_ResponsibleParty();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -165,6 +170,7 @@
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.idInfo_resourceMaintenance_lbl = new System.Windows.Forms.Label();
             this.idInfo_resourceMaintenance = new System.Windows.Forms.ComboBox();
+            this.idInfo_extent_temporalExtent = new EmeLibrary.uc_extentTemporal();
             this.panel4 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -195,12 +201,6 @@
             this.idInfo_citation_Title_lbl = new System.Windows.Forms.Label();
             this.idInfo_citation_Title = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.label4 = new System.Windows.Forms.Label();
-            this.idInfo_extent_temporalExtent = new EmeLibrary.uc_extentTemporal();
-            this.distributionInfo__MD_Distribution = new EmeLibrary.uc_distribution();
-            this.contact_CI_ResponsibleParty = new EmeLibrary.uc_ResponsibleParty();
-            this.idInfo_pointOfContact = new EmeLibrary.uc_ResponsibleParty();
-            this.idInfo_citation_citedResponsibleParty = new EmeLibrary.uc_ResponsibleParty();
             this.uc_ResponsibleParty2 = new EmeLibrary.uc_ResponsibleParty();
             this.uc_ResponsibleParty3 = new EmeLibrary.uc_ResponsibleParty();
             this.uc_ResponsibleParty4 = new EmeLibrary.uc_ResponsibleParty();
@@ -899,6 +899,16 @@
             this.tabPage5.Text = "Unsupported Elements";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(4, 13);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(580, 13);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "This tab is for testing purposes.  These elements are not edited by EME but will " +
+    "be merged back into the saved document.";
+            // 
             // elementsNotSupportedByEME
             // 
             this.elementsNotSupportedByEME.Location = new System.Drawing.Point(3, 35);
@@ -945,6 +955,18 @@
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
             this.flowLayoutPanel4.Size = new System.Drawing.Size(478, 561);
             this.flowLayoutPanel4.TabIndex = 42;
+            // 
+            // distributionInfo__MD_Distribution
+            // 
+            this.distributionInfo__MD_Distribution.AutoSize = true;
+            this.distributionInfo__MD_Distribution.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.distributionInfo__MD_Distribution.distributorList = null;
+            this.distributionInfo__MD_Distribution.Location = new System.Drawing.Point(0, 0);
+            this.distributionInfo__MD_Distribution.Margin = new System.Windows.Forms.Padding(0);
+            this.distributionInfo__MD_Distribution.mylabel = "Distributor";
+            this.distributionInfo__MD_Distribution.Name = "distributionInfo__MD_Distribution";
+            this.distributionInfo__MD_Distribution.Size = new System.Drawing.Size(454, 208);
+            this.distributionInfo__MD_Distribution.TabIndex = 0;
             // 
             // idInfo_resourceConstraints_gbx
             // 
@@ -1354,6 +1376,21 @@
             this.metadataAuthor_Pnl.Size = new System.Drawing.Size(451, 40);
             this.metadataAuthor_Pnl.TabIndex = 13;
             // 
+            // contact_CI_ResponsibleParty
+            // 
+            this.contact_CI_ResponsibleParty.BackColor = System.Drawing.Color.Transparent;
+            this.contact_CI_ResponsibleParty.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.contact_CI_ResponsibleParty.CI_ResponsiblePartyList = null;
+            this.contact_CI_ResponsibleParty.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contact_CI_ResponsibleParty.Location = new System.Drawing.Point(3, 2);
+            this.contact_CI_ResponsibleParty.mylabel = "Metadata Author";
+            this.contact_CI_ResponsibleParty.Name = "contact_CI_ResponsibleParty";
+            this.contact_CI_ResponsibleParty.rp_mode = "dist";
+            this.contact_CI_ResponsibleParty.Size = new System.Drawing.Size(445, 35);
+            this.contact_CI_ResponsibleParty.TabIndex = 0;
+            this.contact_CI_ResponsibleParty.Tag = "";
+            this.contact_CI_ResponsibleParty.Validating += new System.ComponentModel.CancelEventHandler(this.cntrl_Validating);
+            // 
             // pointOfContact_Pnl
             // 
             this.pointOfContact_Pnl.AutoSize = true;
@@ -1365,6 +1402,19 @@
             this.pointOfContact_Pnl.Size = new System.Drawing.Size(451, 40);
             this.pointOfContact_Pnl.TabIndex = 17;
             // 
+            // idInfo_pointOfContact
+            // 
+            this.idInfo_pointOfContact.BackColor = System.Drawing.Color.Transparent;
+            this.idInfo_pointOfContact.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.idInfo_pointOfContact.CI_ResponsiblePartyList = null;
+            this.idInfo_pointOfContact.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idInfo_pointOfContact.Location = new System.Drawing.Point(2, 2);
+            this.idInfo_pointOfContact.mylabel = "Resource Owner";
+            this.idInfo_pointOfContact.Name = "idInfo_pointOfContact";
+            this.idInfo_pointOfContact.rp_mode = null;
+            this.idInfo_pointOfContact.Size = new System.Drawing.Size(446, 35);
+            this.idInfo_pointOfContact.TabIndex = 2;
+            // 
             // Citation_Pnl
             // 
             this.Citation_Pnl.AutoSize = true;
@@ -1375,6 +1425,19 @@
             this.Citation_Pnl.Name = "Citation_Pnl";
             this.Citation_Pnl.Size = new System.Drawing.Size(451, 41);
             this.Citation_Pnl.TabIndex = 16;
+            // 
+            // idInfo_citation_citedResponsibleParty
+            // 
+            this.idInfo_citation_citedResponsibleParty.BackColor = System.Drawing.Color.Transparent;
+            this.idInfo_citation_citedResponsibleParty.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.idInfo_citation_citedResponsibleParty.CI_ResponsiblePartyList = null;
+            this.idInfo_citation_citedResponsibleParty.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idInfo_citation_citedResponsibleParty.Location = new System.Drawing.Point(2, 3);
+            this.idInfo_citation_citedResponsibleParty.mylabel = "Resource Producer";
+            this.idInfo_citation_citedResponsibleParty.Name = "idInfo_citation_citedResponsibleParty";
+            this.idInfo_citation_citedResponsibleParty.rp_mode = null;
+            this.idInfo_citation_citedResponsibleParty.Size = new System.Drawing.Size(446, 35);
+            this.idInfo_citation_citedResponsibleParty.TabIndex = 2;
             // 
             // groupBox3
             // 
@@ -1802,6 +1865,20 @@
             this.idInfo_resourceMaintenance.Size = new System.Drawing.Size(134, 21);
             this.idInfo_resourceMaintenance.TabIndex = 57;
             // 
+            // idInfo_extent_temporalExtent
+            // 
+            this.idInfo_extent_temporalExtent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.idInfo_extent_temporalExtent.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idInfo_extent_temporalExtent.Location = new System.Drawing.Point(37, 24);
+            this.idInfo_extent_temporalExtent.Name = "idInfo_extent_temporalExtent";
+            this.idInfo_extent_temporalExtent.Size = new System.Drawing.Size(313, 174);
+            this.idInfo_extent_temporalExtent.TabIndex = 51;
+            temporalElement__EX_TemporalExtent1.TimeInstant = null;
+            temporalElement__EX_TemporalExtent1.TimePeriod = null;
+            this.idInfo_extent_temporalExtent.temporalElement = temporalElement__EX_TemporalExtent1;
+            this.idInfo_extent_temporalExtent.Load += new System.EventHandler(this.idInfo_extent_temporalExtent_Load);
+            this.idInfo_extent_temporalExtent.Validating += new System.ComponentModel.CancelEventHandler(this.cntrl_Validating);
+            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
@@ -2187,83 +2264,6 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1003, 613);
             this.tabControl1.TabIndex = 2;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(4, 13);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(580, 13);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "This tab is for testing purposes.  These elements are not edited by EME but will " +
-    "be merged back into the saved document.";
-            // 
-            // idInfo_extent_temporalExtent
-            // 
-            this.idInfo_extent_temporalExtent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.idInfo_extent_temporalExtent.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idInfo_extent_temporalExtent.Location = new System.Drawing.Point(37, 24);
-            this.idInfo_extent_temporalExtent.Name = "idInfo_extent_temporalExtent";
-            this.idInfo_extent_temporalExtent.Size = new System.Drawing.Size(313, 174);
-            this.idInfo_extent_temporalExtent.TabIndex = 51;
-            temporalElement__EX_TemporalExtent1.TimeInstant = null;
-            temporalElement__EX_TemporalExtent1.TimePeriod = null;
-            this.idInfo_extent_temporalExtent.temporalElement = temporalElement__EX_TemporalExtent1;
-            this.idInfo_extent_temporalExtent.Load += new System.EventHandler(this.idInfo_extent_temporalExtent_Load);
-            this.idInfo_extent_temporalExtent.Validating += new System.ComponentModel.CancelEventHandler(this.cntrl_Validating);
-            // 
-            // distributionInfo__MD_Distribution
-            // 
-            this.distributionInfo__MD_Distribution.AutoSize = true;
-            this.distributionInfo__MD_Distribution.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.distributionInfo__MD_Distribution.distributorList = null;
-            this.distributionInfo__MD_Distribution.Location = new System.Drawing.Point(0, 0);
-            this.distributionInfo__MD_Distribution.Margin = new System.Windows.Forms.Padding(0);
-            this.distributionInfo__MD_Distribution.mylabel = "Distributor";
-            this.distributionInfo__MD_Distribution.Name = "distributionInfo__MD_Distribution";
-            this.distributionInfo__MD_Distribution.Size = new System.Drawing.Size(454, 208);
-            this.distributionInfo__MD_Distribution.TabIndex = 0;
-            // 
-            // contact_CI_ResponsibleParty
-            // 
-            this.contact_CI_ResponsibleParty.BackColor = System.Drawing.Color.Transparent;
-            this.contact_CI_ResponsibleParty.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.contact_CI_ResponsibleParty.CI_ResponsiblePartyList = null;
-            this.contact_CI_ResponsibleParty.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.contact_CI_ResponsibleParty.Location = new System.Drawing.Point(3, 2);
-            this.contact_CI_ResponsibleParty.mylabel = "Metadata Author";
-            this.contact_CI_ResponsibleParty.Name = "contact_CI_ResponsibleParty";
-            this.contact_CI_ResponsibleParty.rp_mode = "dist";
-            this.contact_CI_ResponsibleParty.Size = new System.Drawing.Size(445, 35);
-            this.contact_CI_ResponsibleParty.TabIndex = 0;
-            this.contact_CI_ResponsibleParty.Tag = "";
-            this.contact_CI_ResponsibleParty.Validating += new System.ComponentModel.CancelEventHandler(this.cntrl_Validating);
-            // 
-            // idInfo_pointOfContact
-            // 
-            this.idInfo_pointOfContact.BackColor = System.Drawing.Color.Transparent;
-            this.idInfo_pointOfContact.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.idInfo_pointOfContact.CI_ResponsiblePartyList = null;
-            this.idInfo_pointOfContact.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idInfo_pointOfContact.Location = new System.Drawing.Point(2, 2);
-            this.idInfo_pointOfContact.mylabel = "Resource Owner";
-            this.idInfo_pointOfContact.Name = "idInfo_pointOfContact";
-            this.idInfo_pointOfContact.rp_mode = null;
-            this.idInfo_pointOfContact.Size = new System.Drawing.Size(446, 35);
-            this.idInfo_pointOfContact.TabIndex = 2;
-            // 
-            // idInfo_citation_citedResponsibleParty
-            // 
-            this.idInfo_citation_citedResponsibleParty.BackColor = System.Drawing.Color.Transparent;
-            this.idInfo_citation_citedResponsibleParty.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.idInfo_citation_citedResponsibleParty.CI_ResponsiblePartyList = null;
-            this.idInfo_citation_citedResponsibleParty.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idInfo_citation_citedResponsibleParty.Location = new System.Drawing.Point(2, 3);
-            this.idInfo_citation_citedResponsibleParty.mylabel = "Resource Producer";
-            this.idInfo_citation_citedResponsibleParty.Name = "idInfo_citation_citedResponsibleParty";
-            this.idInfo_citation_citedResponsibleParty.rp_mode = null;
-            this.idInfo_citation_citedResponsibleParty.Size = new System.Drawing.Size(446, 35);
-            this.idInfo_citation_citedResponsibleParty.TabIndex = 2;
             // 
             // uc_ResponsibleParty2
             // 

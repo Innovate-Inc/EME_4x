@@ -213,6 +213,7 @@ namespace EmeLibrary
         {
             openFileDialog1.Filter = "XML Metadata (*.XML)|*.XML";
             openFileDialog1.Title = "Select a metadata record";
+            openFileDialog1.FileName = "Select a file";
             openFileDialog1.Multiselect = false;
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
@@ -696,8 +697,8 @@ namespace EmeLibrary
 
         private void saveXmlChanges()
         {
-            //try
-            //{
+            try
+            {
                 PageController.PageSaver(this);
                 
                 sourceXmlFormat = toolStripComboBox1.SelectedItem.ToString();                
@@ -722,11 +723,11 @@ namespace EmeLibrary
                 toolStripStatusLabel1.Text = "Editing File: " + filename;
 
                 MessageBox.Show("Saved: " + filename);
-            //}
-            //catch (Exception e)
-            //{
-            //    MessageBox.Show("Error Saving Record " + e.Message);
-            //}
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error Saving Record " + e.Message);
+            }
         }
 
         private string saveWithThisFileName()
@@ -1334,9 +1335,6 @@ namespace EmeLibrary
             //    validate_Controls(c);
             //}
         }
-
-        
-                            
                 
 
     }
