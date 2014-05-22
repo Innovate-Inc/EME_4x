@@ -13,14 +13,14 @@ using System.Windows.Forms;
 
 namespace ArcCatalogAddinEme4Tools
 {
-    public class Button1 : ESRI.ArcGIS.Desktop.AddIns.Button
+    public class EditIsoMetadata : ESRI.ArcGIS.Desktop.AddIns.Button
     {
         private XmlDocument esriXmlDoc = new XmlDocument();
         private IMetadata gxMetadata;
         private string esriXmlString;
         private string gxName;
 
-        public Button1()
+        public EditIsoMetadata()
         {
         }
 
