@@ -194,8 +194,8 @@
             this.idInfo_Abstract_lbl = new System.Windows.Forms.Label();
             this.idInfo_citation_Title_lbl = new System.Windows.Forms.Label();
             this.idInfo_citation_Title = new System.Windows.Forms.TextBox();
-            this.citationGrp_Pnl = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.label4 = new System.Windows.Forms.Label();
             this.idInfo_extent_temporalExtent = new EmeLibrary.uc_extentTemporal();
             this.distributionInfo__MD_Distribution = new EmeLibrary.uc_distribution();
             this.contact_CI_ResponsibleParty = new EmeLibrary.uc_ResponsibleParty();
@@ -259,9 +259,10 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 700);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 670);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(994, 22);
+            this.statusStrip1.SizingGrip = false;
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -282,7 +283,7 @@
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.panel8.Controls.Add(this.label7);
-            this.panel8.Location = new System.Drawing.Point(15, 665);
+            this.panel8.Location = new System.Drawing.Point(15, 638);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(68, 27);
             this.panel8.TabIndex = 4;
@@ -300,7 +301,7 @@
             // 
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.panel9.Controls.Add(this.label8);
-            this.panel9.Location = new System.Drawing.Point(89, 665);
+            this.panel9.Location = new System.Drawing.Point(89, 638);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(130, 27);
             this.panel9.TabIndex = 37;
@@ -318,7 +319,7 @@
             // 
             this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.panel10.Controls.Add(this.label9);
-            this.panel10.Location = new System.Drawing.Point(225, 665);
+            this.panel10.Location = new System.Drawing.Point(225, 638);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(58, 27);
             this.panel10.TabIndex = 38;
@@ -689,7 +690,7 @@
             this.tabPage6.Controls.Add(this.label3);
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(987, 605);
+            this.tabPage6.Size = new System.Drawing.Size(995, 587);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Testing Page Also";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -766,7 +767,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(987, 605);
+            this.tabPage4.Size = new System.Drawing.Size(995, 587);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Testing Area";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -889,22 +890,23 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.label4);
             this.tabPage5.Controls.Add(this.elementsNotSupportedByEME);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(987, 605);
+            this.tabPage5.Size = new System.Drawing.Size(995, 587);
             this.tabPage5.TabIndex = 6;
             this.tabPage5.Text = "Unsupported Elements";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
             // elementsNotSupportedByEME
             // 
-            this.elementsNotSupportedByEME.Location = new System.Drawing.Point(3, 22);
+            this.elementsNotSupportedByEME.Location = new System.Drawing.Point(3, 35);
             this.elementsNotSupportedByEME.Multiline = true;
             this.elementsNotSupportedByEME.Name = "elementsNotSupportedByEME";
             this.elementsNotSupportedByEME.ReadOnly = true;
             this.elementsNotSupportedByEME.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.elementsNotSupportedByEME.Size = new System.Drawing.Size(978, 579);
+            this.elementsNotSupportedByEME.Size = new System.Drawing.Size(978, 549);
             this.elementsNotSupportedByEME.TabIndex = 0;
             this.elementsNotSupportedByEME.WordWrap = false;
             // 
@@ -914,34 +916,34 @@
             this.tabPage3.Controls.Add(this.distributionInformation_gbx);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(987, 605);
+            this.tabPage3.Size = new System.Drawing.Size(995, 587);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Distribution & Metadata Information";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // distributionInformation_gbx
             // 
-            this.distributionInformation_gbx.AutoSize = true;
             this.distributionInformation_gbx.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.distributionInformation_gbx.Controls.Add(this.flowLayoutPanel4);
             this.distributionInformation_gbx.Controls.Add(this.flowLayoutPanel6);
-            this.distributionInformation_gbx.Location = new System.Drawing.Point(3, 7);
+            this.distributionInformation_gbx.Location = new System.Drawing.Point(1, 7);
+            this.distributionInformation_gbx.Margin = new System.Windows.Forms.Padding(0);
             this.distributionInformation_gbx.Name = "distributionInformation_gbx";
-            this.distributionInformation_gbx.Size = new System.Drawing.Size(962, 589);
+            this.distributionInformation_gbx.Size = new System.Drawing.Size(983, 576);
             this.distributionInformation_gbx.TabIndex = 39;
             this.distributionInformation_gbx.TabStop = false;
             this.distributionInformation_gbx.Enter += new System.EventHandler(this.distributionInformation_gbx_Enter);
             // 
             // flowLayoutPanel4
             // 
-            this.flowLayoutPanel4.AutoSize = true;
+            this.flowLayoutPanel4.AutoScroll = true;
             this.flowLayoutPanel4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flowLayoutPanel4.Controls.Add(this.distributionInfo__MD_Distribution);
             this.flowLayoutPanel4.Controls.Add(this.idInfo_resourceConstraints_gbx);
-            this.flowLayoutPanel4.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(8, 9);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(2, 9);
+            this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(457, 561);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(478, 561);
             this.flowLayoutPanel4.TabIndex = 42;
             // 
             // idInfo_resourceConstraints_gbx
@@ -1305,13 +1307,13 @@
             // flowLayoutPanel6
             // 
             this.flowLayoutPanel6.AutoScroll = true;
-            this.flowLayoutPanel6.AutoSize = true;
             this.flowLayoutPanel6.Controls.Add(this.groupBox8);
             this.flowLayoutPanel6.Controls.Add(this.groupBox3);
             this.flowLayoutPanel6.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel6.Location = new System.Drawing.Point(478, 15);
+            this.flowLayoutPanel6.Location = new System.Drawing.Point(480, 15);
+            this.flowLayoutPanel6.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.flowLayoutPanel6.Name = "flowLayoutPanel6";
-            this.flowLayoutPanel6.Size = new System.Drawing.Size(478, 461);
+            this.flowLayoutPanel6.Size = new System.Drawing.Size(495, 555);
             this.flowLayoutPanel6.TabIndex = 41;
             this.flowLayoutPanel6.WrapContents = false;
             // 
@@ -1595,7 +1597,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(987, 605);
+            this.tabPage1.Size = new System.Drawing.Size(995, 587);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Basic Data Information";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -1800,20 +1802,6 @@
             this.idInfo_resourceMaintenance.Size = new System.Drawing.Size(134, 21);
             this.idInfo_resourceMaintenance.TabIndex = 57;
             // 
-            // idInfo_extent_temporalExtent
-            // 
-            this.idInfo_extent_temporalExtent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.idInfo_extent_temporalExtent.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idInfo_extent_temporalExtent.Location = new System.Drawing.Point(37, 24);
-            this.idInfo_extent_temporalExtent.Name = "idInfo_extent_temporalExtent";
-            this.idInfo_extent_temporalExtent.Size = new System.Drawing.Size(313, 174);
-            this.idInfo_extent_temporalExtent.TabIndex = 51;
-            temporalElement__EX_TemporalExtent1.TimeInstant = null;
-            temporalElement__EX_TemporalExtent1.TimePeriod = null;
-            this.idInfo_extent_temporalExtent.temporalElement = temporalElement__EX_TemporalExtent1;
-            this.idInfo_extent_temporalExtent.Load += new System.EventHandler(this.idInfo_extent_temporalExtent_Load);
-            this.idInfo_extent_temporalExtent.Validating += new System.ComponentModel.CancelEventHandler(this.cntrl_Validating);
-            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
@@ -1827,17 +1815,15 @@
             this.flowLayoutPanel2.AutoSize = true;
             this.flowLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flowLayoutPanel2.Controls.Add(this.groupBox4);
-            this.flowLayoutPanel2.Controls.Add(this.citationGrp_Pnl);
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 7);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(549, 520);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(549, 496);
             this.flowLayoutPanel2.TabIndex = 36;
             this.flowLayoutPanel2.WrapContents = false;
             // 
             // groupBox4
             // 
-            this.groupBox4.AutoSize = true;
             this.groupBox4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBox4.Controls.Add(this.panel1);
             this.groupBox4.Controls.Add(this.groupBox1);
@@ -1845,7 +1831,7 @@
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.Location = new System.Drawing.Point(3, 3);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(543, 506);
+            this.groupBox4.Size = new System.Drawing.Size(543, 490);
             this.groupBox4.TabIndex = 37;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Description";
@@ -2189,17 +2175,6 @@
             this.idInfo_citation_Title.Tag = "";
             this.idInfo_citation_Title.Validating += new System.ComponentModel.CancelEventHandler(this.cntrl_Validating);
             // 
-            // citationGrp_Pnl
-            // 
-            this.citationGrp_Pnl.AutoSize = true;
-            this.citationGrp_Pnl.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.citationGrp_Pnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.citationGrp_Pnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.citationGrp_Pnl.Location = new System.Drawing.Point(3, 515);
-            this.citationGrp_Pnl.Name = "citationGrp_Pnl";
-            this.citationGrp_Pnl.Size = new System.Drawing.Size(2, 2);
-            this.citationGrp_Pnl.TabIndex = 1;
-            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
@@ -2207,11 +2182,21 @@
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage6);
-            this.tabControl1.Location = new System.Drawing.Point(-3, 28);
+            this.tabControl1.Location = new System.Drawing.Point(-3, 23);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(995, 631);
+            this.tabControl1.Size = new System.Drawing.Size(1003, 613);
             this.tabControl1.TabIndex = 2;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(4, 13);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(580, 13);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "This tab is for testing purposes.  These elements are not edited by EME but will " +
+    "be merged back into the saved document.";
             // 
             // idInfo_extent_temporalExtent
             // 
@@ -2350,16 +2335,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(994, 722);
-            this.Controls.Add(this.panel10);
+            this.ClientSize = new System.Drawing.Size(994, 692);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.panel9);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.panel8);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.panel10);
+            this.Controls.Add(this.panel9);
+            this.Controls.Add(this.panel8);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "EmeLT";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "<EME 4.0 Beta/>";
             this.Load += new System.EventHandler(this.EmeLT_Load);
             this.Resize += new System.EventHandler(this.EmeLT_Resize);
@@ -2384,9 +2371,7 @@
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
             this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
             this.distributionInformation_gbx.ResumeLayout(false);
-            this.distributionInformation_gbx.PerformLayout();
             this.flowLayoutPanel4.ResumeLayout(false);
             this.flowLayoutPanel4.PerformLayout();
             this.idInfo_resourceConstraints_gbx.ResumeLayout(false);
@@ -2424,7 +2409,6 @@
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
-            this.flowLayoutPanel2.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -2542,7 +2526,6 @@
         internal System.Windows.Forms.Button idinfo_keywords_place_placekt__None___placekey_____default;
         internal System.Windows.Forms.LinkLabel idinfo_keywords_place_placekt__None___placekey_____help;
         internal System.Windows.Forms.ListBox idInfo_keywordsPlace;
-        private System.Windows.Forms.Panel citationGrp_Pnl;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.GroupBox distributionInformation_gbx;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
@@ -2624,5 +2607,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ToolStripMenuItem validationToolStripMenuItem;
         private System.Windows.Forms.ToolStripComboBox toolStripCboValidationType;
+        private System.Windows.Forms.Label label4;
     }
 }

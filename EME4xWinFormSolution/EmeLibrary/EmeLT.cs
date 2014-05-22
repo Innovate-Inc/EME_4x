@@ -36,7 +36,7 @@ namespace EmeLibrary
         public EmeLT()
         {
             InitializeComponent();
-
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             //MessageBox.Show("FormDir: " + Directory.GetCurrentDirectory());
 
 
@@ -144,25 +144,16 @@ namespace EmeLibrary
         }
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //When the form loads, maybe the tabs should be grey'd out until something happens, like opening an existing file, or creating a new record.
-            //Kind of like with MS Word, New...
-
-            //New Clicked, wire up page events, like when a file is open.
-            //1)
-            //2)
-            //3)
-
-            //EME3x does have a tool to bind all the form controls to default settings.
-
+            
             Utils1.setEmeDataSets();
-            //bindFormtoEMEdatabases();
             xDoc = new XmlDocument();
             //Format picker... default should be -2
-            sourceXmlFormat = "ISO19115-2"; //  sourceXmlFormat ="ISO19115"
+            sourceXmlFormat = sourceXmlFormat = "ISO19115"; //"ISO19115-2"; //  sourceXmlFormat ="ISO19115"
             //xDox Set when checking the metadata format
             filename = "New";
             //localXdoc = new isoNodes(xDoc, sourceXmlFormat, filename);
             bindCCMFields();
+            toolStripStatusLabel1.Text = "New Record Created.  Please provide a name when saving.";
 
             frmctrls(this.Controls); //validation
             foreach (Control c in this.Controls)
@@ -239,7 +230,7 @@ namespace EmeLibrary
                     {
                         validate_Controls(c);
                     }
-                    toolStripStatusLabel1.Text = "Opened File: " + filename;                    
+                    toolStripStatusLabel1.Text = "Editing File: " + filename;                    
                 }
                 else
                 {
@@ -705,15 +696,37 @@ namespace EmeLibrary
 
         private void saveXmlChanges()
         {
-            PageController.PageSaver(this);
+            //try
+            //{
+                PageController.PageSaver(this);
+                
+                sourceXmlFormat = toolStripComboBox1.SelectedItem.ToString();                
+                XmlDocument xmlDocToSave = localXdoc.saveChangestoRecord(sourceXmlFormat);
+                xmlDocToSave.PreserveWhitespace = false;
+                XmlTextWriter xw = new XmlTextWriter(filename, new UTF8Encoding(false));
+                xw.Formatting = Formatting.Indented;
+                xmlDocToSave.Save(xw);
+                xw.Close();//release from Memmory
 
-            string outPutFormat = toolStripComboBox1.SelectedItem.ToString();
-            XmlDocument xmlDocToSave = localXdoc.saveChangestoRecord(outPutFormat);
-            xmlDocToSave.PreserveWhitespace = false;
-            XmlTextWriter xw = new XmlTextWriter(filename, new UTF8Encoding(false));
-            xw.Formatting = Formatting.Indented;
-            xmlDocToSave.Save(xw);
-            MessageBox.Show("Saved: " + filename);
+                //reload the file back into the form
+
+                xDoc.Load(filename);                
+                Utils1.setEmeDataSets();
+                bindCCMFields();
+
+                frmctrls(this.Controls); //validation
+                foreach (Control c in this.Controls)
+                {
+                    validate_Controls(c);
+                }
+                toolStripStatusLabel1.Text = "Editing File: " + filename;
+
+                MessageBox.Show("Saved: " + filename);
+            //}
+            //catch (Exception e)
+            //{
+            //    MessageBox.Show("Error Saving Record " + e.Message);
+            //}
         }
 
         private string saveWithThisFileName()
@@ -809,6 +822,7 @@ namespace EmeLibrary
             }
             else
             {
+                //ESRI Mode
                 PageController.PageSaver(this);
 
                 string outPutFormat = toolStripComboBox1.SelectedItem.ToString();
@@ -832,6 +846,7 @@ namespace EmeLibrary
             {
                 filename = newFileName;
                 saveXmlChanges();
+                //toolStripStatusLabel1.Text = "Editing File: " + filename;
             }
             else
             {

@@ -310,6 +310,8 @@ namespace EmeLibrary
             xw.Formatting = Formatting.Indented;
             xdoc.WriteTo(xw);
             string xdocCopy = sw.ToString();
+            sw.Close();
+            xw.Close();
             inboundMetadataRecordSkippedElements = new XmlDocument();
             if (!string.IsNullOrEmpty(xdocCopy))
             {
@@ -593,12 +595,17 @@ namespace EmeLibrary
                 //set the private backing field directly in the method since this object only occurs in this section.
                 returnMD_DistributionSection();
                 //Console.WriteLine("done");
-
-                StringWriter sw2 = new StringWriter();
-                XmlTextWriter xw2 = new XmlTextWriter(sw2);
-                xw2.Formatting = Formatting.Indented;
-                inboundMetadataRecordSkippedElements.WriteTo(xw2);
-                _inboundMetadataRecordSkippedElementsXmlString = sw2.ToString();
+                XmlNodeList skippedElementCount = inboundMetadataRecordSkippedElements.DocumentElement.ChildNodes;
+                if (skippedElementCount.Count > 0)
+                {
+                    StringWriter sw2 = new StringWriter();
+                    XmlTextWriter xw2 = new XmlTextWriter(sw2);
+                    xw2.Formatting = Formatting.Indented;
+                    inboundMetadataRecordSkippedElements.WriteTo(xw2);
+                    _inboundMetadataRecordSkippedElementsXmlString = sw2.ToString();
+                    sw2.Close();
+                    xw2.Close();
+                }
 
             }
 
@@ -1006,7 +1013,7 @@ namespace EmeLibrary
             }
             
             constructMI_MetadataMarkUp();
-
+            
             return outboundMetadataRecord;
             //outboundMetadataRecord.Save(@"C:\Users\dspinosa\Desktop\testMetadata\DCAT\testCommonCoreRecordFromGeoportal-2vJUNK.xml");
             //outboundMetadataRecord.Save(           
