@@ -85,6 +85,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Config.esriaddinx</DependentUpon>
     </Compile>
+    <Compile Include="ExportMetadata.cs" />
     <Compile Include="ImportMetadata.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -98,7 +99,7 @@
     <AddInContent Include="Images\ArcCatalogAddinEme4Tools.png" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Button1.cs" />
+    <Compile Include="EditIsoMetadata.cs" />
     <AddInContent Include="Images\Button1.png" />
   </ItemGroup>
   <ItemGroup>
@@ -137,6 +138,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Debug\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\EmeIconv2.PNG" />
+    <Content Include="Images\export.png" />
+    <AddInContent Include="Images\ExportMetadata.png" />
+    <Content Include="Images\import24.png" />
+    <Content Include="Images\MetadataEdit16.png" />
   </ItemGroup>
   <PropertyGroup>
     <ZipFileExtension>esriAddIn</ZipFileExtension>

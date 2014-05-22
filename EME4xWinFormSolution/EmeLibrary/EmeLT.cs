@@ -182,6 +182,12 @@ namespace EmeLibrary
                     bindCCMFields();
                     toolStripStatusLabel1.Text = "Opened File: " + filename;                    
                     this.Show();
+                    
+                    frmctrls(this.Controls); //validation
+                    foreach (Control c in this.Controls)
+                    {
+                        validate_Controls(c);
+                    }
 
                 }
                 else if (isoRootNode.ToLower() == "gmd:md_metadata")
@@ -193,6 +199,12 @@ namespace EmeLibrary
                     bindCCMFields();
                     toolStripStatusLabel1.Text = "Opened File: " + filename;                    
                     this.Show();
+
+                    frmctrls(this.Controls); //validation
+                    foreach (Control c in this.Controls)
+                    {
+                        validate_Controls(c);
+                    }
                 }
                 else
                 {
