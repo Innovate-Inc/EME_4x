@@ -57,6 +57,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_63CA9DFDB9164439A829AFADE43DE9C4"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_7882BFCFD23C4B3AB0C58E882853C9DD"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -195,6 +201,19 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.0,Profile=Client"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4 Client Profile (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.0,Profile=Client"
+                    }
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Windows.Installer.3.1"
+                    {
+                    "Name" = "8:Windows Installer 3.1"
+                    "ProductCode" = "8:Microsoft.Windows.Installer.3.1"
+                    }
+                }
             }
         }
     }
@@ -362,6 +381,26 @@
             "TargetName" = "8:DistributionLiability.xml"
             "Tag" = "8:"
             "Folder" = "8:_DB8F238C472A4B459F2F4CDAA163B28F"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_63CA9DFDB9164439A829AFADE43DE9C4"
+            {
+            "SourcePath" = "8:..\\EmeLibrary\\Resources\\Eme4xv2.ico"
+            "TargetName" = "8:Eme4xv2.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_5728161856E14ACDB7707CE5E1D38EF3"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -743,7 +782,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:EPA Metadata Editor v4.0 Beta"
         "ProductCode" = "8:{9D299FD9-3F18-45BE-9783-236BD995E785}"
-        "PackageCode" = "8:{80B7DC0B-E717-4E49-BC39-F545400F4528}"
+        "PackageCode" = "8:{76C7A6EA-772A-4DDE-B7BB-7DF42922B129}"
         "UpgradeCode" = "8:{EFE50942-63DD-4CA2-9EA0-74A9CD61A9D5}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -874,7 +913,21 @@
             "Target" = "8:_BDAE7C08E8E14EADAB8DD8AD8CA0C293"
             "Folder" = "8:_57F78B8651FF45FE9AE2EFC68B5D77EC"
             "WorkingFolder" = "8:_5728161856E14ACDB7707CE5E1D38EF3"
-            "Icon" = "8:"
+            "Icon" = "8:_63CA9DFDB9164439A829AFADE43DE9C4"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_A3172AEC25ED4B08966FDEBB6383BCEA"
+            {
+            "Name" = "8:EPA Metadata Editor v4.0 Beta"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_BDAE7C08E8E14EADAB8DD8AD8CA0C293"
+            "Folder" = "8:_4A3AD5E306E94D69972C7E679F82CE4D"
+            "WorkingFolder" = "8:_5728161856E14ACDB7707CE5E1D38EF3"
+            "Icon" = "8:_63CA9DFDB9164439A829AFADE43DE9C4"
             "Feature" = "8:"
             }
         }
