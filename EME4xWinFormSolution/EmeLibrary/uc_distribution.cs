@@ -136,8 +136,9 @@ namespace EmeLibrary
             
             //ds
             distributor_Contact.adjustRPControl(_distributorList.Count);
-
+            
         }
+
 
         /// <summary>
         /// This methon is an event fired when the user clicks on the add distributor button
@@ -178,7 +179,7 @@ namespace EmeLibrary
             //Bind new distributor to controls
             bind_MD_Dist_Field(_distributorList[_distributorList_idx]);
             distributor_gbx.Enabled = true;
-            
+           
             //distributor_Contact.Tag = "required";
             //val_Distribution_frmControls(this.Controls);
         }

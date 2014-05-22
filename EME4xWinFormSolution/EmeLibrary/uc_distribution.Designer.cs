@@ -1185,7 +1185,7 @@
             this.distributor_Contact.CI_ResponsiblePartyList = null;
             this.distributor_Contact.Location = new System.Drawing.Point(0, 0);
             this.distributor_Contact.Margin = new System.Windows.Forms.Padding(0);
-            this.distributor_Contact.mylabel = "Contact";
+            this.distributor_Contact.mylabel = "Contact (Required)";
             this.distributor_Contact.Name = "distributor_Contact";
             this.distributor_Contact.rp_mode = "distribution";
             this.distributor_Contact.Size = new System.Drawing.Size(439, 35);

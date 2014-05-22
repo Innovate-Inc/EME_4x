@@ -585,7 +585,9 @@ namespace EmeLibrary
                     {
                         if (_incomingRPList == null || _incomingRPList.Count == 0)
                         {
+                            
                             errorProvider_RP.SetError(this.uc_ResponsibleParty_lbl, "Need at least 1");
+                            
                         }
                         else
                         {
