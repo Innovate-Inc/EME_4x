@@ -65,6 +65,7 @@
             this.offLine__MD_Medium__densityUnits_txt = new System.Windows.Forms.TextBox();
             this.offLine__MD_Medium__density__Real_txt = new System.Windows.Forms.TextBox();
             this.offLine__MD_Medium__name_txt = new System.Windows.Forms.TextBox();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.CI_OnlineResource = new System.Windows.Forms.GroupBox();
             this.onLine__CI_OnlineResource__applicationProfile_lbl = new System.Windows.Forms.Label();
             this.onLine__CI_OnlineResource__linkage__URL_lbl = new System.Windows.Forms.Label();
@@ -79,6 +80,8 @@
             this.onLine__CI_OnlineResource__protocol_lbl = new System.Windows.Forms.Label();
             this.onLine__CI_OnlineResource__function_txt = new System.Windows.Forms.ComboBox();
             this.onLine__CI_OnlineResource__name_lbl = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.md_digitalTransferOptions_transferSize_lbl = new System.Windows.Forms.Label();
             this.md_digitalTransferOptions_UnitsOfDistribution_lbl = new System.Windows.Forms.Label();
@@ -123,9 +126,6 @@
             this.MD_Dist = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.errorProvider_Distribution = new System.Windows.Forms.ErrorProvider(this.components);
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
             this.distributor_Contact = new EmeLibrary.uc_ResponsibleParty();
             this.MD_Format_pnl.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -517,6 +517,14 @@
             this.offLine__MD_Medium__name_txt.Size = new System.Drawing.Size(279, 20);
             this.offLine__MD_Medium__name_txt.TabIndex = 0;
             // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.panel8.Location = new System.Drawing.Point(12, 17);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(399, 162);
+            this.panel8.TabIndex = 12;
+            // 
             // CI_OnlineResource
             // 
             this.CI_OnlineResource.BackColor = System.Drawing.Color.Transparent;
@@ -664,6 +672,22 @@
             this.onLine__CI_OnlineResource__name_lbl.Size = new System.Drawing.Size(35, 13);
             this.onLine__CI_OnlineResource__name_lbl.TabIndex = 8;
             this.onLine__CI_OnlineResource__name_lbl.Text = "Name";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.panel3.Location = new System.Drawing.Point(12, 53);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(399, 143);
+            this.panel3.TabIndex = 17;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.panel7.Location = new System.Drawing.Point(11, 13);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(400, 32);
+            this.panel7.TabIndex = 18;
             // 
             // panel6
             // 
@@ -1154,30 +1178,6 @@
             // errorProvider_Distribution
             // 
             this.errorProvider_Distribution.ContainerControl = this;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.panel3.Location = new System.Drawing.Point(12, 53);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(399, 143);
-            this.panel3.TabIndex = 17;
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.panel7.Location = new System.Drawing.Point(11, 13);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(400, 32);
-            this.panel7.TabIndex = 18;
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.panel8.Location = new System.Drawing.Point(12, 17);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(399, 162);
-            this.panel8.TabIndex = 12;
             // 
             // distributor_Contact
             // 
