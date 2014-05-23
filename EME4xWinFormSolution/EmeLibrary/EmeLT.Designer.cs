@@ -1835,7 +1835,7 @@
             // 
             this.idInfo_resourceMaintenance_lbl.AutoSize = true;
             this.idInfo_resourceMaintenance_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idInfo_resourceMaintenance_lbl.Location = new System.Drawing.Point(227, 61);
+            this.idInfo_resourceMaintenance_lbl.Location = new System.Drawing.Point(225, 61);
             this.idInfo_resourceMaintenance_lbl.Name = "idInfo_resourceMaintenance_lbl";
             this.idInfo_resourceMaintenance_lbl.Size = new System.Drawing.Size(146, 26);
             this.idInfo_resourceMaintenance_lbl.TabIndex = 56;
@@ -1860,7 +1860,7 @@
             "irregular",
             "notPlanned",
             "unknown"});
-            this.idInfo_resourceMaintenance.Location = new System.Drawing.Point(230, 93);
+            this.idInfo_resourceMaintenance.Location = new System.Drawing.Point(228, 93);
             this.idInfo_resourceMaintenance.Name = "idInfo_resourceMaintenance";
             this.idInfo_resourceMaintenance.Size = new System.Drawing.Size(134, 21);
             this.idInfo_resourceMaintenance.TabIndex = 57;

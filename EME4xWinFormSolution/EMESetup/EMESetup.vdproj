@@ -782,7 +782,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:EPA Metadata Editor v4.0 Beta"
         "ProductCode" = "8:{9D299FD9-3F18-45BE-9783-236BD995E785}"
-        "PackageCode" = "8:{76C7A6EA-772A-4DDE-B7BB-7DF42922B129}"
+        "PackageCode" = "8:{195245A9-DD41-4B90-9979-E30D6AAC5772}"
         "UpgradeCode" = "8:{EFE50942-63DD-4CA2-9EA0-74A9CD61A9D5}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"

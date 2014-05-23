@@ -13,20 +13,20 @@ using System.Windows.Forms;
 
 namespace ArcCatalogAddinEme4Tools
 {
-    public class EditIsoMetadata : ESRI.ArcGIS.Desktop.AddIns.Button
+    public class EditIsoMetadata2 : ESRI.ArcGIS.Desktop.AddIns.Button
     {
         private XmlDocument esriXmlDoc = new XmlDocument();
         private IMetadata gxMetadata;
         private string esriXmlString;
         private string gxName;
 
-        public EditIsoMetadata()
+        public EditIsoMetadata2()
         {
         }
 
         protected override void OnClick()
         {
-            //MessageBobutx.Show("Clicked");
+            //MessageBox.Show("Clicked");
             //MessageBox.Show("Addin: " + Directory.GetCurrentDirectory());
             try
             {
@@ -94,7 +94,7 @@ namespace ArcCatalogAddinEme4Tools
             catch (Exception ex)
             {
                 MessageBox.Show("Error Saving Metadata for " + gxName);
-            }
+            }           
 
         }
     }
