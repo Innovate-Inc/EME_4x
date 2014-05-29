@@ -43,6 +43,7 @@ namespace EmeLibrary
             toolStripComboBox1.SelectedIndex = 0;
             toolStripCboValidationType.SelectedIndex = 0;
             validationSetting = toolStripCboValidationType.SelectedItem.ToString();
+            
             //Start instance of the eme dataset
             //if (Utils1.emeDataSet == null)
             //{
