@@ -1011,6 +1011,11 @@ namespace EmeLibrary
                 paneltoExpand.Height = 530;
             }
         }
+
+        private void EmeLT_Resize(object sender, EventArgs e)
+        {
+            
+        }
                 
 
         /// <summary>
