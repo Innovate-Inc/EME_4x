@@ -122,11 +122,11 @@
             this.pgD_MD_Dist_btn = new System.Windows.Forms.Button();
             this.pgU_MD_Dist_btn = new System.Windows.Forms.Button();
             this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
+            this.distributor_Contact = new EmeLibrary.uc_ResponsibleParty();
             this.distributor_gbx = new System.Windows.Forms.GroupBox();
             this.MD_Dist = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.errorProvider_Distribution = new System.Windows.Forms.ErrorProvider(this.components);
-            this.distributor_Contact = new EmeLibrary.uc_ResponsibleParty();
             this.MD_Format_pnl.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -353,8 +353,9 @@
             // expand_MD_Format_btn
             // 
             this.expand_MD_Format_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.expand_MD_Format_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.expand_MD_Format_btn.Location = new System.Drawing.Point(7, 6);
+            this.expand_MD_Format_btn.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.expand_MD_Format_btn.Font = new System.Drawing.Font("Arial Unicode MS", 10F);
+            this.expand_MD_Format_btn.Location = new System.Drawing.Point(6, 6);
             this.expand_MD_Format_btn.Name = "expand_MD_Format_btn";
             this.expand_MD_Format_btn.Size = new System.Drawing.Size(22, 22);
             this.expand_MD_Format_btn.TabIndex = 1;
@@ -823,8 +824,9 @@
             // expand_MD_DTO_btn
             // 
             this.expand_MD_DTO_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.expand_MD_DTO_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.expand_MD_DTO_btn.Location = new System.Drawing.Point(7, 6);
+            this.expand_MD_DTO_btn.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.expand_MD_DTO_btn.Font = new System.Drawing.Font("Arial Unicode MS", 10F);
+            this.expand_MD_DTO_btn.Location = new System.Drawing.Point(6, 6);
             this.expand_MD_DTO_btn.Name = "expand_MD_DTO_btn";
             this.expand_MD_DTO_btn.Size = new System.Drawing.Size(23, 23);
             this.expand_MD_DTO_btn.TabIndex = 0;
@@ -1044,8 +1046,9 @@
             // expand_MD_SOP_btn
             // 
             this.expand_MD_SOP_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.expand_MD_SOP_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.expand_MD_SOP_btn.Location = new System.Drawing.Point(7, 6);
+            this.expand_MD_SOP_btn.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.expand_MD_SOP_btn.Font = new System.Drawing.Font("Arial Unicode MS", 10F);
+            this.expand_MD_SOP_btn.Location = new System.Drawing.Point(6, 6);
             this.expand_MD_SOP_btn.Name = "expand_MD_SOP_btn";
             this.expand_MD_SOP_btn.Size = new System.Drawing.Size(23, 23);
             this.expand_MD_SOP_btn.TabIndex = 0;
@@ -1139,6 +1142,19 @@
             this.flowLayoutPanel6.TabIndex = 0;
             this.flowLayoutPanel6.Leave += new System.EventHandler(this.flowLayoutPanel6_Leave);
             // 
+            // distributor_Contact
+            // 
+            this.distributor_Contact.BackColor = System.Drawing.Color.Transparent;
+            this.distributor_Contact.CI_ResponsiblePartyList = null;
+            this.distributor_Contact.Location = new System.Drawing.Point(0, 0);
+            this.distributor_Contact.Margin = new System.Windows.Forms.Padding(0);
+            this.distributor_Contact.mylabel = "Contact (Required)";
+            this.distributor_Contact.Name = "distributor_Contact";
+            this.distributor_Contact.rp_mode = "distribution";
+            this.distributor_Contact.Size = new System.Drawing.Size(439, 35);
+            this.distributor_Contact.TabIndex = 7;
+            this.distributor_Contact.Tag = "";
+            // 
             // distributor_gbx
             // 
             this.distributor_gbx.AutoSize = true;
@@ -1178,19 +1194,6 @@
             // errorProvider_Distribution
             // 
             this.errorProvider_Distribution.ContainerControl = this;
-            // 
-            // distributor_Contact
-            // 
-            this.distributor_Contact.BackColor = System.Drawing.Color.Transparent;
-            this.distributor_Contact.CI_ResponsiblePartyList = null;
-            this.distributor_Contact.Location = new System.Drawing.Point(0, 0);
-            this.distributor_Contact.Margin = new System.Windows.Forms.Padding(0);
-            this.distributor_Contact.mylabel = "Contact (Required)";
-            this.distributor_Contact.Name = "distributor_Contact";
-            this.distributor_Contact.rp_mode = "distribution";
-            this.distributor_Contact.Size = new System.Drawing.Size(439, 35);
-            this.distributor_Contact.TabIndex = 7;
-            this.distributor_Contact.Tag = "";
             // 
             // uc_distribution
             // 

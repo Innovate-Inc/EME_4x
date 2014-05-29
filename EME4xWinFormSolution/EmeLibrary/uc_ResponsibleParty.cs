@@ -18,6 +18,8 @@ namespace EmeLibrary
         //Expanding
         private int expandHeight;
         private int collapseHeight;
+        private string expandedSymbol = "\u25BC"; //25BC //25E2
+        private string collapsedSymbol = "\u25B6";
 
        
 
@@ -73,7 +75,10 @@ namespace EmeLibrary
         public uc_ResponsibleParty()
         {
             InitializeComponent();
-            
+
+            rp_expander_btn.Text = collapsedSymbol;            
+            CI_ContactExpand_btn.Text = collapsedSymbol;
+
             //_incomingRPList = new List<CI_ResponsibleParty>();
             
             //Start instance of the eme dataset
@@ -219,6 +224,8 @@ namespace EmeLibrary
                 deleteRP_Btn.Enabled = false;
                 addRP_Btn.Enabled = true;
                 panel3.Enabled = false;
+                rp_expander_btn.Enabled = false;
+                rp_expander_btn.Text = collapsedSymbol;
             }
             else if (_incomingRPList.Count == 1)
             {
@@ -226,6 +233,7 @@ namespace EmeLibrary
                 incomingRPListIndex = 0;
                 bindToFields(_incomingRPList[incomingRPListIndex]);
                 panel3.Enabled = true;
+                rp_expander_btn.Enabled = true;
             }
             else if (_incomingRPList.Count > 1)
             {
@@ -235,6 +243,7 @@ namespace EmeLibrary
                 incomingRPListIndex = 0;
                 bindToFields(_incomingRPList[incomingRPListIndex]);
                 panel3.Enabled = true;
+                rp_expander_btn.Enabled = true;
             }
 
             
@@ -289,7 +298,7 @@ namespace EmeLibrary
             contactInfo__CI_Contact__contactInstructions.Text = "";
             //bindToFields(incomingRPList[incomingRPListIndex]);
             comboBox1.SelectedIndex = -1;
-            comboBox1.Visible = false;
+            //comboBox1.Visible = false;
             deleteRP_Btn.Enabled = false;
             addRP_Btn.Enabled = true;
             if (rp_mode == "distribution")
@@ -297,6 +306,8 @@ namespace EmeLibrary
                 addRP_Btn.Enabled = false;
             }
             panel3.Enabled = false;
+            rp_expander_btn.Enabled = false;
+            rp_expander_btn.Text = collapsedSymbol;
             pagerDownBtn.Visible = false;
             pagerUpBtn.Visible = false;
            
@@ -316,6 +327,8 @@ namespace EmeLibrary
                 //addRP_Btn.Enabled = false;
                 deleteRP_Btn.Enabled = false;
                 panel3.Enabled = false;
+                rp_expander_btn.Enabled = false;
+                this.Height = 35;
             }
             else
             {
@@ -325,6 +338,7 @@ namespace EmeLibrary
                     //User should be able to add one contact
                     addRP_Btn.Enabled = true;
                     deleteRP_Btn.Enabled = false;
+                    this.Height = 35;
                 }
                 else
                 {
@@ -357,6 +371,7 @@ namespace EmeLibrary
                 pagerUpBtn.Enabled = true;
                 bindToFields(_incomingRPList[incomingRPListIndex]);
                 panel3.Enabled = true;
+                rp_expander_btn.Enabled = true;
             }
         }
 
@@ -396,8 +411,8 @@ namespace EmeLibrary
                 if (rp_mode == "distribution")
                 {
                     addRP_Btn.Enabled = false;
-                    rp_expander_btn.Text = "-";
-                    this.Height = 200;
+                    //rp_expander_btn.Text = expandedSymbol; //"-";
+                    //this.Height = 200;
                 } 
             }
             else
@@ -420,6 +435,7 @@ namespace EmeLibrary
             }
 
             panel3.Enabled = true;
+            rp_expander_btn.Enabled = true;
             bindToFields(_incomingRPList[incomingRPListIndex]);
             Control ctrl = (Control)sender;
             rp_Validating(ctrl);
@@ -455,9 +471,10 @@ namespace EmeLibrary
                 //bindToFields(incomingRPList[incomingRPListIndex]);
                 deleteRP_Btn.Enabled = false;
                 addRP_Btn.Enabled = true;
-                rp_expander_btn.Text = "+";
+                rp_expander_btn.Text = collapsedSymbol; //"+";
                 this.Height = 35;
                 panel3.Enabled = false;
+                rp_expander_btn.Enabled = false;
                 
             }
             else if (_incomingRPList.Count == 1)
@@ -467,6 +484,7 @@ namespace EmeLibrary
                 incomingRPListIndex = 0;
                 bindToFields(_incomingRPList[incomingRPListIndex]);
                 panel3.Enabled = true;
+                rp_expander_btn.Enabled = true;
             }
             else
             {
@@ -477,6 +495,7 @@ namespace EmeLibrary
                 }
                 bindToFields(_incomingRPList[incomingRPListIndex]);
                 panel3.Enabled = true;
+                rp_expander_btn.Enabled = true;
             }
             Control ctrl = (Control)sender;
             rp_Validating(ctrl);
@@ -516,7 +535,7 @@ namespace EmeLibrary
             //DataTable subTable = Utils1.emeDataSet.Tables["Contact_Information"].Select().CopyToDataTable();
 
 
-            if (comboBox1.SelectedIndex != -1 && comboBox1.Visible == true)
+            if (comboBox1.SelectedIndex != -1) //&& comboBox1.Visible == true)
             {
                 DataRowView drv = (DataRowView)comboBox1.SelectedItem;
                 Console.WriteLine(drv["positionName"].ToString());
@@ -527,12 +546,18 @@ namespace EmeLibrary
                 organisationName_txt.Text = drv["organizationName"].ToString();
                 positionName.Text = drv["positionName"].ToString();
                 contactInfo__CI_Contact__address__CI_Address__deliveryPoint.Text = drv["deliveryPoint"].ToString();
+                if (!string.IsNullOrEmpty(drv["address2"].ToString()))
+                {
+                    contactInfo__CI_Contact__address__CI_Address__deliveryPoint.Text += "; "+ drv["address2"].ToString();
+                }
                 contactInfo__CI_Contact__address__CI_Address__city.Text = drv["city"].ToString();
                 contactInfo__CI_Contact__address__CI_Address__administrativeArea.Text = drv["administrativeArea"].ToString();
                 contactInfo__CI_Contact__address__CI_Address__postalCode.Text = drv["postalCode"].ToString();
                 contactInfo__CI_Contact__phone__CI_Telephone__facsimile.Text = drv["facsimile"].ToString();
                 contactInfo__CI_Contact__phone__CI_Telephone__voice.Text = drv["voice"].ToString();
                 contactInfo__CI_Contact__address__CI_Address__electronicMailAddress.Text = drv["electronicMailAddress"].ToString();
+                contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage.Text = drv["linkage"].ToString();
+                contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode.Text = drv["linkageType"].ToString();
                 contactInfo__CI_Contact__hoursOfService.Text = drv["hoursOfService"].ToString();
                 contactInfo__CI_Contact__contactInstructions.Text = drv["contactInstructions"].ToString();
                 //contactInfo__CI_Contact__contactInstructions.Text = drv["cntinst"].ToString();
@@ -677,10 +702,13 @@ namespace EmeLibrary
             Button expand = (Button)sender;
             if (expand.Name == "rp_expander_btn")
             {
-                if (expand.Text == "+")
+                //if (expand.Text == "+")
+                if (expand.Text == collapsedSymbol)
                 {
-                    expand.Text = "-";
-                    if (CI_ContactExpand_btn.Text == "+")
+                    //expand.Text = "-";
+                    //http://www.fileformat.info/info/unicode/block/geometric_shapes/images.htm
+                    expand.Text = expandedSymbol; //"\u25BC"; //"\u25C2";
+                    if (CI_ContactExpand_btn.Text == collapsedSymbol) //"+")
                     {
                         this.Height = 200;
                     }
@@ -691,22 +719,23 @@ namespace EmeLibrary
                 }
                 else
                 {
-                    expand.Text = "+";
+                    //expand.Text = "+";
+                    expand.Text = collapsedSymbol; //"\u25B7";
                     this.Height = collapseHeight;
                 }
             }
             else if (expand.Name == "CI_ContactExpand_btn")
             {
-                if (expand.Text == "+")
+                if (expand.Text == collapsedSymbol)// "+")
                 {
-                    expand.Text = "-";
+                    expand.Text = expandedSymbol; //"-";
                     this.Height = 500;
                     //panel3.Height = 
                     groupBox1.Height = 325;
                 }
                 else
                 {
-                    expand.Text = "+";
+                    expand.Text = collapsedSymbol; //"+";
                     this.Height = 200;
                     groupBox1.Height = 22;
                 }
@@ -742,6 +771,25 @@ namespace EmeLibrary
                 dcatProgramCode.ValueMember = "pCode";
             }
             dcatProgramCode.SelectedIndex = -1;
+
+            DataTable subTable = Utils1.emeDataSet.Tables["Contact_Information"].Select().CopyToDataTable();
+
+            //concatinate Name and oraganization so that we have a display field
+            subTable.Columns.Add("display", typeof(string));
+
+            //concatinate and add person and organization to new field
+            foreach (DataRow dr in subTable.Rows)
+            {
+                dr["display"] = dr["individualName"] + " | " + dr["organizationName"];
+            }
+                        
+            comboBox1.SelectedIndexChanged -= new EventHandler(comboBox1_SelectedIndexChanged_1);
+            comboBox1.DataSource = subTable;
+            comboBox1.ValueMember = "display";
+            comboBox1.DisplayMember = "display";
+            comboBox1.SelectedIndex = -1;
+            comboBox1.SelectedIndexChanged += new EventHandler(comboBox1_SelectedIndexChanged_1);
+           
         }
        
         private string getSelectedProgramCode(string selectedDisplayValue)
@@ -752,7 +800,38 @@ namespace EmeLibrary
             string pcodeValue = drv["pCode"].ToString();
             return pcodeValue;
                 
-        }       
+        }
+
+        private void responsible_party_d_Click(object sender, EventArgs e)
+        {
+            //comboBox1.SelectedIndex = 3;
+            for (int i = 0; i < comboBox1.Items.Count - 1; i++)
+            {
+                DataRowView drv = (DataRowView)comboBox1.Items[i];
+                bool d = (bool)drv["default"];
+                if (d)
+                {
+                    comboBox1.SelectedIndex = i;
+                }
+            }
+            if (this.Name == "contact_CI_ResponsibleParty")
+            {
+                role.Text = "author";
+            }
+            else if (this.Name == "idInfo_pointOfContact")
+            {
+                role.Text = "owner";
+            }
+            else if (this.Name == "idInfo_citation_citedResponsibleParty")
+            {
+                role.Text = "originator";
+            }
+             else if (this.Name == "distributor_Contact")
+            {
+                role.Text = "distributor";
+            }
+        }
+                     
 
     }
 }

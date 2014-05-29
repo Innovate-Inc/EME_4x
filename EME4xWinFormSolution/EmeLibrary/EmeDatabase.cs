@@ -50,6 +50,7 @@ namespace EmeLibrary
             BindingSource testBindingSource = new BindingSource(Utils1.emeDataSet, tableName);            
             this.dataGridView1.DataSource = testBindingSource;            
             this.dataGridView1.AutoGenerateColumns = true;
+           
             dataGridView1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             
             #region Old method

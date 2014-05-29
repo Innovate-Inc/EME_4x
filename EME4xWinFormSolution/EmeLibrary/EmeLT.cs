@@ -49,7 +49,9 @@ namespace EmeLibrary
                 Utils1.setEmeDataSets();
             }
             //bindFormtoEMEdatabases();
+            //Utils1.setEmeDataSets();
             hoverHelpInit();
+                        
             //setDefaultKeywordListBoxSelection(ref  idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey);
             //setDefaultKeywordListBoxSelection(ref idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey);
             //setDefaultKeywordListBoxSelection(ref idinfo_keywords_place_placekt__None___placekey);
@@ -962,6 +964,20 @@ namespace EmeLibrary
         {
             PageController.readFromDB();
 
+            if (Utils1.emeDataSet == null)
+            {
+                Utils1.setEmeDataSets();
+            }
+            //bindFormtoEMEdatabases();
+            //Utils1.setEmeDataSets();
+            hoverHelpInit();
+            xDoc = new XmlDocument();
+            //Format picker... default should be -2
+            sourceXmlFormat = sourceXmlFormat = "ISO19115"; //"ISO19115-2"; //  sourceXmlFormat ="ISO19115"
+            //xDox Set when checking the metadata format
+            filename = "New";
+            //localXdoc = new isoNodes(xDoc, sourceXmlFormat, filename);
+            bindCCMFields();
             //PageController.ElementPopulator(this);
 
             
@@ -1087,7 +1103,7 @@ namespace EmeLibrary
         private void button4_Click(object sender, EventArgs e)
         {
             Utils1.setEmeDataSets();
-            bindFormtoEMEdatabases();
+            //bindFormtoEMEdatabases();
             xDoc = new XmlDocument();
             //Format picker... default should be -2
             //sourceXmlFormat = "ISO19115-2"; //  
@@ -1172,7 +1188,8 @@ namespace EmeLibrary
                 {
                     ComboBox cbox = (ComboBox)ctrl;
 
-                    if (cbox.SelectedIndex == -1 ||cbox.SelectedItem.ToString() == string.Empty)
+                    //if (cbox.SelectedIndex == -1 ||cbox.SelectedItem.ToString() == string.Empty)
+                    if (string.IsNullOrEmpty(cbox.Text))
                     {
                         errorProvider1.SetError(ctrl, "This is a required Field");
                     }
@@ -1281,10 +1298,13 @@ namespace EmeLibrary
 
         private void idInfo_extent_description_SelectedValueChanged(object sender, EventArgs e)
         {
-            ComboBox boundingbox = (ComboBox)sender;
-            if (boundingbox.SelectedIndex != -1)
+            
+            if (idInfo_extent_description.SelectedIndex != -1)
+            //ComboBox boundingbox = (ComboBox)sender;
+            //if (boundingbox.SelectedIndex != -1)
             {
-                DataRowView drv = (DataRowView)boundingbox.SelectedItem;
+                DataRowView drv = (DataRowView)idInfo_extent_description.SelectedItem;
+                //DataRowView drv = (DataRowView)boundingbox.SelectedItem;
                 //Console.WriteLine(drv["westbc"].ToString());
 
                 idInfo_extent_geographicBoundingBox_northLatDD.Text = drv["northbc"].ToString();
@@ -1346,6 +1366,12 @@ namespace EmeLibrary
             //{
             //    validate_Controls(c);
             //}
+        }
+
+        private void tooltip1_Popup(object sender, PopupEventArgs e)
+        {            
+            toolStripStatusLabel1.Text =tooltip1.GetToolTip(e.AssociatedControl);
+
         }
                 
 

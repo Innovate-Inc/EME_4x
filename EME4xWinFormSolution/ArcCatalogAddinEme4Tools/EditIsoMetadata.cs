@@ -8,6 +8,7 @@ using ESRI.ArcGIS.Catalog;
 using ESRI.ArcGIS.CatalogUI;
 using ESRI.ArcGIS.esriSystem;
 using ESRI.ArcGIS.Geodatabase;
+using ESRI.ArcGIS.Geometry;
 using System.Windows.Forms;
 
 
@@ -42,8 +43,12 @@ namespace ArcCatalogAddinEme4Tools
 
                 if (selection.Count == 1)  //if (selection !=null)                
                 {
+                    //TODO:  Check if it is an XML File. If it is allow the file to be open with EME
+                    //       In standAlone Mode  Otherwise Open in ESRI Mode
+
                     IGxObject selectedObject = selectedObjects.Next();
                     gxName = selectedObject.Name;
+                    
                     //bool iv = selectedObject.IsValid;
                     //MessageBox.Show("IsValid: " + iv + " Name:" + selectedObject.FullName); //Seems to always be valid.
                     gxMetadata = (IMetadata)selectedObject.InternalObjectName;
@@ -52,9 +57,8 @@ namespace ArcCatalogAddinEme4Tools
                     {
                         IXmlPropertySet2 xmlPropSet2 = gxMetadata.Metadata as IXmlPropertySet2;
                         esriXmlString = xmlPropSet2.GetXml("/");
-                        //MessageBox.Show("Metadata: " + System.Environment.NewLine + esriXmlString);
-                        emeForm.AddDocument(ref esriXmlString, selectedObject.FullName);
-                        ////emeForm.AddDocument(ref esriXmlString, selection.Location.FullName); 
+                        //MessageBox.Show("Metadata: " + System.Environment.NewLine + esriXmlString);                        
+                        emeForm.AddDocument(ref esriXmlString, selectedObject.FullName);                        
                         ////.Location can give different results if there is a selection w/in the contents tab.                        
                     }
                     else
@@ -63,7 +67,7 @@ namespace ArcCatalogAddinEme4Tools
                     }
 
                 }
-                else { MessageBox.Show("Please select one geodatabase object from the Contents Tab"); }
+                else { MessageBox.Show("Please select an item with metadata from the Contents Tab"); }
 
                 //emeForm.Show();
             }

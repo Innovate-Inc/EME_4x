@@ -13,10 +13,10 @@
   <AddIn language="CLR" library="ArcCatalogAddinEme4Tools.dll" namespace="ArcCatalogAddinEme4Tools">
     <ArcCatalog>
       <Commands>
-        <Button id="EPA_Environmental_Dataset_ArcCatalogAddinEme4Tools_EditIsoMetadata" class="EditIsoMetadata" message="Edit Metadata" caption="Edit Metadata" tip="Click to edit ISO 19115/19115-2 metadata with EME 4.0 Beta" category="Add-In Controls" image="Images\EditIsoMetadata_1.png" />
-        <Button id="ArcCatalogAddinEme4Tools_EditIsoMetadata2" class="EditIsoMetadata2" message="Edit Metadata" caption="Edit Metadata" tip="Click to edit ISO 19115/19115-2 metadata with EME 4.0 Beta" category="Add-In Controls" image="Images\Button1.png" />
+        <Button id="EPA_Environmental_Dataset_ArcCatalogAddinEme4Tools_EditIsoMetadata" class="EditIsoMetadata" message="Edit Metadata" caption="Edit Metadata" tip="Click to edit ISO 19115/19115-2 metadata with EME 4.0 Beta" category="Add-In Controls" image="Images\EditIsoMetadata_1.png" />        
         <Button id="ArcCatalogAddinEme4Tools_ImportMetadata" class="ImportMetadata" message="Import ISO Metadata" caption="Import ISO Metadata" tip="Click to import an ISO 19115/19115-2 metadata record" category="Add-In Controls" image="Images\ImportMetadata.png" />
-        <Button id="ArcCatalogAddinEme4Tools_ExportMetadata" class="ExportMetadata" message="Export Metadata" caption="Export Metadata" tip="Click to export metadata as a standalone xml file" category="Add-In Controls" image="Images\ExportMetadata.png" />        
+        <Button id="ArcCatalogAddinEme4Tools_ExportMetadata" class="ExportMetadata" message="Export Metadata" caption="Export Metadata" tip="Click to export metadata as a standalone xml file" category="Add-In Controls" image="Images\ExportMetadata.png" />
+        <Button id="ArcCatalogAddinEme4Tools_EditIsoMetadata2" class="EditIsoMetadata2" message="Test Get BBox" caption="Test Get BBox" tip="Click to get bounding box and spatial reference" category="Add-In Controls" image="Images\Button1.png" />
       </Commands>
       <Toolbars>
         <Toolbar id="InnovateInc_ArcCatalogAddinEme4Tools_EME_Tools" caption="EME 4.0 Beta Tools" showInitially="true">
@@ -24,6 +24,7 @@
             <Button refID="EPA_Environmental_Dataset_ArcCatalogAddinEme4Tools_EditIsoMetadata" />            
             <Button refID="ArcCatalogAddinEme4Tools_ImportMetadata" />
             <Button refID="ArcCatalogAddinEme4Tools_ExportMetadata" />
+            <Button refID="ArcCatalogAddinEme4Tools_EditIsoMetadata2" />
           </Items>
         </Toolbar>
       </Toolbars>

@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(uc_ResponsibleParty));
-            this.button1 = new System.Windows.Forms.Button();
             this.positionName = new System.Windows.Forms.TextBox();
             this.organisationName_txt = new System.Windows.Forms.TextBox();
             this.contactInfo__CI_Contact__phone__CI_Telephone__voice = new System.Windows.Forms.TextBox();
@@ -81,6 +80,8 @@
             this.rp_expander_btn = new System.Windows.Forms.Button();
             this.uc_ResponsibleParty_lbl = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.responsible_party_d = new System.Windows.Forms.Button();
+            this.contact_list = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -88,19 +89,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_RP)).BeginInit();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.DarkOrange;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(313, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(112, 43);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Select From Contact List";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // positionName
             // 
@@ -450,12 +438,14 @@
             // 
             this.CI_ContactExpand_btn.BackColor = System.Drawing.SystemColors.Control;
             this.CI_ContactExpand_btn.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
-            this.CI_ContactExpand_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CI_ContactExpand_btn.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.CI_ContactExpand_btn.Font = new System.Drawing.Font("Arial Unicode MS", 10F);
             this.CI_ContactExpand_btn.Location = new System.Drawing.Point(0, 0);
             this.CI_ContactExpand_btn.Name = "CI_ContactExpand_btn";
             this.CI_ContactExpand_btn.Size = new System.Drawing.Size(22, 22);
             this.CI_ContactExpand_btn.TabIndex = 36;
             this.CI_ContactExpand_btn.Text = "+";
+            this.CI_ContactExpand_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.CI_ContactExpand_btn.UseVisualStyleBackColor = false;
             this.CI_ContactExpand_btn.Click += new System.EventHandler(this.Expander_Click);
             // 
@@ -560,11 +550,10 @@
             // 
             this.comboBox1.DropDownWidth = 600;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(313, 44);
+            this.comboBox1.Location = new System.Drawing.Point(311, 99);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(112, 21);
             this.comboBox1.TabIndex = 41;
-            this.comboBox1.Visible = false;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
             // 
             // panel1
@@ -576,6 +565,7 @@
             this.panel1.Controls.Add(this.organisationName_lbl);
             this.panel1.Controls.Add(this.organisationName_txt);
             this.panel1.Controls.Add(this.individualName_lbl);
+            this.errorProvider_RP.SetIconPadding(this.panel1, -15);
             this.panel1.Location = new System.Drawing.Point(3, 39);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(283, 94);
@@ -594,7 +584,7 @@
             // dcatProgramCode_lbl
             // 
             this.dcatProgramCode_lbl.AutoSize = true;
-            this.dcatProgramCode_lbl.Location = new System.Drawing.Point(332, 88);
+            this.dcatProgramCode_lbl.Location = new System.Drawing.Point(332, 18);
             this.dcatProgramCode_lbl.Name = "dcatProgramCode_lbl";
             this.dcatProgramCode_lbl.Size = new System.Drawing.Size(74, 13);
             this.dcatProgramCode_lbl.TabIndex = 37;
@@ -606,7 +596,7 @@
             this.dcatProgramCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dcatProgramCode.DropDownWidth = 600;
             this.dcatProgramCode.FormattingEnabled = true;
-            this.dcatProgramCode.Location = new System.Drawing.Point(313, 104);
+            this.dcatProgramCode.Location = new System.Drawing.Point(313, 34);
             this.dcatProgramCode.Name = "dcatProgramCode";
             this.dcatProgramCode.Size = new System.Drawing.Size(112, 21);
             this.dcatProgramCode.TabIndex = 36;
@@ -618,9 +608,12 @@
             // 
             // rp_expander_btn
             // 
+            this.rp_expander_btn.Enabled = false;
             this.rp_expander_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.rp_expander_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rp_expander_btn.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.rp_expander_btn.Font = new System.Drawing.Font("Arial Unicode MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rp_expander_btn.Location = new System.Drawing.Point(7, 6);
+            this.rp_expander_btn.Margin = new System.Windows.Forms.Padding(0);
             this.rp_expander_btn.Name = "rp_expander_btn";
             this.rp_expander_btn.Size = new System.Drawing.Size(22, 22);
             this.rp_expander_btn.TabIndex = 44;
@@ -640,10 +633,11 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.contact_list);
+            this.panel3.Controls.Add(this.responsible_party_d);
             this.panel3.Controls.Add(this.dcatProgramCode_lbl);
             this.panel3.Controls.Add(this.panel2);
             this.panel3.Controls.Add(this.dcatProgramCode);
-            this.panel3.Controls.Add(this.button1);
             this.panel3.Controls.Add(this.groupBox1);
             this.panel3.Controls.Add(this.comboBox1);
             this.panel3.Controls.Add(this.panel1);
@@ -652,14 +646,37 @@
             this.panel3.Size = new System.Drawing.Size(435, 464);
             this.panel3.TabIndex = 46;
             // 
+            // responsible_party_d
+            // 
+            this.responsible_party_d.BackColor = System.Drawing.SystemColors.Control;
+            this.responsible_party_d.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.responsible_party_d.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.responsible_party_d.Location = new System.Drawing.Point(393, 75);
+            this.responsible_party_d.Name = "responsible_party_d";
+            this.responsible_party_d.Size = new System.Drawing.Size(28, 22);
+            this.responsible_party_d.TabIndex = 44;
+            this.responsible_party_d.Text = "D";
+            this.responsible_party_d.UseVisualStyleBackColor = false;
+            this.responsible_party_d.Click += new System.EventHandler(this.responsible_party_d_Click);
+            // 
+            // contact_list
+            // 
+            this.contact_list.AutoSize = true;
+            this.contact_list.Location = new System.Drawing.Point(317, 81);
+            this.contact_list.Name = "contact_list";
+            this.contact_list.Size = new System.Drawing.Size(63, 13);
+            this.contact_list.TabIndex = 45;
+            this.contact_list.Text = "Contact List";
+            this.contact_list.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
             // uc_ResponsibleParty
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.rp_expander_btn);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.uc_ResponsibleParty_lbl);
-            this.Controls.Add(this.rp_expander_btn);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.lblCI_RpListCount);
             this.Name = "uc_ResponsibleParty";
@@ -684,7 +701,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox positionName;
         private System.Windows.Forms.TextBox organisationName_txt;
         private System.Windows.Forms.TextBox contactInfo__CI_Contact__phone__CI_Telephone__voice;
@@ -735,5 +751,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label dcatProgramCode_lbl;
         private System.Windows.Forms.ComboBox dcatProgramCode;
+        private System.Windows.Forms.Button responsible_party_d;
+        private System.Windows.Forms.Label contact_list;
     }
 }

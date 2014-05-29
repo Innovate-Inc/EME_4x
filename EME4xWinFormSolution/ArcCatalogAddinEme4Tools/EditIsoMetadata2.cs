@@ -7,6 +7,7 @@ using EmeLibrary;
 using ESRI.ArcGIS.Catalog;
 using ESRI.ArcGIS.CatalogUI;
 using ESRI.ArcGIS.esriSystem;
+using ESRI.ArcGIS.Geometry;
 using ESRI.ArcGIS.Geodatabase;
 using System.Windows.Forms;
 
@@ -44,6 +45,25 @@ namespace ArcCatalogAddinEme4Tools
                 {
                     IGxObject selectedObject = selectedObjects.Next();
                     gxName = selectedObject.Name;
+
+                    IGxDataset gxDataSet = (IGxDataset)selectedObject;
+                    IGeoDataset geoDataSet = (IGeoDataset)gxDataSet.Dataset;
+                    StringBuilder sbExtent = new StringBuilder();
+                    sbExtent.Append("Bounding Box" + System.Environment.NewLine);
+                    sbExtent.Append("Upper Left x: " + geoDataSet.Extent.UpperLeft.X.ToString() + System.Environment.NewLine);
+                    sbExtent.Append("Upper Right x: " + geoDataSet.Extent.UpperRight.X.ToString() + System.Environment.NewLine);
+                    sbExtent.Append("Upper Left y: " + geoDataSet.Extent.UpperLeft.Y.ToString() + System.Environment.NewLine);
+                    sbExtent.Append("Upper Right y: " + geoDataSet.Extent.UpperRight.Y.ToString() + System.Environment.NewLine);
+                    //sbExtent.Append("Lower Left: " + geoDataSet.Extent.LowerLeft + System.Environment.NewLine);
+                    //sbExtent.Append("Lower Right: " + geoDataSet.Extent.LowerRight + System.Environment.NewLine);
+                    sbExtent.Append("Spatial Reference Name: " + geoDataSet.SpatialReference.Name + System.Environment.NewLine);
+
+                    //geoDataSet.SpatialReference.FactoryCode
+
+                    MessageBox.Show(sbExtent.ToString());
+                    //geoDataSet.Extent.
+                    //geoDataSet.SpatialReference
+
                     //bool iv = selectedObject.IsValid;
                     //MessageBox.Show("IsValid: " + iv + " Name:" + selectedObject.FullName); //Seems to always be valid.
                     gxMetadata = (IMetadata)selectedObject.InternalObjectName;
@@ -53,7 +73,7 @@ namespace ArcCatalogAddinEme4Tools
                         IXmlPropertySet2 xmlPropSet2 = gxMetadata.Metadata as IXmlPropertySet2;
                         esriXmlString = xmlPropSet2.GetXml("/");
                         //MessageBox.Show("Metadata: " + System.Environment.NewLine + esriXmlString);
-                        emeForm.AddDocument(ref esriXmlString, selectedObject.FullName);
+                        //emeForm.AddDocument(ref esriXmlString, selectedObject.FullName);
                         ////emeForm.AddDocument(ref esriXmlString, selection.Location.FullName); 
                         ////.Location can give different results if there is a selection w/in the contents tab.                        
                     }

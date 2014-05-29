@@ -28,7 +28,9 @@ namespace EmeLibrary
         //List of DigitalTransferOptions objects and an index for the list
         private int _digitalTransferOptions_idx;
         private List<MD_DigitalTransferOptions> _digitalTransferOptions;
-        
+
+        private string expandedSymbol = "\u25BC"; //E
+        private string collapsedSymbol = "\u25B6";
 
         public List<MD_Distributor> distributorList
         {
@@ -85,6 +87,9 @@ namespace EmeLibrary
         {
             
             InitializeComponent();
+            expand_MD_DTO_btn.Text = collapsedSymbol;
+            expand_MD_Format_btn.Text = collapsedSymbol;
+            expand_MD_SOP_btn.Text = collapsedSymbol;
             //_distributorList = new List<MD_Distributor>(); 
             //_distributorContact = new CI_ResponsibleParty();
 
@@ -922,15 +927,15 @@ namespace EmeLibrary
                 //cHeight = ;
             }
             
-            if (expand.Text == "+")
+            if (expand.Text == collapsedSymbol) //"+")
             {
-                expand.Text = "-";
+                expand.Text = expandedSymbol; //"-";
                 expand.Parent.Height = expHeight;
                 //this.Height = 250;
             }
             else
             {
-                expand.Text = "+";
+                expand.Text = collapsedSymbol; // "+";
                 expand.Parent.Height = cHeight;
                 //this.Height = 35;
             }
@@ -960,7 +965,7 @@ namespace EmeLibrary
                     //expand_MD_Format_btn.Enabled = false;
                     Button Expanderbtn = (Button)this.Controls.Find("expand_" + pager.Name + "_btn", true)[0];
                     Expanderbtn.Enabled = false;
-                    Expanderbtn.Text = "+";
+                    Expanderbtn.Text = collapsedSymbol; // "+";
                     Expanderbtn.Parent.Height = 35;
                 }
 
@@ -978,8 +983,8 @@ namespace EmeLibrary
                     {                        
                         //expand_MD_Format_btn.Enabled = false;
                         Button Expanderbtn = (Button) this.Controls.Find("expand_" + pager.Name + "_btn",true)[0];                        
-                        Expanderbtn.Enabled = false;                        
-                        Expanderbtn.Text = "+";
+                        Expanderbtn.Enabled = false;
+                        Expanderbtn.Text = collapsedSymbol; //"+";
                         Expanderbtn.Parent.Height = 35;
                     }
                 }
