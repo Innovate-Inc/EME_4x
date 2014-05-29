@@ -15,7 +15,31 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_0E994B1088AD447A84776F3C45498F44"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_17A12AF2964146A889CC9DCE935B34DA"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_1AA5C97EB86743AB93927F5E3FCCFCFB"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_1C849B821C754685AFEBB92D47262909"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_2984535FC61345DBA89A1DAFCF2F9F1C"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -33,6 +57,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_439D2811BB2A4AC388771F3A284CF712"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_43FB8464BFA24FBE8F81C31D9773AD12"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -40,6 +70,18 @@
         "Entry"
         {
         "MsmKey" = "8:_48A98E516E15456CB7EDB527AA940480"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_4C728D62E65E40178488925386ED8627"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_4C8B2C624C4C4E1181B31744164C8FAE"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -63,6 +105,18 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_6FF9E95F9D96483EB1EE6D3313A14257"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_7640DD3FE0CA4A32A2BE694285DA4691"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_7882BFCFD23C4B3AB0C58E882853C9DD"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -70,6 +124,18 @@
         "Entry"
         {
         "MsmKey" = "8:_8904572E2BB04F288A6BB78A3663CFAC"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_98A3F0E6E3404DA3B6B80E7FB90B81E0"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_9DC1229ADEA24B2B8BBE04CE51B54D8B"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -93,7 +159,19 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_AF29EA93231D47EC87B7F2839FE2A5F8"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_B34779815070443AB5822C8BF547F450"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B72851C495D4457C9218AD82A3D43D80"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -123,7 +201,19 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_F0A4B9B895DD4F1C9BDF98A4A1D65DA6"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_F4A4D7C48CB54B87BC403DD8CBEA397E"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_FF925F5A49984172BCB691BAEA54E329"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -244,12 +334,92 @@
         }
         "File"
         {
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_0E994B1088AD447A84776F3C45498F44"
+            {
+            "SourcePath" = "8:..\\EME4xWinForm\\Eme4xSystemFiles\\EMEdb\\MDtemplate.xml"
+            "TargetName" = "8:MDtemplate.xml"
+            "Tag" = "8:"
+            "Folder" = "8:_6865A5485F2845359A03ECC25B314C85"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_17A12AF2964146A889CC9DCE935B34DA"
+            {
+            "SourcePath" = "8:..\\EME4xWinForm\\Eme4xSystemFiles\\EMEdb\\Contact_Information.xml"
+            "TargetName" = "8:Contact_Information.xml"
+            "Tag" = "8:"
+            "Folder" = "8:_6865A5485F2845359A03ECC25B314C85"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1AA5C97EB86743AB93927F5E3FCCFCFB"
+            {
+            "SourcePath" = "8:..\\EME4xWinForm\\Eme4xSystemFiles\\EMEdb\\Citation.xml"
+            "TargetName" = "8:Citation.xml"
+            "Tag" = "8:"
+            "Folder" = "8:_6865A5485F2845359A03ECC25B314C85"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1C849B821C754685AFEBB92D47262909"
             {
             "SourcePath" = "8:..\\EME4xWinForm\\Eme4xSystemFiles\\EMEdb\\emeSettings.xml"
             "TargetName" = "8:emeSettings.xml"
             "Tag" = "8:"
             "Folder" = "8:_DB8F238C472A4B459F2F4CDAA163B28F"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2984535FC61345DBA89A1DAFCF2F9F1C"
+            {
+            "SourcePath" = "8:..\\EME4xWinForm\\Eme4xSystemFiles\\EMEdb\\ProgramCode.xml"
+            "TargetName" = "8:ProgramCode.xml"
+            "Tag" = "8:"
+            "Folder" = "8:_6865A5485F2845359A03ECC25B314C85"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -304,6 +474,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_439D2811BB2A4AC388771F3A284CF712"
+            {
+            "SourcePath" = "8:..\\EME4xWinForm\\Eme4xSystemFiles\\EMEdb\\KeywordsUser.xml"
+            "TargetName" = "8:KeywordsUser.xml"
+            "Tag" = "8:"
+            "Folder" = "8:_6865A5485F2845359A03ECC25B314C85"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_43FB8464BFA24FBE8F81C31D9773AD12"
             {
             "SourcePath" = "8:..\\ArcCatalogAddinEme4Tools\\bin\\Debug\\ArcCatalogAddinEme4Tools.esriAddIn"
@@ -344,6 +534,46 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4C728D62E65E40178488925386ED8627"
+            {
+            "SourcePath" = "8:..\\EME4xWinForm\\Eme4xSystemFiles\\EMEdb\\KeywordsISO.xml"
+            "TargetName" = "8:KeywordsISO.xml"
+            "Tag" = "8:"
+            "Folder" = "8:_6865A5485F2845359A03ECC25B314C85"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4C8B2C624C4C4E1181B31744164C8FAE"
+            {
+            "SourcePath" = "8:..\\EME4xWinForm\\Eme4xSystemFiles\\EMEdb\\MItemplate.xml"
+            "TargetName" = "8:MItemplate.xml"
+            "Tag" = "8:"
+            "Folder" = "8:_6865A5485F2845359A03ECC25B314C85"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_52410AF9C84349B0E8A455E84A4A1844"
             {
             "AssemblyRegister" = "3:1"
@@ -351,11 +581,6 @@
             "AssemblyAsmDisplayName" = "8:EmeLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_52410AF9C84349B0E8A455E84A4A1844"
-                    {
-                    "Name" = "8:EmeLibrary.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:EmeLibrary.dll"
             "TargetName" = "8:"
@@ -415,6 +640,46 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6FF9E95F9D96483EB1EE6D3313A14257"
+            {
+            "SourcePath" = "8:..\\EME4xWinForm\\Eme4xSystemFiles\\EMEdb\\OnlineLinkage.xml"
+            "TargetName" = "8:OnlineLinkage.xml"
+            "Tag" = "8:"
+            "Folder" = "8:_6865A5485F2845359A03ECC25B314C85"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7640DD3FE0CA4A32A2BE694285DA4691"
+            {
+            "SourcePath" = "8:..\\EME4xWinForm\\Eme4xSystemFiles\\EMEdb\\Publisher.xml"
+            "TargetName" = "8:Publisher.xml"
+            "Tag" = "8:"
+            "Folder" = "8:_6865A5485F2845359A03ECC25B314C85"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7882BFCFD23C4B3AB0C58E882853C9DD"
             {
             "SourcePath" = "8:..\\EME4xWinForm\\Eme4xSystemFiles\\EMEdb\\emeGUI.xml"
@@ -441,6 +706,46 @@
             "TargetName" = "8:MItemplate.xml"
             "Tag" = "8:"
             "Folder" = "8:_DB8F238C472A4B459F2F4CDAA163B28F"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_98A3F0E6E3404DA3B6B80E7FB90B81E0"
+            {
+            "SourcePath" = "8:..\\EME4xWinForm\\Eme4xSystemFiles\\EMEdb\\BoundingBox.xml"
+            "TargetName" = "8:BoundingBox.xml"
+            "Tag" = "8:"
+            "Folder" = "8:_6865A5485F2845359A03ECC25B314C85"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9DC1229ADEA24B2B8BBE04CE51B54D8B"
+            {
+            "SourcePath" = "8:..\\EME4xWinForm\\Eme4xSystemFiles\\EMEdb\\emeGUI.xml"
+            "TargetName" = "8:emeGUI.xml"
+            "Tag" = "8:"
+            "Folder" = "8:_6865A5485F2845359A03ECC25B314C85"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -515,12 +820,52 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_AF29EA93231D47EC87B7F2839FE2A5F8"
+            {
+            "SourcePath" = "8:..\\EME4xWinForm\\Eme4xSystemFiles\\EMEdb\\KeywordsEPA.xml"
+            "TargetName" = "8:KeywordsEPA.xml"
+            "Tag" = "8:"
+            "Folder" = "8:_6865A5485F2845359A03ECC25B314C85"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B34779815070443AB5822C8BF547F450"
             {
             "SourcePath" = "8:..\\EME4xWinForm\\Eme4xSystemFiles\\EMEdb\\MDtemplate.xml"
             "TargetName" = "8:MDtemplate.xml"
             "Tag" = "8:"
             "Folder" = "8:_DB8F238C472A4B459F2F4CDAA163B28F"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B72851C495D4457C9218AD82A3D43D80"
+            {
+            "SourcePath" = "8:..\\EME4xWinForm\\Eme4xSystemFiles\\EMEdb\\KeywordsPlace.xml"
+            "TargetName" = "8:KeywordsPlace.xml"
+            "Tag" = "8:"
+            "Folder" = "8:_6865A5485F2845359A03ECC25B314C85"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -595,12 +940,52 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F0A4B9B895DD4F1C9BDF98A4A1D65DA6"
+            {
+            "SourcePath" = "8:..\\EME4xWinForm\\Eme4xSystemFiles\\EMEdb\\DistributionLiability.xml"
+            "TargetName" = "8:DistributionLiability.xml"
+            "Tag" = "8:"
+            "Folder" = "8:_6865A5485F2845359A03ECC25B314C85"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F4A4D7C48CB54B87BC403DD8CBEA397E"
             {
             "SourcePath" = "8:..\\EME4xWinForm\\Eme4xSystemFiles\\EMEdb\\KeywordsEPA.xml"
             "TargetName" = "8:KeywordsEPA.xml"
             "Tag" = "8:"
             "Folder" = "8:_DB8F238C472A4B459F2F4CDAA163B28F"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_FF925F5A49984172BCB691BAEA54E329"
+            {
+            "SourcePath" = "8:..\\EME4xWinForm\\Eme4xSystemFiles\\EMEdb\\emeSettings.xml"
+            "TargetName" = "8:emeSettings.xml"
+            "Tag" = "8:"
+            "Folder" = "8:_6865A5485F2845359A03ECC25B314C85"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -686,6 +1071,28 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_DEF6B17D99DE4068BB11D4AEA7BB68DA"
+                    {
+                    "Name" = "8:Eme4xSystemFiles"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_3E8A4AAF50F64A19ADDD8A9D0CF00E44"
+                        "Folders"
+                        {
+                            "{9EF0B969-E518-4E46-987F-47570745A589}:_6865A5485F2845359A03ECC25B314C85"
+                            {
+                            "Name" = "8:EMEdb"
+                            "AlwaysCreate" = "11:FALSE"
+                            "Condition" = "8:"
+                            "Transitive" = "11:FALSE"
+                            "Property" = "8:_E8FAE286C21C4EE3B20C7C9AD5FBD529"
+                                "Folders"
+                                {
+                                }
+                            }
+                        }
+                    }
                 }
             }
             "{1525181F-901A-416C-8A58-119130FE478E}:_6D70CE307EE04FC0AD2D37E6B187E07D"
