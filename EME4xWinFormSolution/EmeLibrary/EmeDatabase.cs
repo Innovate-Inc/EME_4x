@@ -53,49 +53,6 @@ namespace EmeLibrary
            
             dataGridView1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             
-            #region Old method
-            //dataGridView1.Columns.Clear();
-            ////string filepath = @"C:\Users\dspinosa\Desktop\testMetadata\EMEdb\" + tableName + "Copy.xml";
-            //dbfilePath = @"C:\Users\dspinosa\Desktop\testMetadata\EMEdb\" + tableName + "Copy.xml";
-            ////string filepath = @"C:\Users\dspinosa\Desktop\testMetadata\noaaDownLoad\schema\resources\Codelist\gmxCodelists.xml";
-            ////dataSet1.Clear();                        
-            ////dataSet1.ReadXml(filepath);
-            ////dataSet1.DataSetName = tableName;
-
-          
-            ////DataSet ds1 = new DataSet();           
-            //emeDataset = new DataSet();
-            //emeDataset.ReadXml(dbfilePath);
-            ////ds1.DataSetName = tableName;
-            //BindingSource testbindingSource = new BindingSource(emeDataset, tableName);            
-            ////(ds1.Tables[5], "CodeListDictionary"); //ds1.Tables[5].TableName.ToString());//(ds1, "codelistItem"); //tableName);
-            ////BindingSource testbindingSource = new BindingSource(ds1.Tables[3], "codeEntry"); //ds1.Tables[0].TableName.ToString());
-            //this.dataGridView1.DataSource = testbindingSource; 
-            //this.dataGridView1.AutoGenerateColumns = true;
-            ////this.dataGridView1.AutoResizeColumns(DataGridViewAutoSizeColumnMode.AllCellsExceptHeader);
-            //dataGridView1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-            ////this.dataGridView1.Columns.Clear();
-            
-            ////DataGridView dgView = new DataGridView();
-            ////dgView.AutoGenerateColumns = true;
-            ////dgView.DataSource = dataSet1;
-            ////dgView.DataMember = tableName;
-            ////dataGridView1 = dgView;
-            ////dataGridView1.Refresh();
-
-            
-            ////this.dataGridView1.DataMember = tableName;
-            ////this.dataGridView1.DataSource = dataSet1;
-            ////dataGridView1.Columns.Clear();
-            ////this.dataGridView1.Refresh();
-            ////dataGridView1.DataSource = "";
-            ////dataSet1.Tables[0].TableName.ToString(); //"NewDataSet";// 
-
-            ////dataGridView1.DataSource = dataSet1;
-
-            #endregion
-
-
 
         }
 
