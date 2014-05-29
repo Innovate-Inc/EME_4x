@@ -249,6 +249,7 @@ namespace EmeLibrary
                     string c = (frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null) != null) ?
                         frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null).ToString().Trim() : "";
                     ctrl.Tag = validateVal;
+                    boxCbo.BeginUpdate();
                     boxCbo.SelectedIndex = -1;
                     boxCbo.Text = ""; //clears free existing free text
 
@@ -303,6 +304,7 @@ namespace EmeLibrary
                         }
 
                     }
+                    boxCbo.EndUpdate();
 
 
                     //boxCbo.Focus();     //Need to figure out why it need focus to save

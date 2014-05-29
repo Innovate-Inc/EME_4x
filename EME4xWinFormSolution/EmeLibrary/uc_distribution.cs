@@ -196,44 +196,51 @@ namespace EmeLibrary
         /// <param name="e"></param>
         private void del_MD_Dist_btn_Click(object sender, EventArgs e)
         {
-            //Remove the distributor from the list at the current index
-            _distributorList.RemoveAt(_distributorList_idx);
-            //Depending on distributor list count adjust distributor pager controls
-            if (_distributorList.Count == 0)
+
+            if (MessageBox.Show("Are you sure you want to delete an entire Distributor Section?", "Please Confirm Deletion",
+                MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
             {
-                _distributorList_idx = 0;   //reset index
-                MD_Dist_lbl.Text = "0 of 0";    //reset label
-                del_MD_Dist_btn.Enabled = false;    
-                _distributorList.Clear();
-                //clear field in all sub pagers
-                clearFields("All");
-                distributor_gbx.Enabled = false;
-            }
-            else if (_distributorList.Count == 1) 
-            {
-                //adjust pager elements for a list of 1
-                pgD_MD_Dist_btn.Visible = false;
-                pgU_MD_Dist_btn.Visible = false;
-                _distributorList_idx = 0;
-                //Load the next distributor in the list
-                bind_MD_Dist_Field(_distributorList[_distributorList_idx]);
-                distributor_gbx.Enabled = true;
-            }
-            else
-            {
-                //Adjust index and load next distributor in the list
-                if (_distributorList_idx > 0)
+                
+
+                //Remove the distributor from the list at the current index
+                _distributorList.RemoveAt(_distributorList_idx);
+                //Depending on distributor list count adjust distributor pager controls
+                if (_distributorList.Count == 0)
                 {
-                    _distributorList_idx--;
+                    _distributorList_idx = 0;   //reset index
+                    MD_Dist_lbl.Text = "0 of 0";    //reset label
+                    del_MD_Dist_btn.Enabled = false;
+                    _distributorList.Clear();
+                    //clear field in all sub pagers
+                    clearFields("All");
+                    distributor_gbx.Enabled = false;
                 }
-                bind_MD_Dist_Field(_distributorList[_distributorList_idx]);
-                distributor_gbx.Enabled = true;
+                else if (_distributorList.Count == 1)
+                {
+                    //adjust pager elements for a list of 1
+                    pgD_MD_Dist_btn.Visible = false;
+                    pgU_MD_Dist_btn.Visible = false;
+                    _distributorList_idx = 0;
+                    //Load the next distributor in the list
+                    bind_MD_Dist_Field(_distributorList[_distributorList_idx]);
+                    distributor_gbx.Enabled = true;
+                }
+                else
+                {
+                    //Adjust index and load next distributor in the list
+                    if (_distributorList_idx > 0)
+                    {
+                        _distributorList_idx--;
+                    }
+                    bind_MD_Dist_Field(_distributorList[_distributorList_idx]);
+                    distributor_gbx.Enabled = true;
+                }
+                //Adjust controls in sub pagers
+                distributor_Contact.adjustRPControl(_distributorList.Count);
+                adjustPagers(MD_Format, _distributionFormat);
+                adjustPagers(MD_SOP, _standardOrderProcess);
+                adjustPagers(MD_DTO, _digitalTransferOptions);
             }
-            //Adjust controls in sub pagers
-            distributor_Contact.adjustRPControl(_distributorList.Count);
-            adjustPagers(MD_Format, _distributionFormat);
-            adjustPagers(MD_SOP, _standardOrderProcess);
-            adjustPagers(MD_DTO, _digitalTransferOptions);
         }
 
         /// <summary>

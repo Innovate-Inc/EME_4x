@@ -29,29 +29,42 @@ namespace EmeLibrary
         
         public static void setEmeDataSets()
         {
-            emeDataSet = new DataSet();
-            emeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            //emeDataSet.ReadXml(Directory.GetCurrentDirectory() + "\\Eme4xSystemFiles\\EMEdb\\Publisher.xml");            
-            emeDataSet.ReadXml(EmeUserAppDataFolder + "\\Eme4xSystemFiles\\EMEdb\\Publisher.xml");
-            emeDataSet.ReadXml(EmeUserAppDataFolder + "\\Eme4xSystemFiles\\EMEdb\\OnlineLinkage.xml");
-            emeDataSet.ReadXml(EmeUserAppDataFolder + "\\Eme4xSystemFiles\\EMEdb\\KeywordsEPA.xml");
-            emeDataSet.ReadXml(EmeUserAppDataFolder + "\\Eme4xSystemFiles\\EMEdb\\KeywordsISO.xml");
-            emeDataSet.ReadXml(EmeUserAppDataFolder + "\\Eme4xSystemFiles\\EMEdb\\KeywordsUser.xml");
-            emeDataSet.ReadXml(EmeUserAppDataFolder + "\\Eme4xSystemFiles\\EMEdb\\KeywordsPlace.xml");
-            emeDataSet.ReadXml(EmeUserAppDataFolder + "\\Eme4xSystemFiles\\EMEdb\\Contact_Information.xml");
-            emeDataSet.ReadXml(EmeUserAppDataFolder + "\\Eme4xSystemFiles\\EMEdb\\BoundingBox.xml");
-            emeDataSet.ReadXml(EmeUserAppDataFolder + "\\Eme4xSystemFiles\\EMEdb\\Citation.xml");
-            emeDataSet.ReadXml(EmeUserAppDataFolder + "\\Eme4xSystemFiles\\EMEdb\\DistributionLiability.xml");
-            emeDataSet.ReadXml(EmeUserAppDataFolder + "\\Eme4xSystemFiles\\EMEdb\\ProgramCode.xml");
-            emeDataSet.DataSetName = "emeData";
+            try
+            {
+                //Check that directory exists.  If not, try to copy for the specific user from the CallingAssembly Location
 
-            emeDataSetEditor = emeDataSet;
-            //new DataSet();
-            //emeDataSetEditor = 
+                emeDataSet = new DataSet();
+                emeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+                //emeDataSet.ReadXml(Directory.GetCurrentDirectory() + "\\Eme4xSystemFiles\\EMEdb\\Publisher.xml");            
+                emeDataSet.ReadXml(EmeUserAppDataFolder + "\\Eme4xSystemFiles\\EMEdb\\Publisher.xml");
+                emeDataSet.ReadXml(EmeUserAppDataFolder + "\\Eme4xSystemFiles\\EMEdb\\OnlineLinkage.xml");
+                emeDataSet.ReadXml(EmeUserAppDataFolder + "\\Eme4xSystemFiles\\EMEdb\\KeywordsEPA.xml");
+                emeDataSet.ReadXml(EmeUserAppDataFolder + "\\Eme4xSystemFiles\\EMEdb\\KeywordsISO.xml");
+                emeDataSet.ReadXml(EmeUserAppDataFolder + "\\Eme4xSystemFiles\\EMEdb\\KeywordsUser.xml");
+                emeDataSet.ReadXml(EmeUserAppDataFolder + "\\Eme4xSystemFiles\\EMEdb\\KeywordsPlace.xml");
+                emeDataSet.ReadXml(EmeUserAppDataFolder + "\\Eme4xSystemFiles\\EMEdb\\Contact_Information.xml");
+                emeDataSet.ReadXml(EmeUserAppDataFolder + "\\Eme4xSystemFiles\\EMEdb\\BoundingBox.xml");
+                emeDataSet.ReadXml(EmeUserAppDataFolder + "\\Eme4xSystemFiles\\EMEdb\\Citation.xml");
+                emeDataSet.ReadXml(EmeUserAppDataFolder + "\\Eme4xSystemFiles\\EMEdb\\DistributionLiability.xml");
+                emeDataSet.ReadXml(EmeUserAppDataFolder + "\\Eme4xSystemFiles\\EMEdb\\ProgramCode.xml");
+                emeDataSet.DataSetName = "emeData";
 
-            //use for databinding to drop list
-            dataTableNames = new string[]{"Publisher", "OnlineLinkage", "KeywordsEPA", "KeywordsISO",
+                emeDataSetEditor = emeDataSet;
+                //new DataSet();
+                //emeDataSetEditor = 
+
+                //use for databinding to drop list
+                dataTableNames = new string[]{"Publisher", "OnlineLinkage", "KeywordsEPA", "KeywordsISO",
                 "KeywordsUser","KeywordsPlace","Contact_Information", "BoundingBox", "Citation", "DistributionLiability", "ProgramCode"};
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error Loading Data Files!"
+                    + System.Environment.NewLine
+                    + "Please confirm the following directory is installed: "
+                    + EmeUserAppDataFolder + "\\Eme4xSystemFiles\\EMEdb", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); ;
+                
+            }
         }
 
         public static DataSet codeListValuesDataSet;       
@@ -108,11 +121,22 @@ namespace EmeLibrary
         public static DataSet emeSettingsDataset;
         public static void setEmeSettingsDataset()
         {
-            emeSettingsDataset = new DataSet();
-            emeSettingsDataset.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            //emeSettingsDataset.ReadXml(Directory.GetCurrentDirectory() + "\\Eme4xSystemFiles\\EMEdb\\emeSettings.xml");
-            emeSettingsDataset.ReadXml(EmeUserAppDataFolder + "\\Eme4xSystemFiles\\EMEdb\\emeSettings.xml");
-            emeSettingsDataset.DataSetName = "emeSettings";
+            try
+            {
+                emeSettingsDataset = new DataSet();
+                emeSettingsDataset.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+                //emeSettingsDataset.ReadXml(Directory.GetCurrentDirectory() + "\\Eme4xSystemFiles\\EMEdb\\emeSettings.xml");
+                emeSettingsDataset.ReadXml(EmeUserAppDataFolder + "\\Eme4xSystemFiles\\EMEdb\\emeSettings.xml");
+                emeSettingsDataset.DataSetName = "emeSettings";
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error Loading Data Files!" 
+                    + System.Environment.NewLine 
+                    + "Please confirm the following directory is installed: "
+                    + EmeUserAppDataFolder + "\\Eme4xSystemFiles\\EMEdb", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
         }
     }
         

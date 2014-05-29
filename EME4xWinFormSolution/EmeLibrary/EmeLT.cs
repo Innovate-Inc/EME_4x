@@ -44,13 +44,14 @@ namespace EmeLibrary
             toolStripCboValidationType.SelectedIndex = 0;
             validationSetting = toolStripCboValidationType.SelectedItem.ToString();
             //Start instance of the eme dataset
-            if (Utils1.emeDataSet == null)
-            {
-                Utils1.setEmeDataSets();
-            }
+            //if (Utils1.emeDataSet == null)
+            //{
+            //    Utils1.setEmeDataSets();
+            //}
             //bindFormtoEMEdatabases();
             //Utils1.setEmeDataSets();
-            hoverHelpInit();
+            
+            //hoverHelpInit();
                         
             //setDefaultKeywordListBoxSelection(ref  idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey);
             //setDefaultKeywordListBoxSelection(ref idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey);
@@ -173,6 +174,10 @@ namespace EmeLibrary
                 xDoc = new XmlDocument();                
                 xDoc.LoadXml(xml);                
                 filename = gxObjectName;
+                newToolStripMenuItem.Visible = false;
+                OpenToolStripMenuItem.Visible = false;
+                saveAsToolStripMenuItem.Visible = false;
+
 
                 string isoRootNode = xDoc.DocumentElement.Name;
                 if (isoRootNode.ToLower() == "gmi:mi_metadata")
@@ -962,24 +967,36 @@ namespace EmeLibrary
 
         private void EmeLT_Load(object sender, EventArgs e)
         {
-            PageController.readFromDB();
-
-            if (Utils1.emeDataSet == null)
+            try
             {
-                Utils1.setEmeDataSets();
-            }
-            //bindFormtoEMEdatabases();
-            //Utils1.setEmeDataSets();
-            hoverHelpInit();
-            xDoc = new XmlDocument();
-            //Format picker... default should be -2
-            sourceXmlFormat = sourceXmlFormat = "ISO19115"; //"ISO19115-2"; //  sourceXmlFormat ="ISO19115"
-            //xDox Set when checking the metadata format
-            filename = "New";
-            //localXdoc = new isoNodes(xDoc, sourceXmlFormat, filename);
-            bindCCMFields();
-            //PageController.ElementPopulator(this);
+                
 
+                if (Utils1.emeDataSet == null)
+                {
+                    Utils1.setEmeDataSets();
+                }
+
+                PageController.readFromDB();
+                //bindFormtoEMEdatabases();
+                //Utils1.setEmeDataSets();
+                hoverHelpInit();
+                if (!ESRIMode)
+                {
+                    //This prevents overriding incoming documents from ArcCatalog
+                    xDoc = new XmlDocument();
+                    //Format picker... default should be -2
+                    sourceXmlFormat = sourceXmlFormat = "ISO19115"; //"ISO19115-2"; //  sourceXmlFormat ="ISO19115"
+                    //xDox Set when checking the metadata format
+                    filename = "New";
+                    //localXdoc = new isoNodes(xDoc, sourceXmlFormat, filename);
+                    bindCCMFields();
+                    //PageController.ElementPopulator(this);
+                }
+            }
+            catch (Exception ex)
+            {
+                this.Close();
+            }
             
         }
 
@@ -994,11 +1011,7 @@ namespace EmeLibrary
                 paneltoExpand.Height = 530;
             }
         }
-
-        private void EmeLT_Resize(object sender, EventArgs e)
-        {
-            
-        }
+                
 
         /// <summary>
         /// wirite the selected date from datetimepicker to its associated textbox
