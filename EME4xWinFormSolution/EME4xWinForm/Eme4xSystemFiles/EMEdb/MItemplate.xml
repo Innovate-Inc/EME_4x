@@ -39,7 +39,7 @@
 							</gmd:facsimile>
 						</gmd:CI_Telephone>
 					</gmd:phone>
-					<gmd:address>
+					<gmd:address>					
 						<gmd:CI_Address>
 							<gmd:deliveryPoint>
 								<gco:CharacterString>*template*</gco:CharacterString>
@@ -61,6 +61,16 @@
 							</gmd:electronicMailAddress>
 						</gmd:CI_Address>
 					</gmd:address>
+					<gmd:onlineResource>
+						<gmd:CI_OnlineResource>
+							<gmd:linkage>
+								<gmd:URL>*template*</gmd:URL>
+							</gmd:linkage>																		
+							<gmd:function>
+								<gmd:CI_OnLineFunctionCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_OnLineFunctionCode" codeListValue="*template*">*template*</gmd:CI_OnLineFunctionCode>
+							</gmd:function>
+						</gmd:CI_OnlineResource>						
+					</gmd:onlineResource>
 					<gmd:hoursOfService>
 						<gco:CharacterString>*template*</gco:CharacterString>
 					</gmd:hoursOfService>
@@ -262,10 +272,16 @@
 					<gmd:editionDate/>
 					<gmd:identifier/>
 					<gmd:citedResponsibleParty>
-						<gmd:CI_ResponsibleParty>
+						<gmd:CI_ResponsibleParty>		
+							<gmd:individualName>
+								<gco:CharacterString>*template*</gco:CharacterString>
+							</gmd:individualName>
 							<gmd:organisationName>
 								<gco:CharacterString>*template*</gco:CharacterString>
 							</gmd:organisationName>
+							<gmd:positionName>
+								<gco:CharacterString>*template*</gco:CharacterString>
+							</gmd:positionName>
 							<gmd:contactInfo>
 								<gmd:CI_Contact>
 									<gmd:phone>
@@ -278,7 +294,7 @@
 											</gmd:facsimile>
 										</gmd:CI_Telephone>
 									</gmd:phone>
-									<gmd:address>
+									<gmd:address>					
 										<gmd:CI_Address>
 											<gmd:deliveryPoint>
 												<gco:CharacterString>*template*</gco:CharacterString>
@@ -300,14 +316,26 @@
 											</gmd:electronicMailAddress>
 										</gmd:CI_Address>
 									</gmd:address>
+									<gmd:onlineResource>
+										<gmd:CI_OnlineResource>
+											<gmd:linkage>
+												<gmd:URL>*template*</gmd:URL>
+											</gmd:linkage>																		
+											<gmd:function>
+												<gmd:CI_OnLineFunctionCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_OnLineFunctionCode" codeListValue="*template*">*template*</gmd:CI_OnLineFunctionCode>
+											</gmd:function>
+										</gmd:CI_OnlineResource>						
+									</gmd:onlineResource>
 									<gmd:hoursOfService>
 										<gco:CharacterString>*template*</gco:CharacterString>
 									</gmd:hoursOfService>
-									<gmd:contactInstructions/>
+									<gmd:contactInstructions>
+										<gco:CharacterString>*template*</gco:CharacterString>
+									</gmd:contactInstructions>
 								</gmd:CI_Contact>
 							</gmd:contactInfo>
 							<gmd:role>
-								<gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="originator">originator</gmd:CI_RoleCode>
+								<gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="pointOfContact">pointOfContact</gmd:CI_RoleCode>
 							</gmd:role>
 						</gmd:CI_ResponsibleParty>
 					</gmd:citedResponsibleParty>
@@ -354,7 +382,7 @@
 									</gmd:facsimile>
 								</gmd:CI_Telephone>
 							</gmd:phone>
-							<gmd:address>
+							<gmd:address>					
 								<gmd:CI_Address>
 									<gmd:deliveryPoint>
 										<gco:CharacterString>*template*</gco:CharacterString>
@@ -376,6 +404,16 @@
 									</gmd:electronicMailAddress>
 								</gmd:CI_Address>
 							</gmd:address>
+							<gmd:onlineResource>
+								<gmd:CI_OnlineResource>
+									<gmd:linkage>
+										<gmd:URL>*template*</gmd:URL>
+									</gmd:linkage>																		
+									<gmd:function>
+										<gmd:CI_OnLineFunctionCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_OnLineFunctionCode" codeListValue="*template*">*template*</gmd:CI_OnLineFunctionCode>
+									</gmd:function>
+								</gmd:CI_OnlineResource>						
+							</gmd:onlineResource>
 							<gmd:hoursOfService>
 								<gco:CharacterString>*template*</gco:CharacterString>
 							</gmd:hoursOfService>
@@ -692,7 +730,7 @@
 											</gmd:facsimile>
 										</gmd:CI_Telephone>
 									</gmd:phone>
-									<gmd:address>
+									<gmd:address>					
 										<gmd:CI_Address>
 											<gmd:deliveryPoint>
 												<gco:CharacterString>*template*</gco:CharacterString>
@@ -714,6 +752,16 @@
 											</gmd:electronicMailAddress>
 										</gmd:CI_Address>
 									</gmd:address>
+									<gmd:onlineResource>
+										<gmd:CI_OnlineResource>
+											<gmd:linkage>
+												<gmd:URL>*template*</gmd:URL>
+											</gmd:linkage>																		
+											<gmd:function>
+												<gmd:CI_OnLineFunctionCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_OnLineFunctionCode" codeListValue="*template*">*template*</gmd:CI_OnLineFunctionCode>
+											</gmd:function>
+										</gmd:CI_OnlineResource>						
+									</gmd:onlineResource>
 									<gmd:hoursOfService>
 										<gco:CharacterString>*template*</gco:CharacterString>
 									</gmd:hoursOfService>
@@ -959,10 +1007,16 @@
 				<gco:CharacterString>*template*</gco:CharacterString>
 			</gmd:maintenanceNote>
 			<gmd:contact>
-				<gmd:CI_ResponsibleParty>
+				<gmd:CI_ResponsibleParty>		
+					<gmd:individualName>
+						<gco:CharacterString>*template*</gco:CharacterString>
+					</gmd:individualName>
 					<gmd:organisationName>
 						<gco:CharacterString>*template*</gco:CharacterString>
 					</gmd:organisationName>
+					<gmd:positionName>
+						<gco:CharacterString>*template*</gco:CharacterString>
+					</gmd:positionName>
 					<gmd:contactInfo>
 						<gmd:CI_Contact>
 							<gmd:phone>
@@ -975,7 +1029,7 @@
 									</gmd:facsimile>
 								</gmd:CI_Telephone>
 							</gmd:phone>
-							<gmd:address>
+							<gmd:address>					
 								<gmd:CI_Address>
 									<gmd:deliveryPoint>
 										<gco:CharacterString>*template*</gco:CharacterString>
@@ -997,14 +1051,26 @@
 									</gmd:electronicMailAddress>
 								</gmd:CI_Address>
 							</gmd:address>
+							<gmd:onlineResource>
+								<gmd:CI_OnlineResource>
+									<gmd:linkage>
+										<gmd:URL>*template*</gmd:URL>
+									</gmd:linkage>																		
+									<gmd:function>
+										<gmd:CI_OnLineFunctionCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_OnLineFunctionCode" codeListValue="*template*">*template*</gmd:CI_OnLineFunctionCode>
+									</gmd:function>
+								</gmd:CI_OnlineResource>						
+							</gmd:onlineResource>
 							<gmd:hoursOfService>
 								<gco:CharacterString>*template*</gco:CharacterString>
 							</gmd:hoursOfService>
-							<gmd:contactInstructions/>
+							<gmd:contactInstructions>
+								<gco:CharacterString>*template*</gco:CharacterString>
+							</gmd:contactInstructions>
 						</gmd:CI_Contact>
 					</gmd:contactInfo>
 					<gmd:role>
-						<gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="*template*" codeSpace="*template*">*template*</gmd:CI_RoleCode>
+						<gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="pointOfContact">pointOfContact</gmd:CI_RoleCode>
 					</gmd:role>
 				</gmd:CI_ResponsibleParty>
 			</gmd:contact>

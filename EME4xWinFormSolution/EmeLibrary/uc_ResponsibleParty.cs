@@ -122,8 +122,8 @@ namespace EmeLibrary
             {
                 dcatProgramCode.SelectedValue = incomingCIRP.dcatProgramCode;
             }
-            individualName_txt.Text = incomingCIRP.individualName;
-            organisationName_txt.Text = incomingCIRP.organisationName;
+            individualName.Text = incomingCIRP.individualName;
+            organisationName.Text = incomingCIRP.organisationName;
             positionName.Text = incomingCIRP.positionName;
             contactInfo__CI_Contact__address__CI_Address__deliveryPoint.Text = incomingCIRP.contactInfo__CI_Contact__address__CI_Address__deliveryPoint;
             contactInfo__CI_Contact__address__CI_Address__city.Text = incomingCIRP.contactInfo__CI_Contact__address__CI_Address__city;
@@ -134,14 +134,14 @@ namespace EmeLibrary
             contactInfo__CI_Contact__phone__CI_Telephone__facsimile.Text = incomingCIRP.contactInfo__CI_Contact__phone__CI_Telephone__facsimile;
             contactInfo__CI_Contact__address__CI_Address__electronicMailAddress.Text = incomingCIRP.contactInfo__CI_Contact__address__CI_Address__electronicMailAddress;
             contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage.Text = incomingCIRP.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage;
-            if (incomingCIRP.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode == null)
+            if (incomingCIRP.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__function == null)
             {
                 contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode.SelectedIndex = -1;
             }
             else
             {
                 contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode.SelectedItem =
-                    incomingCIRP.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode;
+                    incomingCIRP.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__function;
             }
             contactInfo__CI_Contact__hoursOfService.Text = incomingCIRP.contactInfo__CI_Contact__hoursOfService;
             contactInfo__CI_Contact__contactInstructions.Text = incomingCIRP.contactInfo__CI_Contact__contactInstructions;
@@ -157,8 +157,9 @@ namespace EmeLibrary
                 outgoingCIRP.role = role.SelectedItem.ToString();
             }
             outgoingCIRP.dcatProgramCode = getSelectedProgramCode(dcatProgramCode.Text);
-            outgoingCIRP.individualName = individualName_txt.Text;
-            outgoingCIRP.organisationName = organisationName_txt.Text;
+            outgoingCIRP.individualName = individualName.Text;
+            outgoingCIRP.organisationName = organisationName.Text;
+            outgoingCIRP.positionName = positionName.Text;
             outgoingCIRP.contactInfo__CI_Contact__address__CI_Address__deliveryPoint = contactInfo__CI_Contact__address__CI_Address__deliveryPoint.Text;
             outgoingCIRP.contactInfo__CI_Contact__address__CI_Address__city = contactInfo__CI_Contact__address__CI_Address__city.Text;
             outgoingCIRP.contactInfo__CI_Contact__address__CI_Address__administrativeArea = contactInfo__CI_Contact__address__CI_Address__administrativeArea.Text;
@@ -170,7 +171,7 @@ namespace EmeLibrary
             outgoingCIRP.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage = contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage.Text;
             if (contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode.SelectedItem != null)
             {
-                outgoingCIRP.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode =
+                outgoingCIRP.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__function =
                     contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode.SelectedItem.ToString();
             }
             outgoingCIRP.contactInfo__CI_Contact__hoursOfService = contactInfo__CI_Contact__hoursOfService.Text;
@@ -280,8 +281,8 @@ namespace EmeLibrary
             pagerLbl.Text = "0 of 0";
             role.SelectedIndex = -1;
             dcatProgramCode.SelectedIndex = -1;
-            individualName_txt.Text = "";
-            organisationName_txt.Text = "";
+            individualName.Text = "";
+            organisationName.Text = "";
             positionName.Text = "";
             contactInfo__CI_Contact__address__CI_Address__deliveryPoint.Text = "";
             contactInfo__CI_Contact__address__CI_Address__city.Text = "";
@@ -453,8 +454,8 @@ namespace EmeLibrary
                 pagerLbl.Text = "0 of 0";
                 role.SelectedIndex = -1;
                 dcatProgramCode.SelectedIndex = -1;
-                individualName_txt.Text = "";
-                organisationName_txt.Text = "";
+                individualName.Text = "";
+                organisationName.Text = "";
                 positionName.Text = "";
                 contactInfo__CI_Contact__address__CI_Address__deliveryPoint.Text = "";
                 contactInfo__CI_Contact__address__CI_Address__city.Text = "";
@@ -542,8 +543,8 @@ namespace EmeLibrary
 
                 //CI_ResponsibleParty newRP = new CI_ResponsibleParty();
 
-                individualName_txt.Text = drv["individualName"].ToString();
-                organisationName_txt.Text = drv["organizationName"].ToString();
+                individualName.Text = drv["individualName"].ToString();
+                organisationName.Text = drv["organizationName"].ToString();
                 positionName.Text = drv["positionName"].ToString();
                 contactInfo__CI_Contact__address__CI_Address__deliveryPoint.Text = drv["deliveryPoint"].ToString();
                 if (!string.IsNullOrEmpty(drv["address2"].ToString()))

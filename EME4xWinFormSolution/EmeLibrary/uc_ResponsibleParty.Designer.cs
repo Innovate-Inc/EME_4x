@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(uc_ResponsibleParty));
             this.positionName = new System.Windows.Forms.TextBox();
-            this.organisationName_txt = new System.Windows.Forms.TextBox();
+            this.organisationName = new System.Windows.Forms.TextBox();
             this.contactInfo__CI_Contact__phone__CI_Telephone__voice = new System.Windows.Forms.TextBox();
             this.lblCI_RpListCount = new System.Windows.Forms.Label();
             this.role = new System.Windows.Forms.ComboBox();
@@ -41,7 +41,7 @@
             this.contactInfo__CI_Contact__phone__CI_Telephone__voice_lbl = new System.Windows.Forms.Label();
             this.contactInfo__CI_Contact__phone__CI_Telephone__facsimile_lbl = new System.Windows.Forms.Label();
             this.contactInfo__CI_Contact__phone__CI_Telephone__facsimile = new System.Windows.Forms.TextBox();
-            this.individualName_txt = new System.Windows.Forms.TextBox();
+            this.individualName = new System.Windows.Forms.TextBox();
             this.contactInfo__CI_Contact__address__CI_Address__deliveryPoint_lbl = new System.Windows.Forms.Label();
             this.contactInfo__CI_Contact__address__CI_Address__deliveryPoint = new System.Windows.Forms.TextBox();
             this.contactInfo__CI_Contact__address__CI_Address__city_lbl = new System.Windows.Forms.Label();
@@ -101,16 +101,16 @@
             this.positionName.Tag = "required1";
             this.positionName.Validating += new System.ComponentModel.CancelEventHandler(this.responsibleParty_Validating);
             // 
-            // organisationName_txt
+            // organisationName
             // 
-            this.organisationName_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.organisationName_txt.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.organisationName_txt.Location = new System.Drawing.Point(85, 37);
-            this.organisationName_txt.Name = "organisationName_txt";
-            this.organisationName_txt.Size = new System.Drawing.Size(178, 21);
-            this.organisationName_txt.TabIndex = 3;
-            this.organisationName_txt.Tag = "required1";
-            this.organisationName_txt.Validating += new System.ComponentModel.CancelEventHandler(this.responsibleParty_Validating);
+            this.organisationName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.organisationName.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.organisationName.Location = new System.Drawing.Point(85, 37);
+            this.organisationName.Name = "organisationName";
+            this.organisationName.Size = new System.Drawing.Size(178, 21);
+            this.organisationName.TabIndex = 3;
+            this.organisationName.Tag = "required1";
+            this.organisationName.Validating += new System.ComponentModel.CancelEventHandler(this.responsibleParty_Validating);
             // 
             // contactInfo__CI_Contact__phone__CI_Telephone__voice
             // 
@@ -219,16 +219,16 @@
             this.contactInfo__CI_Contact__phone__CI_Telephone__facsimile.Size = new System.Drawing.Size(186, 21);
             this.contactInfo__CI_Contact__phone__CI_Telephone__facsimile.TabIndex = 6;
             // 
-            // individualName_txt
+            // individualName
             // 
-            this.individualName_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.individualName_txt.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.individualName_txt.Location = new System.Drawing.Point(85, 13);
-            this.individualName_txt.Name = "individualName_txt";
-            this.individualName_txt.Size = new System.Drawing.Size(178, 21);
-            this.individualName_txt.TabIndex = 2;
-            this.individualName_txt.Tag = "required1";
-            this.individualName_txt.Validating += new System.ComponentModel.CancelEventHandler(this.responsibleParty_Validating);
+            this.individualName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.individualName.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.individualName.Location = new System.Drawing.Point(85, 13);
+            this.individualName.Name = "individualName";
+            this.individualName.Size = new System.Drawing.Size(178, 21);
+            this.individualName.TabIndex = 2;
+            this.individualName.Tag = "required1";
+            this.individualName.Validating += new System.ComponentModel.CancelEventHandler(this.responsibleParty_Validating);
             // 
             // contactInfo__CI_Contact__address__CI_Address__deliveryPoint_lbl
             // 
@@ -593,11 +593,11 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.panel1.Controls.Add(this.individualName_txt);
+            this.panel1.Controls.Add(this.individualName);
             this.panel1.Controls.Add(this.positionName);
             this.panel1.Controls.Add(this.positionName_lbl);
             this.panel1.Controls.Add(this.organisationName_lbl);
-            this.panel1.Controls.Add(this.organisationName_txt);
+            this.panel1.Controls.Add(this.organisationName);
             this.panel1.Controls.Add(this.individualName_lbl);
             this.errorProvider_RP.SetIconPadding(this.panel1, -15);
             this.panel1.Location = new System.Drawing.Point(3, 39);
@@ -739,7 +739,7 @@
         #endregion
 
         private System.Windows.Forms.TextBox positionName;
-        private System.Windows.Forms.TextBox organisationName_txt;
+        private System.Windows.Forms.TextBox organisationName;
         private System.Windows.Forms.TextBox contactInfo__CI_Contact__phone__CI_Telephone__voice;
         private System.Windows.Forms.Label lblCI_RpListCount;
         private System.Windows.Forms.ComboBox role;
@@ -749,7 +749,7 @@
         private System.Windows.Forms.Label contactInfo__CI_Contact__phone__CI_Telephone__voice_lbl;
         private System.Windows.Forms.Label contactInfo__CI_Contact__phone__CI_Telephone__facsimile_lbl;
         private System.Windows.Forms.TextBox contactInfo__CI_Contact__phone__CI_Telephone__facsimile;
-        private System.Windows.Forms.TextBox individualName_txt;
+        private System.Windows.Forms.TextBox individualName;
         private System.Windows.Forms.Label contactInfo__CI_Contact__address__CI_Address__deliveryPoint_lbl;
         private System.Windows.Forms.TextBox contactInfo__CI_Contact__address__CI_Address__deliveryPoint;
         private System.Windows.Forms.Label contactInfo__CI_Contact__address__CI_Address__city_lbl;

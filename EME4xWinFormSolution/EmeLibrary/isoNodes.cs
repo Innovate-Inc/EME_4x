@@ -1962,6 +1962,8 @@ namespace EmeLibrary
                                 if (targetNode.HasChildNodes == true) { targetNode.FirstChild.InnerText = nodeValue; }
                                 else { targetNode.InnerText = nodeValue; }
                                 if (p.Name == "role") { targetNode.FirstChild.Attributes["codeListValue"].Value = nodeValue; }
+                                if (p.Name == "contactInfo__CI_Contact__onlineResource__CI_OnlineResource__function")
+                                { targetNode.FirstChild.Attributes["codeListValue"].Value = nodeValue; }
 
                             }
                         }
@@ -2126,6 +2128,8 @@ namespace EmeLibrary
                                 if (targetNode.HasChildNodes == true) { targetNode.FirstChild.InnerText = nodeValue; }
                                 else { targetNode.InnerText = nodeValue; }
                                 if (p.Name == "role") { targetNode.FirstChild.Attributes["codeListValue"].Value = nodeValue; }
+                                if (p.Name == "contactInfo__CI_Contact__onlineResource__CI_OnlineResource__function")
+                                { targetNode.FirstChild.Attributes["codeListValue"].Value = nodeValue; }
 
                             }
                         }
@@ -2485,7 +2489,7 @@ namespace EmeLibrary
         public string contactInfo__CI_Contact__address__CI_Address__country { get; set; }
         public string contactInfo__CI_Contact__address__CI_Address__electronicMailAddress { get; set; }
         public string contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage { get; set; }//More properties under this.
-        public string contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode { get; set; } //link with CI_OnlineFunctionCode
+        public string contactInfo__CI_Contact__onlineResource__CI_OnlineResource__function { get; set; } //link with CI_OnlineFunctionCode
         public string contactInfo__CI_Contact__hoursOfService { get; set; }
         public string contactInfo__CI_Contact__contactInstructions { get; set; }
         public string role { get; set; } //need to link with role-code values from codelist
