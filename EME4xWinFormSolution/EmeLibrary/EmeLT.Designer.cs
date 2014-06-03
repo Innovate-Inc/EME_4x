@@ -80,6 +80,7 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.distributionInformation_gbx = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
+            this.distributionInfo__MD_Distribution = new EmeLibrary.uc_distribution();
             this.idInfo_resourceConstraints_gbx = new System.Windows.Forms.GroupBox();
             this.idInfo_resourceConstraints_MD_Constraints_useLimitation = new System.Windows.Forms.ComboBox();
             this.securityConstraints_gbx = new System.Windows.Forms.GroupBox();
@@ -107,8 +108,11 @@
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
             this.metadataAuthor_Pnl = new System.Windows.Forms.Panel();
+            this.contact_CI_ResponsibleParty = new EmeLibrary.uc_ResponsibleParty();
             this.pointOfContact_Pnl = new System.Windows.Forms.Panel();
+            this.idInfo_pointOfContact = new EmeLibrary.uc_ResponsibleParty();
             this.Citation_Pnl = new System.Windows.Forms.Panel();
+            this.idInfo_citation_citedResponsibleParty = new EmeLibrary.uc_ResponsibleParty();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -146,6 +150,7 @@
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.idInfo_resourceMaintenance_lbl = new System.Windows.Forms.Label();
             this.idInfo_resourceMaintenance = new System.Windows.Forms.ComboBox();
+            this.idInfo_extent_temporalExtent = new EmeLibrary.uc_extentTemporal();
             this.panel4 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -176,11 +181,6 @@
             this.idInfo_citation_Title_lbl = new System.Windows.Forms.Label();
             this.idInfo_citation_Title = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.idInfo_extent_temporalExtent = new EmeLibrary.uc_extentTemporal();
-            this.distributionInfo__MD_Distribution = new EmeLibrary.uc_distribution();
-            this.contact_CI_ResponsibleParty = new EmeLibrary.uc_ResponsibleParty();
-            this.idInfo_pointOfContact = new EmeLibrary.uc_ResponsibleParty();
-            this.idInfo_citation_citedResponsibleParty = new EmeLibrary.uc_ResponsibleParty();
             this.uc_ResponsibleParty2 = new EmeLibrary.uc_ResponsibleParty();
             this.uc_ResponsibleParty3 = new EmeLibrary.uc_ResponsibleParty();
             this.uc_ResponsibleParty4 = new EmeLibrary.uc_ResponsibleParty();
@@ -261,6 +261,7 @@
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.panel8.Controls.Add(this.label7);
+            this.panel8.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel8.Location = new System.Drawing.Point(15, 638);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(68, 27);
@@ -269,9 +270,10 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(8, 7);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(56, 13);
+            this.label7.Size = new System.Drawing.Size(59, 13);
             this.label7.TabIndex = 0;
             this.label7.Text = "mandatory";
             // 
@@ -279,6 +281,7 @@
             // 
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.panel9.Controls.Add(this.label8);
+            this.panel9.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel9.Location = new System.Drawing.Point(89, 638);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(130, 27);
@@ -287,9 +290,10 @@
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(8, 7);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(115, 13);
+            this.label8.Size = new System.Drawing.Size(118, 13);
             this.label8.TabIndex = 0;
             this.label8.Text = "mandatory if applicable";
             // 
@@ -297,6 +301,7 @@
             // 
             this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.panel10.Controls.Add(this.label9);
+            this.panel10.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel10.Location = new System.Drawing.Point(225, 638);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(58, 27);
@@ -305,9 +310,10 @@
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(8, 7);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(44, 13);
+            this.label9.Size = new System.Drawing.Size(45, 13);
             this.label9.TabIndex = 0;
             this.label9.Text = "optional";
             // 
@@ -343,7 +349,7 @@
             // 
             this.idInfo_citation_date_revision_dtP.Location = new System.Drawing.Point(174, 65);
             this.idInfo_citation_date_revision_dtP.Name = "idInfo_citation_date_revision_dtP";
-            this.idInfo_citation_date_revision_dtP.Size = new System.Drawing.Size(18, 20);
+            this.idInfo_citation_date_revision_dtP.Size = new System.Drawing.Size(18, 21);
             this.idInfo_citation_date_revision_dtP.TabIndex = 42;
             this.idInfo_citation_date_revision_dtP.ValueChanged += new System.EventHandler(this.dtP_ValueChanged);
             // 
@@ -378,7 +384,7 @@
             this.idInfo_citation_date_publication_dtP.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.idInfo_citation_date_publication_dtP.Location = new System.Drawing.Point(174, 41);
             this.idInfo_citation_date_publication_dtP.Name = "idInfo_citation_date_publication_dtP";
-            this.idInfo_citation_date_publication_dtP.Size = new System.Drawing.Size(18, 20);
+            this.idInfo_citation_date_publication_dtP.Size = new System.Drawing.Size(18, 21);
             this.idInfo_citation_date_publication_dtP.TabIndex = 41;
             this.idInfo_citation_date_publication_dtP.ValueChanged += new System.EventHandler(this.dtP_ValueChanged);
             // 
@@ -398,11 +404,11 @@
             // idInfo_citation_date_creation
             // 
             this.idInfo_citation_date_creation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.idInfo_citation_date_creation.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idInfo_citation_date_creation.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idInfo_citation_date_creation.Location = new System.Drawing.Point(68, 18);
             this.idInfo_citation_date_creation.Name = "idInfo_citation_date_creation";
             this.idInfo_citation_date_creation.ReadOnly = true;
-            this.idInfo_citation_date_creation.Size = new System.Drawing.Size(100, 20);
+            this.idInfo_citation_date_creation.Size = new System.Drawing.Size(100, 21);
             this.idInfo_citation_date_creation.TabIndex = 40;
             this.idInfo_citation_date_creation.Tag = "";
             this.idInfo_citation_date_creation.Validating += new System.ComponentModel.CancelEventHandler(this.cntrl_Validating);
@@ -413,29 +419,29 @@
             this.idInfo_citation_date_creation_dtP.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.idInfo_citation_date_creation_dtP.Location = new System.Drawing.Point(174, 18);
             this.idInfo_citation_date_creation_dtP.Name = "idInfo_citation_date_creation_dtP";
-            this.idInfo_citation_date_creation_dtP.Size = new System.Drawing.Size(18, 20);
+            this.idInfo_citation_date_creation_dtP.Size = new System.Drawing.Size(18, 21);
             this.idInfo_citation_date_creation_dtP.TabIndex = 37;
             this.idInfo_citation_date_creation_dtP.ValueChanged += new System.EventHandler(this.dtP_ValueChanged);
             // 
             // idInfo_citation_date_revision_lbl
             // 
             this.idInfo_citation_date_revision_lbl.AutoSize = true;
-            this.idInfo_citation_date_revision_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idInfo_citation_date_revision_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idInfo_citation_date_revision_lbl.Location = new System.Drawing.Point(14, 68);
             this.idInfo_citation_date_revision_lbl.Name = "idInfo_citation_date_revision_lbl";
-            this.idInfo_citation_date_revision_lbl.Size = new System.Drawing.Size(48, 13);
+            this.idInfo_citation_date_revision_lbl.Size = new System.Drawing.Size(47, 13);
             this.idInfo_citation_date_revision_lbl.TabIndex = 39;
             this.idInfo_citation_date_revision_lbl.Text = "Revision";
             // 
             // idInfo_citation_date_publication
             // 
             this.idInfo_citation_date_publication.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.idInfo_citation_date_publication.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idInfo_citation_date_publication.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.errorProvider1.SetIconPadding(this.idInfo_citation_date_publication, 25);
             this.idInfo_citation_date_publication.Location = new System.Drawing.Point(68, 42);
             this.idInfo_citation_date_publication.Name = "idInfo_citation_date_publication";
             this.idInfo_citation_date_publication.ReadOnly = true;
-            this.idInfo_citation_date_publication.Size = new System.Drawing.Size(100, 20);
+            this.idInfo_citation_date_publication.Size = new System.Drawing.Size(100, 21);
             this.idInfo_citation_date_publication.TabIndex = 1;
             this.idInfo_citation_date_publication.Tag = "";
             this.idInfo_citation_date_publication.Validating += new System.ComponentModel.CancelEventHandler(this.cntrl_Validating);
@@ -443,21 +449,21 @@
             // idInfo_citation_date_publication_lbl
             // 
             this.idInfo_citation_date_publication_lbl.AutoSize = true;
-            this.idInfo_citation_date_publication_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idInfo_citation_date_publication_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idInfo_citation_date_publication_lbl.Location = new System.Drawing.Point(3, 44);
             this.idInfo_citation_date_publication_lbl.Name = "idInfo_citation_date_publication_lbl";
-            this.idInfo_citation_date_publication_lbl.Size = new System.Drawing.Size(59, 13);
+            this.idInfo_citation_date_publication_lbl.Size = new System.Drawing.Size(58, 13);
             this.idInfo_citation_date_publication_lbl.TabIndex = 38;
             this.idInfo_citation_date_publication_lbl.Text = "Publication";
             // 
             // idInfo_citation_date_revision
             // 
             this.idInfo_citation_date_revision.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.idInfo_citation_date_revision.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idInfo_citation_date_revision.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idInfo_citation_date_revision.Location = new System.Drawing.Point(68, 66);
             this.idInfo_citation_date_revision.Name = "idInfo_citation_date_revision";
             this.idInfo_citation_date_revision.ReadOnly = true;
-            this.idInfo_citation_date_revision.Size = new System.Drawing.Size(100, 20);
+            this.idInfo_citation_date_revision.Size = new System.Drawing.Size(100, 21);
             this.idInfo_citation_date_revision.TabIndex = 2;
             this.idInfo_citation_date_revision.Tag = "";
             this.idInfo_citation_date_revision.Validating += new System.ComponentModel.CancelEventHandler(this.cntrl_Validating);
@@ -465,17 +471,17 @@
             // idInfo_citation_date_creation_lbl
             // 
             this.idInfo_citation_date_creation_lbl.AutoSize = true;
-            this.idInfo_citation_date_creation_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idInfo_citation_date_creation_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idInfo_citation_date_creation_lbl.Location = new System.Drawing.Point(16, 21);
             this.idInfo_citation_date_creation_lbl.Name = "idInfo_citation_date_creation_lbl";
-            this.idInfo_citation_date_creation_lbl.Size = new System.Drawing.Size(46, 13);
+            this.idInfo_citation_date_creation_lbl.Size = new System.Drawing.Size(48, 13);
             this.idInfo_citation_date_creation_lbl.TabIndex = 37;
             this.idInfo_citation_date_creation_lbl.Text = "Creation";
             // 
             // hierarchyLevel_MD_ScopeCode
             // 
             this.hierarchyLevel_MD_ScopeCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.hierarchyLevel_MD_ScopeCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hierarchyLevel_MD_ScopeCode.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hierarchyLevel_MD_ScopeCode.FormattingEnabled = true;
             this.errorProvider1.SetIconPadding(this.hierarchyLevel_MD_ScopeCode, 3);
             this.hierarchyLevel_MD_ScopeCode.Items.AddRange(new object[] {
@@ -505,28 +511,28 @@
             // dateStamp
             // 
             this.dateStamp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.dateStamp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateStamp.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.errorProvider1.SetIconPadding(this.dateStamp, 25);
             this.dateStamp.Location = new System.Drawing.Point(105, 29);
             this.dateStamp.Name = "dateStamp";
             this.dateStamp.ReadOnly = true;
-            this.dateStamp.Size = new System.Drawing.Size(140, 20);
+            this.dateStamp.Size = new System.Drawing.Size(140, 21);
             this.dateStamp.TabIndex = 9;
             // 
             // fileIdentifier
             // 
             this.fileIdentifier.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.fileIdentifier.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fileIdentifier.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.errorProvider1.SetIconPadding(this.fileIdentifier, 75);
             this.fileIdentifier.Location = new System.Drawing.Point(104, 5);
             this.fileIdentifier.Margin = new System.Windows.Forms.Padding(5, 5, 11, 5);
             this.fileIdentifier.Name = "fileIdentifier";
-            this.fileIdentifier.Size = new System.Drawing.Size(233, 20);
+            this.fileIdentifier.Size = new System.Drawing.Size(233, 21);
             this.fileIdentifier.TabIndex = 7;
             // 
             // idInfo_extent_description
             // 
-            this.idInfo_extent_description.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idInfo_extent_description.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idInfo_extent_description.FormattingEnabled = true;
             this.idInfo_extent_description.Location = new System.Drawing.Point(69, 7);
             this.idInfo_extent_description.Name = "idInfo_extent_description";
@@ -671,15 +677,17 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(4, 13);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(580, 13);
+            this.label4.Size = new System.Drawing.Size(590, 13);
             this.label4.TabIndex = 1;
             this.label4.Text = "This tab is for testing purposes.  These elements are not edited by EME but will " +
     "be merged back into the saved document.";
             // 
             // elementsNotSupportedByEME
             // 
+            this.elementsNotSupportedByEME.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.elementsNotSupportedByEME.Location = new System.Drawing.Point(3, 35);
             this.elementsNotSupportedByEME.Multiline = true;
             this.elementsNotSupportedByEME.Name = "elementsNotSupportedByEME";
@@ -695,7 +703,7 @@
             this.tabPage3.Controls.Add(this.distributionInformation_gbx);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(995, 587);
+            this.tabPage3.Size = new System.Drawing.Size(995, 593);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Distribution & Metadata Information";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -708,7 +716,7 @@
             this.distributionInformation_gbx.Location = new System.Drawing.Point(1, 7);
             this.distributionInformation_gbx.Margin = new System.Windows.Forms.Padding(0);
             this.distributionInformation_gbx.Name = "distributionInformation_gbx";
-            this.distributionInformation_gbx.Size = new System.Drawing.Size(983, 576);
+            this.distributionInformation_gbx.Size = new System.Drawing.Size(983, 586);
             this.distributionInformation_gbx.TabIndex = 39;
             this.distributionInformation_gbx.TabStop = false;
             // 
@@ -721,8 +729,21 @@
             this.flowLayoutPanel4.Location = new System.Drawing.Point(2, 9);
             this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(478, 561);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(478, 574);
             this.flowLayoutPanel4.TabIndex = 42;
+            // 
+            // distributionInfo__MD_Distribution
+            // 
+            this.distributionInfo__MD_Distribution.AutoSize = true;
+            this.distributionInfo__MD_Distribution.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.distributionInfo__MD_Distribution.distributorList = null;
+            this.distributionInfo__MD_Distribution.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.distributionInfo__MD_Distribution.Location = new System.Drawing.Point(0, 0);
+            this.distributionInfo__MD_Distribution.Margin = new System.Windows.Forms.Padding(0);
+            this.distributionInfo__MD_Distribution.mylabel = "Distributor";
+            this.distributionInfo__MD_Distribution.Name = "distributionInfo__MD_Distribution";
+            this.distributionInfo__MD_Distribution.Size = new System.Drawing.Size(454, 209);
+            this.distributionInfo__MD_Distribution.TabIndex = 0;
             // 
             // idInfo_resourceConstraints_gbx
             // 
@@ -731,10 +752,10 @@
             this.idInfo_resourceConstraints_gbx.Controls.Add(this.securityConstraints_gbx);
             this.idInfo_resourceConstraints_gbx.Controls.Add(this.legalContraints_lbl);
             this.idInfo_resourceConstraints_gbx.Controls.Add(this.generalContraints_lbl);
-            this.idInfo_resourceConstraints_gbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idInfo_resourceConstraints_gbx.Location = new System.Drawing.Point(3, 211);
+            this.idInfo_resourceConstraints_gbx.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idInfo_resourceConstraints_gbx.Location = new System.Drawing.Point(3, 212);
             this.idInfo_resourceConstraints_gbx.Name = "idInfo_resourceConstraints_gbx";
-            this.idInfo_resourceConstraints_gbx.Size = new System.Drawing.Size(451, 347);
+            this.idInfo_resourceConstraints_gbx.Size = new System.Drawing.Size(451, 349);
             this.idInfo_resourceConstraints_gbx.TabIndex = 52;
             this.idInfo_resourceConstraints_gbx.TabStop = false;
             this.idInfo_resourceConstraints_gbx.Text = "Dataset Constraints";
@@ -742,7 +763,7 @@
             // idInfo_resourceConstraints_MD_Constraints_useLimitation
             // 
             this.idInfo_resourceConstraints_MD_Constraints_useLimitation.DropDownWidth = 600;
-            this.idInfo_resourceConstraints_MD_Constraints_useLimitation.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idInfo_resourceConstraints_MD_Constraints_useLimitation.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idInfo_resourceConstraints_MD_Constraints_useLimitation.FormattingEnabled = true;
             this.idInfo_resourceConstraints_MD_Constraints_useLimitation.IntegralHeight = false;
             this.idInfo_resourceConstraints_MD_Constraints_useLimitation.Items.AddRange(new object[] {
@@ -818,45 +839,45 @@
             // securityConstraints_handlingDescription_lbl
             // 
             this.securityConstraints_handlingDescription_lbl.AutoSize = true;
-            this.securityConstraints_handlingDescription_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.securityConstraints_handlingDescription_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.securityConstraints_handlingDescription_lbl.Location = new System.Drawing.Point(11, 136);
             this.securityConstraints_handlingDescription_lbl.Name = "securityConstraints_handlingDescription_lbl";
-            this.securityConstraints_handlingDescription_lbl.Size = new System.Drawing.Size(105, 13);
+            this.securityConstraints_handlingDescription_lbl.Size = new System.Drawing.Size(104, 13);
             this.securityConstraints_handlingDescription_lbl.TabIndex = 59;
             this.securityConstraints_handlingDescription_lbl.Text = "Handling Description";
             // 
             // idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescription
             // 
             this.idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescription.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescription.Location = new System.Drawing.Point(127, 127);
             this.idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescription.Name = "idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescription";
-            this.idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescription.Size = new System.Drawing.Size(255, 20);
+            this.idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescription.Size = new System.Drawing.Size(255, 21);
             this.idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescription.TabIndex = 58;
             // 
             // securityConstraints_classificationSystem_lbl
             // 
             this.securityConstraints_classificationSystem_lbl.AutoSize = true;
-            this.securityConstraints_classificationSystem_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.securityConstraints_classificationSystem_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.securityConstraints_classificationSystem_lbl.Location = new System.Drawing.Point(11, 108);
             this.securityConstraints_classificationSystem_lbl.Name = "securityConstraints_classificationSystem_lbl";
-            this.securityConstraints_classificationSystem_lbl.Size = new System.Drawing.Size(105, 13);
+            this.securityConstraints_classificationSystem_lbl.Size = new System.Drawing.Size(107, 13);
             this.securityConstraints_classificationSystem_lbl.TabIndex = 57;
             this.securityConstraints_classificationSystem_lbl.Text = "Classification System";
             // 
             // idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystem
             // 
             this.idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystem.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystem.Location = new System.Drawing.Point(128, 101);
             this.idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystem.Name = "idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystem";
-            this.idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystem.Size = new System.Drawing.Size(255, 20);
+            this.idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystem.Size = new System.Drawing.Size(255, 21);
             this.idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystem.TabIndex = 56;
             // 
             // idInfo_resourceConstraints_MD_SecurityConstraints_userNote
             // 
             this.idInfo_resourceConstraints_MD_SecurityConstraints_userNote.DropDownWidth = 600;
-            this.idInfo_resourceConstraints_MD_SecurityConstraints_userNote.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idInfo_resourceConstraints_MD_SecurityConstraints_userNote.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idInfo_resourceConstraints_MD_SecurityConstraints_userNote.FormattingEnabled = true;
             this.idInfo_resourceConstraints_MD_SecurityConstraints_userNote.Items.AddRange(new object[] {
             "EPA Category: Mission Sensitive, NARA Category: Critical Infrastructure",
@@ -898,7 +919,7 @@
             // 
             // idInfo_resourceConstraints_MD_SecurityConstraints_useLimitation
             // 
-            this.idInfo_resourceConstraints_MD_SecurityConstraints_useLimitation.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idInfo_resourceConstraints_MD_SecurityConstraints_useLimitation.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idInfo_resourceConstraints_MD_SecurityConstraints_useLimitation.FormattingEnabled = true;
             this.idInfo_resourceConstraints_MD_SecurityConstraints_useLimitation.Items.AddRange(new object[] {
             "public",
@@ -912,37 +933,37 @@
             // securityConstraints_userNote_lbl
             // 
             this.securityConstraints_userNote_lbl.AutoSize = true;
-            this.securityConstraints_userNote_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.securityConstraints_userNote_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.securityConstraints_userNote_lbl.Location = new System.Drawing.Point(53, 71);
             this.securityConstraints_userNote_lbl.Name = "securityConstraints_userNote_lbl";
-            this.securityConstraints_userNote_lbl.Size = new System.Drawing.Size(63, 26);
+            this.securityConstraints_userNote_lbl.Size = new System.Drawing.Size(62, 26);
             this.securityConstraints_userNote_lbl.TabIndex = 12;
             this.securityConstraints_userNote_lbl.Text = "User Note /\r\nComment";
             // 
             // securityConstraints_classification_lbl
             // 
             this.securityConstraints_classification_lbl.AutoSize = true;
-            this.securityConstraints_classification_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.securityConstraints_classification_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.securityConstraints_classification_lbl.Location = new System.Drawing.Point(41, 52);
             this.securityConstraints_classification_lbl.Name = "securityConstraints_classification_lbl";
-            this.securityConstraints_classification_lbl.Size = new System.Drawing.Size(68, 13);
+            this.securityConstraints_classification_lbl.Size = new System.Drawing.Size(69, 13);
             this.securityConstraints_classification_lbl.TabIndex = 11;
             this.securityConstraints_classification_lbl.Text = "Classification";
             // 
             // securityConstraints_useLimitation_lbl
             // 
             this.securityConstraints_useLimitation_lbl.AutoSize = true;
-            this.securityConstraints_useLimitation_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.securityConstraints_useLimitation_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.securityConstraints_useLimitation_lbl.Location = new System.Drawing.Point(38, 16);
             this.securityConstraints_useLimitation_lbl.Name = "securityConstraints_useLimitation_lbl";
-            this.securityConstraints_useLimitation_lbl.Size = new System.Drawing.Size(78, 26);
+            this.securityConstraints_useLimitation_lbl.Size = new System.Drawing.Size(77, 26);
             this.securityConstraints_useLimitation_lbl.TabIndex = 10;
             this.securityConstraints_useLimitation_lbl.Text = "Use Limitation/\r\nAccess Level";
             // 
             // idInfo_resourceConstraints_MD_SecurityConstraints_classification
             // 
             this.idInfo_resourceConstraints_MD_SecurityConstraints_classification.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.idInfo_resourceConstraints_MD_SecurityConstraints_classification.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idInfo_resourceConstraints_MD_SecurityConstraints_classification.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idInfo_resourceConstraints_MD_SecurityConstraints_classification.FormattingEnabled = true;
             this.idInfo_resourceConstraints_MD_SecurityConstraints_classification.Items.AddRange(new object[] {
             "",
@@ -966,7 +987,7 @@
             this.legalContraints_lbl.Controls.Add(this.accessConstraints_lbl);
             this.legalContraints_lbl.Controls.Add(this.idInfo_resourceConstraints_MD_LegalConstraints_accessConstraints);
             this.legalContraints_lbl.Controls.Add(this.idInfo_resourceConstraints_MD_LegalConstraints_useConstraints);
-            this.legalContraints_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.legalContraints_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.legalContraints_lbl.Location = new System.Drawing.Point(12, 48);
             this.legalContraints_lbl.Name = "legalContraints_lbl";
             this.legalContraints_lbl.Size = new System.Drawing.Size(404, 125);
@@ -977,26 +998,26 @@
             // idInfo_resourceConstraints_MD_LegalConstraints_otherConstraints
             // 
             this.idInfo_resourceConstraints_MD_LegalConstraints_otherConstraints.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.idInfo_resourceConstraints_MD_LegalConstraints_otherConstraints.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idInfo_resourceConstraints_MD_LegalConstraints_otherConstraints.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idInfo_resourceConstraints_MD_LegalConstraints_otherConstraints.Location = new System.Drawing.Point(127, 94);
             this.idInfo_resourceConstraints_MD_LegalConstraints_otherConstraints.Name = "idInfo_resourceConstraints_MD_LegalConstraints_otherConstraints";
-            this.idInfo_resourceConstraints_MD_LegalConstraints_otherConstraints.Size = new System.Drawing.Size(255, 20);
+            this.idInfo_resourceConstraints_MD_LegalConstraints_otherConstraints.Size = new System.Drawing.Size(255, 21);
             this.idInfo_resourceConstraints_MD_LegalConstraints_otherConstraints.TabIndex = 14;
             // 
             // otherConstraints_lbl
             // 
             this.otherConstraints_lbl.AutoSize = true;
-            this.otherConstraints_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.otherConstraints_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.otherConstraints_lbl.Location = new System.Drawing.Point(28, 101);
             this.otherConstraints_lbl.Name = "otherConstraints_lbl";
-            this.otherConstraints_lbl.Size = new System.Drawing.Size(88, 13);
+            this.otherConstraints_lbl.Size = new System.Drawing.Size(93, 13);
             this.otherConstraints_lbl.TabIndex = 13;
             this.otherConstraints_lbl.Text = "Other Constraints";
             // 
             // useLimitation_lbl
             // 
             this.useLimitation_lbl.AutoSize = true;
-            this.useLimitation_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.useLimitation_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.useLimitation_lbl.Location = new System.Drawing.Point(43, 24);
             this.useLimitation_lbl.Name = "useLimitation_lbl";
             this.useLimitation_lbl.Size = new System.Drawing.Size(73, 13);
@@ -1006,36 +1027,36 @@
             // idInfo_resourceConstraints_MD_LegalConstraints_useLimitation
             // 
             this.idInfo_resourceConstraints_MD_LegalConstraints_useLimitation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.idInfo_resourceConstraints_MD_LegalConstraints_useLimitation.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idInfo_resourceConstraints_MD_LegalConstraints_useLimitation.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idInfo_resourceConstraints_MD_LegalConstraints_useLimitation.Location = new System.Drawing.Point(127, 17);
             this.idInfo_resourceConstraints_MD_LegalConstraints_useLimitation.Name = "idInfo_resourceConstraints_MD_LegalConstraints_useLimitation";
-            this.idInfo_resourceConstraints_MD_LegalConstraints_useLimitation.Size = new System.Drawing.Size(255, 20);
+            this.idInfo_resourceConstraints_MD_LegalConstraints_useLimitation.Size = new System.Drawing.Size(255, 21);
             this.idInfo_resourceConstraints_MD_LegalConstraints_useLimitation.TabIndex = 1;
             // 
             // useConstraints_lbl
             // 
             this.useConstraints_lbl.AutoSize = true;
-            this.useConstraints_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.useConstraints_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.useConstraints_lbl.Location = new System.Drawing.Point(35, 76);
             this.useConstraints_lbl.Name = "useConstraints_lbl";
-            this.useConstraints_lbl.Size = new System.Drawing.Size(81, 13);
+            this.useConstraints_lbl.Size = new System.Drawing.Size(83, 13);
             this.useConstraints_lbl.TabIndex = 11;
             this.useConstraints_lbl.Text = "Use Constraints";
             // 
             // accessConstraints_lbl
             // 
             this.accessConstraints_lbl.AutoSize = true;
-            this.accessConstraints_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.accessConstraints_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.accessConstraints_lbl.Location = new System.Drawing.Point(19, 51);
             this.accessConstraints_lbl.Name = "accessConstraints_lbl";
-            this.accessConstraints_lbl.Size = new System.Drawing.Size(97, 13);
+            this.accessConstraints_lbl.Size = new System.Drawing.Size(98, 13);
             this.accessConstraints_lbl.TabIndex = 10;
             this.accessConstraints_lbl.Text = "Access Constraints";
             // 
             // idInfo_resourceConstraints_MD_LegalConstraints_accessConstraints
             // 
             this.idInfo_resourceConstraints_MD_LegalConstraints_accessConstraints.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.idInfo_resourceConstraints_MD_LegalConstraints_accessConstraints.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idInfo_resourceConstraints_MD_LegalConstraints_accessConstraints.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idInfo_resourceConstraints_MD_LegalConstraints_accessConstraints.FormattingEnabled = true;
             this.idInfo_resourceConstraints_MD_LegalConstraints_accessConstraints.Items.AddRange(new object[] {
             "",
@@ -1055,7 +1076,7 @@
             // idInfo_resourceConstraints_MD_LegalConstraints_useConstraints
             // 
             this.idInfo_resourceConstraints_MD_LegalConstraints_useConstraints.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.idInfo_resourceConstraints_MD_LegalConstraints_useConstraints.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idInfo_resourceConstraints_MD_LegalConstraints_useConstraints.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idInfo_resourceConstraints_MD_LegalConstraints_useConstraints.FormattingEnabled = true;
             this.idInfo_resourceConstraints_MD_LegalConstraints_useConstraints.Items.AddRange(new object[] {
             "",
@@ -1075,10 +1096,10 @@
             // generalContraints_lbl
             // 
             this.generalContraints_lbl.AutoSize = true;
-            this.generalContraints_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.generalContraints_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.generalContraints_lbl.Location = new System.Drawing.Point(26, 17);
             this.generalContraints_lbl.Name = "generalContraints_lbl";
-            this.generalContraints_lbl.Size = new System.Drawing.Size(107, 26);
+            this.generalContraints_lbl.Size = new System.Drawing.Size(109, 26);
             this.generalContraints_lbl.TabIndex = 8;
             this.generalContraints_lbl.Text = "General Constraints /\r\nSystem Of Records";
             // 
@@ -1091,7 +1112,7 @@
             this.flowLayoutPanel6.Location = new System.Drawing.Point(480, 15);
             this.flowLayoutPanel6.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.flowLayoutPanel6.Name = "flowLayoutPanel6";
-            this.flowLayoutPanel6.Size = new System.Drawing.Size(495, 555);
+            this.flowLayoutPanel6.Size = new System.Drawing.Size(495, 568);
             this.flowLayoutPanel6.TabIndex = 41;
             this.flowLayoutPanel6.WrapContents = false;
             // 
@@ -1100,10 +1121,10 @@
             this.groupBox8.AutoSize = true;
             this.groupBox8.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBox8.Controls.Add(this.flowLayoutPanel5);
-            this.groupBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox8.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox8.Location = new System.Drawing.Point(3, 3);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(469, 177);
+            this.groupBox8.Size = new System.Drawing.Size(469, 178);
             this.groupBox8.TabIndex = 39;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Contacts";
@@ -1132,6 +1153,21 @@
             this.metadataAuthor_Pnl.Size = new System.Drawing.Size(451, 40);
             this.metadataAuthor_Pnl.TabIndex = 13;
             // 
+            // contact_CI_ResponsibleParty
+            // 
+            this.contact_CI_ResponsibleParty.BackColor = System.Drawing.Color.Transparent;
+            this.contact_CI_ResponsibleParty.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.contact_CI_ResponsibleParty.CI_ResponsiblePartyList = null;
+            this.contact_CI_ResponsibleParty.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contact_CI_ResponsibleParty.Location = new System.Drawing.Point(3, 2);
+            this.contact_CI_ResponsibleParty.mylabel = "Metadata Author";
+            this.contact_CI_ResponsibleParty.Name = "contact_CI_ResponsibleParty";
+            this.contact_CI_ResponsibleParty.rp_mode = "dist";
+            this.contact_CI_ResponsibleParty.Size = new System.Drawing.Size(445, 35);
+            this.contact_CI_ResponsibleParty.TabIndex = 0;
+            this.contact_CI_ResponsibleParty.Tag = "";
+            this.contact_CI_ResponsibleParty.Validating += new System.ComponentModel.CancelEventHandler(this.cntrl_Validating);
+            // 
             // pointOfContact_Pnl
             // 
             this.pointOfContact_Pnl.AutoSize = true;
@@ -1142,6 +1178,19 @@
             this.pointOfContact_Pnl.Name = "pointOfContact_Pnl";
             this.pointOfContact_Pnl.Size = new System.Drawing.Size(451, 40);
             this.pointOfContact_Pnl.TabIndex = 17;
+            // 
+            // idInfo_pointOfContact
+            // 
+            this.idInfo_pointOfContact.BackColor = System.Drawing.Color.Transparent;
+            this.idInfo_pointOfContact.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.idInfo_pointOfContact.CI_ResponsiblePartyList = null;
+            this.idInfo_pointOfContact.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idInfo_pointOfContact.Location = new System.Drawing.Point(2, 2);
+            this.idInfo_pointOfContact.mylabel = "Resource Owner";
+            this.idInfo_pointOfContact.Name = "idInfo_pointOfContact";
+            this.idInfo_pointOfContact.rp_mode = null;
+            this.idInfo_pointOfContact.Size = new System.Drawing.Size(446, 35);
+            this.idInfo_pointOfContact.TabIndex = 2;
             // 
             // Citation_Pnl
             // 
@@ -1154,12 +1203,25 @@
             this.Citation_Pnl.Size = new System.Drawing.Size(451, 41);
             this.Citation_Pnl.TabIndex = 16;
             // 
+            // idInfo_citation_citedResponsibleParty
+            // 
+            this.idInfo_citation_citedResponsibleParty.BackColor = System.Drawing.Color.Transparent;
+            this.idInfo_citation_citedResponsibleParty.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.idInfo_citation_citedResponsibleParty.CI_ResponsiblePartyList = null;
+            this.idInfo_citation_citedResponsibleParty.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idInfo_citation_citedResponsibleParty.Location = new System.Drawing.Point(2, 3);
+            this.idInfo_citation_citedResponsibleParty.mylabel = "Resource Producer";
+            this.idInfo_citation_citedResponsibleParty.Name = "idInfo_citation_citedResponsibleParty";
+            this.idInfo_citation_citedResponsibleParty.rp_mode = null;
+            this.idInfo_citation_citedResponsibleParty.Size = new System.Drawing.Size(446, 35);
+            this.idInfo_citation_citedResponsibleParty.TabIndex = 2;
+            // 
             // groupBox3
             // 
             this.groupBox3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBox3.Controls.Add(this.flowLayoutPanel1);
-            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(3, 186);
+            this.groupBox3.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(3, 187);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(470, 252);
             this.groupBox3.TabIndex = 38;
@@ -1210,7 +1272,7 @@
             // hierarchyLevel_MD_ScopeCode_lbl
             // 
             this.hierarchyLevel_MD_ScopeCode_lbl.AutoSize = true;
-            this.hierarchyLevel_MD_ScopeCode_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hierarchyLevel_MD_ScopeCode_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hierarchyLevel_MD_ScopeCode_lbl.Location = new System.Drawing.Point(5, 8);
             this.hierarchyLevel_MD_ScopeCode_lbl.Name = "hierarchyLevel_MD_ScopeCode_lbl";
             this.hierarchyLevel_MD_ScopeCode_lbl.Size = new System.Drawing.Size(92, 13);
@@ -1229,7 +1291,7 @@
             // dateStamp_lbl
             // 
             this.dateStamp_lbl.AutoSize = true;
-            this.dateStamp_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateStamp_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateStamp_lbl.Location = new System.Drawing.Point(28, 31);
             this.dateStamp_lbl.Name = "dateStamp_lbl";
             this.dateStamp_lbl.Size = new System.Drawing.Size(70, 13);
@@ -1264,7 +1326,7 @@
             // 
             // button9
             // 
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button9.Location = new System.Drawing.Point(338, 3);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(75, 23);
@@ -1276,19 +1338,19 @@
             // language
             // 
             this.language.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.language.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.language.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.language.Location = new System.Drawing.Point(104, 28);
             this.language.Name = "language";
-            this.language.Size = new System.Drawing.Size(233, 20);
+            this.language.Size = new System.Drawing.Size(233, 21);
             this.language.TabIndex = 26;
             // 
             // fileIdentifier_lbl
             // 
             this.fileIdentifier_lbl.AutoSize = true;
-            this.fileIdentifier_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fileIdentifier_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fileIdentifier_lbl.Location = new System.Drawing.Point(50, 7);
             this.fileIdentifier_lbl.Name = "fileIdentifier_lbl";
-            this.fileIdentifier_lbl.Size = new System.Drawing.Size(47, 13);
+            this.fileIdentifier_lbl.Size = new System.Drawing.Size(51, 13);
             this.fileIdentifier_lbl.TabIndex = 19;
             this.fileIdentifier_lbl.Text = "Identifier";
             this.fileIdentifier_lbl.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -1296,10 +1358,10 @@
             // language_lbl
             // 
             this.language_lbl.AutoSize = true;
-            this.language_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.language_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.language_lbl.Location = new System.Drawing.Point(42, 31);
             this.language_lbl.Name = "language_lbl";
-            this.language_lbl.Size = new System.Drawing.Size(55, 13);
+            this.language_lbl.Size = new System.Drawing.Size(54, 13);
             this.language_lbl.TabIndex = 25;
             this.language_lbl.Text = "Language";
             // 
@@ -1319,7 +1381,7 @@
             this.groupBox2.Controls.Add(this.metadataStandardName_lbl);
             this.groupBox2.Controls.Add(this.metadataStandardName);
             this.groupBox2.Controls.Add(this.metadataStandardVersion);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(3, 5);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(439, 68);
@@ -1330,17 +1392,17 @@
             // metadataStandardVersion_lbl
             // 
             this.metadataStandardVersion_lbl.AutoSize = true;
-            this.metadataStandardVersion_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.metadataStandardVersion_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.metadataStandardVersion_lbl.Location = new System.Drawing.Point(6, 41);
             this.metadataStandardVersion_lbl.Name = "metadataStandardVersion_lbl";
-            this.metadataStandardVersion_lbl.Size = new System.Drawing.Size(88, 13);
+            this.metadataStandardVersion_lbl.Size = new System.Drawing.Size(89, 13);
             this.metadataStandardVersion_lbl.TabIndex = 12;
             this.metadataStandardVersion_lbl.Text = "Standard Version";
             // 
             // metadataStandardName_lbl
             // 
             this.metadataStandardName_lbl.AutoSize = true;
-            this.metadataStandardName_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.metadataStandardName_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.metadataStandardName_lbl.Location = new System.Drawing.Point(13, 18);
             this.metadataStandardName_lbl.Name = "metadataStandardName_lbl";
             this.metadataStandardName_lbl.Size = new System.Drawing.Size(81, 13);
@@ -1350,21 +1412,21 @@
             // metadataStandardName
             // 
             this.metadataStandardName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.metadataStandardName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.metadataStandardName.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.metadataStandardName.Location = new System.Drawing.Point(101, 16);
             this.metadataStandardName.Name = "metadataStandardName";
             this.metadataStandardName.ReadOnly = true;
-            this.metadataStandardName.Size = new System.Drawing.Size(309, 20);
+            this.metadataStandardName.Size = new System.Drawing.Size(309, 21);
             this.metadataStandardName.TabIndex = 9;
             // 
             // metadataStandardVersion
             // 
             this.metadataStandardVersion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.metadataStandardVersion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.metadataStandardVersion.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.metadataStandardVersion.Location = new System.Drawing.Point(101, 39);
             this.metadataStandardVersion.Name = "metadataStandardVersion";
             this.metadataStandardVersion.ReadOnly = true;
-            this.metadataStandardVersion.Size = new System.Drawing.Size(309, 20);
+            this.metadataStandardVersion.Size = new System.Drawing.Size(309, 21);
             this.metadataStandardVersion.TabIndex = 10;
             // 
             // tabPage1
@@ -1376,7 +1438,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(995, 587);
+            this.tabPage1.Size = new System.Drawing.Size(995, 593);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Basic Data Information";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -1396,7 +1458,7 @@
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.panel2);
-            this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox6.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox6.Location = new System.Drawing.Point(3, 3);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(400, 117);
@@ -1426,7 +1488,7 @@
             // idInfo_extent_description_lbl
             // 
             this.idInfo_extent_description_lbl.AutoSize = true;
-            this.idInfo_extent_description_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idInfo_extent_description_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idInfo_extent_description_lbl.Location = new System.Drawing.Point(3, 10);
             this.idInfo_extent_description_lbl.Name = "idInfo_extent_description_lbl";
             this.idInfo_extent_description_lbl.Size = new System.Drawing.Size(60, 13);
@@ -1449,7 +1511,7 @@
             // idInfo_extent_geographicBoundingBox_westLongDD_lbl
             // 
             this.idInfo_extent_geographicBoundingBox_westLongDD_lbl.AutoSize = true;
-            this.idInfo_extent_geographicBoundingBox_westLongDD_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idInfo_extent_geographicBoundingBox_westLongDD_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idInfo_extent_geographicBoundingBox_westLongDD_lbl.Location = new System.Drawing.Point(199, 65);
             this.idInfo_extent_geographicBoundingBox_westLongDD_lbl.Name = "idInfo_extent_geographicBoundingBox_westLongDD_lbl";
             this.idInfo_extent_geographicBoundingBox_westLongDD_lbl.Size = new System.Drawing.Size(32, 13);
@@ -1459,7 +1521,7 @@
             // idInfo_extent_geographicBoundingBox_eastLongDD_lbl
             // 
             this.idInfo_extent_geographicBoundingBox_eastLongDD_lbl.AutoSize = true;
-            this.idInfo_extent_geographicBoundingBox_eastLongDD_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idInfo_extent_geographicBoundingBox_eastLongDD_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idInfo_extent_geographicBoundingBox_eastLongDD_lbl.Location = new System.Drawing.Point(203, 39);
             this.idInfo_extent_geographicBoundingBox_eastLongDD_lbl.Name = "idInfo_extent_geographicBoundingBox_eastLongDD_lbl";
             this.idInfo_extent_geographicBoundingBox_eastLongDD_lbl.Size = new System.Drawing.Size(28, 13);
@@ -1469,7 +1531,7 @@
             // idInfo_extent_geographicBoundingBox_southLatDD_lbl
             // 
             this.idInfo_extent_geographicBoundingBox_southLatDD_lbl.AutoSize = true;
-            this.idInfo_extent_geographicBoundingBox_southLatDD_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idInfo_extent_geographicBoundingBox_southLatDD_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idInfo_extent_geographicBoundingBox_southLatDD_lbl.Location = new System.Drawing.Point(28, 62);
             this.idInfo_extent_geographicBoundingBox_southLatDD_lbl.Name = "idInfo_extent_geographicBoundingBox_southLatDD_lbl";
             this.idInfo_extent_geographicBoundingBox_southLatDD_lbl.Size = new System.Drawing.Size(35, 13);
@@ -1479,47 +1541,47 @@
             // idInfo_extent_geographicBoundingBox_northLatDD_lbl
             // 
             this.idInfo_extent_geographicBoundingBox_northLatDD_lbl.AutoSize = true;
-            this.idInfo_extent_geographicBoundingBox_northLatDD_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idInfo_extent_geographicBoundingBox_northLatDD_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idInfo_extent_geographicBoundingBox_northLatDD_lbl.Location = new System.Drawing.Point(30, 36);
             this.idInfo_extent_geographicBoundingBox_northLatDD_lbl.Name = "idInfo_extent_geographicBoundingBox_northLatDD_lbl";
-            this.idInfo_extent_geographicBoundingBox_northLatDD_lbl.Size = new System.Drawing.Size(33, 13);
+            this.idInfo_extent_geographicBoundingBox_northLatDD_lbl.Size = new System.Drawing.Size(34, 13);
             this.idInfo_extent_geographicBoundingBox_northLatDD_lbl.TabIndex = 5;
             this.idInfo_extent_geographicBoundingBox_northLatDD_lbl.Text = "North";
             // 
             // idInfo_extent_geographicBoundingBox_westLongDD
             // 
             this.idInfo_extent_geographicBoundingBox_westLongDD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.idInfo_extent_geographicBoundingBox_westLongDD.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idInfo_extent_geographicBoundingBox_westLongDD.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idInfo_extent_geographicBoundingBox_westLongDD.Location = new System.Drawing.Point(240, 63);
             this.idInfo_extent_geographicBoundingBox_westLongDD.Name = "idInfo_extent_geographicBoundingBox_westLongDD";
-            this.idInfo_extent_geographicBoundingBox_westLongDD.Size = new System.Drawing.Size(110, 20);
+            this.idInfo_extent_geographicBoundingBox_westLongDD.Size = new System.Drawing.Size(110, 21);
             this.idInfo_extent_geographicBoundingBox_westLongDD.TabIndex = 4;
             // 
             // idInfo_extent_geographicBoundingBox_southLatDD
             // 
             this.idInfo_extent_geographicBoundingBox_southLatDD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.idInfo_extent_geographicBoundingBox_southLatDD.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idInfo_extent_geographicBoundingBox_southLatDD.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idInfo_extent_geographicBoundingBox_southLatDD.Location = new System.Drawing.Point(69, 60);
             this.idInfo_extent_geographicBoundingBox_southLatDD.Name = "idInfo_extent_geographicBoundingBox_southLatDD";
-            this.idInfo_extent_geographicBoundingBox_southLatDD.Size = new System.Drawing.Size(110, 20);
+            this.idInfo_extent_geographicBoundingBox_southLatDD.Size = new System.Drawing.Size(110, 21);
             this.idInfo_extent_geographicBoundingBox_southLatDD.TabIndex = 3;
             // 
             // idInfo_extent_geographicBoundingBox_northLatDD
             // 
             this.idInfo_extent_geographicBoundingBox_northLatDD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.idInfo_extent_geographicBoundingBox_northLatDD.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idInfo_extent_geographicBoundingBox_northLatDD.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idInfo_extent_geographicBoundingBox_northLatDD.Location = new System.Drawing.Point(69, 34);
             this.idInfo_extent_geographicBoundingBox_northLatDD.Name = "idInfo_extent_geographicBoundingBox_northLatDD";
-            this.idInfo_extent_geographicBoundingBox_northLatDD.Size = new System.Drawing.Size(110, 20);
+            this.idInfo_extent_geographicBoundingBox_northLatDD.Size = new System.Drawing.Size(110, 21);
             this.idInfo_extent_geographicBoundingBox_northLatDD.TabIndex = 2;
             // 
             // idInfo_extent_geographicBoundingBox_eastLongDD
             // 
             this.idInfo_extent_geographicBoundingBox_eastLongDD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.idInfo_extent_geographicBoundingBox_eastLongDD.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idInfo_extent_geographicBoundingBox_eastLongDD.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idInfo_extent_geographicBoundingBox_eastLongDD.Location = new System.Drawing.Point(240, 37);
             this.idInfo_extent_geographicBoundingBox_eastLongDD.Name = "idInfo_extent_geographicBoundingBox_eastLongDD";
-            this.idInfo_extent_geographicBoundingBox_eastLongDD.Size = new System.Drawing.Size(110, 20);
+            this.idInfo_extent_geographicBoundingBox_eastLongDD.Size = new System.Drawing.Size(110, 21);
             this.idInfo_extent_geographicBoundingBox_eastLongDD.TabIndex = 1;
             // 
             // groupBox9
@@ -1527,7 +1589,7 @@
             this.groupBox9.Controls.Add(this.groupBox7);
             this.groupBox9.Controls.Add(this.idInfo_extent_temporalExtent);
             this.groupBox9.Controls.Add(this.panel4);
-            this.groupBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox9.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox9.Location = new System.Drawing.Point(3, 126);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Size = new System.Drawing.Size(400, 354);
@@ -1550,17 +1612,17 @@
             // idInfo_resourceMaintenance_lbl
             // 
             this.idInfo_resourceMaintenance_lbl.AutoSize = true;
-            this.idInfo_resourceMaintenance_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idInfo_resourceMaintenance_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idInfo_resourceMaintenance_lbl.Location = new System.Drawing.Point(225, 61);
             this.idInfo_resourceMaintenance_lbl.Name = "idInfo_resourceMaintenance_lbl";
-            this.idInfo_resourceMaintenance_lbl.Size = new System.Drawing.Size(146, 26);
+            this.idInfo_resourceMaintenance_lbl.Size = new System.Drawing.Size(149, 26);
             this.idInfo_resourceMaintenance_lbl.TabIndex = 56;
             this.idInfo_resourceMaintenance_lbl.Text = "Maintenance and Update\r\nFrequency(accrualPeriodicity)";
             // 
             // idInfo_resourceMaintenance
             // 
             this.idInfo_resourceMaintenance.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.idInfo_resourceMaintenance.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idInfo_resourceMaintenance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idInfo_resourceMaintenance.FormattingEnabled = true;
             this.idInfo_resourceMaintenance.Items.AddRange(new object[] {
             "",
@@ -1580,6 +1642,19 @@
             this.idInfo_resourceMaintenance.Name = "idInfo_resourceMaintenance";
             this.idInfo_resourceMaintenance.Size = new System.Drawing.Size(134, 21);
             this.idInfo_resourceMaintenance.TabIndex = 57;
+            // 
+            // idInfo_extent_temporalExtent
+            // 
+            this.idInfo_extent_temporalExtent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.idInfo_extent_temporalExtent.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idInfo_extent_temporalExtent.Location = new System.Drawing.Point(37, 24);
+            this.idInfo_extent_temporalExtent.Name = "idInfo_extent_temporalExtent";
+            this.idInfo_extent_temporalExtent.Size = new System.Drawing.Size(313, 174);
+            this.idInfo_extent_temporalExtent.TabIndex = 51;
+            temporalElement__EX_TemporalExtent1.TimeInstant = null;
+            temporalElement__EX_TemporalExtent1.TimePeriod = null;
+            this.idInfo_extent_temporalExtent.temporalElement = temporalElement__EX_TemporalExtent1;
+            this.idInfo_extent_temporalExtent.Validating += new System.ComponentModel.CancelEventHandler(this.cntrl_Validating);
             // 
             // panel4
             // 
@@ -1607,7 +1682,7 @@
             this.groupBox4.Controls.Add(this.panel1);
             this.groupBox4.Controls.Add(this.groupBox1);
             this.groupBox4.Controls.Add(this.panel3);
-            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.Location = new System.Drawing.Point(3, 3);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(543, 490);
@@ -1628,7 +1703,7 @@
             // idInfo_Purpose
             // 
             this.idInfo_Purpose.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.idInfo_Purpose.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idInfo_Purpose.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idInfo_Purpose.Location = new System.Drawing.Point(57, 5);
             this.idInfo_Purpose.Multiline = true;
             this.idInfo_Purpose.Name = "idInfo_Purpose";
@@ -1640,7 +1715,7 @@
             // 
             this.idInfo_Purpose_lbl.AutoSize = true;
             this.idInfo_Purpose_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.idInfo_Purpose_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idInfo_Purpose_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idInfo_Purpose_lbl.Location = new System.Drawing.Point(5, 23);
             this.idInfo_Purpose_lbl.Name = "idInfo_Purpose_lbl";
             this.idInfo_Purpose_lbl.Size = new System.Drawing.Size(46, 13);
@@ -1670,7 +1745,7 @@
             this.tcKeywords.Controls.Add(this.tpEPA);
             this.tcKeywords.Controls.Add(this.tpUser);
             this.tcKeywords.Controls.Add(this.tpPlace);
-            this.tcKeywords.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tcKeywords.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tcKeywords.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.tcKeywords.Location = new System.Drawing.Point(6, 18);
             this.tcKeywords.Name = "tcKeywords";
@@ -1911,7 +1986,7 @@
             // idInfo_Abstract
             // 
             this.idInfo_Abstract.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.idInfo_Abstract.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idInfo_Abstract.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idInfo_Abstract.Location = new System.Drawing.Point(57, 60);
             this.idInfo_Abstract.Multiline = true;
             this.idInfo_Abstract.Name = "idInfo_Abstract";
@@ -1924,10 +1999,10 @@
             // 
             this.idInfo_Abstract_lbl.AutoSize = true;
             this.idInfo_Abstract_lbl.BackColor = System.Drawing.Color.Transparent;
-            this.idInfo_Abstract_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idInfo_Abstract_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idInfo_Abstract_lbl.Location = new System.Drawing.Point(6, 78);
             this.idInfo_Abstract_lbl.Name = "idInfo_Abstract_lbl";
-            this.idInfo_Abstract_lbl.Size = new System.Drawing.Size(46, 13);
+            this.idInfo_Abstract_lbl.Size = new System.Drawing.Size(48, 13);
             this.idInfo_Abstract_lbl.TabIndex = 10;
             this.idInfo_Abstract_lbl.Text = "Abstract";
             this.idInfo_Abstract_lbl.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -1936,7 +2011,7 @@
             // 
             this.idInfo_citation_Title_lbl.AutoSize = true;
             this.idInfo_citation_Title_lbl.BackColor = System.Drawing.Color.Transparent;
-            this.idInfo_citation_Title_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idInfo_citation_Title_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idInfo_citation_Title_lbl.Location = new System.Drawing.Point(26, 18);
             this.idInfo_citation_Title_lbl.Name = "idInfo_citation_Title_lbl";
             this.idInfo_citation_Title_lbl.Size = new System.Drawing.Size(27, 13);
@@ -1947,7 +2022,7 @@
             // idInfo_citation_Title
             // 
             this.idInfo_citation_Title.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.idInfo_citation_Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idInfo_citation_Title.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idInfo_citation_Title.Location = new System.Drawing.Point(57, 9);
             this.idInfo_citation_Title.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
             this.idInfo_citation_Title.Multiline = true;
@@ -1966,74 +2041,8 @@
             this.tabControl1.Location = new System.Drawing.Point(-3, 23);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1003, 613);
+            this.tabControl1.Size = new System.Drawing.Size(1003, 619);
             this.tabControl1.TabIndex = 2;
-            // 
-            // idInfo_extent_temporalExtent
-            // 
-            this.idInfo_extent_temporalExtent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.idInfo_extent_temporalExtent.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idInfo_extent_temporalExtent.Location = new System.Drawing.Point(37, 24);
-            this.idInfo_extent_temporalExtent.Name = "idInfo_extent_temporalExtent";
-            this.idInfo_extent_temporalExtent.Size = new System.Drawing.Size(313, 174);
-            this.idInfo_extent_temporalExtent.TabIndex = 51;
-            temporalElement__EX_TemporalExtent1.TimeInstant = null;
-            temporalElement__EX_TemporalExtent1.TimePeriod = null;
-            this.idInfo_extent_temporalExtent.temporalElement = temporalElement__EX_TemporalExtent1;
-            this.idInfo_extent_temporalExtent.Validating += new System.ComponentModel.CancelEventHandler(this.cntrl_Validating);
-            // 
-            // distributionInfo__MD_Distribution
-            // 
-            this.distributionInfo__MD_Distribution.AutoSize = true;
-            this.distributionInfo__MD_Distribution.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.distributionInfo__MD_Distribution.distributorList = null;
-            this.distributionInfo__MD_Distribution.Location = new System.Drawing.Point(0, 0);
-            this.distributionInfo__MD_Distribution.Margin = new System.Windows.Forms.Padding(0);
-            this.distributionInfo__MD_Distribution.mylabel = "Distributor";
-            this.distributionInfo__MD_Distribution.Name = "distributionInfo__MD_Distribution";
-            this.distributionInfo__MD_Distribution.Size = new System.Drawing.Size(454, 208);
-            this.distributionInfo__MD_Distribution.TabIndex = 0;
-            // 
-            // contact_CI_ResponsibleParty
-            // 
-            this.contact_CI_ResponsibleParty.BackColor = System.Drawing.Color.Transparent;
-            this.contact_CI_ResponsibleParty.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.contact_CI_ResponsibleParty.CI_ResponsiblePartyList = null;
-            this.contact_CI_ResponsibleParty.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.contact_CI_ResponsibleParty.Location = new System.Drawing.Point(3, 2);
-            this.contact_CI_ResponsibleParty.mylabel = "Metadata Author";
-            this.contact_CI_ResponsibleParty.Name = "contact_CI_ResponsibleParty";
-            this.contact_CI_ResponsibleParty.rp_mode = "dist";
-            this.contact_CI_ResponsibleParty.Size = new System.Drawing.Size(445, 35);
-            this.contact_CI_ResponsibleParty.TabIndex = 0;
-            this.contact_CI_ResponsibleParty.Tag = "";
-            this.contact_CI_ResponsibleParty.Validating += new System.ComponentModel.CancelEventHandler(this.cntrl_Validating);
-            // 
-            // idInfo_pointOfContact
-            // 
-            this.idInfo_pointOfContact.BackColor = System.Drawing.Color.Transparent;
-            this.idInfo_pointOfContact.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.idInfo_pointOfContact.CI_ResponsiblePartyList = null;
-            this.idInfo_pointOfContact.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idInfo_pointOfContact.Location = new System.Drawing.Point(2, 2);
-            this.idInfo_pointOfContact.mylabel = "Resource Owner";
-            this.idInfo_pointOfContact.Name = "idInfo_pointOfContact";
-            this.idInfo_pointOfContact.rp_mode = null;
-            this.idInfo_pointOfContact.Size = new System.Drawing.Size(446, 35);
-            this.idInfo_pointOfContact.TabIndex = 2;
-            // 
-            // idInfo_citation_citedResponsibleParty
-            // 
-            this.idInfo_citation_citedResponsibleParty.BackColor = System.Drawing.Color.Transparent;
-            this.idInfo_citation_citedResponsibleParty.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.idInfo_citation_citedResponsibleParty.CI_ResponsiblePartyList = null;
-            this.idInfo_citation_citedResponsibleParty.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idInfo_citation_citedResponsibleParty.Location = new System.Drawing.Point(2, 3);
-            this.idInfo_citation_citedResponsibleParty.mylabel = "Resource Producer";
-            this.idInfo_citation_citedResponsibleParty.Name = "idInfo_citation_citedResponsibleParty";
-            this.idInfo_citation_citedResponsibleParty.rp_mode = null;
-            this.idInfo_citation_citedResponsibleParty.Size = new System.Drawing.Size(446, 35);
-            this.idInfo_citation_citedResponsibleParty.TabIndex = 2;
             // 
             // uc_ResponsibleParty2
             // 
@@ -2112,6 +2121,7 @@
             this.Controls.Add(this.panel10);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel8);
+            this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;

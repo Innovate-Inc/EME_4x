@@ -581,6 +581,11 @@
             "AssemblyAsmDisplayName" = "8:EmeLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
+                    "_52410AF9C84349B0E8A455E84A4A1844"
+                    {
+                    "Name" = "8:EmeLibrary.dll"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:EmeLibrary.dll"
             "TargetName" = "8:"
@@ -1189,7 +1194,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:EPA Metadata Editor v4.0 Beta"
         "ProductCode" = "8:{9D299FD9-3F18-45BE-9783-236BD995E785}"
-        "PackageCode" = "8:{195245A9-DD41-4B90-9979-E30D6AAC5772}"
+        "PackageCode" = "8:{979A6876-0792-47E2-9A2F-E3A8CEDB9BDE}"
         "UpgradeCode" = "8:{EFE50942-63DD-4CA2-9EA0-74A9CD61A9D5}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"

@@ -67,7 +67,7 @@
             // temporalExtent
             // 
             this.temporalExtent.Controls.Add(this.tabControl1);
-            this.temporalExtent.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.temporalExtent.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.temporalExtent.Location = new System.Drawing.Point(3, 3);
             this.temporalExtent.Name = "temporalExtent";
             this.temporalExtent.Size = new System.Drawing.Size(309, 161);
@@ -79,7 +79,7 @@
             // 
             this.tabControl1.Controls.Add(this.timePeriod);
             this.tabControl1.Controls.Add(this.timeInstant);
-            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(10, 15);
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
@@ -128,7 +128,7 @@
             this.extent__TimePeriod__description.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.extent__TimePeriod__description.Location = new System.Drawing.Point(68, 6);
             this.extent__TimePeriod__description.Name = "extent__TimePeriod__description";
-            this.extent__TimePeriod__description.Size = new System.Drawing.Size(197, 20);
+            this.extent__TimePeriod__description.Size = new System.Drawing.Size(197, 21);
             this.extent__TimePeriod__description.TabIndex = 44;
             // 
             // extent__TimePeriod__endPosition_btn
@@ -166,7 +166,7 @@
             this.extent__TimePeriod__endPosition_dtP.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.extent__TimePeriod__endPosition_dtP.Location = new System.Drawing.Point(154, 57);
             this.extent__TimePeriod__endPosition_dtP.Name = "extent__TimePeriod__endPosition_dtP";
-            this.extent__TimePeriod__endPosition_dtP.Size = new System.Drawing.Size(18, 20);
+            this.extent__TimePeriod__endPosition_dtP.Size = new System.Drawing.Size(18, 21);
             this.extent__TimePeriod__endPosition_dtP.TabIndex = 42;
             this.toolTip1.SetToolTip(this.extent__TimePeriod__endPosition_dtP, "Choose an Exact Date");
             this.extent__TimePeriod__endPosition_dtP.ValueChanged += new System.EventHandler(this.dtP_ValueChanged);
@@ -192,7 +192,7 @@
             this.extent__TimePeriod__endPosition.Location = new System.Drawing.Point(68, 57);
             this.extent__TimePeriod__endPosition.Name = "extent__TimePeriod__endPosition";
             this.extent__TimePeriod__endPosition.ReadOnly = true;
-            this.extent__TimePeriod__endPosition.Size = new System.Drawing.Size(80, 20);
+            this.extent__TimePeriod__endPosition.Size = new System.Drawing.Size(80, 21);
             this.extent__TimePeriod__endPosition.TabIndex = 41;
             this.toolTip1.SetToolTip(this.extent__TimePeriod__endPosition, "Choose an Exact Date or Indeterminate Value");
             // 
@@ -201,7 +201,7 @@
             this.timePeriod_Begin_lbl.AutoSize = true;
             this.timePeriod_Begin_lbl.Location = new System.Drawing.Point(31, 35);
             this.timePeriod_Begin_lbl.Name = "timePeriod_Begin_lbl";
-            this.timePeriod_Begin_lbl.Size = new System.Drawing.Size(34, 13);
+            this.timePeriod_Begin_lbl.Size = new System.Drawing.Size(33, 13);
             this.timePeriod_Begin_lbl.TabIndex = 3;
             this.timePeriod_Begin_lbl.Text = "Begin";
             // 
@@ -226,7 +226,7 @@
             this.timePeriod_End_lbl.AutoSize = true;
             this.timePeriod_End_lbl.Location = new System.Drawing.Point(39, 58);
             this.timePeriod_End_lbl.Name = "timePeriod_End_lbl";
-            this.timePeriod_End_lbl.Size = new System.Drawing.Size(26, 13);
+            this.timePeriod_End_lbl.Size = new System.Drawing.Size(25, 13);
             this.timePeriod_End_lbl.TabIndex = 4;
             this.timePeriod_End_lbl.Text = "End";
             // 
@@ -248,7 +248,7 @@
             this.timePeriod_Interval_lbl.AutoSize = true;
             this.timePeriod_Interval_lbl.Location = new System.Drawing.Point(23, 88);
             this.timePeriod_Interval_lbl.Name = "timePeriod_Interval_lbl";
-            this.timePeriod_Interval_lbl.Size = new System.Drawing.Size(42, 13);
+            this.timePeriod_Interval_lbl.Size = new System.Drawing.Size(45, 13);
             this.timePeriod_Interval_lbl.TabIndex = 5;
             this.timePeriod_Interval_lbl.Text = "Interval";
             // 
@@ -258,7 +258,7 @@
             this.extent__TimePeriod__beginPosition_dtP.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.extent__TimePeriod__beginPosition_dtP.Location = new System.Drawing.Point(154, 32);
             this.extent__TimePeriod__beginPosition_dtP.Name = "extent__TimePeriod__beginPosition_dtP";
-            this.extent__TimePeriod__beginPosition_dtP.Size = new System.Drawing.Size(18, 20);
+            this.extent__TimePeriod__beginPosition_dtP.Size = new System.Drawing.Size(18, 21);
             this.extent__TimePeriod__beginPosition_dtP.TabIndex = 38;
             this.toolTip1.SetToolTip(this.extent__TimePeriod__beginPosition_dtP, "Choose an Exact Date");
             this.extent__TimePeriod__beginPosition_dtP.ValueChanged += new System.EventHandler(this.dtP_ValueChanged);
@@ -268,7 +268,7 @@
             this.extent__TimePeriod__timeInterval.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.extent__TimePeriod__timeInterval.Location = new System.Drawing.Point(68, 86);
             this.extent__TimePeriod__timeInterval.Name = "extent__TimePeriod__timeInterval";
-            this.extent__TimePeriod__timeInterval.Size = new System.Drawing.Size(80, 20);
+            this.extent__TimePeriod__timeInterval.Size = new System.Drawing.Size(80, 21);
             this.extent__TimePeriod__timeInterval.TabIndex = 7;
             // 
             // extent__TimePeriod__beginPosition
@@ -277,7 +277,7 @@
             this.extent__TimePeriod__beginPosition.Location = new System.Drawing.Point(68, 32);
             this.extent__TimePeriod__beginPosition.Name = "extent__TimePeriod__beginPosition";
             this.extent__TimePeriod__beginPosition.ReadOnly = true;
-            this.extent__TimePeriod__beginPosition.Size = new System.Drawing.Size(80, 20);
+            this.extent__TimePeriod__beginPosition.Size = new System.Drawing.Size(80, 21);
             this.extent__TimePeriod__beginPosition.TabIndex = 8;
             this.toolTip1.SetToolTip(this.extent__TimePeriod__beginPosition, "Choose an Exact Date or Indeterminate Value");
             // 
@@ -314,7 +314,7 @@
             this.extent__TimeInstant__description.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.extent__TimeInstant__description.Location = new System.Drawing.Point(68, 6);
             this.extent__TimeInstant__description.Name = "extent__TimeInstant__description";
-            this.extent__TimeInstant__description.Size = new System.Drawing.Size(197, 20);
+            this.extent__TimeInstant__description.Size = new System.Drawing.Size(197, 21);
             this.extent__TimeInstant__description.TabIndex = 44;
             // 
             // panel2
@@ -360,7 +360,7 @@
             this.extent__TimeInstant__timePosition_dtP.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.extent__TimeInstant__timePosition_dtP.Location = new System.Drawing.Point(154, 32);
             this.extent__TimeInstant__timePosition_dtP.Name = "extent__TimeInstant__timePosition_dtP";
-            this.extent__TimeInstant__timePosition_dtP.Size = new System.Drawing.Size(18, 20);
+            this.extent__TimeInstant__timePosition_dtP.Size = new System.Drawing.Size(18, 21);
             this.extent__TimeInstant__timePosition_dtP.TabIndex = 38;
             this.toolTip1.SetToolTip(this.extent__TimeInstant__timePosition_dtP, "Choose an Exact Date");
             this.extent__TimeInstant__timePosition_dtP.ValueChanged += new System.EventHandler(this.dtP_ValueChanged);
@@ -380,7 +380,7 @@
             this.extent__TimeInstant__timePosition.Location = new System.Drawing.Point(68, 32);
             this.extent__TimeInstant__timePosition.Name = "extent__TimeInstant__timePosition";
             this.extent__TimeInstant__timePosition.ReadOnly = true;
-            this.extent__TimeInstant__timePosition.Size = new System.Drawing.Size(80, 20);
+            this.extent__TimeInstant__timePosition.Size = new System.Drawing.Size(80, 21);
             this.extent__TimeInstant__timePosition.TabIndex = 8;
             this.toolTip1.SetToolTip(this.extent__TimeInstant__timePosition, "Choose an Exact Date or Indeterminate Value");
             // 

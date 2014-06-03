@@ -80,8 +80,8 @@
             this.rp_expander_btn = new System.Windows.Forms.Button();
             this.uc_ResponsibleParty_lbl = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.responsible_party_d = new System.Windows.Forms.Button();
             this.contact_list = new System.Windows.Forms.Label();
+            this.responsible_party_d = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -93,9 +93,10 @@
             // positionName
             // 
             this.positionName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.positionName.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.positionName.Location = new System.Drawing.Point(85, 63);
             this.positionName.Name = "positionName";
-            this.positionName.Size = new System.Drawing.Size(178, 20);
+            this.positionName.Size = new System.Drawing.Size(178, 21);
             this.positionName.TabIndex = 4;
             this.positionName.Tag = "required1";
             this.positionName.Validating += new System.ComponentModel.CancelEventHandler(this.responsibleParty_Validating);
@@ -103,9 +104,10 @@
             // organisationName_txt
             // 
             this.organisationName_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.organisationName_txt.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.organisationName_txt.Location = new System.Drawing.Point(85, 37);
             this.organisationName_txt.Name = "organisationName_txt";
-            this.organisationName_txt.Size = new System.Drawing.Size(178, 20);
+            this.organisationName_txt.Size = new System.Drawing.Size(178, 21);
             this.organisationName_txt.TabIndex = 3;
             this.organisationName_txt.Tag = "required1";
             this.organisationName_txt.Validating += new System.ComponentModel.CancelEventHandler(this.responsibleParty_Validating);
@@ -113,9 +115,10 @@
             // contactInfo__CI_Contact__phone__CI_Telephone__voice
             // 
             this.contactInfo__CI_Contact__phone__CI_Telephone__voice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.contactInfo__CI_Contact__phone__CI_Telephone__voice.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contactInfo__CI_Contact__phone__CI_Telephone__voice.Location = new System.Drawing.Point(101, 108);
             this.contactInfo__CI_Contact__phone__CI_Telephone__voice.Name = "contactInfo__CI_Contact__phone__CI_Telephone__voice";
-            this.contactInfo__CI_Contact__phone__CI_Telephone__voice.Size = new System.Drawing.Size(186, 20);
+            this.contactInfo__CI_Contact__phone__CI_Telephone__voice.Size = new System.Drawing.Size(186, 21);
             this.contactInfo__CI_Contact__phone__CI_Telephone__voice.TabIndex = 5;
             // 
             // lblCI_RpListCount
@@ -129,6 +132,7 @@
             // role
             // 
             this.role.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.role.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.role.FormattingEnabled = true;
             this.role.Items.AddRange(new object[] {
             "resourceProvider",
@@ -154,9 +158,10 @@
             // individualName_lbl
             // 
             this.individualName_lbl.AutoSize = true;
+            this.individualName_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.individualName_lbl.Location = new System.Drawing.Point(24, 15);
             this.individualName_lbl.Name = "individualName_lbl";
-            this.individualName_lbl.Size = new System.Drawing.Size(52, 13);
+            this.individualName_lbl.Size = new System.Drawing.Size(53, 13);
             this.individualName_lbl.TabIndex = 8;
             this.individualName_lbl.Text = "Individual";
             this.individualName_lbl.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -164,9 +169,10 @@
             // organisationName_lbl
             // 
             this.organisationName_lbl.AutoSize = true;
+            this.organisationName_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.organisationName_lbl.Location = new System.Drawing.Point(10, 41);
             this.organisationName_lbl.Name = "organisationName_lbl";
-            this.organisationName_lbl.Size = new System.Drawing.Size(66, 13);
+            this.organisationName_lbl.Size = new System.Drawing.Size(68, 13);
             this.organisationName_lbl.TabIndex = 9;
             this.organisationName_lbl.Text = "Organization";
             this.organisationName_lbl.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -174,6 +180,7 @@
             // positionName_lbl
             // 
             this.positionName_lbl.AutoSize = true;
+            this.positionName_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.positionName_lbl.Location = new System.Drawing.Point(32, 65);
             this.positionName_lbl.Name = "positionName_lbl";
             this.positionName_lbl.Size = new System.Drawing.Size(44, 13);
@@ -184,9 +191,10 @@
             // contactInfo__CI_Contact__phone__CI_Telephone__voice_lbl
             // 
             this.contactInfo__CI_Contact__phone__CI_Telephone__voice_lbl.AutoSize = true;
+            this.contactInfo__CI_Contact__phone__CI_Telephone__voice_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contactInfo__CI_Contact__phone__CI_Telephone__voice_lbl.Location = new System.Drawing.Point(54, 110);
             this.contactInfo__CI_Contact__phone__CI_Telephone__voice_lbl.Name = "contactInfo__CI_Contact__phone__CI_Telephone__voice_lbl";
-            this.contactInfo__CI_Contact__phone__CI_Telephone__voice_lbl.Size = new System.Drawing.Size(38, 13);
+            this.contactInfo__CI_Contact__phone__CI_Telephone__voice_lbl.Size = new System.Drawing.Size(37, 13);
             this.contactInfo__CI_Contact__phone__CI_Telephone__voice_lbl.TabIndex = 11;
             this.contactInfo__CI_Contact__phone__CI_Telephone__voice_lbl.Text = "Phone";
             this.contactInfo__CI_Contact__phone__CI_Telephone__voice_lbl.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -194,9 +202,10 @@
             // contactInfo__CI_Contact__phone__CI_Telephone__facsimile_lbl
             // 
             this.contactInfo__CI_Contact__phone__CI_Telephone__facsimile_lbl.AutoSize = true;
+            this.contactInfo__CI_Contact__phone__CI_Telephone__facsimile_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contactInfo__CI_Contact__phone__CI_Telephone__facsimile_lbl.Location = new System.Drawing.Point(68, 136);
             this.contactInfo__CI_Contact__phone__CI_Telephone__facsimile_lbl.Name = "contactInfo__CI_Contact__phone__CI_Telephone__facsimile_lbl";
-            this.contactInfo__CI_Contact__phone__CI_Telephone__facsimile_lbl.Size = new System.Drawing.Size(24, 13);
+            this.contactInfo__CI_Contact__phone__CI_Telephone__facsimile_lbl.Size = new System.Drawing.Size(25, 13);
             this.contactInfo__CI_Contact__phone__CI_Telephone__facsimile_lbl.TabIndex = 13;
             this.contactInfo__CI_Contact__phone__CI_Telephone__facsimile_lbl.Text = "Fax";
             this.contactInfo__CI_Contact__phone__CI_Telephone__facsimile_lbl.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -204,17 +213,19 @@
             // contactInfo__CI_Contact__phone__CI_Telephone__facsimile
             // 
             this.contactInfo__CI_Contact__phone__CI_Telephone__facsimile.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.contactInfo__CI_Contact__phone__CI_Telephone__facsimile.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contactInfo__CI_Contact__phone__CI_Telephone__facsimile.Location = new System.Drawing.Point(101, 134);
             this.contactInfo__CI_Contact__phone__CI_Telephone__facsimile.Name = "contactInfo__CI_Contact__phone__CI_Telephone__facsimile";
-            this.contactInfo__CI_Contact__phone__CI_Telephone__facsimile.Size = new System.Drawing.Size(186, 20);
+            this.contactInfo__CI_Contact__phone__CI_Telephone__facsimile.Size = new System.Drawing.Size(186, 21);
             this.contactInfo__CI_Contact__phone__CI_Telephone__facsimile.TabIndex = 6;
             // 
             // individualName_txt
             // 
             this.individualName_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.individualName_txt.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.individualName_txt.Location = new System.Drawing.Point(85, 13);
             this.individualName_txt.Name = "individualName_txt";
-            this.individualName_txt.Size = new System.Drawing.Size(178, 20);
+            this.individualName_txt.Size = new System.Drawing.Size(178, 21);
             this.individualName_txt.TabIndex = 2;
             this.individualName_txt.Tag = "required1";
             this.individualName_txt.Validating += new System.ComponentModel.CancelEventHandler(this.responsibleParty_Validating);
@@ -222,9 +233,10 @@
             // contactInfo__CI_Contact__address__CI_Address__deliveryPoint_lbl
             // 
             this.contactInfo__CI_Contact__address__CI_Address__deliveryPoint_lbl.AutoSize = true;
+            this.contactInfo__CI_Contact__address__CI_Address__deliveryPoint_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contactInfo__CI_Contact__address__CI_Address__deliveryPoint_lbl.Location = new System.Drawing.Point(47, 30);
             this.contactInfo__CI_Contact__address__CI_Address__deliveryPoint_lbl.Name = "contactInfo__CI_Contact__address__CI_Address__deliveryPoint_lbl";
-            this.contactInfo__CI_Contact__address__CI_Address__deliveryPoint_lbl.Size = new System.Drawing.Size(45, 13);
+            this.contactInfo__CI_Contact__address__CI_Address__deliveryPoint_lbl.Size = new System.Drawing.Size(46, 13);
             this.contactInfo__CI_Contact__address__CI_Address__deliveryPoint_lbl.TabIndex = 16;
             this.contactInfo__CI_Contact__address__CI_Address__deliveryPoint_lbl.Text = "Address";
             this.contactInfo__CI_Contact__address__CI_Address__deliveryPoint_lbl.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -232,17 +244,19 @@
             // contactInfo__CI_Contact__address__CI_Address__deliveryPoint
             // 
             this.contactInfo__CI_Contact__address__CI_Address__deliveryPoint.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.contactInfo__CI_Contact__address__CI_Address__deliveryPoint.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contactInfo__CI_Contact__address__CI_Address__deliveryPoint.Location = new System.Drawing.Point(101, 28);
             this.contactInfo__CI_Contact__address__CI_Address__deliveryPoint.Name = "contactInfo__CI_Contact__address__CI_Address__deliveryPoint";
-            this.contactInfo__CI_Contact__address__CI_Address__deliveryPoint.Size = new System.Drawing.Size(315, 20);
+            this.contactInfo__CI_Contact__address__CI_Address__deliveryPoint.Size = new System.Drawing.Size(315, 21);
             this.contactInfo__CI_Contact__address__CI_Address__deliveryPoint.TabIndex = 7;
             // 
             // contactInfo__CI_Contact__address__CI_Address__city_lbl
             // 
             this.contactInfo__CI_Contact__address__CI_Address__city_lbl.AutoSize = true;
+            this.contactInfo__CI_Contact__address__CI_Address__city_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contactInfo__CI_Contact__address__CI_Address__city_lbl.Location = new System.Drawing.Point(68, 56);
             this.contactInfo__CI_Contact__address__CI_Address__city_lbl.Name = "contactInfo__CI_Contact__address__CI_Address__city_lbl";
-            this.contactInfo__CI_Contact__address__CI_Address__city_lbl.Size = new System.Drawing.Size(24, 13);
+            this.contactInfo__CI_Contact__address__CI_Address__city_lbl.Size = new System.Drawing.Size(26, 13);
             this.contactInfo__CI_Contact__address__CI_Address__city_lbl.TabIndex = 18;
             this.contactInfo__CI_Contact__address__CI_Address__city_lbl.Text = "City";
             this.contactInfo__CI_Contact__address__CI_Address__city_lbl.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -250,51 +264,57 @@
             // contactInfo__CI_Contact__address__CI_Address__city
             // 
             this.contactInfo__CI_Contact__address__CI_Address__city.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.contactInfo__CI_Contact__address__CI_Address__city.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contactInfo__CI_Contact__address__CI_Address__city.Location = new System.Drawing.Point(101, 54);
             this.contactInfo__CI_Contact__address__CI_Address__city.Name = "contactInfo__CI_Contact__address__CI_Address__city";
-            this.contactInfo__CI_Contact__address__CI_Address__city.Size = new System.Drawing.Size(100, 20);
+            this.contactInfo__CI_Contact__address__CI_Address__city.Size = new System.Drawing.Size(100, 21);
             this.contactInfo__CI_Contact__address__CI_Address__city.TabIndex = 8;
             // 
             // contactInfo__CI_Contact__address__CI_Address__administrativeArea_lbl
             // 
             this.contactInfo__CI_Contact__address__CI_Address__administrativeArea_lbl.AutoSize = true;
+            this.contactInfo__CI_Contact__address__CI_Address__administrativeArea_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contactInfo__CI_Contact__address__CI_Address__administrativeArea_lbl.Location = new System.Drawing.Point(204, 56);
             this.contactInfo__CI_Contact__address__CI_Address__administrativeArea_lbl.Name = "contactInfo__CI_Contact__address__CI_Address__administrativeArea_lbl";
-            this.contactInfo__CI_Contact__address__CI_Address__administrativeArea_lbl.Size = new System.Drawing.Size(79, 13);
+            this.contactInfo__CI_Contact__address__CI_Address__administrativeArea_lbl.Size = new System.Drawing.Size(78, 13);
             this.contactInfo__CI_Contact__address__CI_Address__administrativeArea_lbl.TabIndex = 20;
             this.contactInfo__CI_Contact__address__CI_Address__administrativeArea_lbl.Text = "State/Province";
             // 
             // contactInfo__CI_Contact__address__CI_Address__administrativeArea
             // 
             this.contactInfo__CI_Contact__address__CI_Address__administrativeArea.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.contactInfo__CI_Contact__address__CI_Address__administrativeArea.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contactInfo__CI_Contact__address__CI_Address__administrativeArea.Location = new System.Drawing.Point(285, 54);
             this.contactInfo__CI_Contact__address__CI_Address__administrativeArea.Name = "contactInfo__CI_Contact__address__CI_Address__administrativeArea";
-            this.contactInfo__CI_Contact__address__CI_Address__administrativeArea.Size = new System.Drawing.Size(37, 20);
+            this.contactInfo__CI_Contact__address__CI_Address__administrativeArea.Size = new System.Drawing.Size(37, 21);
             this.contactInfo__CI_Contact__address__CI_Address__administrativeArea.TabIndex = 9;
             // 
             // contactInfo__CI_Contact__address__CI_Address__postalCode_lbl
             // 
             this.contactInfo__CI_Contact__address__CI_Address__postalCode_lbl.AutoSize = true;
+            this.contactInfo__CI_Contact__address__CI_Address__postalCode_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contactInfo__CI_Contact__address__CI_Address__postalCode_lbl.Location = new System.Drawing.Point(326, 56);
             this.contactInfo__CI_Contact__address__CI_Address__postalCode_lbl.Name = "contactInfo__CI_Contact__address__CI_Address__postalCode_lbl";
-            this.contactInfo__CI_Contact__address__CI_Address__postalCode_lbl.Size = new System.Drawing.Size(22, 13);
+            this.contactInfo__CI_Contact__address__CI_Address__postalCode_lbl.Size = new System.Drawing.Size(21, 13);
             this.contactInfo__CI_Contact__address__CI_Address__postalCode_lbl.TabIndex = 22;
             this.contactInfo__CI_Contact__address__CI_Address__postalCode_lbl.Text = "Zip";
             // 
             // contactInfo__CI_Contact__address__CI_Address__postalCode
             // 
             this.contactInfo__CI_Contact__address__CI_Address__postalCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.contactInfo__CI_Contact__address__CI_Address__postalCode.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contactInfo__CI_Contact__address__CI_Address__postalCode.Location = new System.Drawing.Point(351, 54);
             this.contactInfo__CI_Contact__address__CI_Address__postalCode.Name = "contactInfo__CI_Contact__address__CI_Address__postalCode";
-            this.contactInfo__CI_Contact__address__CI_Address__postalCode.Size = new System.Drawing.Size(65, 20);
+            this.contactInfo__CI_Contact__address__CI_Address__postalCode.Size = new System.Drawing.Size(65, 21);
             this.contactInfo__CI_Contact__address__CI_Address__postalCode.TabIndex = 10;
             // 
             // contactInfo__CI_Contact__address__CI_Address__county_lbl
             // 
             this.contactInfo__CI_Contact__address__CI_Address__county_lbl.AutoSize = true;
+            this.contactInfo__CI_Contact__address__CI_Address__county_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contactInfo__CI_Contact__address__CI_Address__county_lbl.Location = new System.Drawing.Point(49, 82);
             this.contactInfo__CI_Contact__address__CI_Address__county_lbl.Name = "contactInfo__CI_Contact__address__CI_Address__county_lbl";
-            this.contactInfo__CI_Contact__address__CI_Address__county_lbl.Size = new System.Drawing.Size(43, 13);
+            this.contactInfo__CI_Contact__address__CI_Address__county_lbl.Size = new System.Drawing.Size(46, 13);
             this.contactInfo__CI_Contact__address__CI_Address__county_lbl.TabIndex = 24;
             this.contactInfo__CI_Contact__address__CI_Address__county_lbl.Text = "Country";
             this.contactInfo__CI_Contact__address__CI_Address__county_lbl.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -302,17 +322,19 @@
             // contactInfo__CI_Contact__address__CI_Address__county
             // 
             this.contactInfo__CI_Contact__address__CI_Address__county.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.contactInfo__CI_Contact__address__CI_Address__county.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contactInfo__CI_Contact__address__CI_Address__county.Location = new System.Drawing.Point(101, 80);
             this.contactInfo__CI_Contact__address__CI_Address__county.Name = "contactInfo__CI_Contact__address__CI_Address__county";
-            this.contactInfo__CI_Contact__address__CI_Address__county.Size = new System.Drawing.Size(150, 20);
+            this.contactInfo__CI_Contact__address__CI_Address__county.Size = new System.Drawing.Size(150, 21);
             this.contactInfo__CI_Contact__address__CI_Address__county.TabIndex = 11;
             // 
             // contactInfo__CI_Contact__address__CI_Address__electronicMailAddress_lbl
             // 
             this.contactInfo__CI_Contact__address__CI_Address__electronicMailAddress_lbl.AutoSize = true;
+            this.contactInfo__CI_Contact__address__CI_Address__electronicMailAddress_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contactInfo__CI_Contact__address__CI_Address__electronicMailAddress_lbl.Location = new System.Drawing.Point(56, 162);
             this.contactInfo__CI_Contact__address__CI_Address__electronicMailAddress_lbl.Name = "contactInfo__CI_Contact__address__CI_Address__electronicMailAddress_lbl";
-            this.contactInfo__CI_Contact__address__CI_Address__electronicMailAddress_lbl.Size = new System.Drawing.Size(36, 13);
+            this.contactInfo__CI_Contact__address__CI_Address__electronicMailAddress_lbl.Size = new System.Drawing.Size(35, 13);
             this.contactInfo__CI_Contact__address__CI_Address__electronicMailAddress_lbl.TabIndex = 26;
             this.contactInfo__CI_Contact__address__CI_Address__electronicMailAddress_lbl.Text = "E-Mail";
             this.contactInfo__CI_Contact__address__CI_Address__electronicMailAddress_lbl.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -320,18 +342,20 @@
             // contactInfo__CI_Contact__address__CI_Address__electronicMailAddress
             // 
             this.contactInfo__CI_Contact__address__CI_Address__electronicMailAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.contactInfo__CI_Contact__address__CI_Address__electronicMailAddress.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contactInfo__CI_Contact__address__CI_Address__electronicMailAddress.Location = new System.Drawing.Point(101, 160);
             this.contactInfo__CI_Contact__address__CI_Address__electronicMailAddress.Name = "contactInfo__CI_Contact__address__CI_Address__electronicMailAddress";
-            this.contactInfo__CI_Contact__address__CI_Address__electronicMailAddress.Size = new System.Drawing.Size(186, 20);
+            this.contactInfo__CI_Contact__address__CI_Address__electronicMailAddress.Size = new System.Drawing.Size(186, 21);
             this.contactInfo__CI_Contact__address__CI_Address__electronicMailAddress.TabIndex = 12;
             this.contactInfo__CI_Contact__address__CI_Address__electronicMailAddress.Tag = "";
             // 
             // contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage_lbl
             // 
             this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage_lbl.AutoSize = true;
+            this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage_lbl.Location = new System.Drawing.Point(47, 188);
             this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage_lbl.Name = "contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage_lbl";
-            this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage_lbl.Size = new System.Drawing.Size(45, 13);
+            this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage_lbl.Size = new System.Drawing.Size(43, 13);
             this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage_lbl.TabIndex = 28;
             this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage_lbl.Text = "Linkage";
             this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage_lbl.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -339,17 +363,19 @@
             // contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage
             // 
             this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage.Location = new System.Drawing.Point(101, 186);
             this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage.Name = "contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage";
-            this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage.Size = new System.Drawing.Size(186, 20);
+            this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage.Size = new System.Drawing.Size(186, 21);
             this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage.TabIndex = 13;
             // 
             // contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode_lbl
             // 
             this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode_lbl.AutoSize = true;
+            this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode_lbl.Location = new System.Drawing.Point(19, 214);
             this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode_lbl.Name = "contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode_lbl";
-            this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode_lbl.Size = new System.Drawing.Size(72, 13);
+            this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode_lbl.Size = new System.Drawing.Size(70, 13);
             this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode_lbl.TabIndex = 30;
             this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode_lbl.Text = "Linkage Type";
             this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode_lbl.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -357,14 +383,16 @@
             // contactInfo__CI_Contact__hoursOfService
             // 
             this.contactInfo__CI_Contact__hoursOfService.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.contactInfo__CI_Contact__hoursOfService.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contactInfo__CI_Contact__hoursOfService.Location = new System.Drawing.Point(101, 239);
             this.contactInfo__CI_Contact__hoursOfService.Name = "contactInfo__CI_Contact__hoursOfService";
-            this.contactInfo__CI_Contact__hoursOfService.Size = new System.Drawing.Size(186, 20);
+            this.contactInfo__CI_Contact__hoursOfService.Size = new System.Drawing.Size(186, 21);
             this.contactInfo__CI_Contact__hoursOfService.TabIndex = 14;
             // 
             // contactInfo__CI_Contact__hoursOfService_lbl
             // 
             this.contactInfo__CI_Contact__hoursOfService_lbl.AutoSize = true;
+            this.contactInfo__CI_Contact__hoursOfService_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contactInfo__CI_Contact__hoursOfService_lbl.Location = new System.Drawing.Point(6, 240);
             this.contactInfo__CI_Contact__hoursOfService_lbl.Name = "contactInfo__CI_Contact__hoursOfService_lbl";
             this.contactInfo__CI_Contact__hoursOfService_lbl.Size = new System.Drawing.Size(86, 13);
@@ -375,9 +403,10 @@
             // contactInfo__CI_Contact__contactInstructions_lbl
             // 
             this.contactInfo__CI_Contact__contactInstructions_lbl.AutoSize = true;
+            this.contactInfo__CI_Contact__contactInstructions_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contactInfo__CI_Contact__contactInstructions_lbl.Location = new System.Drawing.Point(31, 266);
             this.contactInfo__CI_Contact__contactInstructions_lbl.Name = "contactInfo__CI_Contact__contactInstructions_lbl";
-            this.contactInfo__CI_Contact__contactInstructions_lbl.Size = new System.Drawing.Size(61, 26);
+            this.contactInfo__CI_Contact__contactInstructions_lbl.Size = new System.Drawing.Size(64, 26);
             this.contactInfo__CI_Contact__contactInstructions_lbl.TabIndex = 34;
             this.contactInfo__CI_Contact__contactInstructions_lbl.Text = "Contact\r\nInstructions";
             this.contactInfo__CI_Contact__contactInstructions_lbl.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -385,6 +414,7 @@
             // contactInfo__CI_Contact__contactInstructions
             // 
             this.contactInfo__CI_Contact__contactInstructions.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.contactInfo__CI_Contact__contactInstructions.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contactInfo__CI_Contact__contactInstructions.Location = new System.Drawing.Point(101, 264);
             this.contactInfo__CI_Contact__contactInstructions.Multiline = true;
             this.contactInfo__CI_Contact__contactInstructions.Name = "contactInfo__CI_Contact__contactInstructions";
@@ -394,9 +424,10 @@
             // roleCode_lbl
             // 
             this.roleCode_lbl.AutoSize = true;
+            this.roleCode_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.roleCode_lbl.Location = new System.Drawing.Point(47, 8);
             this.roleCode_lbl.Name = "roleCode_lbl";
-            this.roleCode_lbl.Size = new System.Drawing.Size(29, 13);
+            this.roleCode_lbl.Size = new System.Drawing.Size(28, 13);
             this.roleCode_lbl.TabIndex = 35;
             this.roleCode_lbl.Text = "Role";
             this.roleCode_lbl.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -452,6 +483,7 @@
             // contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode
             // 
             this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode.FormattingEnabled = true;
             this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode.Items.AddRange(new object[] {
             "download",
@@ -468,10 +500,10 @@
             // 
             this.pagerLbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pagerLbl.AutoSize = true;
-            this.pagerLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pagerLbl.Location = new System.Drawing.Point(101, 6);
+            this.pagerLbl.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pagerLbl.Location = new System.Drawing.Point(104, 6);
             this.pagerLbl.Name = "pagerLbl";
-            this.pagerLbl.Size = new System.Drawing.Size(44, 17);
+            this.pagerLbl.Size = new System.Drawing.Size(41, 16);
             this.pagerLbl.TabIndex = 37;
             this.pagerLbl.Text = "0 of 0";
             this.pagerLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -480,8 +512,8 @@
             // 
             this.pagerDownBtn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.pagerDownBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.pagerDownBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pagerDownBtn.Location = new System.Drawing.Point(72, 3);
+            this.pagerDownBtn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pagerDownBtn.Location = new System.Drawing.Point(75, 3);
             this.pagerDownBtn.Name = "pagerDownBtn";
             this.pagerDownBtn.Size = new System.Drawing.Size(23, 23);
             this.pagerDownBtn.TabIndex = 38;
@@ -494,7 +526,7 @@
             // 
             this.pagerUpBtn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.pagerUpBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.pagerUpBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pagerUpBtn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pagerUpBtn.Location = new System.Drawing.Point(151, 3);
             this.pagerUpBtn.Name = "pagerUpBtn";
             this.pagerUpBtn.Size = new System.Drawing.Size(23, 23);
@@ -512,6 +544,7 @@
             this.flowLayoutPanel1.Controls.Add(this.pagerLbl);
             this.flowLayoutPanel1.Controls.Add(this.pagerDownBtn);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.flowLayoutPanel1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flowLayoutPanel1.Location = new System.Drawing.Point(201, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(235, 30);
@@ -549,8 +582,9 @@
             // comboBox1
             // 
             this.comboBox1.DropDownWidth = 600;
+            this.comboBox1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(311, 99);
+            this.comboBox1.Location = new System.Drawing.Point(311, 33);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(112, 21);
             this.comboBox1.TabIndex = 41;
@@ -584,9 +618,10 @@
             // dcatProgramCode_lbl
             // 
             this.dcatProgramCode_lbl.AutoSize = true;
-            this.dcatProgramCode_lbl.Location = new System.Drawing.Point(332, 18);
+            this.dcatProgramCode_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dcatProgramCode_lbl.Location = new System.Drawing.Point(328, 76);
             this.dcatProgramCode_lbl.Name = "dcatProgramCode_lbl";
-            this.dcatProgramCode_lbl.Size = new System.Drawing.Size(74, 13);
+            this.dcatProgramCode_lbl.Size = new System.Drawing.Size(75, 13);
             this.dcatProgramCode_lbl.TabIndex = 37;
             this.dcatProgramCode_lbl.Text = "Program Code";
             this.dcatProgramCode_lbl.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -595,8 +630,9 @@
             // 
             this.dcatProgramCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dcatProgramCode.DropDownWidth = 600;
+            this.dcatProgramCode.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dcatProgramCode.FormattingEnabled = true;
-            this.dcatProgramCode.Location = new System.Drawing.Point(313, 34);
+            this.dcatProgramCode.Location = new System.Drawing.Point(309, 92);
             this.dcatProgramCode.Name = "dcatProgramCode";
             this.dcatProgramCode.Size = new System.Drawing.Size(112, 21);
             this.dcatProgramCode.TabIndex = 36;
@@ -624,10 +660,10 @@
             // uc_ResponsibleParty_lbl
             // 
             this.uc_ResponsibleParty_lbl.AutoSize = true;
-            this.uc_ResponsibleParty_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uc_ResponsibleParty_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uc_ResponsibleParty_lbl.Location = new System.Drawing.Point(33, 9);
             this.uc_ResponsibleParty_lbl.Name = "uc_ResponsibleParty_lbl";
-            this.uc_ResponsibleParty_lbl.Size = new System.Drawing.Size(0, 17);
+            this.uc_ResponsibleParty_lbl.Size = new System.Drawing.Size(0, 13);
             this.uc_ResponsibleParty_lbl.TabIndex = 45;
             this.uc_ResponsibleParty_lbl.Tag = "";
             // 
@@ -646,28 +682,29 @@
             this.panel3.Size = new System.Drawing.Size(435, 464);
             this.panel3.TabIndex = 46;
             // 
+            // contact_list
+            // 
+            this.contact_list.AutoSize = true;
+            this.contact_list.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contact_list.Location = new System.Drawing.Point(313, 13);
+            this.contact_list.Name = "contact_list";
+            this.contact_list.Size = new System.Drawing.Size(77, 13);
+            this.contact_list.TabIndex = 45;
+            this.contact_list.Text = "Select Contact";
+            this.contact_list.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
             // responsible_party_d
             // 
             this.responsible_party_d.BackColor = System.Drawing.SystemColors.Control;
             this.responsible_party_d.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.responsible_party_d.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.responsible_party_d.Location = new System.Drawing.Point(393, 75);
+            this.responsible_party_d.Location = new System.Drawing.Point(393, 9);
             this.responsible_party_d.Name = "responsible_party_d";
             this.responsible_party_d.Size = new System.Drawing.Size(28, 22);
             this.responsible_party_d.TabIndex = 44;
             this.responsible_party_d.Text = "D";
             this.responsible_party_d.UseVisualStyleBackColor = false;
             this.responsible_party_d.Click += new System.EventHandler(this.responsible_party_d_Click);
-            // 
-            // contact_list
-            // 
-            this.contact_list.AutoSize = true;
-            this.contact_list.Location = new System.Drawing.Point(317, 81);
-            this.contact_list.Name = "contact_list";
-            this.contact_list.Size = new System.Drawing.Size(63, 13);
-            this.contact_list.TabIndex = 45;
-            this.contact_list.Text = "Contact List";
-            this.contact_list.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // uc_ResponsibleParty
             // 

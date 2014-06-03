@@ -176,52 +176,58 @@
             // md_format_decompressionTechnique_lbl
             // 
             this.md_format_decompressionTechnique_lbl.AutoSize = true;
+            this.md_format_decompressionTechnique_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.md_format_decompressionTechnique_lbl.Location = new System.Drawing.Point(27, 58);
             this.md_format_decompressionTechnique_lbl.Name = "md_format_decompressionTechnique_lbl";
-            this.md_format_decompressionTechnique_lbl.Size = new System.Drawing.Size(80, 26);
+            this.md_format_decompressionTechnique_lbl.Size = new System.Drawing.Size(79, 26);
             this.md_format_decompressionTechnique_lbl.TabIndex = 10;
             this.md_format_decompressionTechnique_lbl.Text = "Decompression\r\nTechnique";
             // 
             // md_format_Specification_lbl
             // 
             this.md_format_Specification_lbl.AutoSize = true;
+            this.md_format_Specification_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.md_format_Specification_lbl.Location = new System.Drawing.Point(39, 39);
             this.md_format_Specification_lbl.Name = "md_format_Specification_lbl";
-            this.md_format_Specification_lbl.Size = new System.Drawing.Size(68, 13);
+            this.md_format_Specification_lbl.Size = new System.Drawing.Size(67, 13);
             this.md_format_Specification_lbl.TabIndex = 9;
             this.md_format_Specification_lbl.Text = "Specification";
             // 
             // md_format_AmendmentNumber_lbl
             // 
             this.md_format_AmendmentNumber_lbl.AutoSize = true;
+            this.md_format_AmendmentNumber_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.md_format_AmendmentNumber_lbl.Location = new System.Drawing.Point(6, 12);
             this.md_format_AmendmentNumber_lbl.Name = "md_format_AmendmentNumber_lbl";
-            this.md_format_AmendmentNumber_lbl.Size = new System.Drawing.Size(103, 13);
+            this.md_format_AmendmentNumber_lbl.Size = new System.Drawing.Size(104, 13);
             this.md_format_AmendmentNumber_lbl.TabIndex = 8;
             this.md_format_AmendmentNumber_lbl.Text = "Amendment Number";
             // 
             // md_format_decompressionTechnique_txt
             // 
             this.md_format_decompressionTechnique_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.md_format_decompressionTechnique_txt.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.md_format_decompressionTechnique_txt.Location = new System.Drawing.Point(115, 64);
             this.md_format_decompressionTechnique_txt.Name = "md_format_decompressionTechnique_txt";
-            this.md_format_decompressionTechnique_txt.Size = new System.Drawing.Size(205, 20);
+            this.md_format_decompressionTechnique_txt.Size = new System.Drawing.Size(205, 21);
             this.md_format_decompressionTechnique_txt.TabIndex = 7;
             // 
             // md_format_Specification_txt
             // 
             this.md_format_Specification_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.md_format_Specification_txt.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.md_format_Specification_txt.Location = new System.Drawing.Point(115, 37);
             this.md_format_Specification_txt.Name = "md_format_Specification_txt";
-            this.md_format_Specification_txt.Size = new System.Drawing.Size(205, 20);
+            this.md_format_Specification_txt.Size = new System.Drawing.Size(205, 21);
             this.md_format_Specification_txt.TabIndex = 6;
             // 
             // md_format_AmendmentNumber_txt
             // 
             this.md_format_AmendmentNumber_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.md_format_AmendmentNumber_txt.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.md_format_AmendmentNumber_txt.Location = new System.Drawing.Point(115, 10);
             this.md_format_AmendmentNumber_txt.Name = "md_format_AmendmentNumber_txt";
-            this.md_format_AmendmentNumber_txt.Size = new System.Drawing.Size(205, 20);
+            this.md_format_AmendmentNumber_txt.Size = new System.Drawing.Size(205, 21);
             this.md_format_AmendmentNumber_txt.TabIndex = 5;
             // 
             // panel1
@@ -239,9 +245,10 @@
             // md_format_version_txt
             // 
             this.md_format_version_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.md_format_version_txt.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.md_format_version_txt.Location = new System.Drawing.Point(115, 35);
             this.md_format_version_txt.Name = "md_format_version_txt";
-            this.md_format_version_txt.Size = new System.Drawing.Size(205, 20);
+            this.md_format_version_txt.Size = new System.Drawing.Size(205, 21);
             this.md_format_version_txt.TabIndex = 6;
             this.md_format_version_txt.Tag = "";
             this.md_format_version_txt.Validating += new System.ComponentModel.CancelEventHandler(this.distribution_Validating);
@@ -249,6 +256,7 @@
             // md_format_version_lbl
             // 
             this.md_format_version_lbl.AutoSize = true;
+            this.md_format_version_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.md_format_version_lbl.Location = new System.Drawing.Point(67, 37);
             this.md_format_version_lbl.Name = "md_format_version_lbl";
             this.md_format_version_lbl.Size = new System.Drawing.Size(42, 13);
@@ -258,18 +266,20 @@
             // md_format_name_lbl
             // 
             this.md_format_name_lbl.AutoSize = true;
+            this.md_format_name_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.md_format_name_lbl.Location = new System.Drawing.Point(73, 11);
             this.md_format_name_lbl.Name = "md_format_name_lbl";
-            this.md_format_name_lbl.Size = new System.Drawing.Size(35, 13);
+            this.md_format_name_lbl.Size = new System.Drawing.Size(34, 13);
             this.md_format_name_lbl.TabIndex = 4;
             this.md_format_name_lbl.Text = "Name";
             // 
             // md_format_name_txt
             // 
             this.md_format_name_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.md_format_name_txt.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.md_format_name_txt.Location = new System.Drawing.Point(115, 9);
             this.md_format_name_txt.Name = "md_format_name_txt";
-            this.md_format_name_txt.Size = new System.Drawing.Size(205, 20);
+            this.md_format_name_txt.Size = new System.Drawing.Size(205, 21);
             this.md_format_name_txt.TabIndex = 3;
             this.md_format_name_txt.Tag = "";
             this.md_format_name_txt.Validating += new System.ComponentModel.CancelEventHandler(this.distribution_Validating);
@@ -282,6 +292,7 @@
             this.MD_Format.Controls.Add(this.MD_format_lbl);
             this.MD_Format.Controls.Add(this.pgD_MD_Format_btn);
             this.MD_Format.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.MD_Format.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MD_Format.Location = new System.Drawing.Point(201, 3);
             this.MD_Format.Name = "MD_Format";
             this.MD_Format.Size = new System.Drawing.Size(235, 30);
@@ -292,6 +303,7 @@
             this.del_MD_Format_btn.Enabled = false;
             this.del_MD_Format_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.del_MD_Format_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.del_MD_Format_btn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.del_MD_Format_btn.Image = ((System.Drawing.Image)(resources.GetObject("del_MD_Format_btn.Image")));
             this.del_MD_Format_btn.Location = new System.Drawing.Point(209, 3);
             this.del_MD_Format_btn.Name = "del_MD_Format_btn";
@@ -305,6 +317,7 @@
             this.add_MD_Format_btn.Enabled = false;
             this.add_MD_Format_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.add_MD_Format_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.add_MD_Format_btn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.add_MD_Format_btn.Image = ((System.Drawing.Image)(resources.GetObject("add_MD_Format_btn.Image")));
             this.add_MD_Format_btn.Location = new System.Drawing.Point(180, 3);
             this.add_MD_Format_btn.Name = "add_MD_Format_btn";
@@ -317,6 +330,7 @@
             // 
             this.pgU_MD_Format_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.pgU_MD_Format_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.pgU_MD_Format_btn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pgU_MD_Format_btn.Location = new System.Drawing.Point(151, 3);
             this.pgU_MD_Format_btn.Name = "pgU_MD_Format_btn";
             this.pgU_MD_Format_btn.Size = new System.Drawing.Size(23, 23);
@@ -330,10 +344,10 @@
             // 
             this.MD_format_lbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.MD_format_lbl.AutoSize = true;
-            this.MD_format_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MD_format_lbl.Location = new System.Drawing.Point(101, 6);
+            this.MD_format_lbl.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MD_format_lbl.Location = new System.Drawing.Point(104, 6);
             this.MD_format_lbl.Name = "MD_format_lbl";
-            this.MD_format_lbl.Size = new System.Drawing.Size(44, 17);
+            this.MD_format_lbl.Size = new System.Drawing.Size(41, 16);
             this.MD_format_lbl.TabIndex = 3;
             this.MD_format_lbl.Text = "0 of 0";
             // 
@@ -341,7 +355,8 @@
             // 
             this.pgD_MD_Format_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.pgD_MD_Format_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.pgD_MD_Format_btn.Location = new System.Drawing.Point(72, 3);
+            this.pgD_MD_Format_btn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pgD_MD_Format_btn.Location = new System.Drawing.Point(75, 3);
             this.pgD_MD_Format_btn.Name = "pgD_MD_Format_btn";
             this.pgD_MD_Format_btn.Size = new System.Drawing.Size(23, 23);
             this.pgD_MD_Format_btn.TabIndex = 4;
@@ -366,10 +381,10 @@
             // md_distributionFormat_lbl
             // 
             this.md_distributionFormat_lbl.AutoSize = true;
-            this.md_distributionFormat_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.md_distributionFormat_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.md_distributionFormat_lbl.Location = new System.Drawing.Point(33, 9);
             this.md_distributionFormat_lbl.Name = "md_distributionFormat_lbl";
-            this.md_distributionFormat_lbl.Size = new System.Drawing.Size(127, 17);
+            this.md_distributionFormat_lbl.Size = new System.Drawing.Size(98, 13);
             this.md_distributionFormat_lbl.TabIndex = 0;
             this.md_distributionFormat_lbl.Text = "Distribution Format";
             // 
@@ -403,6 +418,7 @@
             this.groupBox2.Controls.Add(this.offLine__MD_Medium__density__Real_txt);
             this.groupBox2.Controls.Add(this.offLine__MD_Medium__name_txt);
             this.groupBox2.Controls.Add(this.panel8);
+            this.groupBox2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(7, 315);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(426, 185);
@@ -414,9 +430,10 @@
             // 
             this.offLine__MD_Medium__mediumNode_lbl.AutoSize = true;
             this.offLine__MD_Medium__mediumNode_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.offLine__MD_Medium__mediumNode_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.offLine__MD_Medium__mediumNode_lbl.Location = new System.Drawing.Point(39, 155);
             this.offLine__MD_Medium__mediumNode_lbl.Name = "offLine__MD_Medium__mediumNode_lbl";
-            this.offLine__MD_Medium__mediumNode_lbl.Size = new System.Drawing.Size(70, 13);
+            this.offLine__MD_Medium__mediumNode_lbl.Size = new System.Drawing.Size(69, 13);
             this.offLine__MD_Medium__mediumNode_lbl.TabIndex = 11;
             this.offLine__MD_Medium__mediumNode_lbl.Text = "Medium Note";
             // 
@@ -424,9 +441,10 @@
             // 
             this.offLine__MD_Medium__mediumFormat_lbl.AutoSize = true;
             this.offLine__MD_Medium__mediumFormat_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.offLine__MD_Medium__mediumFormat_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.offLine__MD_Medium__mediumFormat_lbl.Location = new System.Drawing.Point(29, 129);
             this.offLine__MD_Medium__mediumFormat_lbl.Name = "offLine__MD_Medium__mediumFormat_lbl";
-            this.offLine__MD_Medium__mediumFormat_lbl.Size = new System.Drawing.Size(79, 13);
+            this.offLine__MD_Medium__mediumFormat_lbl.Size = new System.Drawing.Size(80, 13);
             this.offLine__MD_Medium__mediumFormat_lbl.TabIndex = 10;
             this.offLine__MD_Medium__mediumFormat_lbl.Text = "Medium Format";
             // 
@@ -434,9 +452,10 @@
             // 
             this.offLine__MD_Medium__volumes_lbl.AutoSize = true;
             this.offLine__MD_Medium__volumes_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.offLine__MD_Medium__volumes_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.offLine__MD_Medium__volumes_lbl.Location = new System.Drawing.Point(60, 103);
             this.offLine__MD_Medium__volumes_lbl.Name = "offLine__MD_Medium__volumes_lbl";
-            this.offLine__MD_Medium__volumes_lbl.Size = new System.Drawing.Size(47, 13);
+            this.offLine__MD_Medium__volumes_lbl.Size = new System.Drawing.Size(46, 13);
             this.offLine__MD_Medium__volumes_lbl.TabIndex = 9;
             this.offLine__MD_Medium__volumes_lbl.Text = "Volumes";
             // 
@@ -444,9 +463,10 @@
             // 
             this.offLine__MD_Medium__densityUnits_lbl.AutoSize = true;
             this.offLine__MD_Medium__densityUnits_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.offLine__MD_Medium__densityUnits_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.offLine__MD_Medium__densityUnits_lbl.Location = new System.Drawing.Point(39, 77);
             this.offLine__MD_Medium__densityUnits_lbl.Name = "offLine__MD_Medium__densityUnits_lbl";
-            this.offLine__MD_Medium__densityUnits_lbl.Size = new System.Drawing.Size(69, 13);
+            this.offLine__MD_Medium__densityUnits_lbl.Size = new System.Drawing.Size(70, 13);
             this.offLine__MD_Medium__densityUnits_lbl.TabIndex = 8;
             this.offLine__MD_Medium__densityUnits_lbl.Text = "Density Units";
             // 
@@ -454,9 +474,10 @@
             // 
             this.offLine__MD_Medium__density__Real_lbl.AutoSize = true;
             this.offLine__MD_Medium__density__Real_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.offLine__MD_Medium__density__Real_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.offLine__MD_Medium__density__Real_lbl.Location = new System.Drawing.Point(66, 51);
             this.offLine__MD_Medium__density__Real_lbl.Name = "offLine__MD_Medium__density__Real_lbl";
-            this.offLine__MD_Medium__density__Real_lbl.Size = new System.Drawing.Size(42, 13);
+            this.offLine__MD_Medium__density__Real_lbl.Size = new System.Drawing.Size(43, 13);
             this.offLine__MD_Medium__density__Real_lbl.TabIndex = 7;
             this.offLine__MD_Medium__density__Real_lbl.Text = "Density";
             // 
@@ -464,58 +485,65 @@
             // 
             this.offLine__MD_Medium__name_lbl.AutoSize = true;
             this.offLine__MD_Medium__name_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.offLine__MD_Medium__name_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.offLine__MD_Medium__name_lbl.Location = new System.Drawing.Point(72, 25);
             this.offLine__MD_Medium__name_lbl.Name = "offLine__MD_Medium__name_lbl";
-            this.offLine__MD_Medium__name_lbl.Size = new System.Drawing.Size(35, 13);
+            this.offLine__MD_Medium__name_lbl.Size = new System.Drawing.Size(34, 13);
             this.offLine__MD_Medium__name_lbl.TabIndex = 6;
             this.offLine__MD_Medium__name_lbl.Text = "Name";
             // 
             // offLine__MD_Medium__mediumNode_txt
             // 
             this.offLine__MD_Medium__mediumNode_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.offLine__MD_Medium__mediumNode_txt.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.offLine__MD_Medium__mediumNode_txt.Location = new System.Drawing.Point(115, 152);
             this.offLine__MD_Medium__mediumNode_txt.Name = "offLine__MD_Medium__mediumNode_txt";
-            this.offLine__MD_Medium__mediumNode_txt.Size = new System.Drawing.Size(279, 20);
+            this.offLine__MD_Medium__mediumNode_txt.Size = new System.Drawing.Size(279, 21);
             this.offLine__MD_Medium__mediumNode_txt.TabIndex = 5;
             // 
             // offLine__MD_Medium__mediumFormat_txt
             // 
             this.offLine__MD_Medium__mediumFormat_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.offLine__MD_Medium__mediumFormat_txt.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.offLine__MD_Medium__mediumFormat_txt.Location = new System.Drawing.Point(116, 126);
             this.offLine__MD_Medium__mediumFormat_txt.Name = "offLine__MD_Medium__mediumFormat_txt";
-            this.offLine__MD_Medium__mediumFormat_txt.Size = new System.Drawing.Size(279, 20);
+            this.offLine__MD_Medium__mediumFormat_txt.Size = new System.Drawing.Size(279, 21);
             this.offLine__MD_Medium__mediumFormat_txt.TabIndex = 4;
             // 
             // offLine__MD_Medium__volumes_txt
             // 
             this.offLine__MD_Medium__volumes_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.offLine__MD_Medium__volumes_txt.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.offLine__MD_Medium__volumes_txt.Location = new System.Drawing.Point(115, 100);
             this.offLine__MD_Medium__volumes_txt.Name = "offLine__MD_Medium__volumes_txt";
-            this.offLine__MD_Medium__volumes_txt.Size = new System.Drawing.Size(279, 20);
+            this.offLine__MD_Medium__volumes_txt.Size = new System.Drawing.Size(279, 21);
             this.offLine__MD_Medium__volumes_txt.TabIndex = 3;
             // 
             // offLine__MD_Medium__densityUnits_txt
             // 
             this.offLine__MD_Medium__densityUnits_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.offLine__MD_Medium__densityUnits_txt.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.offLine__MD_Medium__densityUnits_txt.Location = new System.Drawing.Point(115, 74);
             this.offLine__MD_Medium__densityUnits_txt.Name = "offLine__MD_Medium__densityUnits_txt";
-            this.offLine__MD_Medium__densityUnits_txt.Size = new System.Drawing.Size(279, 20);
+            this.offLine__MD_Medium__densityUnits_txt.Size = new System.Drawing.Size(279, 21);
             this.offLine__MD_Medium__densityUnits_txt.TabIndex = 2;
             // 
             // offLine__MD_Medium__density__Real_txt
             // 
             this.offLine__MD_Medium__density__Real_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.offLine__MD_Medium__density__Real_txt.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.offLine__MD_Medium__density__Real_txt.Location = new System.Drawing.Point(115, 48);
             this.offLine__MD_Medium__density__Real_txt.Name = "offLine__MD_Medium__density__Real_txt";
-            this.offLine__MD_Medium__density__Real_txt.Size = new System.Drawing.Size(279, 20);
+            this.offLine__MD_Medium__density__Real_txt.Size = new System.Drawing.Size(279, 21);
             this.offLine__MD_Medium__density__Real_txt.TabIndex = 1;
             // 
             // offLine__MD_Medium__name_txt
             // 
             this.offLine__MD_Medium__name_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.offLine__MD_Medium__name_txt.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.offLine__MD_Medium__name_txt.Location = new System.Drawing.Point(115, 22);
             this.offLine__MD_Medium__name_txt.Name = "offLine__MD_Medium__name_txt";
-            this.offLine__MD_Medium__name_txt.Size = new System.Drawing.Size(279, 20);
+            this.offLine__MD_Medium__name_txt.Size = new System.Drawing.Size(279, 21);
             this.offLine__MD_Medium__name_txt.TabIndex = 0;
             // 
             // panel8
@@ -544,6 +572,7 @@
             this.CI_OnlineResource.Controls.Add(this.onLine__CI_OnlineResource__name_lbl);
             this.CI_OnlineResource.Controls.Add(this.panel3);
             this.CI_OnlineResource.Controls.Add(this.panel7);
+            this.CI_OnlineResource.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CI_OnlineResource.Location = new System.Drawing.Point(7, 107);
             this.CI_OnlineResource.Name = "CI_OnlineResource";
             this.CI_OnlineResource.Size = new System.Drawing.Size(426, 202);
@@ -555,41 +584,47 @@
             // 
             this.onLine__CI_OnlineResource__applicationProfile_lbl.AutoSize = true;
             this.onLine__CI_OnlineResource__applicationProfile_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.onLine__CI_OnlineResource__applicationProfile_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.onLine__CI_OnlineResource__applicationProfile_lbl.Location = new System.Drawing.Point(19, 89);
             this.onLine__CI_OnlineResource__applicationProfile_lbl.Name = "onLine__CI_OnlineResource__applicationProfile_lbl";
-            this.onLine__CI_OnlineResource__applicationProfile_lbl.Size = new System.Drawing.Size(89, 13);
+            this.onLine__CI_OnlineResource__applicationProfile_lbl.Size = new System.Drawing.Size(90, 13);
             this.onLine__CI_OnlineResource__applicationProfile_lbl.TabIndex = 16;
             this.onLine__CI_OnlineResource__applicationProfile_lbl.Text = "Applicaton Profile";
             // 
             // onLine__CI_OnlineResource__linkage__URL_lbl
             // 
             this.onLine__CI_OnlineResource__linkage__URL_lbl.AutoSize = true;
+            this.onLine__CI_OnlineResource__linkage__URL_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.onLine__CI_OnlineResource__linkage__URL_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.onLine__CI_OnlineResource__linkage__URL_lbl.Location = new System.Drawing.Point(62, 22);
             this.onLine__CI_OnlineResource__linkage__URL_lbl.Name = "onLine__CI_OnlineResource__linkage__URL_lbl";
-            this.onLine__CI_OnlineResource__linkage__URL_lbl.Size = new System.Drawing.Size(45, 13);
+            this.onLine__CI_OnlineResource__linkage__URL_lbl.Size = new System.Drawing.Size(43, 13);
             this.onLine__CI_OnlineResource__linkage__URL_lbl.TabIndex = 5;
             this.onLine__CI_OnlineResource__linkage__URL_lbl.Text = "Linkage";
             // 
             // onLine__CI_OnlineResource__applicationProfile_txt
             // 
             this.onLine__CI_OnlineResource__applicationProfile_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.onLine__CI_OnlineResource__applicationProfile_txt.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.onLine__CI_OnlineResource__applicationProfile_txt.Location = new System.Drawing.Point(115, 86);
             this.onLine__CI_OnlineResource__applicationProfile_txt.Name = "onLine__CI_OnlineResource__applicationProfile_txt";
-            this.onLine__CI_OnlineResource__applicationProfile_txt.Size = new System.Drawing.Size(279, 20);
+            this.onLine__CI_OnlineResource__applicationProfile_txt.Size = new System.Drawing.Size(279, 21);
             this.onLine__CI_OnlineResource__applicationProfile_txt.TabIndex = 15;
             // 
             // onLine__CI_OnlineResource__protocol_txt
             // 
             this.onLine__CI_OnlineResource__protocol_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.onLine__CI_OnlineResource__protocol_txt.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.onLine__CI_OnlineResource__protocol_txt.Location = new System.Drawing.Point(115, 60);
             this.onLine__CI_OnlineResource__protocol_txt.Name = "onLine__CI_OnlineResource__protocol_txt";
-            this.onLine__CI_OnlineResource__protocol_txt.Size = new System.Drawing.Size(279, 20);
+            this.onLine__CI_OnlineResource__protocol_txt.Size = new System.Drawing.Size(279, 21);
             this.onLine__CI_OnlineResource__protocol_txt.TabIndex = 4;
             // 
             // onLine__CI_OnlineResource__function_lbl
             // 
             this.onLine__CI_OnlineResource__function_lbl.AutoSize = true;
             this.onLine__CI_OnlineResource__function_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.onLine__CI_OnlineResource__function_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.onLine__CI_OnlineResource__function_lbl.Location = new System.Drawing.Point(59, 169);
             this.onLine__CI_OnlineResource__function_lbl.Name = "onLine__CI_OnlineResource__function_lbl";
             this.onLine__CI_OnlineResource__function_lbl.Size = new System.Drawing.Size(48, 13);
@@ -600,6 +635,7 @@
             // 
             this.onLine__CI_OnlineResource__description_lbl.AutoSize = true;
             this.onLine__CI_OnlineResource__description_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.onLine__CI_OnlineResource__description_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.onLine__CI_OnlineResource__description_lbl.Location = new System.Drawing.Point(47, 142);
             this.onLine__CI_OnlineResource__description_lbl.Name = "onLine__CI_OnlineResource__description_lbl";
             this.onLine__CI_OnlineResource__description_lbl.Size = new System.Drawing.Size(60, 13);
@@ -609,17 +645,19 @@
             // onLine__CI_OnlineResource__name_txt
             // 
             this.onLine__CI_OnlineResource__name_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.onLine__CI_OnlineResource__name_txt.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.onLine__CI_OnlineResource__name_txt.Location = new System.Drawing.Point(115, 113);
             this.onLine__CI_OnlineResource__name_txt.Name = "onLine__CI_OnlineResource__name_txt";
-            this.onLine__CI_OnlineResource__name_txt.Size = new System.Drawing.Size(279, 20);
+            this.onLine__CI_OnlineResource__name_txt.Size = new System.Drawing.Size(279, 21);
             this.onLine__CI_OnlineResource__name_txt.TabIndex = 7;
             // 
             // onLine__CI_OnlineResource__description_txt
             // 
             this.onLine__CI_OnlineResource__description_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.onLine__CI_OnlineResource__description_txt.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.onLine__CI_OnlineResource__description_txt.Location = new System.Drawing.Point(115, 140);
             this.onLine__CI_OnlineResource__description_txt.Name = "onLine__CI_OnlineResource__description_txt";
-            this.onLine__CI_OnlineResource__description_txt.Size = new System.Drawing.Size(279, 20);
+            this.onLine__CI_OnlineResource__description_txt.Size = new System.Drawing.Size(279, 21);
             this.onLine__CI_OnlineResource__description_txt.TabIndex = 9;
             // 
             // label16
@@ -633,9 +671,10 @@
             // onLine__CI_OnlineResource__linkage__URL_txt
             // 
             this.onLine__CI_OnlineResource__linkage__URL_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.onLine__CI_OnlineResource__linkage__URL_txt.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.onLine__CI_OnlineResource__linkage__URL_txt.Location = new System.Drawing.Point(115, 19);
             this.onLine__CI_OnlineResource__linkage__URL_txt.Name = "onLine__CI_OnlineResource__linkage__URL_txt";
-            this.onLine__CI_OnlineResource__linkage__URL_txt.Size = new System.Drawing.Size(279, 20);
+            this.onLine__CI_OnlineResource__linkage__URL_txt.Size = new System.Drawing.Size(279, 21);
             this.onLine__CI_OnlineResource__linkage__URL_txt.TabIndex = 3;
             this.onLine__CI_OnlineResource__linkage__URL_txt.Tag = "";
             // 
@@ -643,6 +682,7 @@
             // 
             this.onLine__CI_OnlineResource__protocol_lbl.AutoSize = true;
             this.onLine__CI_OnlineResource__protocol_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.onLine__CI_OnlineResource__protocol_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.onLine__CI_OnlineResource__protocol_lbl.Location = new System.Drawing.Point(61, 62);
             this.onLine__CI_OnlineResource__protocol_lbl.Name = "onLine__CI_OnlineResource__protocol_lbl";
             this.onLine__CI_OnlineResource__protocol_lbl.Size = new System.Drawing.Size(46, 13);
@@ -652,6 +692,7 @@
             // onLine__CI_OnlineResource__function_txt
             // 
             this.onLine__CI_OnlineResource__function_txt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.onLine__CI_OnlineResource__function_txt.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.onLine__CI_OnlineResource__function_txt.FormattingEnabled = true;
             this.onLine__CI_OnlineResource__function_txt.Items.AddRange(new object[] {
             "download",
@@ -668,9 +709,10 @@
             // 
             this.onLine__CI_OnlineResource__name_lbl.AutoSize = true;
             this.onLine__CI_OnlineResource__name_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.onLine__CI_OnlineResource__name_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.onLine__CI_OnlineResource__name_lbl.Location = new System.Drawing.Point(72, 115);
             this.onLine__CI_OnlineResource__name_lbl.Name = "onLine__CI_OnlineResource__name_lbl";
-            this.onLine__CI_OnlineResource__name_lbl.Size = new System.Drawing.Size(35, 13);
+            this.onLine__CI_OnlineResource__name_lbl.Size = new System.Drawing.Size(34, 13);
             this.onLine__CI_OnlineResource__name_lbl.TabIndex = 8;
             this.onLine__CI_OnlineResource__name_lbl.Text = "Name";
             // 
@@ -704,35 +746,39 @@
             // md_digitalTransferOptions_transferSize_lbl
             // 
             this.md_digitalTransferOptions_transferSize_lbl.AutoSize = true;
+            this.md_digitalTransferOptions_transferSize_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.md_digitalTransferOptions_transferSize_lbl.Location = new System.Drawing.Point(38, 42);
             this.md_digitalTransferOptions_transferSize_lbl.Name = "md_digitalTransferOptions_transferSize_lbl";
-            this.md_digitalTransferOptions_transferSize_lbl.Size = new System.Drawing.Size(69, 13);
+            this.md_digitalTransferOptions_transferSize_lbl.Size = new System.Drawing.Size(70, 13);
             this.md_digitalTransferOptions_transferSize_lbl.TabIndex = 6;
             this.md_digitalTransferOptions_transferSize_lbl.Text = "Transfer Size";
             // 
             // md_digitalTransferOptions_UnitsOfDistribution_lbl
             // 
             this.md_digitalTransferOptions_UnitsOfDistribution_lbl.AutoSize = true;
+            this.md_digitalTransferOptions_UnitsOfDistribution_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.md_digitalTransferOptions_UnitsOfDistribution_lbl.Location = new System.Drawing.Point(9, 16);
             this.md_digitalTransferOptions_UnitsOfDistribution_lbl.Name = "md_digitalTransferOptions_UnitsOfDistribution_lbl";
-            this.md_digitalTransferOptions_UnitsOfDistribution_lbl.Size = new System.Drawing.Size(98, 13);
+            this.md_digitalTransferOptions_UnitsOfDistribution_lbl.Size = new System.Drawing.Size(101, 13);
             this.md_digitalTransferOptions_UnitsOfDistribution_lbl.TabIndex = 5;
             this.md_digitalTransferOptions_UnitsOfDistribution_lbl.Text = "Units of Distribution";
             // 
             // md_digitalTransferOptions_transferSize_txt
             // 
             this.md_digitalTransferOptions_transferSize_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.md_digitalTransferOptions_transferSize_txt.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.md_digitalTransferOptions_transferSize_txt.Location = new System.Drawing.Point(115, 39);
             this.md_digitalTransferOptions_transferSize_txt.Name = "md_digitalTransferOptions_transferSize_txt";
-            this.md_digitalTransferOptions_transferSize_txt.Size = new System.Drawing.Size(205, 20);
+            this.md_digitalTransferOptions_transferSize_txt.Size = new System.Drawing.Size(205, 21);
             this.md_digitalTransferOptions_transferSize_txt.TabIndex = 4;
             // 
             // md_digitalTransferOptions_UnitsOfDistribution_txt
             // 
             this.md_digitalTransferOptions_UnitsOfDistribution_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.md_digitalTransferOptions_UnitsOfDistribution_txt.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.md_digitalTransferOptions_UnitsOfDistribution_txt.Location = new System.Drawing.Point(115, 13);
             this.md_digitalTransferOptions_UnitsOfDistribution_txt.Name = "md_digitalTransferOptions_UnitsOfDistribution_txt";
-            this.md_digitalTransferOptions_UnitsOfDistribution_txt.Size = new System.Drawing.Size(205, 20);
+            this.md_digitalTransferOptions_UnitsOfDistribution_txt.Size = new System.Drawing.Size(205, 21);
             this.md_digitalTransferOptions_UnitsOfDistribution_txt.TabIndex = 3;
             // 
             // MD_DTO
@@ -743,6 +789,7 @@
             this.MD_DTO.Controls.Add(this.MD_DTO_lbl);
             this.MD_DTO.Controls.Add(this.pgD_MD_DTO_btn);
             this.MD_DTO.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.MD_DTO.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MD_DTO.Location = new System.Drawing.Point(201, 3);
             this.MD_DTO.Name = "MD_DTO";
             this.MD_DTO.Size = new System.Drawing.Size(235, 30);
@@ -753,6 +800,7 @@
             this.del_MD_DTO_btn.Enabled = false;
             this.del_MD_DTO_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.del_MD_DTO_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.del_MD_DTO_btn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.del_MD_DTO_btn.Image = ((System.Drawing.Image)(resources.GetObject("del_MD_DTO_btn.Image")));
             this.del_MD_DTO_btn.Location = new System.Drawing.Point(209, 3);
             this.del_MD_DTO_btn.Name = "del_MD_DTO_btn";
@@ -766,6 +814,7 @@
             this.add_MD_DTO_btn.Enabled = false;
             this.add_MD_DTO_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.add_MD_DTO_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.add_MD_DTO_btn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.add_MD_DTO_btn.Image = ((System.Drawing.Image)(resources.GetObject("add_MD_DTO_btn.Image")));
             this.add_MD_DTO_btn.Location = new System.Drawing.Point(180, 3);
             this.add_MD_DTO_btn.Name = "add_MD_DTO_btn";
@@ -778,6 +827,7 @@
             // 
             this.pgU_MD_DTO_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.pgU_MD_DTO_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.pgU_MD_DTO_btn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pgU_MD_DTO_btn.Location = new System.Drawing.Point(151, 3);
             this.pgU_MD_DTO_btn.Name = "pgU_MD_DTO_btn";
             this.pgU_MD_DTO_btn.Size = new System.Drawing.Size(23, 23);
@@ -791,10 +841,10 @@
             // 
             this.MD_DTO_lbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.MD_DTO_lbl.AutoSize = true;
-            this.MD_DTO_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MD_DTO_lbl.Location = new System.Drawing.Point(101, 6);
+            this.MD_DTO_lbl.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MD_DTO_lbl.Location = new System.Drawing.Point(104, 6);
             this.MD_DTO_lbl.Name = "MD_DTO_lbl";
-            this.MD_DTO_lbl.Size = new System.Drawing.Size(44, 17);
+            this.MD_DTO_lbl.Size = new System.Drawing.Size(41, 16);
             this.MD_DTO_lbl.TabIndex = 3;
             this.MD_DTO_lbl.Text = "0 of 0";
             // 
@@ -802,7 +852,8 @@
             // 
             this.pgD_MD_DTO_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.pgD_MD_DTO_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.pgD_MD_DTO_btn.Location = new System.Drawing.Point(72, 3);
+            this.pgD_MD_DTO_btn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pgD_MD_DTO_btn.Location = new System.Drawing.Point(75, 3);
             this.pgD_MD_DTO_btn.Name = "pgD_MD_DTO_btn";
             this.pgD_MD_DTO_btn.Size = new System.Drawing.Size(23, 23);
             this.pgD_MD_DTO_btn.TabIndex = 4;
@@ -814,10 +865,10 @@
             // md_digitalTranferOptions_lbl
             // 
             this.md_digitalTranferOptions_lbl.AutoSize = true;
-            this.md_digitalTranferOptions_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.md_digitalTranferOptions_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.md_digitalTranferOptions_lbl.Location = new System.Drawing.Point(33, 9);
             this.md_digitalTranferOptions_lbl.Name = "md_digitalTranferOptions_lbl";
-            this.md_digitalTranferOptions_lbl.Size = new System.Drawing.Size(158, 17);
+            this.md_digitalTranferOptions_lbl.Size = new System.Drawing.Size(120, 13);
             this.md_digitalTranferOptions_lbl.TabIndex = 1;
             this.md_digitalTranferOptions_lbl.Text = "Digital Transfer Options";
             // 
@@ -882,31 +933,34 @@
             this.availableDat_dtp.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.availableDat_dtp.Location = new System.Drawing.Point(229, 35);
             this.availableDat_dtp.Name = "availableDat_dtp";
-            this.availableDat_dtp.Size = new System.Drawing.Size(18, 20);
+            this.availableDat_dtp.Size = new System.Drawing.Size(18, 21);
             this.availableDat_dtp.TabIndex = 8;
             this.availableDat_dtp.ValueChanged += new System.EventHandler(this.available_dtp_ValueChanged);
             // 
             // md_SOP_Turnaround_lbl
             // 
             this.md_SOP_Turnaround_lbl.AutoSize = true;
+            this.md_SOP_Turnaround_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.md_SOP_Turnaround_lbl.Location = new System.Drawing.Point(52, 131);
             this.md_SOP_Turnaround_lbl.Name = "md_SOP_Turnaround_lbl";
-            this.md_SOP_Turnaround_lbl.Size = new System.Drawing.Size(62, 13);
+            this.md_SOP_Turnaround_lbl.Size = new System.Drawing.Size(63, 13);
             this.md_SOP_Turnaround_lbl.TabIndex = 7;
             this.md_SOP_Turnaround_lbl.Text = "Turnaround";
             // 
             // md_SOP_Ordering_lbl
             // 
             this.md_SOP_Ordering_lbl.AutoSize = true;
+            this.md_SOP_Ordering_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.md_SOP_Ordering_lbl.Location = new System.Drawing.Point(10, 64);
             this.md_SOP_Ordering_lbl.Name = "md_SOP_Ordering_lbl";
-            this.md_SOP_Ordering_lbl.Size = new System.Drawing.Size(104, 13);
+            this.md_SOP_Ordering_lbl.Size = new System.Drawing.Size(109, 13);
             this.md_SOP_Ordering_lbl.TabIndex = 6;
             this.md_SOP_Ordering_lbl.Text = "Ordering Instructions";
             // 
             // md_SOP_AvailableDate_lbl
             // 
             this.md_SOP_AvailableDate_lbl.AutoSize = true;
+            this.md_SOP_AvailableDate_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.md_SOP_AvailableDate_lbl.Location = new System.Drawing.Point(38, 38);
             this.md_SOP_AvailableDate_lbl.Name = "md_SOP_AvailableDate_lbl";
             this.md_SOP_AvailableDate_lbl.Size = new System.Drawing.Size(76, 13);
@@ -916,6 +970,7 @@
             // MD_SOP_Fees_lbl
             // 
             this.MD_SOP_Fees_lbl.AutoSize = true;
+            this.MD_SOP_Fees_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MD_SOP_Fees_lbl.Location = new System.Drawing.Point(84, 12);
             this.MD_SOP_Fees_lbl.Name = "MD_SOP_Fees_lbl";
             this.MD_SOP_Fees_lbl.Size = new System.Drawing.Size(30, 13);
@@ -925,14 +980,16 @@
             // md_SOP_Turnaround_txt
             // 
             this.md_SOP_Turnaround_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.md_SOP_Turnaround_txt.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.md_SOP_Turnaround_txt.Location = new System.Drawing.Point(122, 129);
             this.md_SOP_Turnaround_txt.Name = "md_SOP_Turnaround_txt";
-            this.md_SOP_Turnaround_txt.Size = new System.Drawing.Size(205, 20);
+            this.md_SOP_Turnaround_txt.Size = new System.Drawing.Size(205, 21);
             this.md_SOP_Turnaround_txt.TabIndex = 3;
             // 
             // md_SOP_Ordering_txt
             // 
             this.md_SOP_Ordering_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.md_SOP_Ordering_txt.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.md_SOP_Ordering_txt.Location = new System.Drawing.Point(122, 62);
             this.md_SOP_Ordering_txt.Multiline = true;
             this.md_SOP_Ordering_txt.Name = "md_SOP_Ordering_txt";
@@ -942,18 +999,20 @@
             // md_SOP_AvailableDate_txt
             // 
             this.md_SOP_AvailableDate_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.md_SOP_AvailableDate_txt.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.md_SOP_AvailableDate_txt.Location = new System.Drawing.Point(122, 36);
             this.md_SOP_AvailableDate_txt.Name = "md_SOP_AvailableDate_txt";
             this.md_SOP_AvailableDate_txt.ReadOnly = true;
-            this.md_SOP_AvailableDate_txt.Size = new System.Drawing.Size(100, 20);
+            this.md_SOP_AvailableDate_txt.Size = new System.Drawing.Size(100, 21);
             this.md_SOP_AvailableDate_txt.TabIndex = 1;
             // 
             // md_SOP_Fees_txt
             // 
             this.md_SOP_Fees_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.md_SOP_Fees_txt.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.md_SOP_Fees_txt.Location = new System.Drawing.Point(122, 10);
             this.md_SOP_Fees_txt.Name = "md_SOP_Fees_txt";
-            this.md_SOP_Fees_txt.Size = new System.Drawing.Size(205, 20);
+            this.md_SOP_Fees_txt.Size = new System.Drawing.Size(205, 21);
             this.md_SOP_Fees_txt.TabIndex = 0;
             this.md_SOP_Fees_txt.Tag = "";
             // 
@@ -965,6 +1024,7 @@
             this.MD_SOP.Controls.Add(this.MD_SOP_lbl);
             this.MD_SOP.Controls.Add(this.pgD_MD_SOP_btn);
             this.MD_SOP.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.MD_SOP.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MD_SOP.Location = new System.Drawing.Point(201, 3);
             this.MD_SOP.Name = "MD_SOP";
             this.MD_SOP.Size = new System.Drawing.Size(235, 30);
@@ -975,6 +1035,7 @@
             this.del_MD_SOP_btn.Enabled = false;
             this.del_MD_SOP_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.del_MD_SOP_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.del_MD_SOP_btn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.del_MD_SOP_btn.Image = ((System.Drawing.Image)(resources.GetObject("del_MD_SOP_btn.Image")));
             this.del_MD_SOP_btn.Location = new System.Drawing.Point(209, 3);
             this.del_MD_SOP_btn.Name = "del_MD_SOP_btn";
@@ -988,6 +1049,7 @@
             this.add_MD_SOP_btn.Enabled = false;
             this.add_MD_SOP_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.add_MD_SOP_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.add_MD_SOP_btn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.add_MD_SOP_btn.Image = ((System.Drawing.Image)(resources.GetObject("add_MD_SOP_btn.Image")));
             this.add_MD_SOP_btn.Location = new System.Drawing.Point(180, 3);
             this.add_MD_SOP_btn.Name = "add_MD_SOP_btn";
@@ -1000,6 +1062,7 @@
             // 
             this.pgU_MD_SOP_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.pgU_MD_SOP_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.pgU_MD_SOP_btn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pgU_MD_SOP_btn.Location = new System.Drawing.Point(151, 3);
             this.pgU_MD_SOP_btn.Name = "pgU_MD_SOP_btn";
             this.pgU_MD_SOP_btn.Size = new System.Drawing.Size(23, 23);
@@ -1013,10 +1076,10 @@
             // 
             this.MD_SOP_lbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.MD_SOP_lbl.AutoSize = true;
-            this.MD_SOP_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MD_SOP_lbl.Location = new System.Drawing.Point(101, 6);
+            this.MD_SOP_lbl.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MD_SOP_lbl.Location = new System.Drawing.Point(104, 6);
             this.MD_SOP_lbl.Name = "MD_SOP_lbl";
-            this.MD_SOP_lbl.Size = new System.Drawing.Size(44, 17);
+            this.MD_SOP_lbl.Size = new System.Drawing.Size(41, 16);
             this.MD_SOP_lbl.TabIndex = 3;
             this.MD_SOP_lbl.Text = "0 of 0";
             // 
@@ -1024,7 +1087,8 @@
             // 
             this.pgD_MD_SOP_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.pgD_MD_SOP_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.pgD_MD_SOP_btn.Location = new System.Drawing.Point(72, 3);
+            this.pgD_MD_SOP_btn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pgD_MD_SOP_btn.Location = new System.Drawing.Point(75, 3);
             this.pgD_MD_SOP_btn.Name = "pgD_MD_SOP_btn";
             this.pgD_MD_SOP_btn.Size = new System.Drawing.Size(23, 23);
             this.pgD_MD_SOP_btn.TabIndex = 4;
@@ -1036,10 +1100,10 @@
             // md_standardOrderProcess_lbl
             // 
             this.md_standardOrderProcess_lbl.AutoSize = true;
-            this.md_standardOrderProcess_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.md_standardOrderProcess_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.md_standardOrderProcess_lbl.Location = new System.Drawing.Point(33, 9);
             this.md_standardOrderProcess_lbl.Name = "md_standardOrderProcess_lbl";
-            this.md_standardOrderProcess_lbl.Size = new System.Drawing.Size(162, 17);
+            this.md_standardOrderProcess_lbl.Size = new System.Drawing.Size(122, 13);
             this.md_standardOrderProcess_lbl.TabIndex = 1;
             this.md_standardOrderProcess_lbl.Text = "Standard Order Process";
             // 
@@ -1059,10 +1123,10 @@
             // uc_distribution_lbl
             // 
             this.uc_distribution_lbl.AutoSize = true;
-            this.uc_distribution_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uc_distribution_lbl.Location = new System.Drawing.Point(24, 20);
+            this.uc_distribution_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uc_distribution_lbl.Location = new System.Drawing.Point(24, 22);
             this.uc_distribution_lbl.Name = "uc_distribution_lbl";
-            this.uc_distribution_lbl.Size = new System.Drawing.Size(0, 17);
+            this.uc_distribution_lbl.Size = new System.Drawing.Size(0, 13);
             this.uc_distribution_lbl.TabIndex = 3;
             // 
             // del_MD_Dist_btn
@@ -1070,6 +1134,7 @@
             this.del_MD_Dist_btn.Enabled = false;
             this.del_MD_Dist_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.del_MD_Dist_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.del_MD_Dist_btn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.del_MD_Dist_btn.Image = ((System.Drawing.Image)(resources.GetObject("del_MD_Dist_btn.Image")));
             this.del_MD_Dist_btn.Location = new System.Drawing.Point(156, 3);
             this.del_MD_Dist_btn.Name = "del_MD_Dist_btn";
@@ -1082,10 +1147,10 @@
             // 
             this.MD_Dist_lbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.MD_Dist_lbl.AutoSize = true;
-            this.MD_Dist_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MD_Dist_lbl.Location = new System.Drawing.Point(48, 6);
+            this.MD_Dist_lbl.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MD_Dist_lbl.Location = new System.Drawing.Point(51, 6);
             this.MD_Dist_lbl.Name = "MD_Dist_lbl";
-            this.MD_Dist_lbl.Size = new System.Drawing.Size(44, 17);
+            this.MD_Dist_lbl.Size = new System.Drawing.Size(41, 16);
             this.MD_Dist_lbl.TabIndex = 3;
             this.MD_Dist_lbl.Text = "0 of 0";
             // 
@@ -1093,6 +1158,7 @@
             // 
             this.add_MD_Dist_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.add_MD_Dist_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.add_MD_Dist_btn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.add_MD_Dist_btn.Image = ((System.Drawing.Image)(resources.GetObject("add_MD_Dist_btn.Image")));
             this.add_MD_Dist_btn.Location = new System.Drawing.Point(127, 3);
             this.add_MD_Dist_btn.Name = "add_MD_Dist_btn";
@@ -1105,7 +1171,8 @@
             // 
             this.pgD_MD_Dist_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.pgD_MD_Dist_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.pgD_MD_Dist_btn.Location = new System.Drawing.Point(19, 3);
+            this.pgD_MD_Dist_btn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pgD_MD_Dist_btn.Location = new System.Drawing.Point(22, 3);
             this.pgD_MD_Dist_btn.Name = "pgD_MD_Dist_btn";
             this.pgD_MD_Dist_btn.Size = new System.Drawing.Size(23, 23);
             this.pgD_MD_Dist_btn.TabIndex = 4;
@@ -1118,6 +1185,7 @@
             // 
             this.pgU_MD_Dist_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.pgU_MD_Dist_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.pgU_MD_Dist_btn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pgU_MD_Dist_btn.Location = new System.Drawing.Point(98, 3);
             this.pgU_MD_Dist_btn.Name = "pgU_MD_Dist_btn";
             this.pgU_MD_Dist_btn.Size = new System.Drawing.Size(23, 23);
@@ -1146,6 +1214,7 @@
             // 
             this.distributor_Contact.BackColor = System.Drawing.Color.Transparent;
             this.distributor_Contact.CI_ResponsiblePartyList = null;
+            this.distributor_Contact.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.distributor_Contact.Location = new System.Drawing.Point(0, 0);
             this.distributor_Contact.Margin = new System.Windows.Forms.Padding(0);
             this.distributor_Contact.mylabel = "Contact (Required)";
@@ -1164,7 +1233,7 @@
             this.distributor_gbx.Location = new System.Drawing.Point(3, 22);
             this.distributor_gbx.Margin = new System.Windows.Forms.Padding(0);
             this.distributor_gbx.Name = "distributor_gbx";
-            this.distributor_gbx.Size = new System.Drawing.Size(451, 186);
+            this.distributor_gbx.Size = new System.Drawing.Size(451, 187);
             this.distributor_gbx.TabIndex = 6;
             this.distributor_gbx.TabStop = false;
             this.distributor_gbx.Leave += new System.EventHandler(this.distributor_gbx_Leave);
@@ -1177,6 +1246,7 @@
             this.MD_Dist.Controls.Add(this.MD_Dist_lbl);
             this.MD_Dist.Controls.Add(this.pgD_MD_Dist_btn);
             this.MD_Dist.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.MD_Dist.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MD_Dist.Location = new System.Drawing.Point(12, 12);
             this.MD_Dist.Name = "MD_Dist";
             this.MD_Dist.Size = new System.Drawing.Size(182, 30);
@@ -1204,9 +1274,10 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.uc_distribution_lbl);
             this.Controls.Add(this.distributor_gbx);
+            this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "uc_distribution";
-            this.Size = new System.Drawing.Size(454, 208);
+            this.Size = new System.Drawing.Size(454, 209);
             this.MD_Format_pnl.ResumeLayout(false);
             this.MD_Format_pnl.PerformLayout();
             this.panel4.ResumeLayout(false);
