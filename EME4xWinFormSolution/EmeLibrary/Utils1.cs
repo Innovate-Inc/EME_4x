@@ -17,7 +17,7 @@ namespace EmeLibrary
         public static DataSet emeDataSet;
         public static DataSet emeDataSetEditor;
         public static string[] dataTableNames;
-        
+        //Dan Was Here
         public static string EmeUserAppDataFolder
         {
             get
