@@ -20,7 +20,7 @@ namespace ArcCatalogAddinEme4Tools
         private IMetadata gxMetadata;
         private string esriXmlString;
         private string gxName;
-
+        //Test Change
         public EditIsoMetadata2()
         {
         }
