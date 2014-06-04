@@ -302,6 +302,7 @@
             // 
             this.del_MD_Format_btn.Enabled = false;
             this.del_MD_Format_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.del_MD_Format_btn.FlatAppearance.BorderSize = 0;
             this.del_MD_Format_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.del_MD_Format_btn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.del_MD_Format_btn.Image = ((System.Drawing.Image)(resources.GetObject("del_MD_Format_btn.Image")));
@@ -316,6 +317,7 @@
             // 
             this.add_MD_Format_btn.Enabled = false;
             this.add_MD_Format_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.add_MD_Format_btn.FlatAppearance.BorderSize = 0;
             this.add_MD_Format_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.add_MD_Format_btn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.add_MD_Format_btn.Image = ((System.Drawing.Image)(resources.GetObject("add_MD_Format_btn.Image")));
@@ -329,6 +331,7 @@
             // pgU_MD_Format_btn
             // 
             this.pgU_MD_Format_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.pgU_MD_Format_btn.FlatAppearance.BorderSize = 0;
             this.pgU_MD_Format_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.pgU_MD_Format_btn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pgU_MD_Format_btn.Location = new System.Drawing.Point(151, 3);
@@ -354,6 +357,7 @@
             // pgD_MD_Format_btn
             // 
             this.pgD_MD_Format_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.pgD_MD_Format_btn.FlatAppearance.BorderSize = 0;
             this.pgD_MD_Format_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.pgD_MD_Format_btn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pgD_MD_Format_btn.Location = new System.Drawing.Point(75, 3);
@@ -799,6 +803,7 @@
             // 
             this.del_MD_DTO_btn.Enabled = false;
             this.del_MD_DTO_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.del_MD_DTO_btn.FlatAppearance.BorderSize = 0;
             this.del_MD_DTO_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.del_MD_DTO_btn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.del_MD_DTO_btn.Image = ((System.Drawing.Image)(resources.GetObject("del_MD_DTO_btn.Image")));
@@ -813,6 +818,7 @@
             // 
             this.add_MD_DTO_btn.Enabled = false;
             this.add_MD_DTO_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.add_MD_DTO_btn.FlatAppearance.BorderSize = 0;
             this.add_MD_DTO_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.add_MD_DTO_btn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.add_MD_DTO_btn.Image = ((System.Drawing.Image)(resources.GetObject("add_MD_DTO_btn.Image")));
@@ -826,6 +832,7 @@
             // pgU_MD_DTO_btn
             // 
             this.pgU_MD_DTO_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.pgU_MD_DTO_btn.FlatAppearance.BorderSize = 0;
             this.pgU_MD_DTO_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.pgU_MD_DTO_btn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pgU_MD_DTO_btn.Location = new System.Drawing.Point(151, 3);
@@ -851,6 +858,7 @@
             // pgD_MD_DTO_btn
             // 
             this.pgD_MD_DTO_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.pgD_MD_DTO_btn.FlatAppearance.BorderSize = 0;
             this.pgD_MD_DTO_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.pgD_MD_DTO_btn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pgD_MD_DTO_btn.Location = new System.Drawing.Point(75, 3);
@@ -1034,6 +1042,7 @@
             // 
             this.del_MD_SOP_btn.Enabled = false;
             this.del_MD_SOP_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.del_MD_SOP_btn.FlatAppearance.BorderSize = 0;
             this.del_MD_SOP_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.del_MD_SOP_btn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.del_MD_SOP_btn.Image = ((System.Drawing.Image)(resources.GetObject("del_MD_SOP_btn.Image")));
@@ -1048,6 +1057,7 @@
             // 
             this.add_MD_SOP_btn.Enabled = false;
             this.add_MD_SOP_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.add_MD_SOP_btn.FlatAppearance.BorderSize = 0;
             this.add_MD_SOP_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.add_MD_SOP_btn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.add_MD_SOP_btn.Image = ((System.Drawing.Image)(resources.GetObject("add_MD_SOP_btn.Image")));
@@ -1061,6 +1071,7 @@
             // pgU_MD_SOP_btn
             // 
             this.pgU_MD_SOP_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.pgU_MD_SOP_btn.FlatAppearance.BorderSize = 0;
             this.pgU_MD_SOP_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.pgU_MD_SOP_btn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pgU_MD_SOP_btn.Location = new System.Drawing.Point(151, 3);
@@ -1086,6 +1097,7 @@
             // pgD_MD_SOP_btn
             // 
             this.pgD_MD_SOP_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.pgD_MD_SOP_btn.FlatAppearance.BorderSize = 0;
             this.pgD_MD_SOP_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.pgD_MD_SOP_btn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pgD_MD_SOP_btn.Location = new System.Drawing.Point(75, 3);
@@ -1133,6 +1145,7 @@
             // 
             this.del_MD_Dist_btn.Enabled = false;
             this.del_MD_Dist_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.del_MD_Dist_btn.FlatAppearance.BorderSize = 0;
             this.del_MD_Dist_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.del_MD_Dist_btn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.del_MD_Dist_btn.Image = ((System.Drawing.Image)(resources.GetObject("del_MD_Dist_btn.Image")));
@@ -1157,6 +1170,7 @@
             // add_MD_Dist_btn
             // 
             this.add_MD_Dist_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.add_MD_Dist_btn.FlatAppearance.BorderSize = 0;
             this.add_MD_Dist_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.add_MD_Dist_btn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.add_MD_Dist_btn.Image = ((System.Drawing.Image)(resources.GetObject("add_MD_Dist_btn.Image")));
@@ -1170,6 +1184,7 @@
             // pgD_MD_Dist_btn
             // 
             this.pgD_MD_Dist_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.pgD_MD_Dist_btn.FlatAppearance.BorderSize = 0;
             this.pgD_MD_Dist_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.pgD_MD_Dist_btn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pgD_MD_Dist_btn.Location = new System.Drawing.Point(22, 3);
@@ -1184,6 +1199,7 @@
             // pgU_MD_Dist_btn
             // 
             this.pgU_MD_Dist_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.pgU_MD_Dist_btn.FlatAppearance.BorderSize = 0;
             this.pgU_MD_Dist_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.pgU_MD_Dist_btn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pgU_MD_Dist_btn.Location = new System.Drawing.Point(98, 3);

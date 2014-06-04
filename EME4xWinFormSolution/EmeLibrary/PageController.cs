@@ -85,7 +85,7 @@ namespace EmeLibrary
                     : dr["controlName"].ToString().Remove(index, "Xpath".Length);
                 cntrlName = cleanPath;
                 
-                Console.WriteLine(cntrlName);
+                //Console.WriteLine(cntrlName);
                 //Add new page controller object for each record in database
                 p = new PageController(i, cntrlName, dr["sourceTable"].ToString(), dr["sourceField"].ToString(), dr["DCATrequired"].ToString(), dr["EPArequired"].ToString());
 
@@ -116,7 +116,7 @@ namespace EmeLibrary
         private void populate(EmeLT frm)
         {
             
-            Console.WriteLine(formFieldName_);
+            //Console.WriteLine(formFieldName_);
             Control ctrl;
             
             ctrl = frm.getControlForTag(formFieldName_);
@@ -311,10 +311,19 @@ namespace EmeLibrary
                 }
                 else if (ctrl.GetType() == typeof(TextBox))
                 {
-                    string s = (frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null) != null) ? frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null).ToString() : "";
+                    string s = (frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null) != null) ?
+                        frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null).ToString() : "";
+
+                    if (ctrl.Name.Contains("idInfo_extent_geographicBoundingBox"))
+                    {
+                        if (s == "0")
+                        {
+                            s = "";                            
+                        }
+                    }
+
                     ctrl.Text = s;
                     ctrl.Tag = validateVal;
-
                 }
             }
         }
@@ -374,7 +383,10 @@ namespace EmeLibrary
                     //idInfo_extent_geographicBoundingBox_northLatDD
                     if (ctrl.Name.Contains("idInfo_extent_geographicBoundingBox"))
                     {
-                        double v = Convert.ToDouble(ctrl.Text);
+                        double testVal;
+                        bool isDouble = double.TryParse(ctrl.Text, out testVal);
+                        double v = (isDouble) ? testVal : 0;
+                        //double v = (!string.IsNullOrEmpty(ctrl.Text)) ? Convert.ToDouble(ctrl.Text) : 0;                        
                         frm.localXdoc.GetType().GetProperty(ctrl.Name).SetValue(obj, v, null);
                     }
                     else
@@ -384,7 +396,7 @@ namespace EmeLibrary
                         //MessageBox.Show(frm.localXdoc.idInfo_citation_Title.ToString());
                     }
 
-                    Console.WriteLine(ctrl.Text);
+                    //Console.WriteLine(ctrl.Text);
                 }
                 else if (ctrl.GetType() == typeof(ListBox))
                 {
@@ -450,7 +462,7 @@ namespace EmeLibrary
         private void populateVal(EmeLT frm)
         {
 
-            Console.WriteLine(formFieldName_ + "val");
+            //Console.WriteLine(formFieldName_ + "val");
             Control ctrl;
 
             ctrl = frm.getControlForTag(formFieldName_);

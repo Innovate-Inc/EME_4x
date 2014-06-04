@@ -135,6 +135,7 @@
             // 
             this.extent__TimePeriod__endPosition_btn.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.extent__TimePeriod__endPosition_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonFace;
+            this.extent__TimePeriod__endPosition_btn.FlatAppearance.BorderSize = 0;
             this.extent__TimePeriod__endPosition_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.extent__TimePeriod__endPosition_btn.Image = ((System.Drawing.Image)(resources.GetObject("extent__TimePeriod__endPosition_btn.Image")));
             this.extent__TimePeriod__endPosition_btn.Location = new System.Drawing.Point(131, 59);
@@ -234,6 +235,7 @@
             // 
             this.extent__TimePeriod__beginPosition_btn.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.extent__TimePeriod__beginPosition_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonFace;
+            this.extent__TimePeriod__beginPosition_btn.FlatAppearance.BorderSize = 0;
             this.extent__TimePeriod__beginPosition_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.extent__TimePeriod__beginPosition_btn.Image = ((System.Drawing.Image)(resources.GetObject("extent__TimePeriod__beginPosition_btn.Image")));
             this.extent__TimePeriod__beginPosition_btn.Location = new System.Drawing.Point(131, 34);
@@ -328,6 +330,7 @@
             // 
             this.extent__TimeInstant__timePosition_btn.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.extent__TimeInstant__timePosition_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonFace;
+            this.extent__TimeInstant__timePosition_btn.FlatAppearance.BorderSize = 0;
             this.extent__TimeInstant__timePosition_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.extent__TimeInstant__timePosition_btn.Image = ((System.Drawing.Image)(resources.GetObject("extent__TimeInstant__timePosition_btn.Image")));
             this.extent__TimeInstant__timePosition_btn.Location = new System.Drawing.Point(131, 34);

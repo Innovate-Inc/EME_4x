@@ -131,7 +131,7 @@
             // 
             // role
             // 
-            this.role.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.role.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.role.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.role.FormattingEnabled = true;
             this.role.Items.AddRange(new object[] {
@@ -482,10 +482,11 @@
             // 
             // contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode
             // 
-            this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode.FormattingEnabled = true;
             this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode.Items.AddRange(new object[] {
+            "",
             "download",
             "information",
             "offlineAccess",
@@ -511,6 +512,7 @@
             // pagerDownBtn
             // 
             this.pagerDownBtn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.pagerDownBtn.FlatAppearance.BorderSize = 0;
             this.pagerDownBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.pagerDownBtn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pagerDownBtn.Location = new System.Drawing.Point(75, 3);
@@ -525,6 +527,7 @@
             // pagerUpBtn
             // 
             this.pagerUpBtn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.pagerUpBtn.FlatAppearance.BorderSize = 0;
             this.pagerUpBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.pagerUpBtn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pagerUpBtn.Location = new System.Drawing.Point(151, 3);
@@ -544,7 +547,7 @@
             this.flowLayoutPanel1.Controls.Add(this.pagerLbl);
             this.flowLayoutPanel1.Controls.Add(this.pagerDownBtn);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flowLayoutPanel1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flowLayoutPanel1.Location = new System.Drawing.Point(201, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(235, 30);
@@ -554,7 +557,9 @@
             // 
             this.deleteRP_Btn.Enabled = false;
             this.deleteRP_Btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.deleteRP_Btn.FlatAppearance.BorderSize = 0;
             this.deleteRP_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deleteRP_Btn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deleteRP_Btn.Image = ((System.Drawing.Image)(resources.GetObject("deleteRP_Btn.Image")));
             this.deleteRP_Btn.Location = new System.Drawing.Point(209, 3);
             this.deleteRP_Btn.Name = "deleteRP_Btn";
@@ -569,7 +574,9 @@
             this.addRP_Btn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.addRP_Btn.Enabled = false;
             this.addRP_Btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.addRP_Btn.FlatAppearance.BorderSize = 0;
             this.addRP_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addRP_Btn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addRP_Btn.Image = ((System.Drawing.Image)(resources.GetObject("addRP_Btn.Image")));
             this.addRP_Btn.Location = new System.Drawing.Point(180, 3);
             this.addRP_Btn.Name = "addRP_Btn";
@@ -696,7 +703,6 @@
             // responsible_party_d
             // 
             this.responsible_party_d.BackColor = System.Drawing.SystemColors.Control;
-            this.responsible_party_d.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.responsible_party_d.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.responsible_party_d.Location = new System.Drawing.Point(393, 9);
             this.responsible_party_d.Name = "responsible_party_d";

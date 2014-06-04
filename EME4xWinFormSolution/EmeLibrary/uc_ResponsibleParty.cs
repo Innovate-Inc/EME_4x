@@ -52,13 +52,13 @@ namespace EmeLibrary
             {
                 //Call bindToClass here and pass in the index of the RP visible in the form to ensure it gets saved.
                 //binds the current responsibleParty visible in repeater to the class when save is called in pageController.
-                //if (_incomingRPList != null)
-                //{
-                //    if (_incomingRPList.Count != 0)
-                //    {
-                //        bindToClass(_incomingRPList[incomingRPListIndex]);
-                //    }
-                //}
+                if (_incomingRPList != null)
+                {
+                    if (_incomingRPList.Count != 0)
+                    {
+                        bindToClass(_incomingRPList[incomingRPListIndex]);
+                    }
+                }
                 //else { _incomingRPList = new List<CI_ResponsibleParty>(); }
                 return _incomingRPList;
             }
@@ -227,6 +227,7 @@ namespace EmeLibrary
                 panel3.Enabled = false;
                 rp_expander_btn.Enabled = false;
                 rp_expander_btn.Text = collapsedSymbol;
+                this.Height = 35;
             }
             else if (_incomingRPList.Count == 1)
             {
@@ -309,6 +310,7 @@ namespace EmeLibrary
             panel3.Enabled = false;
             rp_expander_btn.Enabled = false;
             rp_expander_btn.Text = collapsedSymbol;
+            this.Height = 35;
             pagerDownBtn.Visible = false;
             pagerUpBtn.Visible = false;
            

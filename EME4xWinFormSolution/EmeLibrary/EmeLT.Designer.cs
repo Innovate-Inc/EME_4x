@@ -80,7 +80,6 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.distributionInformation_gbx = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
-            this.distributionInfo__MD_Distribution = new EmeLibrary.uc_distribution();
             this.idInfo_resourceConstraints_gbx = new System.Windows.Forms.GroupBox();
             this.idInfo_resourceConstraints_MD_Constraints_useLimitation = new System.Windows.Forms.ComboBox();
             this.securityConstraints_gbx = new System.Windows.Forms.GroupBox();
@@ -108,11 +107,8 @@
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
             this.metadataAuthor_Pnl = new System.Windows.Forms.Panel();
-            this.contact_CI_ResponsibleParty = new EmeLibrary.uc_ResponsibleParty();
             this.pointOfContact_Pnl = new System.Windows.Forms.Panel();
-            this.idInfo_pointOfContact = new EmeLibrary.uc_ResponsibleParty();
             this.Citation_Pnl = new System.Windows.Forms.Panel();
-            this.idInfo_citation_citedResponsibleParty = new EmeLibrary.uc_ResponsibleParty();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -150,7 +146,6 @@
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.idInfo_resourceMaintenance_lbl = new System.Windows.Forms.Label();
             this.idInfo_resourceMaintenance = new System.Windows.Forms.ComboBox();
-            this.idInfo_extent_temporalExtent = new EmeLibrary.uc_extentTemporal();
             this.panel4 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -181,6 +176,11 @@
             this.idInfo_citation_Title_lbl = new System.Windows.Forms.Label();
             this.idInfo_citation_Title = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.idInfo_extent_temporalExtent = new EmeLibrary.uc_extentTemporal();
+            this.distributionInfo__MD_Distribution = new EmeLibrary.uc_distribution();
+            this.contact_CI_ResponsibleParty = new EmeLibrary.uc_ResponsibleParty();
+            this.idInfo_pointOfContact = new EmeLibrary.uc_ResponsibleParty();
+            this.idInfo_citation_citedResponsibleParty = new EmeLibrary.uc_ResponsibleParty();
             this.uc_ResponsibleParty2 = new EmeLibrary.uc_ResponsibleParty();
             this.uc_ResponsibleParty3 = new EmeLibrary.uc_ResponsibleParty();
             this.uc_ResponsibleParty4 = new EmeLibrary.uc_ResponsibleParty();
@@ -357,6 +357,7 @@
             // 
             this.idInfo_citation_date_revision_btn.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.idInfo_citation_date_revision_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonFace;
+            this.idInfo_citation_date_revision_btn.FlatAppearance.BorderSize = 0;
             this.idInfo_citation_date_revision_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.idInfo_citation_date_revision_btn.Image = ((System.Drawing.Image)(resources.GetObject("idInfo_citation_date_revision_btn.Image")));
             this.idInfo_citation_date_revision_btn.Location = new System.Drawing.Point(150, 69);
@@ -370,6 +371,7 @@
             // 
             this.idInfo_citation_date_publication_btn.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.idInfo_citation_date_publication_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonFace;
+            this.idInfo_citation_date_publication_btn.FlatAppearance.BorderSize = 0;
             this.idInfo_citation_date_publication_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.idInfo_citation_date_publication_btn.Image = ((System.Drawing.Image)(resources.GetObject("idInfo_citation_date_publication_btn.Image")));
             this.idInfo_citation_date_publication_btn.Location = new System.Drawing.Point(150, 45);
@@ -392,6 +394,7 @@
             // 
             this.idInfo_citation_date_creation_btn.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.idInfo_citation_date_creation_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonFace;
+            this.idInfo_citation_date_creation_btn.FlatAppearance.BorderSize = 0;
             this.idInfo_citation_date_creation_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.idInfo_citation_date_creation_btn.Image = ((System.Drawing.Image)(resources.GetObject("idInfo_citation_date_creation_btn.Image")));
             this.idInfo_citation_date_creation_btn.Location = new System.Drawing.Point(150, 20);
@@ -669,7 +672,7 @@
             this.tabPage5.Controls.Add(this.elementsNotSupportedByEME);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(995, 587);
+            this.tabPage5.Size = new System.Drawing.Size(995, 593);
             this.tabPage5.TabIndex = 6;
             this.tabPage5.Text = "Unsupported Elements";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -731,19 +734,6 @@
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
             this.flowLayoutPanel4.Size = new System.Drawing.Size(478, 574);
             this.flowLayoutPanel4.TabIndex = 42;
-            // 
-            // distributionInfo__MD_Distribution
-            // 
-            this.distributionInfo__MD_Distribution.AutoSize = true;
-            this.distributionInfo__MD_Distribution.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.distributionInfo__MD_Distribution.distributorList = null;
-            this.distributionInfo__MD_Distribution.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.distributionInfo__MD_Distribution.Location = new System.Drawing.Point(0, 0);
-            this.distributionInfo__MD_Distribution.Margin = new System.Windows.Forms.Padding(0);
-            this.distributionInfo__MD_Distribution.mylabel = "Distributor";
-            this.distributionInfo__MD_Distribution.Name = "distributionInfo__MD_Distribution";
-            this.distributionInfo__MD_Distribution.Size = new System.Drawing.Size(454, 209);
-            this.distributionInfo__MD_Distribution.TabIndex = 0;
             // 
             // idInfo_resourceConstraints_gbx
             // 
@@ -1153,21 +1143,6 @@
             this.metadataAuthor_Pnl.Size = new System.Drawing.Size(451, 40);
             this.metadataAuthor_Pnl.TabIndex = 13;
             // 
-            // contact_CI_ResponsibleParty
-            // 
-            this.contact_CI_ResponsibleParty.BackColor = System.Drawing.Color.Transparent;
-            this.contact_CI_ResponsibleParty.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.contact_CI_ResponsibleParty.CI_ResponsiblePartyList = null;
-            this.contact_CI_ResponsibleParty.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.contact_CI_ResponsibleParty.Location = new System.Drawing.Point(3, 2);
-            this.contact_CI_ResponsibleParty.mylabel = "Metadata Author";
-            this.contact_CI_ResponsibleParty.Name = "contact_CI_ResponsibleParty";
-            this.contact_CI_ResponsibleParty.rp_mode = "dist";
-            this.contact_CI_ResponsibleParty.Size = new System.Drawing.Size(445, 35);
-            this.contact_CI_ResponsibleParty.TabIndex = 0;
-            this.contact_CI_ResponsibleParty.Tag = "";
-            this.contact_CI_ResponsibleParty.Validating += new System.ComponentModel.CancelEventHandler(this.cntrl_Validating);
-            // 
             // pointOfContact_Pnl
             // 
             this.pointOfContact_Pnl.AutoSize = true;
@@ -1179,19 +1154,6 @@
             this.pointOfContact_Pnl.Size = new System.Drawing.Size(451, 40);
             this.pointOfContact_Pnl.TabIndex = 17;
             // 
-            // idInfo_pointOfContact
-            // 
-            this.idInfo_pointOfContact.BackColor = System.Drawing.Color.Transparent;
-            this.idInfo_pointOfContact.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.idInfo_pointOfContact.CI_ResponsiblePartyList = null;
-            this.idInfo_pointOfContact.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idInfo_pointOfContact.Location = new System.Drawing.Point(2, 2);
-            this.idInfo_pointOfContact.mylabel = "Resource Owner";
-            this.idInfo_pointOfContact.Name = "idInfo_pointOfContact";
-            this.idInfo_pointOfContact.rp_mode = null;
-            this.idInfo_pointOfContact.Size = new System.Drawing.Size(446, 35);
-            this.idInfo_pointOfContact.TabIndex = 2;
-            // 
             // Citation_Pnl
             // 
             this.Citation_Pnl.AutoSize = true;
@@ -1202,19 +1164,6 @@
             this.Citation_Pnl.Name = "Citation_Pnl";
             this.Citation_Pnl.Size = new System.Drawing.Size(451, 41);
             this.Citation_Pnl.TabIndex = 16;
-            // 
-            // idInfo_citation_citedResponsibleParty
-            // 
-            this.idInfo_citation_citedResponsibleParty.BackColor = System.Drawing.Color.Transparent;
-            this.idInfo_citation_citedResponsibleParty.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.idInfo_citation_citedResponsibleParty.CI_ResponsiblePartyList = null;
-            this.idInfo_citation_citedResponsibleParty.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idInfo_citation_citedResponsibleParty.Location = new System.Drawing.Point(2, 3);
-            this.idInfo_citation_citedResponsibleParty.mylabel = "Resource Producer";
-            this.idInfo_citation_citedResponsibleParty.Name = "idInfo_citation_citedResponsibleParty";
-            this.idInfo_citation_citedResponsibleParty.rp_mode = null;
-            this.idInfo_citation_citedResponsibleParty.Size = new System.Drawing.Size(446, 35);
-            this.idInfo_citation_citedResponsibleParty.TabIndex = 2;
             // 
             // groupBox3
             // 
@@ -1259,6 +1208,7 @@
             // 
             this.dateStamp_btn.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.dateStamp_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonFace;
+            this.dateStamp_btn.FlatAppearance.BorderSize = 0;
             this.dateStamp_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.dateStamp_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateStamp_btn.Image = ((System.Drawing.Image)(resources.GetObject("dateStamp_btn.Image")));
@@ -1498,9 +1448,8 @@
             // idInfo_extent_description_d
             // 
             this.idInfo_extent_description_d.BackColor = System.Drawing.SystemColors.Control;
-            this.idInfo_extent_description_d.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.idInfo_extent_description_d.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idInfo_extent_description_d.Location = new System.Drawing.Point(344, 7);
+            this.idInfo_extent_description_d.Location = new System.Drawing.Point(344, 6);
             this.idInfo_extent_description_d.Name = "idInfo_extent_description_d";
             this.idInfo_extent_description_d.Size = new System.Drawing.Size(28, 23);
             this.idInfo_extent_description_d.TabIndex = 9;
@@ -1512,7 +1461,7 @@
             // 
             this.idInfo_extent_geographicBoundingBox_westLongDD_lbl.AutoSize = true;
             this.idInfo_extent_geographicBoundingBox_westLongDD_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idInfo_extent_geographicBoundingBox_westLongDD_lbl.Location = new System.Drawing.Point(199, 65);
+            this.idInfo_extent_geographicBoundingBox_westLongDD_lbl.Location = new System.Drawing.Point(217, 65);
             this.idInfo_extent_geographicBoundingBox_westLongDD_lbl.Name = "idInfo_extent_geographicBoundingBox_westLongDD_lbl";
             this.idInfo_extent_geographicBoundingBox_westLongDD_lbl.Size = new System.Drawing.Size(32, 13);
             this.idInfo_extent_geographicBoundingBox_westLongDD_lbl.TabIndex = 8;
@@ -1522,7 +1471,7 @@
             // 
             this.idInfo_extent_geographicBoundingBox_eastLongDD_lbl.AutoSize = true;
             this.idInfo_extent_geographicBoundingBox_eastLongDD_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idInfo_extent_geographicBoundingBox_eastLongDD_lbl.Location = new System.Drawing.Point(203, 39);
+            this.idInfo_extent_geographicBoundingBox_eastLongDD_lbl.Location = new System.Drawing.Point(221, 39);
             this.idInfo_extent_geographicBoundingBox_eastLongDD_lbl.Name = "idInfo_extent_geographicBoundingBox_eastLongDD_lbl";
             this.idInfo_extent_geographicBoundingBox_eastLongDD_lbl.Size = new System.Drawing.Size(28, 13);
             this.idInfo_extent_geographicBoundingBox_eastLongDD_lbl.TabIndex = 7;
@@ -1552,7 +1501,7 @@
             // 
             this.idInfo_extent_geographicBoundingBox_westLongDD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.idInfo_extent_geographicBoundingBox_westLongDD.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idInfo_extent_geographicBoundingBox_westLongDD.Location = new System.Drawing.Point(240, 63);
+            this.idInfo_extent_geographicBoundingBox_westLongDD.Location = new System.Drawing.Point(258, 63);
             this.idInfo_extent_geographicBoundingBox_westLongDD.Name = "idInfo_extent_geographicBoundingBox_westLongDD";
             this.idInfo_extent_geographicBoundingBox_westLongDD.Size = new System.Drawing.Size(110, 21);
             this.idInfo_extent_geographicBoundingBox_westLongDD.TabIndex = 4;
@@ -1579,7 +1528,7 @@
             // 
             this.idInfo_extent_geographicBoundingBox_eastLongDD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.idInfo_extent_geographicBoundingBox_eastLongDD.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idInfo_extent_geographicBoundingBox_eastLongDD.Location = new System.Drawing.Point(240, 37);
+            this.idInfo_extent_geographicBoundingBox_eastLongDD.Location = new System.Drawing.Point(258, 37);
             this.idInfo_extent_geographicBoundingBox_eastLongDD.Name = "idInfo_extent_geographicBoundingBox_eastLongDD";
             this.idInfo_extent_geographicBoundingBox_eastLongDD.Size = new System.Drawing.Size(110, 21);
             this.idInfo_extent_geographicBoundingBox_eastLongDD.TabIndex = 1;
@@ -1642,19 +1591,6 @@
             this.idInfo_resourceMaintenance.Name = "idInfo_resourceMaintenance";
             this.idInfo_resourceMaintenance.Size = new System.Drawing.Size(134, 21);
             this.idInfo_resourceMaintenance.TabIndex = 57;
-            // 
-            // idInfo_extent_temporalExtent
-            // 
-            this.idInfo_extent_temporalExtent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.idInfo_extent_temporalExtent.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idInfo_extent_temporalExtent.Location = new System.Drawing.Point(37, 24);
-            this.idInfo_extent_temporalExtent.Name = "idInfo_extent_temporalExtent";
-            this.idInfo_extent_temporalExtent.Size = new System.Drawing.Size(313, 174);
-            this.idInfo_extent_temporalExtent.TabIndex = 51;
-            temporalElement__EX_TemporalExtent1.TimeInstant = null;
-            temporalElement__EX_TemporalExtent1.TimePeriod = null;
-            this.idInfo_extent_temporalExtent.temporalElement = temporalElement__EX_TemporalExtent1;
-            this.idInfo_extent_temporalExtent.Validating += new System.ComponentModel.CancelEventHandler(this.cntrl_Validating);
             // 
             // panel4
             // 
@@ -1771,9 +1707,8 @@
             // 
             this.idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____default.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____default.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____default.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____default.Font = new System.Drawing.Font("Tahoma", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____default.Location = new System.Drawing.Point(286, 145);
+            this.idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____default.Location = new System.Drawing.Point(273, 145);
             this.idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____default.Name = "idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____default";
             this.idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____default.Size = new System.Drawing.Size(33, 23);
             this.idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____default.TabIndex = 1;
@@ -1787,7 +1722,7 @@
             this.idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____help.AutoSize = true;
             this.idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____help.BackColor = System.Drawing.Color.Transparent;
             this.idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____help.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____help.Location = new System.Drawing.Point(286, 129);
+            this.idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____help.Location = new System.Drawing.Point(273, 129);
             this.idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____help.Name = "idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____help";
             this.idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____help.Size = new System.Drawing.Size(34, 13);
             this.idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____help.TabIndex = 46;
@@ -1827,9 +1762,8 @@
             // 
             this.idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____default.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____default.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____default.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____default.Font = new System.Drawing.Font("Tahoma", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____default.Location = new System.Drawing.Point(286, 145);
+            this.idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____default.Location = new System.Drawing.Point(283, 145);
             this.idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____default.Name = "idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____default";
             this.idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____default.Size = new System.Drawing.Size(33, 23);
             this.idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____default.TabIndex = 1;
@@ -1843,7 +1777,7 @@
             this.idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____help.AutoSize = true;
             this.idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____help.BackColor = System.Drawing.Color.Transparent;
             this.idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____help.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____help.Location = new System.Drawing.Point(286, 129);
+            this.idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____help.Location = new System.Drawing.Point(283, 129);
             this.idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____help.Name = "idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____help";
             this.idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____help.Size = new System.Drawing.Size(34, 13);
             this.idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____help.TabIndex = 46;
@@ -1880,9 +1814,8 @@
             // 
             this.idinfo_keywords_theme_themekt__User___themekey_____default.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.idinfo_keywords_theme_themekt__User___themekey_____default.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.idinfo_keywords_theme_themekt__User___themekey_____default.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.idinfo_keywords_theme_themekt__User___themekey_____default.Font = new System.Drawing.Font("Tahoma", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idinfo_keywords_theme_themekt__User___themekey_____default.Location = new System.Drawing.Point(286, 145);
+            this.idinfo_keywords_theme_themekt__User___themekey_____default.Location = new System.Drawing.Point(283, 145);
             this.idinfo_keywords_theme_themekt__User___themekey_____default.Name = "idinfo_keywords_theme_themekt__User___themekey_____default";
             this.idinfo_keywords_theme_themekt__User___themekey_____default.Size = new System.Drawing.Size(33, 23);
             this.idinfo_keywords_theme_themekt__User___themekey_____default.TabIndex = 1;
@@ -1896,7 +1829,7 @@
             this.idinfo_keywords_theme_themekt__User___themekey_____help.AutoSize = true;
             this.idinfo_keywords_theme_themekt__User___themekey_____help.BackColor = System.Drawing.Color.Transparent;
             this.idinfo_keywords_theme_themekt__User___themekey_____help.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idinfo_keywords_theme_themekt__User___themekey_____help.Location = new System.Drawing.Point(286, 129);
+            this.idinfo_keywords_theme_themekt__User___themekey_____help.Location = new System.Drawing.Point(283, 129);
             this.idinfo_keywords_theme_themekt__User___themekey_____help.Name = "idinfo_keywords_theme_themekt__User___themekey_____help";
             this.idinfo_keywords_theme_themekt__User___themekey_____help.Size = new System.Drawing.Size(34, 13);
             this.idinfo_keywords_theme_themekt__User___themekey_____help.TabIndex = 46;
@@ -1934,9 +1867,8 @@
             // 
             this.idinfo_keywords_place_placekt__None___placekey_____default.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.idinfo_keywords_place_placekt__None___placekey_____default.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.idinfo_keywords_place_placekt__None___placekey_____default.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.idinfo_keywords_place_placekt__None___placekey_____default.Font = new System.Drawing.Font("Tahoma", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idinfo_keywords_place_placekt__None___placekey_____default.Location = new System.Drawing.Point(286, 145);
+            this.idinfo_keywords_place_placekt__None___placekey_____default.Location = new System.Drawing.Point(283, 145);
             this.idinfo_keywords_place_placekt__None___placekey_____default.Name = "idinfo_keywords_place_placekt__None___placekey_____default";
             this.idinfo_keywords_place_placekt__None___placekey_____default.Size = new System.Drawing.Size(33, 23);
             this.idinfo_keywords_place_placekt__None___placekey_____default.TabIndex = 1;
@@ -1950,7 +1882,7 @@
             this.idinfo_keywords_place_placekt__None___placekey_____help.AutoSize = true;
             this.idinfo_keywords_place_placekt__None___placekey_____help.BackColor = System.Drawing.Color.Transparent;
             this.idinfo_keywords_place_placekt__None___placekey_____help.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idinfo_keywords_place_placekt__None___placekey_____help.Location = new System.Drawing.Point(286, 129);
+            this.idinfo_keywords_place_placekt__None___placekey_____help.Location = new System.Drawing.Point(283, 129);
             this.idinfo_keywords_place_placekt__None___placekey_____help.Name = "idinfo_keywords_place_placekt__None___placekey_____help";
             this.idinfo_keywords_place_placekt__None___placekey_____help.Size = new System.Drawing.Size(34, 13);
             this.idinfo_keywords_place_placekt__None___placekey_____help.TabIndex = 45;
@@ -2043,6 +1975,73 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1003, 619);
             this.tabControl1.TabIndex = 2;
+            // 
+            // idInfo_extent_temporalExtent
+            // 
+            this.idInfo_extent_temporalExtent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.idInfo_extent_temporalExtent.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idInfo_extent_temporalExtent.Location = new System.Drawing.Point(37, 24);
+            this.idInfo_extent_temporalExtent.Name = "idInfo_extent_temporalExtent";
+            this.idInfo_extent_temporalExtent.Size = new System.Drawing.Size(313, 174);
+            this.idInfo_extent_temporalExtent.TabIndex = 51;
+            temporalElement__EX_TemporalExtent1.TimeInstant = null;
+            temporalElement__EX_TemporalExtent1.TimePeriod = null;
+            this.idInfo_extent_temporalExtent.temporalElement = temporalElement__EX_TemporalExtent1;
+            this.idInfo_extent_temporalExtent.Validating += new System.ComponentModel.CancelEventHandler(this.cntrl_Validating);
+            // 
+            // distributionInfo__MD_Distribution
+            // 
+            this.distributionInfo__MD_Distribution.AutoSize = true;
+            this.distributionInfo__MD_Distribution.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.distributionInfo__MD_Distribution.distributorList = null;
+            this.distributionInfo__MD_Distribution.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.distributionInfo__MD_Distribution.Location = new System.Drawing.Point(0, 0);
+            this.distributionInfo__MD_Distribution.Margin = new System.Windows.Forms.Padding(0);
+            this.distributionInfo__MD_Distribution.mylabel = "Distributor";
+            this.distributionInfo__MD_Distribution.Name = "distributionInfo__MD_Distribution";
+            this.distributionInfo__MD_Distribution.Size = new System.Drawing.Size(454, 209);
+            this.distributionInfo__MD_Distribution.TabIndex = 0;
+            // 
+            // contact_CI_ResponsibleParty
+            // 
+            this.contact_CI_ResponsibleParty.BackColor = System.Drawing.Color.Transparent;
+            this.contact_CI_ResponsibleParty.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.contact_CI_ResponsibleParty.CI_ResponsiblePartyList = null;
+            this.contact_CI_ResponsibleParty.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contact_CI_ResponsibleParty.Location = new System.Drawing.Point(3, 2);
+            this.contact_CI_ResponsibleParty.mylabel = "Metadata Author";
+            this.contact_CI_ResponsibleParty.Name = "contact_CI_ResponsibleParty";
+            this.contact_CI_ResponsibleParty.rp_mode = "dist";
+            this.contact_CI_ResponsibleParty.Size = new System.Drawing.Size(445, 35);
+            this.contact_CI_ResponsibleParty.TabIndex = 0;
+            this.contact_CI_ResponsibleParty.Tag = "";
+            this.contact_CI_ResponsibleParty.Validating += new System.ComponentModel.CancelEventHandler(this.cntrl_Validating);
+            // 
+            // idInfo_pointOfContact
+            // 
+            this.idInfo_pointOfContact.BackColor = System.Drawing.Color.Transparent;
+            this.idInfo_pointOfContact.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.idInfo_pointOfContact.CI_ResponsiblePartyList = null;
+            this.idInfo_pointOfContact.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idInfo_pointOfContact.Location = new System.Drawing.Point(2, 2);
+            this.idInfo_pointOfContact.mylabel = "Resource Owner";
+            this.idInfo_pointOfContact.Name = "idInfo_pointOfContact";
+            this.idInfo_pointOfContact.rp_mode = null;
+            this.idInfo_pointOfContact.Size = new System.Drawing.Size(446, 35);
+            this.idInfo_pointOfContact.TabIndex = 2;
+            // 
+            // idInfo_citation_citedResponsibleParty
+            // 
+            this.idInfo_citation_citedResponsibleParty.BackColor = System.Drawing.Color.Transparent;
+            this.idInfo_citation_citedResponsibleParty.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.idInfo_citation_citedResponsibleParty.CI_ResponsiblePartyList = null;
+            this.idInfo_citation_citedResponsibleParty.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idInfo_citation_citedResponsibleParty.Location = new System.Drawing.Point(2, 3);
+            this.idInfo_citation_citedResponsibleParty.mylabel = "Resource Producer";
+            this.idInfo_citation_citedResponsibleParty.Name = "idInfo_citation_citedResponsibleParty";
+            this.idInfo_citation_citedResponsibleParty.rp_mode = null;
+            this.idInfo_citation_citedResponsibleParty.Size = new System.Drawing.Size(446, 35);
+            this.idInfo_citation_citedResponsibleParty.TabIndex = 2;
             // 
             // uc_ResponsibleParty2
             // 

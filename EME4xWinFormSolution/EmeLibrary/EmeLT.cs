@@ -282,7 +282,7 @@ namespace EmeLibrary
             else if (args.Severity == XmlSeverityType.Error)
                 Console.Write("ERROR: ");
 
-            Console.WriteLine(args.Message);
+            //Console.WriteLine(args.Message);
         }
         
         
@@ -336,8 +336,8 @@ namespace EmeLibrary
 
         private void saveXmlChanges()
         {
-            try
-            {
+            //try
+            //{
                 PageController.PageSaver(this);
                 
                 sourceXmlFormat = toolStripComboBox1.SelectedItem.ToString();                
@@ -362,11 +362,11 @@ namespace EmeLibrary
                 toolStripStatusLabel1.Text = "Editing File: " + filename;
 
                 MessageBox.Show("Saved: " + filename);
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("Error Saving Record " + e.Message);
-            }
+            //}
+            //catch (Exception e)
+            //{
+            //    MessageBox.Show("Error Saving Record " + e.Message);
+            //}
         }
 
         private string saveWithThisFileName()
@@ -803,7 +803,7 @@ namespace EmeLibrary
             Button defaultbutton = (Button)sender;
             string senderName = defaultbutton.Name;
             senderName = senderName.Remove(senderName.Length - 2);
-            Console.WriteLine(senderName);
+            //Console.WriteLine(senderName);
             PageController pc = PageController.thatControls(senderName);
             pc.setDefault(this);
         }
