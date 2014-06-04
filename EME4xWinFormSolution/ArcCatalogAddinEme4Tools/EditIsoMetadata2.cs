@@ -30,6 +30,7 @@ namespace ArcCatalogAddinEme4Tools
             //MessageBox.Show("Clicked");
             //MessageBox.Show("Addin: " + Directory.GetCurrentDirectory());
             //Comment by Baohong
+            //try conflict by Baohong
             try
             {
                 EmeLT emeForm = new EmeLT();
