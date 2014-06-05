@@ -107,12 +107,33 @@
     <HoverNote>Who to contact about the data</HoverNote>
   </emeControl>
   <emeControl>
-    <controlName>groupBox1</controlName>
+    <controlName>keywordsGroupBox</controlName>
     <TabNum>1</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>Keywords about your data</HoverNote>
   </emeControl>
+  <emeControl>
+    <controlName>boundingBoxGroupBox</controlName>
+    <TabNum>1</TabNum>
+    <FGDC_Def></FGDC_Def>
+    <EPARequirementGuidance></EPARequirementGuidance>
+    <HoverNote>The spatial extent for the resource</HoverNote>
+  </emeControl>
+  <emeControl>
+    <controlName>idInfo_extent_description_lbl</controlName>
+    <TabNum>1</TabNum>
+    <FGDC_Def></FGDC_Def>
+    <EPARequirementGuidance></EPARequirementGuidance>
+    <HoverNote>A description of the geographic extent or area</HoverNote>
+  </emeControl>
+  <emeControl>
+    <controlName>idInfo_extent_temporalExtent</controlName>
+    <TabNum>1</TabNum>
+    <FGDC_Def></FGDC_Def>
+    <EPARequirementGuidance></EPARequirementGuidance>
+    <HoverNote>The time period applicable to the resource</HoverNote>
+  </emeControl>   
   <emeControl>
     <controlName>fileIdentifier_lbl</controlName>
     <TabNum>3</TabNum>
@@ -125,7 +146,7 @@
     <TabNum>3</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
-    <HoverNote>Lanquage of the metadata record</HoverNote>
+    <HoverNote>Language of the metadata record</HoverNote>
   </emeControl>
   <emeControl>
     <controlName>dateStamp_lbl</controlName>
@@ -139,21 +160,21 @@
     <TabNum>3</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
-    <HoverNote>Autor of the metadata</HoverNote>
+    <HoverNote>Author of the metadata</HoverNote>
   </emeControl>
   <emeControl>
     <controlName>roleCode_lbl</controlName>
     <TabNum>3</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
-    <HoverNote> Function performed by the responsible party</HoverNote>
+    <HoverNote>Function performed by the responsible party</HoverNote>
   </emeControl>
   <emeControl>
-    <controlName>distributionInformation_gbx</controlName>
+    <controlName>distributionInfo__MD_Distribution</controlName>
     <TabNum>3</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
-    <HoverNote>Information about the distributor of and options for obtaining the data set.</HoverNote>
+    <HoverNote>Information about the distributor and options for obtaining the data set.</HoverNote>
   </emeControl>
   <emeControl>
     <controlName>md_standardOrderProcess_lbl</controlName>
@@ -167,7 +188,7 @@
     <TabNum>3</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
-    <HoverNote>The data transfer format.</HoverNote>
+    <HoverNote>The data transfer format</HoverNote>
   </emeControl>
   <emeControl>
     <controlName>md_digitalTranferOptions_lbl</controlName>
@@ -252,14 +273,7 @@
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>Estimated size of the transfer unit in the specified format, expressed in megabytes.</HoverNote>
-  </emeControl>
-  <emeControl>
-    <controlName>idInfo_extent_description_lbl</controlName>
-    <TabNum>3</TabNum>
-    <FGDC_Def></FGDC_Def>
-    <EPARequirementGuidance></EPARequirementGuidance>
-    <HoverNote>Spatial and temporal extent for the referring object.</HoverNote>
-  </emeControl>
+  </emeControl>  
   <emeControl>
     <controlName>onLine__CI_OnlineResource__linkage__URL_lbl</controlName>
     <TabNum>3</TabNum>

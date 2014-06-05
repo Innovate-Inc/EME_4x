@@ -122,11 +122,11 @@
             this.pgD_MD_Dist_btn = new System.Windows.Forms.Button();
             this.pgU_MD_Dist_btn = new System.Windows.Forms.Button();
             this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
-            this.distributor_Contact = new EmeLibrary.uc_ResponsibleParty();
             this.distributor_gbx = new System.Windows.Forms.GroupBox();
             this.MD_Dist = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.errorProvider_Distribution = new System.Windows.Forms.ErrorProvider(this.components);
+            this.distributor_Contact = new EmeLibrary.uc_ResponsibleParty();
             this.MD_Format_pnl.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -157,7 +157,8 @@
             this.MD_Format_pnl.Margin = new System.Windows.Forms.Padding(0);
             this.MD_Format_pnl.Name = "MD_Format_pnl";
             this.MD_Format_pnl.Size = new System.Drawing.Size(439, 35);
-            this.MD_Format_pnl.TabIndex = 2;
+            this.MD_Format_pnl.TabIndex = 3;
+            this.MD_Format_pnl.TabStop = true;
             // 
             // panel4
             // 
@@ -171,7 +172,7 @@
             this.panel4.Location = new System.Drawing.Point(31, 109);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(373, 95);
-            this.panel4.TabIndex = 6;
+            this.panel4.TabIndex = 3;
             // 
             // md_format_decompressionTechnique_lbl
             // 
@@ -210,7 +211,7 @@
             this.md_format_decompressionTechnique_txt.Location = new System.Drawing.Point(115, 64);
             this.md_format_decompressionTechnique_txt.Name = "md_format_decompressionTechnique_txt";
             this.md_format_decompressionTechnique_txt.Size = new System.Drawing.Size(205, 21);
-            this.md_format_decompressionTechnique_txt.TabIndex = 7;
+            this.md_format_decompressionTechnique_txt.TabIndex = 6;
             // 
             // md_format_Specification_txt
             // 
@@ -219,7 +220,7 @@
             this.md_format_Specification_txt.Location = new System.Drawing.Point(115, 37);
             this.md_format_Specification_txt.Name = "md_format_Specification_txt";
             this.md_format_Specification_txt.Size = new System.Drawing.Size(205, 21);
-            this.md_format_Specification_txt.TabIndex = 6;
+            this.md_format_Specification_txt.TabIndex = 5;
             // 
             // md_format_AmendmentNumber_txt
             // 
@@ -228,7 +229,7 @@
             this.md_format_AmendmentNumber_txt.Location = new System.Drawing.Point(115, 10);
             this.md_format_AmendmentNumber_txt.Name = "md_format_AmendmentNumber_txt";
             this.md_format_AmendmentNumber_txt.Size = new System.Drawing.Size(205, 21);
-            this.md_format_AmendmentNumber_txt.TabIndex = 5;
+            this.md_format_AmendmentNumber_txt.TabIndex = 4;
             // 
             // panel1
             // 
@@ -240,7 +241,7 @@
             this.panel1.Location = new System.Drawing.Point(31, 39);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(373, 64);
-            this.panel1.TabIndex = 4;
+            this.panel1.TabIndex = 2;
             // 
             // md_format_version_txt
             // 
@@ -249,7 +250,7 @@
             this.md_format_version_txt.Location = new System.Drawing.Point(115, 35);
             this.md_format_version_txt.Name = "md_format_version_txt";
             this.md_format_version_txt.Size = new System.Drawing.Size(205, 21);
-            this.md_format_version_txt.TabIndex = 6;
+            this.md_format_version_txt.TabIndex = 3;
             this.md_format_version_txt.Tag = "";
             this.md_format_version_txt.Validating += new System.ComponentModel.CancelEventHandler(this.distribution_Validating);
             // 
@@ -280,7 +281,7 @@
             this.md_format_name_txt.Location = new System.Drawing.Point(115, 9);
             this.md_format_name_txt.Name = "md_format_name_txt";
             this.md_format_name_txt.Size = new System.Drawing.Size(205, 21);
-            this.md_format_name_txt.TabIndex = 3;
+            this.md_format_name_txt.TabIndex = 2;
             this.md_format_name_txt.Tag = "";
             this.md_format_name_txt.Validating += new System.ComponentModel.CancelEventHandler(this.distribution_Validating);
             // 
@@ -296,10 +297,12 @@
             this.MD_Format.Location = new System.Drawing.Point(201, 3);
             this.MD_Format.Name = "MD_Format";
             this.MD_Format.Size = new System.Drawing.Size(235, 30);
-            this.MD_Format.TabIndex = 2;
+            this.MD_Format.TabIndex = 0;
+            this.MD_Format.TabStop = true;
             // 
             // del_MD_Format_btn
             // 
+            this.del_MD_Format_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.del_MD_Format_btn.Enabled = false;
             this.del_MD_Format_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.del_MD_Format_btn.FlatAppearance.BorderSize = 0;
@@ -309,12 +312,14 @@
             this.del_MD_Format_btn.Location = new System.Drawing.Point(209, 3);
             this.del_MD_Format_btn.Name = "del_MD_Format_btn";
             this.del_MD_Format_btn.Size = new System.Drawing.Size(23, 23);
-            this.del_MD_Format_btn.TabIndex = 0;
+            this.del_MD_Format_btn.TabIndex = 2;
+            this.del_MD_Format_btn.TabStop = false;
             this.del_MD_Format_btn.UseVisualStyleBackColor = true;
             this.del_MD_Format_btn.Click += new System.EventHandler(this.del_MD_Format_btn_Click);
             // 
             // add_MD_Format_btn
             // 
+            this.add_MD_Format_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.add_MD_Format_btn.Enabled = false;
             this.add_MD_Format_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.add_MD_Format_btn.FlatAppearance.BorderSize = 0;
@@ -324,7 +329,7 @@
             this.add_MD_Format_btn.Location = new System.Drawing.Point(180, 3);
             this.add_MD_Format_btn.Name = "add_MD_Format_btn";
             this.add_MD_Format_btn.Size = new System.Drawing.Size(23, 23);
-            this.add_MD_Format_btn.TabIndex = 1;
+            this.add_MD_Format_btn.TabIndex = 0;
             this.add_MD_Format_btn.UseVisualStyleBackColor = true;
             this.add_MD_Format_btn.Click += new System.EventHandler(this.Add_MD_Format_Click);
             // 
@@ -338,6 +343,7 @@
             this.pgU_MD_Format_btn.Name = "pgU_MD_Format_btn";
             this.pgU_MD_Format_btn.Size = new System.Drawing.Size(23, 23);
             this.pgU_MD_Format_btn.TabIndex = 2;
+            this.pgU_MD_Format_btn.TabStop = false;
             this.pgU_MD_Format_btn.Text = ">";
             this.pgU_MD_Format_btn.UseVisualStyleBackColor = true;
             this.pgU_MD_Format_btn.Visible = false;
@@ -364,6 +370,7 @@
             this.pgD_MD_Format_btn.Name = "pgD_MD_Format_btn";
             this.pgD_MD_Format_btn.Size = new System.Drawing.Size(23, 23);
             this.pgD_MD_Format_btn.TabIndex = 4;
+            this.pgD_MD_Format_btn.TabStop = false;
             this.pgD_MD_Format_btn.Text = "<";
             this.pgD_MD_Format_btn.UseVisualStyleBackColor = true;
             this.pgD_MD_Format_btn.Visible = false;
@@ -404,7 +411,8 @@
             this.digitalTransferOptions_pnl.Margin = new System.Windows.Forms.Padding(0);
             this.digitalTransferOptions_pnl.Name = "digitalTransferOptions_pnl";
             this.digitalTransferOptions_pnl.Size = new System.Drawing.Size(439, 35);
-            this.digitalTransferOptions_pnl.TabIndex = 4;
+            this.digitalTransferOptions_pnl.TabIndex = 1;
+            this.digitalTransferOptions_pnl.TabStop = true;
             // 
             // groupBox2
             // 
@@ -580,7 +588,7 @@
             this.CI_OnlineResource.Location = new System.Drawing.Point(7, 107);
             this.CI_OnlineResource.Name = "CI_OnlineResource";
             this.CI_OnlineResource.Size = new System.Drawing.Size(426, 202);
-            this.CI_OnlineResource.TabIndex = 5;
+            this.CI_OnlineResource.TabIndex = 4;
             this.CI_OnlineResource.TabStop = false;
             this.CI_OnlineResource.Text = "Online Resource";
             // 
@@ -613,7 +621,7 @@
             this.onLine__CI_OnlineResource__applicationProfile_txt.Location = new System.Drawing.Point(115, 86);
             this.onLine__CI_OnlineResource__applicationProfile_txt.Name = "onLine__CI_OnlineResource__applicationProfile_txt";
             this.onLine__CI_OnlineResource__applicationProfile_txt.Size = new System.Drawing.Size(279, 21);
-            this.onLine__CI_OnlineResource__applicationProfile_txt.TabIndex = 15;
+            this.onLine__CI_OnlineResource__applicationProfile_txt.TabIndex = 2;
             // 
             // onLine__CI_OnlineResource__protocol_txt
             // 
@@ -622,7 +630,7 @@
             this.onLine__CI_OnlineResource__protocol_txt.Location = new System.Drawing.Point(115, 60);
             this.onLine__CI_OnlineResource__protocol_txt.Name = "onLine__CI_OnlineResource__protocol_txt";
             this.onLine__CI_OnlineResource__protocol_txt.Size = new System.Drawing.Size(279, 21);
-            this.onLine__CI_OnlineResource__protocol_txt.TabIndex = 4;
+            this.onLine__CI_OnlineResource__protocol_txt.TabIndex = 1;
             // 
             // onLine__CI_OnlineResource__function_lbl
             // 
@@ -653,7 +661,7 @@
             this.onLine__CI_OnlineResource__name_txt.Location = new System.Drawing.Point(115, 113);
             this.onLine__CI_OnlineResource__name_txt.Name = "onLine__CI_OnlineResource__name_txt";
             this.onLine__CI_OnlineResource__name_txt.Size = new System.Drawing.Size(279, 21);
-            this.onLine__CI_OnlineResource__name_txt.TabIndex = 7;
+            this.onLine__CI_OnlineResource__name_txt.TabIndex = 3;
             // 
             // onLine__CI_OnlineResource__description_txt
             // 
@@ -662,7 +670,7 @@
             this.onLine__CI_OnlineResource__description_txt.Location = new System.Drawing.Point(115, 140);
             this.onLine__CI_OnlineResource__description_txt.Name = "onLine__CI_OnlineResource__description_txt";
             this.onLine__CI_OnlineResource__description_txt.Size = new System.Drawing.Size(279, 21);
-            this.onLine__CI_OnlineResource__description_txt.TabIndex = 9;
+            this.onLine__CI_OnlineResource__description_txt.TabIndex = 4;
             // 
             // label16
             // 
@@ -679,7 +687,7 @@
             this.onLine__CI_OnlineResource__linkage__URL_txt.Location = new System.Drawing.Point(115, 19);
             this.onLine__CI_OnlineResource__linkage__URL_txt.Name = "onLine__CI_OnlineResource__linkage__URL_txt";
             this.onLine__CI_OnlineResource__linkage__URL_txt.Size = new System.Drawing.Size(279, 21);
-            this.onLine__CI_OnlineResource__linkage__URL_txt.TabIndex = 3;
+            this.onLine__CI_OnlineResource__linkage__URL_txt.TabIndex = 0;
             this.onLine__CI_OnlineResource__linkage__URL_txt.Tag = "";
             // 
             // onLine__CI_OnlineResource__protocol_lbl
@@ -707,7 +715,7 @@
             this.onLine__CI_OnlineResource__function_txt.Location = new System.Drawing.Point(115, 166);
             this.onLine__CI_OnlineResource__function_txt.Name = "onLine__CI_OnlineResource__function_txt";
             this.onLine__CI_OnlineResource__function_txt.Size = new System.Drawing.Size(169, 21);
-            this.onLine__CI_OnlineResource__function_txt.TabIndex = 11;
+            this.onLine__CI_OnlineResource__function_txt.TabIndex = 5;
             // 
             // onLine__CI_OnlineResource__name_lbl
             // 
@@ -745,7 +753,7 @@
             this.panel6.Location = new System.Drawing.Point(7, 39);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(426, 67);
-            this.panel6.TabIndex = 4;
+            this.panel6.TabIndex = 2;
             // 
             // md_digitalTransferOptions_transferSize_lbl
             // 
@@ -774,7 +782,7 @@
             this.md_digitalTransferOptions_transferSize_txt.Location = new System.Drawing.Point(115, 39);
             this.md_digitalTransferOptions_transferSize_txt.Name = "md_digitalTransferOptions_transferSize_txt";
             this.md_digitalTransferOptions_transferSize_txt.Size = new System.Drawing.Size(205, 21);
-            this.md_digitalTransferOptions_transferSize_txt.TabIndex = 4;
+            this.md_digitalTransferOptions_transferSize_txt.TabIndex = 3;
             // 
             // md_digitalTransferOptions_UnitsOfDistribution_txt
             // 
@@ -783,7 +791,7 @@
             this.md_digitalTransferOptions_UnitsOfDistribution_txt.Location = new System.Drawing.Point(115, 13);
             this.md_digitalTransferOptions_UnitsOfDistribution_txt.Name = "md_digitalTransferOptions_UnitsOfDistribution_txt";
             this.md_digitalTransferOptions_UnitsOfDistribution_txt.Size = new System.Drawing.Size(205, 21);
-            this.md_digitalTransferOptions_UnitsOfDistribution_txt.TabIndex = 3;
+            this.md_digitalTransferOptions_UnitsOfDistribution_txt.TabIndex = 2;
             // 
             // MD_DTO
             // 
@@ -797,10 +805,12 @@
             this.MD_DTO.Location = new System.Drawing.Point(201, 3);
             this.MD_DTO.Name = "MD_DTO";
             this.MD_DTO.Size = new System.Drawing.Size(235, 30);
-            this.MD_DTO.TabIndex = 2;
+            this.MD_DTO.TabIndex = 0;
+            this.MD_DTO.TabStop = true;
             // 
             // del_MD_DTO_btn
             // 
+            this.del_MD_DTO_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.del_MD_DTO_btn.Enabled = false;
             this.del_MD_DTO_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.del_MD_DTO_btn.FlatAppearance.BorderSize = 0;
@@ -810,12 +820,14 @@
             this.del_MD_DTO_btn.Location = new System.Drawing.Point(209, 3);
             this.del_MD_DTO_btn.Name = "del_MD_DTO_btn";
             this.del_MD_DTO_btn.Size = new System.Drawing.Size(23, 23);
-            this.del_MD_DTO_btn.TabIndex = 0;
+            this.del_MD_DTO_btn.TabIndex = 2;
+            this.del_MD_DTO_btn.TabStop = false;
             this.del_MD_DTO_btn.UseVisualStyleBackColor = true;
             this.del_MD_DTO_btn.Click += new System.EventHandler(this.del_MD_DTO_Click);
             // 
             // add_MD_DTO_btn
             // 
+            this.add_MD_DTO_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.add_MD_DTO_btn.Enabled = false;
             this.add_MD_DTO_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.add_MD_DTO_btn.FlatAppearance.BorderSize = 0;
@@ -825,7 +837,7 @@
             this.add_MD_DTO_btn.Location = new System.Drawing.Point(180, 3);
             this.add_MD_DTO_btn.Name = "add_MD_DTO_btn";
             this.add_MD_DTO_btn.Size = new System.Drawing.Size(23, 23);
-            this.add_MD_DTO_btn.TabIndex = 1;
+            this.add_MD_DTO_btn.TabIndex = 0;
             this.add_MD_DTO_btn.UseVisualStyleBackColor = true;
             this.add_MD_DTO_btn.Click += new System.EventHandler(this.add_DTO_Click);
             // 
@@ -838,7 +850,8 @@
             this.pgU_MD_DTO_btn.Location = new System.Drawing.Point(151, 3);
             this.pgU_MD_DTO_btn.Name = "pgU_MD_DTO_btn";
             this.pgU_MD_DTO_btn.Size = new System.Drawing.Size(23, 23);
-            this.pgU_MD_DTO_btn.TabIndex = 2;
+            this.pgU_MD_DTO_btn.TabIndex = 0;
+            this.pgU_MD_DTO_btn.TabStop = false;
             this.pgU_MD_DTO_btn.Text = ">";
             this.pgU_MD_DTO_btn.UseVisualStyleBackColor = true;
             this.pgU_MD_DTO_btn.Visible = false;
@@ -852,7 +865,7 @@
             this.MD_DTO_lbl.Location = new System.Drawing.Point(104, 6);
             this.MD_DTO_lbl.Name = "MD_DTO_lbl";
             this.MD_DTO_lbl.Size = new System.Drawing.Size(41, 16);
-            this.MD_DTO_lbl.TabIndex = 3;
+            this.MD_DTO_lbl.TabIndex = 0;
             this.MD_DTO_lbl.Text = "0 of 0";
             // 
             // pgD_MD_DTO_btn
@@ -864,7 +877,8 @@
             this.pgD_MD_DTO_btn.Location = new System.Drawing.Point(75, 3);
             this.pgD_MD_DTO_btn.Name = "pgD_MD_DTO_btn";
             this.pgD_MD_DTO_btn.Size = new System.Drawing.Size(23, 23);
-            this.pgD_MD_DTO_btn.TabIndex = 4;
+            this.pgD_MD_DTO_btn.TabIndex = 0;
+            this.pgD_MD_DTO_btn.TabStop = false;
             this.pgD_MD_DTO_btn.Text = "<";
             this.pgD_MD_DTO_btn.UseVisualStyleBackColor = true;
             this.pgD_MD_DTO_btn.Visible = false;
@@ -888,7 +902,7 @@
             this.expand_MD_DTO_btn.Location = new System.Drawing.Point(6, 6);
             this.expand_MD_DTO_btn.Name = "expand_MD_DTO_btn";
             this.expand_MD_DTO_btn.Size = new System.Drawing.Size(23, 23);
-            this.expand_MD_DTO_btn.TabIndex = 0;
+            this.expand_MD_DTO_btn.TabIndex = 1;
             this.expand_MD_DTO_btn.Text = "+";
             this.expand_MD_DTO_btn.UseVisualStyleBackColor = true;
             this.expand_MD_DTO_btn.Click += new System.EventHandler(this.expand_Click);
@@ -903,7 +917,8 @@
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(439, 35);
-            this.panel2.TabIndex = 3;
+            this.panel2.TabIndex = 2;
+            this.panel2.TabStop = true;
             // 
             // panel5
             // 
@@ -921,7 +936,7 @@
             this.panel5.Location = new System.Drawing.Point(24, 39);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(385, 157);
-            this.panel5.TabIndex = 3;
+            this.panel5.TabIndex = 2;
             // 
             // availabelDate_clear_btn
             // 
@@ -932,7 +947,7 @@
             this.availabelDate_clear_btn.Location = new System.Drawing.Point(203, 38);
             this.availabelDate_clear_btn.Name = "availabelDate_clear_btn";
             this.availabelDate_clear_btn.Size = new System.Drawing.Size(16, 16);
-            this.availabelDate_clear_btn.TabIndex = 9;
+            this.availabelDate_clear_btn.TabIndex = 3;
             this.availabelDate_clear_btn.UseVisualStyleBackColor = false;
             this.availabelDate_clear_btn.Click += new System.EventHandler(this.availabelDate_clear_btn_Click);
             // 
@@ -941,8 +956,8 @@
             this.availableDat_dtp.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.availableDat_dtp.Location = new System.Drawing.Point(229, 35);
             this.availableDat_dtp.Name = "availableDat_dtp";
-            this.availableDat_dtp.Size = new System.Drawing.Size(18, 21);
-            this.availableDat_dtp.TabIndex = 8;
+            this.availableDat_dtp.Size = new System.Drawing.Size(16, 21);
+            this.availableDat_dtp.TabIndex = 4;
             this.availableDat_dtp.ValueChanged += new System.EventHandler(this.available_dtp_ValueChanged);
             // 
             // md_SOP_Turnaround_lbl
@@ -992,7 +1007,7 @@
             this.md_SOP_Turnaround_txt.Location = new System.Drawing.Point(122, 129);
             this.md_SOP_Turnaround_txt.Name = "md_SOP_Turnaround_txt";
             this.md_SOP_Turnaround_txt.Size = new System.Drawing.Size(205, 21);
-            this.md_SOP_Turnaround_txt.TabIndex = 3;
+            this.md_SOP_Turnaround_txt.TabIndex = 6;
             // 
             // md_SOP_Ordering_txt
             // 
@@ -1002,7 +1017,7 @@
             this.md_SOP_Ordering_txt.Multiline = true;
             this.md_SOP_Ordering_txt.Name = "md_SOP_Ordering_txt";
             this.md_SOP_Ordering_txt.Size = new System.Drawing.Size(255, 61);
-            this.md_SOP_Ordering_txt.TabIndex = 2;
+            this.md_SOP_Ordering_txt.TabIndex = 5;
             // 
             // md_SOP_AvailableDate_txt
             // 
@@ -1012,7 +1027,8 @@
             this.md_SOP_AvailableDate_txt.Name = "md_SOP_AvailableDate_txt";
             this.md_SOP_AvailableDate_txt.ReadOnly = true;
             this.md_SOP_AvailableDate_txt.Size = new System.Drawing.Size(100, 21);
-            this.md_SOP_AvailableDate_txt.TabIndex = 1;
+            this.md_SOP_AvailableDate_txt.TabIndex = 3;
+            this.md_SOP_AvailableDate_txt.TabStop = false;
             // 
             // md_SOP_Fees_txt
             // 
@@ -1021,7 +1037,7 @@
             this.md_SOP_Fees_txt.Location = new System.Drawing.Point(122, 10);
             this.md_SOP_Fees_txt.Name = "md_SOP_Fees_txt";
             this.md_SOP_Fees_txt.Size = new System.Drawing.Size(205, 21);
-            this.md_SOP_Fees_txt.TabIndex = 0;
+            this.md_SOP_Fees_txt.TabIndex = 2;
             this.md_SOP_Fees_txt.Tag = "";
             // 
             // MD_SOP
@@ -1036,10 +1052,12 @@
             this.MD_SOP.Location = new System.Drawing.Point(201, 3);
             this.MD_SOP.Name = "MD_SOP";
             this.MD_SOP.Size = new System.Drawing.Size(235, 30);
-            this.MD_SOP.TabIndex = 2;
+            this.MD_SOP.TabIndex = 0;
+            this.MD_SOP.TabStop = true;
             // 
             // del_MD_SOP_btn
             // 
+            this.del_MD_SOP_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.del_MD_SOP_btn.Enabled = false;
             this.del_MD_SOP_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.del_MD_SOP_btn.FlatAppearance.BorderSize = 0;
@@ -1049,12 +1067,14 @@
             this.del_MD_SOP_btn.Location = new System.Drawing.Point(209, 3);
             this.del_MD_SOP_btn.Name = "del_MD_SOP_btn";
             this.del_MD_SOP_btn.Size = new System.Drawing.Size(23, 23);
-            this.del_MD_SOP_btn.TabIndex = 0;
+            this.del_MD_SOP_btn.TabIndex = 2;
+            this.del_MD_SOP_btn.TabStop = false;
             this.del_MD_SOP_btn.UseVisualStyleBackColor = true;
             this.del_MD_SOP_btn.Click += new System.EventHandler(this.del_MD_SOP_Click);
             // 
             // add_MD_SOP_btn
             // 
+            this.add_MD_SOP_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.add_MD_SOP_btn.Enabled = false;
             this.add_MD_SOP_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.add_MD_SOP_btn.FlatAppearance.BorderSize = 0;
@@ -1064,7 +1084,7 @@
             this.add_MD_SOP_btn.Location = new System.Drawing.Point(180, 3);
             this.add_MD_SOP_btn.Name = "add_MD_SOP_btn";
             this.add_MD_SOP_btn.Size = new System.Drawing.Size(23, 23);
-            this.add_MD_SOP_btn.TabIndex = 1;
+            this.add_MD_SOP_btn.TabIndex = 0;
             this.add_MD_SOP_btn.UseVisualStyleBackColor = true;
             this.add_MD_SOP_btn.Click += new System.EventHandler(this.add_md_SOP_Click);
             // 
@@ -1078,6 +1098,7 @@
             this.pgU_MD_SOP_btn.Name = "pgU_MD_SOP_btn";
             this.pgU_MD_SOP_btn.Size = new System.Drawing.Size(23, 23);
             this.pgU_MD_SOP_btn.TabIndex = 2;
+            this.pgU_MD_SOP_btn.TabStop = false;
             this.pgU_MD_SOP_btn.Text = ">";
             this.pgU_MD_SOP_btn.UseVisualStyleBackColor = true;
             this.pgU_MD_SOP_btn.Visible = false;
@@ -1104,6 +1125,7 @@
             this.pgD_MD_SOP_btn.Name = "pgD_MD_SOP_btn";
             this.pgD_MD_SOP_btn.Size = new System.Drawing.Size(23, 23);
             this.pgD_MD_SOP_btn.TabIndex = 4;
+            this.pgD_MD_SOP_btn.TabStop = false;
             this.pgD_MD_SOP_btn.Text = "<";
             this.pgD_MD_SOP_btn.UseVisualStyleBackColor = true;
             this.pgD_MD_SOP_btn.Visible = false;
@@ -1127,7 +1149,7 @@
             this.expand_MD_SOP_btn.Location = new System.Drawing.Point(6, 6);
             this.expand_MD_SOP_btn.Name = "expand_MD_SOP_btn";
             this.expand_MD_SOP_btn.Size = new System.Drawing.Size(23, 23);
-            this.expand_MD_SOP_btn.TabIndex = 0;
+            this.expand_MD_SOP_btn.TabIndex = 1;
             this.expand_MD_SOP_btn.Text = "+";
             this.expand_MD_SOP_btn.UseVisualStyleBackColor = true;
             this.expand_MD_SOP_btn.Click += new System.EventHandler(this.expand_Click);
@@ -1143,6 +1165,7 @@
             // 
             // del_MD_Dist_btn
             // 
+            this.del_MD_Dist_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.del_MD_Dist_btn.Enabled = false;
             this.del_MD_Dist_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.del_MD_Dist_btn.FlatAppearance.BorderSize = 0;
@@ -1152,7 +1175,7 @@
             this.del_MD_Dist_btn.Location = new System.Drawing.Point(156, 3);
             this.del_MD_Dist_btn.Name = "del_MD_Dist_btn";
             this.del_MD_Dist_btn.Size = new System.Drawing.Size(23, 23);
-            this.del_MD_Dist_btn.TabIndex = 0;
+            this.del_MD_Dist_btn.TabIndex = 1;
             this.del_MD_Dist_btn.UseVisualStyleBackColor = true;
             this.del_MD_Dist_btn.Click += new System.EventHandler(this.del_MD_Dist_btn_Click);
             // 
@@ -1164,11 +1187,12 @@
             this.MD_Dist_lbl.Location = new System.Drawing.Point(51, 6);
             this.MD_Dist_lbl.Name = "MD_Dist_lbl";
             this.MD_Dist_lbl.Size = new System.Drawing.Size(41, 16);
-            this.MD_Dist_lbl.TabIndex = 3;
+            this.MD_Dist_lbl.TabIndex = 0;
             this.MD_Dist_lbl.Text = "0 of 0";
             // 
             // add_MD_Dist_btn
             // 
+            this.add_MD_Dist_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.add_MD_Dist_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.add_MD_Dist_btn.FlatAppearance.BorderSize = 0;
             this.add_MD_Dist_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1177,7 +1201,7 @@
             this.add_MD_Dist_btn.Location = new System.Drawing.Point(127, 3);
             this.add_MD_Dist_btn.Name = "add_MD_Dist_btn";
             this.add_MD_Dist_btn.Size = new System.Drawing.Size(23, 23);
-            this.add_MD_Dist_btn.TabIndex = 1;
+            this.add_MD_Dist_btn.TabIndex = 0;
             this.add_MD_Dist_btn.UseVisualStyleBackColor = true;
             this.add_MD_Dist_btn.Click += new System.EventHandler(this.add_MD_Dist_btn_Click);
             // 
@@ -1190,7 +1214,8 @@
             this.pgD_MD_Dist_btn.Location = new System.Drawing.Point(22, 3);
             this.pgD_MD_Dist_btn.Name = "pgD_MD_Dist_btn";
             this.pgD_MD_Dist_btn.Size = new System.Drawing.Size(23, 23);
-            this.pgD_MD_Dist_btn.TabIndex = 4;
+            this.pgD_MD_Dist_btn.TabIndex = 0;
+            this.pgD_MD_Dist_btn.TabStop = false;
             this.pgD_MD_Dist_btn.Text = "<";
             this.pgD_MD_Dist_btn.UseVisualStyleBackColor = true;
             this.pgD_MD_Dist_btn.Visible = false;
@@ -1205,7 +1230,8 @@
             this.pgU_MD_Dist_btn.Location = new System.Drawing.Point(98, 3);
             this.pgU_MD_Dist_btn.Name = "pgU_MD_Dist_btn";
             this.pgU_MD_Dist_btn.Size = new System.Drawing.Size(23, 23);
-            this.pgU_MD_Dist_btn.TabIndex = 2;
+            this.pgU_MD_Dist_btn.TabIndex = 0;
+            this.pgU_MD_Dist_btn.TabStop = false;
             this.pgU_MD_Dist_btn.Text = ">";
             this.pgU_MD_Dist_btn.UseVisualStyleBackColor = true;
             this.pgU_MD_Dist_btn.Visible = false;
@@ -1226,20 +1252,6 @@
             this.flowLayoutPanel6.TabIndex = 0;
             this.flowLayoutPanel6.Leave += new System.EventHandler(this.flowLayoutPanel6_Leave);
             // 
-            // distributor_Contact
-            // 
-            this.distributor_Contact.BackColor = System.Drawing.Color.Transparent;
-            this.distributor_Contact.CI_ResponsiblePartyList = null;
-            this.distributor_Contact.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.distributor_Contact.Location = new System.Drawing.Point(0, 0);
-            this.distributor_Contact.Margin = new System.Windows.Forms.Padding(0);
-            this.distributor_Contact.mylabel = "Contact (Required)";
-            this.distributor_Contact.Name = "distributor_Contact";
-            this.distributor_Contact.rp_mode = "distribution";
-            this.distributor_Contact.Size = new System.Drawing.Size(439, 35);
-            this.distributor_Contact.TabIndex = 7;
-            this.distributor_Contact.Tag = "";
-            // 
             // distributor_gbx
             // 
             this.distributor_gbx.AutoSize = true;
@@ -1250,7 +1262,7 @@
             this.distributor_gbx.Margin = new System.Windows.Forms.Padding(0);
             this.distributor_gbx.Name = "distributor_gbx";
             this.distributor_gbx.Size = new System.Drawing.Size(451, 187);
-            this.distributor_gbx.TabIndex = 6;
+            this.distributor_gbx.TabIndex = 1;
             this.distributor_gbx.TabStop = false;
             this.distributor_gbx.Leave += new System.EventHandler(this.distributor_gbx_Leave);
             // 
@@ -1266,7 +1278,8 @@
             this.MD_Dist.Location = new System.Drawing.Point(12, 12);
             this.MD_Dist.Name = "MD_Dist";
             this.MD_Dist.Size = new System.Drawing.Size(182, 30);
-            this.MD_Dist.TabIndex = 7;
+            this.MD_Dist.TabIndex = 0;
+            this.MD_Dist.TabStop = true;
             // 
             // groupBox1
             // 
@@ -1274,12 +1287,26 @@
             this.groupBox1.Location = new System.Drawing.Point(134, -1);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(200, 45);
-            this.groupBox1.TabIndex = 7;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // errorProvider_Distribution
             // 
             this.errorProvider_Distribution.ContainerControl = this;
+            // 
+            // distributor_Contact
+            // 
+            this.distributor_Contact.BackColor = System.Drawing.Color.Transparent;
+            this.distributor_Contact.CI_ResponsiblePartyList = null;
+            this.distributor_Contact.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.distributor_Contact.Location = new System.Drawing.Point(0, 0);
+            this.distributor_Contact.Margin = new System.Windows.Forms.Padding(0);
+            this.distributor_Contact.mylabel = "Contact (Required)";
+            this.distributor_Contact.Name = "distributor_Contact";
+            this.distributor_Contact.rp_mode = "distribution";
+            this.distributor_Contact.Size = new System.Drawing.Size(439, 35);
+            this.distributor_Contact.TabIndex = 0;
+            this.distributor_Contact.Tag = "";
             // 
             // uc_distribution
             // 

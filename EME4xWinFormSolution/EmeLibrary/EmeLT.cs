@@ -486,7 +486,15 @@ namespace EmeLibrary
                     //localXdoc = new isoNodes(xDoc, sourceXmlFormat, filename);
                     bindCCMFields();
                     //PageController.ElementPopulator(this);
+                    
+                    frmctrls(this.Controls); //validation
+                    foreach (Control c in this.Controls)
+                    {
+                        validate_Controls(c);
+                    }
+                    
                 }
+
             }
             catch (Exception ex)
             {
@@ -619,6 +627,12 @@ namespace EmeLibrary
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void cntrl_ValidateTextChanged(object sender, EventArgs e)
+        {
+            Control ctrl = (Control)sender;
+            validate_Controls(ctrl);
         }
 
         /// <summary>
@@ -837,6 +851,8 @@ namespace EmeLibrary
             toolStripStatusLabel1.Text =tooltip1.GetToolTip(e.AssociatedControl);
 
         }
+
+        
                 
 
     }

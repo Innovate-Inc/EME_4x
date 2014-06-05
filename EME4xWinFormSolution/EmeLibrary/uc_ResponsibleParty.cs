@@ -566,8 +566,18 @@ namespace EmeLibrary
                 //contactInfo__CI_Contact__contactInstructions.Text = drv["cntinst"].ToString();
             }
             val_RP_frmControls(this.Controls);
+            comboBox1.SelectedIndexChanged -= new EventHandler(comboBox1_SelectedIndexChanged_1);            
+            comboBox1.SelectedIndex = -1;
+            comboBox1.SelectedIndexChanged += new EventHandler(comboBox1_SelectedIndexChanged_1);
         }
 
+        private void responsibleParty_TextChangedValidation(object sender, EventArgs e)
+        {
+            Control ctrl = (Control)sender;
+            rp_Validating(ctrl);
+            //validate_Controls(ctrl);
+
+        }
         private void responsibleParty_Validating(object sender, CancelEventArgs e)
         {
             Control ctrl = (Control)sender;
@@ -834,6 +844,8 @@ namespace EmeLibrary
                 role.Text = "distributor";
             }
         }
+
+       
                      
 
     }

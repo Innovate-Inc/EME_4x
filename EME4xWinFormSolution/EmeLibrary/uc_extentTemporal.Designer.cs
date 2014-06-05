@@ -51,7 +51,6 @@
             this.timeInstant = new System.Windows.Forms.TabPage();
             this.label5 = new System.Windows.Forms.Label();
             this.extent__TimeInstant__description = new System.Windows.Forms.TextBox();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.extent__TimeInstant__timePosition_btn = new System.Windows.Forms.Button();
             this.extent__TimeInstant__timePosition_cbo = new System.Windows.Forms.ComboBox();
             this.extent__TimeInstant__timePosition_dtP = new System.Windows.Forms.DateTimePicker();
@@ -86,7 +85,8 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.ShowToolTips = true;
             this.tabControl1.Size = new System.Drawing.Size(288, 138);
-            this.tabControl1.TabIndex = 6;
+            this.tabControl1.TabIndex = 1;
+            this.tabControl1.TabStop = false;
             this.toolTip1.SetToolTip(this.tabControl1, "Chose One Date Type");
             // 
             // timePeriod
@@ -129,11 +129,12 @@
             this.extent__TimePeriod__description.Location = new System.Drawing.Point(68, 6);
             this.extent__TimePeriod__description.Name = "extent__TimePeriod__description";
             this.extent__TimePeriod__description.Size = new System.Drawing.Size(197, 21);
-            this.extent__TimePeriod__description.TabIndex = 44;
+            this.extent__TimePeriod__description.TabIndex = 0;
             // 
             // extent__TimePeriod__endPosition_btn
             // 
             this.extent__TimePeriod__endPosition_btn.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.extent__TimePeriod__endPosition_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.extent__TimePeriod__endPosition_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonFace;
             this.extent__TimePeriod__endPosition_btn.FlatAppearance.BorderSize = 0;
             this.extent__TimePeriod__endPosition_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -141,7 +142,7 @@
             this.extent__TimePeriod__endPosition_btn.Location = new System.Drawing.Point(131, 59);
             this.extent__TimePeriod__endPosition_btn.Name = "extent__TimePeriod__endPosition_btn";
             this.extent__TimePeriod__endPosition_btn.Size = new System.Drawing.Size(16, 16);
-            this.extent__TimePeriod__endPosition_btn.TabIndex = 43;
+            this.extent__TimePeriod__endPosition_btn.TabIndex = 4;
             this.extent__TimePeriod__endPosition_btn.UseVisualStyleBackColor = false;
             this.extent__TimePeriod__endPosition_btn.Click += new System.EventHandler(this.ClearTextbox_Click);
             // 
@@ -157,7 +158,7 @@
             this.extent__TimePeriod__beginPosition_cbo.Location = new System.Drawing.Point(178, 32);
             this.extent__TimePeriod__beginPosition_cbo.Name = "extent__TimePeriod__beginPosition_cbo";
             this.extent__TimePeriod__beginPosition_cbo.Size = new System.Drawing.Size(87, 21);
-            this.extent__TimePeriod__beginPosition_cbo.TabIndex = 0;
+            this.extent__TimePeriod__beginPosition_cbo.TabIndex = 3;
             this.toolTip1.SetToolTip(this.extent__TimePeriod__beginPosition_cbo, "Choose an Indeterminate Date");
             this.extent__TimePeriod__beginPosition_cbo.SelectedIndexChanged += new System.EventHandler(this.cbo_ValueChanged);
             // 
@@ -167,8 +168,8 @@
             this.extent__TimePeriod__endPosition_dtP.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.extent__TimePeriod__endPosition_dtP.Location = new System.Drawing.Point(154, 57);
             this.extent__TimePeriod__endPosition_dtP.Name = "extent__TimePeriod__endPosition_dtP";
-            this.extent__TimePeriod__endPosition_dtP.Size = new System.Drawing.Size(18, 21);
-            this.extent__TimePeriod__endPosition_dtP.TabIndex = 42;
+            this.extent__TimePeriod__endPosition_dtP.Size = new System.Drawing.Size(16, 21);
+            this.extent__TimePeriod__endPosition_dtP.TabIndex = 5;
             this.toolTip1.SetToolTip(this.extent__TimePeriod__endPosition_dtP, "Choose an Exact Date");
             this.extent__TimePeriod__endPosition_dtP.ValueChanged += new System.EventHandler(this.dtP_ValueChanged);
             // 
@@ -184,7 +185,7 @@
             this.extent__TimePeriod__timeIntervalUnit_cbo.Location = new System.Drawing.Point(151, 85);
             this.extent__TimePeriod__timeIntervalUnit_cbo.Name = "extent__TimePeriod__timeIntervalUnit_cbo";
             this.extent__TimePeriod__timeIntervalUnit_cbo.Size = new System.Drawing.Size(65, 21);
-            this.extent__TimePeriod__timeIntervalUnit_cbo.TabIndex = 2;
+            this.extent__TimePeriod__timeIntervalUnit_cbo.TabIndex = 8;
             this.toolTip1.SetToolTip(this.extent__TimePeriod__timeIntervalUnit_cbo, "Type of Units for Interval");
             // 
             // extent__TimePeriod__endPosition
@@ -194,7 +195,8 @@
             this.extent__TimePeriod__endPosition.Name = "extent__TimePeriod__endPosition";
             this.extent__TimePeriod__endPosition.ReadOnly = true;
             this.extent__TimePeriod__endPosition.Size = new System.Drawing.Size(80, 21);
-            this.extent__TimePeriod__endPosition.TabIndex = 41;
+            this.extent__TimePeriod__endPosition.TabIndex = 4;
+            this.extent__TimePeriod__endPosition.TabStop = false;
             this.toolTip1.SetToolTip(this.extent__TimePeriod__endPosition, "Choose an Exact Date or Indeterminate Value");
             // 
             // timePeriod_Begin_lbl
@@ -218,7 +220,7 @@
             this.extent__TimePeriod__endPosition_cbo.Location = new System.Drawing.Point(178, 57);
             this.extent__TimePeriod__endPosition_cbo.Name = "extent__TimePeriod__endPosition_cbo";
             this.extent__TimePeriod__endPosition_cbo.Size = new System.Drawing.Size(87, 21);
-            this.extent__TimePeriod__endPosition_cbo.TabIndex = 40;
+            this.extent__TimePeriod__endPosition_cbo.TabIndex = 6;
             this.toolTip1.SetToolTip(this.extent__TimePeriod__endPosition_cbo, "Choose an Indeterminate Date");
             this.extent__TimePeriod__endPosition_cbo.SelectedIndexChanged += new System.EventHandler(this.cbo_ValueChanged);
             // 
@@ -234,6 +236,7 @@
             // extent__TimePeriod__beginPosition_btn
             // 
             this.extent__TimePeriod__beginPosition_btn.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.extent__TimePeriod__beginPosition_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.extent__TimePeriod__beginPosition_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonFace;
             this.extent__TimePeriod__beginPosition_btn.FlatAppearance.BorderSize = 0;
             this.extent__TimePeriod__beginPosition_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -241,7 +244,7 @@
             this.extent__TimePeriod__beginPosition_btn.Location = new System.Drawing.Point(131, 34);
             this.extent__TimePeriod__beginPosition_btn.Name = "extent__TimePeriod__beginPosition_btn";
             this.extent__TimePeriod__beginPosition_btn.Size = new System.Drawing.Size(16, 16);
-            this.extent__TimePeriod__beginPosition_btn.TabIndex = 39;
+            this.extent__TimePeriod__beginPosition_btn.TabIndex = 1;
             this.extent__TimePeriod__beginPosition_btn.UseVisualStyleBackColor = false;
             this.extent__TimePeriod__beginPosition_btn.Click += new System.EventHandler(this.ClearTextbox_Click);
             // 
@@ -260,8 +263,8 @@
             this.extent__TimePeriod__beginPosition_dtP.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.extent__TimePeriod__beginPosition_dtP.Location = new System.Drawing.Point(154, 32);
             this.extent__TimePeriod__beginPosition_dtP.Name = "extent__TimePeriod__beginPosition_dtP";
-            this.extent__TimePeriod__beginPosition_dtP.Size = new System.Drawing.Size(18, 21);
-            this.extent__TimePeriod__beginPosition_dtP.TabIndex = 38;
+            this.extent__TimePeriod__beginPosition_dtP.Size = new System.Drawing.Size(16, 21);
+            this.extent__TimePeriod__beginPosition_dtP.TabIndex = 2;
             this.toolTip1.SetToolTip(this.extent__TimePeriod__beginPosition_dtP, "Choose an Exact Date");
             this.extent__TimePeriod__beginPosition_dtP.ValueChanged += new System.EventHandler(this.dtP_ValueChanged);
             // 
@@ -280,15 +283,15 @@
             this.extent__TimePeriod__beginPosition.Name = "extent__TimePeriod__beginPosition";
             this.extent__TimePeriod__beginPosition.ReadOnly = true;
             this.extent__TimePeriod__beginPosition.Size = new System.Drawing.Size(80, 21);
-            this.extent__TimePeriod__beginPosition.TabIndex = 8;
+            this.extent__TimePeriod__beginPosition.TabIndex = 1;
+            this.extent__TimePeriod__beginPosition.TabStop = false;
             this.toolTip1.SetToolTip(this.extent__TimePeriod__beginPosition, "Choose an Exact Date or Indeterminate Value");
             // 
             // timeInstant
             // 
-            this.timeInstant.BackColor = System.Drawing.Color.White;
+            this.timeInstant.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.timeInstant.Controls.Add(this.label5);
             this.timeInstant.Controls.Add(this.extent__TimeInstant__description);
-            this.timeInstant.Controls.Add(this.panel2);
             this.timeInstant.Controls.Add(this.extent__TimeInstant__timePosition_btn);
             this.timeInstant.Controls.Add(this.extent__TimeInstant__timePosition_cbo);
             this.timeInstant.Controls.Add(this.extent__TimeInstant__timePosition_dtP);
@@ -317,18 +320,13 @@
             this.extent__TimeInstant__description.Location = new System.Drawing.Point(68, 6);
             this.extent__TimeInstant__description.Name = "extent__TimeInstant__description";
             this.extent__TimeInstant__description.Size = new System.Drawing.Size(197, 21);
-            this.extent__TimeInstant__description.TabIndex = 44;
-            // 
-            // panel2
-            // 
-            this.panel2.Location = new System.Drawing.Point(6, 122);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(326, 76);
-            this.panel2.TabIndex = 2;
+            this.extent__TimeInstant__description.TabIndex = 0;
+            this.extent__TimeInstant__description.Tag = "";
             // 
             // extent__TimeInstant__timePosition_btn
             // 
             this.extent__TimeInstant__timePosition_btn.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.extent__TimeInstant__timePosition_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.extent__TimeInstant__timePosition_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonFace;
             this.extent__TimeInstant__timePosition_btn.FlatAppearance.BorderSize = 0;
             this.extent__TimeInstant__timePosition_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -336,7 +334,7 @@
             this.extent__TimeInstant__timePosition_btn.Location = new System.Drawing.Point(131, 34);
             this.extent__TimeInstant__timePosition_btn.Name = "extent__TimeInstant__timePosition_btn";
             this.extent__TimeInstant__timePosition_btn.Size = new System.Drawing.Size(16, 16);
-            this.extent__TimeInstant__timePosition_btn.TabIndex = 39;
+            this.extent__TimeInstant__timePosition_btn.TabIndex = 1;
             this.extent__TimeInstant__timePosition_btn.UseVisualStyleBackColor = false;
             this.extent__TimeInstant__timePosition_btn.Click += new System.EventHandler(this.ClearTextbox_Click);
             // 
@@ -353,7 +351,7 @@
             this.extent__TimeInstant__timePosition_cbo.Location = new System.Drawing.Point(178, 32);
             this.extent__TimeInstant__timePosition_cbo.Name = "extent__TimeInstant__timePosition_cbo";
             this.extent__TimeInstant__timePosition_cbo.Size = new System.Drawing.Size(87, 21);
-            this.extent__TimeInstant__timePosition_cbo.TabIndex = 0;
+            this.extent__TimeInstant__timePosition_cbo.TabIndex = 3;
             this.toolTip1.SetToolTip(this.extent__TimeInstant__timePosition_cbo, "Choose an Indeterminate Date");
             this.extent__TimeInstant__timePosition_cbo.SelectedIndexChanged += new System.EventHandler(this.cbo_ValueChanged);
             // 
@@ -363,8 +361,8 @@
             this.extent__TimeInstant__timePosition_dtP.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.extent__TimeInstant__timePosition_dtP.Location = new System.Drawing.Point(154, 32);
             this.extent__TimeInstant__timePosition_dtP.Name = "extent__TimeInstant__timePosition_dtP";
-            this.extent__TimeInstant__timePosition_dtP.Size = new System.Drawing.Size(18, 21);
-            this.extent__TimeInstant__timePosition_dtP.TabIndex = 38;
+            this.extent__TimeInstant__timePosition_dtP.Size = new System.Drawing.Size(16, 21);
+            this.extent__TimeInstant__timePosition_dtP.TabIndex = 2;
             this.toolTip1.SetToolTip(this.extent__TimeInstant__timePosition_dtP, "Choose an Exact Date");
             this.extent__TimeInstant__timePosition_dtP.ValueChanged += new System.EventHandler(this.dtP_ValueChanged);
             // 
@@ -384,7 +382,8 @@
             this.extent__TimeInstant__timePosition.Name = "extent__TimeInstant__timePosition";
             this.extent__TimeInstant__timePosition.ReadOnly = true;
             this.extent__TimeInstant__timePosition.Size = new System.Drawing.Size(80, 21);
-            this.extent__TimeInstant__timePosition.TabIndex = 8;
+            this.extent__TimeInstant__timePosition.TabIndex = 1;
+            this.extent__TimeInstant__timePosition.TabStop = false;
             this.toolTip1.SetToolTip(this.extent__TimeInstant__timePosition, "Choose an Exact Date or Indeterminate Value");
             // 
             // uc_extentTemporal
@@ -422,7 +421,6 @@
         private System.Windows.Forms.TextBox extent__TimePeriod__endPosition;
         private System.Windows.Forms.ComboBox extent__TimePeriod__endPosition_cbo;
         private System.Windows.Forms.Label tempTimePeriod_Desc_lbl;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox extent__TimeInstant__description;
         private System.Windows.Forms.Button extent__TimeInstant__timePosition_btn;

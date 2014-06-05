@@ -33,7 +33,6 @@
             this.positionName = new System.Windows.Forms.TextBox();
             this.organisationName = new System.Windows.Forms.TextBox();
             this.contactInfo__CI_Contact__phone__CI_Telephone__voice = new System.Windows.Forms.TextBox();
-            this.lblCI_RpListCount = new System.Windows.Forms.Label();
             this.role = new System.Windows.Forms.ComboBox();
             this.individualName_lbl = new System.Windows.Forms.Label();
             this.organisationName_lbl = new System.Windows.Forms.Label();
@@ -80,6 +79,7 @@
             this.rp_expander_btn = new System.Windows.Forms.Button();
             this.uc_ResponsibleParty_lbl = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.contact_list = new System.Windows.Forms.Label();
             this.responsible_party_d = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -88,6 +88,7 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_RP)).BeginInit();
             this.panel3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // positionName
@@ -97,7 +98,7 @@
             this.positionName.Location = new System.Drawing.Point(85, 63);
             this.positionName.Name = "positionName";
             this.positionName.Size = new System.Drawing.Size(178, 21);
-            this.positionName.TabIndex = 4;
+            this.positionName.TabIndex = 7;
             this.positionName.Tag = "required1";
             this.positionName.Validating += new System.ComponentModel.CancelEventHandler(this.responsibleParty_Validating);
             // 
@@ -108,7 +109,7 @@
             this.organisationName.Location = new System.Drawing.Point(85, 37);
             this.organisationName.Name = "organisationName";
             this.organisationName.Size = new System.Drawing.Size(178, 21);
-            this.organisationName.TabIndex = 3;
+            this.organisationName.TabIndex = 6;
             this.organisationName.Tag = "required1";
             this.organisationName.Validating += new System.ComponentModel.CancelEventHandler(this.responsibleParty_Validating);
             // 
@@ -119,15 +120,7 @@
             this.contactInfo__CI_Contact__phone__CI_Telephone__voice.Location = new System.Drawing.Point(101, 108);
             this.contactInfo__CI_Contact__phone__CI_Telephone__voice.Name = "contactInfo__CI_Contact__phone__CI_Telephone__voice";
             this.contactInfo__CI_Contact__phone__CI_Telephone__voice.Size = new System.Drawing.Size(186, 21);
-            this.contactInfo__CI_Contact__phone__CI_Telephone__voice.TabIndex = 5;
-            // 
-            // lblCI_RpListCount
-            // 
-            this.lblCI_RpListCount.AutoSize = true;
-            this.lblCI_RpListCount.Location = new System.Drawing.Point(38, 459);
-            this.lblCI_RpListCount.Name = "lblCI_RpListCount";
-            this.lblCI_RpListCount.Size = new System.Drawing.Size(0, 13);
-            this.lblCI_RpListCount.TabIndex = 6;
+            this.contactInfo__CI_Contact__phone__CI_Telephone__voice.TabIndex = 6;
             // 
             // role
             // 
@@ -151,8 +144,9 @@
             this.role.Location = new System.Drawing.Point(85, 5);
             this.role.Name = "role";
             this.role.Size = new System.Drawing.Size(178, 21);
-            this.role.TabIndex = 1;
+            this.role.TabIndex = 4;
             this.role.Tag = "required";
+            this.role.TextChanged += new System.EventHandler(this.responsibleParty_TextChangedValidation);
             this.role.Validating += new System.ComponentModel.CancelEventHandler(this.responsibleParty_Validating);
             // 
             // individualName_lbl
@@ -217,7 +211,7 @@
             this.contactInfo__CI_Contact__phone__CI_Telephone__facsimile.Location = new System.Drawing.Point(101, 134);
             this.contactInfo__CI_Contact__phone__CI_Telephone__facsimile.Name = "contactInfo__CI_Contact__phone__CI_Telephone__facsimile";
             this.contactInfo__CI_Contact__phone__CI_Telephone__facsimile.Size = new System.Drawing.Size(186, 21);
-            this.contactInfo__CI_Contact__phone__CI_Telephone__facsimile.TabIndex = 6;
+            this.contactInfo__CI_Contact__phone__CI_Telephone__facsimile.TabIndex = 7;
             // 
             // individualName
             // 
@@ -226,7 +220,7 @@
             this.individualName.Location = new System.Drawing.Point(85, 13);
             this.individualName.Name = "individualName";
             this.individualName.Size = new System.Drawing.Size(178, 21);
-            this.individualName.TabIndex = 2;
+            this.individualName.TabIndex = 5;
             this.individualName.Tag = "required1";
             this.individualName.Validating += new System.ComponentModel.CancelEventHandler(this.responsibleParty_Validating);
             // 
@@ -248,7 +242,7 @@
             this.contactInfo__CI_Contact__address__CI_Address__deliveryPoint.Location = new System.Drawing.Point(101, 28);
             this.contactInfo__CI_Contact__address__CI_Address__deliveryPoint.Name = "contactInfo__CI_Contact__address__CI_Address__deliveryPoint";
             this.contactInfo__CI_Contact__address__CI_Address__deliveryPoint.Size = new System.Drawing.Size(315, 21);
-            this.contactInfo__CI_Contact__address__CI_Address__deliveryPoint.TabIndex = 7;
+            this.contactInfo__CI_Contact__address__CI_Address__deliveryPoint.TabIndex = 1;
             // 
             // contactInfo__CI_Contact__address__CI_Address__city_lbl
             // 
@@ -268,7 +262,7 @@
             this.contactInfo__CI_Contact__address__CI_Address__city.Location = new System.Drawing.Point(101, 54);
             this.contactInfo__CI_Contact__address__CI_Address__city.Name = "contactInfo__CI_Contact__address__CI_Address__city";
             this.contactInfo__CI_Contact__address__CI_Address__city.Size = new System.Drawing.Size(100, 21);
-            this.contactInfo__CI_Contact__address__CI_Address__city.TabIndex = 8;
+            this.contactInfo__CI_Contact__address__CI_Address__city.TabIndex = 2;
             // 
             // contactInfo__CI_Contact__address__CI_Address__administrativeArea_lbl
             // 
@@ -287,7 +281,7 @@
             this.contactInfo__CI_Contact__address__CI_Address__administrativeArea.Location = new System.Drawing.Point(285, 54);
             this.contactInfo__CI_Contact__address__CI_Address__administrativeArea.Name = "contactInfo__CI_Contact__address__CI_Address__administrativeArea";
             this.contactInfo__CI_Contact__address__CI_Address__administrativeArea.Size = new System.Drawing.Size(37, 21);
-            this.contactInfo__CI_Contact__address__CI_Address__administrativeArea.TabIndex = 9;
+            this.contactInfo__CI_Contact__address__CI_Address__administrativeArea.TabIndex = 3;
             // 
             // contactInfo__CI_Contact__address__CI_Address__postalCode_lbl
             // 
@@ -306,7 +300,7 @@
             this.contactInfo__CI_Contact__address__CI_Address__postalCode.Location = new System.Drawing.Point(351, 54);
             this.contactInfo__CI_Contact__address__CI_Address__postalCode.Name = "contactInfo__CI_Contact__address__CI_Address__postalCode";
             this.contactInfo__CI_Contact__address__CI_Address__postalCode.Size = new System.Drawing.Size(65, 21);
-            this.contactInfo__CI_Contact__address__CI_Address__postalCode.TabIndex = 10;
+            this.contactInfo__CI_Contact__address__CI_Address__postalCode.TabIndex = 4;
             // 
             // contactInfo__CI_Contact__address__CI_Address__county_lbl
             // 
@@ -326,7 +320,7 @@
             this.contactInfo__CI_Contact__address__CI_Address__county.Location = new System.Drawing.Point(101, 80);
             this.contactInfo__CI_Contact__address__CI_Address__county.Name = "contactInfo__CI_Contact__address__CI_Address__county";
             this.contactInfo__CI_Contact__address__CI_Address__county.Size = new System.Drawing.Size(150, 21);
-            this.contactInfo__CI_Contact__address__CI_Address__county.TabIndex = 11;
+            this.contactInfo__CI_Contact__address__CI_Address__county.TabIndex = 5;
             // 
             // contactInfo__CI_Contact__address__CI_Address__electronicMailAddress_lbl
             // 
@@ -346,8 +340,9 @@
             this.contactInfo__CI_Contact__address__CI_Address__electronicMailAddress.Location = new System.Drawing.Point(101, 160);
             this.contactInfo__CI_Contact__address__CI_Address__electronicMailAddress.Name = "contactInfo__CI_Contact__address__CI_Address__electronicMailAddress";
             this.contactInfo__CI_Contact__address__CI_Address__electronicMailAddress.Size = new System.Drawing.Size(186, 21);
-            this.contactInfo__CI_Contact__address__CI_Address__electronicMailAddress.TabIndex = 12;
-            this.contactInfo__CI_Contact__address__CI_Address__electronicMailAddress.Tag = "";
+            this.contactInfo__CI_Contact__address__CI_Address__electronicMailAddress.TabIndex = 8;
+            this.contactInfo__CI_Contact__address__CI_Address__electronicMailAddress.Tag = "required";
+            this.contactInfo__CI_Contact__address__CI_Address__electronicMailAddress.TextChanged += new System.EventHandler(this.responsibleParty_TextChangedValidation);
             // 
             // contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage_lbl
             // 
@@ -367,7 +362,7 @@
             this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage.Location = new System.Drawing.Point(101, 186);
             this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage.Name = "contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage";
             this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage.Size = new System.Drawing.Size(186, 21);
-            this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage.TabIndex = 13;
+            this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage.TabIndex = 9;
             // 
             // contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode_lbl
             // 
@@ -387,7 +382,7 @@
             this.contactInfo__CI_Contact__hoursOfService.Location = new System.Drawing.Point(101, 239);
             this.contactInfo__CI_Contact__hoursOfService.Name = "contactInfo__CI_Contact__hoursOfService";
             this.contactInfo__CI_Contact__hoursOfService.Size = new System.Drawing.Size(186, 21);
-            this.contactInfo__CI_Contact__hoursOfService.TabIndex = 14;
+            this.contactInfo__CI_Contact__hoursOfService.TabIndex = 11;
             // 
             // contactInfo__CI_Contact__hoursOfService_lbl
             // 
@@ -419,7 +414,7 @@
             this.contactInfo__CI_Contact__contactInstructions.Multiline = true;
             this.contactInfo__CI_Contact__contactInstructions.Name = "contactInfo__CI_Contact__contactInstructions";
             this.contactInfo__CI_Contact__contactInstructions.Size = new System.Drawing.Size(315, 53);
-            this.contactInfo__CI_Contact__contactInstructions.TabIndex = 16;
+            this.contactInfo__CI_Contact__contactInstructions.TabIndex = 12;
             // 
             // roleCode_lbl
             // 
@@ -462,7 +457,7 @@
             this.groupBox1.Location = new System.Drawing.Point(3, 135);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(422, 22);
-            this.groupBox1.TabIndex = 36;
+            this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             // 
             // CI_ContactExpand_btn
@@ -474,7 +469,7 @@
             this.CI_ContactExpand_btn.Location = new System.Drawing.Point(0, 0);
             this.CI_ContactExpand_btn.Name = "CI_ContactExpand_btn";
             this.CI_ContactExpand_btn.Size = new System.Drawing.Size(22, 22);
-            this.CI_ContactExpand_btn.TabIndex = 36;
+            this.CI_ContactExpand_btn.TabIndex = 0;
             this.CI_ContactExpand_btn.Text = "+";
             this.CI_ContactExpand_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.CI_ContactExpand_btn.UseVisualStyleBackColor = false;
@@ -495,7 +490,7 @@
             this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode.Location = new System.Drawing.Point(101, 212);
             this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode.Name = "contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode";
             this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode.Size = new System.Drawing.Size(186, 21);
-            this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode.TabIndex = 35;
+            this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode.TabIndex = 10;
             // 
             // pagerLbl
             // 
@@ -505,7 +500,7 @@
             this.pagerLbl.Location = new System.Drawing.Point(104, 6);
             this.pagerLbl.Name = "pagerLbl";
             this.pagerLbl.Size = new System.Drawing.Size(41, 16);
-            this.pagerLbl.TabIndex = 37;
+            this.pagerLbl.TabIndex = 0;
             this.pagerLbl.Text = "0 of 0";
             this.pagerLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -518,7 +513,8 @@
             this.pagerDownBtn.Location = new System.Drawing.Point(75, 3);
             this.pagerDownBtn.Name = "pagerDownBtn";
             this.pagerDownBtn.Size = new System.Drawing.Size(23, 23);
-            this.pagerDownBtn.TabIndex = 38;
+            this.pagerDownBtn.TabIndex = 0;
+            this.pagerDownBtn.TabStop = false;
             this.pagerDownBtn.Text = "<";
             this.pagerDownBtn.UseVisualStyleBackColor = false;
             this.pagerDownBtn.Visible = false;
@@ -533,7 +529,8 @@
             this.pagerUpBtn.Location = new System.Drawing.Point(151, 3);
             this.pagerUpBtn.Name = "pagerUpBtn";
             this.pagerUpBtn.Size = new System.Drawing.Size(23, 23);
-            this.pagerUpBtn.TabIndex = 38;
+            this.pagerUpBtn.TabIndex = 0;
+            this.pagerUpBtn.TabStop = false;
             this.pagerUpBtn.Text = ">";
             this.pagerUpBtn.UseVisualStyleBackColor = false;
             this.pagerUpBtn.Visible = false;
@@ -551,7 +548,8 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(201, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(235, 30);
-            this.flowLayoutPanel1.TabIndex = 40;
+            this.flowLayoutPanel1.TabIndex = 0;
+            this.flowLayoutPanel1.TabStop = true;
             // 
             // deleteRP_Btn
             // 
@@ -564,7 +562,8 @@
             this.deleteRP_Btn.Location = new System.Drawing.Point(209, 3);
             this.deleteRP_Btn.Name = "deleteRP_Btn";
             this.deleteRP_Btn.Size = new System.Drawing.Size(23, 23);
-            this.deleteRP_Btn.TabIndex = 40;
+            this.deleteRP_Btn.TabIndex = 0;
+            this.deleteRP_Btn.TabStop = false;
             this.deleteRP_Btn.Tag = "required";
             this.deleteRP_Btn.UseVisualStyleBackColor = true;
             this.deleteRP_Btn.Click += new System.EventHandler(this.deleteRP_Btn_Click);
@@ -581,20 +580,21 @@
             this.addRP_Btn.Location = new System.Drawing.Point(180, 3);
             this.addRP_Btn.Name = "addRP_Btn";
             this.addRP_Btn.Size = new System.Drawing.Size(23, 23);
-            this.addRP_Btn.TabIndex = 39;
+            this.addRP_Btn.TabIndex = 0;
             this.addRP_Btn.Tag = "required";
             this.addRP_Btn.UseVisualStyleBackColor = true;
             this.addRP_Btn.Click += new System.EventHandler(this.addRP_Btn_Click);
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.DropDownWidth = 600;
             this.comboBox1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(311, 33);
+            this.comboBox1.Location = new System.Drawing.Point(16, 29);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(112, 21);
-            this.comboBox1.TabIndex = 41;
+            this.comboBox1.Size = new System.Drawing.Size(19, 21);
+            this.comboBox1.TabIndex = 0;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
             // 
             // panel1
@@ -610,7 +610,7 @@
             this.panel1.Location = new System.Drawing.Point(3, 39);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(283, 94);
-            this.panel1.TabIndex = 42;
+            this.panel1.TabIndex = 4;
             // 
             // panel2
             // 
@@ -620,7 +620,7 @@
             this.panel2.Location = new System.Drawing.Point(3, 5);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(283, 33);
-            this.panel2.TabIndex = 43;
+            this.panel2.TabIndex = 4;
             // 
             // dcatProgramCode_lbl
             // 
@@ -642,7 +642,7 @@
             this.dcatProgramCode.Location = new System.Drawing.Point(309, 92);
             this.dcatProgramCode.Name = "dcatProgramCode";
             this.dcatProgramCode.Size = new System.Drawing.Size(112, 21);
-            this.dcatProgramCode.TabIndex = 36;
+            this.dcatProgramCode.TabIndex = 3;
             this.dcatProgramCode.Tag = "";
             // 
             // errorProvider_RP
@@ -659,7 +659,7 @@
             this.rp_expander_btn.Margin = new System.Windows.Forms.Padding(0);
             this.rp_expander_btn.Name = "rp_expander_btn";
             this.rp_expander_btn.Size = new System.Drawing.Size(22, 22);
-            this.rp_expander_btn.TabIndex = 44;
+            this.rp_expander_btn.TabIndex = 1;
             this.rp_expander_btn.Text = "+";
             this.rp_expander_btn.UseVisualStyleBackColor = true;
             this.rp_expander_btn.Click += new System.EventHandler(this.Expander_Click);
@@ -676,27 +676,36 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.contact_list);
-            this.panel3.Controls.Add(this.responsible_party_d);
+            this.panel3.Controls.Add(this.groupBox2);
             this.panel3.Controls.Add(this.dcatProgramCode_lbl);
             this.panel3.Controls.Add(this.panel2);
             this.panel3.Controls.Add(this.dcatProgramCode);
             this.panel3.Controls.Add(this.groupBox1);
-            this.panel3.Controls.Add(this.comboBox1);
             this.panel3.Controls.Add(this.panel1);
             this.panel3.Location = new System.Drawing.Point(2, 36);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(435, 464);
-            this.panel3.TabIndex = 46;
+            this.panel3.TabIndex = 2;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.contact_list);
+            this.groupBox2.Controls.Add(this.comboBox1);
+            this.groupBox2.Controls.Add(this.responsible_party_d);
+            this.groupBox2.Location = new System.Drawing.Point(317, 7);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(94, 60);
+            this.groupBox2.TabIndex = 2;
+            this.groupBox2.TabStop = false;
             // 
             // contact_list
             // 
             this.contact_list.AutoSize = true;
             this.contact_list.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.contact_list.Location = new System.Drawing.Point(313, 13);
+            this.contact_list.Location = new System.Drawing.Point(10, 11);
             this.contact_list.Name = "contact_list";
             this.contact_list.Size = new System.Drawing.Size(77, 13);
-            this.contact_list.TabIndex = 45;
+            this.contact_list.TabIndex = 2;
             this.contact_list.Text = "Select Contact";
             this.contact_list.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
@@ -704,10 +713,10 @@
             // 
             this.responsible_party_d.BackColor = System.Drawing.SystemColors.Control;
             this.responsible_party_d.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.responsible_party_d.Location = new System.Drawing.Point(393, 9);
+            this.responsible_party_d.Location = new System.Drawing.Point(50, 29);
             this.responsible_party_d.Name = "responsible_party_d";
             this.responsible_party_d.Size = new System.Drawing.Size(28, 22);
-            this.responsible_party_d.TabIndex = 44;
+            this.responsible_party_d.TabIndex = 1;
             this.responsible_party_d.Text = "D";
             this.responsible_party_d.UseVisualStyleBackColor = false;
             this.responsible_party_d.Click += new System.EventHandler(this.responsible_party_d_Click);
@@ -721,7 +730,6 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.uc_ResponsibleParty_lbl);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.lblCI_RpListCount);
             this.Name = "uc_ResponsibleParty";
             this.Size = new System.Drawing.Size(439, 500);
             this.Load += new System.EventHandler(this.uc_ResponsibleParty_Load);
@@ -737,6 +745,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_RP)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -747,7 +757,6 @@
         private System.Windows.Forms.TextBox positionName;
         private System.Windows.Forms.TextBox organisationName;
         private System.Windows.Forms.TextBox contactInfo__CI_Contact__phone__CI_Telephone__voice;
-        private System.Windows.Forms.Label lblCI_RpListCount;
         private System.Windows.Forms.ComboBox role;
         private System.Windows.Forms.Label individualName_lbl;
         private System.Windows.Forms.Label organisationName_lbl;
@@ -796,5 +805,6 @@
         private System.Windows.Forms.ComboBox dcatProgramCode;
         private System.Windows.Forms.Button responsible_party_d;
         private System.Windows.Forms.Label contact_list;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }
