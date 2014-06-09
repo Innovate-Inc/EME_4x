@@ -249,7 +249,7 @@ namespace EmeLibrary
                     string c = (frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null) != null) ?
                         frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null).ToString().Trim() : "";
                     ctrl.Tag = validateVal;
-                    boxCbo.BeginUpdate();
+                    //boxCbo.BeginUpdate();
                     boxCbo.SelectedIndex = -1;
                     boxCbo.Text = ""; //clears free existing free text
 
@@ -304,7 +304,7 @@ namespace EmeLibrary
                         }
 
                     }
-                    boxCbo.EndUpdate();
+                    //boxCbo.EndUpdate();
 
 
                     //boxCbo.Focus();     //Need to figure out why it need focus to save
@@ -426,7 +426,7 @@ namespace EmeLibrary
                 if (ctrl.GetType() == typeof(ComboBox))
                 {
                     ComboBox cbx = (ComboBox)ctrl;
-                    for (int i = 0; i < cbx.Items.Count-1; i++)
+                    for (int i = 0; i < cbx.Items.Count; i++)
                     {
                         DataRowView dr = (DataRowView)cbx.Items[i];
                         bool d = (bool)dr["default"];

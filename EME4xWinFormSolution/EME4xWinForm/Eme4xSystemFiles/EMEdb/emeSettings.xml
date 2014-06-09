@@ -138,7 +138,7 @@
 		<Iso19115_2>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='citation']/*[local-name()='CI_Citation']/*[local-name()='date']/*[local-name()='CI_Date']/*[local-name()='dateType'][*[local-name()='CI_DateTypeCode']='creation']/../..//*[local-name()='date']</Iso19115_2>
 		<Iso19115_1/>
 		<Csdgm/>
-		<DCATrequired/>
+		<DCATrequired>required1</DCATrequired>
 		<EPArequired>required1</EPArequired>
 	</emeControl>
 	<emeControl>
@@ -146,7 +146,7 @@
 		<Iso19115_2>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='citation']/*[local-name()='CI_Citation']/*[local-name()='date']/*[local-name()='CI_Date']/*[local-name()='dateType'][*[local-name()='CI_DateTypeCode']='publication']/../..//*[local-name()='date']</Iso19115_2>
 		<Iso19115_1/>
 		<Csdgm/>
-		<DCATrequired>required</DCATrequired>
+		<DCATrequired>required1</DCATrequired>
 		<EPArequired>required1</EPArequired>
 	</emeControl>
 	<emeControl>
@@ -154,7 +154,7 @@
 		<Iso19115_2>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='citation']/*[local-name()='CI_Citation']/*[local-name()='date']/*[local-name()='CI_Date']/*[local-name()='dateType'][*[local-name()='CI_DateTypeCode']='revision']/../..//*[local-name()='date']</Iso19115_2>
 		<Iso19115_1/>
 		<Csdgm/>
-		<DCATrequired/>
+		<DCATrequired>required1</DCATrequired>
 		<EPArequired>required1</EPArequired>
 	</emeControl>  
 	<emeControl>
@@ -202,7 +202,7 @@
 		<Iso19115_2>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='topicCategory']</Iso19115_2>
 		<Iso19115_1/>
 		<Csdgm/>
-		<DCATrequired>required</DCATrequired>
+		<DCATrequired/>		
 		<EPArequired>required</EPArequired>
 		<sourceTable>KeywordsISO</sourceTable>
 		<sourceField>themekey</sourceField>
@@ -312,9 +312,7 @@
 		<Iso19115_1/>
 		<Csdgm/>
 		<DCATrequired/>
-		<EPArequired>required</EPArequired>
-		<sourceTable>BoundingBox</sourceTable>
-		<sourceField>Area</sourceField>
+		<EPArequired>required</EPArequired>		
 	</emeControl>
 	<emeControl>
 		<controlName>idInfo_extent_geographicBoundingBox_westLongDD</controlName>

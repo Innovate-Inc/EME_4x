@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            EmeLibrary.temporalElement__EX_TemporalExtent temporalElement__EX_TemporalExtent2 = new EmeLibrary.temporalElement__EX_TemporalExtent();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmeLT));
+            EmeLibrary.temporalElement__EX_TemporalExtent temporalElement__EX_TemporalExtent1 = new EmeLibrary.temporalElement__EX_TemporalExtent();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
@@ -58,7 +58,7 @@
             this.hierarchyLevel_MD_ScopeCode = new System.Windows.Forms.ComboBox();
             this.dateStamp = new System.Windows.Forms.TextBox();
             this.fileIdentifier = new System.Windows.Forms.TextBox();
-            this.idInfo_extent_description = new System.Windows.Forms.ComboBox();
+            this.idInfo_extent_descriptionCB = new System.Windows.Forms.ComboBox();
             this.tooltip1 = new System.Windows.Forms.ToolTip(this.components);
             this.dateStamp_dtP = new System.Windows.Forms.DateTimePicker();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -73,6 +73,7 @@
             this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
             this.validationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripCboValidationType = new System.Windows.Forms.ToolStripComboBox();
+            this.refreshFromDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.tabPage5 = new System.Windows.Forms.TabPage();
@@ -132,6 +133,7 @@
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.boundingBoxGroupBox = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.idInfo_extent_description = new System.Windows.Forms.TextBox();
             this.idInfo_extent_description_lbl = new System.Windows.Forms.Label();
             this.idInfo_extent_description_d = new System.Windows.Forms.Button();
             this.idInfo_extent_geographicBoundingBox_westLongDD_lbl = new System.Windows.Forms.Label();
@@ -143,10 +145,9 @@
             this.idInfo_extent_geographicBoundingBox_northLatDD = new System.Windows.Forms.TextBox();
             this.idInfo_extent_geographicBoundingBox_eastLongDD = new System.Windows.Forms.TextBox();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.idInfo_resourceMaintenance_lbl = new System.Windows.Forms.Label();
             this.idInfo_resourceMaintenance = new System.Windows.Forms.ComboBox();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -219,7 +220,7 @@
             this.boundingBoxGroupBox.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox9.SuspendLayout();
-            this.groupBox7.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -337,9 +338,9 @@
             this.dates_for_resources_pnl.Controls.Add(this.idInfo_citation_date_creation_lbl);
             this.dates_for_resources_pnl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.errorProvider1.SetIconAlignment(this.dates_for_resources_pnl, System.Windows.Forms.ErrorIconAlignment.TopRight);
-            this.dates_for_resources_pnl.Location = new System.Drawing.Point(8, 18);
+            this.dates_for_resources_pnl.Location = new System.Drawing.Point(12, 204);
             this.dates_for_resources_pnl.Name = "dates_for_resources_pnl";
-            this.dates_for_resources_pnl.Size = new System.Drawing.Size(200, 100);
+            this.dates_for_resources_pnl.Size = new System.Drawing.Size(204, 100);
             this.dates_for_resources_pnl.TabIndex = 7;
             this.dates_for_resources_pnl.TabStop = false;
             this.dates_for_resources_pnl.Tag = "";
@@ -347,7 +348,7 @@
             // 
             // idInfo_citation_date_revision_dtP
             // 
-            this.idInfo_citation_date_revision_dtP.Location = new System.Drawing.Point(174, 65);
+            this.idInfo_citation_date_revision_dtP.Location = new System.Drawing.Point(172, 65);
             this.idInfo_citation_date_revision_dtP.Name = "idInfo_citation_date_revision_dtP";
             this.idInfo_citation_date_revision_dtP.Size = new System.Drawing.Size(16, 21);
             this.idInfo_citation_date_revision_dtP.TabIndex = 13;
@@ -387,7 +388,7 @@
             // idInfo_citation_date_publication_dtP
             // 
             this.idInfo_citation_date_publication_dtP.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.idInfo_citation_date_publication_dtP.Location = new System.Drawing.Point(174, 41);
+            this.idInfo_citation_date_publication_dtP.Location = new System.Drawing.Point(172, 41);
             this.idInfo_citation_date_publication_dtP.Name = "idInfo_citation_date_publication_dtP";
             this.idInfo_citation_date_publication_dtP.Size = new System.Drawing.Size(16, 21);
             this.idInfo_citation_date_publication_dtP.TabIndex = 11;
@@ -426,7 +427,7 @@
             // 
             this.idInfo_citation_date_creation_dtP.CustomFormat = "";
             this.idInfo_citation_date_creation_dtP.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.idInfo_citation_date_creation_dtP.Location = new System.Drawing.Point(174, 18);
+            this.idInfo_citation_date_creation_dtP.Location = new System.Drawing.Point(172, 18);
             this.idInfo_citation_date_creation_dtP.Name = "idInfo_citation_date_creation_dtP";
             this.idInfo_citation_date_creation_dtP.Size = new System.Drawing.Size(16, 21);
             this.idInfo_citation_date_creation_dtP.TabIndex = 9;
@@ -447,7 +448,7 @@
             // 
             this.idInfo_citation_date_publication.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.idInfo_citation_date_publication.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.errorProvider1.SetIconPadding(this.idInfo_citation_date_publication, 25);
+            this.errorProvider1.SetIconPadding(this.idInfo_citation_date_publication, 20);
             this.idInfo_citation_date_publication.Location = new System.Drawing.Point(68, 42);
             this.idInfo_citation_date_publication.Name = "idInfo_citation_date_publication";
             this.idInfo_citation_date_publication.ReadOnly = true;
@@ -545,17 +546,18 @@
             this.fileIdentifier.Size = new System.Drawing.Size(233, 21);
             this.fileIdentifier.TabIndex = 3;
             // 
-            // idInfo_extent_description
+            // idInfo_extent_descriptionCB
             // 
-            this.idInfo_extent_description.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idInfo_extent_description.FormattingEnabled = true;
-            this.idInfo_extent_description.Location = new System.Drawing.Point(69, 7);
-            this.idInfo_extent_description.Name = "idInfo_extent_description";
-            this.idInfo_extent_description.Size = new System.Drawing.Size(258, 21);
-            this.idInfo_extent_description.TabIndex = 0;
-            this.idInfo_extent_description.SelectedIndexChanged += new System.EventHandler(this.idInfo_extent_description_SelectedValueChanged);
-            this.idInfo_extent_description.TextChanged += new System.EventHandler(this.cntrl_ValidateTextChanged);
-            this.idInfo_extent_description.Validating += new System.ComponentModel.CancelEventHandler(this.cntrl_Validating);
+            this.idInfo_extent_descriptionCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.idInfo_extent_descriptionCB.DropDownWidth = 100;
+            this.idInfo_extent_descriptionCB.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idInfo_extent_descriptionCB.FormattingEnabled = true;
+            this.idInfo_extent_descriptionCB.Location = new System.Drawing.Point(322, 7);
+            this.idInfo_extent_descriptionCB.Name = "idInfo_extent_descriptionCB";
+            this.idInfo_extent_descriptionCB.Size = new System.Drawing.Size(16, 21);
+            this.idInfo_extent_descriptionCB.TabIndex = 0;
+            this.tooltip1.SetToolTip(this.idInfo_extent_descriptionCB, "Quick pick from a list");
+            this.idInfo_extent_descriptionCB.SelectedIndexChanged += new System.EventHandler(this.idInfo_extent_descriptionCB_SelectedValueChanged);
             // 
             // tooltip1
             // 
@@ -631,7 +633,8 @@
             this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.databaseToolStripMenuItem,
             this.defaultOutputFormatToolStripMenuItem,
-            this.validationToolStripMenuItem});
+            this.validationToolStripMenuItem,
+            this.refreshFromDatabaseToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
             this.toolsToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.toolsToolStripMenuItem.Text = "&Tools";
@@ -639,7 +642,7 @@
             // databaseToolStripMenuItem
             // 
             this.databaseToolStripMenuItem.Name = "databaseToolStripMenuItem";
-            this.databaseToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.databaseToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.databaseToolStripMenuItem.Text = "Open Database";
             this.databaseToolStripMenuItem.Click += new System.EventHandler(this.databaseToolStripMenuItem_Click);
             // 
@@ -648,7 +651,7 @@
             this.defaultOutputFormatToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripComboBox1});
             this.defaultOutputFormatToolStripMenuItem.Name = "defaultOutputFormatToolStripMenuItem";
-            this.defaultOutputFormatToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.defaultOutputFormatToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.defaultOutputFormatToolStripMenuItem.Text = "Default Output Format";
             // 
             // toolStripComboBox1
@@ -665,7 +668,7 @@
             this.validationToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripCboValidationType});
             this.validationToolStripMenuItem.Name = "validationToolStripMenuItem";
-            this.validationToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.validationToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.validationToolStripMenuItem.Text = "Validation Mode";
             // 
             // toolStripCboValidationType
@@ -676,6 +679,13 @@
             this.toolStripCboValidationType.Name = "toolStripCboValidationType";
             this.toolStripCboValidationType.Size = new System.Drawing.Size(150, 23);
             this.toolStripCboValidationType.SelectedIndexChanged += new System.EventHandler(this.toolStripCboValidationType_SelectedIndexChanged);
+            // 
+            // refreshFromDatabaseToolStripMenuItem
+            // 
+            this.refreshFromDatabaseToolStripMenuItem.Name = "refreshFromDatabaseToolStripMenuItem";
+            this.refreshFromDatabaseToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.refreshFromDatabaseToolStripMenuItem.Text = "Refresh From Database";
+            this.refreshFromDatabaseToolStripMenuItem.Click += new System.EventHandler(this.refreshFromDatabaseToolStripMenuItem_Click);
             // 
             // menuStrip1
             // 
@@ -1438,6 +1448,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.panel2.Controls.Add(this.idInfo_extent_description);
             this.panel2.Controls.Add(this.idInfo_extent_description_lbl);
             this.panel2.Controls.Add(this.idInfo_extent_description_d);
             this.panel2.Controls.Add(this.idInfo_extent_geographicBoundingBox_westLongDD_lbl);
@@ -1448,11 +1459,21 @@
             this.panel2.Controls.Add(this.idInfo_extent_geographicBoundingBox_southLatDD);
             this.panel2.Controls.Add(this.idInfo_extent_geographicBoundingBox_northLatDD);
             this.panel2.Controls.Add(this.idInfo_extent_geographicBoundingBox_eastLongDD);
-            this.panel2.Controls.Add(this.idInfo_extent_description);
+            this.panel2.Controls.Add(this.idInfo_extent_descriptionCB);
             this.panel2.Location = new System.Drawing.Point(6, 18);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(388, 93);
             this.panel2.TabIndex = 3;
+            // 
+            // idInfo_extent_description
+            // 
+            this.idInfo_extent_description.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.idInfo_extent_description.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idInfo_extent_description.Location = new System.Drawing.Point(68, 8);
+            this.idInfo_extent_description.Name = "idInfo_extent_description";
+            this.idInfo_extent_description.Size = new System.Drawing.Size(235, 21);
+            this.idInfo_extent_description.TabIndex = 11;
+            this.idInfo_extent_description.TextChanged += new System.EventHandler(this.cntrl_ValidateTextChanged);
             // 
             // idInfo_extent_description_lbl
             // 
@@ -1468,13 +1489,14 @@
             // 
             this.idInfo_extent_description_d.BackColor = System.Drawing.SystemColors.Control;
             this.idInfo_extent_description_d.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idInfo_extent_description_d.Location = new System.Drawing.Point(344, 6);
+            this.idInfo_extent_description_d.Location = new System.Drawing.Point(340, 6);
             this.idInfo_extent_description_d.Name = "idInfo_extent_description_d";
             this.idInfo_extent_description_d.Size = new System.Drawing.Size(28, 23);
             this.idInfo_extent_description_d.TabIndex = 1;
             this.idInfo_extent_description_d.Text = "D";
+            this.tooltip1.SetToolTip(this.idInfo_extent_description_d, "Set to default");
             this.idInfo_extent_description_d.UseVisualStyleBackColor = false;
-            this.idInfo_extent_description_d.Click += new System.EventHandler(this.Default_Click);
+            this.idInfo_extent_description_d.Click += new System.EventHandler(this.idInfo_extent_description_d_Click);
             // 
             // idInfo_extent_geographicBoundingBox_westLongDD_lbl
             // 
@@ -1558,7 +1580,6 @@
             // 
             // groupBox9
             // 
-            this.groupBox9.Controls.Add(this.groupBox7);
             this.groupBox9.Controls.Add(this.idInfo_extent_temporalExtent);
             this.groupBox9.Controls.Add(this.panel4);
             this.groupBox9.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1569,23 +1590,22 @@
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Time Periods";
             // 
-            // groupBox7
+            // panel4
             // 
-            this.groupBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.groupBox7.Controls.Add(this.dates_for_resources_pnl);
-            this.groupBox7.Controls.Add(this.idInfo_resourceMaintenance_lbl);
-            this.groupBox7.Controls.Add(this.idInfo_resourceMaintenance);
-            this.groupBox7.Location = new System.Drawing.Point(12, 194);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(374, 124);
-            this.groupBox7.TabIndex = 6;
-            this.groupBox7.TabStop = false;
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.panel4.Controls.Add(this.idInfo_resourceMaintenance_lbl);
+            this.panel4.Controls.Add(this.idInfo_resourceMaintenance);
+            this.panel4.Controls.Add(this.dates_for_resources_pnl);
+            this.panel4.Location = new System.Drawing.Point(6, 19);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(388, 329);
+            this.panel4.TabIndex = 4;
             // 
             // idInfo_resourceMaintenance_lbl
             // 
             this.idInfo_resourceMaintenance_lbl.AutoSize = true;
             this.idInfo_resourceMaintenance_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idInfo_resourceMaintenance_lbl.Location = new System.Drawing.Point(215, 61);
+            this.idInfo_resourceMaintenance_lbl.Location = new System.Drawing.Point(225, 233);
             this.idInfo_resourceMaintenance_lbl.Name = "idInfo_resourceMaintenance_lbl";
             this.idInfo_resourceMaintenance_lbl.Size = new System.Drawing.Size(149, 26);
             this.idInfo_resourceMaintenance_lbl.TabIndex = 14;
@@ -1610,18 +1630,10 @@
             "irregular",
             "notPlanned",
             "unknown"});
-            this.idInfo_resourceMaintenance.Location = new System.Drawing.Point(218, 93);
+            this.idInfo_resourceMaintenance.Location = new System.Drawing.Point(228, 265);
             this.idInfo_resourceMaintenance.Name = "idInfo_resourceMaintenance";
             this.idInfo_resourceMaintenance.Size = new System.Drawing.Size(134, 21);
             this.idInfo_resourceMaintenance.TabIndex = 15;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.panel4.Location = new System.Drawing.Point(6, 19);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(388, 329);
-            this.panel4.TabIndex = 4;
             // 
             // flowLayoutPanel2
             // 
@@ -2008,9 +2020,9 @@
             this.idInfo_extent_temporalExtent.Name = "idInfo_extent_temporalExtent";
             this.idInfo_extent_temporalExtent.Size = new System.Drawing.Size(321, 164);
             this.idInfo_extent_temporalExtent.TabIndex = 5;
-            temporalElement__EX_TemporalExtent2.TimeInstant = null;
-            temporalElement__EX_TemporalExtent2.TimePeriod = null;
-            this.idInfo_extent_temporalExtent.temporalElement = temporalElement__EX_TemporalExtent2;
+            temporalElement__EX_TemporalExtent1.TimeInstant = null;
+            temporalElement__EX_TemporalExtent1.TimePeriod = null;
+            this.idInfo_extent_temporalExtent.temporalElement = temporalElement__EX_TemporalExtent1;
             this.idInfo_extent_temporalExtent.Validating += new System.ComponentModel.CancelEventHandler(this.cntrl_Validating);
             // 
             // distributionInfo__MD_Distribution
@@ -2205,8 +2217,8 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.groupBox9.ResumeLayout(false);
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -2276,9 +2288,8 @@
         private System.Windows.Forms.TextBox idInfo_extent_geographicBoundingBox_southLatDD;
         private System.Windows.Forms.TextBox idInfo_extent_geographicBoundingBox_northLatDD;
         private System.Windows.Forms.TextBox idInfo_extent_geographicBoundingBox_eastLongDD;
-        private System.Windows.Forms.ComboBox idInfo_extent_description;
+        private System.Windows.Forms.ComboBox idInfo_extent_descriptionCB;
         private System.Windows.Forms.GroupBox groupBox9;
-        private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.GroupBox dates_for_resources_pnl;
         private System.Windows.Forms.DateTimePicker idInfo_citation_date_revision_dtP;
         private System.Windows.Forms.Button idInfo_citation_date_revision_btn;
@@ -2387,5 +2398,7 @@
         private System.Windows.Forms.ToolStripMenuItem validationToolStripMenuItem;
         private System.Windows.Forms.ToolStripComboBox toolStripCboValidationType;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ToolStripMenuItem refreshFromDatabaseToolStripMenuItem;
+        private System.Windows.Forms.TextBox idInfo_extent_description;
     }
 }

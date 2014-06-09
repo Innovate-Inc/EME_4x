@@ -818,7 +818,7 @@ namespace EmeLibrary
         private void responsible_party_d_Click(object sender, EventArgs e)
         {
             //comboBox1.SelectedIndex = 3;
-            for (int i = 0; i < comboBox1.Items.Count - 1; i++)
+            for (int i = 0; i < comboBox1.Items.Count; i++)
             {
                 DataRowView drv = (DataRowView)comboBox1.Items[i];
                 bool d = (bool)drv["default"];

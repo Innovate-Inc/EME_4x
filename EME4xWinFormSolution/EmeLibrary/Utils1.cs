@@ -62,8 +62,10 @@ namespace EmeLibrary
                 //emeDataSetEditor = 
 
                 //use for databinding to drop list
-                dataTableNames = new string[]{"Publisher", "OnlineLinkage", "KeywordsEPA", "KeywordsISO",
-                "KeywordsUser","KeywordsPlace","Contact_Information", "BoundingBox", "Citation", "DistributionLiability", "ProgramCode"};
+                //dataTableNames = new string[]{"Publisher", "OnlineLinkage", "KeywordsEPA", "KeywordsISO",
+                //"KeywordsUser","KeywordsPlace","Contact_Information", "BoundingBox", "Citation", "DistributionLiability", "ProgramCode"};
+                dataTableNames = new string[]{"Contact_Information", "BoundingBox", "DistributionLiability", "KeywordsEPA", "KeywordsISO",
+                "KeywordsUser","KeywordsPlace"};
             }
             catch (Exception e)
             {

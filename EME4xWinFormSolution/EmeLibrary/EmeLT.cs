@@ -51,6 +51,20 @@ namespace EmeLibrary
             //hoverHelpInit();
             
         }
+        private void bindOtherControlstoEMEdataset()
+        {
+            DataTable bbDT = Utils1.emeDataSet.Tables["BoundingBox"].Select().CopyToDataTable();
+
+            idInfo_extent_descriptionCB.BeginUpdate();
+            idInfo_extent_descriptionCB.SelectedIndexChanged -= new EventHandler(idInfo_extent_descriptionCB_SelectedValueChanged);
+            idInfo_extent_descriptionCB.DataSource = bbDT;
+            idInfo_extent_descriptionCB.DisplayMember = "Area";
+            idInfo_extent_descriptionCB.ValueMember = "Area";
+            idInfo_extent_descriptionCB.SelectedIndex = -1;
+            idInfo_extent_descriptionCB.SelectedIndexChanged += new EventHandler(idInfo_extent_descriptionCB_SelectedValueChanged);
+            idInfo_extent_descriptionCB.EndUpdate();
+
+        }
 
         public Hashtable allControls
         {
@@ -112,6 +126,8 @@ namespace EmeLibrary
         {
             
             Utils1.setEmeDataSets();
+            bindOtherControlstoEMEdataset();
+
             xDoc = new XmlDocument();
             //Format picker... default should be -2
             sourceXmlFormat = sourceXmlFormat = "ISO19115"; //"ISO19115-2"; //  sourceXmlFormat ="ISO19115"
@@ -140,6 +156,8 @@ namespace EmeLibrary
                 newToolStripMenuItem.Visible = false;
                 OpenToolStripMenuItem.Visible = false;
                 saveAsToolStripMenuItem.Visible = false;
+                Utils1.setEmeDataSets();
+                bindOtherControlstoEMEdataset();
 
 
                 string isoRootNode = xDoc.DocumentElement.Name;
@@ -148,7 +166,7 @@ namespace EmeLibrary
                     PageController.readFromDB();
                     sourceXmlFormat = "ISO19115-2";
                     //toolStripComboBox1.SelectedItem = sourceXmlFormat;
-                    Utils1.setEmeDataSets();
+                    
                     bindCCMFields();
                     toolStripStatusLabel1.Text = "Opened File: " + filename;                    
                     this.Show();
@@ -165,7 +183,7 @@ namespace EmeLibrary
                     PageController.readFromDB();
                     sourceXmlFormat = "ISO19115";
                     //toolStripComboBox1.SelectedItem = sourceXmlFormat;
-                    Utils1.setEmeDataSets();
+                    //Utils1.setEmeDataSets();
                     bindCCMFields();
                     toolStripStatusLabel1.Text = "Opened File: " + filename;                    
                     this.Show();
@@ -197,6 +215,10 @@ namespace EmeLibrary
             openFileDialog1.Title = "Select a metadata record";
             openFileDialog1.FileName = "Select a file";
             openFileDialog1.Multiselect = false;
+
+            Utils1.setEmeDataSets();
+            bindOtherControlstoEMEdataset();
+
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 filename = openFileDialog1.FileName;
@@ -204,7 +226,7 @@ namespace EmeLibrary
 
                 if (sourceXmlFormat == "ISO19115-2" || sourceXmlFormat =="ISO19115")
                 {
-                    Utils1.setEmeDataSets();
+                    //Utils1.setEmeDataSets();
                     //bindFormtoEMEdatabases();
                     bindCCMFields();
 
@@ -224,14 +246,12 @@ namespace EmeLibrary
         }
 
         private void bindCCMFields()
-        {
-            
+        {            
             toolStripComboBox1.SelectedItem = sourceXmlFormat;
             localXdoc = new isoNodes(xDoc, sourceXmlFormat, filename);
                         
             PageController.ElementPopulator(this);
-            elementsNotSupportedByEME.Text = localXdoc.elementsNotEditedByEME;            
-           
+            elementsNotSupportedByEME.Text = localXdoc.elementsNotEditedByEME;
 
         }
 
@@ -351,7 +371,7 @@ namespace EmeLibrary
                 //reload the file back into the form
 
                 xDoc.Load(filename);                
-                Utils1.setEmeDataSets();
+                //Utils1.setEmeDataSets();
                 bindCCMFields();
 
                 frmctrls(this.Controls); //validation
@@ -469,8 +489,10 @@ namespace EmeLibrary
             {
                 if (Utils1.emeDataSet == null)
                 {
-                    Utils1.setEmeDataSets();
+                    Utils1.setEmeDataSets();                    
                 }
+
+                bindOtherControlstoEMEdataset();
 
                 PageController.readFromDB();                              
                 hoverHelpInit();
@@ -619,8 +641,7 @@ namespace EmeLibrary
                 expand.Text = "+";
 
             expander((Panel)expand.Parent);
-        }
-            
+        }        
 
        
 
@@ -793,22 +814,27 @@ namespace EmeLibrary
          }
                 
 
-        private void idInfo_extent_description_SelectedValueChanged(object sender, EventArgs e)
+        private void idInfo_extent_descriptionCB_SelectedValueChanged(object sender, EventArgs e)
         {
             
-            if (idInfo_extent_description.SelectedIndex != -1)
+            if (idInfo_extent_descriptionCB.SelectedIndex != -1)
             //ComboBox boundingbox = (ComboBox)sender;
             //if (boundingbox.SelectedIndex != -1)
             {
-                DataRowView drv = (DataRowView)idInfo_extent_description.SelectedItem;
+                DataRowView drv = (DataRowView)idInfo_extent_descriptionCB.SelectedItem;
                 //DataRowView drv = (DataRowView)boundingbox.SelectedItem;
                 //Console.WriteLine(drv["westbc"].ToString());
-
+                idInfo_extent_description.Text = idInfo_extent_descriptionCB.Text;
                 idInfo_extent_geographicBoundingBox_northLatDD.Text = drv["northbc"].ToString();
                 idInfo_extent_geographicBoundingBox_southLatDD.Text = drv["southbc"].ToString();
                 idInfo_extent_geographicBoundingBox_eastLongDD.Text = drv["eastbc"].ToString();
                 idInfo_extent_geographicBoundingBox_westLongDD.Text = drv["westbc"].ToString();
             }
+
+            idInfo_extent_descriptionCB.SelectedIndexChanged -= new EventHandler(idInfo_extent_descriptionCB_SelectedValueChanged);
+            idInfo_extent_descriptionCB.SelectedIndex = -1;
+            idInfo_extent_descriptionCB.SelectedIndexChanged += new EventHandler(idInfo_extent_descriptionCB_SelectedValueChanged);
+
         }
 
         private void Default_Click(object sender, EventArgs e)
@@ -852,7 +878,40 @@ namespace EmeLibrary
 
         }
 
+        private void refreshFromDatabaseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+                        
+            PageController.PageSaver(this);
+            Utils1.setEmeDataSets();            
+            bindOtherControlstoEMEdataset();
+            PageController.ElementPopulator(this);
+            
+            //bindCCMFields();
+
+            //private void bindCCMFields()                    
+            //toolStripComboBox1.SelectedItem = sourceXmlFormat;
+            //localXdoc = new isoNodes(xDoc, sourceXmlFormat, filename);                        
+            //PageController.ElementPopulator(this);
+            //elementsNotSupportedByEME.Text = localXdoc.elementsNotEditedByEME;
+
         
+
+        }
+
+        private void idInfo_extent_description_d_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < idInfo_extent_descriptionCB.Items.Count; i++)
+            {
+                DataRowView drv = (DataRowView)idInfo_extent_descriptionCB.Items[i];
+                bool d = (bool)drv["default"];
+                if (d)
+                {
+                    idInfo_extent_descriptionCB.SelectedIndex = i;
+                }
+            }
+        }
+           
+                   
                 
 
     }
