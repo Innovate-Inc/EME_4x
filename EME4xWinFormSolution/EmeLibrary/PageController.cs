@@ -146,6 +146,7 @@ namespace EmeLibrary
                         incoming_ResponsibleParty.loadList(ci_RP);
                     }
                     ctrl.Tag = validateVal;
+                    setValidationPanelColor(frm, ctrl.Name + "_colorPnl", validateVal);
                 }
                 else if (ctrl.GetType() == typeof(uc_distribution))
                 {
@@ -208,6 +209,7 @@ namespace EmeLibrary
                         (ctrl.Name).GetValue(obj, null);
                     temporalExtentCtrl.loadTemporalExtent(inboundExtentObject);
                     ctrl.Tag = validateVal;
+                    setValidationPanelColor(frm, ctrl.Name + "_colorPnl", validateVal);
                 }
                 else if (ctrl.GetType() == typeof(ListBox))
                 {
@@ -324,6 +326,7 @@ namespace EmeLibrary
 
                     ctrl.Text = s;
                     ctrl.Tag = validateVal;
+                    setValidationPanelColor(frm, ctrl.Name + "_colorPnl", validateVal);
                 }
             }
         }
@@ -487,6 +490,10 @@ namespace EmeLibrary
                     uc_ResponsibleParty incoming_ResponsibleParty = (uc_ResponsibleParty)ctrl;
                     
                     ctrl.Tag = validateVal;
+                    
+                    //Set the color panel to yellow or blue
+                    setValidationPanelColor(frm, ctrl.Name + "_colorPnl", validateVal);       
+
                 }
                 else if (ctrl.GetType() == typeof(uc_distribution))
                 {
@@ -497,6 +504,9 @@ namespace EmeLibrary
                 }
                 else if (ctrl.GetType() == typeof(uc_extentTemporal))
                 {
+                    uc_extentTemporal timeExtent = (uc_extentTemporal)ctrl;
+                    ctrl.Tag = validateVal;
+                    setValidationPanelColor(frm, ctrl.Name + "_colorPnl", validateVal);
                     
                 }
                 else if (ctrl.GetType() == typeof(ListBox))
@@ -514,9 +524,33 @@ namespace EmeLibrary
                 else if (ctrl.GetType() == typeof(TextBox))
                 {
                     ctrl.Tag = validateVal;
-
+                    setValidationPanelColor(frm, ctrl.Name + "_colorPnl", validateVal);
                 }
             }
+        }
+
+        private void setValidationPanelColor(EmeLT frmRef, string controlName, string valiationValue)
+        {
+            
+            Control[] colorPanelCollection = frmRef.Controls.Find(controlName, true);
+            if (colorPanelCollection.Length > 0)
+            {
+                Panel pnlColor = (Panel)colorPanelCollection[0];
+
+                if (valiationValue.Contains("require"))
+                {
+
+                    pnlColor.BackColor = System.Drawing.Color.FromArgb(255, 255, 192);
+                    pnlColor.Refresh();
+                }
+                else
+                {
+                    pnlColor.BackColor = System.Drawing.Color.FromArgb(192, 255, 255);
+                    pnlColor.Refresh();
+                }
+            }       
+
+
         }
     }   
 }

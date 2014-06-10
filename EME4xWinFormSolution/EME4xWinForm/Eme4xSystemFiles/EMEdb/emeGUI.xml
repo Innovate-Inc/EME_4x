@@ -58,34 +58,6 @@
 	  <HoverNote>What to call the data set</HoverNote>  
   </emeControl>
   <emeControl>
-    <controlName>idInfo_citation_date_creation_lbl</controlName>
-    <TabNum>1</TabNum>
-    <FGDC_Def></FGDC_Def>
-    <EPARequirementGuidance></EPARequirementGuidance>
-    <HoverNote>When the resource was brought into existence</HoverNote>
-  </emeControl>
-  <emeControl>
-    <controlName>idInfo_citation_date_publication_lbl</controlName>
-    <TabNum>1</TabNum>
-    <FGDC_Def></FGDC_Def>
-    <EPARequirementGuidance></EPARequirementGuidance>
-    <HoverNote>When the resource was issued</HoverNote>
-  </emeControl>
-  <emeControl>
-    <controlName>idInfo_citation_date_revision_lbl</controlName>
-    <TabNum>1</TabNum>
-    <FGDC_Def></FGDC_Def>
-    <EPARequirementGuidance></EPARequirementGuidance>
-    <HoverNote>When the resource was examined or re-examined and improved or amended</HoverNote>
-  </emeControl>
-  <emeControl>
-    <controlName>citatonExpand_lbl</controlName>
-    <TabNum>1</TabNum>
-    <FGDC_Def></FGDC_Def>
-    <EPARequirementGuidance></EPARequirementGuidance>
-    <HoverNote>Who created the resource</HoverNote>
-  </emeControl>
-  <emeControl>
     <controlName>idInfo_Abstract_lbl</controlName>
     <TabNum>1</TabNum>
     <FGDC_Def></FGDC_Def>
@@ -98,13 +70,6 @@
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>Why was the data set developed</HoverNote>
-  </emeControl>
-  <emeControl>
-    <controlName>idInfo_pointOfContact</controlName>
-    <TabNum>1</TabNum>
-    <FGDC_Def></FGDC_Def>
-    <EPARequirementGuidance></EPARequirementGuidance>
-    <HoverNote>Who to contact about the data</HoverNote>
   </emeControl>
   <emeControl>
     <controlName>keywordsGroupBox</controlName>
@@ -126,56 +91,182 @@
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>A description of the geographic extent or area</HoverNote>
-  </emeControl>
+  </emeControl>  
   <emeControl>
     <controlName>idInfo_extent_temporalExtent</controlName>
     <TabNum>1</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
-    <HoverNote>The time period applicable to the resource</HoverNote>
-  </emeControl>   
+    <HoverNote>Time period covered by the content of the dataset</HoverNote>
+  </emeControl>
+  <emeControl>
+    <controlName>idInfo_extent_geographicBoundingBox_northLatDD_lbl</controlName>
+    <TabNum>1</TabNum>
+    <FGDC_Def></FGDC_Def>
+    <EPARequirementGuidance></EPARequirementGuidance>
+    <HoverNote>Northern Latitude (-90 to 90)</HoverNote>
+  </emeControl>
+  <emeControl>
+    <controlName>idInfo_extent_geographicBoundingBox_southLatDD_lbl</controlName>
+    <TabNum>1</TabNum>
+    <FGDC_Def></FGDC_Def>
+    <EPARequirementGuidance></EPARequirementGuidance>
+    <HoverNote>Southern Latitude (-90 to 90)</HoverNote>
+  </emeControl>
+  <emeControl>
+    <controlName>idInfo_extent_geographicBoundingBox_eastLongDD_lbl</controlName>
+    <TabNum>1</TabNum>
+    <FGDC_Def></FGDC_Def>
+    <EPARequirementGuidance></EPARequirementGuidance>
+    <HoverNote>Eastern Longitude (-180 to 180)</HoverNote>
+  </emeControl>
+  <emeControl>
+    <controlName>idInfo_extent_geographicBoundingBox_westLongDD_lbl</controlName>
+    <TabNum>1</TabNum>
+    <FGDC_Def></FGDC_Def>
+    <EPARequirementGuidance></EPARequirementGuidance>
+    <HoverNote>Western Longitude (-180 to 180)</HoverNote>
+  </emeControl>  
+  <emeControl>
+    <controlName>tempTimePeriod_Desc_lbl</controlName>
+    <TabNum>1</TabNum>
+    <FGDC_Def></FGDC_Def>
+    <EPARequirementGuidance></EPARequirementGuidance>
+    <HoverNote>Description of the date documented</HoverNote>
+  </emeControl>
+  <emeControl>
+    <controlName>timePeriod_Begin_lbl</controlName>
+    <TabNum>1</TabNum>
+    <FGDC_Def></FGDC_Def>
+    <EPARequirementGuidance></EPARequirementGuidance>
+    <HoverNote>The beginning date for the content of the dataset</HoverNote>
+  </emeControl>
+  <emeControl>
+    <controlName>timePeriod_End_lbl</controlName>
+    <TabNum>1</TabNum>
+    <FGDC_Def></FGDC_Def>
+    <EPARequirementGuidance></EPARequirementGuidance>
+    <HoverNote>The ending date for the content of the dataset</HoverNote>
+  </emeControl>  
+  <emeControl>
+    <controlName>timePeriod_Interval_lbl</controlName>
+    <TabNum>1</TabNum>
+    <FGDC_Def></FGDC_Def>
+    <EPARequirementGuidance></EPARequirementGuidance>
+    <HoverNote>Frequency between time events based on floating point values for temporal length</HoverNote>
+  </emeControl>
+  <emeControl>
+    <controlName>timeInstant_description_lbl</controlName>
+    <TabNum>1</TabNum>
+    <FGDC_Def></FGDC_Def>
+    <EPARequirementGuidance></EPARequirementGuidance>
+    <HoverNote>Description of the date documented</HoverNote>
+  </emeControl>
+  <emeControl>
+    <controlName>timeInstant_timePosition_lbl</controlName>
+    <TabNum>1</TabNum>
+    <FGDC_Def></FGDC_Def>
+    <EPARequirementGuidance></EPARequirementGuidance>
+    <HoverNote>The date for the content of the dataset</HoverNote>
+  </emeControl>  
+  <emeControl>
+    <controlName>idInfo_citation_date_creation_lbl</controlName>
+    <TabNum>1</TabNum>
+    <FGDC_Def></FGDC_Def>
+    <EPARequirementGuidance></EPARequirementGuidance>
+    <HoverNote>When the resource was brought into existence</HoverNote>
+  </emeControl>
+  <emeControl>
+    <controlName>idInfo_citation_date_publication_lbl</controlName>
+    <TabNum>1</TabNum>
+    <FGDC_Def></FGDC_Def>
+    <EPARequirementGuidance></EPARequirementGuidance>
+    <HoverNote>When the resource was issued</HoverNote>
+  </emeControl>
+  <emeControl>
+    <controlName>idInfo_citation_date_revision_lbl</controlName>
+    <TabNum>1</TabNum>
+    <FGDC_Def></FGDC_Def>
+    <EPARequirementGuidance></EPARequirementGuidance>
+    <HoverNote>When the resource was examined or re-examined and improved or amended</HoverNote>
+  </emeControl>
+  <emeControl>
+    <controlName>idInfo_resourceMaintenance_lbl</controlName>
+    <TabNum>1</TabNum>
+    <FGDC_Def></FGDC_Def>
+    <EPARequirementGuidance></EPARequirementGuidance>
+    <HoverNote>Frequency of changes and additions made to the resource after the initial completion</HoverNote>
+  </emeControl>
+  <emeControl>  
+    <controlName>contact_CI_ResponsibleParty</controlName>
+    <TabNum>2</TabNum>
+    <FGDC_Def></FGDC_Def>
+    <EPARequirementGuidance></EPARequirementGuidance>
+    <HoverNote>Author(s) of the metadata</HoverNote>
+  </emeControl>     
+  <emeControl>
+    <controlName>idInfo_pointOfContact</controlName>
+    <TabNum>2</TabNum>
+    <FGDC_Def></FGDC_Def>
+    <EPARequirementGuidance></EPARequirementGuidance>
+    <HoverNote>The owner(s) of the resource  </HoverNote>
+  </emeControl>
+  <emeControl>
+    <controlName>idInfo_citation_citedResponsibleParty</controlName>
+    <TabNum>2</TabNum>
+    <FGDC_Def></FGDC_Def>
+    <EPARequirementGuidance></EPARequirementGuidance>
+    <HoverNote>Who created/produced the resource</HoverNote>
+  </emeControl>
+  <emeControl>
+    <controlName>roleCode_lbl</controlName>
+    <TabNum>2</TabNum>
+    <FGDC_Def></FGDC_Def>
+    <EPARequirementGuidance></EPARequirementGuidance>
+    <HoverNote>Function performed by the contact</HoverNote>
+  </emeControl> 
   <emeControl>
     <controlName>fileIdentifier_lbl</controlName>
-    <TabNum>3</TabNum>
+    <TabNum>2</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>A value that uniquely identifies this metadata record</HoverNote>
   </emeControl>
   <emeControl>
+    <controlName>fileIdentifier_new</controlName>
+    <TabNum>2</TabNum>
+    <FGDC_Def></FGDC_Def>
+    <EPARequirementGuidance></EPARequirementGuidance>
+    <HoverNote>This generates a value that uniquely identifies the metadata record (UUID)</HoverNote>
+  </emeControl>
+  <emeControl>
     <controlName>language_lbl</controlName>
-    <TabNum>3</TabNum>
+    <TabNum>2</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>Language of the metadata record</HoverNote>
   </emeControl>
   <emeControl>
     <controlName>dateStamp_lbl</controlName>
-    <TabNum>3</TabNum>
+    <TabNum>2</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>The date that the metadata was last updated</HoverNote>
   </emeControl>
   <emeControl>
-    <controlName>contact_CI_ResponsibleParty_lbl</controlName>
-    <TabNum>3</TabNum>
-    <FGDC_Def></FGDC_Def>
-    <EPARequirementGuidance></EPARequirementGuidance>
-    <HoverNote>Author of the metadata</HoverNote>
-  </emeControl>
-  <emeControl>
-    <controlName>roleCode_lbl</controlName>
-    <TabNum>3</TabNum>
-    <FGDC_Def></FGDC_Def>
-    <EPARequirementGuidance></EPARequirementGuidance>
-    <HoverNote>Function performed by the responsible party</HoverNote>
-  </emeControl>
-  <emeControl>
     <controlName>distributionInfo__MD_Distribution</controlName>
-    <TabNum>3</TabNum>
+    <TabNum>2</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>Information about the distributor and options for obtaining the data set.</HoverNote>
   </emeControl>
+  <emeControl>
+    <controlName>distributor_Contact</controlName>
+    <TabNum>1</TabNum>
+    <FGDC_Def></FGDC_Def>
+    <EPARequirementGuidance></EPARequirementGuidance>
+    <HoverNote>The data distributor contact</HoverNote>
+  </emeControl>   
   <emeControl>
     <controlName>md_standardOrderProcess_lbl</controlName>
     <TabNum>3</TabNum>
@@ -357,62 +448,6 @@
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>Description of limitations or requirements for using the medium</HoverNote>
-  </emeControl>
-  <emeControl>
-    <controlName>temporalExtent</controlName>
-    <TabNum>1</TabNum>
-    <FGDC_Def></FGDC_Def>
-    <EPARequirementGuidance></EPARequirementGuidance>
-    <HoverNote>Time period covered by the content of the dataset</HoverNote>
-  </emeControl>
-  <emeControl>
-    <controlName>tempTimePeriod_Desc_lbl</controlName>
-    <TabNum>1</TabNum>
-    <FGDC_Def></FGDC_Def>
-    <EPARequirementGuidance></EPARequirementGuidance>
-    <HoverNote>Description of the date and time documented</HoverNote>
-  </emeControl>
-  <emeControl>
-    <controlName>timePeriod_Begin_lbl</controlName>
-    <TabNum>1</TabNum>
-    <FGDC_Def></FGDC_Def>
-    <EPARequirementGuidance></EPARequirementGuidance>
-    <HoverNote>The beginning date and time of the content of the dataset</HoverNote>
-  </emeControl>
-  <emeControl>
-    <controlName>timePeriod_End_lbl</controlName>
-    <TabNum>1</TabNum>
-    <FGDC_Def></FGDC_Def>
-    <EPARequirementGuidance></EPARequirementGuidance>
-    <HoverNote>The ending date and time of the content of the dataset</HoverNote>
-  </emeControl>
-  <emeControl>
-    <controlName>timePeriod_End_lbl</controlName>
-    <TabNum>1</TabNum>
-    <FGDC_Def></FGDC_Def>
-    <EPARequirementGuidance></EPARequirementGuidance>
-    <HoverNote>The ending date and time of the content of the dataset</HoverNote>
-  </emeControl>
-  <emeControl>
-    <controlName>timePeriod_Interval_lbl</controlName>
-    <TabNum>1</TabNum>
-    <FGDC_Def></FGDC_Def>
-    <EPARequirementGuidance></EPARequirementGuidance>
-    <HoverNote>Frequency between time events based on floating point values for temporal length</HoverNote>
-  </emeControl>
-  <emeControl>
-    <controlName>idInfo_resourceMaintenance_lbl</controlName>
-    <TabNum>1</TabNum>
-    <FGDC_Def></FGDC_Def>
-    <EPARequirementGuidance></EPARequirementGuidance>
-    <HoverNote>Frequency of changes and additions made to the resource after the initial completion</HoverNote>
-  </emeControl>
-  <emeControl>
-    <controlName>uc_distribution_lbl</controlName>
-    <TabNum>1</TabNum>
-    <FGDC_Def></FGDC_Def>
-    <EPARequirementGuidance></EPARequirementGuidance>
-    <HoverNote>Information about the data distributor and options to obtain the dataset</HoverNote>
   </emeControl>
   <emeControl>
     <controlName>idInfo_resourceConstraints_gbx</controlName>

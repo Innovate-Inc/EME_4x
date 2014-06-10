@@ -363,6 +363,8 @@ namespace EmeLibrary
                 idinfoPointOfContact = new List<CI_ResponsibleParty>();
                 _idInfo_extent_temporalExtent = new temporalElement__EX_TemporalExtent();
                 _distributionInfo__MD_Distribution = new List<MD_Distributor>();
+                mdStandardName = templateMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.metadataStandardNameXpath).FirstChild.InnerText;
+                mdStandardVersion = templateMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.metadataStandardVersionXpath).FirstChild.InnerText;
                                               
                 
 

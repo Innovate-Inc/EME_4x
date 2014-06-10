@@ -130,7 +130,8 @@ namespace EmeLibrary
 
             xDoc = new XmlDocument();
             //Format picker... default should be -2
-            sourceXmlFormat = sourceXmlFormat = "ISO19115"; //"ISO19115-2"; //  sourceXmlFormat ="ISO19115"
+            //sourceXmlFormat = "ISO19115"; //"ISO19115-2"; //  sourceXmlFormat ="ISO19115"
+            sourceXmlFormat = toolStripComboBox1.SelectedItem.ToString();
             //xDox Set when checking the metadata format
             filename = "New";
             //localXdoc = new isoNodes(xDoc, sourceXmlFormat, filename);
@@ -502,7 +503,8 @@ namespace EmeLibrary
                     //This prevents overriding incoming documents from ArcCatalog
                     xDoc = new XmlDocument();
                     //Format picker... default should be -2
-                    sourceXmlFormat = sourceXmlFormat = "ISO19115"; //"ISO19115-2"; //  sourceXmlFormat ="ISO19115"
+                    //sourceXmlFormat = "ISO19115"; //"ISO19115-2"; //  sourceXmlFormat ="ISO19115"
+                    sourceXmlFormat = toolStripComboBox1.SelectedItem.ToString();
                     //xDox Set when checking the metadata format
                     filename = "New";
                     //localXdoc = new isoNodes(xDoc, sourceXmlFormat, filename);
@@ -847,9 +849,9 @@ namespace EmeLibrary
             PageController pc = PageController.thatControls(senderName);
             pc.setDefault(this);
         }
-                
 
-        private void button9_Click(object sender, EventArgs e)
+
+        private void fileIdentifier_new_Click(object sender, EventArgs e)
         {
             Guid g = Guid.NewGuid();
             fileIdentifier.Text = g.ToString();
@@ -874,7 +876,13 @@ namespace EmeLibrary
 
         private void tooltip1_Popup(object sender, PopupEventArgs e)
         {            
-            toolStripStatusLabel1.Text =tooltip1.GetToolTip(e.AssociatedControl);
+            //toolStripStatusLabel1.Text =tooltip1.GetToolTip(e.AssociatedControl);
+            string controlDisplayName = e.AssociatedControl.Text;
+            controlDisplayName = controlDisplayName.Replace(System.Environment.NewLine, "").Trim();
+            controlDisplayName = (!string.IsNullOrEmpty(controlDisplayName)) ? controlDisplayName + ": " : "";
+
+            hoverTip_txt.Text = controlDisplayName + tooltip1.GetToolTip(e.AssociatedControl);
+            
 
         }
 
@@ -910,9 +918,7 @@ namespace EmeLibrary
                 }
             }
         }
-           
-                   
-                
+              
 
     }
 }
