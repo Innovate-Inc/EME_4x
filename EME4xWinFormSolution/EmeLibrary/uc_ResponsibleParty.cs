@@ -20,7 +20,7 @@ namespace EmeLibrary
         private int collapseHeight;
         private string expandedSymbol = "\u25BC"; //25BC //25E2
         private string collapsedSymbol = "\u25B6";
-
+        private string _validation_modeEmeLt;
        
 
         //[Bindable(false)]
@@ -45,7 +45,16 @@ namespace EmeLibrary
             }
         }
         public string rp_mode { get; set; }
-        
+        public string validation_modeEmeLt
+        {
+            get { return _validation_modeEmeLt; }
+            set
+            {
+                _validation_modeEmeLt = value;
+                setValidationModeTags();
+            }
+        }
+
         public List<CI_ResponsibleParty> CI_ResponsiblePartyList
         {
             get
@@ -574,14 +583,16 @@ namespace EmeLibrary
         private void responsibleParty_TextChangedValidation(object sender, EventArgs e)
         {
             Control ctrl = (Control)sender;
-            rp_Validating(ctrl);
-            //validate_Controls(ctrl);
-
+            rp_Validating(ctrl);            
         }
+               
+
         private void responsibleParty_Validating(object sender, CancelEventArgs e)
         {
-            Control ctrl = (Control)sender;
+            Control ctrl = (Control)sender;         
+            
             rp_Validating(ctrl);
+            
         }
 
         private void rp_Validating(Control ctrl)
@@ -675,6 +686,31 @@ namespace EmeLibrary
             }
         }
 
+        private void setValidationModeTags()
+        {
+            if (_validation_modeEmeLt == "EPA/EDG (ISO19115)")
+            {
+                errorProvider_RP.SetError(positionName, System.String.Empty);
+                errorProvider_RP.SetError(individualName, System.String.Empty);
+                errorProvider_RP.SetError(organisationName, System.String.Empty);
+                errorProvider_RP.SetError(positionName.Parent, System.String.Empty);
+                individualName.Tag = "required1";
+                organisationName.Tag = "required1";
+                positionName.Tag = "required1";
+            }
+            else if (_validation_modeEmeLt == "DCAT/Common Core")
+            {
+                errorProvider_RP.SetError(positionName, System.String.Empty);
+                errorProvider_RP.SetError(individualName, System.String.Empty);
+                errorProvider_RP.SetError(organisationName, System.String.Empty);
+                errorProvider_RP.SetError(positionName.Parent, System.String.Empty);
+                individualName.Tag = "required";
+                organisationName.Tag = "required";
+                positionName.Tag = "";
+                positionName.Parent.Tag = "";
+            }
+
+        }
         public void val_RP_frmControls(Control.ControlCollection cControls)
         {
             //MessageBox.Show(cControls.Count.ToString());

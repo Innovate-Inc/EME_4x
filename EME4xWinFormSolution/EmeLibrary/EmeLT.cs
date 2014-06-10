@@ -41,6 +41,7 @@ namespace EmeLibrary
             toolStripComboBox1.SelectedIndex = 0;
             toolStripCboValidationType.SelectedIndex = 0;
             validationSetting = toolStripCboValidationType.SelectedItem.ToString();
+            idInfo_pointOfContact.validation_modeEmeLt = validationSetting;
             
             //Start instance of the eme dataset
             //if (Utils1.emeDataSet == null)
@@ -863,6 +864,8 @@ namespace EmeLibrary
             ToolStripComboBox validate_type = (ToolStripComboBox)sender;
             validationSetting = validate_type.SelectedItem.ToString();
             PageController.validatePopulator(this);
+            //Set Responsible Party Validation Mode
+            idInfo_pointOfContact.validation_modeEmeLt = validationSetting;
            
             //MessageBox.Show(idInfo_citation_Title.Tag.ToString());
             //errorProvider1.Clear();
