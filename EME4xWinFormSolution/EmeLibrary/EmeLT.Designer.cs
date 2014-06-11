@@ -972,6 +972,7 @@
             this.idInfo_resourceConstraints_MD_SecurityConstraints_useLimitation.Name = "idInfo_resourceConstraints_MD_SecurityConstraints_useLimitation";
             this.idInfo_resourceConstraints_MD_SecurityConstraints_useLimitation.Size = new System.Drawing.Size(259, 21);
             this.idInfo_resourceConstraints_MD_SecurityConstraints_useLimitation.TabIndex = 0;
+            this.idInfo_resourceConstraints_MD_SecurityConstraints_useLimitation.TextChanged += new System.EventHandler(this.cntrl_ValidateTextChanged);
             // 
             // securityConstraints_userNote_lbl
             // 
@@ -1019,6 +1020,7 @@
             this.idInfo_resourceConstraints_MD_SecurityConstraints_classification.Name = "idInfo_resourceConstraints_MD_SecurityConstraints_classification";
             this.idInfo_resourceConstraints_MD_SecurityConstraints_classification.Size = new System.Drawing.Size(141, 21);
             this.idInfo_resourceConstraints_MD_SecurityConstraints_classification.TabIndex = 1;
+            this.idInfo_resourceConstraints_MD_SecurityConstraints_classification.TextChanged += new System.EventHandler(this.cntrl_ValidateTextChanged);
             // 
             // legalContraints_lbl
             // 
