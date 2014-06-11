@@ -413,7 +413,9 @@
     <Content Include="Eme4xSystemFiles\MetadataSchema\NOAA_19115_2\schema\resources\Codelist\ML_gmxCodelists.xml" />
     <Content Include="Eme4xSystemFiles\MetadataSchema\NOAA_19115_2\schema\resources\Codelist\tcCodelists.xml" />
     <Content Include="Eme4xSystemFiles\MetadataSchema\NOAA_19115_2\schema\resources\crs\gmxCrs.xml" />
-    <Content Include="Eme4xSystemFiles\MetadataSchema\NOAA_19115_2\schema\resources\crs\ML_gmxCrs.xml" />
+    <Content Include="Eme4xSystemFiles\MetadataSchema\NOAA_19115_2\schema\resources\crs\ML_gmxCrs.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Eme4xSystemFiles\MetadataSchema\NOAA_19115_2\schema\resources\example\fr-fr.xml" />
     <Content Include="Eme4xSystemFiles\MetadataSchema\NOAA_19115_2\schema\resources\extensions\MD_MetadataExtensionInformation.xml" />
     <Content Include="Eme4xSystemFiles\MetadataSchema\NOAA_19115_2\schema\resources\ReadMe.txt" />
