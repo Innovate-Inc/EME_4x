@@ -277,15 +277,15 @@
 		<Iso19115_2>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='resourceConstraints']/*[local-name()='MD_SecurityConstraints']/*[local-name()='useLimitation']</Iso19115_2>
 		<Iso19115_1/>
 		<Csdgm/>
-		<DCATrequired/>
-		<EPArequired>required</EPArequired>
+		<DCATrequired>required</DCATrequired>
+		<EPArequired></EPArequired>
 	</emeControl>
 	<emeControl>
 		<controlName>idInfo_resourceConstraints_MD_SecurityConstraints_classification</controlName>
 		<Iso19115_2>./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='resourceConstraints']/*[local-name()='MD_SecurityConstraints']/*[local-name()='classification']</Iso19115_2>
 		<Iso19115_1/>
 		<Csdgm/>
-		<DCATrequired/>
+		<DCATrequired>required</DCATrequired>
 		<EPArequired/>
 	</emeControl>
 	<emeControl>

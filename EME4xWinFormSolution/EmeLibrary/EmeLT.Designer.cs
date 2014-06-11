@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            EmeLibrary.temporalElement__EX_TemporalExtent temporalElement__EX_TemporalExtent2 = new EmeLibrary.temporalElement__EX_TemporalExtent();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmeLT));
+            EmeLibrary.temporalElement__EX_TemporalExtent temporalElement__EX_TemporalExtent1 = new EmeLibrary.temporalElement__EX_TemporalExtent();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
@@ -179,6 +179,7 @@
             this.idInfo_citation_Title = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.hoverTip_txt = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.idInfo_extent_temporalExtent = new EmeLibrary.uc_extentTemporal();
             this.distributionInfo__MD_Distribution = new EmeLibrary.uc_distribution();
             this.idInfo_pointOfContact = new EmeLibrary.uc_ResponsibleParty();
@@ -235,6 +236,7 @@
             this.tpPlace.SuspendLayout();
             this.panel3.SuspendLayout();
             this.tabControl1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // statusStrip1
@@ -791,7 +793,7 @@
             // 
             // idInfo_resourceConstraints_gbx
             // 
-            this.idInfo_resourceConstraints_gbx.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.idInfo_resourceConstraints_gbx.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.idInfo_resourceConstraints_gbx.Controls.Add(this.idInfo_resourceConstraints_MD_Constraints_useLimitation);
             this.idInfo_resourceConstraints_gbx.Controls.Add(this.securityConstraints_gbx);
             this.idInfo_resourceConstraints_gbx.Controls.Add(this.legalContraints_lbl);
@@ -863,16 +865,13 @@
             // 
             // securityConstraints_gbx
             // 
+            this.securityConstraints_gbx.Controls.Add(this.panel2);
             this.securityConstraints_gbx.Controls.Add(this.securityConstraints_handlingDescription_lbl);
             this.securityConstraints_gbx.Controls.Add(this.idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescription);
             this.securityConstraints_gbx.Controls.Add(this.securityConstraints_classificationSystem_lbl);
             this.securityConstraints_gbx.Controls.Add(this.idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystem);
             this.securityConstraints_gbx.Controls.Add(this.idInfo_resourceConstraints_MD_SecurityConstraints_userNote);
-            this.securityConstraints_gbx.Controls.Add(this.idInfo_resourceConstraints_MD_SecurityConstraints_useLimitation);
             this.securityConstraints_gbx.Controls.Add(this.securityConstraints_userNote_lbl);
-            this.securityConstraints_gbx.Controls.Add(this.securityConstraints_classification_lbl);
-            this.securityConstraints_gbx.Controls.Add(this.securityConstraints_useLimitation_lbl);
-            this.securityConstraints_gbx.Controls.Add(this.idInfo_resourceConstraints_MD_SecurityConstraints_classification);
             this.securityConstraints_gbx.Location = new System.Drawing.Point(12, 178);
             this.securityConstraints_gbx.Name = "securityConstraints_gbx";
             this.securityConstraints_gbx.Size = new System.Drawing.Size(404, 161);
@@ -884,7 +883,7 @@
             // 
             this.securityConstraints_handlingDescription_lbl.AutoSize = true;
             this.securityConstraints_handlingDescription_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.securityConstraints_handlingDescription_lbl.Location = new System.Drawing.Point(11, 136);
+            this.securityConstraints_handlingDescription_lbl.Location = new System.Drawing.Point(9, 129);
             this.securityConstraints_handlingDescription_lbl.Name = "securityConstraints_handlingDescription_lbl";
             this.securityConstraints_handlingDescription_lbl.Size = new System.Drawing.Size(104, 13);
             this.securityConstraints_handlingDescription_lbl.TabIndex = 59;
@@ -894,7 +893,7 @@
             // 
             this.idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescription.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescription.Location = new System.Drawing.Point(127, 127);
+            this.idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescription.Location = new System.Drawing.Point(124, 127);
             this.idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescription.Name = "idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescription";
             this.idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescription.Size = new System.Drawing.Size(255, 21);
             this.idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescription.TabIndex = 4;
@@ -903,7 +902,7 @@
             // 
             this.securityConstraints_classificationSystem_lbl.AutoSize = true;
             this.securityConstraints_classificationSystem_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.securityConstraints_classificationSystem_lbl.Location = new System.Drawing.Point(11, 108);
+            this.securityConstraints_classificationSystem_lbl.Location = new System.Drawing.Point(8, 108);
             this.securityConstraints_classificationSystem_lbl.Name = "securityConstraints_classificationSystem_lbl";
             this.securityConstraints_classificationSystem_lbl.Size = new System.Drawing.Size(107, 13);
             this.securityConstraints_classificationSystem_lbl.TabIndex = 57;
@@ -913,7 +912,7 @@
             // 
             this.idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystem.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystem.Location = new System.Drawing.Point(128, 101);
+            this.idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystem.Location = new System.Drawing.Point(125, 101);
             this.idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystem.Name = "idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystem";
             this.idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystem.Size = new System.Drawing.Size(255, 21);
             this.idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystem.TabIndex = 3;
@@ -956,7 +955,7 @@
             "EPA Category: Proprietary, NARA Category: Proprietary",
             "EPA Category: Confidential Business Information, NARA Category: Proprietary-Manuf" +
                 "acturer"});
-            this.idInfo_resourceConstraints_MD_SecurityConstraints_userNote.Location = new System.Drawing.Point(127, 71);
+            this.idInfo_resourceConstraints_MD_SecurityConstraints_userNote.Location = new System.Drawing.Point(124, 75);
             this.idInfo_resourceConstraints_MD_SecurityConstraints_userNote.Name = "idInfo_resourceConstraints_MD_SecurityConstraints_userNote";
             this.idInfo_resourceConstraints_MD_SecurityConstraints_userNote.Size = new System.Drawing.Size(258, 21);
             this.idInfo_resourceConstraints_MD_SecurityConstraints_userNote.TabIndex = 2;
@@ -969,7 +968,7 @@
             "public",
             "restricted public",
             "non-public"});
-            this.idInfo_resourceConstraints_MD_SecurityConstraints_useLimitation.Location = new System.Drawing.Point(126, 18);
+            this.idInfo_resourceConstraints_MD_SecurityConstraints_useLimitation.Location = new System.Drawing.Point(97, 4);
             this.idInfo_resourceConstraints_MD_SecurityConstraints_useLimitation.Name = "idInfo_resourceConstraints_MD_SecurityConstraints_useLimitation";
             this.idInfo_resourceConstraints_MD_SecurityConstraints_useLimitation.Size = new System.Drawing.Size(259, 21);
             this.idInfo_resourceConstraints_MD_SecurityConstraints_useLimitation.TabIndex = 0;
@@ -978,7 +977,7 @@
             // 
             this.securityConstraints_userNote_lbl.AutoSize = true;
             this.securityConstraints_userNote_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.securityConstraints_userNote_lbl.Location = new System.Drawing.Point(53, 71);
+            this.securityConstraints_userNote_lbl.Location = new System.Drawing.Point(50, 75);
             this.securityConstraints_userNote_lbl.Name = "securityConstraints_userNote_lbl";
             this.securityConstraints_userNote_lbl.Size = new System.Drawing.Size(62, 26);
             this.securityConstraints_userNote_lbl.TabIndex = 12;
@@ -988,7 +987,7 @@
             // 
             this.securityConstraints_classification_lbl.AutoSize = true;
             this.securityConstraints_classification_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.securityConstraints_classification_lbl.Location = new System.Drawing.Point(41, 52);
+            this.securityConstraints_classification_lbl.Location = new System.Drawing.Point(10, 33);
             this.securityConstraints_classification_lbl.Name = "securityConstraints_classification_lbl";
             this.securityConstraints_classification_lbl.Size = new System.Drawing.Size(69, 13);
             this.securityConstraints_classification_lbl.TabIndex = 11;
@@ -998,7 +997,7 @@
             // 
             this.securityConstraints_useLimitation_lbl.AutoSize = true;
             this.securityConstraints_useLimitation_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.securityConstraints_useLimitation_lbl.Location = new System.Drawing.Point(38, 16);
+            this.securityConstraints_useLimitation_lbl.Location = new System.Drawing.Point(6, 2);
             this.securityConstraints_useLimitation_lbl.Name = "securityConstraints_useLimitation_lbl";
             this.securityConstraints_useLimitation_lbl.Size = new System.Drawing.Size(77, 26);
             this.securityConstraints_useLimitation_lbl.TabIndex = 10;
@@ -1016,7 +1015,7 @@
             "confidential",
             "secret",
             "topSecret"});
-            this.idInfo_resourceConstraints_MD_SecurityConstraints_classification.Location = new System.Drawing.Point(127, 44);
+            this.idInfo_resourceConstraints_MD_SecurityConstraints_classification.Location = new System.Drawing.Point(97, 29);
             this.idInfo_resourceConstraints_MD_SecurityConstraints_classification.Name = "idInfo_resourceConstraints_MD_SecurityConstraints_classification";
             this.idInfo_resourceConstraints_MD_SecurityConstraints_classification.Size = new System.Drawing.Size(141, 21);
             this.idInfo_resourceConstraints_MD_SecurityConstraints_classification.TabIndex = 1;
@@ -1741,7 +1740,7 @@
             // 
             // tpISO
             // 
-            this.tpISO.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.tpISO.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.tpISO.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.tpISO.Controls.Add(this.idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____default);
             this.tpISO.Controls.Add(this.idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____help);
@@ -2040,6 +2039,19 @@
             this.hoverTip_txt.TabIndex = 39;
             this.hoverTip_txt.TabStop = false;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.panel2.Controls.Add(this.securityConstraints_classification_lbl);
+            this.panel2.Controls.Add(this.idInfo_resourceConstraints_MD_SecurityConstraints_classification);
+            this.panel2.Controls.Add(this.idInfo_resourceConstraints_MD_SecurityConstraints_useLimitation);
+            this.panel2.Controls.Add(this.securityConstraints_useLimitation_lbl);
+            this.panel2.Location = new System.Drawing.Point(24, 15);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(376, 55);
+            this.panel2.TabIndex = 0;
+            this.panel2.TabStop = true;
+            // 
             // idInfo_extent_temporalExtent
             // 
             this.idInfo_extent_temporalExtent.BackColor = System.Drawing.Color.Transparent;
@@ -2048,9 +2060,9 @@
             this.idInfo_extent_temporalExtent.Name = "idInfo_extent_temporalExtent";
             this.idInfo_extent_temporalExtent.Size = new System.Drawing.Size(353, 175);
             this.idInfo_extent_temporalExtent.TabIndex = 5;
-            temporalElement__EX_TemporalExtent2.TimeInstant = null;
-            temporalElement__EX_TemporalExtent2.TimePeriod = null;
-            this.idInfo_extent_temporalExtent.temporalElement = temporalElement__EX_TemporalExtent2;
+            temporalElement__EX_TemporalExtent1.TimeInstant = null;
+            temporalElement__EX_TemporalExtent1.TimePeriod = null;
+            this.idInfo_extent_temporalExtent.temporalElement = temporalElement__EX_TemporalExtent1;
             this.idInfo_extent_temporalExtent.Validating += new System.ComponentModel.CancelEventHandler(this.cntrl_Validating);
             // 
             // distributionInfo__MD_Distribution
@@ -2078,6 +2090,7 @@
             this.idInfo_pointOfContact.rp_mode = null;
             this.idInfo_pointOfContact.Size = new System.Drawing.Size(446, 35);
             this.idInfo_pointOfContact.TabIndex = 1;
+            this.idInfo_pointOfContact.validation_modeEmeLt = null;
             // 
             // idInfo_citation_citedResponsibleParty
             // 
@@ -2091,6 +2104,7 @@
             this.idInfo_citation_citedResponsibleParty.rp_mode = null;
             this.idInfo_citation_citedResponsibleParty.Size = new System.Drawing.Size(446, 35);
             this.idInfo_citation_citedResponsibleParty.TabIndex = 2;
+            this.idInfo_citation_citedResponsibleParty.validation_modeEmeLt = null;
             // 
             // contact_CI_ResponsibleParty
             // 
@@ -2105,6 +2119,7 @@
             this.contact_CI_ResponsibleParty.Size = new System.Drawing.Size(445, 35);
             this.contact_CI_ResponsibleParty.TabIndex = 0;
             this.contact_CI_ResponsibleParty.Tag = "";
+            this.contact_CI_ResponsibleParty.validation_modeEmeLt = null;
             this.contact_CI_ResponsibleParty.Validating += new System.ComponentModel.CancelEventHandler(this.cntrl_Validating);
             // 
             // uc_ResponsibleParty2
@@ -2117,6 +2132,7 @@
             this.uc_ResponsibleParty2.rp_mode = null;
             this.uc_ResponsibleParty2.Size = new System.Drawing.Size(439, 500);
             this.uc_ResponsibleParty2.TabIndex = 0;
+            this.uc_ResponsibleParty2.validation_modeEmeLt = null;
             // 
             // uc_ResponsibleParty3
             // 
@@ -2128,6 +2144,7 @@
             this.uc_ResponsibleParty3.rp_mode = null;
             this.uc_ResponsibleParty3.Size = new System.Drawing.Size(439, 500);
             this.uc_ResponsibleParty3.TabIndex = 0;
+            this.uc_ResponsibleParty3.validation_modeEmeLt = null;
             // 
             // uc_ResponsibleParty4
             // 
@@ -2139,6 +2156,7 @@
             this.uc_ResponsibleParty4.rp_mode = null;
             this.uc_ResponsibleParty4.Size = new System.Drawing.Size(439, 500);
             this.uc_ResponsibleParty4.TabIndex = 0;
+            this.uc_ResponsibleParty4.validation_modeEmeLt = null;
             // 
             // uc_ResponsibleParty5
             // 
@@ -2150,6 +2168,7 @@
             this.uc_ResponsibleParty5.rp_mode = null;
             this.uc_ResponsibleParty5.Size = new System.Drawing.Size(439, 500);
             this.uc_ResponsibleParty5.TabIndex = 0;
+            this.uc_ResponsibleParty5.validation_modeEmeLt = null;
             // 
             // uc_ResponsibleParty6
             // 
@@ -2161,6 +2180,7 @@
             this.uc_ResponsibleParty6.rp_mode = null;
             this.uc_ResponsibleParty6.Size = new System.Drawing.Size(439, 500);
             this.uc_ResponsibleParty6.TabIndex = 0;
+            this.uc_ResponsibleParty6.validation_modeEmeLt = null;
             // 
             // uc_ResponsibleParty7
             // 
@@ -2172,6 +2192,7 @@
             this.uc_ResponsibleParty7.rp_mode = null;
             this.uc_ResponsibleParty7.Size = new System.Drawing.Size(439, 500);
             this.uc_ResponsibleParty7.TabIndex = 0;
+            this.uc_ResponsibleParty7.validation_modeEmeLt = null;
             // 
             // EmeLT
             // 
@@ -2267,6 +2288,8 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.tabControl1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2433,5 +2456,6 @@
         private System.Windows.Forms.TextBox idInfo_extent_description;
         private System.Windows.Forms.TextBox hoverTip_txt;
         private System.Windows.Forms.Panel idInfo_citation_date_publication_colorPnl;
+        private System.Windows.Forms.Panel panel2;
     }
 }
