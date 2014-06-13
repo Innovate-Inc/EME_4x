@@ -28,6 +28,7 @@ namespace EmeLibrary
         private string defaultSettingsTableName;
         private xmlFieldMaps xmlFieldMappings;
         private XmlDocument xDoc;
+        private geographicExtentBoundingBox tempfeatureClassBBox;
         public isoNodes localXdoc;
         public string validationSetting;
 
@@ -147,6 +148,67 @@ namespace EmeLibrary
 
         }
 
+        /// <summary>
+        /// Open xml file in Stand Alone mode
+        /// </summary>
+        /// <param name="xmlFilePath"></param>
+        public void AddDocument(string xmlFilePath)
+        {
+            Utils1.setEmeDataSets();
+            bindOtherControlstoEMEdataset();
+            filename = xmlFilePath;
+            getXmlFormatType();
+            
+            PageController.readFromDB();
+            hoverHelpInit();
+            ESRIMode = true; //Set to true temporarily to bypass the onLoad Event
+
+            if (sourceXmlFormat == "ISO19115-2" || sourceXmlFormat == "ISO19115")
+            {
+                //Utils1.setEmeDataSets();
+                //bindFormtoEMEdatabases();
+                bindCCMFields();                
+
+                frmctrls(this.Controls); //validation
+                foreach (Control c in this.Controls)
+                {
+                    validate_Controls(c);
+                }
+                toolStripStatusLabel1.Text = "Editing File: " + filename;
+                this.Show();
+            }
+            else
+            {
+                MessageBox.Show(sourceXmlFormat);
+                toolStripStatusLabel1.Text = sourceXmlFormat;
+            }
+            ESRIMode = false;
+
+
+        }
+
+        /// <summary>
+        /// Open in ArcGIS Mode with Bounding Box information.
+        /// </summary>
+        /// <param name="xml"></param>
+        /// <param name="gxObjectName"></param>
+        /// <param name="featureClassBBox"></param>
+        public void AddDocument(ref string xml, string gxObjectName, geographicExtentBoundingBox featureClassBBox)
+        {
+            AddDocument(ref xml, gxObjectName);
+
+            tempfeatureClassBBox = featureClassBBox;
+            idInfo_extent_updateFromFC_btn.Visible = true;
+
+            
+
+        }
+
+        /// <summary>
+        /// Open in ArcGIS Mode without Bounding Box information.
+        /// </summary>
+        /// <param name="xml"></param>
+        /// <param name="gxObjectName"></param>
         public void AddDocument(ref string xml, string gxObjectName)
         {
             try
@@ -160,6 +222,7 @@ namespace EmeLibrary
                 saveAsToolStripMenuItem.Visible = false;
                 Utils1.setEmeDataSets();
                 bindOtherControlstoEMEdataset();
+                this.Text = this.Text + "  ***Esri ArcGIS Add-In Mode***";
 
 
                 string isoRootNode = xDoc.DocumentElement.Name;
@@ -358,8 +421,8 @@ namespace EmeLibrary
 
         private void saveXmlChanges()
         {
-            //try
-            //{
+            try
+            {
                 PageController.PageSaver(this);
                 
                 sourceXmlFormat = toolStripComboBox1.SelectedItem.ToString();                
@@ -384,11 +447,11 @@ namespace EmeLibrary
                 toolStripStatusLabel1.Text = "Editing File: " + filename;
 
                 MessageBox.Show("Saved: " + filename);
-            //}
-            //catch (Exception e)
-            //{
-            //    MessageBox.Show("Error Saving Record " + e.Message);
-            //}
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error Saving Record " + e.Message);
+            }
         }
 
         private string saveWithThisFileName()
@@ -920,6 +983,22 @@ namespace EmeLibrary
                     idInfo_extent_descriptionCB.SelectedIndex = i;
                 }
             }
+        }
+
+        private void idInfo_extent_updateFromFC_btn_Click(object sender, EventArgs e)
+        {
+            //Catch for stability
+            if (!string.IsNullOrEmpty(tempfeatureClassBBox.Description))
+            {
+                //Park Values and populate with button.
+                idInfo_extent_description.Text = tempfeatureClassBBox.Description;
+                idInfo_extent_geographicBoundingBox_northLatDD.Text = tempfeatureClassBBox.NorthLat.ToString();
+                idInfo_extent_geographicBoundingBox_southLatDD.Text = tempfeatureClassBBox.SouthLat.ToString();
+                idInfo_extent_geographicBoundingBox_westLongDD.Text = tempfeatureClassBBox.WestLong.ToString();
+                idInfo_extent_geographicBoundingBox_eastLongDD.Text = tempfeatureClassBBox.EastLong.ToString();
+            }
+            else { MessageBox.Show("Extent not found for feature class"); }
+
         }
               
 

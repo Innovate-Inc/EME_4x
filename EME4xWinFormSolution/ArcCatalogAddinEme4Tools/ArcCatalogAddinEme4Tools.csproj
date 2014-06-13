@@ -85,6 +85,7 @@
     <Reference Include="System.Drawing" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClearMetadata.cs" />
     <Compile Include="Config.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Config.esriaddinx</DependentUpon>
@@ -102,9 +103,6 @@
   </ItemGroup>
   <ItemGroup>
     <AddInContent Include="Images\ArcCatalogAddinEme4Tools.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="EditIsoMetadata2.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="ESRI.ArcGIS.ArcCatalog">
@@ -145,8 +143,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\Button1.png" />
+    <AddInContent Include="Images\ClearMetadata.png" />
     <Content Include="Images\EditIsoMetadata.png" />
     <AddInContent Include="Images\EditIsoMetadata_1.png" />
+    <AddInContent Include="Images\EditIsoMetadatawBBox.png" />
     <Content Include="Images\EmeIconv2.PNG" />
     <Content Include="Images\export.png" />
     <AddInContent Include="Images\ExportMetadata.png" />

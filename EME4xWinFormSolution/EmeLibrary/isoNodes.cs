@@ -2558,6 +2558,14 @@ namespace EmeLibrary
         public string offLine__MD_Medium__mediumNote { get; set; }
 
     }
+    public class geographicExtentBoundingBox
+    {
+        public string Description { get; set; }
+        public double NorthLat { get; set; }
+        public double SouthLat { get; set; }
+        public double WestLong { get; set; }
+        public double EastLong { get; set; }
+    }
 
     public class temporalElement__EX_TemporalExtent
     {
