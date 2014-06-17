@@ -273,10 +273,5 @@
     <themekt>EPA GIS Keyword Thesaurus</themekt>
     <themekey>Water</themekey>
     <default>false</default>
-  </KeywordsEPA>
-  <KeywordsEPA>
-    <themekt>qqqqq</themekt>
-    <themekey>sssss</themekey>
-    <default>true</default>
-  </KeywordsEPA>
+  </KeywordsEPA>  
 </emeData>

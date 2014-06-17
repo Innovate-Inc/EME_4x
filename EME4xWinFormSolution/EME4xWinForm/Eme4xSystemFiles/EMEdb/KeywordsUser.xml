@@ -38,15 +38,5 @@
     <themekt>User</themekt>
     <themekey>sample</themekey>
     <default>false</default>
-  </KeywordsUser>
-  <KeywordsUser>
-    <themekt>User</themekt>
-    <themekey>newEntry</themekey>
-    <default>true</default>
-  </KeywordsUser>
-  <KeywordsUser>
-    <themekt>User</themekt>
-    <themekey>MyNewEntry</themekey>
-    <default>true</default>
-  </KeywordsUser>
+  </KeywordsUser>  
 </emeData>

@@ -1000,7 +1000,72 @@ namespace EmeLibrary
             else { MessageBox.Show("Extent not found for feature class"); }
 
         }
-              
+
+        private void setDefaultsFromTemplateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Existing values will be replaced by the template.  Are you sure you want to load the template?",
+                "Please Confirm Loading Template", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
+            {
+                XmlDocument templateDoc = new XmlDocument();
+                templateDoc.Load(Utils1.EmeUserAppDataFolder + "\\Eme4xSystemFiles\\EMEdb\\ISO19115MD_GenericMetadataTemplate.xml");
+                sourceXmlFormat = "ISO19115";  //For now the template is 19115;  The user could easily change that.
+
+                xDoc.RemoveAll();
+
+                XmlNode defaultTemplateNodes = templateDoc.DocumentElement.CloneNode(true);
+                XmlNode nodeImporter = xDoc.ImportNode(defaultTemplateNodes, true);
+                XmlNode testForDocElement = xDoc.DocumentElement;
+                
+                if (testForDocElement == null)
+                {
+                    xDoc.AppendChild(nodeImporter);
+                }               
+                else
+                {
+                    xDoc.ReplaceChild(nodeImporter, xDoc.DocumentElement);                    
+                }
+
+                if (filename == "New")
+                {
+                    filename = "Temp";
+                    bindCCMFields();
+                    filename = "New";
+                }
+                else
+                {
+                    bindCCMFields();
+                }              
+
+                frmctrls(this.Controls); //validation
+                foreach (Control c in this.Controls)
+                {
+                    validate_Controls(c);
+                }
+            }            
+        }
+
+        private void clearAllValuesToolStripMenuItem_Click(object sender, EventArgs e)
+        {            
+            XmlNode testForDocElement = xDoc.DocumentElement;
+
+            if (MessageBox.Show("Existing values will be cleared.  Are you sure you want to clear all values?",
+                "Please Confirm", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
+            {
+                if (testForDocElement != null)
+                {
+                    xDoc.DocumentElement.RemoveAll();
+                    bindCCMFields();
+                    frmctrls(this.Controls); //validation
+                    foreach (Control c in this.Controls)
+                    {
+                        validate_Controls(c);
+                    }
+                }
+            }
+
+        }
+
+        
 
     }
 }

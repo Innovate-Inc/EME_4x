@@ -52,7 +52,7 @@
             this.expand_MD_Format_btn = new System.Windows.Forms.Button();
             this.md_distributionFormat_lbl = new System.Windows.Forms.Label();
             this.digitalTransferOptions_pnl = new System.Windows.Forms.Panel();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.offline_resource_expandGxb = new System.Windows.Forms.GroupBox();
             this.offLine__MD_Medium__mediumNode_lbl = new System.Windows.Forms.Label();
             this.offLine__MD_Medium__mediumFormat_lbl = new System.Windows.Forms.Label();
             this.offLine__MD_Medium__volumes_lbl = new System.Windows.Forms.Label();
@@ -126,13 +126,15 @@
             this.MD_Dist = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.errorProvider_Distribution = new System.Windows.Forms.ErrorProvider(this.components);
+            this.offline_resource_expandBtn = new System.Windows.Forms.Button();
+            this.offline_resource_expandLbl = new System.Windows.Forms.Label();
             this.distributor_Contact = new EmeLibrary.uc_ResponsibleParty();
             this.MD_Format_pnl.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.MD_Format.SuspendLayout();
             this.digitalTransferOptions_pnl.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.offline_resource_expandGxb.SuspendLayout();
             this.CI_OnlineResource.SuspendLayout();
             this.panel6.SuspendLayout();
             this.MD_DTO.SuspendLayout();
@@ -401,7 +403,7 @@
             // 
             // digitalTransferOptions_pnl
             // 
-            this.digitalTransferOptions_pnl.Controls.Add(this.groupBox2);
+            this.digitalTransferOptions_pnl.Controls.Add(this.offline_resource_expandGxb);
             this.digitalTransferOptions_pnl.Controls.Add(this.CI_OnlineResource);
             this.digitalTransferOptions_pnl.Controls.Add(this.panel6);
             this.digitalTransferOptions_pnl.Controls.Add(this.MD_DTO);
@@ -414,36 +416,38 @@
             this.digitalTransferOptions_pnl.TabIndex = 1;
             this.digitalTransferOptions_pnl.TabStop = true;
             // 
-            // groupBox2
+            // offline_resource_expandGxb
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox2.Controls.Add(this.offLine__MD_Medium__mediumNode_lbl);
-            this.groupBox2.Controls.Add(this.offLine__MD_Medium__mediumFormat_lbl);
-            this.groupBox2.Controls.Add(this.offLine__MD_Medium__volumes_lbl);
-            this.groupBox2.Controls.Add(this.offLine__MD_Medium__densityUnits_lbl);
-            this.groupBox2.Controls.Add(this.offLine__MD_Medium__density__Real_lbl);
-            this.groupBox2.Controls.Add(this.offLine__MD_Medium__name_lbl);
-            this.groupBox2.Controls.Add(this.offLine__MD_Medium__mediumNode_txt);
-            this.groupBox2.Controls.Add(this.offLine__MD_Medium__mediumFormat_txt);
-            this.groupBox2.Controls.Add(this.offLine__MD_Medium__volumes_txt);
-            this.groupBox2.Controls.Add(this.offLine__MD_Medium__densityUnits_txt);
-            this.groupBox2.Controls.Add(this.offLine__MD_Medium__density__Real_txt);
-            this.groupBox2.Controls.Add(this.offLine__MD_Medium__name_txt);
-            this.groupBox2.Controls.Add(this.panel8);
-            this.groupBox2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(7, 315);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(426, 185);
-            this.groupBox2.TabIndex = 6;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Offline Resource";
+            this.offline_resource_expandGxb.BackColor = System.Drawing.Color.Transparent;
+            this.offline_resource_expandGxb.Controls.Add(this.offline_resource_expandLbl);
+            this.offline_resource_expandGxb.Controls.Add(this.offLine__MD_Medium__mediumNode_lbl);
+            this.offline_resource_expandGxb.Controls.Add(this.offline_resource_expandBtn);
+            this.offline_resource_expandGxb.Controls.Add(this.offLine__MD_Medium__mediumFormat_lbl);
+            this.offline_resource_expandGxb.Controls.Add(this.offLine__MD_Medium__volumes_lbl);
+            this.offline_resource_expandGxb.Controls.Add(this.offLine__MD_Medium__densityUnits_lbl);
+            this.offline_resource_expandGxb.Controls.Add(this.offLine__MD_Medium__density__Real_lbl);
+            this.offline_resource_expandGxb.Controls.Add(this.offLine__MD_Medium__name_lbl);
+            this.offline_resource_expandGxb.Controls.Add(this.offLine__MD_Medium__mediumNode_txt);
+            this.offline_resource_expandGxb.Controls.Add(this.offLine__MD_Medium__mediumFormat_txt);
+            this.offline_resource_expandGxb.Controls.Add(this.offLine__MD_Medium__volumes_txt);
+            this.offline_resource_expandGxb.Controls.Add(this.offLine__MD_Medium__densityUnits_txt);
+            this.offline_resource_expandGxb.Controls.Add(this.offLine__MD_Medium__density__Real_txt);
+            this.offline_resource_expandGxb.Controls.Add(this.offLine__MD_Medium__name_txt);
+            this.offline_resource_expandGxb.Controls.Add(this.panel8);
+            this.offline_resource_expandGxb.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.offline_resource_expandGxb.Location = new System.Drawing.Point(5, 313);
+            this.offline_resource_expandGxb.Name = "offline_resource_expandGxb";
+            this.offline_resource_expandGxb.Size = new System.Drawing.Size(426, 30);
+            this.offline_resource_expandGxb.TabIndex = 6;
+            this.offline_resource_expandGxb.TabStop = false;
+            this.offline_resource_expandGxb.Text = "                                        ";
             // 
             // offLine__MD_Medium__mediumNode_lbl
             // 
             this.offLine__MD_Medium__mediumNode_lbl.AutoSize = true;
             this.offLine__MD_Medium__mediumNode_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.offLine__MD_Medium__mediumNode_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.offLine__MD_Medium__mediumNode_lbl.Location = new System.Drawing.Point(39, 155);
+            this.offLine__MD_Medium__mediumNode_lbl.Location = new System.Drawing.Point(40, 172);
             this.offLine__MD_Medium__mediumNode_lbl.Name = "offLine__MD_Medium__mediumNode_lbl";
             this.offLine__MD_Medium__mediumNode_lbl.Size = new System.Drawing.Size(69, 13);
             this.offLine__MD_Medium__mediumNode_lbl.TabIndex = 11;
@@ -454,7 +458,7 @@
             this.offLine__MD_Medium__mediumFormat_lbl.AutoSize = true;
             this.offLine__MD_Medium__mediumFormat_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.offLine__MD_Medium__mediumFormat_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.offLine__MD_Medium__mediumFormat_lbl.Location = new System.Drawing.Point(29, 129);
+            this.offLine__MD_Medium__mediumFormat_lbl.Location = new System.Drawing.Point(30, 146);
             this.offLine__MD_Medium__mediumFormat_lbl.Name = "offLine__MD_Medium__mediumFormat_lbl";
             this.offLine__MD_Medium__mediumFormat_lbl.Size = new System.Drawing.Size(80, 13);
             this.offLine__MD_Medium__mediumFormat_lbl.TabIndex = 10;
@@ -465,7 +469,7 @@
             this.offLine__MD_Medium__volumes_lbl.AutoSize = true;
             this.offLine__MD_Medium__volumes_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.offLine__MD_Medium__volumes_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.offLine__MD_Medium__volumes_lbl.Location = new System.Drawing.Point(60, 103);
+            this.offLine__MD_Medium__volumes_lbl.Location = new System.Drawing.Point(61, 120);
             this.offLine__MD_Medium__volumes_lbl.Name = "offLine__MD_Medium__volumes_lbl";
             this.offLine__MD_Medium__volumes_lbl.Size = new System.Drawing.Size(46, 13);
             this.offLine__MD_Medium__volumes_lbl.TabIndex = 9;
@@ -476,7 +480,7 @@
             this.offLine__MD_Medium__densityUnits_lbl.AutoSize = true;
             this.offLine__MD_Medium__densityUnits_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.offLine__MD_Medium__densityUnits_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.offLine__MD_Medium__densityUnits_lbl.Location = new System.Drawing.Point(39, 77);
+            this.offLine__MD_Medium__densityUnits_lbl.Location = new System.Drawing.Point(40, 94);
             this.offLine__MD_Medium__densityUnits_lbl.Name = "offLine__MD_Medium__densityUnits_lbl";
             this.offLine__MD_Medium__densityUnits_lbl.Size = new System.Drawing.Size(70, 13);
             this.offLine__MD_Medium__densityUnits_lbl.TabIndex = 8;
@@ -487,7 +491,7 @@
             this.offLine__MD_Medium__density__Real_lbl.AutoSize = true;
             this.offLine__MD_Medium__density__Real_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.offLine__MD_Medium__density__Real_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.offLine__MD_Medium__density__Real_lbl.Location = new System.Drawing.Point(66, 51);
+            this.offLine__MD_Medium__density__Real_lbl.Location = new System.Drawing.Point(67, 68);
             this.offLine__MD_Medium__density__Real_lbl.Name = "offLine__MD_Medium__density__Real_lbl";
             this.offLine__MD_Medium__density__Real_lbl.Size = new System.Drawing.Size(43, 13);
             this.offLine__MD_Medium__density__Real_lbl.TabIndex = 7;
@@ -498,7 +502,7 @@
             this.offLine__MD_Medium__name_lbl.AutoSize = true;
             this.offLine__MD_Medium__name_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.offLine__MD_Medium__name_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.offLine__MD_Medium__name_lbl.Location = new System.Drawing.Point(72, 25);
+            this.offLine__MD_Medium__name_lbl.Location = new System.Drawing.Point(73, 42);
             this.offLine__MD_Medium__name_lbl.Name = "offLine__MD_Medium__name_lbl";
             this.offLine__MD_Medium__name_lbl.Size = new System.Drawing.Size(34, 13);
             this.offLine__MD_Medium__name_lbl.TabIndex = 6;
@@ -508,7 +512,7 @@
             // 
             this.offLine__MD_Medium__mediumNode_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.offLine__MD_Medium__mediumNode_txt.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.offLine__MD_Medium__mediumNode_txt.Location = new System.Drawing.Point(115, 152);
+            this.offLine__MD_Medium__mediumNode_txt.Location = new System.Drawing.Point(116, 169);
             this.offLine__MD_Medium__mediumNode_txt.Name = "offLine__MD_Medium__mediumNode_txt";
             this.offLine__MD_Medium__mediumNode_txt.Size = new System.Drawing.Size(279, 21);
             this.offLine__MD_Medium__mediumNode_txt.TabIndex = 5;
@@ -517,7 +521,7 @@
             // 
             this.offLine__MD_Medium__mediumFormat_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.offLine__MD_Medium__mediumFormat_txt.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.offLine__MD_Medium__mediumFormat_txt.Location = new System.Drawing.Point(116, 126);
+            this.offLine__MD_Medium__mediumFormat_txt.Location = new System.Drawing.Point(117, 143);
             this.offLine__MD_Medium__mediumFormat_txt.Name = "offLine__MD_Medium__mediumFormat_txt";
             this.offLine__MD_Medium__mediumFormat_txt.Size = new System.Drawing.Size(279, 21);
             this.offLine__MD_Medium__mediumFormat_txt.TabIndex = 4;
@@ -526,7 +530,7 @@
             // 
             this.offLine__MD_Medium__volumes_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.offLine__MD_Medium__volumes_txt.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.offLine__MD_Medium__volumes_txt.Location = new System.Drawing.Point(115, 100);
+            this.offLine__MD_Medium__volumes_txt.Location = new System.Drawing.Point(116, 117);
             this.offLine__MD_Medium__volumes_txt.Name = "offLine__MD_Medium__volumes_txt";
             this.offLine__MD_Medium__volumes_txt.Size = new System.Drawing.Size(279, 21);
             this.offLine__MD_Medium__volumes_txt.TabIndex = 3;
@@ -535,7 +539,7 @@
             // 
             this.offLine__MD_Medium__densityUnits_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.offLine__MD_Medium__densityUnits_txt.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.offLine__MD_Medium__densityUnits_txt.Location = new System.Drawing.Point(115, 74);
+            this.offLine__MD_Medium__densityUnits_txt.Location = new System.Drawing.Point(116, 91);
             this.offLine__MD_Medium__densityUnits_txt.Name = "offLine__MD_Medium__densityUnits_txt";
             this.offLine__MD_Medium__densityUnits_txt.Size = new System.Drawing.Size(279, 21);
             this.offLine__MD_Medium__densityUnits_txt.TabIndex = 2;
@@ -544,7 +548,7 @@
             // 
             this.offLine__MD_Medium__density__Real_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.offLine__MD_Medium__density__Real_txt.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.offLine__MD_Medium__density__Real_txt.Location = new System.Drawing.Point(115, 48);
+            this.offLine__MD_Medium__density__Real_txt.Location = new System.Drawing.Point(116, 65);
             this.offLine__MD_Medium__density__Real_txt.Name = "offLine__MD_Medium__density__Real_txt";
             this.offLine__MD_Medium__density__Real_txt.Size = new System.Drawing.Size(279, 21);
             this.offLine__MD_Medium__density__Real_txt.TabIndex = 1;
@@ -553,7 +557,7 @@
             // 
             this.offLine__MD_Medium__name_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.offLine__MD_Medium__name_txt.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.offLine__MD_Medium__name_txt.Location = new System.Drawing.Point(115, 22);
+            this.offLine__MD_Medium__name_txt.Location = new System.Drawing.Point(116, 39);
             this.offLine__MD_Medium__name_txt.Name = "offLine__MD_Medium__name_txt";
             this.offLine__MD_Medium__name_txt.Size = new System.Drawing.Size(279, 21);
             this.offLine__MD_Medium__name_txt.TabIndex = 0;
@@ -561,7 +565,7 @@
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.panel8.Location = new System.Drawing.Point(12, 17);
+            this.panel8.Location = new System.Drawing.Point(13, 33);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(399, 162);
             this.panel8.TabIndex = 12;
@@ -597,7 +601,7 @@
             this.onLine__CI_OnlineResource__applicationProfile_lbl.AutoSize = true;
             this.onLine__CI_OnlineResource__applicationProfile_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.onLine__CI_OnlineResource__applicationProfile_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.onLine__CI_OnlineResource__applicationProfile_lbl.Location = new System.Drawing.Point(19, 89);
+            this.onLine__CI_OnlineResource__applicationProfile_lbl.Location = new System.Drawing.Point(19, 114);
             this.onLine__CI_OnlineResource__applicationProfile_lbl.Name = "onLine__CI_OnlineResource__applicationProfile_lbl";
             this.onLine__CI_OnlineResource__applicationProfile_lbl.Size = new System.Drawing.Size(90, 13);
             this.onLine__CI_OnlineResource__applicationProfile_lbl.TabIndex = 16;
@@ -618,7 +622,7 @@
             // 
             this.onLine__CI_OnlineResource__applicationProfile_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.onLine__CI_OnlineResource__applicationProfile_txt.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.onLine__CI_OnlineResource__applicationProfile_txt.Location = new System.Drawing.Point(115, 86);
+            this.onLine__CI_OnlineResource__applicationProfile_txt.Location = new System.Drawing.Point(115, 111);
             this.onLine__CI_OnlineResource__applicationProfile_txt.Name = "onLine__CI_OnlineResource__applicationProfile_txt";
             this.onLine__CI_OnlineResource__applicationProfile_txt.Size = new System.Drawing.Size(279, 21);
             this.onLine__CI_OnlineResource__applicationProfile_txt.TabIndex = 2;
@@ -627,7 +631,7 @@
             // 
             this.onLine__CI_OnlineResource__protocol_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.onLine__CI_OnlineResource__protocol_txt.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.onLine__CI_OnlineResource__protocol_txt.Location = new System.Drawing.Point(115, 60);
+            this.onLine__CI_OnlineResource__protocol_txt.Location = new System.Drawing.Point(115, 85);
             this.onLine__CI_OnlineResource__protocol_txt.Name = "onLine__CI_OnlineResource__protocol_txt";
             this.onLine__CI_OnlineResource__protocol_txt.Size = new System.Drawing.Size(279, 21);
             this.onLine__CI_OnlineResource__protocol_txt.TabIndex = 1;
@@ -635,9 +639,9 @@
             // onLine__CI_OnlineResource__function_lbl
             // 
             this.onLine__CI_OnlineResource__function_lbl.AutoSize = true;
-            this.onLine__CI_OnlineResource__function_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.onLine__CI_OnlineResource__function_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.onLine__CI_OnlineResource__function_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.onLine__CI_OnlineResource__function_lbl.Location = new System.Drawing.Point(59, 169);
+            this.onLine__CI_OnlineResource__function_lbl.Location = new System.Drawing.Point(61, 49);
             this.onLine__CI_OnlineResource__function_lbl.Name = "onLine__CI_OnlineResource__function_lbl";
             this.onLine__CI_OnlineResource__function_lbl.Size = new System.Drawing.Size(48, 13);
             this.onLine__CI_OnlineResource__function_lbl.TabIndex = 13;
@@ -648,7 +652,7 @@
             this.onLine__CI_OnlineResource__description_lbl.AutoSize = true;
             this.onLine__CI_OnlineResource__description_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.onLine__CI_OnlineResource__description_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.onLine__CI_OnlineResource__description_lbl.Location = new System.Drawing.Point(47, 142);
+            this.onLine__CI_OnlineResource__description_lbl.Location = new System.Drawing.Point(47, 165);
             this.onLine__CI_OnlineResource__description_lbl.Name = "onLine__CI_OnlineResource__description_lbl";
             this.onLine__CI_OnlineResource__description_lbl.Size = new System.Drawing.Size(60, 13);
             this.onLine__CI_OnlineResource__description_lbl.TabIndex = 10;
@@ -658,7 +662,7 @@
             // 
             this.onLine__CI_OnlineResource__name_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.onLine__CI_OnlineResource__name_txt.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.onLine__CI_OnlineResource__name_txt.Location = new System.Drawing.Point(115, 113);
+            this.onLine__CI_OnlineResource__name_txt.Location = new System.Drawing.Point(115, 137);
             this.onLine__CI_OnlineResource__name_txt.Name = "onLine__CI_OnlineResource__name_txt";
             this.onLine__CI_OnlineResource__name_txt.Size = new System.Drawing.Size(279, 21);
             this.onLine__CI_OnlineResource__name_txt.TabIndex = 3;
@@ -667,7 +671,7 @@
             // 
             this.onLine__CI_OnlineResource__description_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.onLine__CI_OnlineResource__description_txt.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.onLine__CI_OnlineResource__description_txt.Location = new System.Drawing.Point(115, 140);
+            this.onLine__CI_OnlineResource__description_txt.Location = new System.Drawing.Point(115, 163);
             this.onLine__CI_OnlineResource__description_txt.Name = "onLine__CI_OnlineResource__description_txt";
             this.onLine__CI_OnlineResource__description_txt.Size = new System.Drawing.Size(279, 21);
             this.onLine__CI_OnlineResource__description_txt.TabIndex = 4;
@@ -695,7 +699,7 @@
             this.onLine__CI_OnlineResource__protocol_lbl.AutoSize = true;
             this.onLine__CI_OnlineResource__protocol_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.onLine__CI_OnlineResource__protocol_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.onLine__CI_OnlineResource__protocol_lbl.Location = new System.Drawing.Point(61, 62);
+            this.onLine__CI_OnlineResource__protocol_lbl.Location = new System.Drawing.Point(61, 87);
             this.onLine__CI_OnlineResource__protocol_lbl.Name = "onLine__CI_OnlineResource__protocol_lbl";
             this.onLine__CI_OnlineResource__protocol_lbl.Size = new System.Drawing.Size(46, 13);
             this.onLine__CI_OnlineResource__protocol_lbl.TabIndex = 6;
@@ -710,9 +714,10 @@
             "download",
             "information",
             "offlineAccess",
+            "webService",
             "order",
             "search"});
-            this.onLine__CI_OnlineResource__function_txt.Location = new System.Drawing.Point(115, 166);
+            this.onLine__CI_OnlineResource__function_txt.Location = new System.Drawing.Point(117, 46);
             this.onLine__CI_OnlineResource__function_txt.Name = "onLine__CI_OnlineResource__function_txt";
             this.onLine__CI_OnlineResource__function_txt.Size = new System.Drawing.Size(169, 21);
             this.onLine__CI_OnlineResource__function_txt.TabIndex = 5;
@@ -722,7 +727,7 @@
             this.onLine__CI_OnlineResource__name_lbl.AutoSize = true;
             this.onLine__CI_OnlineResource__name_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.onLine__CI_OnlineResource__name_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.onLine__CI_OnlineResource__name_lbl.Location = new System.Drawing.Point(72, 115);
+            this.onLine__CI_OnlineResource__name_lbl.Location = new System.Drawing.Point(72, 139);
             this.onLine__CI_OnlineResource__name_lbl.Name = "onLine__CI_OnlineResource__name_lbl";
             this.onLine__CI_OnlineResource__name_lbl.Size = new System.Drawing.Size(34, 13);
             this.onLine__CI_OnlineResource__name_lbl.TabIndex = 8;
@@ -731,9 +736,9 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.panel3.Location = new System.Drawing.Point(12, 53);
+            this.panel3.Location = new System.Drawing.Point(12, 80);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(399, 143);
+            this.panel3.Size = new System.Drawing.Size(399, 110);
             this.panel3.TabIndex = 17;
             // 
             // panel7
@@ -741,7 +746,7 @@
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.panel7.Location = new System.Drawing.Point(11, 13);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(400, 32);
+            this.panel7.Size = new System.Drawing.Size(400, 62);
             this.panel7.TabIndex = 18;
             // 
             // panel6
@@ -1294,6 +1299,29 @@
             // 
             this.errorProvider_Distribution.ContainerControl = this;
             // 
+            // offline_resource_expandBtn
+            // 
+            this.offline_resource_expandBtn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.offline_resource_expandBtn.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.offline_resource_expandBtn.Font = new System.Drawing.Font("Arial Unicode MS", 10F);
+            this.offline_resource_expandBtn.Location = new System.Drawing.Point(10, -1);
+            this.offline_resource_expandBtn.Name = "offline_resource_expandBtn";
+            this.offline_resource_expandBtn.Size = new System.Drawing.Size(23, 23);
+            this.offline_resource_expandBtn.TabIndex = 7;
+            this.offline_resource_expandBtn.Text = "+";
+            this.offline_resource_expandBtn.UseVisualStyleBackColor = true;
+            this.offline_resource_expandBtn.Click += new System.EventHandler(this.offline_resource_expandBtn_Click);
+            // 
+            // offline_resource_expandLbl
+            // 
+            this.offline_resource_expandLbl.AutoSize = true;
+            this.offline_resource_expandLbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.offline_resource_expandLbl.Location = new System.Drawing.Point(38, 2);
+            this.offline_resource_expandLbl.Name = "offline_resource_expandLbl";
+            this.offline_resource_expandLbl.Size = new System.Drawing.Size(87, 13);
+            this.offline_resource_expandLbl.TabIndex = 8;
+            this.offline_resource_expandLbl.Text = "Offline Resource";
+            // 
             // distributor_Contact
             // 
             this.distributor_Contact.BackColor = System.Drawing.Color.Transparent;
@@ -1307,6 +1335,7 @@
             this.distributor_Contact.Size = new System.Drawing.Size(439, 35);
             this.distributor_Contact.TabIndex = 0;
             this.distributor_Contact.Tag = "";
+            this.distributor_Contact.validation_modeEmeLt = null;
             // 
             // uc_distribution
             // 
@@ -1331,8 +1360,8 @@
             this.MD_Format.PerformLayout();
             this.digitalTransferOptions_pnl.ResumeLayout(false);
             this.digitalTransferOptions_pnl.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.offline_resource_expandGxb.ResumeLayout(false);
+            this.offline_resource_expandGxb.PerformLayout();
             this.CI_OnlineResource.ResumeLayout(false);
             this.CI_OnlineResource.PerformLayout();
             this.panel6.ResumeLayout(false);
@@ -1440,7 +1469,7 @@
         private System.Windows.Forms.Label onLine__CI_OnlineResource__applicationProfile_lbl;
         private System.Windows.Forms.TextBox onLine__CI_OnlineResource__applicationProfile_txt;
         private System.Windows.Forms.GroupBox CI_OnlineResource;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox offline_resource_expandGxb;
         private System.Windows.Forms.Label offLine__MD_Medium__name_lbl;
         private System.Windows.Forms.TextBox offLine__MD_Medium__mediumNode_txt;
         private System.Windows.Forms.TextBox offLine__MD_Medium__mediumFormat_txt;
@@ -1456,5 +1485,7 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Button offline_resource_expandBtn;
+        private System.Windows.Forms.Label offline_resource_expandLbl;
     }
 }

@@ -105,6 +105,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_6A9D0929C8DA4269A18B33165633EDD1"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_6FF9E95F9D96483EB1EE6D3313A14257"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -202,6 +208,12 @@
         "Entry"
         {
         "MsmKey" = "8:_F0A4B9B895DD4F1C9BDF98A4A1D65DA6"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_F33E1248EE504304BE1A2D35DB8B5C01"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -645,6 +657,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6A9D0929C8DA4269A18B33165633EDD1"
+            {
+            "SourcePath" = "8:..\\EME4xWinForm\\Eme4xSystemFiles\\EMEdb\\ISO19115MD_GenericMetadataTemplate.xml"
+            "TargetName" = "8:ISO19115MD_GenericMetadataTemplate.xml"
+            "Tag" = "8:"
+            "Folder" = "8:_DB8F238C472A4B459F2F4CDAA163B28F"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6FF9E95F9D96483EB1EE6D3313A14257"
             {
             "SourcePath" = "8:..\\EME4xWinForm\\Eme4xSystemFiles\\EMEdb\\OnlineLinkage.xml"
@@ -965,6 +997,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F33E1248EE504304BE1A2D35DB8B5C01"
+            {
+            "SourcePath" = "8:..\\EME4xWinForm\\Eme4xSystemFiles\\EMEdb\\ISO19115MD_GenericMetadataTemplate.xml"
+            "TargetName" = "8:ISO19115MD_GenericMetadataTemplate.xml"
+            "Tag" = "8:"
+            "Folder" = "8:_6865A5485F2845359A03ECC25B314C85"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F4A4D7C48CB54B87BC403DD8CBEA397E"
             {
             "SourcePath" = "8:..\\EME4xWinForm\\Eme4xSystemFiles\\EMEdb\\KeywordsEPA.xml"
@@ -1194,7 +1246,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:EPA Metadata Editor v4.0 Beta"
         "ProductCode" = "8:{9D299FD9-3F18-45BE-9783-236BD995E785}"
-        "PackageCode" = "8:{979A6876-0792-47E2-9A2F-E3A8CEDB9BDE}"
+        "PackageCode" = "8:{83223A81-FF40-498E-AA72-D2D92D4B3A55}"
         "UpgradeCode" = "8:{EFE50942-63DD-4CA2-9EA0-74A9CD61A9D5}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"

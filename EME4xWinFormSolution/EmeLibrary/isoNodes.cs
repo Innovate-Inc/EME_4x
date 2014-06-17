@@ -297,323 +297,329 @@ namespace EmeLibrary
         
         public isoNodes(XmlDocument xdoc, string sourceXMLFormat, string fileNamewithFullPath)
         {
-            
-            //Set Metadata format and file path and then set fields
-            //ToDo:  Handle newly created files.  Will have to overload this method incase we are dealing with ArcObjects
-
-            //Store inbound record.  Idea is to have both an inbound and outbound metadata record           
-            inboundMetadataRecord = xdoc;
-
-            //Make a copy and remove the elements that were handeled so we have a document of all the unsupported elements.
-            StringWriter sw = new StringWriter();
-            XmlTextWriter xw = new XmlTextWriter(sw);
-            xw.Formatting = Formatting.Indented;
-            xdoc.WriteTo(xw);
-            string xdocCopy = sw.ToString();
-            sw.Close();
-            xw.Close();
-            inboundMetadataRecordSkippedElements = new XmlDocument();
-            if (!string.IsNullOrEmpty(xdocCopy))
-            {
-                inboundMetadataRecordSkippedElements.LoadXml(xdocCopy);
-            }
-            else
-            {
-                inboundMetadataRecordSkippedElements.LoadXml("<Empty/>");
-            }
-                       
-
-            // = xdoc;
-            inboundMetadataFormat = sourceXMLFormat;
-            inboundMetadataFilePath = fileNamewithFullPath;
-
-            //Depending on the format detected, load the correct template record to for the outgoing metadata record
-            //(gmd:MD_Metdata = 19115, gmi:MI_Metadata = 19115-2; metadata = both CSDGM and ArcGIS)
-            templateMetadataRecord = new XmlDocument();
-            if (inboundMetadataFormat == "ISO19115-2")
-            {
-                templateMetadataRecord.Load(Utils1.EmeUserAppDataFolder + "\\Eme4xSystemFiles\\EMEdb\\MItemplate.xml");
-            }
-            else if (inboundMetadataFormat == "ISO19115")
-            {
-                templateMetadataRecord.Load(Utils1.EmeUserAppDataFolder + "\\Eme4xSystemFiles\\EMEdb\\MDtemplate.xml");
-            }
-            else
-            {
-                //do something; not sure what yet  :-)
-            }
-                        
-            //NameSpace and schema specific to 19115 and -2.  Trying to avoid using this or some other work around for multiple standards.
-            //setISONameSpaceManager();
-            
-            //codeListsArcISO = new XmlDocument();
-
-            bindclassXpathProperties();
-
-            if (fileNamewithFullPath == "New")
-            {
-                //Set new instances for object fields
-                kwEpaList = new List<string>();
-                kwIsoTopicCatList = new List<string>();
-                kwPlaceList = new List<string>();
-                kwUserList = new List<string>();
-                _contactRpSection = new List<CI_ResponsibleParty>();
-                idinfoCitationcitedResponsibleParty = new List<CI_ResponsibleParty>();
-                
-                idinfoPointOfContact = new List<CI_ResponsibleParty>();
-                _idInfo_extent_temporalExtent = new temporalElement__EX_TemporalExtent();
-                _distributionInfo__MD_Distribution = new List<MD_Distributor>();
-                mdStandardName = templateMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.metadataStandardNameXpath).FirstChild.InnerText;
-                mdStandardVersion = templateMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.metadataStandardVersionXpath).FirstChild.InnerText;
-                                              
-                
-
-            }
-            else
+            try
             {
 
-                //Metadata Information
-                fileid = returnInnerTextfromNode(IsoNodeXpaths.fileIdentifierXpath);
-                _language = returnInnerTextfromNode(IsoNodeXpaths.languageXpath);
-                hyLevel_md_scopeCode = returnInnerTextfromNode(IsoNodeXpaths.hierarchyLevel_MD_ScopeCodeXpath);
-                //check that there is a contact
-                _contactRpSection = returnCI_ResponsiblePartyList(IsoNodeXpaths.contact_CI_ResponsiblePartyXpath);
-                _dateStamp = returnInnerTextfromNode(IsoNodeXpaths.dateStampXpath);
-                //Might get this from template metadata instead and leave as read-only
-                mdStandardName = templateMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.metadataStandardNameXpath).FirstChild.InnerText;
-                mdStandardVersion = templateMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.metadataStandardVersionXpath).FirstChild.InnerText;
-                
-                XmlNode deleteMDInfo = inboundMetadataRecordSkippedElements.DocumentElement.SelectSingleNode("./*[local-name()='characterSet']");
-                if (deleteMDInfo != null)
+                //Set Metadata format and file path and then set fields
+                //ToDo:  Handle newly created files.  Will have to overload this method incase we are dealing with ArcObjects
+
+                //Store inbound record.  Idea is to have both an inbound and outbound metadata record           
+                inboundMetadataRecord = xdoc;
+
+                //Make a copy and remove the elements that were handeled so we have a document of all the unsupported elements.
+                StringWriter sw = new StringWriter();
+                XmlTextWriter xw = new XmlTextWriter(sw);
+                xw.Formatting = Formatting.Indented;
+                xdoc.WriteTo(xw);
+                string xdocCopy = sw.ToString();
+                sw.Close();
+                xw.Close();
+                inboundMetadataRecordSkippedElements = new XmlDocument();
+                if (!string.IsNullOrEmpty(xdocCopy))
                 {
-                    deleteMDInfo.RemoveAll();
-                    removeEmptyParentNodes(deleteMDInfo);
+                    inboundMetadataRecordSkippedElements.LoadXml(xdocCopy);
                 }
-                deleteMDInfo = inboundMetadataRecordSkippedElements.DocumentElement.SelectSingleNode("./*[local-name()='metadataStandardName']");
-                if (deleteMDInfo != null)
+                else
                 {
-                    deleteMDInfo.RemoveAll();
-                    removeEmptyParentNodes(deleteMDInfo);
-                }
-                deleteMDInfo = inboundMetadataRecordSkippedElements.DocumentElement.SelectSingleNode("./*[local-name()='metadataStandardVersion']");
-                if (deleteMDInfo != null)
-                {
-                    deleteMDInfo.RemoveAll();
-                    removeEmptyParentNodes(deleteMDInfo);
+                    inboundMetadataRecordSkippedElements.LoadXml("<Empty/>");
                 }
 
-                //IdInfo
-                _idInfo_citation_title = returnInnerTextfromNode(IsoNodeXpaths.idInfo_citation_TitleXpath);
-                
-                //Remove the compound dates first, then set class fields
-                XmlNode deleteCompoundElement = inboundMetadataRecordSkippedElements.DocumentElement.SelectSingleNode
-                    (IsoNodeXpaths.idInfo_citation_date_creationXpath);
-                if (deleteCompoundElement != null)
+
+                // = xdoc;
+                inboundMetadataFormat = sourceXMLFormat;
+                inboundMetadataFilePath = fileNamewithFullPath;
+
+                //Depending on the format detected, load the correct template record to for the outgoing metadata record
+                //(gmd:MD_Metdata = 19115, gmi:MI_Metadata = 19115-2; metadata = both CSDGM and ArcGIS)
+                templateMetadataRecord = new XmlDocument();
+                if (inboundMetadataFormat == "ISO19115-2")
                 {
-                    XmlNode pNode = deleteCompoundElement.ParentNode;
-                    pNode.RemoveAll();
-                    removeEmptyParentNodes(pNode);
-                }                
-                deleteCompoundElement = inboundMetadataRecordSkippedElements.DocumentElement.SelectSingleNode
-                    (IsoNodeXpaths.idInfo_citation_date_publicationXpath);
-                if (deleteCompoundElement != null)
-                {
-                    XmlNode pNode = deleteCompoundElement.ParentNode;
-                    pNode.RemoveAll();
-                    removeEmptyParentNodes(pNode);
+                    templateMetadataRecord.Load(Utils1.EmeUserAppDataFolder + "\\Eme4xSystemFiles\\EMEdb\\MItemplate.xml");
                 }
-                deleteCompoundElement = inboundMetadataRecordSkippedElements.DocumentElement.SelectSingleNode
-                    (IsoNodeXpaths.idInfo_citation_date_revisionXpath);
-                if (deleteCompoundElement != null)
+                else if (inboundMetadataFormat == "ISO19115")
                 {
-                    XmlNode pNode = deleteCompoundElement.ParentNode;
-                    pNode.RemoveAll();
-                    removeEmptyParentNodes(pNode);
+                    templateMetadataRecord.Load(Utils1.EmeUserAppDataFolder + "\\Eme4xSystemFiles\\EMEdb\\MDtemplate.xml");
+                }
+                else
+                {
+                    //do something; not sure what yet  :-)
                 }
 
-                _idInfo_citation_date_creation = returnInnerTextfromNode(IsoNodeXpaths.idInfo_citation_date_creationXpath);
-                _idInfo_citation_date_publication = returnInnerTextfromNode(IsoNodeXpaths.idInfo_citation_date_publicationXpath);
-                _idInfo_citation_date_revision = returnInnerTextfromNode(IsoNodeXpaths.idInfo_citation_date_revisionXpath);
+                //NameSpace and schema specific to 19115 and -2.  Trying to avoid using this or some other work around for multiple standards.
+                //setISONameSpaceManager();
 
-                idinfoCitationcitedResponsibleParty = returnCI_ResponsiblePartyList(IsoNodeXpaths.idInfo_citation_citedResponsiblePartyXpath);
+                //codeListsArcISO = new XmlDocument();
 
-                _idInfo_abstract = returnInnerTextfromNode(IsoNodeXpaths.idInfo_AbstractXpath);
-                _idInfo_purpose = returnInnerTextfromNode(IsoNodeXpaths.idInfo_PurposeXpath);
-                _idInfo_status_MD_ProgressCode = returnInnerTextfromNode(IsoNodeXpaths.idInfo_Status_MD_ProgressCodeXpath);
-                idinfoPointOfContact = returnCI_ResponsiblePartyList(IsoNodeXpaths.idInfo_pointOfContactXpath);
+                bindclassXpathProperties();
 
-                //Section 7 resourceMaintenance
-                _idInfo_resourceMaintenance = returnInnerTextfromNode(IsoNodeXpaths.idInfo_resourceMaintenanceXpath);
-
-                kwEpaList = returnListFromKeywordSection(IsoNodeXpaths.idInfo_keywordsEpaXpath, "./*[local-name()='MD_Keywords']/*[local-name()='keyword']");
-                //returnListFromNodeList(inboundMetadataRecord.DocumentElement.SelectNodes(IsoNodeXpaths.IdInfo_keywordsEpaListXpath));
-                kwPlaceList = returnListFromKeywordSection(IsoNodeXpaths.idInfo_keywordsPlaceXpath, "./*[local-name()='MD_Keywords']/*[local-name()='keyword']");
-                kwUserList = returnListFromKeywordSection(IsoNodeXpaths.idInfo_keywordsUserXpath, "./*[local-name()='MD_Keywords']/*[local-name()='keyword']");
-                kwIsoTopicCatList = returnListFromKeywordSection(IsoNodeXpaths.idInfo_keywordsIsoTopicCategoryXpath, "./*[local-name()='MD_TopicCategoryCode']");
-                
-                //Section 12 resourceConstraints
-                _idInfo_resourceConstraints_MD_Constraints_useLimitation = 
-                    returnInnerTextfromNode(IsoNodeXpaths.idInfo_resourceConstraints_MD_Constraints_useLimitationXpath);
-                _idInfo_resourceConstraints_MD_LegalConstraints_useLimitation = 
-                    returnInnerTextfromNode(IsoNodeXpaths.idInfo_resourceConstraints_MD_LegalConstraints_useLimitationXpath);
-                _idInfo_resourceConstraints_MD_LegalConstraints_accessConstraints = 
-                    returnInnerTextfromNode(IsoNodeXpaths.idInfo_resourceConstraints_MD_LegalConstraints_accessConstraintsXpath);
-                _idInfo_resourceConstraints_MD_LegalConstraints_useConstraints =
-                    returnInnerTextfromNode(IsoNodeXpaths.idInfo_resourceConstraints_MD_LegalConstraints_useConstraintsXpath);
-                _idInfo_resourceConstraints_MD_LegalConstraints_otherConstraints =
-                    returnInnerTextfromNode(IsoNodeXpaths.idInfo_resourceConstraints_MD_LegalConstraints_otherConstraintsXpath);
-                _idInfo_resourceConstraints_MD_SecurityConstraints_useLimitation =
-                    returnInnerTextfromNode(IsoNodeXpaths.idInfo_resourceConstraints_MD_SecurityConstraints_useLimitationXpath);
-                _idInfo_resourceConstraints_MD_SecurityConstraints_classification =
-                    returnInnerTextfromNode(IsoNodeXpaths.idInfo_resourceConstraints_MD_SecurityConstraints_classificationXpath);
-                _idInfo_resourceConstraints_MD_SecurityConstraints_userNote =
-                    returnInnerTextfromNode(IsoNodeXpaths.idInfo_resourceConstraints_MD_SecurityConstraints_userNoteXpath);
-                _idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystem =
-                    returnInnerTextfromNode(IsoNodeXpaths.idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystemXpath);
-                _idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescription =
-                    returnInnerTextfromNode(IsoNodeXpaths.idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescriptionXpath);
-                
-                //Section 16  //just remove the lanuague section
-                XmlNode delLan = inboundMetadataRecordSkippedElements.DocumentElement.SelectSingleNode(
-                    "./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='language']");
-                if (delLan != null)
+                if (fileNamewithFullPath == "New")
                 {
-                    delLan.RemoveAll();
-                    removeEmptyParentNodes(delLan);
+                    //Set new instances for object fields
+                    kwEpaList = new List<string>();
+                    kwIsoTopicCatList = new List<string>();
+                    kwPlaceList = new List<string>();
+                    kwUserList = new List<string>();
+                    _contactRpSection = new List<CI_ResponsibleParty>();
+                    idinfoCitationcitedResponsibleParty = new List<CI_ResponsibleParty>();
+
+                    idinfoPointOfContact = new List<CI_ResponsibleParty>();
+                    _idInfo_extent_temporalExtent = new temporalElement__EX_TemporalExtent();
+                    _distributionInfo__MD_Distribution = new List<MD_Distributor>();
+                    mdStandardName = templateMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.metadataStandardNameXpath).FirstChild.InnerText;
+                    mdStandardVersion = templateMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.metadataStandardVersionXpath).FirstChild.InnerText;
+
+
+
                 }
-
-                _idInfo_extent_description = returnInnerTextfromNode(IsoNodeXpaths.idInfo_extent_descriptionXpath);
-                _idInfo_extent_geographicBoundingBox_eastLongDD = returnInnerTextfromNodeAsDouble(IsoNodeXpaths.idInfo_extent_geographicBoundingBox_eastLongDDXpath);
-                _idInfo_extent_geographicBoundingBox_westLongDD = returnInnerTextfromNodeAsDouble(IsoNodeXpaths.idInfo_extent_geographicBoundingBox_westLongDDXpath);
-                _idInfo_extent_geographicBoundingBox_northLatDD= returnInnerTextfromNodeAsDouble(IsoNodeXpaths.idInfo_extent_geographicBoundingBox_northLatDDXpath);
-                _idInfo_extent_geographicBoundingBox_southLatDD = returnInnerTextfromNodeAsDouble(IsoNodeXpaths.idInfo_extent_geographicBoundingBox_southLatDDXpath);
-
-                //Check which timeExtent is found in the document... if one is found.  If not found then leave each type null?
-                //Only populate one of the extents for now, even if more are present.
-                //This grabs the first occurance of time extent and populate timePeriod, or timeInstant
-                _idInfo_extent_temporalExtent = new temporalElement__EX_TemporalExtent();
-                #region temporalExtent Section
-                XmlNode temporalExtentNode = inboundMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.idInfo_extent_temporalExtentXpath);
-                if (temporalExtentNode != null)
+                else
                 {
-                    //check which section we have.
-                    //If both time instant and time period what do we do???
-                    //For now this will grab a timePeriod and skip time instant if they both exist
-                    //First one grabbed will be removed from the tree.
 
-                    XmlNode nodeToDelete = inboundMetadataRecordSkippedElements.DocumentElement.SelectSingleNode(IsoNodeXpaths.idInfo_extent_temporalExtentXpath);
-                    nodeToDelete.RemoveAll();
-                    removeEmptyParentNodes(nodeToDelete);
+                    //Metadata Information
+                    fileid = returnInnerTextfromNode(IsoNodeXpaths.fileIdentifierXpath);
+                    _language = returnInnerTextfromNode(IsoNodeXpaths.languageXpath);
+                    hyLevel_md_scopeCode = returnInnerTextfromNode(IsoNodeXpaths.hierarchyLevel_MD_ScopeCodeXpath);
+                    //check that there is a contact
+                    _contactRpSection = returnCI_ResponsiblePartyList(IsoNodeXpaths.contact_CI_ResponsiblePartyXpath);
+                    _dateStamp = returnInnerTextfromNode(IsoNodeXpaths.dateStampXpath);
+                    //Might get this from template metadata instead and leave as read-only
+                    mdStandardName = templateMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.metadataStandardNameXpath).FirstChild.InnerText;
+                    mdStandardVersion = templateMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.metadataStandardVersionXpath).FirstChild.InnerText;
 
-                    string tExtentName = temporalExtentNode.FirstChild.Name;
-                    if (tExtentName == "gml:TimePeriod")
+                    XmlNode deleteMDInfo = inboundMetadataRecordSkippedElements.DocumentElement.SelectSingleNode("./*[local-name()='characterSet']");
+                    if (deleteMDInfo != null)
                     {
-                        timePeriodExtent tp = new timePeriodExtent();
-                        
-                        tp.extent__TimePeriod__id = "boundingTimePeriodExtent1";//Make sure it is unique. We are assigning our own id.
-                        tp.extent__TimePeriod__description = (temporalExtentNode.FirstChild.SelectSingleNode("./*[local-name()='description']") != null) ?
-                            temporalExtentNode.FirstChild.SelectSingleNode("./*[local-name()='description']").InnerText : "";
-                        //These could have the indeterminantPosition Attribute
-                        //XmlNode attributeNode = targetNode.FirstChild.Attributes["codeListValue"];
-                        //if (attributeNode != null) { targetNode.FirstChild.Attributes["codeListValue"].Value = nodeValue; }
-                        XmlNode subNode = temporalExtentNode.FirstChild.SelectSingleNode("./*[local-name()='beginPosition']");
-                        if (subNode != null)
+                        deleteMDInfo.RemoveAll();
+                        removeEmptyParentNodes(deleteMDInfo);
+                    }
+                    deleteMDInfo = inboundMetadataRecordSkippedElements.DocumentElement.SelectSingleNode("./*[local-name()='metadataStandardName']");
+                    if (deleteMDInfo != null)
+                    {
+                        deleteMDInfo.RemoveAll();
+                        removeEmptyParentNodes(deleteMDInfo);
+                    }
+                    deleteMDInfo = inboundMetadataRecordSkippedElements.DocumentElement.SelectSingleNode("./*[local-name()='metadataStandardVersion']");
+                    if (deleteMDInfo != null)
+                    {
+                        deleteMDInfo.RemoveAll();
+                        removeEmptyParentNodes(deleteMDInfo);
+                    }
+
+                    //IdInfo
+                    _idInfo_citation_title = returnInnerTextfromNode(IsoNodeXpaths.idInfo_citation_TitleXpath);
+
+                    //Remove the compound dates first, then set class fields
+                    XmlNode deleteCompoundElement = inboundMetadataRecordSkippedElements.DocumentElement.SelectSingleNode
+                        (IsoNodeXpaths.idInfo_citation_date_creationXpath);
+                    if (deleteCompoundElement != null)
+                    {
+                        XmlNode pNode = deleteCompoundElement.ParentNode;
+                        pNode.RemoveAll();
+                        removeEmptyParentNodes(pNode);
+                    }
+                    deleteCompoundElement = inboundMetadataRecordSkippedElements.DocumentElement.SelectSingleNode
+                        (IsoNodeXpaths.idInfo_citation_date_publicationXpath);
+                    if (deleteCompoundElement != null)
+                    {
+                        XmlNode pNode = deleteCompoundElement.ParentNode;
+                        pNode.RemoveAll();
+                        removeEmptyParentNodes(pNode);
+                    }
+                    deleteCompoundElement = inboundMetadataRecordSkippedElements.DocumentElement.SelectSingleNode
+                        (IsoNodeXpaths.idInfo_citation_date_revisionXpath);
+                    if (deleteCompoundElement != null)
+                    {
+                        XmlNode pNode = deleteCompoundElement.ParentNode;
+                        pNode.RemoveAll();
+                        removeEmptyParentNodes(pNode);
+                    }
+
+                    _idInfo_citation_date_creation = returnInnerTextfromNode(IsoNodeXpaths.idInfo_citation_date_creationXpath);
+                    _idInfo_citation_date_publication = returnInnerTextfromNode(IsoNodeXpaths.idInfo_citation_date_publicationXpath);
+                    _idInfo_citation_date_revision = returnInnerTextfromNode(IsoNodeXpaths.idInfo_citation_date_revisionXpath);
+
+                    idinfoCitationcitedResponsibleParty = returnCI_ResponsiblePartyList(IsoNodeXpaths.idInfo_citation_citedResponsiblePartyXpath);
+
+                    _idInfo_abstract = returnInnerTextfromNode(IsoNodeXpaths.idInfo_AbstractXpath);
+                    _idInfo_purpose = returnInnerTextfromNode(IsoNodeXpaths.idInfo_PurposeXpath);
+                    _idInfo_status_MD_ProgressCode = returnInnerTextfromNode(IsoNodeXpaths.idInfo_Status_MD_ProgressCodeXpath);
+                    idinfoPointOfContact = returnCI_ResponsiblePartyList(IsoNodeXpaths.idInfo_pointOfContactXpath);
+
+                    //Section 7 resourceMaintenance
+                    _idInfo_resourceMaintenance = returnInnerTextfromNode(IsoNodeXpaths.idInfo_resourceMaintenanceXpath);
+
+                    kwEpaList = returnListFromKeywordSection(IsoNodeXpaths.idInfo_keywordsEpaXpath, "./*[local-name()='MD_Keywords']/*[local-name()='keyword']");
+                    //returnListFromNodeList(inboundMetadataRecord.DocumentElement.SelectNodes(IsoNodeXpaths.IdInfo_keywordsEpaListXpath));
+                    kwPlaceList = returnListFromKeywordSection(IsoNodeXpaths.idInfo_keywordsPlaceXpath, "./*[local-name()='MD_Keywords']/*[local-name()='keyword']");
+                    kwUserList = returnListFromKeywordSection(IsoNodeXpaths.idInfo_keywordsUserXpath, "./*[local-name()='MD_Keywords']/*[local-name()='keyword']");
+                    kwIsoTopicCatList = returnListFromKeywordSection(IsoNodeXpaths.idInfo_keywordsIsoTopicCategoryXpath, "./*[local-name()='MD_TopicCategoryCode']");
+
+                    //Section 12 resourceConstraints
+                    _idInfo_resourceConstraints_MD_Constraints_useLimitation =
+                        returnInnerTextfromNode(IsoNodeXpaths.idInfo_resourceConstraints_MD_Constraints_useLimitationXpath);
+                    _idInfo_resourceConstraints_MD_LegalConstraints_useLimitation =
+                        returnInnerTextfromNode(IsoNodeXpaths.idInfo_resourceConstraints_MD_LegalConstraints_useLimitationXpath);
+                    _idInfo_resourceConstraints_MD_LegalConstraints_accessConstraints =
+                        returnInnerTextfromNode(IsoNodeXpaths.idInfo_resourceConstraints_MD_LegalConstraints_accessConstraintsXpath);
+                    _idInfo_resourceConstraints_MD_LegalConstraints_useConstraints =
+                        returnInnerTextfromNode(IsoNodeXpaths.idInfo_resourceConstraints_MD_LegalConstraints_useConstraintsXpath);
+                    _idInfo_resourceConstraints_MD_LegalConstraints_otherConstraints =
+                        returnInnerTextfromNode(IsoNodeXpaths.idInfo_resourceConstraints_MD_LegalConstraints_otherConstraintsXpath);
+                    _idInfo_resourceConstraints_MD_SecurityConstraints_useLimitation =
+                        returnInnerTextfromNode(IsoNodeXpaths.idInfo_resourceConstraints_MD_SecurityConstraints_useLimitationXpath);
+                    _idInfo_resourceConstraints_MD_SecurityConstraints_classification =
+                        returnInnerTextfromNode(IsoNodeXpaths.idInfo_resourceConstraints_MD_SecurityConstraints_classificationXpath);
+                    _idInfo_resourceConstraints_MD_SecurityConstraints_userNote =
+                        returnInnerTextfromNode(IsoNodeXpaths.idInfo_resourceConstraints_MD_SecurityConstraints_userNoteXpath);
+                    _idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystem =
+                        returnInnerTextfromNode(IsoNodeXpaths.idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystemXpath);
+                    _idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescription =
+                        returnInnerTextfromNode(IsoNodeXpaths.idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescriptionXpath);
+
+                    //Section 16  //just remove the lanuague section
+                    XmlNode delLan = inboundMetadataRecordSkippedElements.DocumentElement.SelectSingleNode(
+                        "./*[local-name()='identificationInfo']/*[local-name()='MD_DataIdentification']/*[local-name()='language']");
+                    if (delLan != null)
+                    {
+                        delLan.RemoveAll();
+                        removeEmptyParentNodes(delLan);
+                    }
+
+                    _idInfo_extent_description = returnInnerTextfromNode(IsoNodeXpaths.idInfo_extent_descriptionXpath);
+                    _idInfo_extent_geographicBoundingBox_eastLongDD = returnInnerTextfromNodeAsDouble(IsoNodeXpaths.idInfo_extent_geographicBoundingBox_eastLongDDXpath);
+                    _idInfo_extent_geographicBoundingBox_westLongDD = returnInnerTextfromNodeAsDouble(IsoNodeXpaths.idInfo_extent_geographicBoundingBox_westLongDDXpath);
+                    _idInfo_extent_geographicBoundingBox_northLatDD = returnInnerTextfromNodeAsDouble(IsoNodeXpaths.idInfo_extent_geographicBoundingBox_northLatDDXpath);
+                    _idInfo_extent_geographicBoundingBox_southLatDD = returnInnerTextfromNodeAsDouble(IsoNodeXpaths.idInfo_extent_geographicBoundingBox_southLatDDXpath);
+
+                    //Check which timeExtent is found in the document... if one is found.  If not found then leave each type null?
+                    //Only populate one of the extents for now, even if more are present.
+                    //This grabs the first occurance of time extent and populate timePeriod, or timeInstant
+                    _idInfo_extent_temporalExtent = new temporalElement__EX_TemporalExtent();
+                    #region temporalExtent Section
+                    XmlNode temporalExtentNode = inboundMetadataRecord.DocumentElement.SelectSingleNode(IsoNodeXpaths.idInfo_extent_temporalExtentXpath);
+                    if (temporalExtentNode != null)
+                    {
+                        //check which section we have.
+                        //If both time instant and time period what do we do???
+                        //For now this will grab a timePeriod and skip time instant if they both exist
+                        //First one grabbed will be removed from the tree.
+
+                        XmlNode nodeToDelete = inboundMetadataRecordSkippedElements.DocumentElement.SelectSingleNode(IsoNodeXpaths.idInfo_extent_temporalExtentXpath);
+                        nodeToDelete.RemoveAll();
+                        removeEmptyParentNodes(nodeToDelete);
+
+                        string tExtentName = temporalExtentNode.FirstChild.Name;
+                        if (tExtentName == "gml:TimePeriod")
                         {
-                            DateTime dt;
-                            bool isValueDate = DateTime.TryParse(subNode.InnerText, out dt);
-                            if (isValueDate) { tp.extent__TimePeriod__beginPosition = subNode.InnerText; }
-                            else
+                            timePeriodExtent tp = new timePeriodExtent();
+
+                            tp.extent__TimePeriod__id = "boundingTimePeriodExtent1";//Make sure it is unique. We are assigning our own id.
+                            tp.extent__TimePeriod__description = (temporalExtentNode.FirstChild.SelectSingleNode("./*[local-name()='description']") != null) ?
+                                temporalExtentNode.FirstChild.SelectSingleNode("./*[local-name()='description']").InnerText : "";
+                            //These could have the indeterminantPosition Attribute
+                            //XmlNode attributeNode = targetNode.FirstChild.Attributes["codeListValue"];
+                            //if (attributeNode != null) { targetNode.FirstChild.Attributes["codeListValue"].Value = nodeValue; }
+                            XmlNode subNode = temporalExtentNode.FirstChild.SelectSingleNode("./*[local-name()='beginPosition']");
+                            if (subNode != null)
                             {
-                                XmlNode attributeNode = subNode.Attributes["indeterminatePosition"];
-                                if (attributeNode != null)
+                                DateTime dt;
+                                bool isValueDate = DateTime.TryParse(subNode.InnerText, out dt);
+                                if (isValueDate) { tp.extent__TimePeriod__beginPosition = subNode.InnerText; }
+                                else
                                 {
-                                    tp.extent__TimePeriod__beginPosition = (subNode.Attributes["indeterminatePosition"].Value != null) ?
-                                        subNode.Attributes["indeterminatePosition"].Value : "unknown";
-                                }                               
+                                    XmlNode attributeNode = subNode.Attributes["indeterminatePosition"];
+                                    if (attributeNode != null)
+                                    {
+                                        tp.extent__TimePeriod__beginPosition = (subNode.Attributes["indeterminatePosition"].Value != null) ?
+                                            subNode.Attributes["indeterminatePosition"].Value : "unknown";
+                                    }
+                                }
                             }
-                        }
-                        subNode = temporalExtentNode.FirstChild.SelectSingleNode("./*[local-name()='endPosition']");
-                        if (subNode != null)
-                        {
-                            DateTime dt;
-                            bool isValueDate = DateTime.TryParse(subNode.InnerText, out dt);
-                            if (isValueDate) { tp.extent__TimePeriod__endPosition = subNode.InnerText; }
-                            else
+                            subNode = temporalExtentNode.FirstChild.SelectSingleNode("./*[local-name()='endPosition']");
+                            if (subNode != null)
                             {
-                                XmlNode attributeNode = subNode.Attributes["indeterminatePosition"];
-                                if (attributeNode != null)
+                                DateTime dt;
+                                bool isValueDate = DateTime.TryParse(subNode.InnerText, out dt);
+                                if (isValueDate) { tp.extent__TimePeriod__endPosition = subNode.InnerText; }
+                                else
                                 {
-                                    tp.extent__TimePeriod__endPosition = (subNode.Attributes["indeterminatePosition"].Value != null) ?
-                                        subNode.Attributes["indeterminatePosition"].Value : "unknown";
+                                    XmlNode attributeNode = subNode.Attributes["indeterminatePosition"];
+                                    if (attributeNode != null)
+                                    {
+                                        tp.extent__TimePeriod__endPosition = (subNode.Attributes["indeterminatePosition"].Value != null) ?
+                                            subNode.Attributes["indeterminatePosition"].Value : "unknown";
+                                    }
+                                }
+
+                            }
+                            subNode = temporalExtentNode.FirstChild.SelectSingleNode("./*[local-name()='timeInterval']");
+                            if (subNode != null)
+                            {
+                                tp.extent__TimePeriod__timeInterval = subNode.InnerText;
+                                tp.extent__TimePeriod__timeIntervalUnit = (subNode.Attributes["unit"] != null) ? subNode.Attributes["unit"].Value : "";
+                            }
+
+                            _idInfo_extent_temporalExtent.TimePeriod = tp;
+                        }
+                        else if (tExtentName == "gml:TimeInstant")
+                        {
+                            timeInstantExtent ti = new timeInstantExtent();
+                            ti.extent__TimeInstant__id = "boundingTimeInstantExtent1";
+                            //ti.extent__TimeInstant__description = 
+                            //ti.extent__TimeInstant__timePosition = 
+                            ti.extent__TimeInstant__description = (temporalExtentNode.FirstChild.SelectSingleNode("./*[local-name()='description']") != null) ?
+                                temporalExtentNode.FirstChild.SelectSingleNode("./*[local-name()='description']").InnerText : "";
+
+                            //ti.extent__TimeInstant__timePosition = "unknown";
+                            XmlNode subNode = temporalExtentNode.FirstChild.SelectSingleNode("./*[local-name()='timePosition']");
+                            if (subNode != null)
+                            {
+                                DateTime dt;
+                                bool isValueDate = DateTime.TryParse(subNode.InnerText, out dt);
+                                if (isValueDate) { ti.extent__TimeInstant__timePosition = subNode.InnerText; }
+                                else
+                                {
+                                    XmlNode attributeNode = subNode.Attributes["indeterminatePosition"];
+                                    if (attributeNode != null)
+                                    {
+                                        ti.extent__TimeInstant__timePosition = (subNode.Attributes["indeterminatePosition"].Value != null) ?
+                                            subNode.Attributes["indeterminatePosition"].Value : "unknown";
+                                    }
                                 }
                             }
 
-                        }                        
-                        subNode = temporalExtentNode.FirstChild.SelectSingleNode("./*[local-name()='timeInterval']");
-                        if (subNode != null)
-                        {
-                            tp.extent__TimePeriod__timeInterval = subNode.InnerText;
-                            tp.extent__TimePeriod__timeIntervalUnit = (subNode.Attributes["unit"] != null) ? subNode.Attributes["unit"].Value : "";
+                            _idInfo_extent_temporalExtent.TimeInstant = ti;
                         }
-                        
-                        _idInfo_extent_temporalExtent.TimePeriod = tp;
+                        //Console.WriteLine(tExtentName);
+
                     }
-                    else if (tExtentName == "gml:TimeInstant")
+                    #endregion
+
+
+                    //_distributionInfo_MD_Distribution = new List<MD_Distribution>();
+                    //set the private backing field directly in the method since this object only occurs in this section.
+                    returnMD_DistributionSection();
+                    //Console.WriteLine("done");
+                    XmlNodeList skippedElementCount = inboundMetadataRecordSkippedElements.DocumentElement.ChildNodes;
+                    if (skippedElementCount.Count > 0)
                     {
-                        timeInstantExtent ti = new timeInstantExtent();
-                        ti.extent__TimeInstant__id = "boundingTimeInstantExtent1";
-                        //ti.extent__TimeInstant__description = 
-                        //ti.extent__TimeInstant__timePosition = 
-                        ti.extent__TimeInstant__description = (temporalExtentNode.FirstChild.SelectSingleNode("./*[local-name()='description']") != null) ?
-                            temporalExtentNode.FirstChild.SelectSingleNode("./*[local-name()='description']").InnerText : "";
-
-                        //ti.extent__TimeInstant__timePosition = "unknown";
-                        XmlNode subNode = temporalExtentNode.FirstChild.SelectSingleNode("./*[local-name()='timePosition']");
-                        if (subNode != null)
-                        {
-                            DateTime dt;
-                            bool isValueDate = DateTime.TryParse(subNode.InnerText, out dt);
-                            if (isValueDate) { ti.extent__TimeInstant__timePosition = subNode.InnerText; }
-                            else
-                            {
-                                XmlNode attributeNode = subNode.Attributes["indeterminatePosition"];
-                                if (attributeNode != null)
-                                {
-                                    ti.extent__TimeInstant__timePosition = (subNode.Attributes["indeterminatePosition"].Value != null) ?
-                                        subNode.Attributes["indeterminatePosition"].Value : "unknown";
-                                }
-                            }
-                        }
-
-                        _idInfo_extent_temporalExtent.TimeInstant = ti;
+                        StringWriter sw2 = new StringWriter();
+                        XmlTextWriter xw2 = new XmlTextWriter(sw2);
+                        xw2.Formatting = Formatting.Indented;
+                        inboundMetadataRecordSkippedElements.WriteTo(xw2);
+                        _inboundMetadataRecordSkippedElementsXmlString = sw2.ToString();
+                        sw2.Close();
+                        xw2.Close();
                     }
-                    //Console.WriteLine(tExtentName);
 
                 }
-                #endregion
 
-
-                //_distributionInfo_MD_Distribution = new List<MD_Distribution>();
-                //set the private backing field directly in the method since this object only occurs in this section.
-                returnMD_DistributionSection();
-                //Console.WriteLine("done");
-                XmlNodeList skippedElementCount = inboundMetadataRecordSkippedElements.DocumentElement.ChildNodes;
-                if (skippedElementCount.Count > 0)
-                {
-                    StringWriter sw2 = new StringWriter();
-                    XmlTextWriter xw2 = new XmlTextWriter(sw2);
-                    xw2.Formatting = Formatting.Indented;
-                    inboundMetadataRecordSkippedElements.WriteTo(xw2);
-                    _inboundMetadataRecordSkippedElementsXmlString = sw2.ToString();
-                    sw2.Close();
-                    xw2.Close();
-                }
-
+                //****************Testing
+                //constructMI_MetadataMarkUp();
             }
-
-            //****************Testing
-            //constructMI_MetadataMarkUp();
-            
+            catch (Exception e)
+            {
+                
+            }
         }
 
         /// <summary>

@@ -90,6 +90,7 @@ namespace EmeLibrary
             expand_MD_DTO_btn.Text = collapsedSymbol;
             expand_MD_Format_btn.Text = collapsedSymbol;
             expand_MD_SOP_btn.Text = collapsedSymbol;
+            offline_resource_expandBtn.Text = collapsedSymbol;
             //_distributorList = new List<MD_Distributor>(); 
             //_distributorContact = new CI_ResponsibleParty();
 
@@ -930,8 +931,15 @@ namespace EmeLibrary
             int cHeight = 35;
             if (expand.Name == "expand_MD_DTO_btn")
             {
-                expHeight = 500;
-                //cHeight = ;
+                if (offline_resource_expandBtn.Text == collapsedSymbol)
+                {
+                    expHeight = 520 - 160;
+                }
+                else
+                {
+                    expHeight = 520;
+                    //cHeight = ;
+                }
             }
             
             if (expand.Text == collapsedSymbol) //"+")
@@ -946,6 +954,29 @@ namespace EmeLibrary
                 expand.Parent.Height = cHeight;
                 //this.Height = 35;
             }
+        }
+
+        private void offline_resource_expandBtn_Click(object sender, EventArgs e)
+        {
+            int offlineExpHight = 203;
+            int offlinecHight = 65;
+            int expHeight = 520;
+            int cHeight = 30;
+
+            if (offline_resource_expandBtn.Text == collapsedSymbol) //"+")
+            {
+                offline_resource_expandBtn.Text = expandedSymbol; //"-";
+                offline_resource_expandBtn.Parent.Height = offlineExpHight;
+                digitalTransferOptions_pnl.Height = expHeight;
+                //this.Height = 250;
+            }
+            else
+            {
+                offline_resource_expandBtn.Text = collapsedSymbol; // "+";
+                offline_resource_expandBtn.Parent.Height = cHeight;
+                digitalTransferOptions_pnl.Height = expHeight - 160;
+            }
+
         }
 
         /// <summary>
@@ -1142,6 +1173,8 @@ namespace EmeLibrary
         {
 
         }
+
+        
 
         
 

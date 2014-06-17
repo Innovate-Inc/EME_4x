@@ -128,10 +128,5 @@
     <themekt>ISO 19115 Topic Category</themekt>
     <themekey>utilitiesCommunication</themekey>
     <default>true</default>
-  </KeywordsISO>
-  <KeywordsISO>
-    <themekt>ISO 19115 Topic Category</themekt>
-    <themekey>testDS1</themekey>
-    <default>true</default>
-  </KeywordsISO>
+  </KeywordsISO>  
 </emeData>

@@ -446,7 +446,10 @@ namespace EmeLibrary
         {
             throw new NotImplementedException();
         }
-
+        /// <summary>
+        /// Sets validation mode, error icon, and color of panels for controls.
+        /// </summary>
+        /// <param name="frm"></param>
         public static void validatePopulator(EmeLT frm)
         {
             try

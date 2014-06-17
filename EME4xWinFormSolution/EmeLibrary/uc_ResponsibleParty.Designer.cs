@@ -63,6 +63,7 @@
             this.roleCode_lbl = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.CI_ContactExpand_btn = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode = new System.Windows.Forms.ComboBox();
             this.pagerLbl = new System.Windows.Forms.Label();
             this.pagerDownBtn = new System.Windows.Forms.Button();
@@ -79,20 +80,20 @@
             this.rp_expander_btn = new System.Windows.Forms.Button();
             this.uc_ResponsibleParty_lbl = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.contact_list = new System.Windows.Forms.Label();
             this.responsible_party_d = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_RP)).BeginInit();
             this.panel3.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // positionName
@@ -434,6 +435,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.CI_ContactExpand_btn);
             this.groupBox1.Controls.Add(this.panel4);
             this.groupBox1.Location = new System.Drawing.Point(3, 135);
@@ -441,6 +443,7 @@
             this.groupBox1.Size = new System.Drawing.Size(422, 22);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "                                 ";
             // 
             // CI_ContactExpand_btn
             // 
@@ -448,7 +451,7 @@
             this.CI_ContactExpand_btn.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
             this.CI_ContactExpand_btn.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.CI_ContactExpand_btn.Font = new System.Drawing.Font("Arial Unicode MS", 10F);
-            this.CI_ContactExpand_btn.Location = new System.Drawing.Point(0, 0);
+            this.CI_ContactExpand_btn.Location = new System.Drawing.Point(4, -1);
             this.CI_ContactExpand_btn.Name = "CI_ContactExpand_btn";
             this.CI_ContactExpand_btn.Size = new System.Drawing.Size(22, 22);
             this.CI_ContactExpand_btn.TabIndex = 0;
@@ -456,6 +459,38 @@
             this.CI_ContactExpand_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.CI_ContactExpand_btn.UseVisualStyleBackColor = false;
             this.CI_ContactExpand_btn.Click += new System.EventHandler(this.Expander_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.panel4.Controls.Add(this.contactInfo__CI_Contact__address__CI_Address__deliveryPoint_lbl);
+            this.panel4.Controls.Add(this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode);
+            this.panel4.Controls.Add(this.contactInfo__CI_Contact__phone__CI_Telephone__voice);
+            this.panel4.Controls.Add(this.contactInfo__CI_Contact__address__CI_Address__deliveryPoint);
+            this.panel4.Controls.Add(this.contactInfo__CI_Contact__address__CI_Address__electronicMailAddress);
+            this.panel4.Controls.Add(this.contactInfo__CI_Contact__address__CI_Address__electronicMailAddress_lbl);
+            this.panel4.Controls.Add(this.contactInfo__CI_Contact__contactInstructions_lbl);
+            this.panel4.Controls.Add(this.contactInfo__CI_Contact__address__CI_Address__county_lbl);
+            this.panel4.Controls.Add(this.contactInfo__CI_Contact__address__CI_Address__city);
+            this.panel4.Controls.Add(this.contactInfo__CI_Contact__phone__CI_Telephone__voice_lbl);
+            this.panel4.Controls.Add(this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage);
+            this.panel4.Controls.Add(this.contactInfo__CI_Contact__contactInstructions);
+            this.panel4.Controls.Add(this.contactInfo__CI_Contact__phone__CI_Telephone__facsimile);
+            this.panel4.Controls.Add(this.contactInfo__CI_Contact__address__CI_Address__city_lbl);
+            this.panel4.Controls.Add(this.contactInfo__CI_Contact__address__CI_Address__county);
+            this.panel4.Controls.Add(this.contactInfo__CI_Contact__hoursOfService_lbl);
+            this.panel4.Controls.Add(this.contactInfo__CI_Contact__phone__CI_Telephone__facsimile_lbl);
+            this.panel4.Controls.Add(this.contactInfo__CI_Contact__address__CI_Address__administrativeArea);
+            this.panel4.Controls.Add(this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage_lbl);
+            this.panel4.Controls.Add(this.contactInfo__CI_Contact__address__CI_Address__administrativeArea_lbl);
+            this.panel4.Controls.Add(this.contactInfo__CI_Contact__address__CI_Address__postalCode_lbl);
+            this.panel4.Controls.Add(this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode_lbl);
+            this.panel4.Controls.Add(this.contactInfo__CI_Contact__hoursOfService);
+            this.panel4.Controls.Add(this.contactInfo__CI_Contact__address__CI_Address__postalCode);
+            this.panel4.Location = new System.Drawing.Point(0, 22);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(419, 307);
+            this.panel4.TabIndex = 35;
             // 
             // contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode
             // 
@@ -667,6 +702,17 @@
             this.panel3.Size = new System.Drawing.Size(435, 464);
             this.panel3.TabIndex = 2;
             // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.panel5.Controls.Add(this.groupBox2);
+            this.panel5.Controls.Add(this.dcatProgramCode_lbl);
+            this.panel5.Controls.Add(this.dcatProgramCode);
+            this.panel5.Location = new System.Drawing.Point(292, 10);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(133, 116);
+            this.panel5.TabIndex = 38;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.contact_list);
@@ -701,48 +747,15 @@
             this.responsible_party_d.UseVisualStyleBackColor = false;
             this.responsible_party_d.Click += new System.EventHandler(this.responsible_party_d_Click);
             // 
-            // panel4
+            // label1
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.panel4.Controls.Add(this.contactInfo__CI_Contact__address__CI_Address__deliveryPoint_lbl);
-            this.panel4.Controls.Add(this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode);
-            this.panel4.Controls.Add(this.contactInfo__CI_Contact__phone__CI_Telephone__voice);
-            this.panel4.Controls.Add(this.contactInfo__CI_Contact__address__CI_Address__deliveryPoint);
-            this.panel4.Controls.Add(this.contactInfo__CI_Contact__address__CI_Address__electronicMailAddress);
-            this.panel4.Controls.Add(this.contactInfo__CI_Contact__address__CI_Address__electronicMailAddress_lbl);
-            this.panel4.Controls.Add(this.contactInfo__CI_Contact__contactInstructions_lbl);
-            this.panel4.Controls.Add(this.contactInfo__CI_Contact__address__CI_Address__county_lbl);
-            this.panel4.Controls.Add(this.contactInfo__CI_Contact__address__CI_Address__city);
-            this.panel4.Controls.Add(this.contactInfo__CI_Contact__phone__CI_Telephone__voice_lbl);
-            this.panel4.Controls.Add(this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage);
-            this.panel4.Controls.Add(this.contactInfo__CI_Contact__contactInstructions);
-            this.panel4.Controls.Add(this.contactInfo__CI_Contact__phone__CI_Telephone__facsimile);
-            this.panel4.Controls.Add(this.contactInfo__CI_Contact__address__CI_Address__city_lbl);
-            this.panel4.Controls.Add(this.contactInfo__CI_Contact__address__CI_Address__county);
-            this.panel4.Controls.Add(this.contactInfo__CI_Contact__hoursOfService_lbl);
-            this.panel4.Controls.Add(this.contactInfo__CI_Contact__phone__CI_Telephone__facsimile_lbl);
-            this.panel4.Controls.Add(this.contactInfo__CI_Contact__address__CI_Address__administrativeArea);
-            this.panel4.Controls.Add(this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage_lbl);
-            this.panel4.Controls.Add(this.contactInfo__CI_Contact__address__CI_Address__administrativeArea_lbl);
-            this.panel4.Controls.Add(this.contactInfo__CI_Contact__address__CI_Address__postalCode_lbl);
-            this.panel4.Controls.Add(this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode_lbl);
-            this.panel4.Controls.Add(this.contactInfo__CI_Contact__hoursOfService);
-            this.panel4.Controls.Add(this.contactInfo__CI_Contact__address__CI_Address__postalCode);
-            this.panel4.Location = new System.Drawing.Point(0, 22);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(419, 307);
-            this.panel4.TabIndex = 35;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.panel5.Controls.Add(this.groupBox2);
-            this.panel5.Controls.Add(this.dcatProgramCode_lbl);
-            this.panel5.Controls.Add(this.dcatProgramCode);
-            this.panel5.Location = new System.Drawing.Point(292, 10);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(133, 116);
-            this.panel5.TabIndex = 38;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(27, 1);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 13);
+            this.label1.TabIndex = 36;
+            this.label1.Text = "Contact Details";
             // 
             // uc_ResponsibleParty
             // 
@@ -758,6 +771,9 @@
             this.Load += new System.EventHandler(this.uc_ResponsibleParty_Load);
             this.Leave += new System.EventHandler(this.uc_ResponsibleParty_Leave);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -766,12 +782,10 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_RP)).EndInit();
             this.panel3.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -833,5 +847,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label1;
     }
 }

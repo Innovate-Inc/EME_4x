@@ -424,16 +424,16 @@
 	<Contact_Information>
 		<OrderedId>55</OrderedId>
 		<organizationName>U.S. Environmental Protection Agency, Research Triangle Park</organizationName>
-		<individualName>EPA GIS Agency Central Support</individualName>
+		<individualName>National Geospatial Support Team</individualName>
 		<positionName>OEI RTP NCC GIS</positionName>
 		<addrtype>mailing and physical address</addrtype>
 		<deliveryPoint>USEPA Mailroom N127-02</deliveryPoint>
 		<city>Research Triangle Park</city>
 		<administrativeArea>NC</administrativeArea>
 		<postalCode>27711</postalCode>
-		<voice>919-767-7493</voice>
-		<facsimile>(415) 947-3553</facsimile>
-		<electronicMailAddress>esrisupport@epa.gov</electronicMailAddress>
+		<voice></voice>
+		<facsimile></facsimile>
+		<electronicMailAddress>geoservices@epa.gov</electronicMailAddress>
 		<linkage>http://intranet.epa.gov/rtpgis</linkage>
 		<linkageType>information</linkageType>
 		<default>false</default>

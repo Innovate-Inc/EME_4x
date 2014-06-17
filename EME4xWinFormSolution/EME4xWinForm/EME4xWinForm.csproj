@@ -367,6 +367,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Eme4xSystemFiles\EMEdb\ISO19115MD_GenericMetadataTemplate.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Eme4xSystemFiles\EMEdb\KeywordsEPA.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
