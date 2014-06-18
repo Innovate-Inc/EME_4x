@@ -53,7 +53,9 @@
             this.md_distributionFormat_lbl = new System.Windows.Forms.Label();
             this.digitalTransferOptions_pnl = new System.Windows.Forms.Panel();
             this.offline_resource_expandGxb = new System.Windows.Forms.GroupBox();
+            this.offline_resource_expandLbl = new System.Windows.Forms.Label();
             this.offLine__MD_Medium__mediumNode_lbl = new System.Windows.Forms.Label();
+            this.offline_resource_expandBtn = new System.Windows.Forms.Button();
             this.offLine__MD_Medium__mediumFormat_lbl = new System.Windows.Forms.Label();
             this.offLine__MD_Medium__volumes_lbl = new System.Windows.Forms.Label();
             this.offLine__MD_Medium__densityUnits_lbl = new System.Windows.Forms.Label();
@@ -122,13 +124,11 @@
             this.pgD_MD_Dist_btn = new System.Windows.Forms.Button();
             this.pgU_MD_Dist_btn = new System.Windows.Forms.Button();
             this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
+            this.distributor_Contact = new EmeLibrary.uc_ResponsibleParty();
             this.distributor_gbx = new System.Windows.Forms.GroupBox();
             this.MD_Dist = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.errorProvider_Distribution = new System.Windows.Forms.ErrorProvider(this.components);
-            this.offline_resource_expandBtn = new System.Windows.Forms.Button();
-            this.offline_resource_expandLbl = new System.Windows.Forms.Label();
-            this.distributor_Contact = new EmeLibrary.uc_ResponsibleParty();
             this.MD_Format_pnl.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -442,6 +442,16 @@
             this.offline_resource_expandGxb.TabStop = false;
             this.offline_resource_expandGxb.Text = "                                        ";
             // 
+            // offline_resource_expandLbl
+            // 
+            this.offline_resource_expandLbl.AutoSize = true;
+            this.offline_resource_expandLbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.offline_resource_expandLbl.Location = new System.Drawing.Point(38, 2);
+            this.offline_resource_expandLbl.Name = "offline_resource_expandLbl";
+            this.offline_resource_expandLbl.Size = new System.Drawing.Size(87, 13);
+            this.offline_resource_expandLbl.TabIndex = 8;
+            this.offline_resource_expandLbl.Text = "Offline Resource";
+            // 
             // offLine__MD_Medium__mediumNode_lbl
             // 
             this.offLine__MD_Medium__mediumNode_lbl.AutoSize = true;
@@ -452,6 +462,19 @@
             this.offLine__MD_Medium__mediumNode_lbl.Size = new System.Drawing.Size(69, 13);
             this.offLine__MD_Medium__mediumNode_lbl.TabIndex = 11;
             this.offLine__MD_Medium__mediumNode_lbl.Text = "Medium Note";
+            // 
+            // offline_resource_expandBtn
+            // 
+            this.offline_resource_expandBtn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.offline_resource_expandBtn.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.offline_resource_expandBtn.Font = new System.Drawing.Font("Arial Unicode MS", 10F);
+            this.offline_resource_expandBtn.Location = new System.Drawing.Point(10, -1);
+            this.offline_resource_expandBtn.Name = "offline_resource_expandBtn";
+            this.offline_resource_expandBtn.Size = new System.Drawing.Size(23, 23);
+            this.offline_resource_expandBtn.TabIndex = 7;
+            this.offline_resource_expandBtn.Text = "+";
+            this.offline_resource_expandBtn.UseVisualStyleBackColor = true;
+            this.offline_resource_expandBtn.Click += new System.EventHandler(this.offline_resource_expandBtn_Click);
             // 
             // offLine__MD_Medium__mediumFormat_lbl
             // 
@@ -1257,6 +1280,21 @@
             this.flowLayoutPanel6.TabIndex = 0;
             this.flowLayoutPanel6.Leave += new System.EventHandler(this.flowLayoutPanel6_Leave);
             // 
+            // distributor_Contact
+            // 
+            this.distributor_Contact.BackColor = System.Drawing.Color.Transparent;
+            this.distributor_Contact.CI_ResponsiblePartyList = null;
+            this.distributor_Contact.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.distributor_Contact.Location = new System.Drawing.Point(0, 0);
+            this.distributor_Contact.Margin = new System.Windows.Forms.Padding(0);
+            this.distributor_Contact.mylabel = "Contact (Required)";
+            this.distributor_Contact.Name = "distributor_Contact";
+            this.distributor_Contact.rp_mode = "distribution";
+            this.distributor_Contact.Size = new System.Drawing.Size(439, 35);
+            this.distributor_Contact.TabIndex = 0;
+            this.distributor_Contact.Tag = "";
+            this.distributor_Contact.validation_modeEmeLt = null;
+            // 
             // distributor_gbx
             // 
             this.distributor_gbx.AutoSize = true;
@@ -1299,48 +1337,9 @@
             // 
             this.errorProvider_Distribution.ContainerControl = this;
             // 
-            // offline_resource_expandBtn
-            // 
-            this.offline_resource_expandBtn.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.offline_resource_expandBtn.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.offline_resource_expandBtn.Font = new System.Drawing.Font("Arial Unicode MS", 10F);
-            this.offline_resource_expandBtn.Location = new System.Drawing.Point(10, -1);
-            this.offline_resource_expandBtn.Name = "offline_resource_expandBtn";
-            this.offline_resource_expandBtn.Size = new System.Drawing.Size(23, 23);
-            this.offline_resource_expandBtn.TabIndex = 7;
-            this.offline_resource_expandBtn.Text = "+";
-            this.offline_resource_expandBtn.UseVisualStyleBackColor = true;
-            this.offline_resource_expandBtn.Click += new System.EventHandler(this.offline_resource_expandBtn_Click);
-            // 
-            // offline_resource_expandLbl
-            // 
-            this.offline_resource_expandLbl.AutoSize = true;
-            this.offline_resource_expandLbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.offline_resource_expandLbl.Location = new System.Drawing.Point(38, 2);
-            this.offline_resource_expandLbl.Name = "offline_resource_expandLbl";
-            this.offline_resource_expandLbl.Size = new System.Drawing.Size(87, 13);
-            this.offline_resource_expandLbl.TabIndex = 8;
-            this.offline_resource_expandLbl.Text = "Offline Resource";
-            // 
-            // distributor_Contact
-            // 
-            this.distributor_Contact.BackColor = System.Drawing.Color.Transparent;
-            this.distributor_Contact.CI_ResponsiblePartyList = null;
-            this.distributor_Contact.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.distributor_Contact.Location = new System.Drawing.Point(0, 0);
-            this.distributor_Contact.Margin = new System.Windows.Forms.Padding(0);
-            this.distributor_Contact.mylabel = "Contact (Required)";
-            this.distributor_Contact.Name = "distributor_Contact";
-            this.distributor_Contact.rp_mode = "distribution";
-            this.distributor_Contact.Size = new System.Drawing.Size(439, 35);
-            this.distributor_Contact.TabIndex = 0;
-            this.distributor_Contact.Tag = "";
-            this.distributor_Contact.validation_modeEmeLt = null;
-            // 
             // uc_distribution
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Controls.Add(this.groupBox1);

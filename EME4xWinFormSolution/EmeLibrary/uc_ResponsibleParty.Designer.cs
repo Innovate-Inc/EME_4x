@@ -62,6 +62,7 @@
             this.contactInfo__CI_Contact__contactInstructions = new System.Windows.Forms.TextBox();
             this.roleCode_lbl = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.CI_ContactExpand_btn = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode = new System.Windows.Forms.ComboBox();
@@ -84,7 +85,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.contact_list = new System.Windows.Forms.Label();
             this.responsible_party_d = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -100,7 +100,8 @@
             // 
             this.positionName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.positionName.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.positionName.Location = new System.Drawing.Point(85, 63);
+            this.positionName.Location = new System.Drawing.Point(85, 58);
+            this.positionName.Margin = new System.Windows.Forms.Padding(0);
             this.positionName.Name = "positionName";
             this.positionName.Size = new System.Drawing.Size(178, 21);
             this.positionName.TabIndex = 7;
@@ -111,7 +112,8 @@
             // 
             this.organisationName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.organisationName.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.organisationName.Location = new System.Drawing.Point(85, 37);
+            this.organisationName.Location = new System.Drawing.Point(85, 32);
+            this.organisationName.Margin = new System.Windows.Forms.Padding(0);
             this.organisationName.Name = "organisationName";
             this.organisationName.Size = new System.Drawing.Size(178, 21);
             this.organisationName.TabIndex = 6;
@@ -147,6 +149,7 @@
             "author",
             "scienceParty"});
             this.role.Location = new System.Drawing.Point(85, 5);
+            this.role.Margin = new System.Windows.Forms.Padding(0);
             this.role.Name = "role";
             this.role.Size = new System.Drawing.Size(178, 21);
             this.role.TabIndex = 4;
@@ -158,7 +161,8 @@
             // 
             this.individualName_lbl.AutoSize = true;
             this.individualName_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.individualName_lbl.Location = new System.Drawing.Point(24, 15);
+            this.individualName_lbl.Location = new System.Drawing.Point(24, 10);
+            this.individualName_lbl.Margin = new System.Windows.Forms.Padding(0);
             this.individualName_lbl.Name = "individualName_lbl";
             this.individualName_lbl.Size = new System.Drawing.Size(53, 13);
             this.individualName_lbl.TabIndex = 8;
@@ -169,7 +173,8 @@
             // 
             this.organisationName_lbl.AutoSize = true;
             this.organisationName_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.organisationName_lbl.Location = new System.Drawing.Point(10, 41);
+            this.organisationName_lbl.Location = new System.Drawing.Point(10, 36);
+            this.organisationName_lbl.Margin = new System.Windows.Forms.Padding(0);
             this.organisationName_lbl.Name = "organisationName_lbl";
             this.organisationName_lbl.Size = new System.Drawing.Size(68, 13);
             this.organisationName_lbl.TabIndex = 9;
@@ -180,7 +185,8 @@
             // 
             this.positionName_lbl.AutoSize = true;
             this.positionName_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.positionName_lbl.Location = new System.Drawing.Point(32, 65);
+            this.positionName_lbl.Location = new System.Drawing.Point(32, 60);
+            this.positionName_lbl.Margin = new System.Windows.Forms.Padding(0);
             this.positionName_lbl.Name = "positionName_lbl";
             this.positionName_lbl.Size = new System.Drawing.Size(44, 13);
             this.positionName_lbl.TabIndex = 10;
@@ -222,7 +228,8 @@
             // 
             this.individualName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.individualName.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.individualName.Location = new System.Drawing.Point(85, 13);
+            this.individualName.Location = new System.Drawing.Point(85, 8);
+            this.individualName.Margin = new System.Windows.Forms.Padding(0);
             this.individualName.Name = "individualName";
             this.individualName.Size = new System.Drawing.Size(178, 21);
             this.individualName.TabIndex = 5;
@@ -426,6 +433,7 @@
             this.roleCode_lbl.AutoSize = true;
             this.roleCode_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.roleCode_lbl.Location = new System.Drawing.Point(47, 8);
+            this.roleCode_lbl.Margin = new System.Windows.Forms.Padding(0);
             this.roleCode_lbl.Name = "roleCode_lbl";
             this.roleCode_lbl.Size = new System.Drawing.Size(28, 13);
             this.roleCode_lbl.TabIndex = 35;
@@ -438,12 +446,23 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.CI_ContactExpand_btn);
             this.groupBox1.Controls.Add(this.panel4);
-            this.groupBox1.Location = new System.Drawing.Point(3, 135);
+            this.groupBox1.Location = new System.Drawing.Point(3, 130);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(0);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(422, 22);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "                                 ";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(27, 1);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 13);
+            this.label1.TabIndex = 36;
+            this.label1.Text = "Contact Details";
             // 
             // CI_ContactExpand_btn
             // 
@@ -563,6 +582,7 @@
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flowLayoutPanel1.Location = new System.Drawing.Point(201, 3);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(235, 30);
             this.flowLayoutPanel1.TabIndex = 0;
@@ -624,9 +644,10 @@
             this.panel1.Controls.Add(this.organisationName);
             this.panel1.Controls.Add(this.individualName_lbl);
             this.errorProvider_RP.SetIconPadding(this.panel1, -15);
-            this.panel1.Location = new System.Drawing.Point(3, 39);
+            this.panel1.Location = new System.Drawing.Point(3, 36);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(283, 94);
+            this.panel1.Size = new System.Drawing.Size(283, 90);
             this.panel1.TabIndex = 4;
             // 
             // panel2
@@ -635,6 +656,7 @@
             this.panel2.Controls.Add(this.role);
             this.panel2.Controls.Add(this.roleCode_lbl);
             this.panel2.Location = new System.Drawing.Point(3, 5);
+            this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(283, 33);
             this.panel2.TabIndex = 4;
@@ -698,6 +720,7 @@
             this.panel3.Controls.Add(this.panel1);
             this.panel3.Controls.Add(this.panel5);
             this.panel3.Location = new System.Drawing.Point(2, 36);
+            this.panel3.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(435, 464);
             this.panel3.TabIndex = 2;
@@ -747,25 +770,16 @@
             this.responsible_party_d.UseVisualStyleBackColor = false;
             this.responsible_party_d.Click += new System.EventHandler(this.responsible_party_d_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(27, 1);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 13);
-            this.label1.TabIndex = 36;
-            this.label1.Text = "Contact Details";
-            // 
             // uc_ResponsibleParty
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.rp_expander_btn);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.uc_ResponsibleParty_lbl);
             this.Controls.Add(this.flowLayoutPanel1);
+            this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "uc_ResponsibleParty";
             this.Size = new System.Drawing.Size(439, 500);
             this.Load += new System.EventHandler(this.uc_ResponsibleParty_Load);

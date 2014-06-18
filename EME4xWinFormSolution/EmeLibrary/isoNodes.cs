@@ -451,7 +451,8 @@ namespace EmeLibrary
                     //returnListFromNodeList(inboundMetadataRecord.DocumentElement.SelectNodes(IsoNodeXpaths.IdInfo_keywordsEpaListXpath));
                     kwPlaceList = returnListFromKeywordSection(IsoNodeXpaths.idInfo_keywordsPlaceXpath, "./*[local-name()='MD_Keywords']/*[local-name()='keyword']");
                     kwUserList = returnListFromKeywordSection(IsoNodeXpaths.idInfo_keywordsUserXpath, "./*[local-name()='MD_Keywords']/*[local-name()='keyword']");
-                    kwIsoTopicCatList = returnListFromKeywordSection(IsoNodeXpaths.idInfo_keywordsIsoTopicCategoryXpath, "./*[local-name()='MD_TopicCategoryCode']");
+                    kwIsoTopicCatList = returnListFromTopicCatKeywordSection(IsoNodeXpaths.idInfo_keywordsIsoTopicCategoryXpath);
+                        //returnListFromKeywordSection(IsoNodeXpaths.idInfo_keywordsIsoTopicCategoryXpath, "./*[local-name()='MD_TopicCategoryCode']");
 
                     //Section 12 resourceConstraints
                     _idInfo_resourceConstraints_MD_Constraints_useLimitation =
@@ -720,6 +721,41 @@ namespace EmeLibrary
             return templist;
             
         }
+        private List<string> returnListFromTopicCatKeywordSection(string xpathToTopicKeyWordSection)
+        {
+            List<string> templist = new List<string>();
+
+            XmlNodeList topicKwNl = inboundMetadataRecord.DocumentElement.SelectNodes(xpathToTopicKeyWordSection);
+            foreach (XmlNode kwSection in topicKwNl)
+            {
+
+                //XmlNode kwSection = inboundMetadataRecord.DocumentElement.SelectSingleNode(XpathToDescriptiveKeyWordSection);
+                if (kwSection != null)
+                {
+                    templist.Add(kwSection.FirstChild.InnerText);
+
+                    //XmlNode kwSectionToDelete = inboundMetadataRecordSkippedElements.DocumentElement.SelectSingleNode(XpathToDescriptiveKeyWordSection);
+                    //if (kwSectionToDelete != null)
+                    //{
+                    //    kwSectionToDelete.RemoveAll();
+                    //    removeEmptyParentNodes(kwSectionToDelete);
+                    //}
+                }
+            }
+            XmlNodeList topicKwNl2 = inboundMetadataRecordSkippedElements.DocumentElement.SelectNodes(xpathToTopicKeyWordSection);
+            foreach (XmlNode n in topicKwNl2)
+            {
+                if (n != null)
+                {
+                    n.RemoveAll();
+                    removeEmptyParentNodes(n);
+                }
+            }
+
+            return templist;
+
+        }
+
         private List<string> returnListFromNodeList(XmlNodeList nodeList)
         {
             List<string> templist = new List<string>();
@@ -1678,8 +1714,13 @@ namespace EmeLibrary
             {
                 if (kwIsoTopicCatList.Count > 0)
                 {
-                    XmlNode isoTopicTemplateSection = constructIsoTopicCategorySection();
-                    constructChildNodeUnderParent(outbound_md_DataIdSection, isoTopicTemplateSection, true);
+                    foreach (string tc in kwIsoTopicCatList)
+                    {
+                        //XmlNode isoTopicTemplateSection = constructIsoTopicCategorySection();
+                        //constructChildNodeUnderParent(outbound_md_DataIdSection, isoTopicTemplateSection, true);
+                        constructChildNodeUnderParent(outbound_md_DataIdSection, IsoNodeXpaths.idInfo_keywordsIsoTopicCategoryXpath,
+                            tc, false, true,false);
+                    }
                 }
             }
 
@@ -2168,7 +2209,10 @@ namespace EmeLibrary
             //}
 
         }                  
-
+        /// <summary>
+        /// DO not use this... it does not nest topic keywords correctly.
+        /// </summary>
+        /// <returns></returns>
         private XmlNode constructIsoTopicCategorySection()
         {                        
             XmlNode keywordsTemplateSection = 
@@ -2178,18 +2222,18 @@ namespace EmeLibrary
             foreach (string s in kwIsoTopicCatList) //kwEpaList)
             {
                 //THis will insert all the keywords at the top of the keywords section
-                XmlNode keywordItem = keywordsTemplateSection.FirstChild.CloneNode(true);                
+                XmlNode keywordItem = keywordsTemplateSection.CloneNode(true);                
                 keywordItem.FirstChild.InnerText = s;                
                 keywordListFrag.AppendChild(keywordItem);
             }
 
             //Remove the *template* nodes
             XmlNode templateNode = keywordsTemplateSection.SelectSingleNode("./*['*template*']");
-            keywordsTemplateSection.ReplaceChild(keywordListFrag, templateNode);
+            keywordsTemplateSection.ReplaceChild(keywordListFrag, templateNode);            
             
             return keywordsTemplateSection;
         }
-
+        
         private XmlNode constructKeywordSection(List<string> KeywordList, string xpathToKeywordSection)
         {
             //This assumes there is a template section in a specific order.

@@ -194,7 +194,7 @@ namespace EmeLibrary
         {
             
             //MessageBox.Show("RP Load");
-            expandHeight = 500;
+            expandHeight = 510;
             //intermediateHeight
             
             collapseHeight = 35;
@@ -759,11 +759,11 @@ namespace EmeLibrary
                     expand.Text = expandedSymbol; //"\u25BC"; //"\u25C2";
                     if (CI_ContactExpand_btn.Text == collapsedSymbol) //"+")
                     {
-                        this.Height = 200;
+                        this.Height = 220;
                     }
                     else
                     {
-                        this.Height = 500;
+                        this.Height = 510;
                     }
                 }
                 else
@@ -778,14 +778,14 @@ namespace EmeLibrary
                 if (expand.Text == collapsedSymbol)// "+")
                 {
                     expand.Text = expandedSymbol; //"-";
-                    this.Height = 500;
+                    this.Height = 510;
                     //panel3.Height = 
                     groupBox1.Height = 325;
                 }
                 else
                 {
                     expand.Text = collapsedSymbol; //"+";
-                    this.Height = 200;
+                    this.Height = 220;
                     groupBox1.Height = 22;
                 }
             }

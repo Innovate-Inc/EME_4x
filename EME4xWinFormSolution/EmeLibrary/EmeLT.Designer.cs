@@ -70,6 +70,8 @@
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.setDefaultsFromTemplateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clearAllValuesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.databaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.defaultOutputFormatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -182,8 +184,6 @@
             this.idInfo_citation_Title = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.hoverTip_txt = new System.Windows.Forms.TextBox();
-            this.setDefaultsFromTemplateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.clearAllValuesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.idInfo_extent_temporalExtent = new EmeLibrary.uc_extentTemporal();
             this.distributionInfo__MD_Distribution = new EmeLibrary.uc_distribution();
             this.idInfo_pointOfContact = new EmeLibrary.uc_ResponsibleParty();
@@ -367,7 +367,6 @@
             // 
             // idInfo_citation_date_revision_dtP
             // 
-            this.idInfo_citation_date_revision_dtP.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.idInfo_citation_date_revision_dtP.Location = new System.Drawing.Point(165, 4);
             this.idInfo_citation_date_revision_dtP.Name = "idInfo_citation_date_revision_dtP";
             this.idInfo_citation_date_revision_dtP.Size = new System.Drawing.Size(16, 21);
@@ -404,7 +403,7 @@
             // 
             this.idInfo_citation_date_revision.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.idInfo_citation_date_revision.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.errorProvider1.SetIconPadding(this.idInfo_citation_date_revision, 20);
+            this.errorProvider1.SetIconPadding(this.idInfo_citation_date_revision, 24);
             this.idInfo_citation_date_revision.Location = new System.Drawing.Point(61, 5);
             this.idInfo_citation_date_revision.Name = "idInfo_citation_date_revision";
             this.idInfo_citation_date_revision.ReadOnly = true;
@@ -470,7 +469,6 @@
             // idInfo_citation_date_creation_dtP
             // 
             this.idInfo_citation_date_creation_dtP.CustomFormat = "";
-            this.idInfo_citation_date_creation_dtP.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.idInfo_citation_date_creation_dtP.Location = new System.Drawing.Point(172, 18);
             this.idInfo_citation_date_creation_dtP.Name = "idInfo_citation_date_creation_dtP";
             this.idInfo_citation_date_creation_dtP.Size = new System.Drawing.Size(16, 21);
@@ -590,6 +588,7 @@
             // 
             // dateStamp_dtP
             // 
+            this.dateStamp_dtP.Checked = false;
             this.dateStamp_dtP.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateStamp_dtP.Location = new System.Drawing.Point(250, 29);
             this.dateStamp_dtP.Name = "dateStamp_dtP";
@@ -679,6 +678,20 @@
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.editToolStripMenuItem.Text = "&Edit";
+            // 
+            // setDefaultsFromTemplateToolStripMenuItem
+            // 
+            this.setDefaultsFromTemplateToolStripMenuItem.Name = "setDefaultsFromTemplateToolStripMenuItem";
+            this.setDefaultsFromTemplateToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.setDefaultsFromTemplateToolStripMenuItem.Text = "Set Defaults From Template";
+            this.setDefaultsFromTemplateToolStripMenuItem.Click += new System.EventHandler(this.setDefaultsFromTemplateToolStripMenuItem_Click);
+            // 
+            // clearAllValuesToolStripMenuItem
+            // 
+            this.clearAllValuesToolStripMenuItem.Name = "clearAllValuesToolStripMenuItem";
+            this.clearAllValuesToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.clearAllValuesToolStripMenuItem.Text = "Clear All Values";
+            this.clearAllValuesToolStripMenuItem.Click += new System.EventHandler(this.clearAllValuesToolStripMenuItem_Click);
             // 
             // toolsToolStripMenuItem
             // 
@@ -1215,7 +1228,7 @@
             this.groupBox8.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox8.Location = new System.Drawing.Point(3, 3);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(469, 178);
+            this.groupBox8.Size = new System.Drawing.Size(466, 169);
             this.groupBox8.TabIndex = 2;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Contacts";
@@ -1230,7 +1243,7 @@
             this.flowLayoutPanel5.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel5.Location = new System.Drawing.Point(6, 19);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(457, 139);
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(454, 130);
             this.flowLayoutPanel5.TabIndex = 1;
             // 
             // idInfo_pointOfContact_colorPnl
@@ -1241,7 +1254,7 @@
             this.idInfo_pointOfContact_colorPnl.Controls.Add(this.idInfo_pointOfContact);
             this.idInfo_pointOfContact_colorPnl.Location = new System.Drawing.Point(3, 3);
             this.idInfo_pointOfContact_colorPnl.Name = "idInfo_pointOfContact_colorPnl";
-            this.idInfo_pointOfContact_colorPnl.Size = new System.Drawing.Size(451, 40);
+            this.idInfo_pointOfContact_colorPnl.Size = new System.Drawing.Size(448, 37);
             this.idInfo_pointOfContact_colorPnl.TabIndex = 1;
             // 
             // idInfo_citation_citedResponsibleParty_colorPnl
@@ -1250,9 +1263,9 @@
             this.idInfo_citation_citedResponsibleParty_colorPnl.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.idInfo_citation_citedResponsibleParty_colorPnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.idInfo_citation_citedResponsibleParty_colorPnl.Controls.Add(this.idInfo_citation_citedResponsibleParty);
-            this.idInfo_citation_citedResponsibleParty_colorPnl.Location = new System.Drawing.Point(3, 49);
+            this.idInfo_citation_citedResponsibleParty_colorPnl.Location = new System.Drawing.Point(3, 46);
             this.idInfo_citation_citedResponsibleParty_colorPnl.Name = "idInfo_citation_citedResponsibleParty_colorPnl";
-            this.idInfo_citation_citedResponsibleParty_colorPnl.Size = new System.Drawing.Size(451, 41);
+            this.idInfo_citation_citedResponsibleParty_colorPnl.Size = new System.Drawing.Size(448, 38);
             this.idInfo_citation_citedResponsibleParty_colorPnl.TabIndex = 1;
             // 
             // contact_CI_ResponsibleParty_colorPnl
@@ -1261,9 +1274,9 @@
             this.contact_CI_ResponsibleParty_colorPnl.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.contact_CI_ResponsibleParty_colorPnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.contact_CI_ResponsibleParty_colorPnl.Controls.Add(this.contact_CI_ResponsibleParty);
-            this.contact_CI_ResponsibleParty_colorPnl.Location = new System.Drawing.Point(3, 96);
+            this.contact_CI_ResponsibleParty_colorPnl.Location = new System.Drawing.Point(3, 90);
             this.contact_CI_ResponsibleParty_colorPnl.Name = "contact_CI_ResponsibleParty_colorPnl";
-            this.contact_CI_ResponsibleParty_colorPnl.Size = new System.Drawing.Size(451, 40);
+            this.contact_CI_ResponsibleParty_colorPnl.Size = new System.Drawing.Size(448, 37);
             this.contact_CI_ResponsibleParty_colorPnl.TabIndex = 1;
             // 
             // groupBox3
@@ -1271,7 +1284,7 @@
             this.groupBox3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBox3.Controls.Add(this.flowLayoutPanel1);
             this.groupBox3.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(3, 187);
+            this.groupBox3.Location = new System.Drawing.Point(3, 178);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(470, 252);
             this.groupBox3.TabIndex = 3;
@@ -2088,20 +2101,6 @@
             this.hoverTip_txt.TabIndex = 39;
             this.hoverTip_txt.TabStop = false;
             // 
-            // setDefaultsFromTemplateToolStripMenuItem
-            // 
-            this.setDefaultsFromTemplateToolStripMenuItem.Name = "setDefaultsFromTemplateToolStripMenuItem";
-            this.setDefaultsFromTemplateToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
-            this.setDefaultsFromTemplateToolStripMenuItem.Text = "Set Defaults From Template";
-            this.setDefaultsFromTemplateToolStripMenuItem.Click += new System.EventHandler(this.setDefaultsFromTemplateToolStripMenuItem_Click);
-            // 
-            // clearAllValuesToolStripMenuItem
-            // 
-            this.clearAllValuesToolStripMenuItem.Name = "clearAllValuesToolStripMenuItem";
-            this.clearAllValuesToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
-            this.clearAllValuesToolStripMenuItem.Text = "Clear All Values";
-            this.clearAllValuesToolStripMenuItem.Click += new System.EventHandler(this.clearAllValuesToolStripMenuItem_Click);
-            // 
             // idInfo_extent_temporalExtent
             // 
             this.idInfo_extent_temporalExtent.BackColor = System.Drawing.Color.Transparent;
@@ -2135,6 +2134,7 @@
             this.idInfo_pointOfContact.CI_ResponsiblePartyList = null;
             this.idInfo_pointOfContact.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idInfo_pointOfContact.Location = new System.Drawing.Point(2, 2);
+            this.idInfo_pointOfContact.Margin = new System.Windows.Forms.Padding(0);
             this.idInfo_pointOfContact.mylabel = "Resource Owner";
             this.idInfo_pointOfContact.Name = "idInfo_pointOfContact";
             this.idInfo_pointOfContact.rp_mode = null;
@@ -2149,6 +2149,7 @@
             this.idInfo_citation_citedResponsibleParty.CI_ResponsiblePartyList = null;
             this.idInfo_citation_citedResponsibleParty.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idInfo_citation_citedResponsibleParty.Location = new System.Drawing.Point(2, 3);
+            this.idInfo_citation_citedResponsibleParty.Margin = new System.Windows.Forms.Padding(0);
             this.idInfo_citation_citedResponsibleParty.mylabel = "Resource Producer";
             this.idInfo_citation_citedResponsibleParty.Name = "idInfo_citation_citedResponsibleParty";
             this.idInfo_citation_citedResponsibleParty.rp_mode = null;
@@ -2163,6 +2164,7 @@
             this.contact_CI_ResponsibleParty.CI_ResponsiblePartyList = null;
             this.contact_CI_ResponsibleParty.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contact_CI_ResponsibleParty.Location = new System.Drawing.Point(3, 2);
+            this.contact_CI_ResponsibleParty.Margin = new System.Windows.Forms.Padding(0);
             this.contact_CI_ResponsibleParty.mylabel = "Metadata Author";
             this.contact_CI_ResponsibleParty.Name = "contact_CI_ResponsibleParty";
             this.contact_CI_ResponsibleParty.rp_mode = "dist";
@@ -2177,6 +2179,7 @@
             this.uc_ResponsibleParty2.BackColor = System.Drawing.Color.Transparent;
             this.uc_ResponsibleParty2.CI_ResponsiblePartyList = null;
             this.uc_ResponsibleParty2.Location = new System.Drawing.Point(0, 0);
+            this.uc_ResponsibleParty2.Margin = new System.Windows.Forms.Padding(0);
             this.uc_ResponsibleParty2.mylabel = "";
             this.uc_ResponsibleParty2.Name = "uc_ResponsibleParty2";
             this.uc_ResponsibleParty2.rp_mode = null;
@@ -2189,6 +2192,7 @@
             this.uc_ResponsibleParty3.BackColor = System.Drawing.Color.Transparent;
             this.uc_ResponsibleParty3.CI_ResponsiblePartyList = null;
             this.uc_ResponsibleParty3.Location = new System.Drawing.Point(0, 0);
+            this.uc_ResponsibleParty3.Margin = new System.Windows.Forms.Padding(0);
             this.uc_ResponsibleParty3.mylabel = "";
             this.uc_ResponsibleParty3.Name = "uc_ResponsibleParty3";
             this.uc_ResponsibleParty3.rp_mode = null;
@@ -2201,6 +2205,7 @@
             this.uc_ResponsibleParty4.BackColor = System.Drawing.Color.Transparent;
             this.uc_ResponsibleParty4.CI_ResponsiblePartyList = null;
             this.uc_ResponsibleParty4.Location = new System.Drawing.Point(0, 0);
+            this.uc_ResponsibleParty4.Margin = new System.Windows.Forms.Padding(0);
             this.uc_ResponsibleParty4.mylabel = "";
             this.uc_ResponsibleParty4.Name = "uc_ResponsibleParty4";
             this.uc_ResponsibleParty4.rp_mode = null;
@@ -2213,6 +2218,7 @@
             this.uc_ResponsibleParty5.BackColor = System.Drawing.Color.Transparent;
             this.uc_ResponsibleParty5.CI_ResponsiblePartyList = null;
             this.uc_ResponsibleParty5.Location = new System.Drawing.Point(0, 0);
+            this.uc_ResponsibleParty5.Margin = new System.Windows.Forms.Padding(0);
             this.uc_ResponsibleParty5.mylabel = "";
             this.uc_ResponsibleParty5.Name = "uc_ResponsibleParty5";
             this.uc_ResponsibleParty5.rp_mode = null;
@@ -2225,6 +2231,7 @@
             this.uc_ResponsibleParty6.BackColor = System.Drawing.Color.Transparent;
             this.uc_ResponsibleParty6.CI_ResponsiblePartyList = null;
             this.uc_ResponsibleParty6.Location = new System.Drawing.Point(0, 0);
+            this.uc_ResponsibleParty6.Margin = new System.Windows.Forms.Padding(0);
             this.uc_ResponsibleParty6.mylabel = "";
             this.uc_ResponsibleParty6.Name = "uc_ResponsibleParty6";
             this.uc_ResponsibleParty6.rp_mode = null;
@@ -2237,6 +2244,7 @@
             this.uc_ResponsibleParty7.BackColor = System.Drawing.Color.Transparent;
             this.uc_ResponsibleParty7.CI_ResponsiblePartyList = null;
             this.uc_ResponsibleParty7.Location = new System.Drawing.Point(0, 0);
+            this.uc_ResponsibleParty7.Margin = new System.Windows.Forms.Padding(0);
             this.uc_ResponsibleParty7.mylabel = "";
             this.uc_ResponsibleParty7.Name = "uc_ResponsibleParty7";
             this.uc_ResponsibleParty7.rp_mode = null;
@@ -2246,8 +2254,8 @@
             // 
             // EmeLT
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(994, 692);
             this.Controls.Add(this.hoverTip_txt);
             this.Controls.Add(this.statusStrip1);
@@ -2256,7 +2264,8 @@
             this.Controls.Add(this.panel10);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel8);
-            this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
