@@ -1034,6 +1034,7 @@
             this.idInfo_resourceConstraints_MD_SecurityConstraints_userNote.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idInfo_resourceConstraints_MD_SecurityConstraints_userNote.FormattingEnabled = true;
             this.idInfo_resourceConstraints_MD_SecurityConstraints_userNote.Items.AddRange(new object[] {
+            "",
             "EPA Category: Mission Sensitive, NARA Category: Critical Infrastructure",
             "EPA Category: Drinking Water Vulnerability Assessments, NARA Category: Critical I" +
                 "nfrastructure-Water Assessments",
@@ -1050,22 +1051,7 @@
             "EPA Category: Confidential Business Information, NARA Category: Proprietary-Manuf" +
                 "acturer",
             "EPA Category: Source Selection Information, NARA Category: Proprietary-Source Sel" +
-                "ection",
-            "EPA Category: Mission Sensitive, NARA Category: Critical Infrastructure",
-            "EPA Category: Drinking Water Vulnerability Assessments, NARA Category: Critical I" +
-                "nfrastructure-Water Assessments",
-            "EPA Category: Sensitive Drinking Water Related, NARA Category: Critical Infrastru" +
-                "cture-Water Assessments",
-            "EPA Category: IT Security, NARA Category: Information Systems Vulnerability Infor" +
-                "mation",
-            "EPA Category: Law Enforcement Sensitive, NARA Category: Law Enforcement",
-            "EPA Category: Attorney Client Privilege, NARA Category: Legal-Privilege",
-            "EPA Category: Attorney Work Product, NARA Category: Legal-Privilege",
-            "EPA Category: Deliberative Process Privilege, NARA Category: Legal-Privilege",
-            "EPA Category: Personally Identifiable Information (PII), NARA Category: Privacy",
-            "EPA Category: Proprietary, NARA Category: Proprietary",
-            "EPA Category: Confidential Business Information, NARA Category: Proprietary-Manuf" +
-                "acturer"});
+                "ection"});
             this.idInfo_resourceConstraints_MD_SecurityConstraints_userNote.Location = new System.Drawing.Point(124, 75);
             this.idInfo_resourceConstraints_MD_SecurityConstraints_userNote.Name = "idInfo_resourceConstraints_MD_SecurityConstraints_userNote";
             this.idInfo_resourceConstraints_MD_SecurityConstraints_userNote.Size = new System.Drawing.Size(258, 21);
@@ -2075,6 +2061,7 @@
             this.idInfo_citation_Title.Size = new System.Drawing.Size(458, 45);
             this.idInfo_citation_Title.TabIndex = 0;
             this.idInfo_citation_Title.Tag = "";
+            this.idInfo_citation_Title.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.idInfo_citation_Title_MouseDoubleClick);
             this.idInfo_citation_Title.Validating += new System.ComponentModel.CancelEventHandler(this.cntrl_Validating);
             // 
             // tabControl1

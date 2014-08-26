@@ -610,7 +610,7 @@ namespace EmeLibrary
                 
 
         /// <summary>
-        /// wirite the selected date from datetimepicker to its associated textbox
+        /// write the selected date from datetimepicker to its associated textbox
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -1063,6 +1063,23 @@ namespace EmeLibrary
                 }
             }
 
+        }
+
+        private void idInfo_citation_Title_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            int wi = idInfo_citation_Title.Size.Width;
+            int hi = 45;
+
+            if (idInfo_citation_Title.Size.Height == 45)
+            {
+                idInfo_citation_Title.Size = new System.Drawing.Size(wi, 150);
+            }
+            else
+            {
+                idInfo_citation_Title.Size = new System.Drawing.Size(wi, 45);
+            }
+
+          
         }
 
         

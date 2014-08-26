@@ -90,6 +90,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Config.esriaddinx</DependentUpon>
     </Compile>
+    <Compile Include="CreateNewMetadata.cs" />
     <Compile Include="EditIsoMetadata.cs" />
     <Compile Include="ExportMetadata.cs" />
     <Compile Include="ImportMetadata.cs" />
@@ -144,12 +145,14 @@
   <ItemGroup>
     <Content Include="Images\Button1.png" />
     <AddInContent Include="Images\ClearMetadata.png" />
+    <AddInContent Include="Images\CreateNewMetadata.png" />
     <Content Include="Images\EditIsoMetadata.png" />
     <AddInContent Include="Images\EditIsoMetadata_1.png" />
     <AddInContent Include="Images\EditIsoMetadatawBBox.png" />
     <Content Include="Images\EmeIconv2.PNG" />
     <Content Include="Images\export.png" />
     <AddInContent Include="Images\ExportMetadata.png" />
+    <Content Include="Images\gree_add.png" />
     <Content Include="Images\import24.png" />
     <Content Include="Images\MetadataEdit16.png" />
   </ItemGroup>

@@ -6,7 +6,7 @@
   <Image>Images\ArcCatalogAddinEme4Tools.png</Image>
   <Author>Innovate! Inc.</Author>
   <Company>Innovate Inc</Company>
-  <Date>6/13/2014</Date>
+  <Date>7/16/2014</Date>
   <Targets>
     <Target name="Desktop" version="10.2" />
   </Targets>
@@ -17,6 +17,7 @@
         <Button id="ArcCatalogAddinEme4Tools_ImportMetadata" class="ImportMetadata" message="Import ISO Metadata" caption="Import ISO Metadata" tip="Click to import an ISO 19115/19115-2 metadata record into your selected object" category="Add-In Controls" image="Images\ImportMetadata.png" />
         <Button id="ArcCatalogAddinEme4Tools_ExportMetadata" class="ExportMetadata" message="Export Metadata" caption="Export Metadata" tip="Click to export metadata as a standalone xml file" category="Add-In Controls" image="Images\ExportMetadata.png" />
         <Button id="ArcCatalogAddinEme4Tools_ClearMetadata" class="ClearMetadata" message="Clear Metadata" caption="Clear Metadata" tip="Click to clear metadata for your selected object(s)" category="Add-In Controls" image="Images\ClearMetadata.png" />
+        <Button id="ArcCatalogAddinEme4Tools_CreateNewMetadata" class="CreateNewMetadata" message="Click to create a new metadata record from scratch. Existing metadata will be erased." caption="Click to create a new metadata record from scratch" tip="Click to create a new metadata record from scratch" category="Add-In Controls" image="Images\CreateNewMetadata.png" />
       </Commands>
       <Toolbars>
         <Toolbar id="InnovateInc_ArcCatalogAddinEme4Tools_EME_Tools" caption="EME 4.0 Beta Tools" showInitially="true">
@@ -25,6 +26,7 @@
             <Button refID="ArcCatalogAddinEme4Tools_ImportMetadata" />
             <Button refID="ArcCatalogAddinEme4Tools_ExportMetadata" />
             <Button refID="ArcCatalogAddinEme4Tools_ClearMetadata" />
+            <Button refID="ArcCatalogAddinEme4Tools_CreateNewMetadata" />
           </Items>
         </Toolbar>
       </Toolbars>
