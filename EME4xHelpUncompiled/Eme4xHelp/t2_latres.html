@@ -1,0 +1,24 @@
+<html>
+<head>
+<link href="mystyle.css" rel="stylesheet" type="text/css" />
+<h1>EPA Metadata Editor (EME)</h1>
+<h2>Interface Element Description: Tab 2</h2>
+<blockquote>Element:<b> Latitude Resolution</b></blockquote>
+<blockquote>Type: real</blockquote>
+<blockquote>Short Name: latres</blockquote>
+<h3>FGDC Definition</h3>
+<blockquote>The minimum difference between two adjacent latitude values expressed in Geographic Coordinate Units of measure. </blockquote>
+<h3>EPA Requirement/Guidance</h3>
+ <p>This element is not required for minimum FGDC compliancy, but becomes required when the "Geographic" element is used. </p> <em>Note: The Y field in EME corresponds to the Latitude Resolution FGDC element. </em><br><br>
+
+The purpose of the latres field is to indicate how coarsely or finely information was recorded.  This information is usually captured when one uses the EPA Synchronizer to synchronize the coordinate system information from the data set.  When one uses the EPA Synchronizer, the latres and longres fields will be automatically populated with the correct information from the dataset.  The EPA Synchronizer is the best way to capture this information, and it is recommended where possible for documenting this element.  One can attempt to do this calculation manually however, using ArcMap or another GIS program. Calculating this information in ArcMap may require a few steps. The latres value represents the minimum possible difference between coordinate values.  One will need to perform a function that compares all of the points or vertices within the data set and then determine the minimum distance among all of them.  This is best done using a function such as the "near" function (ArcPy) or another spatial processing function.  
+
+<br><br>One may also reference the ESRI help to review the "Resolution" property of a geodatabase feature class.
+
+<br><br>The "Ten Most Common Metadata Errors" document at the FGDC website provides additional information regarding this element.
+
+<h3>Domain</h3>
+<blockquote>Latitude Resolution > 0.0</blockquote>
+<br><br><br><br>
+</body>
+</html>

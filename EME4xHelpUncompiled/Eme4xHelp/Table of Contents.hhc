@@ -1,0 +1,529 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<!-- Sitemap 1.0 -->
+</HEAD><BODY>
+<OBJECT type="text/site properties">
+	<param name="ImageType" value="Folder">
+</OBJECT>
+<UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="EPA Metadata Editor (EME) Overview">
+		<param name="Local" value="Help_Main.html">
+		<param name="ImageNumber" value="12">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Getting Started">
+		<param name="ImageNumber" value="1">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Post-Installation Steps">
+			<param name="Local" value="Help_Post_Install.html">
+			<param name="URL" value="Help_Post_Install.html">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Using the EPA Synchronizer">
+			<param name="Local" value="Help_Synchronizer.html">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Using the EME User Interface">
+			<param name="Local" value="Interface%20Features.html">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Setting up the EME Database">
+			<param name="Local" value="Help_DB.html">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Using the EPA Validator">
+			<param name="Local" value="Help_Validation.html">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Reference Information">
+		<param name="Local" value="Help_Ref_Docs.html">
+		<param name="ImageNumber" value="17">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Interface Elements">
+		<param name="Local" value="Help_Element_Description.html">
+		<param name="ImageNumber" value="1">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Tab 1">
+			<param name="Local" value="Help_Tab1.html">
+			<param name="ImageNumber" value="1">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Abstract">
+				<param name="Local" value="t1_abstract.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Access Constraints">
+				<param name="Local" value="t1_accconst.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Contact Information">
+				<param name="Local" value="t1_cntinfo.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Current">
+				<param name="Local" value="t1_current.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="East Bounding Coordinates">
+				<param name="Local" value="t1_eastbc.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="EPA Theme Keyword">
+				<param name="Local" value="t1_epathemekey.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="ISO Theme Keyword">
+				<param name="Local" value="t1_isothemekey.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Mulitple Dates">
+				<param name="Local" value="t1_mdattim_caldate.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="North Bounding Coordinates">
+				<param name="Local" value="t1_northbc.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Online Linkage">
+				<param name="Local" value="t1_onlink.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Origin">
+				<param name="Local" value="t1_origin.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Place Keyword">
+				<param name="Local" value="t1_placekey.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Progress">
+				<param name="Local" value="t1_progress.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Publication Date">
+				<param name="Local" value="t1_pubdate.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Publication Place">
+				<param name="Local" value="t1_pubplace.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Publisher">
+				<param name="Local" value="t1_publish.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Purpose">
+				<param name="Local" value="t1_purpose.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Range of Dates">
+				<param name="Local" value="t1_rngdates.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Security Classification">
+				<param name="Local" value="t1_secclass.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Single Date">
+				<param name="Local" value="t1_sngdate_caldate.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="South Bounding Coordinates">
+				<param name="Local" value="t1_southbc.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Supplemental Information">
+				<param name="Local" value="t1_supplinf.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Time Period Information">
+				<param name="Local" value="t1_timeinfo.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Title">
+				<param name="Local" value="t1_title.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Update Frequency">
+				<param name="Local" value="t1_update.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Use Constrains">
+				<param name="Local" value="t1_useconst.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="User Theme Keyword">
+				<param name="Local" value="t1_userthemekey.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="West Bounding Coordinates">
+				<param name="Local" value="t1_westbc.html">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Tab 2">
+			<param name="Local" value="Help_Tab2.html">
+			<param name="ImageNumber" value="1">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Abscissa Resolution">
+				<param name="Local" value="t2_absres.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Attribute">
+				<param name="Local" value="t2_attr.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Attribute Citation">
+				<param name="Local" value="t2_eadetcit.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Attribute Domain Values">
+				<param name="Local" value="t2_attrdomv.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Attribute Overview">
+				<param name="Local" value="t2_eaover.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Citation Information">
+				<param name="Local" value="t2_citeinfo.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Codeset Domain">
+				<param name="Local" value="t2_codesetd.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Completeness">
+				<param name="Local" value="t2_complete.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Coordinate System Units">
+				<param name="Local" value="t2_geogunit.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Detailed Description">
+				<param name="Local" value="t2_detailed.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Direct Spatial Reference">
+				<param name="Local" value="t2_direct.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Edition">
+				<param name="Local" value="t2_edition.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Entity Type">
+				<param name="Local" value="t2_enttyp.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Enumerated Domain">
+				<param name="Local" value="t2_edom.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Enumerated Doman Value">
+				<param name="Local" value="t2_edomv.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Enumerated Domain Value Definition">
+				<param name="Local" value="t2_edomvd.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Enumerated Domain Value Definition Source">
+				<param name="Local" value="t2_edomvds.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Horizontal Datum Name">
+				<param name="Local" value="t2_horizdn.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Horizontal Coordinate System">
+				<param name="Local" value="t2_horizsys.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Horizontal Positional Accuracy Report">
+				<param name="Local" value="t2_horizpar.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Horizontal Positional Accuracy Tests Used">
+				<param name="Local" value="t2_horizpav.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Horizontal Positional Accuracy Value">
+				<param name="Local" value="t2_horizpav.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Indirect Spatial Reference">
+				<param name="Local" value="t2_indspref.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Issue Identification">
+				<param name="Local" value="t2_issue.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Larger Work Citation">
+				<param name="Local" value="t2_lworkcit.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Latitude Resolution">
+				<param name="Local" value="t2_latres.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Lineage">
+				<param name="Local" value="t2_lineage.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Logical Consistency Report">
+				<param name="Local" value="t2_logic.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Online Linkage">
+				<param name="Local" value="t2_online.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Longitude Resolution">
+				<param name="Local" value="t2_longres.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Ordinate Resolution">
+				<param name="Local" value="t2_ordres.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Originator">
+				<param name="Local" value="t2_origin.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Other Citation Details">
+				<param name="Local" value="t2_othercit.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Overview Description">
+				<param name="Local" value="t2_overview.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Process Contact">
+				<param name="Local" value="t2_proccont.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Process Date">
+				<param name="Local" value="t2_procdate.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Process Description">
+				<param name="Local" value="t2_procdesc.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Processing Steps">
+				<param name="Local" value="t2_procstep.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Publication Date">
+				<param name="Local" value="t2_pubdate.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Publication Place">
+				<param name="Local" value="t2_pubplace.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Publication Time">
+				<param name="Local" value="t2_pubtime.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Publisher">
+				<param name="Local" value="t2_publish.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Range Domain">
+				<param name="Local" value="t2_rdom.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDTS Terms Description">
+				<param name="Local" value="t2_sdtsterm.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Series Name">
+				<param name="Local" value="t2_sername.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Source Citation">
+				<param name="Local" value="t2_srccite.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Source Citation Abbreviation">
+				<param name="Local" value="t2_srccitea.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Source Citation: Date">
+				<param name="Local" value="t2_srccite_pubdate.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Source Citation: Edition">
+				<param name="Local" value="t2_srccite_edition.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Source Citation: Geospatial Data Presentation Form">
+				<param name="Local" value="t2_srccite_geoform.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Source Citation: Issue Identification">
+				<param name="Local" value="t2_srccite_serinfo_issue.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Source Citation: Larger Work Citation">
+				<param name="Local" value="t2_srccite_lworkcit.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Source Citation: Online Link">
+				<param name="Local" value="t2_srccite_onlink.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Source Citation: Originator">
+				<param name="Local" value="t2_srccite_origin.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Source Citation: Other Citation Information">
+				<param name="Local" value="t2_srccite_othercit.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Source Citation: Publication Place">
+				<param name="Local" value="t2_srccite_pubinfo_pubplace.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Source Citation: Publisher">
+				<param name="Local" value="t2_srccite_pubinfo_publish.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Source Citation: Series Name">
+				<param name="Local" value="t2_srccite_serinfo_sername.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Source Citation: Time">
+				<param name="Local" value="t2_srccite_pubtime.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Source Citation: Title">
+				<param name="Local" value="t2_srccite_title.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Source Contribution">
+				<param name="Local" value="t2_srccontr.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Source Currentness Reference">
+				<param name="Local" value="t2_srccurr.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Source Information">
+				<param name="Local" value="t2_srcinfo.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Source Scale Denominator">
+				<param name="Local" value="t2_srcscale.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Source Time Period of Content">
+				<param name="Local" value="t2_srctime.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Spatial Data Organization Information">
+				<param name="Local" value="t2_spdoinfo.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Title">
+				<param name="Local" value="t2_title.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Type of Source Media">
+				<param name="Local" value="t2_typesrc.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Unrepresentable Domain">
+				<param name="Local" value="t2_udom.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Vertical Positional Accuracy Report">
+				<param name="Local" value="t2_vertaccr.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Vertical Positional Accuracy Value">
+				<param name="Local" value="t2_vertaccv.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Vertical Positional Accuracy Value Tests Used">
+				<param name="Local" value="t2_vertacce.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="VPF Topology Level">
+				<param name="Local" value="t2_vpflevel.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Zone (Applies to State Plane and UTM Projections Only)">
+				<param name="Local" value="t2_spcszone.html">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Tab 3">
+			<param name="Local" value="Help_Tab3.html">
+			<param name="ImageNumber" value="1">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Distribution Contact">
+				<param name="Local" value="t3_distcnt.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Distribution Information">
+				<param name="Local" value="t3_distinfo.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Distribution Liability">
+				<param name="Local" value="t3_distliab.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Metadata Contact">
+				<param name="Local" value="t3_metc.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Metadata Date">
+				<param name="Local" value="t3_metd.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Metadata Future Review Date">
+				<param name="Local" value="t3_metfrd.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Metadata Information">
+				<param name="Local" value="t3_metainfo.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Metadata Standard Name">
+				<param name="Local" value="t3_metstdn.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Metadata Standard Version">
+				<param name="Local" value="t3_metstdv.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Resource Description">
+				<param name="Local" value="t3_resdesc.html">
+				</OBJECT>
+		</UL>
+	</UL>
+</UL>
+</BODY></HTML>

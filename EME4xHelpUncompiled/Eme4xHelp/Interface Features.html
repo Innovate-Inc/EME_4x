@@ -1,0 +1,73 @@
+<html>
+<head>
+<link href="mystyle.css" rel="stylesheet" type="text/css" />
+<h1>EPA Metadata Editor (EME)</h1>
+
+<h2>Interface Features </h2>
+<blockquote>
+The EPA Metadata Editor  allows users to specify information that corresponds to all EPA required elements in Sections 1, 2, 4, 6, and 7 of the FGDC CSDGM. Additionally, the user interface allows a user to specify some information for Section 5 (Attributes) of the FGDC CSDGM.  <br><br>The distinction between ‘mandatory’, ‘mandatory if applicable’, and ‘optional’ fields as required by the <a href="http://epa.gov/geospatial/policies.html" target='blank'>EPA Geospatial Metadata Technical Specification v1.0</a> is provided through the use of color-coding in the user interface as well as through the use of asterisks.  Yellow fields (denoted with *) are considered 'mandatory', green fields (denoted with **) are considered 'mandatory if applicable', and blue fields (no asterisks) are considered ‘optional’.  Defaults for individual fields may be selected interactively in the user interface using buttons or drop-downs.<br><br>
+
+User interface features are described in more detail below.<br>
+
+</blockquote>
+
+<h3>Global Features</h3>
+These features can be accessed from the Tools and Edit menus.<br><br>
+<ol>
+	<li>'Open Database'</li><br>
+	<img src="screenshot_openDB.jpg"><br>
+	<p>This feature allows users to open and edit the EPA Metadata Editor Microsoft Access database (metadata.mdb).  The use of this feature requires that the user have Microsoft Access installed locally.</p>
+
+	<li>'Refresh From Database'</li><br>
+	<img src="screenshot_refreshDB.jpg"><br>
+	<p>This feature is used to refresh the EME user interface defaults after edits have been made to the database. If the EME database is opened and edited from the EME user interface button, the 'Refresh From Database' option should be clicked to make sure that the defaults shown in the user interface reflect the newest edits to the database. </p><br>
+
+	<li>'Set Default'</li><br>
+	<img src="screenshot_set_default.jpg"><br>
+	<p>This feature allows a user to set all defaults for the selected tab.  The editor will prompt the user to ensure that he/she would like to overwrite all information in the selected tab with default values as stored in the EPA Metadata Editor Microsoft Access database (metadata.mdb).</p><br>
+	
+	<li>'Spell Check'</li><br>
+	<img src="screenshot_spellcheck.jpg"><br>
+	<p>This feature will launch a spell-checking utility to verify the spelling of information within the current tab.  If spelling errors are found within the selected tab, a new window will open and allow the user to modify the unknown word(s) if needed.</p><br>
+	<li>'Validate Metadata'</li><br>
+	<img src="screenshot_validate_EPA.jpg"><br>
+	<p>This feature checks the validity of the currently selected metadata record against the EPA Geospatial Metadata Technical Specification v1.0. Users can view errors associated with elements that are either missing or incorrectly documented using this button.  The validation service will separate errors identified from the validation service (if any) that are specific to the FGDC CSDGM from those that are specific to the EPA implementation.  Errors identified from using this feature should be corrected to ensure EPA compliancy.</p>
+<li>'View Metadata XML' <br>
+<img src="screenshot_viewXML.jpg"><br><br>Displays the metadata file in xml format using the default web browser.<br><br>
+<li>'Remove ESRI Tags' <br>
+<img src= "screenshot_removeESRItags.jpg"><br><br>Removes all ESRI-inserted (non FGDC) elements from the metadata record.<br><br>
+<li>'Find and Replace'<br>
+<img src= "screenshot_FindReplace.jpg"><br><br>Performs a global search and replace on the entire metadata record. <br><i>Please Note: This affects information shown in the EME user interface only, and does not include information stored in the metadata record but not displayed in any tab of EME.</i></li><br><br>
+<a name="validate"><li><b>Validation via Webservice and Viewing Validation Results:</b><br></a> These settings allow the user to specify whether or not to use the EPA's web service for performing metadata validation.  They also allow the user to specify how to view the results of validation.  Users may enable the use of the web service by clicking on the 'Enable Validation via Webservice' checkbox.  When this is enabled, a timeout should be specified (in seconds) so that if the service is not available, the EME can perform validation using a local service as back-up. <br><br>
+<img src="screenshot_webservice.jpg" border="1">
+<br><br>Users may also choose how to view validation results.  When performing validation, a user may choose to view the results in the EME user interface or in a browser window, or both.  The 'View in browser window' option will list the errors found during validation (if any) along with links to the specific lines where errors were reported. Users can click on the link and view the line/element that caused the error.  In cases where a required element was missing, the parent element will be linked to so that users can understand which section was missing the required information.  The 'View in User Interface' option will highlight errors in the user interface using a red balloon.  Users can hover over the balloon to understand what the nature of the error was and then fix the error(s) accordingly (see below).</li><br><br>
+	<img src="screenshot_validate_EPA_UI.jpg" border="1"><br>
+	</p><br>	
+	
+</ol>
+<h3>Common Features/Buttons Across Tabs</h3>
+These buttons are located throughout the EME user interface.<br><br>
+<ol>
+<li> 'D' or 'default' button</li><br>
+<img src="screenshot_d.jpg"><br>
+<p>This button sets the current element to the default value stored in the EPA Metadata Editor Microsoft Access database (metadata.mdb).</p><br>
+
+<li>'Today'</li>
+<br>
+	<img src="today_icon.jpg"><br>
+	<p>This button sets the associated date field to today's date.</p><br>
+<li>Check URL</li><br>
+<img src="onlink_img.jpg"><br>
+	<p>This button verifies the availability of online linkage URL(s).  By clicking on the purple check mark next to the URL, the user is able to verify the availability of the URL(s) entered. </p>
+
+</ol>
+<h3>Special Features, Tools & Settings (Tab 3)</h3>
+<ol>
+<li><b>'4 yrs'</b> Sets the date for the future review date to the metadata date + 4 years (EPA default).<br><br>
+<img src="screenshot469.jpg"><br>
+<br>
+<br><br></ul>
+</ol>
+<br><br><br><br>
+</body>
+</html>

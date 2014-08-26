@@ -1,0 +1,59 @@
+/* Generic Selectors */
+
+body {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #000000;
+	background-color: #F9F9F9;
+	background-image: url("3logos.jpg");
+	background-position: bottom;
+	background-repeat: no-repeat;
+}
+
+/*
+p {
+	text-indent: 1cm;
+	width: 80%;
+	color: black;
+	text-align: justify;
+}
+*/
+
+h1 {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	/*font-weight: bold;*/
+	color: #4a4d42;
+	padding: 5pt;
+	background-color: #fffbd6;
+text-align: center;}
+
+h2 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	/*font-weight: bold;*/
+	color: white;
+	background-color: #428fbb;
+	/*border-bottom: 1px #666678 solid; /*C6EC8*/
+	text-align:left;
+} 
+
+h3 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #006699;
+	background-color: #edece2;
+
+}
+
+ul {
+	list-style-image:url("marker_arr.gif");
+	'list-style-position: inside;
+	margin-left: 1cm;
+}
+
+ol {
+	list-style-type:upper-alpha;
+	list-style-position: inside;
+	margin:auto;
+}
