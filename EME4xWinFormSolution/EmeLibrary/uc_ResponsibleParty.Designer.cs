@@ -79,12 +79,12 @@
             this.dcatProgramCode = new System.Windows.Forms.ComboBox();
             this.errorProvider_RP = new System.Windows.Forms.ErrorProvider(this.components);
             this.rp_expander_btn = new System.Windows.Forms.Button();
-            this.uc_ResponsibleParty_lbl = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.contact_list = new System.Windows.Forms.Label();
             this.responsible_party_d = new System.Windows.Forms.Button();
+            this.uc_ResponsibleParty_lbl = new System.Windows.Forms.LinkLabel();
             this.groupBox1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -703,16 +703,6 @@
             this.rp_expander_btn.UseVisualStyleBackColor = true;
             this.rp_expander_btn.Click += new System.EventHandler(this.Expander_Click);
             // 
-            // uc_ResponsibleParty_lbl
-            // 
-            this.uc_ResponsibleParty_lbl.AutoSize = true;
-            this.uc_ResponsibleParty_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uc_ResponsibleParty_lbl.Location = new System.Drawing.Point(33, 9);
-            this.uc_ResponsibleParty_lbl.Name = "uc_ResponsibleParty_lbl";
-            this.uc_ResponsibleParty_lbl.Size = new System.Drawing.Size(0, 13);
-            this.uc_ResponsibleParty_lbl.TabIndex = 45;
-            this.uc_ResponsibleParty_lbl.Tag = "";
-            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.panel2);
@@ -720,7 +710,7 @@
             this.panel3.Controls.Add(this.panel1);
             this.panel3.Controls.Add(this.panel5);
             this.panel3.Location = new System.Drawing.Point(2, 36);
-            this.panel3.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.panel3.Margin = new System.Windows.Forms.Padding(0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(435, 464);
             this.panel3.TabIndex = 2;
@@ -770,14 +760,24 @@
             this.responsible_party_d.UseVisualStyleBackColor = false;
             this.responsible_party_d.Click += new System.EventHandler(this.responsible_party_d_Click);
             // 
+            // uc_ResponsibleParty_lbl
+            // 
+            this.uc_ResponsibleParty_lbl.AutoSize = true;
+            this.uc_ResponsibleParty_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uc_ResponsibleParty_lbl.Location = new System.Drawing.Point(33, 9);
+            this.uc_ResponsibleParty_lbl.Name = "uc_ResponsibleParty_lbl";
+            this.uc_ResponsibleParty_lbl.Size = new System.Drawing.Size(0, 13);
+            this.uc_ResponsibleParty_lbl.TabIndex = 45;
+            this.uc_ResponsibleParty_lbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.uc_ResponsibleParty_lbl_LinkClicked);
+            // 
             // uc_ResponsibleParty
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.uc_ResponsibleParty_lbl);
             this.Controls.Add(this.rp_expander_btn);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.uc_ResponsibleParty_lbl);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "uc_ResponsibleParty";
@@ -851,7 +851,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ErrorProvider errorProvider_RP;
         private System.Windows.Forms.Button rp_expander_btn;
-        private System.Windows.Forms.Label uc_ResponsibleParty_lbl;
         private System.Windows.Forms.Button CI_ContactExpand_btn;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label dcatProgramCode_lbl;
@@ -862,5 +861,6 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.LinkLabel uc_ResponsibleParty_lbl;
     }
 }

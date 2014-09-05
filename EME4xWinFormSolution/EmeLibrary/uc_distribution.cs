@@ -1174,6 +1174,11 @@ namespace EmeLibrary
 
         }
 
+        private void uc_distribution_lbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Utils1.HelpSeeker("t3_distinfo.html", ref Utils1.globalHelpProc);
+        }
+
         
 
         

@@ -38,6 +38,13 @@
                 <xs:maxLength value="500" />
               </xs:restriction>
             </xs:simpleType>
+          </xs:element>
+		  <xs:element name="HelpLink">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="500" />
+              </xs:restriction>
+            </xs:simpleType>
           </xs:element>          
         </xs:sequence>
       </xs:complexType>
@@ -55,7 +62,8 @@
     <TabNum>1</TabNum>
 	  <FGDC_Def></FGDC_Def>
 	  <EPARequirementGuidance></EPARequirementGuidance>
-	  <HoverNote>What to call the data set</HoverNote>  
+	  <HoverNote>What to call the data set</HoverNote>
+	  <HelpLink>t1_title.html</HelpLink>	  
   </emeControl>
   <emeControl>
     <controlName>idInfo_Abstract_lbl</controlName>
@@ -63,6 +71,7 @@
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>Brief summary about the data</HoverNote>
+	<HelpLink>t1_abstract.html</HelpLink>
   </emeControl>
   <emeControl>
     <controlName>idInfo_Purpose_lbl</controlName>
@@ -70,6 +79,7 @@
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>Why was the data set developed</HoverNote>
+	<HelpLink>t1_purpose.html</HelpLink>
   </emeControl>
   <emeControl>
     <controlName>keywordsGroupBox</controlName>
@@ -77,6 +87,34 @@
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>Keywords about your data</HoverNote>
+  </emeControl>
+  <emeControl>
+    <controlName>idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____help</controlName>
+    <TabNum>1</TabNum>
+    <FGDC_Def></FGDC_Def>
+    <EPARequirementGuidance></EPARequirementGuidance>
+    <HelpLink>t1_isothemekey.html</HelpLink>
+  </emeControl>
+  <emeControl>
+    <controlName>idinfo_keywords_theme_themekt__EPA_GIS_Keyword_Thesaurus___themekey_____help</controlName>
+    <TabNum>1</TabNum>
+    <FGDC_Def></FGDC_Def>
+    <EPARequirementGuidance></EPARequirementGuidance>
+    <HelpLink>t1_epathemekey.html</HelpLink>
+  </emeControl>
+  <emeControl>
+    <controlName>idinfo_keywords_theme_themekt__User___themekey_____help</controlName>
+    <TabNum>1</TabNum>
+    <FGDC_Def></FGDC_Def>
+    <EPARequirementGuidance></EPARequirementGuidance>
+    <HelpLink>t1_userthemekey.html</HelpLink>
+  </emeControl>
+  <emeControl>
+    <controlName>idinfo_keywords_place_placekt__None___placekey_____help</controlName>
+    <TabNum>1</TabNum>
+    <FGDC_Def></FGDC_Def>
+    <EPARequirementGuidance></EPARequirementGuidance>
+    <HelpLink>t1_placekt.html</HelpLink>
   </emeControl>
   <emeControl>
     <controlName>boundingBoxGroupBox</controlName>
@@ -91,6 +129,7 @@
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>A description of the geographic extent or area</HoverNote>
+	<HelpLink>t1_extent_description.html</HelpLink>
   </emeControl>  
   <emeControl>
     <controlName>idInfo_extent_temporalExtent</controlName>
@@ -105,6 +144,7 @@
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>Northern Latitude (-90 to 90)</HoverNote>
+	<HelpLink>t1_northbc.html</HelpLink>
   </emeControl>
   <emeControl>
     <controlName>idInfo_extent_geographicBoundingBox_southLatDD_lbl</controlName>
@@ -112,6 +152,7 @@
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>Southern Latitude (-90 to 90)</HoverNote>
+	<HelpLink>t1_southbc.html</HelpLink>
   </emeControl>
   <emeControl>
     <controlName>idInfo_extent_geographicBoundingBox_eastLongDD_lbl</controlName>
@@ -119,6 +160,7 @@
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>Eastern Longitude (-180 to 180)</HoverNote>
+	<HelpLink>t1_eastbc.html</HelpLink>
   </emeControl>
   <emeControl>
     <controlName>idInfo_extent_geographicBoundingBox_westLongDD_lbl</controlName>
@@ -126,6 +168,7 @@
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>Western Longitude (-180 to 180)</HoverNote>
+	<HelpLink>t1_westbc.html</HelpLink>
   </emeControl>  
   <emeControl>
     <controlName>tempTimePeriod_Desc_lbl</controlName>

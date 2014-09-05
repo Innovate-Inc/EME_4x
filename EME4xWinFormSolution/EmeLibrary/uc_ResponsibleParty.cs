@@ -881,6 +881,31 @@ namespace EmeLibrary
             }
         }
 
+        private void uc_ResponsibleParty_lbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (uc_ResponsibleParty_lbl.Text == "Resource Owner")
+            {
+                //Utils1.HelpSeeker("/t2_resourceOwner.html", ref Utils1.globalHelpProc);
+                Utils1.HelpSeeker("t3_distinfo.html", ref Utils1.globalHelpProc);
+
+            }
+            else if (uc_ResponsibleParty_lbl.Text == "Resource Producer")
+            {
+                //Utils1.HelpSeeker("/t2_resourceProducer.html", ref Utils1.globalHelpProc);
+                Utils1.HelpSeeker("t3_distinfo.html", ref Utils1.globalHelpProc);
+            }
+            else if (uc_ResponsibleParty_lbl.Text == "Metadata Author")
+            {
+                //Utils1.HelpSeeker("/t2_metadataAuthor.html", ref Utils1.globalHelpProc);
+                Utils1.HelpSeeker("t3_distinfo.html", ref Utils1.globalHelpProc);
+            }
+            else if (uc_ResponsibleParty_lbl.Text == "Contact (Required)")
+            {
+                //Utils1.HelpSeeker("/t2_distributorContact.html", ref Utils1.globalHelpProc);
+                Utils1.HelpSeeker("t3_distinfo.html", ref Utils1.globalHelpProc);
+            }
+        }
+
        
                      
 

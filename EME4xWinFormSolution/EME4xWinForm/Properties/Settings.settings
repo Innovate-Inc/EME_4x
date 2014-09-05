@@ -5,5 +5,8 @@
     <Setting Name="EmeSystemFilesPath" Type="System.String" Scope="User">
       <Value Profile="(Default)">FullyQualifiedPathNameForEMESystemFiles</Value>
     </Setting>
+    <Setting Name="HHPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">c:\windows</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

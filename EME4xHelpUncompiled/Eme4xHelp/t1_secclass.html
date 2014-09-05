@@ -1,6 +1,7 @@
 <html>
 <head>
 <link href="mystyle.css" rel="stylesheet" type="text/css" />
+</head><body>
 <h1>EPA Metadata Editor (EME)</h1>
 <h2>Interface Element Description: Tab 1</h2>
 <blockquote>Element:<b> Security Classification</b></blockquote>
@@ -10,16 +11,24 @@
 <blockquote>Handling restrictions imposed on the data set because of national security, privacy, or other concerns.
 </blockquote>
 <h3>EPA Requirement/Guidance</h3>
-<blockquote>This element is required for minimum EPA compliancy so that assets may be properly categorized with respect to sharing with external agencies and the general public.  Choose one of the following options for categorizing your data in order to reflect the organizations with whom the information may be shared.</blockquote>
-<blockquote>No Confidentiality = Publicly available </blockquote>
-<blockquote>Medium Confidentiality = May be shared with trusted partners</blockquote>
-<blockquote>High Confidentiality = Internal EPA Only</blockquote>
+<blockquote>This element is required for minimum EPA compliancy so that assets may 
+    be properly categorized with respect to sharing with external agencies and the 
+    general public. This guidance has been updated at 3.2.1 to reflect Data.gov 
+    mandates.</blockquote>
+<h3>Data.gov Requirement/Guidance</h3>
+<blockquote>This field refers to degree to which this dataset could be made available to the public, regardless of whether it is currently available to the public. Choices: 
+<ul>
+<li><strong>public</strong> - Data asset is or could be made publicly available to all without restrictions</li>
+<li><strong>restricted public</strong> - Data asset is available under certain use restrictions</li>
+<li><strong>non-public</strong> - Data asset is not available to members of the public</li>
+</ul>
+For example, if a member of the public can walk into your agency and obtain a dataset, that entry is public even if there are no files online. A restricted public dataset is one only available under certain conditions or to certain audiences (such as researchers who sign a waiver). A non-public dataset is one that could never be made available to the public for privacy, security, or other reasons as determined by your agency.
+</blockquote>
 <h3>Domain</h3>
 <ul>
-<li>High Confidentiality</li>
-<li>Medium Confidentiality</li>
-<li>No Confidentiality</li>
-<li>free text</li>
+<li>public</li>
+<li>restricted public</li>
+<li>non-public</li>
 </ul>
 <br><br><br><br>
 </body>

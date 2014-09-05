@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EME4xWinForm.Properties {
+namespace EmeLibrary.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -20,18 +20,6 @@ namespace EME4xWinForm.Properties {
         public static Settings Default {
             get {
                 return defaultInstance;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("FullyQualifiedPathNameForEMESystemFiles")]
-        public string EmeSystemFilesPath {
-            get {
-                return ((string)(this["EmeSystemFilesPath"]));
-            }
-            set {
-                this["EmeSystemFilesPath"] = value;
             }
         }
         

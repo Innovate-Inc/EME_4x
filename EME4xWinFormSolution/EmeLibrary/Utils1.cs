@@ -17,6 +17,7 @@ namespace EmeLibrary
         public static DataSet emeDataSet;
         public static DataSet emeDataSetEditor;
         public static string[] dataTableNames;
+        public static System.Diagnostics.Process globalHelpProc = new System.Diagnostics.Process();
         
         public static string EmeUserAppDataFolder
         {
@@ -25,6 +26,10 @@ namespace EmeLibrary
                 return System.Environment.GetFolderPath(System.Environment.SpecialFolder.ApplicationData) + "\\Innovate! Inc\\EPA Metadata Edtior 4x\\";
             }
             //get { return Path.GetDirectoryName(Assembly.GetCallingAssembly().Location); }
+        }
+        public static string EmeInstallFolder
+        {
+            get { return Path.GetDirectoryName(Assembly.GetCallingAssembly().Location); }
         }
         
         public static void setEmeDataSets()
@@ -39,6 +44,7 @@ namespace EmeLibrary
                     //MessageBox.Show(Path.GetDirectoryName(Assembly.GetCallingAssembly().Location));
                     //MessageBox.Show(sourceDirPath);
                     DirectoryCopy(sourceDirPath, EmeUserAppDataFolder + "\\Eme4xSystemFiles\\EMEdb", true);
+                    
                 }
 
                 emeDataSet = new DataSet();
@@ -185,6 +191,33 @@ namespace EmeLibrary
                     DirectoryCopy(subdir.FullName, temppath, copySubDirs);
                 }
             }
+        }
+    
+        public static void HelpSeeker (string helpPage, ref System.Diagnostics.Process proc)
+        {
+            try
+            {
+                proc.CloseMainWindow();
+                proc.Refresh();
+            }
+            catch (Exception e)
+            { }
+              
+
+            string hhPath = Properties.Settings.Default.HHPath.Trim();
+            proc.StartInfo.FileName = hhPath +"\\hh.exe";
+
+            string helpStr = "\"" + Utils1.EmeInstallFolder + "\\EME 4x Help.chm::" + helpPage + "\"";
+
+            proc.StartInfo.Arguments = helpStr;
+            proc.Start();
+            //Sample Params
+            //"C:\aInnovate\Projects\EME\EME_v321_20131205\EME_v32_main_codebase\metadataEditorV32\MetadataEditor\bin\Debug\EPA Metadata Editor v3.2.1 Help.chm::/t1_title.html"
+
+
+
+
+
         }
     }
         

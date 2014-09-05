@@ -117,7 +117,6 @@
             this.pgD_MD_SOP_btn = new System.Windows.Forms.Button();
             this.md_standardOrderProcess_lbl = new System.Windows.Forms.Label();
             this.expand_MD_SOP_btn = new System.Windows.Forms.Button();
-            this.uc_distribution_lbl = new System.Windows.Forms.Label();
             this.del_MD_Dist_btn = new System.Windows.Forms.Button();
             this.MD_Dist_lbl = new System.Windows.Forms.Label();
             this.add_MD_Dist_btn = new System.Windows.Forms.Button();
@@ -126,6 +125,7 @@
             this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
             this.distributor_Contact = new EmeLibrary.uc_ResponsibleParty();
             this.distributor_gbx = new System.Windows.Forms.GroupBox();
+            this.uc_distribution_lbl = new System.Windows.Forms.LinkLabel();
             this.MD_Dist = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.errorProvider_Distribution = new System.Windows.Forms.ErrorProvider(this.components);
@@ -1182,15 +1182,6 @@
             this.expand_MD_SOP_btn.UseVisualStyleBackColor = true;
             this.expand_MD_SOP_btn.Click += new System.EventHandler(this.expand_Click);
             // 
-            // uc_distribution_lbl
-            // 
-            this.uc_distribution_lbl.AutoSize = true;
-            this.uc_distribution_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uc_distribution_lbl.Location = new System.Drawing.Point(24, 22);
-            this.uc_distribution_lbl.Name = "uc_distribution_lbl";
-            this.uc_distribution_lbl.Size = new System.Drawing.Size(0, 13);
-            this.uc_distribution_lbl.TabIndex = 3;
-            // 
             // del_MD_Dist_btn
             // 
             this.del_MD_Dist_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
@@ -1309,6 +1300,17 @@
             this.distributor_gbx.TabStop = false;
             this.distributor_gbx.Leave += new System.EventHandler(this.distributor_gbx_Leave);
             // 
+            // uc_distribution_lbl
+            // 
+            this.uc_distribution_lbl.AutoSize = true;
+            this.uc_distribution_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uc_distribution_lbl.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.uc_distribution_lbl.Location = new System.Drawing.Point(24, 22);
+            this.uc_distribution_lbl.Name = "uc_distribution_lbl";
+            this.uc_distribution_lbl.Size = new System.Drawing.Size(0, 13);
+            this.uc_distribution_lbl.TabIndex = 3;
+            this.uc_distribution_lbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.uc_distribution_lbl_LinkClicked);
+            // 
             // MD_Dist
             // 
             this.MD_Dist.Controls.Add(this.del_MD_Dist_btn);
@@ -1342,8 +1344,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.uc_distribution_lbl);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.distributor_gbx);
             this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(0);
@@ -1387,7 +1389,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label uc_distribution_lbl;
         private System.Windows.Forms.Panel MD_Format_pnl;
         private System.Windows.Forms.Label md_distributionFormat_lbl;
         private System.Windows.Forms.FlowLayoutPanel MD_Format;
@@ -1486,5 +1487,6 @@
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Button offline_resource_expandBtn;
         private System.Windows.Forms.Label offline_resource_expandLbl;
+        private System.Windows.Forms.LinkLabel uc_distribution_lbl;
     }
 }

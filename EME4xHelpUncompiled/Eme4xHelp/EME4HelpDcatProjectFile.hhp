@@ -1,6 +1,6 @@
 [OPTIONS]
 Compatibility=1.1 or later
-Compiled file=EME 4x Help.chm
+Compiled file=EPA Metadata Editor v4.0 Help.chm
 Contents file=Table of Contents.hhc
 Default topic=Help_Main.html
 Display compile progress=No
@@ -9,7 +9,6 @@ Language=0x409 English (United States)
 
 
 [FILES]
-Dummy.html
 Help_DB.html
 Help_Element_Description.html
 Help_Main.html
@@ -20,7 +19,7 @@ Help_Tab1.html
 Help_Tab2.html
 Help_Tab3.html
 Help_Validation.html
-Interface_Features.html
+Interface Features.html
 t1_abstract.html
 t1_accconst.html
 t1_caldate.html

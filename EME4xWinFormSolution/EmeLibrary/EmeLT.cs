@@ -845,11 +845,13 @@ namespace EmeLibrary
         }
 
         /// <summary>
-        /// adds hover tips to controld in the emeGUI table
+        /// Adds hover tips to controld in the emeGUI table and add HelpLink.  Watch out for collision validation that
+        /// also uses the tag property of controls.
         /// </summary>
         private void hoverHelpInit()
         {
-
+            
+            
             DataSet cntrlData = new DataSet();
             cntrlData.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             cntrlData.ReadXml(Utils1.EmeUserAppDataFolder + "\\Eme4xSystemFiles\\EMEdb\\emeGUI.xml");
@@ -870,8 +872,18 @@ namespace EmeLibrary
                 {
                     foreach (Control c in ctrl)
                     {
-                        //Console.WriteLine(c.Name.ToString());
-                        tooltip1.SetToolTip(c, dr["HoverNote"].ToString());
+                        string tTip = dr["HoverNote"].ToString();
+                        if (!string.IsNullOrEmpty(tTip))
+                        {
+                            //Console.WriteLine(c.Name.ToString());
+                            tooltip1.SetToolTip(c, tTip);
+                        }
+
+                        string helplink = dr["HelpLink"].ToString();
+                        if (!string.IsNullOrEmpty(helplink))
+                        {
+                            c.Tag = helplink;
+                        }
                     }
                     
                 }
@@ -1082,6 +1094,38 @@ namespace EmeLibrary
           
         }
 
+        private void contentsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Utils1.HelpSeeker("/Help_Main.html", ref Utils1.globalHelpProc);
+        }
+
+        private void idInfo_citation_Title_lbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Utils1.HelpSeeker("/t1_title.html", ref Utils1.globalHelpProc);
+        }
+
+        /// <summary>
+        /// Generic Method to open help for those lableLink objects that have the tag set to the help file name. THis
+        /// is controlled by the EmeGUI table;
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void genericOpenHelpFromLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Windows.Forms.LinkLabel helpLink = (System.Windows.Forms.LinkLabel)sender;
+            if (helpLink.Tag != null)
+            {
+                string n = helpLink.Tag.ToString(); //helpLink.Name.ToString().Replace("_lbl", "");
+
+
+                //MessageBox.Show(n);
+                Utils1.HelpSeeker("/" + n, ref Utils1.globalHelpProc);
+            }
+            //else { Utils1.HelpSeeker("/Help_Main.html", ref Utils1.globalHelpProc); }
+
+        }
+
+        
         
 
     }
