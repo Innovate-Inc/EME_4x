@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(uc_distribution));
             this.MD_Format_pnl = new System.Windows.Forms.Panel();
+            this.md_distributionFormat_lbl = new System.Windows.Forms.LinkLabel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.md_format_decompressionTechnique_lbl = new System.Windows.Forms.Label();
             this.md_format_Specification_lbl = new System.Windows.Forms.Label();
@@ -50,8 +51,8 @@
             this.MD_format_lbl = new System.Windows.Forms.Label();
             this.pgD_MD_Format_btn = new System.Windows.Forms.Button();
             this.expand_MD_Format_btn = new System.Windows.Forms.Button();
-            this.md_distributionFormat_lbl = new System.Windows.Forms.Label();
             this.digitalTransferOptions_pnl = new System.Windows.Forms.Panel();
+            this.md_digitalTranferOptions_lbl = new System.Windows.Forms.LinkLabel();
             this.offline_resource_expandGxb = new System.Windows.Forms.GroupBox();
             this.offline_resource_expandLbl = new System.Windows.Forms.Label();
             this.offLine__MD_Medium__mediumNode_lbl = new System.Windows.Forms.Label();
@@ -95,9 +96,9 @@
             this.pgU_MD_DTO_btn = new System.Windows.Forms.Button();
             this.MD_DTO_lbl = new System.Windows.Forms.Label();
             this.pgD_MD_DTO_btn = new System.Windows.Forms.Button();
-            this.md_digitalTranferOptions_lbl = new System.Windows.Forms.Label();
             this.expand_MD_DTO_btn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.md_standardOrderProcess_lbl = new System.Windows.Forms.LinkLabel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.availabelDate_clear_btn = new System.Windows.Forms.Button();
             this.availableDat_dtp = new System.Windows.Forms.DateTimePicker();
@@ -115,7 +116,6 @@
             this.pgU_MD_SOP_btn = new System.Windows.Forms.Button();
             this.MD_SOP_lbl = new System.Windows.Forms.Label();
             this.pgD_MD_SOP_btn = new System.Windows.Forms.Button();
-            this.md_standardOrderProcess_lbl = new System.Windows.Forms.Label();
             this.expand_MD_SOP_btn = new System.Windows.Forms.Button();
             this.del_MD_Dist_btn = new System.Windows.Forms.Button();
             this.MD_Dist_lbl = new System.Windows.Forms.Label();
@@ -150,17 +150,29 @@
             // 
             // MD_Format_pnl
             // 
+            this.MD_Format_pnl.Controls.Add(this.md_distributionFormat_lbl);
             this.MD_Format_pnl.Controls.Add(this.panel4);
             this.MD_Format_pnl.Controls.Add(this.panel1);
             this.MD_Format_pnl.Controls.Add(this.MD_Format);
             this.MD_Format_pnl.Controls.Add(this.expand_MD_Format_btn);
-            this.MD_Format_pnl.Controls.Add(this.md_distributionFormat_lbl);
             this.MD_Format_pnl.Location = new System.Drawing.Point(0, 105);
             this.MD_Format_pnl.Margin = new System.Windows.Forms.Padding(0);
             this.MD_Format_pnl.Name = "MD_Format_pnl";
             this.MD_Format_pnl.Size = new System.Drawing.Size(439, 35);
             this.MD_Format_pnl.TabIndex = 3;
             this.MD_Format_pnl.TabStop = true;
+            // 
+            // md_distributionFormat_lbl
+            // 
+            this.md_distributionFormat_lbl.AutoSize = true;
+            this.md_distributionFormat_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.md_distributionFormat_lbl.Location = new System.Drawing.Point(33, 9);
+            this.md_distributionFormat_lbl.Name = "md_distributionFormat_lbl";
+            this.md_distributionFormat_lbl.Size = new System.Drawing.Size(98, 13);
+            this.md_distributionFormat_lbl.TabIndex = 0;
+            this.md_distributionFormat_lbl.TabStop = true;
+            this.md_distributionFormat_lbl.Text = "Distribution Format";
+            this.md_distributionFormat_lbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.genericOpenHelpFromLinkLabel_LinkClicked);
             // 
             // panel4
             // 
@@ -391,23 +403,13 @@
             this.expand_MD_Format_btn.UseVisualStyleBackColor = true;
             this.expand_MD_Format_btn.Click += new System.EventHandler(this.expand_Click);
             // 
-            // md_distributionFormat_lbl
-            // 
-            this.md_distributionFormat_lbl.AutoSize = true;
-            this.md_distributionFormat_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.md_distributionFormat_lbl.Location = new System.Drawing.Point(33, 9);
-            this.md_distributionFormat_lbl.Name = "md_distributionFormat_lbl";
-            this.md_distributionFormat_lbl.Size = new System.Drawing.Size(98, 13);
-            this.md_distributionFormat_lbl.TabIndex = 0;
-            this.md_distributionFormat_lbl.Text = "Distribution Format";
-            // 
             // digitalTransferOptions_pnl
             // 
+            this.digitalTransferOptions_pnl.Controls.Add(this.md_digitalTranferOptions_lbl);
             this.digitalTransferOptions_pnl.Controls.Add(this.offline_resource_expandGxb);
             this.digitalTransferOptions_pnl.Controls.Add(this.CI_OnlineResource);
             this.digitalTransferOptions_pnl.Controls.Add(this.panel6);
             this.digitalTransferOptions_pnl.Controls.Add(this.MD_DTO);
-            this.digitalTransferOptions_pnl.Controls.Add(this.md_digitalTranferOptions_lbl);
             this.digitalTransferOptions_pnl.Controls.Add(this.expand_MD_DTO_btn);
             this.digitalTransferOptions_pnl.Location = new System.Drawing.Point(0, 35);
             this.digitalTransferOptions_pnl.Margin = new System.Windows.Forms.Padding(0);
@@ -415,6 +417,18 @@
             this.digitalTransferOptions_pnl.Size = new System.Drawing.Size(439, 35);
             this.digitalTransferOptions_pnl.TabIndex = 1;
             this.digitalTransferOptions_pnl.TabStop = true;
+            // 
+            // md_digitalTranferOptions_lbl
+            // 
+            this.md_digitalTranferOptions_lbl.AutoSize = true;
+            this.md_digitalTranferOptions_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.md_digitalTranferOptions_lbl.Location = new System.Drawing.Point(33, 9);
+            this.md_digitalTranferOptions_lbl.Name = "md_digitalTranferOptions_lbl";
+            this.md_digitalTranferOptions_lbl.Size = new System.Drawing.Size(120, 13);
+            this.md_digitalTranferOptions_lbl.TabIndex = 1;
+            this.md_digitalTranferOptions_lbl.TabStop = true;
+            this.md_digitalTranferOptions_lbl.Text = "Digital Transfer Options";
+            this.md_digitalTranferOptions_lbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.genericOpenHelpFromLinkLabel_LinkClicked);
             // 
             // offline_resource_expandGxb
             // 
@@ -912,16 +926,6 @@
             this.pgD_MD_DTO_btn.Visible = false;
             this.pgD_MD_DTO_btn.Click += new System.EventHandler(this.pgD_MD_DTO_Click);
             // 
-            // md_digitalTranferOptions_lbl
-            // 
-            this.md_digitalTranferOptions_lbl.AutoSize = true;
-            this.md_digitalTranferOptions_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.md_digitalTranferOptions_lbl.Location = new System.Drawing.Point(33, 9);
-            this.md_digitalTranferOptions_lbl.Name = "md_digitalTranferOptions_lbl";
-            this.md_digitalTranferOptions_lbl.Size = new System.Drawing.Size(120, 13);
-            this.md_digitalTranferOptions_lbl.TabIndex = 1;
-            this.md_digitalTranferOptions_lbl.Text = "Digital Transfer Options";
-            // 
             // expand_MD_DTO_btn
             // 
             this.expand_MD_DTO_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
@@ -937,9 +941,9 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.md_standardOrderProcess_lbl);
             this.panel2.Controls.Add(this.panel5);
             this.panel2.Controls.Add(this.MD_SOP);
-            this.panel2.Controls.Add(this.md_standardOrderProcess_lbl);
             this.panel2.Controls.Add(this.expand_MD_SOP_btn);
             this.panel2.Location = new System.Drawing.Point(0, 70);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
@@ -947,6 +951,18 @@
             this.panel2.Size = new System.Drawing.Size(439, 35);
             this.panel2.TabIndex = 2;
             this.panel2.TabStop = true;
+            // 
+            // md_standardOrderProcess_lbl
+            // 
+            this.md_standardOrderProcess_lbl.AutoSize = true;
+            this.md_standardOrderProcess_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.md_standardOrderProcess_lbl.Location = new System.Drawing.Point(33, 9);
+            this.md_standardOrderProcess_lbl.Name = "md_standardOrderProcess_lbl";
+            this.md_standardOrderProcess_lbl.Size = new System.Drawing.Size(122, 13);
+            this.md_standardOrderProcess_lbl.TabIndex = 5;
+            this.md_standardOrderProcess_lbl.TabStop = true;
+            this.md_standardOrderProcess_lbl.Text = "Standard Order Process";
+            this.md_standardOrderProcess_lbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.genericOpenHelpFromLinkLabel_LinkClicked);
             // 
             // panel5
             // 
@@ -1159,16 +1175,6 @@
             this.pgD_MD_SOP_btn.Visible = false;
             this.pgD_MD_SOP_btn.Click += new System.EventHandler(this.pgD_MD_SOP_Click);
             // 
-            // md_standardOrderProcess_lbl
-            // 
-            this.md_standardOrderProcess_lbl.AutoSize = true;
-            this.md_standardOrderProcess_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.md_standardOrderProcess_lbl.Location = new System.Drawing.Point(33, 9);
-            this.md_standardOrderProcess_lbl.Name = "md_standardOrderProcess_lbl";
-            this.md_standardOrderProcess_lbl.Size = new System.Drawing.Size(122, 13);
-            this.md_standardOrderProcess_lbl.TabIndex = 1;
-            this.md_standardOrderProcess_lbl.Text = "Standard Order Process";
-            // 
             // expand_MD_SOP_btn
             // 
             this.expand_MD_SOP_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
@@ -1309,7 +1315,7 @@
             this.uc_distribution_lbl.Name = "uc_distribution_lbl";
             this.uc_distribution_lbl.Size = new System.Drawing.Size(0, 13);
             this.uc_distribution_lbl.TabIndex = 3;
-            this.uc_distribution_lbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.uc_distribution_lbl_LinkClicked);
+            this.uc_distribution_lbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.genericOpenHelpFromLinkLabel_LinkClicked);
             // 
             // MD_Dist
             // 
@@ -1390,7 +1396,6 @@
         #endregion
 
         private System.Windows.Forms.Panel MD_Format_pnl;
-        private System.Windows.Forms.Label md_distributionFormat_lbl;
         private System.Windows.Forms.FlowLayoutPanel MD_Format;
         private System.Windows.Forms.Button del_MD_Format_btn;
         private System.Windows.Forms.Button expand_MD_Format_btn;
@@ -1405,7 +1410,6 @@
         private System.Windows.Forms.Button pgU_MD_SOP_btn;
         private System.Windows.Forms.Label MD_SOP_lbl;
         private System.Windows.Forms.Button pgD_MD_SOP_btn;
-        private System.Windows.Forms.Label md_standardOrderProcess_lbl;
         private System.Windows.Forms.Button expand_MD_SOP_btn;
         private System.Windows.Forms.Panel digitalTransferOptions_pnl;
         private System.Windows.Forms.FlowLayoutPanel MD_DTO;
@@ -1414,7 +1418,6 @@
         private System.Windows.Forms.Button pgU_MD_DTO_btn;
         private System.Windows.Forms.Label MD_DTO_lbl;
         private System.Windows.Forms.Button pgD_MD_DTO_btn;
-        private System.Windows.Forms.Label md_digitalTranferOptions_lbl;
         private System.Windows.Forms.Button expand_MD_DTO_btn;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label md_format_version_lbl;
@@ -1488,5 +1491,8 @@
         private System.Windows.Forms.Button offline_resource_expandBtn;
         private System.Windows.Forms.Label offline_resource_expandLbl;
         private System.Windows.Forms.LinkLabel uc_distribution_lbl;
+        private System.Windows.Forms.LinkLabel md_distributionFormat_lbl;
+        private System.Windows.Forms.LinkLabel md_digitalTranferOptions_lbl;
+        private System.Windows.Forms.LinkLabel md_standardOrderProcess_lbl;
     }
 }

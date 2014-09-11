@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(uc_extentTemporal));
             this.temporalExtent = new System.Windows.Forms.GroupBox();
+            this.temporalExtent_lbl = new System.Windows.Forms.LinkLabel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.timePeriod = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -70,6 +71,7 @@
             // temporalExtent
             // 
             this.temporalExtent.BackColor = System.Drawing.Color.Transparent;
+            this.temporalExtent.Controls.Add(this.temporalExtent_lbl);
             this.temporalExtent.Controls.Add(this.tabControl1);
             this.temporalExtent.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.temporalExtent.Location = new System.Drawing.Point(3, 3);
@@ -77,7 +79,19 @@
             this.temporalExtent.Size = new System.Drawing.Size(346, 173);
             this.temporalExtent.TabIndex = 0;
             this.temporalExtent.TabStop = false;
-            this.temporalExtent.Text = "Temporal Extent of Data";
+            this.temporalExtent.Text = "                                                        ";
+            // 
+            // temporalExtent_lbl
+            // 
+            this.temporalExtent_lbl.AutoSize = true;
+            this.temporalExtent_lbl.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.temporalExtent_lbl.Location = new System.Drawing.Point(7, -1);
+            this.temporalExtent_lbl.Name = "temporalExtent_lbl";
+            this.temporalExtent_lbl.Size = new System.Drawing.Size(171, 13);
+            this.temporalExtent_lbl.TabIndex = 0;
+            this.temporalExtent_lbl.TabStop = true;
+            this.temporalExtent_lbl.Text = "Temporal Extent of Resource";
+            this.temporalExtent_lbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.genericOpenHelpFromLinkLabel_LinkClicked);
             // 
             // tabControl1
             // 
@@ -418,6 +432,7 @@
             this.Name = "uc_extentTemporal";
             this.Size = new System.Drawing.Size(354, 182);
             this.temporalExtent.ResumeLayout(false);
+            this.temporalExtent.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.timePeriod.ResumeLayout(false);
             this.timePeriod.PerformLayout();
@@ -462,6 +477,7 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.LinkLabel temporalExtent_lbl;
 
     }
 }

@@ -260,6 +260,21 @@ namespace EmeLibrary
             }
         }
 
+        private void genericOpenHelpFromLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Windows.Forms.LinkLabel helpLink = (System.Windows.Forms.LinkLabel)sender;
+            if (helpLink.Tag != null)
+            {
+                string n = helpLink.Tag.ToString(); //helpLink.Name.ToString().Replace("_lbl", "");
+
+
+                //MessageBox.Show(n);
+                Utils1.HelpSeeker("/" + n, ref Utils1.globalHelpProc);
+            }
+            //else { Utils1.HelpSeeker("/Help_Main.html", ref Utils1.globalHelpProc); }
+
+        }
+
         
     }
 }

@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            EmeLibrary.temporalElement__EX_TemporalExtent temporalElement__EX_TemporalExtent2 = new EmeLibrary.temporalElement__EX_TemporalExtent();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmeLT));
-            EmeLibrary.temporalElement__EX_TemporalExtent temporalElement__EX_TemporalExtent1 = new EmeLibrary.temporalElement__EX_TemporalExtent();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
@@ -875,7 +875,7 @@
             this.idInfo_resourceConstraints_gbx.Size = new System.Drawing.Size(451, 349);
             this.idInfo_resourceConstraints_gbx.TabIndex = 1;
             this.idInfo_resourceConstraints_gbx.TabStop = false;
-            this.idInfo_resourceConstraints_gbx.Text = "Dataset Constraints";
+            this.idInfo_resourceConstraints_gbx.Text = "Resource Constraints";
             // 
             // idInfo_resourceConstraints_MD_Constraints_useLimitation
             // 
@@ -1339,6 +1339,7 @@
             this.dateStamp_lbl.TabIndex = 8;
             this.dateStamp_lbl.TabStop = true;
             this.dateStamp_lbl.Text = "Last Modified";
+            this.dateStamp_lbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.genericOpenHelpFromLinkLabel_LinkClicked);
             // 
             // hierarchyLevel_MD_ScopeCode_lbl
             // 
@@ -1350,6 +1351,7 @@
             this.hierarchyLevel_MD_ScopeCode_lbl.TabIndex = 23;
             this.hierarchyLevel_MD_ScopeCode_lbl.TabStop = true;
             this.hierarchyLevel_MD_ScopeCode_lbl.Text = "Type of Resource";
+            this.hierarchyLevel_MD_ScopeCode_lbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.genericOpenHelpFromLinkLabel_LinkClicked);
             // 
             // dateStamp_btn
             // 
@@ -1412,6 +1414,7 @@
             this.fileIdentifier_lbl.TabIndex = 19;
             this.fileIdentifier_lbl.TabStop = true;
             this.fileIdentifier_lbl.Text = "Identifier";
+            this.fileIdentifier_lbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.genericOpenHelpFromLinkLabel_LinkClicked);
             // 
             // language_lbl
             // 
@@ -1423,6 +1426,7 @@
             this.language_lbl.TabIndex = 25;
             this.language_lbl.TabStop = true;
             this.language_lbl.Text = "Language";
+            this.language_lbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.genericOpenHelpFromLinkLabel_LinkClicked);
             // 
             // language
             // 
@@ -1477,6 +1481,7 @@
             this.metadataStandardName_lbl.TabIndex = 11;
             this.metadataStandardName_lbl.TabStop = true;
             this.metadataStandardName_lbl.Text = "Standard Name";
+            this.metadataStandardName_lbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.genericOpenHelpFromLinkLabel_LinkClicked);
             // 
             // metadataStandardVersion_lbl
             // 
@@ -1488,6 +1493,7 @@
             this.metadataStandardVersion_lbl.TabIndex = 12;
             this.metadataStandardVersion_lbl.TabStop = true;
             this.metadataStandardVersion_lbl.Text = "Standard Version";
+            this.metadataStandardVersion_lbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.genericOpenHelpFromLinkLabel_LinkClicked);
             // 
             // metadataStandardVersion
             // 
@@ -2136,9 +2142,9 @@
             this.idInfo_extent_temporalExtent.Name = "idInfo_extent_temporalExtent";
             this.idInfo_extent_temporalExtent.Size = new System.Drawing.Size(353, 175);
             this.idInfo_extent_temporalExtent.TabIndex = 5;
-            temporalElement__EX_TemporalExtent1.TimeInstant = null;
-            temporalElement__EX_TemporalExtent1.TimePeriod = null;
-            this.idInfo_extent_temporalExtent.temporalElement = temporalElement__EX_TemporalExtent1;
+            temporalElement__EX_TemporalExtent2.TimeInstant = null;
+            temporalElement__EX_TemporalExtent2.TimePeriod = null;
+            this.idInfo_extent_temporalExtent.temporalElement = temporalElement__EX_TemporalExtent2;
             this.idInfo_extent_temporalExtent.Validating += new System.ComponentModel.CancelEventHandler(this.cntrl_Validating);
             // 
             // distributionInfo__MD_Distribution
@@ -2149,7 +2155,7 @@
             this.distributionInfo__MD_Distribution.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.distributionInfo__MD_Distribution.Location = new System.Drawing.Point(0, 0);
             this.distributionInfo__MD_Distribution.Margin = new System.Windows.Forms.Padding(0);
-            this.distributionInfo__MD_Distribution.mylabel = "Distributor";
+            this.distributionInfo__MD_Distribution.mylabel = "Distribution";
             this.distributionInfo__MD_Distribution.Name = "distributionInfo__MD_Distribution";
             this.distributionInfo__MD_Distribution.Size = new System.Drawing.Size(454, 209);
             this.distributionInfo__MD_Distribution.TabIndex = 0;

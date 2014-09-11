@@ -9,12 +9,7 @@
 		<param name="Name" value="4 yrs">
 		<param name="Name" value="Untitled: e:\My Help File\20070312\Interface Features.html">
 		<param name="Local" value="Interface%20Features.html">
-		</OBJECT>
-	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="Abscissa Resolution">
-		<param name="Name" value="Abscissa Resolution">
-		<param name="Local" value="t2_abres.html">
-		</OBJECT>
+		</OBJECT>	
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="Abstract">
 		<param name="Name" value="Untitled: e:\My Help File\20070312\Help_Tab1.html">
@@ -48,64 +43,56 @@
 			<param name="Name" value="Untitled: e:\My Help File\20070312\t1_westbc.html">
 			<param name="Local" value="t1_westbc.html">
 			</OBJECT>
-	</UL>
-	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="Calendar Date">
-		<param name="Name" value="Untitled: e:\My Help File\20070312\Help_Tab1.html">
-		<param name="Local" value="Help_Tab1.html">
-		<param name="Name" value="Untitled: e:\My Help File\20070312\t1_caldate.html">
-		<param name="Local" value="t1_caldate.html">
-		</OBJECT>
+	</UL>	
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="Constraints">
-		<param name="Name" value="Untitled: e:\My Help File\20070312\Help_Tab1.html">
-		<param name="Local" value="Help_Tab1.html">
+		<param name="Name" value="Untitled: e:\My Help File\20070312\Help_Tab2.html">
+		<param name="Local" value="Help_Tab2.html">
 		</OBJECT>
 	<UL>
 		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="Access">
-			<param name="Name" value="Untitled: e:\My Help File\20070312\t1_accconst.html">
-			<param name="Local" value="t1_accconst.html">
+			<param name="Name" value="Untitled: e:\My Help File\20070312\t2_accconst.html">
+			<param name="Local" value="t2_accconst.html">
 			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="Use">
-			<param name="Name" value="Untitled: e:\My Help File\20070312\t1_useconst.html">
-			<param name="Local" value="t1_useconst.html">
+			<param name="Name" value="Untitled: e:\My Help File\20070312\t2_useconst.html">
+			<param name="Local" value="t2_useconst.html">
 			</OBJECT>
 	</UL>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="Contact Information">
-		<param name="Name" value="Untitled: e:\My Help File\20070312\Help_Tab1.html">
-		<param name="Local" value="Help_Tab1.html">
 		<param name="Name" value="Untitled: e:\My Help File\20070312\Help_Tab2.html">
-		<param name="Local" value="Help_Tab2.html">
-		<param name="Name" value="Untitled: e:\My Help File\20070312\Help_Tab3.html">
-		<param name="Local" value="Help_Tab3.html">
+		<param name="Local" value="Help_Tab2.html">		
 		</OBJECT>
 	<UL>
 		<LI> <OBJECT type="text/sitemap">
-			<param name="Name" value="Distribution">
-			<param name="Name" value="Untitled: e:\My Help File\20070312\t3_distcnt.html">
-			<param name="Local" value="t3_distcnt.html">
+			<param name="Name" value="Distributor">
+			<param name="Name" value="Untitled: e:\My Help File\20070312\t2_distcnt.html">
+			<param name="Local" value="t2_distcnt.html">
 			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
-			<param name="Name" value="Metadata">
-			<param name="Name" value="Untitled: e:\My Help File\20070312\t3_metc.html">
-			<param name="Local" value="t3_metc.html">
+			<param name="Name" value="Metadata Author(s)">
+			<param name="Name" value="Untitled: e:\My Help File\20070312\t2_metaAuthor.html">
+			<param name="Local" value="t2_metaAuthor.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Resource Owner(s)">
+			<param name="Name" value="Untitled: e:\My Help File\20070312\t2_resourceOwner.html">
+			<param name="Local" value="t2_resourceOwner.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Resource Producer(s)">
+			<param name="Name" value="Untitled: e:\My Help File\20070312\t2_resourceProducer.html">
+			<param name="Local" value="t2_resourceProducer.html">
 			</OBJECT>
 	</UL>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="CSDGM">
 		<param name="Name" value="Untitled: e:\My Help File\20070312\Help_Ref_Docs.html">
 		<param name="Local" value="Help_Ref_Docs.html">
-		</OBJECT>
-	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="Currentness">
-		<param name="Name" value="Untitled: e:\My Help File\20070312\Help_Tab1.html">
-		<param name="Local" value="Help_Tab1.html">
-		<param name="Name" value="Untitled: e:\My Help File\20070312\t1_current.html">
-		<param name="Local" value="t1_current.html">
-		</OBJECT>
+		</OBJECT>	
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="Database">
 		<param name="Name" value="Database">
@@ -170,8 +157,8 @@
 			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="Place Keywords">
-			<param name="Name" value="Untitled: e:\My Help File\20070312\t1_placekt.html">
-			<param name="Local" value="t1_placekt.html">
+			<param name="Name" value="Untitled: e:\My Help File\20070312\t1_placekey.html">
+			<param name="Local" value="t1_placekey.html">
 			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="User Theme Keywords">
@@ -187,173 +174,49 @@
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="Online Linkage">
 		<param name="Name" value="Untitled: e:\My Help File\20070312\Help_Tab1.html">
-		<param name="Local" value="Help_Tab1.html">
-		<param name="Name" value="Untitled: e:\My Help File\20070312\t1_onlink.html">
-		<param name="Local" value="t1_onlink.html">
+		<param name="Local" value="Help_Tab2.html">
+		<param name="Name" value="Untitled: e:\My Help File\20070312\t2_onlink.html">
+		<param name="Local" value="t2_onlink.html">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="Open DB">
 		<param name="Name" value="Untitled: e:\My Help File\20070312\Interface Features.html">
 		<param name="Local" value="Interface%20Features.html">
-		</OBJECT>
-	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="Ordinate Resolution">
-		<param name="Name" value="Ordinate Resolution">
-		<param name="Local" value="t2_ordres.html">
-		</OBJECT>
-	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="Origin">
-		<param name="Name" value="Untitled: e:\My Help File\20070312\Help_Tab1.html">
-		<param name="Local" value="Help_Tab1.html">
-		<param name="Name" value="Untitled: e:\My Help File\20070312\t1_origin.html">
-		<param name="Local" value="t1_origin.html">
-		</OBJECT>
+		</OBJECT>	
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="Post-Installation Configuration">
 		<param name="Name" value="Untitled: e:\My Help File\20070312\Help_Getting_Started.html">
 		<param name="Local" value="Help_Getting_Started.html">
-		</OBJECT>
-	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="Process Date">
-		<param name="Name" value="Process Date">
-		<param name="Local" value="t2_procdate.html">
-		</OBJECT>
-	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="Progress">
-		<param name="Name" value="Untitled: e:\My Help File\20070312\Help_Tab1.html">
-		<param name="Local" value="Help_Tab1.html">
-		<param name="Name" value="Untitled: e:\My Help File\20070312\t1_progress.html">
-		<param name="Local" value="t1_progress.html">
-		</OBJECT>
+		</OBJECT>		
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="Publication">
 		<param name="Name" value="Untitled: e:\My Help File\20070312\Help_Tab1.html">
 		<param name="Local" value="Help_Tab1.html">
-		</OBJECT>
-	<UL>
-		<LI> <OBJECT type="text/sitemap">
-			<param name="Name" value="Date">
-			<param name="Name" value="Untitled: e:\My Help File\20070312\t1_pubdate.html">
-			<param name="Local" value="t1_pubdate.html">
-			</OBJECT>
-		<LI> <OBJECT type="text/sitemap">
-			<param name="Name" value="Place">
-			<param name="Name" value="Untitled: e:\My Help File\20070312\t1_pubplace.html">
-			<param name="Local" value="t1_pubplace.html">
-			</OBJECT>
-		<LI> <OBJECT type="text/sitemap">
-			<param name="Name" value="Publisher">
-			<param name="Name" value="Untitled: e:\My Help File\20070312\t1_publish.html">
-			<param name="Local" value="t1_publish.html">
-			</OBJECT>
-	</UL>
+		</OBJECT>	
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="Purpose">
 		<param name="Name" value="Untitled: e:\My Help File\20070312\Help_Tab1.html">
 		<param name="Local" value="Help_Tab1.html">
 		<param name="Name" value="Untitled: e:\My Help File\20070312\t1_purpose.html">
 		<param name="Local" value="t1_purpose.html">
-		</OBJECT>
-	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="SDTS Terms Description">
-		<param name="Name" value="SDTS Terms Description">
-		<param name="Local" value="t2_sdtsterm.html">
-		</OBJECT>
+		</OBJECT>	
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="Security">
 		<param name="Name" value="Untitled: e:\My Help File\20070312\Help_Tab1.html">
-		<param name="Local" value="Help_Tab1.html">
+		<param name="Local" value="Help_Tab2.html">
 		<param name="Name" value="Untitled: e:\My Help File\20070312\t1_secclass.html">
-		<param name="Local" value="t1_secclass.html">
+		<param name="Local" value="t2_secclass.html">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="Set Default">
 		<param name="Name" value="Untitled: e:\My Help File\20070312\Interface Features.html">
 		<param name="Local" value="Interface%20Features.html">
-		</OBJECT>
-	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="Souce Citation">
-		<param name="Name" value="Source Citation">
-		<param name="Local" value="t2_srccite.html">
-		</OBJECT>
-	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="Source Citation: Date">
-		<param name="Name" value="Source Citation: Date">
-		<param name="Local" value="t2_srccite_date.html">
-		</OBJECT>
-	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="Source Citation: Geospatial Data Presentation Form">
-		<param name="Name" value="Source Citation: Geospatial Data Presentation Form">
-		<param name="Local" value="t2_srccite_geoform.html">
-		</OBJECT>
-	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="Source Citation: Issue Identification">
-		<param name="Name" value="Source Citation: Issue Identification">
-		<param name="Local" value="t2_srccite_issue.html">
-		</OBJECT>
-	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="Source Citation: Larger Work Citation">
-		<param name="Name" value="Source Citation: Larger Work Citation">
-		<param name="Local" value="t2_srccite_lworkcit.html">
-		</OBJECT>
-	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="Source Citation: Online Link">
-		<param name="Name" value="Source Citation: Online Link">
-		<param name="Local" value="t2_srccite_onlink.html">
-		</OBJECT>
-	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="Source Citation: Originator">
-		<param name="Name" value="Source Citation: Originator">
-		<param name="Local" value="t2_srccite_origin.html">
-		</OBJECT>
-	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="Source Citation: Other Citation Information">
-		<param name="Name" value="Source Citation: Other Citation Information">
-		<param name="Local" value="t2_srccite_othercit.html">
-		</OBJECT>
-	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="Source Citation: Publication Place">
-		<param name="Name" value="Source Citation: Publication Place">
-		<param name="Local" value="t2_srccite_pubplace.html">
-		</OBJECT>
-	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="Source Citation: Publisher">
-		<param name="Name" value="Source Citation: Publisher">
-		<param name="Local" value="t2_srccite_publish.html">
-		<param name="URL" value="t2_srccite_publish.html">
-		</OBJECT>
-	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="Source Citation: Series Name">
-		<param name="Name" value="Source Citation: Series Name">
-		<param name="Local" value="t2_srccite_sername.html">
-		</OBJECT>
-	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="Source Citation: Time">
-		<param name="Name" value="Source Citation: Time">
-		<param name="Local" value="t2_srccite_time.html">
-		</OBJECT>
-	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="Source Citation: Title">
-		<param name="Name" value="Source Citation: Title">
-		<param name="Local" value="t2_srccite_title.html">
-		</OBJECT>
-	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="Source Time Period of Content">
-		<param name="Name" value="Source Time Period of Content">
-		<param name="Local" value="t2_srctime.html">
-		</OBJECT>
+		</OBJECT>	
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="Spell Check">
 		<param name="Name" value="Untitled: e:\My Help File\20070312\Interface Features.html">
 		<param name="Local" value="Interface%20Features.html">
-		</OBJECT>
-	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="Supplemental Information">
-		<param name="Name" value="Untitled: e:\My Help File\20070312\Help_Tab1.html">
-		<param name="Local" value="Help_Tab1.html">
-		<param name="Name" value="Untitled: e:\My Help File\20070312\t1_supplinf.html">
-		<param name="Local" value="t1_supplinf.html">
-		</OBJECT>
+		</OBJECT>	
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="Synchronizer">
 		<param name="Name" value="Synchronizer">
@@ -390,16 +253,6 @@
 		<param name="Name" value="View Metadata XML">
 		<param name="Name" value="Untitled: e:\My Help File\20070312\Interface Features.html">
 		<param name="Local" value="Interface%20Features.html">
-		</OBJECT>
-	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="VPF Terms Description">
-		<param name="Name" value="VPF Terms Description">
-		<param name="Local" value="t2_vpfinfo.html">
-		</OBJECT>
-	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="VPF Topology Level">
-		<param name="Name" value="VPF Topology Level">
-		<param name="Local" value="t2_vpflevel.html">
-		</OBJECT>
+		</OBJECT>	
 </UL>
 </BODY></HTML>

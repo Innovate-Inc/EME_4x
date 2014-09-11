@@ -62,7 +62,7 @@
     <TabNum>1</TabNum>
 	  <FGDC_Def></FGDC_Def>
 	  <EPARequirementGuidance></EPARequirementGuidance>
-	  <HoverNote>What to call the data set</HoverNote>
+	  <HoverNote>What to call the resource</HoverNote>
 	  <HelpLink>t1_title.html</HelpLink>	  
   </emeControl>
   <emeControl>
@@ -70,7 +70,7 @@
     <TabNum>1</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
-    <HoverNote>Brief summary about the data</HoverNote>
+    <HoverNote>Brief summary about the resource</HoverNote>
 	<HelpLink>t1_abstract.html</HelpLink>
   </emeControl>
   <emeControl>
@@ -78,7 +78,7 @@
     <TabNum>1</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
-    <HoverNote>Why was the data set developed</HoverNote>
+    <HoverNote>Why was the resource developed</HoverNote>
 	<HelpLink>t1_purpose.html</HelpLink>
   </emeControl>
   <emeControl>
@@ -86,7 +86,7 @@
     <TabNum>1</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
-    <HoverNote>Keywords about your data</HoverNote>
+    <HoverNote>Keywords about your resource</HoverNote>
   </emeControl>
   <emeControl>
     <controlName>idinfo_keywords_theme_themekt__ISO_19115_Topic_Category___themekey_____help</controlName>
@@ -114,7 +114,7 @@
     <TabNum>1</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
-    <HelpLink>t1_placekt.html</HelpLink>
+    <HelpLink>t1_placekey.html</HelpLink>
   </emeControl>
   <emeControl>
     <controlName>boundingBoxGroupBox</controlName>
@@ -129,15 +129,8 @@
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>A description of the geographic extent or area</HoverNote>
-	<HelpLink>t1_extent_description.html</HelpLink>
-  </emeControl>  
-  <emeControl>
-    <controlName>idInfo_extent_temporalExtent</controlName>
-    <TabNum>1</TabNum>
-    <FGDC_Def></FGDC_Def>
-    <EPARequirementGuidance></EPARequirementGuidance>
-    <HoverNote>Time period covered by the content of the dataset</HoverNote>
-  </emeControl>
+	<HelpLink>t1_bcDescription.html</HelpLink>
+  </emeControl>    
   <emeControl>
     <controlName>idInfo_extent_geographicBoundingBox_northLatDD_lbl</controlName>
     <TabNum>1</TabNum>
@@ -169,7 +162,22 @@
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>Western Longitude (-180 to 180)</HoverNote>
 	<HelpLink>t1_westbc.html</HelpLink>
-  </emeControl>  
+  </emeControl>   
+  <emeControl>
+    <controlName>idInfo_extent_temporalExtent</controlName>
+    <TabNum>1</TabNum>
+    <FGDC_Def></FGDC_Def>
+    <EPARequirementGuidance></EPARequirementGuidance>
+    <HoverNote>Time period covered by the content of the resource</HoverNote>
+  </emeControl>
+  <emeControl>
+    <controlName>temporalExtent_lbl</controlName>
+    <TabNum>1</TabNum>
+    <FGDC_Def></FGDC_Def>
+    <EPARequirementGuidance></EPARequirementGuidance>
+    <HoverNote></HoverNote>
+	<HelpLink>t1_timeinfo.html</HelpLink>
+  </emeControl>
   <emeControl>
     <controlName>tempTimePeriod_Desc_lbl</controlName>
     <TabNum>1</TabNum>
@@ -182,14 +190,14 @@
     <TabNum>1</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
-    <HoverNote>The beginning date for the content of the dataset</HoverNote>
+    <HoverNote>The beginning date for the content of the resource</HoverNote>
   </emeControl>
   <emeControl>
     <controlName>timePeriod_End_lbl</controlName>
     <TabNum>1</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
-    <HoverNote>The ending date for the content of the dataset</HoverNote>
+    <HoverNote>The ending date for the content of the resource</HoverNote>
   </emeControl>  
   <emeControl>
     <controlName>timePeriod_Interval_lbl</controlName>
@@ -210,7 +218,7 @@
     <TabNum>1</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
-    <HoverNote>The date for the content of the dataset</HoverNote>
+    <HoverNote>The date for the content of the resource</HoverNote>
   </emeControl>  
   <emeControl>
     <controlName>idInfo_citation_date_creation_lbl</controlName>
@@ -218,6 +226,7 @@
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>When the resource was brought into existence</HoverNote>
+	<HelpLink>t1_dateCreate.html</HelpLink>
   </emeControl>
   <emeControl>
     <controlName>idInfo_citation_date_publication_lbl</controlName>
@@ -225,6 +234,7 @@
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>When the resource was issued</HoverNote>
+	<HelpLink>t1_datePub.html</HelpLink>
   </emeControl>
   <emeControl>
     <controlName>idInfo_citation_date_revision_lbl</controlName>
@@ -232,6 +242,7 @@
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>When the resource was examined or re-examined and improved or amended</HoverNote>
+	<HelpLink>t1_dateRevise.html</HelpLink>
   </emeControl>
   <emeControl>
     <controlName>idInfo_resourceMaintenance_lbl</controlName>
@@ -239,20 +250,21 @@
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>Frequency of changes and additions made to the resource after the initial completion</HoverNote>
+	<HelpLink>t1_update.html</HelpLink>
   </emeControl>
   <emeControl>  
     <controlName>contact_CI_ResponsibleParty</controlName>
     <TabNum>2</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
-    <HoverNote>Author(s) of the metadata</HoverNote>
-  </emeControl>     
+    <HoverNote>Author(s) of the metadata</HoverNote>	
+  </emeControl>   
   <emeControl>
     <controlName>idInfo_pointOfContact</controlName>
     <TabNum>2</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
-    <HoverNote>The owner(s) of the resource  </HoverNote>
+    <HoverNote>The owner(s) of the resource</HoverNote>
   </emeControl>
   <emeControl>
     <controlName>idInfo_citation_citedResponsibleParty</controlName>
@@ -267,20 +279,38 @@
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>Function performed by the contact</HoverNote>
+	<HelpLink>t2_contactRole.html</HelpLink>
   </emeControl> 
+  <emeControl>
+    <controlName>dcatProgramCode_lbl</controlName>
+    <TabNum>2</TabNum>
+    <FGDC_Def></FGDC_Def>
+    <EPARequirementGuidance></EPARequirementGuidance>
+    <HoverNote>User friendly name of the primary program related to this data asset, from the Federal Program Inventory.</HoverNote>
+	<HelpLink>t2_contactProgramCode.html</HelpLink>
+  </emeControl> 
+  <emeControl>
+    <controlName>hierarchyLevel_MD_ScopeCode_lbl</controlName>
+    <TabNum>2</TabNum>
+    <FGDC_Def></FGDC_Def>
+    <EPARequirementGuidance></EPARequirementGuidance>
+    <HoverNote>Class of information to which the referencing entity applies.</HoverNote>
+	<HelpLink>t2_resourceType.html</HelpLink>
+  </emeControl>
   <emeControl>
     <controlName>fileIdentifier_lbl</controlName>
     <TabNum>2</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
-    <HoverNote>A value that uniquely identifies this metadata record</HoverNote>
-  </emeControl>
+    <HoverNote>Value that uniquely identifies this metadata record (UUID). This identifier is assigned and maintained by the custodian of the metadata record</HoverNote>
+	<HelpLink>t2_fileId.html</HelpLink>
+  </emeControl>  
   <emeControl>
     <controlName>fileIdentifier_new</controlName>
     <TabNum>2</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
-    <HoverNote>This generates a value that uniquely identifies the metadata record (UUID)</HoverNote>
+    <HoverNote>This generates a value that uniquely identifies the metadata record (UUID)</HoverNote>	
   </emeControl>
   <emeControl>
     <controlName>language_lbl</controlName>
@@ -288,6 +318,7 @@
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>Language of the metadata record</HoverNote>
+	<HelpLink>t2_language.html</HelpLink>
   </emeControl>
   <emeControl>
     <controlName>dateStamp_lbl</controlName>
@@ -295,34 +326,61 @@
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>The date that the metadata was last updated</HoverNote>
+	<HelpLink>t2_metd.html</HelpLink>
+  </emeControl>
+  <emeControl>
+    <controlName>metadataStandardName_lbl</controlName>
+    <TabNum>2</TabNum>
+    <FGDC_Def></FGDC_Def>
+    <EPARequirementGuidance></EPARequirementGuidance>
+    <HoverNote>The name of the metadata standard used to document the data set</HoverNote>
+	<HelpLink>t2_metstdn.html</HelpLink>
+  </emeControl>
+  <emeControl>
+    <controlName>metadataStandardVersion_lbl</controlName>
+    <TabNum>2</TabNum>
+    <FGDC_Def></FGDC_Def>
+    <EPARequirementGuidance></EPARequirementGuidance>
+    <HoverNote>Identification of the version of the metadata standard used to document the data set</HoverNote>
+	<HelpLink>t2_metstdv.html</HelpLink>
   </emeControl>
   <emeControl>
     <controlName>distributionInfo__MD_Distribution</controlName>
     <TabNum>2</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
-    <HoverNote>Information about the distributor and options for obtaining the data set.</HoverNote>
+    <HoverNote>Information about the distributor and options for obtaining the resource.</HoverNote>
   </emeControl>
   <emeControl>
-    <controlName>distributor_Contact</controlName>
-    <TabNum>1</TabNum>
+    <controlName>uc_distribution_lbl</controlName>
+    <TabNum>2</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
-    <HoverNote>The data distributor contact</HoverNote>
+    <HoverNote></HoverNote>
+	<HelpLink>t2_distinfo.html</HelpLink>
+  </emeControl>  
+  <emeControl>
+    <controlName>distributor_Contact</controlName>
+    <TabNum>2</TabNum>
+    <FGDC_Def></FGDC_Def>
+    <EPARequirementGuidance></EPARequirementGuidance>
+    <HoverNote>The resource distributor contact</HoverNote>
   </emeControl>   
   <emeControl>
     <controlName>md_standardOrderProcess_lbl</controlName>
-    <TabNum>3</TabNum>
+    <TabNum>2</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
-    <HoverNote>The process for obtaining resource</HoverNote>
+    <HoverNote>The process for obtaining the resource</HoverNote>
+	<HelpLink>t2_distSOP.html</HelpLink>
   </emeControl>
   <emeControl>
     <controlName>md_distributionFormat_lbl</controlName>
     <TabNum>3</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
-    <HoverNote>The data transfer format</HoverNote>
+    <HoverNote>The resource transfer format</HoverNote>
+	<HelpLink>t2_distFormat.html</HelpLink>
   </emeControl>
   <emeControl>
     <controlName>md_digitalTranferOptions_lbl</controlName>
@@ -330,41 +388,43 @@
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>Technical means and media by which a resource is obtained from the distributor.</HoverNote>
+	<HelpLink>t2_distDTO.html</HelpLink>
   </emeControl>
   <emeControl>
     <controlName>MD_SOP_Fees_lbl</controlName>
-    <TabNum>3</TabNum>
+    <TabNum>2</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
-    <HoverNote>Fees for obtaining data</HoverNote>
+    <HoverNote>Fees for obtaining resource</HoverNote>
   </emeControl>
   <emeControl>
     <controlName>md_SOP_AvailableDate_lbl</controlName>
-    <TabNum>3</TabNum>
+    <TabNum>2</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>Date the resource will be available.</HoverNote>
+	<HelpLink>t2_distSOP.html</HelpLink>
   </emeControl>
   <emeControl>
     <controlName>md_SOP_Ordering_lbl</controlName>
     <TabNum>3</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
-    <HoverNote>General instructions, terms, and services provided by the data distributor.</HoverNote>
+    <HoverNote>General instructions, terms, and services provided by the resource distributor.</HoverNote>
   </emeControl>
   <emeControl>
     <controlName>md_SOP_Turnaround_lbl</controlName>
     <TabNum>3</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
-    <HoverNote>Typical time required for filing a data request.</HoverNote>
+    <HoverNote>Typical time required for filing a resource request.</HoverNote>
   </emeControl>
   <emeControl>
     <controlName>md_format_name_lbl</controlName>
     <TabNum>3</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
-    <HoverNote>Name of the data transfer format.</HoverNote>
+    <HoverNote>Name of the resource transfer format.</HoverNote>
   </emeControl>
   <emeControl>
     <controlName>md_format_version_lbl</controlName>
@@ -399,7 +459,7 @@
     <TabNum>3</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
-    <HoverNote>Tiles, layers, geographic areas, etc. in which the data is available.</HoverNote>
+    <HoverNote>Tiles, layers, geographic areas, etc. in which the resource is available.</HoverNote>
   </emeControl>
   <emeControl>
     <controlName>md_digitalTransferOptions_transferSize_lbl</controlName>

@@ -885,25 +885,36 @@ namespace EmeLibrary
         {
             if (uc_ResponsibleParty_lbl.Text == "Resource Owner")
             {
-                //Utils1.HelpSeeker("/t2_resourceOwner.html", ref Utils1.globalHelpProc);
-                Utils1.HelpSeeker("t3_distinfo.html", ref Utils1.globalHelpProc);
-
+                Utils1.HelpSeeker("/t2_resourceOwner.html", ref Utils1.globalHelpProc);
+                
             }
             else if (uc_ResponsibleParty_lbl.Text == "Resource Producer")
             {
-                //Utils1.HelpSeeker("/t2_resourceProducer.html", ref Utils1.globalHelpProc);
-                Utils1.HelpSeeker("t3_distinfo.html", ref Utils1.globalHelpProc);
+                Utils1.HelpSeeker("/t2_resourceProducer.html", ref Utils1.globalHelpProc);                
             }
             else if (uc_ResponsibleParty_lbl.Text == "Metadata Author")
             {
-                //Utils1.HelpSeeker("/t2_metadataAuthor.html", ref Utils1.globalHelpProc);
-                Utils1.HelpSeeker("t3_distinfo.html", ref Utils1.globalHelpProc);
+                Utils1.HelpSeeker("/t2_metaAuthor.html", ref Utils1.globalHelpProc);                
             }
             else if (uc_ResponsibleParty_lbl.Text == "Contact (Required)")
             {
-                //Utils1.HelpSeeker("/t2_distributorContact.html", ref Utils1.globalHelpProc);
-                Utils1.HelpSeeker("t3_distinfo.html", ref Utils1.globalHelpProc);
+                Utils1.HelpSeeker("/t2_distcnt.html", ref Utils1.globalHelpProc);               
             }
+        }
+
+        private void genericOpenHelpFromLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Windows.Forms.LinkLabel helpLink = (System.Windows.Forms.LinkLabel)sender;
+            if (helpLink.Tag != null)
+            {
+                string n = helpLink.Tag.ToString(); //helpLink.Name.ToString().Replace("_lbl", "");
+
+
+                //MessageBox.Show(n);
+                Utils1.HelpSeeker("/" + n, ref Utils1.globalHelpProc);
+            }
+            //else { Utils1.HelpSeeker("/Help_Main.html", ref Utils1.globalHelpProc); }
+
         }
 
        

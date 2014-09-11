@@ -60,7 +60,6 @@
             this.contactInfo__CI_Contact__hoursOfService_lbl = new System.Windows.Forms.Label();
             this.contactInfo__CI_Contact__contactInstructions_lbl = new System.Windows.Forms.Label();
             this.contactInfo__CI_Contact__contactInstructions = new System.Windows.Forms.TextBox();
-            this.roleCode_lbl = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.CI_ContactExpand_btn = new System.Windows.Forms.Button();
@@ -75,12 +74,13 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dcatProgramCode_lbl = new System.Windows.Forms.Label();
+            this.roleCode_lbl = new System.Windows.Forms.LinkLabel();
             this.dcatProgramCode = new System.Windows.Forms.ComboBox();
             this.errorProvider_RP = new System.Windows.Forms.ErrorProvider(this.components);
             this.rp_expander_btn = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.dcatProgramCode_lbl = new System.Windows.Forms.LinkLabel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.contact_list = new System.Windows.Forms.Label();
             this.responsible_party_d = new System.Windows.Forms.Button();
@@ -428,18 +428,6 @@
             this.contactInfo__CI_Contact__contactInstructions.Size = new System.Drawing.Size(315, 53);
             this.contactInfo__CI_Contact__contactInstructions.TabIndex = 12;
             // 
-            // roleCode_lbl
-            // 
-            this.roleCode_lbl.AutoSize = true;
-            this.roleCode_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roleCode_lbl.Location = new System.Drawing.Point(47, 8);
-            this.roleCode_lbl.Margin = new System.Windows.Forms.Padding(0);
-            this.roleCode_lbl.Name = "roleCode_lbl";
-            this.roleCode_lbl.Size = new System.Drawing.Size(28, 13);
-            this.roleCode_lbl.TabIndex = 35;
-            this.roleCode_lbl.Text = "Role";
-            this.roleCode_lbl.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
@@ -653,24 +641,24 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.panel2.Controls.Add(this.role);
             this.panel2.Controls.Add(this.roleCode_lbl);
+            this.panel2.Controls.Add(this.role);
             this.panel2.Location = new System.Drawing.Point(3, 5);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(283, 33);
             this.panel2.TabIndex = 4;
             // 
-            // dcatProgramCode_lbl
+            // roleCode_lbl
             // 
-            this.dcatProgramCode_lbl.AutoSize = true;
-            this.dcatProgramCode_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dcatProgramCode_lbl.Location = new System.Drawing.Point(31, 68);
-            this.dcatProgramCode_lbl.Name = "dcatProgramCode_lbl";
-            this.dcatProgramCode_lbl.Size = new System.Drawing.Size(75, 13);
-            this.dcatProgramCode_lbl.TabIndex = 37;
-            this.dcatProgramCode_lbl.Text = "Program Code";
-            this.dcatProgramCode_lbl.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.roleCode_lbl.AutoSize = true;
+            this.roleCode_lbl.Location = new System.Drawing.Point(47, 8);
+            this.roleCode_lbl.Name = "roleCode_lbl";
+            this.roleCode_lbl.Size = new System.Drawing.Size(29, 13);
+            this.roleCode_lbl.TabIndex = 35;
+            this.roleCode_lbl.TabStop = true;
+            this.roleCode_lbl.Text = "Role";
+            this.roleCode_lbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.genericOpenHelpFromLinkLabel_LinkClicked);
             // 
             // dcatProgramCode
             // 
@@ -718,13 +706,24 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.panel5.Controls.Add(this.groupBox2);
             this.panel5.Controls.Add(this.dcatProgramCode_lbl);
+            this.panel5.Controls.Add(this.groupBox2);
             this.panel5.Controls.Add(this.dcatProgramCode);
             this.panel5.Location = new System.Drawing.Point(292, 10);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(133, 116);
             this.panel5.TabIndex = 38;
+            // 
+            // dcatProgramCode_lbl
+            // 
+            this.dcatProgramCode_lbl.AutoSize = true;
+            this.dcatProgramCode_lbl.Location = new System.Drawing.Point(31, 68);
+            this.dcatProgramCode_lbl.Name = "dcatProgramCode_lbl";
+            this.dcatProgramCode_lbl.Size = new System.Drawing.Size(74, 13);
+            this.dcatProgramCode_lbl.TabIndex = 37;
+            this.dcatProgramCode_lbl.TabStop = true;
+            this.dcatProgramCode_lbl.Text = "Program Code";
+            this.dcatProgramCode_lbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.genericOpenHelpFromLinkLabel_LinkClicked);
             // 
             // groupBox2
             // 
@@ -837,7 +836,6 @@
         private System.Windows.Forms.Label contactInfo__CI_Contact__hoursOfService_lbl;
         private System.Windows.Forms.Label contactInfo__CI_Contact__contactInstructions_lbl;
         private System.Windows.Forms.TextBox contactInfo__CI_Contact__contactInstructions;
-        private System.Windows.Forms.Label roleCode_lbl;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode;
         private System.Windows.Forms.Label pagerLbl;
@@ -853,7 +851,6 @@
         private System.Windows.Forms.Button rp_expander_btn;
         private System.Windows.Forms.Button CI_ContactExpand_btn;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label dcatProgramCode_lbl;
         private System.Windows.Forms.ComboBox dcatProgramCode;
         private System.Windows.Forms.Button responsible_party_d;
         private System.Windows.Forms.Label contact_list;
@@ -862,5 +859,7 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.LinkLabel uc_ResponsibleParty_lbl;
+        private System.Windows.Forms.LinkLabel roleCode_lbl;
+        private System.Windows.Forms.LinkLabel dcatProgramCode_lbl;
     }
 }
