@@ -2,15 +2,32 @@
 <head>
 <link href="mystyle.css" rel="stylesheet" type="text/css" />
 <h1>EPA Metadata Editor (EME)</h1>
-<h2>Interface Element Description: Tab 3</h2>
+<h2>Interface Element Description: Tab 2</h2>
 <blockquote>Element:<b> Distribution Information</b></blockquote>
-<blockquote>Type: compound</blockquote>
-<blockquote>Short Name: distinfo</blockquote>
-<h3>FGDC Definition</h3>
-<blockquote>Information about the distributor of and options for obtaining the data set.
-</blockquote>
+<blockquote>Type: compound (Distributor Contact, Digital Transfer Options, Standard Order Process, and Distribution Format)</blockquote>
+<blockquote>Short Name: MD_Distribution</blockquote>
 <h3>EPA Requirement/Guidance</h3>
-<blockquote>This section is required by EPA to ensure inclusion of the resource description element (used by Geospatial One Stop and ESRI search tools) and to ensure proper documentation of distribution liability.</blockquote>
+<blockquote>This section is required by EPA to ensure proper distribution and discovery of the resource. The ISO MD_Distribution Object provides information about where users can get data, the formats available, and the processes for ordering the data. This section is designed to support resources that are available from either a single distributor or multiple distributors. As a result, elements are grouped with a single contact. For a given Distributor, provide a single Contact and then populate corresponding sub elements (Digital Transfer Options, Standard Order Process, and Distribution Format) that pertain to that particular contact. Any given distributor could potentially have several formats available and several URLs from which to obtain the resource. This structure helps ensure that each method of obtaining the resource is directly associated with a point of contact.
+<ul>
+	<li>Distribution Information Section</li>
+	<ul>
+		<li>Distributor [0..*]</li>
+		<ul>
+			<li><a href="t2_distcnt.html">Distributor Contact</a>&nbsp;[1]			
+			<li><a href="t2_distDTO.html">Digital Transfer Options</a>&nbsp;[0..*]
+			<li><a href="t2_distSOP.html">Standard Order Process</a>&nbsp;[0..*]
+			<li><a href="t2_distFormat.html">Distribution Format</a>&nbsp;[0..*]
+		</ul>
+	</ul>
+</ul>
+
+</blockquote>
+<h3>Data.gov Requirement/Guidance</h3>
+<blockquote><p>Any Thing???</p></blockquote>
+<h3>ISO Definition</h3>
+<blockquote>Information about acquiring the resource.</blockquote>
+<h3>FGDC Definition</h3>
+<blockquote>Information about the distributor of and options for obtaining the data set.</blockquote>
 <h3>Domain</h3>
 <blockquote>None.</blockquote>
 <br><br><br><br>

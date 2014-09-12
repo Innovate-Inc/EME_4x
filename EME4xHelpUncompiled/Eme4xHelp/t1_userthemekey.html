@@ -4,11 +4,17 @@
 <h1>EPA Metadata Editor (EME)</h1>
 <h2>Interface Element Description: Tab 1</h2>
 <blockquote>Element:<b> User Theme Keyword</b></blockquote>
-<blockquote>Type: text</blockquote>
-<blockquote>Short Name: themekey</blockquote>
+<blockquote>Type: theme</blockquote>
+<blockquote>ISO Element Name: descriptiveKeywords</blockquote>
 <h3>EPA Requirement/Guidance</h3>
 <blockquote>This field is not required for minimum EPA compliancy, but is made available for users who wish to enter keywords that are not part of the ISO or EPA lists.  <br>
-<br><b>Note:</b> User-defined keywords are added to the user interface using the EME database.  They are stored in the "1l_KeywordsUser" table. To enter new keywords, open the "1l_KeywordsUser" table and add the new keywords.  Modifying the thesaurus associated with the new keywords is done using the "EME" table. In the EME table, replace the term 'User' with your thesaurus name in the "idinfo/keywords/theme[themekt='User']/themekt" entry. Also in the EME table, replace the term 'User' with your thesaurus name in the "idinfo/keywords/theme[themekt='User']/themekey" entry.  Any changes performed within the EME table require closing and reopening ArcCatalog for the information to take effect.
+<br><b>Note:</b> User-defined keywords are added to the user interface using the EME database.  They are stored in the "KeywordsUser" table. To enter new keywords, open the "KeywordsUser" table and add the new keywords.
+</blockquote>
+<h3>Data.gov Requirement/Guidance</h3>
+<blockquote><p>Optinal Tags (or keywords) help users discover your resource; please include terms that would be used by technical and non-technical users.
+</p></blockquote>
+<h3>ISO Definition</h3>
+<blockquote>Theme keyword identifies a particular subject or topic.
 </blockquote>
 <h3>Domain</h3>
 <ul>

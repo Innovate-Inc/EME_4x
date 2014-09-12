@@ -3,25 +3,21 @@
 <link href="mystyle.css" rel="stylesheet" type="text/css" />
 <h1>EPA Metadata Editor (EME)</h1>
 <h2>Interface Element Description: Tab 1</h2>
-<blockquote>Element:<b> Time Period Information</b></blockquote>
-<blockquote>Type: compound (single date, or multiple dates, or range of dates)</blockquote>
-<blockquote>Short Name: timeinfo </blockquote>
-<h3>FGDC Definition</h3>
-<blockquote>Information about the date and time of an event. </blockquote>
-<h3>EPA Requirement/Guidance</h3>
+<blockquote>Element:<b> Temporal Extent of Resource </b></blockquote>
+<blockquote>Type: compound (single date, range of dates, or indeterminate time periods, and optionally time interval)</blockquote>
+<blockquote>ISO Element Name: EX_TemporalExtent </blockquote>
 
-<blockquote>This element is required for EPA geospatial assets as per minimum FGDC standards. Users may choose to enter a single date, a range of dates, or multiple dates depending on the time period of the data set/resource.  Use the single date option for documenting the time period information when the resource reflects a single date. Use the range of dates option for documenting the time period information when the information in your resource reflects a range of dates.  Use the multiple dates option for documenting the time period information when the resource reflects a series of individual dates.  
-* 3.2.1 Update: Users may choose either the traditional FGDC preferred date format, or the Data.gov-preferred ISO 8601 format.  The EDG will accept both as input, and will format the output appropriately.
+<h3>EPA Requirement/Guidance</h3>
+<blockquote>This element is required for EPA geospatial assets as per minimum FGDC standards. Users may choose to enter a single date or a range of dates depending on the time period of the data set/resource.  Use the single date option for documenting the time period information when the resource reflects a single date. Use a range of dates for documenting the time period information when the information in your resource reflects a range of dates. Use indeterminate dates to document unknown dates and present dates.  
 
 <br><br>To document the date information using the EME, a user would enter the information using one of the following options: <br><br>
 <ol>
-<li><b> &nbsp;<a href="t1_sngdate_caldate.html">Single Date:</a></b> enter a single date (e.g., 20080812)
-<li><b> &nbsp;<a href="t1_rngdates.html">Range of Dates:</a></b> enter start and end dates separated by a hyphen (e.g., 20080812 - 20080824)
-<li><b> &nbsp;<a href="t1_mdattim_caldate.html">Multiple Dates:</a></b> enter each date separated by commas (e.g., 20080812, 20080818, 20080824)
+<li><b>Single Date:</b> Select the Single Date tab and enter a single date using the calendar feature. Or choose an indeterminate date value from the drop down list. The read-only text box will show the to be committed to the metadata record on save.
+<li><b>Range of Dates:</b> Select the Time Period Table and use the calendar feature to enter begin and end dates. Or choose an indeterminate date value from the drop down list. Users can optionally specify a <b>Time Interval</b> to represent the frequency between time events based on floating point values. Time Intervals contain an integer entered in the first text box followed by the type of units in the second text box. (e.g., 6  Days)
 </ol>
 </blockquote>
 <h3>Data.gov Requirement/Guidance</h3>
-<blockquote><p>
+<blockquote><p>  <b>[we need to update this section since they cannot modify dates this way with EME]</b>
     This field should contain an interval of time defined by start and end dates. 
     Dates should be formatted as pairs of {start datetime/end datetime} in the<a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 
     8601</a> format. ISO 8601 specifies that 
@@ -40,11 +36,16 @@
         Updated every 5 minutes beginning on February 15, 2010 would be represented as: <code>R/2010-02-15/PT5M</code>.<br />
         <strong>Example</strong>|<code>{"temporal":"2000-01-15T00:45:00Z/2010-01-15T00:06:00Z"}</code> or <code>{"temporal":"R/2000-01-15T00:45:00Z/P1W"}</code></p>
 </blockquote>
+<h3>ISO Definition</h3>
+<blockquote>Time period covered by the content of the dataset</blockquote>
+<h3>FGDC Definition</h3>
+<blockquote>Information about the date and time of an event. </blockquote>
 <h3>Domain</h3>
 <ul>
-<li>free date</li>
+<li>YYYY-MM-DD</li>
+<li>Indeterminate Time Periods: “unknown”, “after”, “before”, and “now”</li>
 </ul>
-<blockquote>Note: Date information posted within this field should be documented using the standard date format (YYYY, YYYYMM, or YYYYMMDD, where Y=year, M=month, D=day [no slashes are permitted]), or it may be in the form of free text, such as 'Unknown'. </blockquote>
+<blockquote></blockquote>
 <br><br><br><br>
 </body>
 </html>

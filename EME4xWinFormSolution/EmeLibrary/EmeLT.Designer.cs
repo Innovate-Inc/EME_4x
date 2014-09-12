@@ -186,6 +186,8 @@
             this.idInfo_citation_Title = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.hoverTip_txt = new System.Windows.Forms.TextBox();
+            this.metadataInformation_lbl = new System.Windows.Forms.LinkLabel();
+            this.contactsGeneral_lbl = new System.Windows.Forms.LinkLabel();
             this.idInfo_extent_temporalExtent = new EmeLibrary.uc_extentTemporal();
             this.distributionInfo__MD_Distribution = new EmeLibrary.uc_distribution();
             this.idInfo_pointOfContact = new EmeLibrary.uc_ResponsibleParty();
@@ -1235,6 +1237,7 @@
             // 
             this.groupBox8.AutoSize = true;
             this.groupBox8.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.groupBox8.Controls.Add(this.contactsGeneral_lbl);
             this.groupBox8.Controls.Add(this.flowLayoutPanel5);
             this.groupBox8.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox8.Location = new System.Drawing.Point(3, 3);
@@ -1242,7 +1245,7 @@
             this.groupBox8.Size = new System.Drawing.Size(466, 169);
             this.groupBox8.TabIndex = 2;
             this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Contacts";
+            this.groupBox8.Text = "                  ";
             // 
             // flowLayoutPanel5
             // 
@@ -1293,6 +1296,7 @@
             // groupBox3
             // 
             this.groupBox3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.groupBox3.Controls.Add(this.metadataInformation_lbl);
             this.groupBox3.Controls.Add(this.flowLayoutPanel1);
             this.groupBox3.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(3, 178);
@@ -1300,7 +1304,7 @@
             this.groupBox3.Size = new System.Drawing.Size(470, 252);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Metadata Information";
+            this.groupBox3.Text = "                                           ";
             // 
             // flowLayoutPanel1
             // 
@@ -2134,6 +2138,32 @@
             this.hoverTip_txt.TabIndex = 39;
             this.hoverTip_txt.TabStop = false;
             // 
+            // metadataInformation_lbl
+            // 
+            this.metadataInformation_lbl.AutoSize = true;
+            this.metadataInformation_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.metadataInformation_lbl.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.metadataInformation_lbl.Location = new System.Drawing.Point(6, 0);
+            this.metadataInformation_lbl.Name = "metadataInformation_lbl";
+            this.metadataInformation_lbl.Size = new System.Drawing.Size(133, 13);
+            this.metadataInformation_lbl.TabIndex = 3;
+            this.metadataInformation_lbl.TabStop = true;
+            this.metadataInformation_lbl.Text = "Metadata Information";
+            this.metadataInformation_lbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.genericOpenHelpFromLinkLabel_LinkClicked);
+            // 
+            // contactsGeneral_lbl
+            // 
+            this.contactsGeneral_lbl.AutoSize = true;
+            this.contactsGeneral_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contactsGeneral_lbl.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.contactsGeneral_lbl.Location = new System.Drawing.Point(6, 0);
+            this.contactsGeneral_lbl.Name = "contactsGeneral_lbl";
+            this.contactsGeneral_lbl.Size = new System.Drawing.Size(57, 13);
+            this.contactsGeneral_lbl.TabIndex = 4;
+            this.contactsGeneral_lbl.TabStop = true;
+            this.contactsGeneral_lbl.Text = "Contacts";
+            this.contactsGeneral_lbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.genericOpenHelpFromLinkLabel_LinkClicked);
+            // 
             // idInfo_extent_temporalExtent
             // 
             this.idInfo_extent_temporalExtent.BackColor = System.Drawing.Color.Transparent;
@@ -2557,5 +2587,7 @@
         private System.Windows.Forms.LinkLabel language_lbl;
         private System.Windows.Forms.LinkLabel metadataStandardName_lbl;
         private System.Windows.Forms.LinkLabel metadataStandardVersion_lbl;
+        private System.Windows.Forms.LinkLabel contactsGeneral_lbl;
+        private System.Windows.Forms.LinkLabel metadataInformation_lbl;
     }
 }

@@ -253,6 +253,14 @@
 	<HelpLink>t1_update.html</HelpLink>
   </emeControl>
   <emeControl>  
+    <controlName>contactsGeneral_lbl</controlName>
+    <TabNum>2</TabNum>
+    <FGDC_Def></FGDC_Def>
+    <EPARequirementGuidance></EPARequirementGuidance>
+    <HoverNote></HoverNote>	
+	<HelpLink>t2_contactsGeneral.html</HelpLink>
+  </emeControl>  
+  <emeControl>  
     <controlName>contact_CI_ResponsibleParty</controlName>
     <TabNum>2</TabNum>
     <FGDC_Def></FGDC_Def>
@@ -288,7 +296,15 @@
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>User friendly name of the primary program related to this data asset, from the Federal Program Inventory.</HoverNote>
 	<HelpLink>t2_contactProgramCode.html</HelpLink>
-  </emeControl> 
+  </emeControl>
+  <emeControl>
+    <controlName>metadataInformation_lbl</controlName>
+    <TabNum>2</TabNum>
+    <FGDC_Def></FGDC_Def>
+    <EPARequirementGuidance></EPARequirementGuidance>
+    <HoverNote></HoverNote>
+	<HelpLink>t2_metainfo.html</HelpLink>
+  </emeControl>
   <emeControl>
     <controlName>hierarchyLevel_MD_ScopeCode_lbl</controlName>
     <TabNum>2</TabNum>
