@@ -36,7 +36,6 @@ t1_title.html
 t1_update.html
 t1_userthemekey.html
 t1_westbc.html
-t2_accconst.html
 t2_contactGeneral.html
 t2_contactProgramCode.html
 t2_contactRole.html
@@ -59,6 +58,7 @@ t2_resourceProducer.html
 t2_resourceType.html
 t2_secclass.html
 t2_useconst.html
+t2_useconstGeneral.html
 
 [INFOTYPES]
 

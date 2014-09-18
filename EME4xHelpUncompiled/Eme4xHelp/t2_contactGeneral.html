@@ -1,24 +1,38 @@
 <html>
 <head>
 <link href="mystyle.css" rel="stylesheet" type="text/css" />
+</head><body>
 <h1>EPA Metadata Editor (EME)</h1>
 <h2>Interface Element Description: Tab 2</h2>
-<blockquote>Element:<b> Distribution Contact</b></blockquote>
-<blockquote>Type: compound</blockquote>
-<blockquote>Short Name: distinfo</blockquote>
-<h3>FGDC Definition</h3>
-<blockquote>The party from whom the data set may be obtained.
-</blockquote>
+<blockquote>Element:<b> Contacts (Overview)</b></blockquote>
+<blockquote>Type: compound CI_ResponsibleParty</blockquote>
+<blockquote>ISO Element Name: CI_ResponsibleParty</blockquote>
 <h3>EPA Requirement/Guidance</h3>
-<blockquote>Provide detailed information in this field to identify the person or organization that should be contacted regarding accessing the data or asset.  Contact information within this element may or may not be the same as that listed for the contact for the data and/or metadata.</blockquote>
-<h3>Data.gov Requirement/Guidance</h3>
-<blockquote>The EME Distribution Contact element includes 3 mandatory Data.gov elements: 
+<blockquote>Provide detailed information in this component to identify the person or organization that should be contacted regarding the resource. Contact information within this element may or may not be the same in each section and can be repeated within each section. Currently, contact information is used with the following elements:
 <ul>
-<li><strong>Publisher</strong> - The plaintext name of the entity publishing this resource, corresponding to the FGDC contact organization.</li>
+<li><strong><a href="t2_distcnt.html">Distribution Contact</a></strong> - The party from whom the data set may be obtained.</li>
+<li><strong><a href="t2_metaAuthor.html">Metadata Author</a></strong> - The metadata author(s) responsible for the metadata information.</li>
+<li><strong><a href="t2_resourceOwner.html">Resource Owner</a></strong> - The owner(s) of the resource</li>
+<li><strong><a href="t2_resourceProducer.html">Resource Producer</a></strong> - Those who created/produced the resource</li>
+</ul>
+
+These compound elements use an ISO CI_Responsible Party component. The EME Contacts_Info Table stores most of the items required to populate a section.  To pass validation a contact in the Contacts_Info table should contain at the minimum the Contact Name, Organization, and Email. Additionally, for each contact used within a metadata record the user will need to choose a <strong><a href="t2_contactRole.html">Role Code (required)</a></strong> and <strong><a href="t2_contactProgramCode.html">Program Code (if applicable)</a></strong>.
+
+</blockquote>
+<h3>Data.gov Requirement/Guidance</h3>
+<blockquote>The EME Contact elements includes 3 mandatory Data.gov elements: 
+<ul>
+<li><strong>Organization</strong> - The plaintext name of the entity publishing this resource, corresponding to the FGDC contact organization.</li>
 <li><strong>Contact Name</strong> - A contact person's name for the asset, corresponding to the FGDC contact person.</li>
 <li><strong>Contact Email</strong> - A valid email address for the contact person listed above. An email address corresponding to a helpdesk or distribution list is an acceptable alternative.</li>
 </ul>
-It does not matter whether the "Primary Person" or "Primary Organization" radio button is selected, as long as the metadata contains all three elements above.  If validation fails, the contact info may need to be edited in the <a href="Help_DB.html">EME database</a> or by opening up the metadata document in a text editor.
+If validation fails, the contact info may need to be edited in the <a href="Help_DB.html">EME database</a> or by editing it direclty in the user interface.
+</blockquote>
+<h3>ISO Definition</h3>
+<blockquote>The identification of those responsible for the resource and their role in the resource.
+</blockquote>
+<h3>FGDC Definition</h3>
+<blockquote>The identification of those responsible for the resource and their role in the resource.
 </blockquote>
 <h3>Domain</h3>
 <blockquote>None.</blockquote>

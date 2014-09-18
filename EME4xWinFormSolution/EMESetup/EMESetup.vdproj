@@ -117,12 +117,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_717EB6D514E2418F9A4C42DE21F14014"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_7640DD3FE0CA4A32A2BE694285DA4691"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -136,6 +130,12 @@
         "Entry"
         {
         "MsmKey" = "8:_8904572E2BB04F288A6BB78A3663CFAC"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_8B4CB88A0FC344FC912AA2940A63828A"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -599,6 +599,11 @@
             "AssemblyAsmDisplayName" = "8:EmeLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
+                    "_52410AF9C84349B0E8A455E84A4A1844"
+                    {
+                    "Name" = "8:EmeLibrary.dll"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:EmeLibrary.dll"
             "TargetName" = "8:"
@@ -698,26 +703,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_717EB6D514E2418F9A4C42DE21F14014"
-            {
-            "SourcePath" = "8:..\\EME4xWinForm\\Eme4xSystemFiles\\EME 4x Help.chm"
-            "TargetName" = "8:EME 4x Help.chm"
-            "Tag" = "8:"
-            "Folder" = "8:_5728161856E14ACDB7707CE5E1D38EF3"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7640DD3FE0CA4A32A2BE694285DA4691"
             {
             "SourcePath" = "8:..\\EME4xWinForm\\Eme4xSystemFiles\\EMEdb\\Publisher.xml"
@@ -764,6 +749,26 @@
             "TargetName" = "8:MItemplate.xml"
             "Tag" = "8:"
             "Folder" = "8:_DB8F238C472A4B459F2F4CDAA163B28F"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8B4CB88A0FC344FC912AA2940A63828A"
+            {
+            "SourcePath" = "8:..\\EME4xWinForm\\EME 4x Help.chm"
+            "TargetName" = "8:EME 4x Help.chm"
+            "Tag" = "8:"
+            "Folder" = "8:_5728161856E14ACDB7707CE5E1D38EF3"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -1401,20 +1406,6 @@
             "Icon" = "8:_63CA9DFDB9164439A829AFADE43DE9C4"
             "Feature" = "8:"
             }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_9C811BFAC0584029B88BCCA5C6418953"
-            {
-            "Name" = "8:EME 4x Help.chm"
-            "Arguments" = "8:"
-            "Description" = "8:"
-            "ShowCmd" = "3:1"
-            "IconIndex" = "3:0"
-            "Transitive" = "11:FALSE"
-            "Target" = "8:_717EB6D514E2418F9A4C42DE21F14014"
-            "Folder" = "8:_57F78B8651FF45FE9AE2EFC68B5D77EC"
-            "WorkingFolder" = "8:_5728161856E14ACDB7707CE5E1D38EF3"
-            "Icon" = "8:"
-            "Feature" = "8:"
-            }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_A3172AEC25ED4B08966FDEBB6383BCEA"
             {
             "Name" = "8:EPA Metadata Editor v4.0 Beta"
@@ -1427,6 +1418,20 @@
             "Folder" = "8:_4A3AD5E306E94D69972C7E679F82CE4D"
             "WorkingFolder" = "8:_5728161856E14ACDB7707CE5E1D38EF3"
             "Icon" = "8:_63CA9DFDB9164439A829AFADE43DE9C4"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_FFA4D4F0202847AC97A47F9E63ADEE7B"
+            {
+            "Name" = "8:Shortcut to EME 4x Help.chm"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_8B4CB88A0FC344FC912AA2940A63828A"
+            "Folder" = "8:_57F78B8651FF45FE9AE2EFC68B5D77EC"
+            "WorkingFolder" = "8:_5728161856E14ACDB7707CE5E1D38EF3"
+            "Icon" = "8:"
             "Feature" = "8:"
             }
         }

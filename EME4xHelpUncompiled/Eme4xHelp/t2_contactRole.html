@@ -1,27 +1,41 @@
 <html>
 <head>
 <link href="mystyle.css" rel="stylesheet" type="text/css" />
+</head><body>
 <h1>EPA Metadata Editor (EME)</h1>
 <h2>Interface Element Description: Tab 2</h2>
-<blockquote>Element:<b>Role Code</b></blockquote>
-<blockquote>Type: compound</blockquote>
-<blockquote>Short Name: distinfo</blockquote>
-<h3>FGDC Definition</h3>
-<blockquote>The party from whom the data set may be obtained.
-</blockquote>
+<blockquote>Element: <b>Role Code</b></blockquote>
+<blockquote>Type: codelist CI_RoleCode</blockquote>
+<blockquote>ISO Element Name: role</blockquote>
 <h3>EPA Requirement/Guidance</h3>
-<blockquote>Provide detailed information in this field to identify the person or organization that should be contacted regarding accessing the data or asset.  Contact information within this element may or may not be the same as that listed for the contact for the data and/or metadata.</blockquote>
+<blockquote>For each contact that is used in a metadata record, a Role must be assigned for ISO validation. Pick an appropriate Role from the list provided.</blockquote>
 <h3>Data.gov Requirement/Guidance</h3>
-<blockquote>The EME Distribution Contact element includes 3 mandatory Data.gov elements: 
-<ul>
-<li><strong>Publisher</strong> - The plaintext name of the entity publishing this resource, corresponding to the FGDC contact organization.</li>
-<li><strong>Contact Name</strong> - A contact person's name for the asset, corresponding to the FGDC contact person.</li>
-<li><strong>Contact Email</strong> - A valid email address for the contact person listed above. An email address corresponding to a helpdesk or distribution list is an acceptable alternative.</li>
-</ul>
-It does not matter whether the "Primary Person" or "Primary Organization" radio button is selected, as long as the metadata contains all three elements above.  If validation fails, the contact info may need to be edited in the <a href="Help_DB.html">EME database</a> or by opening up the metadata document in a text editor.
+<blockquote>NA</blockquote>
+<h3>ISO Definition</h3>
+<blockquote>The function performed by the responsible party.
+</blockquote>
+<h3>FGDC Definition</h3>
+<blockquote>NA
 </blockquote>
 <h3>Domain</h3>
-<blockquote>None.</blockquote>
+<ul>
+<li><b>	CI_RoleCode</b>
+	<ul>
+		<li><b>resourceProvider</b> - party that supplies the resource 
+		<li><b>custodian</b> - party that accepts accountability and responsability for the data and ensures appropriate care and maintenance of the resource 
+		<li><b>owner</b> - party that owns the resource 
+		<li><b>sponsor</b> - party that sponsors the resource
+		<li><b>user</b> - party who uses the resource
+		<li><b>distributor</b> - party who distributes the resource 
+		<li><b>originator</b> - party who created the resource
+		<li><b>pointOfContact</b> - party who can be contacted for acquiring knowledge about or acquisition of the resource
+		<li><b>principalInvestigator</b> - key party responsible for gathering information and conducting research 
+		<li><b>processor</b> - party who has processed the data in a manner such that the resource has been modified 
+		<li><b>publisher</b> - party who published the resource
+		<li><b>author</b> - party who authored the resource 
+		<li><b>scienceParty</b> - party who conducted or contributed to the research 
+	</ul>
+</ul>
 <br><br><br><br>
 </body>
 </html>

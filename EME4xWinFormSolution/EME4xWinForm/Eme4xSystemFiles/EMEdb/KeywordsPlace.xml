@@ -319,4 +319,14 @@
     <placekey>Wyoming</placekey>
     <default>false</default>
   </KeywordsPlace>
+  <KeywordsPlace>
+    <placekt>None</placekt>
+    <placekey>Chesapeake Bay</placekey>
+    <default>false</default>
+  </KeywordsPlace>
+  <KeywordsPlace>
+    <placekt>None</placekt>
+    <placekey>Chesapeake Bay Watershed</placekey>
+    <default>false</default>
+  </KeywordsPlace>
 </emeData>

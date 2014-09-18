@@ -1,16 +1,45 @@
 <html>
 <head>
 <link href="mystyle.css" rel="stylesheet" type="text/css" />
+</head><body>
 <h1>EPA Metadata Editor (EME)</h1>
 <h2>Interface Element Description: Tab 2</h2>
 <blockquote>Element:<b>Digital Transfer Options</b></blockquote>
-<blockquote>Type: compound</blockquote>
-<blockquote>Short Name: distinfo</blockquote>
-<h3>FGDC Definition</h3>
-<blockquote>Information about the distributor of and options for obtaining the data set.
-</blockquote>
+<blockquote>Type: compound MD_DigitalTransferOptions </blockquote>
+<blockquote>ISO Element Name: distributorTransferOptions</blockquote>
 <h3>EPA Requirement/Guidance</h3>
-<blockquote>This section is required by EPA to ensure inclusion of the resource description element (used by Geospatial One Stop and ESRI search tools) and to ensure proper documentation of distribution liability.</blockquote>
+<blockquote>This section provides information about the technical means and media by which a resource is obtained from the distributor.  The following elements are included in this section:
+<ul>
+<li><b>Units Of Distribution</b> - Tiles, layers, geographic areas, etc. in which the data is available.	
+<li><b>Transfer Size</b> - Estimated size of the transfer unit in the specified format, expressed in megabytes. Best Practices: Value greater that 0.0.
+<li><b>On Line</b> - Information about the online sources where the data/dataset may be obtained. ISO Element Name: CI_OnlineResource
+	<ul>
+		<li><b>Linkage</b> - Internet location (address) for on-line access which uses a Uniform Resource Locator address or similar addressing scheme. <b>NOTE: [WE NEED TO INCLUDE THE OLD ONLINE LINKAGE HELP HERE.  See <a href="t2_onlink.html">Onlink Page</a> </b>
+		<li><b>Function</b> - Code for function performed by the online resource (CI_OnlineFunctionCode)
+		<li><b>Protocol</b> - The connection protocol to be used such as http, ftp, etc.
+		<li><b>Application Profile</b> - Name of an application profile that can be used with the online resource.
+		<li><b>Name</b> - Name of the online resource.
+		<li><b>Description</b> - Description of the online resource that provides the resource sought.	
+	</ul>
+<li><b>Off Line</b> - Information about the offline distribution media regarding the name, density units, volumes, medium format, and medium note used to describe the transfer of data to a medium. ISO Element Name: MD_Medium
+	<ul>
+		<li><b>Name</b> - Medium name code. Type: MD_MediumNameCode Domain: cdRom, dvd, dvdRom, 3halfInchFloppy, 5quarterInchFloppy, 7trackTape, 9trackTape, 3480Cartridge, 3490Catridge, 3580Cartridge, 4mmCartridgeTape, 8mmCartridgeTape, 1quarterInchCartridgeTape, digitalLinearTape, onLine, satellite, telephoneLink, hardcopy.
+		<li><b>Density</b> - The recording density on the specified media. Best Practices: Value greater than 0.0.		
+		<li><b>Density Units</b> - The recording density units. Best Practices: densityUnits is mandatory when density is documented.
+		<li><b>Volumes</b> - Identification of the number of recorded items on the media. Type: gco:Integer, Domain: any whole number, Best Practices: Value greater than 0.
+		<li><b>Medium Format</b> - Method used to write to the medium. Type: MD_MediumFormatCode, Domain: cpio, tar, highSierra, iso9660, iso9660RockRidge, iso9660AppleHFS.
+		<li><b>Medium Note</b> - Description of limitations or requirements for using the medium.	
+	</ul>
+</ul>
+</blockquote>
+<h3>Data.gov Requirement/Guidance</h3>
+<blockquote><p>NA</p></blockquote>
+<h3>ISO Definition</h3>
+<blockquote>Provides information about the technical means and media by which a resource is obtained from the distributor.
+</blockquote>
+<h3>FGDC Definition</h3>
+<blockquote>NA
+</blockquote>
 <h3>Domain</h3>
 <blockquote>None.</blockquote>
 <br><br><br><br>

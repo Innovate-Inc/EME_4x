@@ -563,17 +563,26 @@
   </emeControl>
   <emeControl>
     <controlName>offLine__MD_Medium__mediumNode_lbl</controlName>
-    <TabNum>3</TabNum>
+    <TabNum>2</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>Description of limitations or requirements for using the medium</HoverNote>
   </emeControl>
   <emeControl>
-    <controlName>idInfo_resourceConstraints_gbx</controlName>
-    <TabNum>1</TabNum>
+    <controlName>idInfo_resourceConstraints_lbl</controlName>
+    <TabNum>2</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>The limitations, restrictions, or statements on the resource fitness for use</HoverNote>
+	<HelpLink></HelpLink>
+  </emeControl>
+  <emeControl>
+    <controlName>generalConstraints_lbl</controlName>
+    <TabNum>2</TabNum>
+    <FGDC_Def></FGDC_Def>
+    <EPARequirementGuidance></EPARequirementGuidance>
+    <HoverNote>Statement on the fitness of use or limitations on the use of the resource or metadata. If the systems is designated as a system of records under the Privacy Act of 1974, provide the URL to the System of Records Notice related to this dataset.</HoverNote>
+	<HelpLink>t2_useconstGeneral.html</HelpLink>
   </emeControl>
   <emeControl>
     <controlName>useLimitation_lbl</controlName>
@@ -584,72 +593,74 @@
   </emeControl>
   <emeControl>
     <controlName>accessConstraints_lbl</controlName>
-    <TabNum>1</TabNum>
+    <TabNum>2</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>Limitations on access to the resource or metadata to protect privacy, intellectual property, or any special limitations</HoverNote>
   </emeControl>
   <emeControl>
     <controlName>useConstraints_lbl</controlName>
-    <TabNum>1</TabNum>
+    <TabNum>2</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>Restrictions or limitations or warnings to protect privacy, intellectual property, or other special restrictions on the resource or the metadata</HoverNote>
   </emeControl>
   <emeControl>
     <controlName>otherConstraints_lbl</controlName>
-    <TabNum>1</TabNum>
+    <TabNum>2</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>Other restrictions or legal prerequisites for accessing the resource or metadata</HoverNote>
   </emeControl>
   <emeControl>
-    <controlName>securityConstraints_gbx</controlName>
-    <TabNum>1</TabNum>
+    <controlName>securityConstraints_lbl</controlName>
+    <TabNum>2</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>Restrictions applied to the resource or metadata to protect security concerns</HoverNote>
+	<HelpLink>t2_secclass.html</HelpLink>
   </emeControl>
   <emeControl>
     <controlName>securityConstraints_useLimitation_lbl</controlName>
-    <TabNum>1</TabNum>
+    <TabNum>2</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>Statement on the fitness of use or limitations on the use of the resource or metadata</HoverNote>
   </emeControl>
   <emeControl>
     <controlName>securityConstraints_classification_lbl</controlName>
-    <TabNum>1</TabNum>
+    <TabNum>2</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>Name of the handling restrictions on the resource or the metadata</HoverNote>
   </emeControl>
   <emeControl>
     <controlName>securityConstraints_userNote_lbl</controlName>
-    <TabNum>1</TabNum>
+    <TabNum>2</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>An explanation of the classification level applied to the resource or metadata</HoverNote>
   </emeControl>
   <emeControl>
     <controlName>securityConstraints_classificationSystem_lbl</controlName>
-    <TabNum>1</TabNum>
+    <TabNum>2</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>Name of the security classification system</HoverNote>
   </emeControl>
   <emeControl>
     <controlName>securityConstraints_handlingDescription_lbl</controlName>
-    <TabNum>1</TabNum>
+    <TabNum>2</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>Additional information regarding security restrictions on handling the resource or metadata</HoverNote>
   </emeControl>
   <emeControl>
     <controlName>legalContraints_lbl</controlName>
-    <TabNum>1</TabNum>
+    <TabNum>2</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>The legal restrictions or prerequisites to using the resource or accessing the metadata</HoverNote>
+	<HelpLink>t2_useconst.html</HelpLink>
   </emeControl>
 </emeGUI>

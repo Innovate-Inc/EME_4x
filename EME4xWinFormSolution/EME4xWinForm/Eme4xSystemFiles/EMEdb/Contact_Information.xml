@@ -149,7 +149,7 @@
 		<electronicMailAddress>giffen.tom@epa.gov</electronicMailAddress>
 		<linkage>http://www.epa.gov/region01/</linkage>
 		<linkageType>information</linkageType>
-		<default>true</default>
+		<default>false</default>
 	</Contact_Information>
 	<Contact_Information>
 		<OrderedId>33</OrderedId>
@@ -317,7 +317,7 @@
 		<electronicMailAddress>parrish.david@epa.gov</electronicMailAddress>
 		<linkage>http://www.epa.gov/region06/</linkage>
 		<linkageType>information</linkageType>
-		<default>false</default>
+		<default>true</default>
 	</Contact_Information>
 	<Contact_Information>
 		<OrderedId>49</OrderedId>
@@ -394,11 +394,12 @@
 		<positionName>GIS Coordinator</positionName>
 		<addrtype>mailing and physical address</addrtype>
 		<deliveryPoint>75 Hawthorne Street</deliveryPoint>
+		<address2>MTS-6-1</address2>
 		<city>San Francisco</city>
 		<administrativeArea>CA</administrativeArea>
 		<postalCode>94105</postalCode>
 		<voice>415-972-3586</voice>
-		<facsimile>415-947-3553</facsimile>
+		<facsimile></facsimile>
 		<electronicMailAddress>henley.cheryl@epa.gov</electronicMailAddress>
 		<linkage>http://www.epa.gov/region09/</linkage>
 		<linkageType>information</linkageType>
@@ -739,11 +740,11 @@
 		<individualName>John Wolf</individualName>
 		<positionName>EDG Steward</positionName>
 		<addrtype>mailing and physical address</addrtype>
-		<deliveryPoint>410 Severn Avenue, Suite 109</deliveryPoint>
+		<deliveryPoint>410 Severn Avenue, Suite 112</deliveryPoint>
 		<city>Annapolis</city>
 		<administrativeArea>MD</administrativeArea>
 		<postalCode>21403</postalCode>
-		<voice>(410) 267-5739</voice>
+		<voice>410-267-5739</voice>
 		<facsimile>(410) 267-5777</facsimile>
 		<electronicMailAddress>jwolf@chesapeakebay.net</electronicMailAddress>
 		<linkage>http://www.chesapeakebay.net/</linkage>
@@ -756,11 +757,12 @@
 		<individualName>Brian Burch</individualName>
 		<positionName>EDG Steward</positionName>
 		<addrtype>mailing and physical address</addrtype>
-		<deliveryPoint>410 Severn Avenue, Suite 109</deliveryPoint>
+		<deliveryPoint>410 Severn Avenue, Suite 112</deliveryPoint>
 		<city>Annapolis</city>
 		<administrativeArea>MD</administrativeArea>
 		<postalCode>21403</postalCode>
 		<voice>410-267-5736</voice>
+		<facsimile>(410) 267-5777</facsimile>
 		<electronicMailAddress>burch.brian@epa.gov</electronicMailAddress>
 		<linkage>http://www.chesapeakebay.net/</linkage>
 		<linkageType>information</linkageType>
@@ -769,15 +771,16 @@
 	<Contact_Information>
 		<OrderedId>104</OrderedId>
 		<organizationName>U.S. Environmental Protection Agency, Region 3-Chesapeake Bay Program</organizationName>
-		<individualName>Megan Thynge</individualName>
-		<positionName>EDG Steward</positionName>
+		<individualName>Howard Weinberg</individualName>
+		<positionName>GIS Analyst</positionName>
 		<addrtype>mailing and physical address</addrtype>
-		<deliveryPoint>410 Severn Avenue, Suite 109</deliveryPoint>
+		<deliveryPoint>410 Severn Avenue, Suite 112</deliveryPoint>
 		<city>Annapolis</city>
 		<administrativeArea>MD</administrativeArea>
 		<postalCode>21403</postalCode>
-		<voice>(410) 267-5786</voice>
-		<electronicMailAddress>thynge.megan@epa.gov</electronicMailAddress>
+		<voice>(410) 267-5735</voice>
+		<facsimile>(410) 267-5777</facsimile>
+		<electronicMailAddress>hweinber@chesapeakebay.net</electronicMailAddress>
 		<linkage>http://www.chesapeakebay.net/</linkage>
 		<linkageType>information</linkageType>
 		<default>false</default>
@@ -870,15 +873,15 @@
 		<OrderedId>110</OrderedId>
 		<organizationName>U.S. Environmental Protection Agency, Region 9</organizationName>
 		<individualName>Linda Chambers</individualName>
-		<positionName>EDG Steward</positionName>
+		<positionName>GIS Analyst</positionName>
 		<addrtype>mailing and physical address</addrtype>
 		<deliveryPoint>75 Hawthorne Street</deliveryPoint>
-		<address2>7th Floor MTS-6</address2>
+		<address2>MTS-6-1</address2>
 		<city>San Francisco</city>
 		<administrativeArea>CA</administrativeArea>
 		<postalCode>94105</postalCode>
 		<voice>(415) 947-4578</voice>
-		<facsimile>415-276-4177</facsimile>
+		<facsimile></facsimile>
 		<electronicMailAddress>chambers.linda@epa.gov</electronicMailAddress>
 		<linkage>http://www.epa.gov/region09/</linkage>
 		<linkageType>information</linkageType>
@@ -888,9 +891,10 @@
 		<OrderedId>111</OrderedId>
 		<organizationName>U.S. Environmental Protection Agency, Region 9</organizationName>
 		<individualName>Stacy Takeda</individualName>
-		<positionName>EDG Steward</positionName>
+		<positionName>GIS Analyst</positionName>
 		<addrtype>mailing and physical address</addrtype>
 		<deliveryPoint>75 Hawthorne Street</deliveryPoint>
+		<address2>MTS-6-1</address2>
 		<city>San Francisco</city>
 		<administrativeArea>CA</administrativeArea>
 		<postalCode>94105</postalCode>
@@ -904,22 +908,58 @@
 		<OrderedId>112</OrderedId>
 		<organizationName>U.S. Environmental Protection Agency, Region 9</organizationName>
 		<individualName>Mo Tangestani</individualName>
-		<positionName>EDG Steward</positionName>
+		<positionName>GIS Analyst</positionName>
 		<addrtype>mailing and physical address</addrtype>
 		<deliveryPoint>75 Hawthorne Street</deliveryPoint>
-		<address2>7th Floor MTS-6</address2>
+		<address2>MTS-6-1</address2>
 		<city>San Francisco</city>
 		<administrativeArea>CA</administrativeArea>
 		<postalCode>94105</postalCode>
 		<voice>415-947-4579</voice>
-		<facsimile>415-276-4177</facsimile>
+		<facsimile></facsimile>
 		<electronicMailAddress>tangestani.mo@epa.gov</electronicMailAddress>
 		<linkage>http://www.epa.gov/region09/</linkage>
 		<linkageType>information</linkageType>
 		<default>false</default>
 	</Contact_Information>
 	<Contact_Information>
+		<OrderedId>113</OrderedId>
+		<organizationName>U.S. Environmental Protection Agency, Region 9</organizationName>
+		<individualName>Fletcher Clover</individualName>
+		<positionName>GIS Analyst</positionName>
+		<addrtype>mailing and physical address</addrtype>
+		<deliveryPoint>75 Hawthorne Street</deliveryPoint>
+		<address2>AIR-7</address2>
+		<city>San Francisco</city>
+		<administrativeArea>CA</administrativeArea>
+		<postalCode>94105</postalCode>
+		<voice>(415) 972-3991</voice>
+		<facsimile></facsimile>
+		<electronicMailAddress>clover.fletcher@epa.gov</electronicMailAddress>
+		<linkage>http://www.epa.gov/region09/</linkage>
+		<linkageType>information</linkageType>
+		<default>false</default>
+	</Contact_Information>
+	<Contact_Information>
 		<OrderedId>114</OrderedId>
+		<organizationName>U.S. Environmental Protection Agency, Region 9</organizationName>
+		<individualName>Charles Swanson</individualName>
+		<positionName>GIS Analyst</positionName>
+		<addrtype>mailing and physical address</addrtype>
+		<deliveryPoint>75 Hawthorne Street</deliveryPoint>
+		<address2>ENF-4-2</address2>
+		<city>San Francisco</city>
+		<administrativeArea>CA</administrativeArea>
+		<postalCode>94105</postalCode>
+		<voice>(415) 947-4219</voice>
+		<facsimile></facsimile>
+		<electronicMailAddress>swanson.charles@epa.gov</electronicMailAddress>
+		<linkage>http://www.epa.gov/region09/</linkage>
+		<linkageType>information</linkageType>
+		<default>false</default>
+	</Contact_Information>
+	<Contact_Information>
+		<OrderedId>115</OrderedId>
 		<organizationName>U.S. Environmental Protection Agency, Office of Environmental Information</organizationName>
 		<individualName>Dave Catlin</individualName>
 		<positionName>Geospatial Data Owner</positionName>

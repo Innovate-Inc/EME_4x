@@ -160,4 +160,22 @@
 	<southbc>41.987672</southbc>
 	<default>false</default>
   </BoundingBox>
+  <BoundingBox>
+	<orderedId>110</orderedId>
+	<Area>Chesapeake Bay</Area>
+	<westbc>-77.464154</westbc>
+	<eastbc>-75.39099</eastbc>
+	<northbc>39.609273</northbc>
+	<southbc>36.714623</southbc>
+	<default>false</default>
+  </BoundingBox>
+  <BoundingBox>
+	<orderedId>120</orderedId>
+	<Area>Chesapeake Bay Watershed</Area>
+	<westbc>-80.542601</westbc>
+	<eastbc>-74.580735</eastbc>
+	<northbc>42.987042</northbc>
+	<southbc>36.666691</southbc>
+	<default>false</default>
+  </BoundingBox>
 </emeData>
