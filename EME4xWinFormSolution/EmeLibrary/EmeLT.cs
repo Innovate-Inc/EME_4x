@@ -26,12 +26,14 @@ namespace EmeLibrary
         private string sourceXmlFormat;
         private string defaultSettingsTablePath;
         private string defaultSettingsTableName;
+        private DateTime cbxPreviousClick;
+
         private xmlFieldMaps xmlFieldMappings;
         private XmlDocument xDoc;
         private geographicExtentBoundingBox tempfeatureClassBBox;
         public isoNodes localXdoc;
         public string validationSetting;
-
+        
         public event SaveEventHandler SaveEvent;
 
         public EmeLT()
@@ -1076,33 +1078,12 @@ namespace EmeLibrary
             }
 
         }
-
-        private void idInfo_citation_Title_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            int wi = idInfo_citation_Title.Size.Width;
-            int hi = 45;
-
-            if (idInfo_citation_Title.Size.Height == 45)
-            {
-                idInfo_citation_Title.Size = new System.Drawing.Size(wi, 150);
-            }
-            else
-            {
-                idInfo_citation_Title.Size = new System.Drawing.Size(wi, 45);
-            }
-
-          
-        }
+                       
 
         private void contentsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Utils1.HelpSeeker("/Help_Main.html", ref Utils1.globalHelpProc);
-        }
-
-        private void idInfo_citation_Title_lbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Utils1.HelpSeeker("/t1_title.html", ref Utils1.globalHelpProc);
-        }
+        }            
 
         /// <summary>
         /// Generic Method to open help for those lableLink objects that have the tag set to the help file name. THis
@@ -1125,7 +1106,61 @@ namespace EmeLibrary
 
         }
 
+        private void genericSpaciousEntryForm_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            Control genericControl = (Control)sender;
+            
+
+            //TextBox clickedTextBox = (TextBox)sender;
+            
+            //LinkLabel tbxLinkLabel
+            string tbxName = genericControl.Name; //clickedTextBox.Name;            
+            string tbxText = genericControl.Text; //clickedTextBox.Text;
+            Control[] foundControl = this.Controls.Find(tbxName + "_lbl", true);
+            if (foundControl.Length > 0)
+            {
+                //LinkLabel tbxLabel = (LinkLabel)foundControl[0];
+
+                tbxName = foundControl[0].Text;
+            }
+
+            if (Utils1.spaciousInputBox(tbxName, tbxName, ref tbxText) == DialogResult.OK)
+            {
+                //clickedTextBox.Text = tbxText;
+                genericControl.Text = tbxText;
+            }
+
+        }
         
+        private void genericSpaciousEntryDropListForm_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (cbxPreviousClick == null) { cbxPreviousClick = DateTime.Now; }
+            
+            if (DateTime.Now.AddMilliseconds(-500) < cbxPreviousClick)
+            {
+                //MessageBox.Show("Double Clicked");
+
+                Control genericControl = (Control)sender;
+                
+                string tbxName = genericControl.Name; //clickedTextBox.Name;            
+                string tbxText = genericControl.Text; //clickedTextBox.Text;
+                Control[] foundControl = this.Controls.Find(tbxName + "_lbl", true);
+                if (foundControl.Length > 0)
+                {
+                    tbxName = foundControl[0].Text;
+                }
+
+                if (Utils1.spaciousInputBox(tbxName, tbxName, ref tbxText) == DialogResult.OK)
+                {
+                    //clickedTextBox.Text = tbxText;
+                    genericControl.Text = tbxText;
+                }
+
+            }            
+            //Re-Set Time
+            cbxPreviousClick = DateTime.Now;
+            
+        }
         
 
     }

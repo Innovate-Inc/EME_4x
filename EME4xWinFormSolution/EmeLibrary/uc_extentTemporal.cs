@@ -275,6 +275,32 @@ namespace EmeLibrary
 
         }
 
+        private void genericSpaciousEntryForm_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            Control genericControl = (Control)sender;
+
+
+            //TextBox clickedTextBox = (TextBox)sender;
+
+            //LinkLabel tbxLinkLabel
+            string tbxName = genericControl.Name; //clickedTextBox.Name;            
+            string tbxText = genericControl.Text; //clickedTextBox.Text;
+            Control[] foundControl = this.Controls.Find(tbxName + "_lbl", true);
+            if (foundControl.Length > 0)
+            {
+                //LinkLabel tbxLabel = (LinkLabel)foundControl[0];
+
+                tbxName = foundControl[0].Text;
+            }
+
+            if (Utils1.spaciousInputBox(tbxName, tbxName, ref tbxText) == DialogResult.OK)
+            {
+                //clickedTextBox.Text = tbxText;
+                genericControl.Text = tbxText;
+            }
+
+        }
+        
         
     }
 }

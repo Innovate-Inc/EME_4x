@@ -7,6 +7,7 @@ using System.Xml;
 using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
+using System.Drawing;
 using System.Configuration;
 
 namespace EmeLibrary
@@ -213,11 +214,55 @@ namespace EmeLibrary
             proc.Start();
             //Sample Params
             //"C:\aInnovate\Projects\EME\EME_v321_20131205\EME_v32_main_codebase\metadataEditorV32\MetadataEditor\bin\Debug\EPA Metadata Editor v3.2.1 Help.chm::/t1_title.html"
+                        
+        }
+        
+        public static DialogResult spaciousInputBox(string title, string promptText, ref string value)
+        {
+            Form form = new Form();
+            Label label = new Label();
+            TextBox textBox = new TextBox();
+            Button buttonOk = new Button();
+            Button buttonCancel = new Button();
 
+            form.Text = title;
+            label.Text = promptText;
+            textBox.Text = value;
 
+            buttonOk.Text = "OK";
+            buttonCancel.Text = "Cancel";
+            buttonOk.DialogResult = DialogResult.OK;
+            buttonCancel.DialogResult = DialogResult.Cancel;
+            //Size = x, y, w, h
+            label.SetBounds(4, 12, 380, 13);
 
+            //textBox.SetBounds(9, 36, 380, 330);
+            textBox.SetBounds(6, 36, 595, 240);
+            textBox.Multiline = true;
+            textBox.ScrollBars = ScrollBars.Vertical;
+            buttonOk.SetBounds(425, 279, 75, 23);
+            buttonCancel.SetBounds(508, 279, 75, 23);
 
+            label.AutoSize = true;
+            textBox.Anchor = textBox.Anchor | AnchorStyles.Right;
+            buttonOk.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonCancel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
 
+            //form.ClientSize = new Size(396, 400);
+            form.ClientSize = new Size(608, 306);
+            form.Controls.AddRange(new Control[] { label, textBox, buttonOk, buttonCancel });
+            //Resizes for long text strings in the lable.  Don't need.
+            //form.ClientSize = new Size(Math.Max(300, label.Right + 10), form.ClientSize.Height);
+            form.FormBorderStyle = FormBorderStyle.FixedDialog;
+            form.StartPosition = FormStartPosition.CenterScreen;
+            form.MinimizeBox = false;
+            form.MaximizeBox = false;
+            form.AcceptButton = buttonOk;
+            form.CancelButton = buttonCancel;
+
+            DialogResult dialogResult = form.ShowDialog();
+            value = textBox.Text;
+            return dialogResult;
         }
     }
         

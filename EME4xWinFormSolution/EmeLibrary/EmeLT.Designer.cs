@@ -92,7 +92,7 @@
             this.distributionInfo__MD_Distribution = new EmeLibrary.uc_distribution();
             this.idInfo_resourceConstraints_gbx = new System.Windows.Forms.GroupBox();
             this.idInfo_resourceConstraints_lbl = new System.Windows.Forms.Label();
-            this.generalConstraints_lbl = new System.Windows.Forms.LinkLabel();
+            this.idInfo_resourceConstraints_MD_Constraints_useLimitation_lbl = new System.Windows.Forms.LinkLabel();
             this.idInfo_resourceConstraints_MD_Constraints_useLimitation = new System.Windows.Forms.ComboBox();
             this.securityConstraints_gbx = new System.Windows.Forms.GroupBox();
             this.securityConstraints_lbl = new System.Windows.Forms.LinkLabel();
@@ -100,18 +100,18 @@
             this.securityConstraints_classification_lbl = new System.Windows.Forms.Label();
             this.idInfo_resourceConstraints_MD_SecurityConstraints_classification = new System.Windows.Forms.ComboBox();
             this.idInfo_resourceConstraints_MD_SecurityConstraints_useLimitation = new System.Windows.Forms.ComboBox();
-            this.securityConstraints_useLimitation_lbl = new System.Windows.Forms.Label();
-            this.securityConstraints_handlingDescription_lbl = new System.Windows.Forms.Label();
+            this.idInfo_resourceConstraints_MD_SecurityConstraints_useLimitation_lbl = new System.Windows.Forms.Label();
+            this.idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescription_lbl = new System.Windows.Forms.Label();
             this.idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescription = new System.Windows.Forms.TextBox();
-            this.securityConstraints_classificationSystem_lbl = new System.Windows.Forms.Label();
+            this.idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystem_lbl = new System.Windows.Forms.Label();
             this.idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystem = new System.Windows.Forms.TextBox();
             this.idInfo_resourceConstraints_MD_SecurityConstraints_userNote = new System.Windows.Forms.ComboBox();
-            this.securityConstraints_userNote_lbl = new System.Windows.Forms.Label();
+            this.idInfo_resourceConstraints_MD_SecurityConstraints_userNote_lbl = new System.Windows.Forms.Label();
             this.legalContraints_gbx = new System.Windows.Forms.GroupBox();
             this.legalContraints_lbl = new System.Windows.Forms.LinkLabel();
             this.idInfo_resourceConstraints_MD_LegalConstraints_otherConstraints = new System.Windows.Forms.TextBox();
-            this.otherConstraints_lbl = new System.Windows.Forms.Label();
-            this.useLimitation_lbl = new System.Windows.Forms.Label();
+            this.idInfo_resourceConstraints_MD_LegalConstraints_otherConstraints_lbl = new System.Windows.Forms.Label();
+            this.idInfo_resourceConstraints_MD_LegalConstraints_useLimitation_lbl = new System.Windows.Forms.Label();
             this.idInfo_resourceConstraints_MD_LegalConstraints_useLimitation = new System.Windows.Forms.TextBox();
             this.useConstraints_lbl = new System.Windows.Forms.Label();
             this.accessConstraints_lbl = new System.Windows.Forms.Label();
@@ -577,6 +577,7 @@
             this.fileIdentifier.Name = "fileIdentifier";
             this.fileIdentifier.Size = new System.Drawing.Size(233, 21);
             this.fileIdentifier.TabIndex = 3;
+            this.fileIdentifier.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.genericSpaciousEntryForm_MouseDoubleClick);
             // 
             // idInfo_extent_descriptionCB
             // 
@@ -871,6 +872,7 @@
             // 
             this.distributionInfo__MD_Distribution.AutoSize = true;
             this.distributionInfo__MD_Distribution.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.distributionInfo__MD_Distribution.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.distributionInfo__MD_Distribution.distributorList = null;
             this.distributionInfo__MD_Distribution.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.distributionInfo__MD_Distribution.Location = new System.Drawing.Point(0, 0);
@@ -884,7 +886,7 @@
             // 
             this.idInfo_resourceConstraints_gbx.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.idInfo_resourceConstraints_gbx.Controls.Add(this.idInfo_resourceConstraints_lbl);
-            this.idInfo_resourceConstraints_gbx.Controls.Add(this.generalConstraints_lbl);
+            this.idInfo_resourceConstraints_gbx.Controls.Add(this.idInfo_resourceConstraints_MD_Constraints_useLimitation_lbl);
             this.idInfo_resourceConstraints_gbx.Controls.Add(this.idInfo_resourceConstraints_MD_Constraints_useLimitation);
             this.idInfo_resourceConstraints_gbx.Controls.Add(this.securityConstraints_gbx);
             this.idInfo_resourceConstraints_gbx.Controls.Add(this.legalContraints_gbx);
@@ -906,18 +908,18 @@
             this.idInfo_resourceConstraints_lbl.TabIndex = 25;
             this.idInfo_resourceConstraints_lbl.Text = "Resource Constraints";
             // 
-            // generalConstraints_lbl
+            // idInfo_resourceConstraints_MD_Constraints_useLimitation_lbl
             // 
-            this.generalConstraints_lbl.AutoSize = true;
-            this.generalConstraints_lbl.BackColor = System.Drawing.Color.Transparent;
-            this.generalConstraints_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.generalConstraints_lbl.Location = new System.Drawing.Point(26, 16);
-            this.generalConstraints_lbl.Name = "generalConstraints_lbl";
-            this.generalConstraints_lbl.Size = new System.Drawing.Size(109, 26);
-            this.generalConstraints_lbl.TabIndex = 24;
-            this.generalConstraints_lbl.TabStop = true;
-            this.generalConstraints_lbl.Text = "General Constraints /\r\nSystem of Records";
-            this.generalConstraints_lbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.genericOpenHelpFromLinkLabel_LinkClicked);
+            this.idInfo_resourceConstraints_MD_Constraints_useLimitation_lbl.AutoSize = true;
+            this.idInfo_resourceConstraints_MD_Constraints_useLimitation_lbl.BackColor = System.Drawing.Color.Transparent;
+            this.idInfo_resourceConstraints_MD_Constraints_useLimitation_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idInfo_resourceConstraints_MD_Constraints_useLimitation_lbl.Location = new System.Drawing.Point(26, 16);
+            this.idInfo_resourceConstraints_MD_Constraints_useLimitation_lbl.Name = "idInfo_resourceConstraints_MD_Constraints_useLimitation_lbl";
+            this.idInfo_resourceConstraints_MD_Constraints_useLimitation_lbl.Size = new System.Drawing.Size(109, 26);
+            this.idInfo_resourceConstraints_MD_Constraints_useLimitation_lbl.TabIndex = 24;
+            this.idInfo_resourceConstraints_MD_Constraints_useLimitation_lbl.TabStop = true;
+            this.idInfo_resourceConstraints_MD_Constraints_useLimitation_lbl.Text = "General Constraints /\r\nSystem of Records";
+            this.idInfo_resourceConstraints_MD_Constraints_useLimitation_lbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.genericOpenHelpFromLinkLabel_LinkClicked);
             // 
             // idInfo_resourceConstraints_MD_Constraints_useLimitation
             // 
@@ -975,17 +977,18 @@
             this.idInfo_resourceConstraints_MD_Constraints_useLimitation.Name = "idInfo_resourceConstraints_MD_Constraints_useLimitation";
             this.idInfo_resourceConstraints_MD_Constraints_useLimitation.Size = new System.Drawing.Size(278, 21);
             this.idInfo_resourceConstraints_MD_Constraints_useLimitation.TabIndex = 0;
+            this.idInfo_resourceConstraints_MD_Constraints_useLimitation.MouseClick += new System.Windows.Forms.MouseEventHandler(this.genericSpaciousEntryDropListForm_MouseClick);
             // 
             // securityConstraints_gbx
             // 
             this.securityConstraints_gbx.Controls.Add(this.securityConstraints_lbl);
             this.securityConstraints_gbx.Controls.Add(this.panel2);
-            this.securityConstraints_gbx.Controls.Add(this.securityConstraints_handlingDescription_lbl);
+            this.securityConstraints_gbx.Controls.Add(this.idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescription_lbl);
             this.securityConstraints_gbx.Controls.Add(this.idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescription);
-            this.securityConstraints_gbx.Controls.Add(this.securityConstraints_classificationSystem_lbl);
+            this.securityConstraints_gbx.Controls.Add(this.idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystem_lbl);
             this.securityConstraints_gbx.Controls.Add(this.idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystem);
             this.securityConstraints_gbx.Controls.Add(this.idInfo_resourceConstraints_MD_SecurityConstraints_userNote);
-            this.securityConstraints_gbx.Controls.Add(this.securityConstraints_userNote_lbl);
+            this.securityConstraints_gbx.Controls.Add(this.idInfo_resourceConstraints_MD_SecurityConstraints_userNote_lbl);
             this.securityConstraints_gbx.Location = new System.Drawing.Point(12, 178);
             this.securityConstraints_gbx.Name = "securityConstraints_gbx";
             this.securityConstraints_gbx.Size = new System.Drawing.Size(404, 161);
@@ -1013,7 +1016,7 @@
             this.panel2.Controls.Add(this.securityConstraints_classification_lbl);
             this.panel2.Controls.Add(this.idInfo_resourceConstraints_MD_SecurityConstraints_classification);
             this.panel2.Controls.Add(this.idInfo_resourceConstraints_MD_SecurityConstraints_useLimitation);
-            this.panel2.Controls.Add(this.securityConstraints_useLimitation_lbl);
+            this.panel2.Controls.Add(this.idInfo_resourceConstraints_MD_SecurityConstraints_useLimitation_lbl);
             this.panel2.Location = new System.Drawing.Point(24, 15);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(376, 55);
@@ -1061,26 +1064,27 @@
             this.idInfo_resourceConstraints_MD_SecurityConstraints_useLimitation.Size = new System.Drawing.Size(259, 21);
             this.idInfo_resourceConstraints_MD_SecurityConstraints_useLimitation.TabIndex = 0;
             this.idInfo_resourceConstraints_MD_SecurityConstraints_useLimitation.TextChanged += new System.EventHandler(this.cntrl_ValidateTextChanged);
+            this.idInfo_resourceConstraints_MD_SecurityConstraints_useLimitation.MouseClick += new System.Windows.Forms.MouseEventHandler(this.genericSpaciousEntryDropListForm_MouseClick);
             // 
-            // securityConstraints_useLimitation_lbl
+            // idInfo_resourceConstraints_MD_SecurityConstraints_useLimitation_lbl
             // 
-            this.securityConstraints_useLimitation_lbl.AutoSize = true;
-            this.securityConstraints_useLimitation_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.securityConstraints_useLimitation_lbl.Location = new System.Drawing.Point(6, 2);
-            this.securityConstraints_useLimitation_lbl.Name = "securityConstraints_useLimitation_lbl";
-            this.securityConstraints_useLimitation_lbl.Size = new System.Drawing.Size(77, 26);
-            this.securityConstraints_useLimitation_lbl.TabIndex = 10;
-            this.securityConstraints_useLimitation_lbl.Text = "Use Limitation/\r\nAccess Level";
+            this.idInfo_resourceConstraints_MD_SecurityConstraints_useLimitation_lbl.AutoSize = true;
+            this.idInfo_resourceConstraints_MD_SecurityConstraints_useLimitation_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idInfo_resourceConstraints_MD_SecurityConstraints_useLimitation_lbl.Location = new System.Drawing.Point(6, 2);
+            this.idInfo_resourceConstraints_MD_SecurityConstraints_useLimitation_lbl.Name = "idInfo_resourceConstraints_MD_SecurityConstraints_useLimitation_lbl";
+            this.idInfo_resourceConstraints_MD_SecurityConstraints_useLimitation_lbl.Size = new System.Drawing.Size(77, 26);
+            this.idInfo_resourceConstraints_MD_SecurityConstraints_useLimitation_lbl.TabIndex = 10;
+            this.idInfo_resourceConstraints_MD_SecurityConstraints_useLimitation_lbl.Text = "Use Limitation/\r\nAccess Level";
             // 
-            // securityConstraints_handlingDescription_lbl
+            // idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescription_lbl
             // 
-            this.securityConstraints_handlingDescription_lbl.AutoSize = true;
-            this.securityConstraints_handlingDescription_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.securityConstraints_handlingDescription_lbl.Location = new System.Drawing.Point(9, 129);
-            this.securityConstraints_handlingDescription_lbl.Name = "securityConstraints_handlingDescription_lbl";
-            this.securityConstraints_handlingDescription_lbl.Size = new System.Drawing.Size(104, 13);
-            this.securityConstraints_handlingDescription_lbl.TabIndex = 59;
-            this.securityConstraints_handlingDescription_lbl.Text = "Handling Description";
+            this.idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescription_lbl.AutoSize = true;
+            this.idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescription_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescription_lbl.Location = new System.Drawing.Point(9, 129);
+            this.idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescription_lbl.Name = "idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescription_lbl";
+            this.idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescription_lbl.Size = new System.Drawing.Size(104, 13);
+            this.idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescription_lbl.TabIndex = 59;
+            this.idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescription_lbl.Text = "Handling Description";
             // 
             // idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescription
             // 
@@ -1090,16 +1094,17 @@
             this.idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescription.Name = "idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescription";
             this.idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescription.Size = new System.Drawing.Size(255, 21);
             this.idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescription.TabIndex = 4;
+            this.idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescription.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.genericSpaciousEntryForm_MouseDoubleClick);
             // 
-            // securityConstraints_classificationSystem_lbl
+            // idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystem_lbl
             // 
-            this.securityConstraints_classificationSystem_lbl.AutoSize = true;
-            this.securityConstraints_classificationSystem_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.securityConstraints_classificationSystem_lbl.Location = new System.Drawing.Point(8, 108);
-            this.securityConstraints_classificationSystem_lbl.Name = "securityConstraints_classificationSystem_lbl";
-            this.securityConstraints_classificationSystem_lbl.Size = new System.Drawing.Size(107, 13);
-            this.securityConstraints_classificationSystem_lbl.TabIndex = 57;
-            this.securityConstraints_classificationSystem_lbl.Text = "Classification System";
+            this.idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystem_lbl.AutoSize = true;
+            this.idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystem_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystem_lbl.Location = new System.Drawing.Point(8, 108);
+            this.idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystem_lbl.Name = "idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystem_lbl";
+            this.idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystem_lbl.Size = new System.Drawing.Size(107, 13);
+            this.idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystem_lbl.TabIndex = 57;
+            this.idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystem_lbl.Text = "Classification System";
             // 
             // idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystem
             // 
@@ -1109,6 +1114,7 @@
             this.idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystem.Name = "idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystem";
             this.idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystem.Size = new System.Drawing.Size(255, 21);
             this.idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystem.TabIndex = 3;
+            this.idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystem.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.genericSpaciousEntryForm_MouseDoubleClick);
             // 
             // idInfo_resourceConstraints_MD_SecurityConstraints_userNote
             // 
@@ -1138,23 +1144,24 @@
             this.idInfo_resourceConstraints_MD_SecurityConstraints_userNote.Name = "idInfo_resourceConstraints_MD_SecurityConstraints_userNote";
             this.idInfo_resourceConstraints_MD_SecurityConstraints_userNote.Size = new System.Drawing.Size(258, 21);
             this.idInfo_resourceConstraints_MD_SecurityConstraints_userNote.TabIndex = 2;
+            this.idInfo_resourceConstraints_MD_SecurityConstraints_userNote.MouseClick += new System.Windows.Forms.MouseEventHandler(this.genericSpaciousEntryDropListForm_MouseClick);
             // 
-            // securityConstraints_userNote_lbl
+            // idInfo_resourceConstraints_MD_SecurityConstraints_userNote_lbl
             // 
-            this.securityConstraints_userNote_lbl.AutoSize = true;
-            this.securityConstraints_userNote_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.securityConstraints_userNote_lbl.Location = new System.Drawing.Point(50, 75);
-            this.securityConstraints_userNote_lbl.Name = "securityConstraints_userNote_lbl";
-            this.securityConstraints_userNote_lbl.Size = new System.Drawing.Size(62, 26);
-            this.securityConstraints_userNote_lbl.TabIndex = 12;
-            this.securityConstraints_userNote_lbl.Text = "User Note /\r\nComment";
+            this.idInfo_resourceConstraints_MD_SecurityConstraints_userNote_lbl.AutoSize = true;
+            this.idInfo_resourceConstraints_MD_SecurityConstraints_userNote_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idInfo_resourceConstraints_MD_SecurityConstraints_userNote_lbl.Location = new System.Drawing.Point(50, 75);
+            this.idInfo_resourceConstraints_MD_SecurityConstraints_userNote_lbl.Name = "idInfo_resourceConstraints_MD_SecurityConstraints_userNote_lbl";
+            this.idInfo_resourceConstraints_MD_SecurityConstraints_userNote_lbl.Size = new System.Drawing.Size(62, 26);
+            this.idInfo_resourceConstraints_MD_SecurityConstraints_userNote_lbl.TabIndex = 12;
+            this.idInfo_resourceConstraints_MD_SecurityConstraints_userNote_lbl.Text = "User Note /\r\nComment";
             // 
             // legalContraints_gbx
             // 
             this.legalContraints_gbx.Controls.Add(this.legalContraints_lbl);
             this.legalContraints_gbx.Controls.Add(this.idInfo_resourceConstraints_MD_LegalConstraints_otherConstraints);
-            this.legalContraints_gbx.Controls.Add(this.otherConstraints_lbl);
-            this.legalContraints_gbx.Controls.Add(this.useLimitation_lbl);
+            this.legalContraints_gbx.Controls.Add(this.idInfo_resourceConstraints_MD_LegalConstraints_otherConstraints_lbl);
+            this.legalContraints_gbx.Controls.Add(this.idInfo_resourceConstraints_MD_LegalConstraints_useLimitation_lbl);
             this.legalContraints_gbx.Controls.Add(this.idInfo_resourceConstraints_MD_LegalConstraints_useLimitation);
             this.legalContraints_gbx.Controls.Add(this.useConstraints_lbl);
             this.legalContraints_gbx.Controls.Add(this.accessConstraints_lbl);
@@ -1190,26 +1197,27 @@
             this.idInfo_resourceConstraints_MD_LegalConstraints_otherConstraints.Name = "idInfo_resourceConstraints_MD_LegalConstraints_otherConstraints";
             this.idInfo_resourceConstraints_MD_LegalConstraints_otherConstraints.Size = new System.Drawing.Size(255, 21);
             this.idInfo_resourceConstraints_MD_LegalConstraints_otherConstraints.TabIndex = 4;
+            this.idInfo_resourceConstraints_MD_LegalConstraints_otherConstraints.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.genericSpaciousEntryForm_MouseDoubleClick);
             // 
-            // otherConstraints_lbl
+            // idInfo_resourceConstraints_MD_LegalConstraints_otherConstraints_lbl
             // 
-            this.otherConstraints_lbl.AutoSize = true;
-            this.otherConstraints_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.otherConstraints_lbl.Location = new System.Drawing.Point(28, 101);
-            this.otherConstraints_lbl.Name = "otherConstraints_lbl";
-            this.otherConstraints_lbl.Size = new System.Drawing.Size(93, 13);
-            this.otherConstraints_lbl.TabIndex = 13;
-            this.otherConstraints_lbl.Text = "Other Constraints";
+            this.idInfo_resourceConstraints_MD_LegalConstraints_otherConstraints_lbl.AutoSize = true;
+            this.idInfo_resourceConstraints_MD_LegalConstraints_otherConstraints_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idInfo_resourceConstraints_MD_LegalConstraints_otherConstraints_lbl.Location = new System.Drawing.Point(28, 101);
+            this.idInfo_resourceConstraints_MD_LegalConstraints_otherConstraints_lbl.Name = "idInfo_resourceConstraints_MD_LegalConstraints_otherConstraints_lbl";
+            this.idInfo_resourceConstraints_MD_LegalConstraints_otherConstraints_lbl.Size = new System.Drawing.Size(93, 13);
+            this.idInfo_resourceConstraints_MD_LegalConstraints_otherConstraints_lbl.TabIndex = 13;
+            this.idInfo_resourceConstraints_MD_LegalConstraints_otherConstraints_lbl.Text = "Other Constraints";
             // 
-            // useLimitation_lbl
+            // idInfo_resourceConstraints_MD_LegalConstraints_useLimitation_lbl
             // 
-            this.useLimitation_lbl.AutoSize = true;
-            this.useLimitation_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.useLimitation_lbl.Location = new System.Drawing.Point(43, 24);
-            this.useLimitation_lbl.Name = "useLimitation_lbl";
-            this.useLimitation_lbl.Size = new System.Drawing.Size(73, 13);
-            this.useLimitation_lbl.TabIndex = 9;
-            this.useLimitation_lbl.Text = "Use Limitation";
+            this.idInfo_resourceConstraints_MD_LegalConstraints_useLimitation_lbl.AutoSize = true;
+            this.idInfo_resourceConstraints_MD_LegalConstraints_useLimitation_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idInfo_resourceConstraints_MD_LegalConstraints_useLimitation_lbl.Location = new System.Drawing.Point(43, 24);
+            this.idInfo_resourceConstraints_MD_LegalConstraints_useLimitation_lbl.Name = "idInfo_resourceConstraints_MD_LegalConstraints_useLimitation_lbl";
+            this.idInfo_resourceConstraints_MD_LegalConstraints_useLimitation_lbl.Size = new System.Drawing.Size(73, 13);
+            this.idInfo_resourceConstraints_MD_LegalConstraints_useLimitation_lbl.TabIndex = 9;
+            this.idInfo_resourceConstraints_MD_LegalConstraints_useLimitation_lbl.Text = "Use Limitation";
             // 
             // idInfo_resourceConstraints_MD_LegalConstraints_useLimitation
             // 
@@ -1219,6 +1227,7 @@
             this.idInfo_resourceConstraints_MD_LegalConstraints_useLimitation.Name = "idInfo_resourceConstraints_MD_LegalConstraints_useLimitation";
             this.idInfo_resourceConstraints_MD_LegalConstraints_useLimitation.Size = new System.Drawing.Size(255, 21);
             this.idInfo_resourceConstraints_MD_LegalConstraints_useLimitation.TabIndex = 0;
+            this.idInfo_resourceConstraints_MD_LegalConstraints_useLimitation.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.genericSpaciousEntryForm_MouseDoubleClick);
             // 
             // useConstraints_lbl
             // 
@@ -1573,6 +1582,7 @@
             this.language.Name = "language";
             this.language.Size = new System.Drawing.Size(233, 21);
             this.language.TabIndex = 5;
+            this.language.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.genericSpaciousEntryForm_MouseDoubleClick);
             // 
             // panel6
             // 
@@ -1770,6 +1780,7 @@
             this.idInfo_extent_description.Size = new System.Drawing.Size(235, 21);
             this.idInfo_extent_description.TabIndex = 0;
             this.idInfo_extent_description.TextChanged += new System.EventHandler(this.cntrl_ValidateTextChanged);
+            this.idInfo_extent_description.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.genericSpaciousEntryForm_MouseDoubleClick);
             // 
             // idInfo_extent_geographicBoundingBox_westLongDD
             // 
@@ -1780,6 +1791,7 @@
             this.idInfo_extent_geographicBoundingBox_westLongDD.Size = new System.Drawing.Size(120, 21);
             this.idInfo_extent_geographicBoundingBox_westLongDD.TabIndex = 6;
             this.idInfo_extent_geographicBoundingBox_westLongDD.TextChanged += new System.EventHandler(this.cntrl_ValidateTextChanged);
+            this.idInfo_extent_geographicBoundingBox_westLongDD.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.genericSpaciousEntryForm_MouseDoubleClick);
             // 
             // idInfo_extent_geographicBoundingBox_southLatDD
             // 
@@ -1790,6 +1802,7 @@
             this.idInfo_extent_geographicBoundingBox_southLatDD.Size = new System.Drawing.Size(120, 21);
             this.idInfo_extent_geographicBoundingBox_southLatDD.TabIndex = 5;
             this.idInfo_extent_geographicBoundingBox_southLatDD.TextChanged += new System.EventHandler(this.cntrl_ValidateTextChanged);
+            this.idInfo_extent_geographicBoundingBox_southLatDD.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.genericSpaciousEntryForm_MouseDoubleClick);
             // 
             // idInfo_extent_geographicBoundingBox_northLatDD
             // 
@@ -1800,6 +1813,7 @@
             this.idInfo_extent_geographicBoundingBox_northLatDD.Size = new System.Drawing.Size(120, 21);
             this.idInfo_extent_geographicBoundingBox_northLatDD.TabIndex = 3;
             this.idInfo_extent_geographicBoundingBox_northLatDD.TextChanged += new System.EventHandler(this.cntrl_ValidateTextChanged);
+            this.idInfo_extent_geographicBoundingBox_northLatDD.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.genericSpaciousEntryForm_MouseDoubleClick);
             // 
             // idInfo_extent_geographicBoundingBox_eastLongDD
             // 
@@ -1810,6 +1824,7 @@
             this.idInfo_extent_geographicBoundingBox_eastLongDD.Size = new System.Drawing.Size(120, 21);
             this.idInfo_extent_geographicBoundingBox_eastLongDD.TabIndex = 4;
             this.idInfo_extent_geographicBoundingBox_eastLongDD.TextChanged += new System.EventHandler(this.cntrl_ValidateTextChanged);
+            this.idInfo_extent_geographicBoundingBox_eastLongDD.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.genericSpaciousEntryForm_MouseDoubleClick);
             // 
             // groupBox9
             // 
@@ -1951,6 +1966,7 @@
             this.idInfo_Purpose.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.idInfo_Purpose.Size = new System.Drawing.Size(458, 88);
             this.idInfo_Purpose.TabIndex = 2;
+            this.idInfo_Purpose.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.genericSpaciousEntryForm_MouseDoubleClick);
             // 
             // keywordsGroupBox
             // 
@@ -2243,6 +2259,7 @@
             this.idInfo_Abstract.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.idInfo_Abstract.Size = new System.Drawing.Size(458, 69);
             this.idInfo_Abstract.TabIndex = 1;
+            this.idInfo_Abstract.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.genericSpaciousEntryForm_MouseDoubleClick);
             this.idInfo_Abstract.Validating += new System.ComponentModel.CancelEventHandler(this.cntrl_Validating);
             // 
             // idInfo_citation_Title
@@ -2257,7 +2274,7 @@
             this.idInfo_citation_Title.Size = new System.Drawing.Size(458, 45);
             this.idInfo_citation_Title.TabIndex = 0;
             this.idInfo_citation_Title.Tag = "";
-            this.idInfo_citation_Title.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.idInfo_citation_Title_MouseDoubleClick);
+            this.idInfo_citation_Title.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.genericSpaciousEntryForm_MouseDoubleClick);
             this.idInfo_citation_Title.Validating += new System.ComponentModel.CancelEventHandler(this.cntrl_Validating);
             // 
             // tabControl1
@@ -2555,20 +2572,20 @@
         private System.Windows.Forms.GroupBox idInfo_resourceConstraints_gbx;
         private System.Windows.Forms.ComboBox idInfo_resourceConstraints_MD_Constraints_useLimitation;
         private System.Windows.Forms.GroupBox securityConstraints_gbx;
-        private System.Windows.Forms.Label securityConstraints_handlingDescription_lbl;
+        private System.Windows.Forms.Label idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescription_lbl;
         private System.Windows.Forms.TextBox idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescription;
-        private System.Windows.Forms.Label securityConstraints_classificationSystem_lbl;
+        private System.Windows.Forms.Label idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystem_lbl;
         private System.Windows.Forms.TextBox idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystem;
         private System.Windows.Forms.ComboBox idInfo_resourceConstraints_MD_SecurityConstraints_userNote;
         private System.Windows.Forms.ComboBox idInfo_resourceConstraints_MD_SecurityConstraints_useLimitation;
-        private System.Windows.Forms.Label securityConstraints_userNote_lbl;
+        private System.Windows.Forms.Label idInfo_resourceConstraints_MD_SecurityConstraints_userNote_lbl;
         private System.Windows.Forms.Label securityConstraints_classification_lbl;
-        private System.Windows.Forms.Label securityConstraints_useLimitation_lbl;
+        private System.Windows.Forms.Label idInfo_resourceConstraints_MD_SecurityConstraints_useLimitation_lbl;
         private System.Windows.Forms.ComboBox idInfo_resourceConstraints_MD_SecurityConstraints_classification;
         private System.Windows.Forms.GroupBox legalContraints_gbx;
         private System.Windows.Forms.TextBox idInfo_resourceConstraints_MD_LegalConstraints_otherConstraints;
-        private System.Windows.Forms.Label otherConstraints_lbl;
-        private System.Windows.Forms.Label useLimitation_lbl;
+        private System.Windows.Forms.Label idInfo_resourceConstraints_MD_LegalConstraints_otherConstraints_lbl;
+        private System.Windows.Forms.Label idInfo_resourceConstraints_MD_LegalConstraints_useLimitation_lbl;
         private System.Windows.Forms.TextBox idInfo_resourceConstraints_MD_LegalConstraints_useLimitation;
         private System.Windows.Forms.Label useConstraints_lbl;
         private System.Windows.Forms.Label accessConstraints_lbl;
@@ -2637,7 +2654,7 @@
         private System.Windows.Forms.LinkLabel metadataInformation_lbl;
         private System.Windows.Forms.LinkLabel legalContraints_lbl;
         private System.Windows.Forms.LinkLabel securityConstraints_lbl;
-        private System.Windows.Forms.LinkLabel generalConstraints_lbl;
+        private System.Windows.Forms.LinkLabel idInfo_resourceConstraints_MD_Constraints_useLimitation_lbl;
         private System.Windows.Forms.Label idInfo_resourceConstraints_lbl;
     }
 }

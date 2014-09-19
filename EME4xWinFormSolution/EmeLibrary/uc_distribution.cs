@@ -147,7 +147,7 @@ namespace EmeLibrary
 
 
         /// <summary>
-        /// This methon is an event fired when the user clicks on the add distributor button
+        /// This method is an event fired when the user clicks on the add distributor button
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -155,7 +155,9 @@ namespace EmeLibrary
         {
             //Create new distributor
             MD_Distributor d1 = new MD_Distributor();
-            d1.distributorContact = null;
+            //d1.distributorContact = null;
+            d1.distributorContact = new CI_ResponsibleParty();
+            //d1.distributorTransferOptions__MD_DigitalTransferOptions
 
             //if first in list add to the list otherwise save current information in controls then add new to list
             if (_distributorList == null)
@@ -185,6 +187,9 @@ namespace EmeLibrary
             //Bind new distributor to controls
             bind_MD_Dist_Field(_distributorList[_distributorList_idx]);
             distributor_gbx.Enabled = true;
+            
+            //adds a DTO section too.
+            add_DTO();
            
             //distributor_Contact.Tag = "required";
             //val_Distribution_frmControls(this.Controls);
@@ -693,7 +698,27 @@ namespace EmeLibrary
 
         private void add_DTO_Click(object sender, EventArgs e)
         {
+            add_DTO();
 
+            //MD_DigitalTransferOptions md_DTO = new MD_DigitalTransferOptions();
+            //if (_digitalTransferOptions.Count == 0)
+            //{
+            //    _digitalTransferOptions = new List<MD_DigitalTransferOptions>();
+            //    _digitalTransferOptions_idx = 0;
+            //    _digitalTransferOptions.Add(md_DTO);
+            //}
+            //else
+            //{
+            //    bind_MD_DTO_Class(_digitalTransferOptions[_digitalTransferOptions_idx]);
+            //    _digitalTransferOptions.Add(md_DTO);
+            //    //_distributionFormat_idx++;
+            //    _digitalTransferOptions_idx = _digitalTransferOptions.Count - 1;
+            //}
+            //adjustPagers(MD_DTO, _digitalTransferOptions);
+            //bind_MD_DTO_Fields(_digitalTransferOptions[_digitalTransferOptions_idx]);      
+        }
+        private void add_DTO()
+        {
             MD_DigitalTransferOptions md_DTO = new MD_DigitalTransferOptions();
             if (_digitalTransferOptions.Count == 0)
             {
@@ -709,7 +734,7 @@ namespace EmeLibrary
                 _digitalTransferOptions_idx = _digitalTransferOptions.Count - 1;
             }
             adjustPagers(MD_DTO, _digitalTransferOptions);
-            bind_MD_DTO_Fields(_digitalTransferOptions[_digitalTransferOptions_idx]);      
+            bind_MD_DTO_Fields(_digitalTransferOptions[_digitalTransferOptions_idx]); 
         }
 
         private void del_MD_DTO_Click(object sender, EventArgs e)
@@ -1191,6 +1216,33 @@ namespace EmeLibrary
                 Utils1.HelpSeeker("/" + n, ref Utils1.globalHelpProc);
             }
             //else { Utils1.HelpSeeker("/Help_Main.html", ref Utils1.globalHelpProc); }
+
+        }
+
+        private void genericSpaciousEntryForm_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            Control genericControl = (Control)sender;
+
+
+            //TextBox clickedTextBox = (TextBox)sender;
+
+            //LinkLabel tbxLinkLabel
+            string tbxName = genericControl.Name; //clickedTextBox.Name;            
+            tbxName = tbxName.Replace("_txt", "");
+            string tbxText = genericControl.Text; //clickedTextBox.Text;
+            Control[] foundControl = this.Controls.Find(tbxName + "_lbl", true);
+            if (foundControl.Length > 0)
+            {
+                //LinkLabel tbxLabel = (LinkLabel)foundControl[0];
+
+                tbxName = foundControl[0].Text;
+            }
+
+            if (Utils1.spaciousInputBox(tbxName, tbxName, ref tbxText) == DialogResult.OK)
+            {
+                //clickedTextBox.Text = tbxText;
+                genericControl.Text = tbxText;
+            }
 
         }
 

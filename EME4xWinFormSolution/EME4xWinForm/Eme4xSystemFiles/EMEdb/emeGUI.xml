@@ -179,7 +179,7 @@
 	<HelpLink>t1_timeinfo.html</HelpLink>
   </emeControl>
   <emeControl>
-    <controlName>tempTimePeriod_Desc_lbl</controlName>
+    <controlName>extent__TimePeriod__description_lbl</controlName>
     <TabNum>1</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
@@ -207,7 +207,7 @@
     <HoverNote>Frequency between time events based on floating point values for temporal length</HoverNote>
   </emeControl>
   <emeControl>
-    <controlName>timeInstant_description_lbl</controlName>
+    <controlName>extent__TimeInstant__description_lbl</controlName>
     <TabNum>1</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
@@ -258,7 +258,7 @@
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote></HoverNote>	
-	<HelpLink>t2_contactsGeneral.html</HelpLink>
+	<HelpLink>t2_contactGeneral.html</HelpLink>
   </emeControl>  
   <emeControl>  
     <controlName>contact_CI_ResponsibleParty</controlName>
@@ -296,6 +296,22 @@
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>User friendly name of the primary program related to this data asset, from the Federal Program Inventory.</HoverNote>
 	<HelpLink>t2_contactProgramCode.html</HelpLink>
+  </emeControl>
+  <emeControl>
+    <controlName>contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage_lbl</controlName>
+    <TabNum>2</TabNum>
+    <FGDC_Def></FGDC_Def>
+    <EPARequirementGuidance></EPARequirementGuidance>
+    <HoverNote>Provide the Internet location (URL) for access to on-line hosted resources.</HoverNote>
+	<HelpLink></HelpLink>
+  </emeControl>
+  <emeControl>
+    <controlName>contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode_lbl</controlName>
+    <TabNum>2</TabNum>
+    <FGDC_Def></FGDC_Def>
+    <EPARequirementGuidance></EPARequirementGuidance>
+    <HoverNote>Choose a value for the function performed by the Linkage (online resource).</HoverNote>
+	<HelpLink></HelpLink>
   </emeControl>
   <emeControl>
     <controlName>metadataInformation_lbl</controlName>
@@ -577,16 +593,16 @@
 	<HelpLink></HelpLink>
   </emeControl>
   <emeControl>
-    <controlName>generalConstraints_lbl</controlName>
+    <controlName>idInfo_resourceConstraints_MD_Constraints_useLimitation_lbl</controlName>
     <TabNum>2</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
-    <HoverNote>Statement on the fitness of use or limitations on the use of the resource or metadata. If the systems is designated as a system of records under the Privacy Act of 1974, provide the URL to the System of Records Notice related to this dataset.</HoverNote>
+    <HoverNote>Statement on the fitness of use or limitations on the use of the resource or metadata. If the systems is designated as a System of Records under the Privacy Act of 1974, choose the System of Records Notice related to this dataset.</HoverNote>
 	<HelpLink>t2_useconstGeneral.html</HelpLink>
   </emeControl>
   <emeControl>
-    <controlName>useLimitation_lbl</controlName>
-    <TabNum>1</TabNum>
+    <controlName>idInfo_resourceConstraints_MD_LegalConstraints_useLimitation_lbl</controlName>
+    <TabNum>2</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>Statement on the fitness of use or limitations on the use of the resource or metadata</HoverNote>
@@ -606,7 +622,7 @@
     <HoverNote>Restrictions or limitations or warnings to protect privacy, intellectual property, or other special restrictions on the resource or the metadata</HoverNote>
   </emeControl>
   <emeControl>
-    <controlName>otherConstraints_lbl</controlName>
+    <controlName>idInfo_resourceConstraints_MD_LegalConstraints_otherConstraints_lbl</controlName>
     <TabNum>2</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
@@ -621,7 +637,7 @@
 	<HelpLink>t2_secclass.html</HelpLink>
   </emeControl>
   <emeControl>
-    <controlName>securityConstraints_useLimitation_lbl</controlName>
+    <controlName>idInfo_resourceConstraints_MD_SecurityConstraints_useLimitation_lbl</controlName>
     <TabNum>2</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
@@ -635,21 +651,21 @@
     <HoverNote>Name of the handling restrictions on the resource or the metadata</HoverNote>
   </emeControl>
   <emeControl>
-    <controlName>securityConstraints_userNote_lbl</controlName>
+    <controlName>idInfo_resourceConstraints_MD_SecurityConstraints_userNote_lbl</controlName>
     <TabNum>2</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>An explanation of the classification level applied to the resource or metadata</HoverNote>
   </emeControl>
   <emeControl>
-    <controlName>securityConstraints_classificationSystem_lbl</controlName>
+    <controlName>idInfo_resourceConstraints_MD_SecurityConstraints_classificationSystem_lbl</controlName>
     <TabNum>2</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>Name of the security classification system</HoverNote>
   </emeControl>
   <emeControl>
-    <controlName>securityConstraints_handlingDescription_lbl</controlName>
+    <controlName>idInfo_resourceConstraints_MD_SecurityConstraints_handlingDescription_lbl</controlName>
     <TabNum>2</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>

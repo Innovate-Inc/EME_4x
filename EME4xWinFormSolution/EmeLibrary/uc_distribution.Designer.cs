@@ -663,6 +663,7 @@
             this.onLine__CI_OnlineResource__applicationProfile_txt.Name = "onLine__CI_OnlineResource__applicationProfile_txt";
             this.onLine__CI_OnlineResource__applicationProfile_txt.Size = new System.Drawing.Size(279, 21);
             this.onLine__CI_OnlineResource__applicationProfile_txt.TabIndex = 2;
+            this.onLine__CI_OnlineResource__applicationProfile_txt.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.genericSpaciousEntryForm_MouseDoubleClick);
             // 
             // onLine__CI_OnlineResource__protocol_txt
             // 
@@ -672,6 +673,7 @@
             this.onLine__CI_OnlineResource__protocol_txt.Name = "onLine__CI_OnlineResource__protocol_txt";
             this.onLine__CI_OnlineResource__protocol_txt.Size = new System.Drawing.Size(279, 21);
             this.onLine__CI_OnlineResource__protocol_txt.TabIndex = 1;
+            this.onLine__CI_OnlineResource__protocol_txt.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.genericSpaciousEntryForm_MouseDoubleClick);
             // 
             // onLine__CI_OnlineResource__function_lbl
             // 
@@ -703,6 +705,7 @@
             this.onLine__CI_OnlineResource__name_txt.Name = "onLine__CI_OnlineResource__name_txt";
             this.onLine__CI_OnlineResource__name_txt.Size = new System.Drawing.Size(279, 21);
             this.onLine__CI_OnlineResource__name_txt.TabIndex = 3;
+            this.onLine__CI_OnlineResource__name_txt.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.genericSpaciousEntryForm_MouseDoubleClick);
             // 
             // onLine__CI_OnlineResource__description_txt
             // 
@@ -712,6 +715,7 @@
             this.onLine__CI_OnlineResource__description_txt.Name = "onLine__CI_OnlineResource__description_txt";
             this.onLine__CI_OnlineResource__description_txt.Size = new System.Drawing.Size(279, 21);
             this.onLine__CI_OnlineResource__description_txt.TabIndex = 4;
+            this.onLine__CI_OnlineResource__description_txt.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.genericSpaciousEntryForm_MouseDoubleClick);
             // 
             // label16
             // 
@@ -730,6 +734,7 @@
             this.onLine__CI_OnlineResource__linkage__URL_txt.Size = new System.Drawing.Size(279, 21);
             this.onLine__CI_OnlineResource__linkage__URL_txt.TabIndex = 0;
             this.onLine__CI_OnlineResource__linkage__URL_txt.Tag = "";
+            this.onLine__CI_OnlineResource__linkage__URL_txt.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.genericSpaciousEntryForm_MouseDoubleClick);
             // 
             // onLine__CI_OnlineResource__protocol_lbl
             // 
@@ -825,6 +830,7 @@
             this.md_digitalTransferOptions_transferSize_txt.Name = "md_digitalTransferOptions_transferSize_txt";
             this.md_digitalTransferOptions_transferSize_txt.Size = new System.Drawing.Size(205, 21);
             this.md_digitalTransferOptions_transferSize_txt.TabIndex = 3;
+            this.md_digitalTransferOptions_transferSize_txt.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.genericSpaciousEntryForm_MouseDoubleClick);
             // 
             // md_digitalTransferOptions_UnitsOfDistribution_txt
             // 
@@ -834,6 +840,7 @@
             this.md_digitalTransferOptions_UnitsOfDistribution_txt.Name = "md_digitalTransferOptions_UnitsOfDistribution_txt";
             this.md_digitalTransferOptions_UnitsOfDistribution_txt.Size = new System.Drawing.Size(205, 21);
             this.md_digitalTransferOptions_UnitsOfDistribution_txt.TabIndex = 2;
+            this.md_digitalTransferOptions_UnitsOfDistribution_txt.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.genericSpaciousEntryForm_MouseDoubleClick);
             // 
             // MD_DTO
             // 
@@ -1296,6 +1303,7 @@
             // 
             this.distributor_gbx.AutoSize = true;
             this.distributor_gbx.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.distributor_gbx.BackColor = System.Drawing.Color.Transparent;
             this.distributor_gbx.Controls.Add(this.flowLayoutPanel6);
             this.distributor_gbx.Enabled = false;
             this.distributor_gbx.Location = new System.Drawing.Point(3, 22);
@@ -1309,6 +1317,7 @@
             // uc_distribution_lbl
             // 
             this.uc_distribution_lbl.AutoSize = true;
+            this.uc_distribution_lbl.BackColor = System.Drawing.Color.Transparent;
             this.uc_distribution_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uc_distribution_lbl.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.uc_distribution_lbl.Location = new System.Drawing.Point(24, 22);
@@ -1319,6 +1328,7 @@
             // 
             // MD_Dist
             // 
+            this.MD_Dist.BackColor = System.Drawing.Color.Transparent;
             this.MD_Dist.Controls.Add(this.del_MD_Dist_btn);
             this.MD_Dist.Controls.Add(this.add_MD_Dist_btn);
             this.MD_Dist.Controls.Add(this.pgU_MD_Dist_btn);
@@ -1334,6 +1344,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.MD_Dist);
             this.groupBox1.Location = new System.Drawing.Point(134, -1);
             this.groupBox1.Name = "groupBox1";
@@ -1350,6 +1361,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.uc_distribution_lbl);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.distributor_gbx);

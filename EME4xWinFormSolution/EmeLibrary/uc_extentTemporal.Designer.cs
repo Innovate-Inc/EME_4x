@@ -45,7 +45,7 @@
             this.extent__TimePeriod__beginPosition_btn = new System.Windows.Forms.Button();
             this.extent__TimePeriod__beginPosition_dtP = new System.Windows.Forms.DateTimePicker();
             this.extent__TimePeriod__beginPosition = new System.Windows.Forms.TextBox();
-            this.tempTimePeriod_Desc_lbl = new System.Windows.Forms.Label();
+            this.extent__TimePeriod__description_lbl = new System.Windows.Forms.Label();
             this.extent__TimePeriod__description = new System.Windows.Forms.TextBox();
             this.extent__TimePeriod__timeIntervalUnit_cbo = new System.Windows.Forms.ComboBox();
             this.timePeriod_Interval_lbl = new System.Windows.Forms.Label();
@@ -57,7 +57,7 @@
             this.extent__TimeInstant__timePosition_dtP = new System.Windows.Forms.DateTimePicker();
             this.timeInstant_timePosition_lbl = new System.Windows.Forms.Label();
             this.extent__TimeInstant__timePosition = new System.Windows.Forms.TextBox();
-            this.timeInstant_description_lbl = new System.Windows.Forms.Label();
+            this.extent__TimeInstant__description_lbl = new System.Windows.Forms.Label();
             this.extent__TimeInstant__description = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.temporalExtent.SuspendLayout();
@@ -112,7 +112,7 @@
             // 
             this.timePeriod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.timePeriod.Controls.Add(this.panel1);
-            this.timePeriod.Controls.Add(this.tempTimePeriod_Desc_lbl);
+            this.timePeriod.Controls.Add(this.extent__TimePeriod__description_lbl);
             this.timePeriod.Controls.Add(this.extent__TimePeriod__description);
             this.timePeriod.Controls.Add(this.extent__TimePeriod__timeIntervalUnit_cbo);
             this.timePeriod.Controls.Add(this.timePeriod_Interval_lbl);
@@ -164,9 +164,9 @@
             this.extent__TimePeriod__beginPosition_cbo.FormattingEnabled = true;
             this.extent__TimePeriod__beginPosition_cbo.Items.AddRange(new object[] {
             "unknown",
+            "now",
             "after",
-            "before",
-            "now"});
+            "before"});
             this.extent__TimePeriod__beginPosition_cbo.Location = new System.Drawing.Point(196, 6);
             this.extent__TimePeriod__beginPosition_cbo.Name = "extent__TimePeriod__beginPosition_cbo";
             this.extent__TimePeriod__beginPosition_cbo.Size = new System.Drawing.Size(87, 21);
@@ -211,9 +211,9 @@
             this.extent__TimePeriod__endPosition_cbo.FormattingEnabled = true;
             this.extent__TimePeriod__endPosition_cbo.Items.AddRange(new object[] {
             "unknown",
+            "now",
             "after",
-            "before",
-            "now"});
+            "before"});
             this.extent__TimePeriod__endPosition_cbo.Location = new System.Drawing.Point(196, 31);
             this.extent__TimePeriod__endPosition_cbo.Name = "extent__TimePeriod__endPosition_cbo";
             this.extent__TimePeriod__endPosition_cbo.Size = new System.Drawing.Size(87, 21);
@@ -267,14 +267,14 @@
             this.extent__TimePeriod__beginPosition.TabStop = false;
             this.toolTip1.SetToolTip(this.extent__TimePeriod__beginPosition, "Choose an Exact Date or Indeterminate Value");
             // 
-            // tempTimePeriod_Desc_lbl
+            // extent__TimePeriod__description_lbl
             // 
-            this.tempTimePeriod_Desc_lbl.AutoSize = true;
-            this.tempTimePeriod_Desc_lbl.Location = new System.Drawing.Point(5, 9);
-            this.tempTimePeriod_Desc_lbl.Name = "tempTimePeriod_Desc_lbl";
-            this.tempTimePeriod_Desc_lbl.Size = new System.Drawing.Size(60, 13);
-            this.tempTimePeriod_Desc_lbl.TabIndex = 45;
-            this.tempTimePeriod_Desc_lbl.Text = "Description";
+            this.extent__TimePeriod__description_lbl.AutoSize = true;
+            this.extent__TimePeriod__description_lbl.Location = new System.Drawing.Point(5, 9);
+            this.extent__TimePeriod__description_lbl.Name = "extent__TimePeriod__description_lbl";
+            this.extent__TimePeriod__description_lbl.Size = new System.Drawing.Size(60, 13);
+            this.extent__TimePeriod__description_lbl.TabIndex = 45;
+            this.extent__TimePeriod__description_lbl.Text = "Description";
             // 
             // extent__TimePeriod__description
             // 
@@ -283,6 +283,7 @@
             this.extent__TimePeriod__description.Name = "extent__TimePeriod__description";
             this.extent__TimePeriod__description.Size = new System.Drawing.Size(240, 21);
             this.extent__TimePeriod__description.TabIndex = 0;
+            this.extent__TimePeriod__description.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.genericSpaciousEntryForm_MouseDoubleClick);
             // 
             // extent__TimePeriod__timeIntervalUnit_cbo
             // 
@@ -320,7 +321,7 @@
             // 
             this.timeInstant.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.timeInstant.Controls.Add(this.panel2);
-            this.timeInstant.Controls.Add(this.timeInstant_description_lbl);
+            this.timeInstant.Controls.Add(this.extent__TimeInstant__description_lbl);
             this.timeInstant.Controls.Add(this.extent__TimeInstant__description);
             this.timeInstant.ForeColor = System.Drawing.SystemColors.ControlText;
             this.timeInstant.Location = new System.Drawing.Point(4, 22);
@@ -406,14 +407,14 @@
             this.extent__TimeInstant__timePosition.TabStop = false;
             this.toolTip1.SetToolTip(this.extent__TimeInstant__timePosition, "Choose an Exact Date or Indeterminate Value");
             // 
-            // timeInstant_description_lbl
+            // extent__TimeInstant__description_lbl
             // 
-            this.timeInstant_description_lbl.AutoSize = true;
-            this.timeInstant_description_lbl.Location = new System.Drawing.Point(5, 9);
-            this.timeInstant_description_lbl.Name = "timeInstant_description_lbl";
-            this.timeInstant_description_lbl.Size = new System.Drawing.Size(60, 13);
-            this.timeInstant_description_lbl.TabIndex = 45;
-            this.timeInstant_description_lbl.Text = "Description";
+            this.extent__TimeInstant__description_lbl.AutoSize = true;
+            this.extent__TimeInstant__description_lbl.Location = new System.Drawing.Point(5, 9);
+            this.extent__TimeInstant__description_lbl.Name = "extent__TimeInstant__description_lbl";
+            this.extent__TimeInstant__description_lbl.Size = new System.Drawing.Size(60, 13);
+            this.extent__TimeInstant__description_lbl.TabIndex = 45;
+            this.extent__TimeInstant__description_lbl.Text = "Description";
             // 
             // extent__TimeInstant__description
             // 
@@ -423,6 +424,7 @@
             this.extent__TimeInstant__description.Size = new System.Drawing.Size(240, 21);
             this.extent__TimeInstant__description.TabIndex = 0;
             this.extent__TimeInstant__description.Tag = "";
+            this.extent__TimeInstant__description.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.genericSpaciousEntryForm_MouseDoubleClick);
             // 
             // uc_extentTemporal
             // 
@@ -463,8 +465,8 @@
         private System.Windows.Forms.DateTimePicker extent__TimePeriod__endPosition_dtP;
         private System.Windows.Forms.TextBox extent__TimePeriod__endPosition;
         private System.Windows.Forms.ComboBox extent__TimePeriod__endPosition_cbo;
-        private System.Windows.Forms.Label tempTimePeriod_Desc_lbl;
-        private System.Windows.Forms.Label timeInstant_description_lbl;
+        private System.Windows.Forms.Label extent__TimePeriod__description_lbl;
+        private System.Windows.Forms.Label extent__TimeInstant__description_lbl;
         private System.Windows.Forms.TextBox extent__TimeInstant__description;
         private System.Windows.Forms.Button extent__TimeInstant__timePosition_btn;
         private System.Windows.Forms.DateTimePicker extent__TimeInstant__timePosition_dtP;

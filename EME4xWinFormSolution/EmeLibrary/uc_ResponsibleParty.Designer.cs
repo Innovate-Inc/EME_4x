@@ -106,6 +106,7 @@
             this.positionName.Size = new System.Drawing.Size(178, 21);
             this.positionName.TabIndex = 7;
             this.positionName.Tag = "required1";
+            this.positionName.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.genericSpaciousEntryForm_MouseDoubleClick);
             this.positionName.Validating += new System.ComponentModel.CancelEventHandler(this.responsibleParty_Validating);
             // 
             // organisationName
@@ -118,6 +119,7 @@
             this.organisationName.Size = new System.Drawing.Size(178, 21);
             this.organisationName.TabIndex = 6;
             this.organisationName.Tag = "required1";
+            this.organisationName.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.genericSpaciousEntryForm_MouseDoubleClick);
             this.organisationName.Validating += new System.ComponentModel.CancelEventHandler(this.responsibleParty_Validating);
             // 
             // contactInfo__CI_Contact__phone__CI_Telephone__voice
@@ -128,6 +130,7 @@
             this.contactInfo__CI_Contact__phone__CI_Telephone__voice.Name = "contactInfo__CI_Contact__phone__CI_Telephone__voice";
             this.contactInfo__CI_Contact__phone__CI_Telephone__voice.Size = new System.Drawing.Size(186, 21);
             this.contactInfo__CI_Contact__phone__CI_Telephone__voice.TabIndex = 6;
+            this.contactInfo__CI_Contact__phone__CI_Telephone__voice.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.genericSpaciousEntryForm_MouseDoubleClick);
             // 
             // role
             // 
@@ -223,6 +226,7 @@
             this.contactInfo__CI_Contact__phone__CI_Telephone__facsimile.Name = "contactInfo__CI_Contact__phone__CI_Telephone__facsimile";
             this.contactInfo__CI_Contact__phone__CI_Telephone__facsimile.Size = new System.Drawing.Size(186, 21);
             this.contactInfo__CI_Contact__phone__CI_Telephone__facsimile.TabIndex = 7;
+            this.contactInfo__CI_Contact__phone__CI_Telephone__facsimile.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.genericSpaciousEntryForm_MouseDoubleClick);
             // 
             // individualName
             // 
@@ -234,6 +238,7 @@
             this.individualName.Size = new System.Drawing.Size(178, 21);
             this.individualName.TabIndex = 5;
             this.individualName.Tag = "required1";
+            this.individualName.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.genericSpaciousEntryForm_MouseDoubleClick);
             this.individualName.Validating += new System.ComponentModel.CancelEventHandler(this.responsibleParty_Validating);
             // 
             // contactInfo__CI_Contact__address__CI_Address__deliveryPoint_lbl
@@ -255,6 +260,7 @@
             this.contactInfo__CI_Contact__address__CI_Address__deliveryPoint.Name = "contactInfo__CI_Contact__address__CI_Address__deliveryPoint";
             this.contactInfo__CI_Contact__address__CI_Address__deliveryPoint.Size = new System.Drawing.Size(315, 21);
             this.contactInfo__CI_Contact__address__CI_Address__deliveryPoint.TabIndex = 1;
+            this.contactInfo__CI_Contact__address__CI_Address__deliveryPoint.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.genericSpaciousEntryForm_MouseDoubleClick);
             // 
             // contactInfo__CI_Contact__address__CI_Address__city_lbl
             // 
@@ -275,6 +281,7 @@
             this.contactInfo__CI_Contact__address__CI_Address__city.Name = "contactInfo__CI_Contact__address__CI_Address__city";
             this.contactInfo__CI_Contact__address__CI_Address__city.Size = new System.Drawing.Size(100, 21);
             this.contactInfo__CI_Contact__address__CI_Address__city.TabIndex = 2;
+            this.contactInfo__CI_Contact__address__CI_Address__city.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.genericSpaciousEntryForm_MouseDoubleClick);
             // 
             // contactInfo__CI_Contact__address__CI_Address__administrativeArea_lbl
             // 
@@ -333,6 +340,7 @@
             this.contactInfo__CI_Contact__address__CI_Address__county.Name = "contactInfo__CI_Contact__address__CI_Address__county";
             this.contactInfo__CI_Contact__address__CI_Address__county.Size = new System.Drawing.Size(150, 21);
             this.contactInfo__CI_Contact__address__CI_Address__county.TabIndex = 5;
+            this.contactInfo__CI_Contact__address__CI_Address__county.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.genericSpaciousEntryForm_MouseDoubleClick);
             // 
             // contactInfo__CI_Contact__address__CI_Address__electronicMailAddress_lbl
             // 
@@ -355,6 +363,7 @@
             this.contactInfo__CI_Contact__address__CI_Address__electronicMailAddress.TabIndex = 8;
             this.contactInfo__CI_Contact__address__CI_Address__electronicMailAddress.Tag = "required";
             this.contactInfo__CI_Contact__address__CI_Address__electronicMailAddress.TextChanged += new System.EventHandler(this.responsibleParty_TextChangedValidation);
+            this.contactInfo__CI_Contact__address__CI_Address__electronicMailAddress.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.genericSpaciousEntryForm_MouseDoubleClick);
             // 
             // contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage_lbl
             // 
@@ -375,6 +384,7 @@
             this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage.Name = "contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage";
             this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage.Size = new System.Drawing.Size(186, 21);
             this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage.TabIndex = 9;
+            this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.genericSpaciousEntryForm_MouseDoubleClick);
             // 
             // contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode_lbl
             // 
@@ -395,6 +405,7 @@
             this.contactInfo__CI_Contact__hoursOfService.Name = "contactInfo__CI_Contact__hoursOfService";
             this.contactInfo__CI_Contact__hoursOfService.Size = new System.Drawing.Size(186, 21);
             this.contactInfo__CI_Contact__hoursOfService.TabIndex = 11;
+            this.contactInfo__CI_Contact__hoursOfService.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.genericSpaciousEntryForm_MouseDoubleClick);
             // 
             // contactInfo__CI_Contact__hoursOfService_lbl
             // 
@@ -427,6 +438,7 @@
             this.contactInfo__CI_Contact__contactInstructions.Name = "contactInfo__CI_Contact__contactInstructions";
             this.contactInfo__CI_Contact__contactInstructions.Size = new System.Drawing.Size(315, 53);
             this.contactInfo__CI_Contact__contactInstructions.TabIndex = 12;
+            this.contactInfo__CI_Contact__contactInstructions.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.genericSpaciousEntryForm_MouseDoubleClick);
             // 
             // groupBox1
             // 
