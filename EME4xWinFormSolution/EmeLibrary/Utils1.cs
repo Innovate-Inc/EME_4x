@@ -234,10 +234,10 @@ namespace EmeLibrary
             buttonOk.DialogResult = DialogResult.OK;
             buttonCancel.DialogResult = DialogResult.Cancel;
             //Size = x, y, w, h
-            label.SetBounds(4, 12, 380, 13);
+            label.SetBounds(4, 10, 380, 13);
 
             //textBox.SetBounds(9, 36, 380, 330);
-            textBox.SetBounds(6, 36, 595, 240);
+            textBox.SetBounds(6, 37, 595, 239);
             textBox.Multiline = true;
             textBox.ScrollBars = ScrollBars.Vertical;
             buttonOk.SetBounds(425, 279, 75, 23);

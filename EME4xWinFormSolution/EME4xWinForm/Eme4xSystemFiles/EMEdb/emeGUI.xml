@@ -265,6 +265,7 @@
     <TabNum>2</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
+	<HelpLink>t2_metaAuthor.html</HelpLink>
     <HoverNote>Author(s) of the metadata</HoverNote>	
   </emeControl>   
   <emeControl>
@@ -272,6 +273,7 @@
     <TabNum>2</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
+	<HelpLink>t2_resourceOwner.html</HelpLink>
     <HoverNote>The owner(s) of the resource</HoverNote>
   </emeControl>
   <emeControl>
@@ -279,6 +281,7 @@
     <TabNum>2</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
+	<HelpLink>t2_resourceProducer.html</HelpLink>
     <HoverNote>Who created/produced the resource</HoverNote>
   </emeControl>
   <emeControl>
@@ -375,20 +378,13 @@
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>Identification of the version of the metadata standard used to document the data set</HoverNote>
 	<HelpLink>t2_metstdv.html</HelpLink>
-  </emeControl>
-  <emeControl>
-    <controlName>distributionInfo__MD_Distribution</controlName>
-    <TabNum>2</TabNum>
-    <FGDC_Def></FGDC_Def>
-    <EPARequirementGuidance></EPARequirementGuidance>
-    <HoverNote>Information about the distributor and options for obtaining the resource.</HoverNote>
-  </emeControl>
+  </emeControl>  
   <emeControl>
     <controlName>uc_distribution_lbl</controlName>
     <TabNum>2</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
-    <HoverNote></HoverNote>
+    <HoverNote>Information about the distributor and options for obtaining the resource.</HoverNote>
 	<HelpLink>t2_distinfo.html</HelpLink>
   </emeControl>  
   <emeControl>
@@ -396,6 +392,7 @@
     <TabNum>2</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
+	<HelpLink>t2_distcnt.html</HelpLink>
     <HoverNote>The resource distributor contact</HoverNote>
   </emeControl>   
   <emeControl>
@@ -526,7 +523,7 @@
     <TabNum>3</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
-    <HoverNote>Name of the online resource.</HoverNote>
+    <HoverNote>The name (title) of the online resource.</HoverNote>
   </emeControl>
   <emeControl>
     <controlName>onLine__CI_OnlineResource__description_lbl</controlName>

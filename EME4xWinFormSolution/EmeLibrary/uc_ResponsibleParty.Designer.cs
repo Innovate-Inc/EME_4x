@@ -779,7 +779,7 @@
             this.uc_ResponsibleParty_lbl.Name = "uc_ResponsibleParty_lbl";
             this.uc_ResponsibleParty_lbl.Size = new System.Drawing.Size(0, 13);
             this.uc_ResponsibleParty_lbl.TabIndex = 45;
-            this.uc_ResponsibleParty_lbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.uc_ResponsibleParty_lbl_LinkClicked);
+            this.uc_ResponsibleParty_lbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.genericOpenHelpFromLinkLabel_LinkClicked);
             // 
             // uc_ResponsibleParty
             // 

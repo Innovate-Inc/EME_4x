@@ -881,27 +881,6 @@ namespace EmeLibrary
             }
         }
 
-        private void uc_ResponsibleParty_lbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            if (uc_ResponsibleParty_lbl.Text == "Resource Owner")
-            {
-                Utils1.HelpSeeker("/t2_resourceOwner.html", ref Utils1.globalHelpProc);
-                
-            }
-            else if (uc_ResponsibleParty_lbl.Text == "Resource Producer")
-            {
-                Utils1.HelpSeeker("/t2_resourceProducer.html", ref Utils1.globalHelpProc);                
-            }
-            else if (uc_ResponsibleParty_lbl.Text == "Metadata Author")
-            {
-                Utils1.HelpSeeker("/t2_metaAuthor.html", ref Utils1.globalHelpProc);                
-            }
-            else if (uc_ResponsibleParty_lbl.Text == "Contact (Required)")
-            {
-                Utils1.HelpSeeker("/t2_distcnt.html", ref Utils1.globalHelpProc);               
-            }
-        }
-
         private void genericOpenHelpFromLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             System.Windows.Forms.LinkLabel helpLink = (System.Windows.Forms.LinkLabel)sender;
@@ -915,7 +894,8 @@ namespace EmeLibrary
             }
             //else { Utils1.HelpSeeker("/Help_Main.html", ref Utils1.globalHelpProc); }
 
-        }
+        }               
+        
 
         private void genericSpaciousEntryForm_MouseDoubleClick(object sender, MouseEventArgs e)
         {
@@ -941,6 +921,8 @@ namespace EmeLibrary
             }
 
         }
+
+        
 
        
                      

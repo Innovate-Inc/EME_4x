@@ -45,6 +45,7 @@ namespace EmeLibrary
             toolStripCboValidationType.SelectedIndex = 0;
             validationSetting = toolStripCboValidationType.SelectedItem.ToString();
             idInfo_pointOfContact.validation_modeEmeLt = validationSetting;
+                        
             
             //Start instance of the eme dataset
             //if (Utils1.emeDataSet == null)
@@ -579,18 +580,43 @@ namespace EmeLibrary
                     
                     frmctrls(this.Controls); //validation
                     foreach (Control c in this.Controls)
-                    {
+                    {                         
                         validate_Controls(c);
                     }
                     
                 }
-
+                               
+                setControlLowerWindowToolTipEvent(this.Controls);
+                
             }
             catch (Exception ex)
             {
                 this.Close();
             }
             
+        }
+        
+        private void setControlLowerWindowToolTipEvent(Control.ControlCollection fromControl)
+        {
+            //Control c = fromControl;
+            foreach (Control c in fromControl)
+            {
+                if (!c.HasChildren)
+                {
+                    if (c.GetType() == typeof(System.Windows.Forms.TextBox) ||
+                        c.GetType() == typeof(System.Windows.Forms.ComboBox) ||
+                        c.GetType() == typeof(System.Windows.Forms.DateTimePicker))
+                    {
+                        c.Enter += new EventHandler(genericControlToolTip_Enter);
+                        //subC.Enter += new EventHandler(genericControlToolTip_Enter);
+                    }
+                }
+                else
+                {
+                    setControlLowerWindowToolTipEvent(c.Controls);
+                }
+            }
+
         }
 
         private void expander(Panel paneltoExpand)
@@ -852,46 +878,142 @@ namespace EmeLibrary
         /// </summary>
         private void hoverHelpInit()
         {
-            
-            
-            DataSet cntrlData = new DataSet();
-            cntrlData.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            cntrlData.ReadXml(Utils1.EmeUserAppDataFolder + "\\Eme4xSystemFiles\\EMEdb\\emeGUI.xml");
-            cntrlData.DataSetName = "emeGUI";
-            DataTable dTable = new DataTable();
-            dTable = cntrlData.Tables["emeControl"].Select().CopyToDataTable();
-            //DataTable dTable = Utils1.emeDataSet.Tables["emeGUI"].Select().CopyToDataTable();
 
-            
-            //DataTable subTable = Utils1.emeSettingsDataset.Tables["emeControl"].Select().CopyToDataTable();
-            
-            foreach (DataRow dr in dTable.Rows)
+            try
             {
-                
-                Control[] ctrl = this.Controls.Find(dr["controlName"].ToString(), true);
-                
-                if (ctrl != null)
+
+                DataSet cntrlData = new DataSet();
+                cntrlData.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+                cntrlData.ReadXml(Utils1.EmeUserAppDataFolder + "\\Eme4xSystemFiles\\EMEdb\\emeGUI.xml");
+                cntrlData.DataSetName = "emeGUI";
+                DataTable dTable = new DataTable();
+                dTable = cntrlData.Tables["emeControl"].Select().CopyToDataTable();
+                //DataTable dTable = Utils1.emeDataSet.Tables["emeGUI"].Select().CopyToDataTable();
+                //DataTable subTable = Utils1.emeSettingsDataset.Tables["emeControl"].Select().CopyToDataTable();
+
+                foreach (DataRow dr in dTable.Rows)
                 {
-                    foreach (Control c in ctrl)
+                    string ctrlName = dr["controlName"].ToString();                    
+
+                    Control[] ctrl = this.Controls.Find(ctrlName, true); //(dr["controlName"].ToString(), true);                    
+                    if (ctrl != null)
                     {
                         string tTip = dr["HoverNote"].ToString();
-                        if (!string.IsNullOrEmpty(tTip))
-                        {
-                            //Console.WriteLine(c.Name.ToString());
-                            tooltip1.SetToolTip(c, tTip);
-                        }
-
                         string helplink = dr["HelpLink"].ToString();
-                        if (!string.IsNullOrEmpty(helplink))
+
+                        //Handle Responsible Party objects Separately
+                        if (ctrlName == "contact_CI_ResponsibleParty" ||
+                            ctrlName == "idInfo_pointOfContact" ||
+                            ctrlName == "idInfo_citation_citedResponsibleParty" ||
+                            ctrlName == "distributor_Contact")
                         {
-                            c.Tag = helplink;
+                            //Set TootTip and HelpLink
+                            if (!string.IsNullOrEmpty(tTip))
+                            {
+                                Control[] contactLabelControl = ctrl[0].Controls.Find("uc_ResponsibleParty_lbl", true);
+                                tooltip1.SetToolTip(contactLabelControl[0], tTip);
+                            }
+                            if (!string.IsNullOrEmpty(helplink))
+                            {
+                                Control[] contactLabelControl = ctrl[0].Controls.Find("uc_ResponsibleParty_lbl", true);
+                                contactLabelControl[0].Tag = helplink;
+                            }
+
+                        }
+                        else
+                        {
+                            //Some controls are used multiple times, i.e., roleCode
+                            foreach (Control c in ctrl)
+                            {
+                                if (!string.IsNullOrEmpty(tTip))
+                                {
+                                    tooltip1.SetToolTip(c, tTip);
+
+                                    //Search for related controls and add the same hovertip
+                                    //string ctrlName = dr["controlName"].ToString();
+                                    ctrlName = ctrlName.Replace("_lbl", "");
+                                    string ctrlName2 = ctrlName + "_txt";
+                                    Control[] ctrl2 = this.Controls.Find(ctrlName, true);
+                                    if (ctrl2 != null)
+                                    {
+                                        if (ctrl2.Length > 0)
+                                        {
+                                            foreach (Control subC in ctrl2)
+                                            {
+                                                tooltip1.SetToolTip(subC, tTip);
+                                                //subC.Enter += new EventHandler(genericControlToolTip_Enter);
+                                            }
+                                        }
+                                        else
+                                        {
+                                            ctrl2 = this.Controls.Find(ctrlName2, true);
+                                            if (ctrl2.Length > 0)
+                                            {
+                                                foreach (Control subC in ctrl2)
+                                                {
+                                                    tooltip1.SetToolTip(subC, tTip);
+                                                    //subC.Enter += new EventHandler(genericControlToolTip_Enter);
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                if (!string.IsNullOrEmpty(helplink))
+                                {
+                                    c.Tag = helplink;
+
+                                }
+                            }
                         }
                     }
-                    
                 }
-               
             }
+            catch (Exception ex)            
+            {
+                MessageBox.Show("HoverTip Init Error: " + ex.Message);
+            }
+
          }
+
+        private void tooltip1_Popup(object sender, PopupEventArgs e)
+        {
+            //toolStripStatusLabel1.Text =tooltip1.GetToolTip(e.AssociatedControl);
+
+            string controlDisplayName = "";
+
+            //Prevent Text from textboxes becoming part of hovertip.
+            if (e.AssociatedControl.GetType() == typeof(LinkLabel) || e.AssociatedControl.GetType() == typeof(Label))
+            {
+                controlDisplayName = e.AssociatedControl.Text;
+                controlDisplayName = controlDisplayName.Replace(System.Environment.NewLine, "").Trim();
+            }
+
+            controlDisplayName = (!string.IsNullOrEmpty(controlDisplayName)) ? controlDisplayName + ": " : "";
+            //hoverTip_txt.Text = controlDisplayName + tooltip1.GetToolTip(e.AssociatedControl);
+            
+        }
+
+        private void genericControlToolTip_Enter(object sender, EventArgs e)
+        {
+            string lowerWindowHelpTip = "";
+            string labelName = "";
+            Control controlWFocus = (Control)sender;
+            string helpTip = tooltip1.GetToolTip(controlWFocus);
+
+            if (!string.IsNullOrEmpty(helpTip))
+            {
+                string ctrlName = controlWFocus.Name.Replace("_txt", "");
+                Control[] labelControl = this.Controls.Find(ctrlName + "_lbl", true);
+                if (labelControl.Length > 0)
+                {
+                    labelName = labelControl[0].Text + ": ";
+                }
+                lowerWindowHelpTip = labelName+ helpTip;
+            }
+
+            hoverTip_txt.Text = lowerWindowHelpTip;
+        }
+
                 
 
         private void idInfo_extent_descriptionCB_SelectedValueChanged(object sender, EventArgs e)
@@ -954,17 +1076,7 @@ namespace EmeLibrary
             //}
         }
 
-        private void tooltip1_Popup(object sender, PopupEventArgs e)
-        {            
-            //toolStripStatusLabel1.Text =tooltip1.GetToolTip(e.AssociatedControl);
-            string controlDisplayName = e.AssociatedControl.Text;
-            controlDisplayName = controlDisplayName.Replace(System.Environment.NewLine, "").Trim();
-            controlDisplayName = (!string.IsNullOrEmpty(controlDisplayName)) ? controlDisplayName + ": " : "";
-
-            hoverTip_txt.Text = controlDisplayName + tooltip1.GetToolTip(e.AssociatedControl);
-            
-
-        }
+        
 
         private void refreshFromDatabaseToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -1106,47 +1218,24 @@ namespace EmeLibrary
 
         }
 
+        
+
         private void genericSpaciousEntryForm_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            Control genericControl = (Control)sender;
-            
-
-            //TextBox clickedTextBox = (TextBox)sender;
-            
-            //LinkLabel tbxLinkLabel
-            string tbxName = genericControl.Name; //clickedTextBox.Name;            
-            string tbxText = genericControl.Text; //clickedTextBox.Text;
-            Control[] foundControl = this.Controls.Find(tbxName + "_lbl", true);
-            if (foundControl.Length > 0)
+            try
             {
-                //LinkLabel tbxLabel = (LinkLabel)foundControl[0];
-
-                tbxName = foundControl[0].Text;
-            }
-
-            if (Utils1.spaciousInputBox(tbxName, tbxName, ref tbxText) == DialogResult.OK)
-            {
-                //clickedTextBox.Text = tbxText;
-                genericControl.Text = tbxText;
-            }
-
-        }
-        
-        private void genericSpaciousEntryDropListForm_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (cbxPreviousClick == null) { cbxPreviousClick = DateTime.Now; }
-            
-            if (DateTime.Now.AddMilliseconds(-500) < cbxPreviousClick)
-            {
-                //MessageBox.Show("Double Clicked");
-
                 Control genericControl = (Control)sender;
-                
+
+                //TextBox clickedTextBox = (TextBox)sender;
+
+                //LinkLabel tbxLinkLabel
                 string tbxName = genericControl.Name; //clickedTextBox.Name;            
                 string tbxText = genericControl.Text; //clickedTextBox.Text;
                 Control[] foundControl = this.Controls.Find(tbxName + "_lbl", true);
                 if (foundControl.Length > 0)
                 {
+                    //LinkLabel tbxLabel = (LinkLabel)foundControl[0];
+
                     tbxName = foundControl[0].Text;
                 }
 
@@ -1155,13 +1244,48 @@ namespace EmeLibrary
                     //clickedTextBox.Text = tbxText;
                     genericControl.Text = tbxText;
                 }
+            }
+            catch (Exception ex)
+            { }
 
-            }            
-            //Re-Set Time
-            cbxPreviousClick = DateTime.Now;
-            
         }
         
+        private void genericSpaciousEntryDropListForm_MouseClick(object sender, MouseEventArgs e)
+        {
+            try
+            {
+
+                if (cbxPreviousClick == null) { cbxPreviousClick = DateTime.Now; }
+
+                if (DateTime.Now.AddMilliseconds(-500) < cbxPreviousClick)
+                {
+                    //MessageBox.Show("Double Clicked");
+
+                    Control genericControl = (Control)sender;
+
+                    string tbxName = genericControl.Name; //clickedTextBox.Name;            
+                    string tbxText = genericControl.Text; //clickedTextBox.Text;
+                    Control[] foundControl = this.Controls.Find(tbxName + "_lbl", true);
+                    if (foundControl.Length > 0)
+                    {
+                        tbxName = foundControl[0].Text;
+                    }
+
+                    if (Utils1.spaciousInputBox(tbxName, tbxName, ref tbxText) == DialogResult.OK)
+                    {
+                        //clickedTextBox.Text = tbxText;
+                        genericControl.Text = tbxText;
+                    }
+
+                }
+                //Re-Set Time
+                cbxPreviousClick = DateTime.Now;
+            }
+            catch (Exception ex)
+            { }
+            
+        }
+               
 
     }
 }

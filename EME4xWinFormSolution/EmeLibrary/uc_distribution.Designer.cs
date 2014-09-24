@@ -539,11 +539,11 @@
             this.offLine__MD_Medium__name_lbl.AutoSize = true;
             this.offLine__MD_Medium__name_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.offLine__MD_Medium__name_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.offLine__MD_Medium__name_lbl.Location = new System.Drawing.Point(73, 42);
+            this.offLine__MD_Medium__name_lbl.Location = new System.Drawing.Point(36, 42);
             this.offLine__MD_Medium__name_lbl.Name = "offLine__MD_Medium__name_lbl";
-            this.offLine__MD_Medium__name_lbl.Size = new System.Drawing.Size(34, 13);
+            this.offLine__MD_Medium__name_lbl.Size = new System.Drawing.Size(73, 13);
             this.offLine__MD_Medium__name_lbl.TabIndex = 6;
-            this.offLine__MD_Medium__name_lbl.Text = "Name";
+            this.offLine__MD_Medium__name_lbl.Text = "Medium Name";
             // 
             // offLine__MD_Medium__mediumNode_txt
             // 
@@ -638,11 +638,11 @@
             this.onLine__CI_OnlineResource__applicationProfile_lbl.AutoSize = true;
             this.onLine__CI_OnlineResource__applicationProfile_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.onLine__CI_OnlineResource__applicationProfile_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.onLine__CI_OnlineResource__applicationProfile_lbl.Location = new System.Drawing.Point(19, 114);
+            this.onLine__CI_OnlineResource__applicationProfile_lbl.Location = new System.Drawing.Point(17, 114);
             this.onLine__CI_OnlineResource__applicationProfile_lbl.Name = "onLine__CI_OnlineResource__applicationProfile_lbl";
-            this.onLine__CI_OnlineResource__applicationProfile_lbl.Size = new System.Drawing.Size(90, 13);
+            this.onLine__CI_OnlineResource__applicationProfile_lbl.Size = new System.Drawing.Size(92, 13);
             this.onLine__CI_OnlineResource__applicationProfile_lbl.TabIndex = 16;
-            this.onLine__CI_OnlineResource__applicationProfile_lbl.Text = "Applicaton Profile";
+            this.onLine__CI_OnlineResource__applicationProfile_lbl.Text = "Application Profile";
             // 
             // onLine__CI_OnlineResource__linkage__URL_lbl
             // 
