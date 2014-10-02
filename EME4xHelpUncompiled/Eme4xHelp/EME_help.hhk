@@ -216,12 +216,7 @@
 		<param name="Name" value="Spell Check">
 		<param name="Name" value="Untitled: e:\My Help File\20070312\Interface Features.html">
 		<param name="Local" value="Interface%20Features.html">
-		</OBJECT>	
-	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="Synchronizer">
-		<param name="Name" value="Synchronizer">
-		<param name="Local" value="Help_Synchronizer.html">
-		</OBJECT>
+		</OBJECT>		
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="Title">
 		<param name="Name" value="Untitled: e:\My Help File\20070312\Help_Tab1.html">

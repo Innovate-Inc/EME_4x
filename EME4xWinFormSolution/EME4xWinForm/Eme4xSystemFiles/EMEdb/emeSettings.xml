@@ -155,7 +155,7 @@
 		<Iso19115_1/>
 		<Csdgm/>
 		<DCATrequired>required</DCATrequired>
-		<EPArequired>required1</EPArequired>
+		<EPArequired>required</EPArequired>
 	</emeControl>  
 	<emeControl>
 		<controlName>idInfo_citation_citedResponsibleParty</controlName>
@@ -189,7 +189,7 @@
 		<Iso19115_1/>
 		<Csdgm/>
 		<DCATrequired>required</DCATrequired>
-		<EPArequired/>
+		<EPArequired>required</EPArequired>
 	</emeControl>
 	<emeControl>
 		<controlName>idInfo_resourceMaintenance</controlName>
@@ -278,7 +278,7 @@
 		<Iso19115_1/>
 		<Csdgm/>
 		<DCATrequired>required</DCATrequired>
-		<EPArequired></EPArequired>
+		<EPArequired>required</EPArequired>
 	</emeControl>
 	<emeControl>
 		<controlName>idInfo_resourceConstraints_MD_SecurityConstraints_classification</controlName>
@@ -286,7 +286,7 @@
 		<Iso19115_1/>
 		<Csdgm/>
 		<DCATrequired>required</DCATrequired>
-		<EPArequired/>
+		<EPArequired>required</EPArequired>
 	</emeControl>
 	<emeControl>
 		<controlName>idInfo_resourceConstraints_MD_SecurityConstraints_userNote</controlName>
@@ -312,7 +312,7 @@
 		<Iso19115_1/>
 		<Csdgm/>
 		<DCATrequired/>
-		<EPArequired>required</EPArequired>		
+		<EPArequired></EPArequired>		
 	</emeControl>
 	<emeControl>
 		<controlName>idInfo_extent_geographicBoundingBox_westLongDD</controlName>
@@ -359,4 +359,4 @@
 		<DCATrequired/>
 		<EPArequired>required</EPArequired>
 	</emeControl>
-</emeSettings>
+	</emeSettings>

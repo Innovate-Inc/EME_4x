@@ -6,116 +6,53 @@ href="mystyle.css" type=text/css rel=stylesheet>
 <BODY>
 <H1>EPA Metadata Editor (EME)</H1>
 <H2>Customizing the EPA Metadata Editor Database</H2>
-<BLOCKQUOTE>The EME utilizes a Microsoft Access database to supply default 
-  information within the user interface. Information stored in this database can 
+<BLOCKQUOTE>The EME utilizes data tables stored as Extensible Markup Language (XML) files to supply default 
+  information within the user interface. By using the provided data table editor, information stored in the XML files can 
   be modified by the user to include new data or to change defaults that are 
-  used by the 'Set Default' buttons. Making these changes requires that the 
-  user have Microsoft Access installed locally on their machine. </BLOCKQUOTE>
+  used by the 'Set Default' buttons. </BLOCKQUOTE>
 <H3>Database Structure</H3>
-<BLOCKQUOTE>The database is structured to align closely with the flow of the 
-  user interface. As such, all tables are named according to the location in 
-  which their information resides in the EME user interface. All tables that 
-  have information located on tab 1 of the user interface begin with a 1. All 
-  tables that store information located on tab 2 of the user interface begin 
-  with a 2. All tables that store information located on tab 3 of the database 
-  begin with a 3. The tables are also ordered sequentially by letter. As such, 
-  when sorted by name, the tables generally flow with the order of the elements 
-  as they are located in the user interface, starting with the top 
-  left.<BR><BR>Each table has a column in it called 'default'. This column 
+<BLOCKQUOTE>The data table names are structured to align closely with name of the user interface control name.
+<BR><BR>Each table has a column in it called 'default'. This column 
   controls what is selected in the EME when the user clicks on the 'Set Default' 
   or 'D' buttons. Users may change the defaults used by the EME by selecting the 
   checkbox next to the entry of their choice. Note that you will need to uncheck 
   the currently selected default when selecting a new default. </BLOCKQUOTE>
 <H3>Editing the Database</H3>
-<BLOCKQUOTE>To modify the EME database, take the following steps: 
+<BLOCKQUOTE>To modify the EME data tables, take the following steps: 
   <OL>
     <LI>Navigate to Tools --> Open Database.
-    <LI>Locate and open a table of interest (e.g., "1b_Publisher").
+    <LI>Locate and open a table of interest (e.g., "Contact_Info").
+	<LI>Click the "Enable Edit Mode" button.
     <LI>Change the default by selecting a new default entry and deselecting the 
     existing default entry.
     <LI>Add new information by adding a new row to the table and entering your 
     own data.
     <LI>If you don't want anything to be selected as default for a particular 
-    field, deselect all checkboxes in the user interface. 
-    <LI>Close the database.
-    <LI>Click on the 'Refresh DB' button to update the user interface. You will 
-    need to click this button for each tab where changes should be 
-    reflected.<BR><BR><IMG src="screenshot_refreshDB.jpg"><BR></LI></OL></BLOCKQUOTE>
-<H3>Special Database Edits</H3>
-<BLOCKQUOTE>There are some edits that require changes to be made in the 
-    'EME' table. These include the theme keyword thesaurus and the compound 
-    element behavior settings. Any time a change is made in the EME table, 
-    ArcCatalog must be closed and reopened for the new settings to take effect. 
-    <BR><BR><B>Specifying Spell-check Behavior</B><BR>The EME table contains a 
-    column for specifying which fields are searched when a user spell-checks a 
-    metadata record. This field is called spell-check. This field can be enabled 
-    (checked) or disabled (unchecked) for each element in the EME user 
-    interface. Fields that have the spell-check field checked (enabled) will be 
-    included when the spell check feature is used from the EME user interface. 
+    field, deselect all checkboxes in the user interface.
+    <LI>Click the "End Edit Mode" button. 	
+    <LI>Close the EmeDatabase window.
+    <LI>Click on the 'Refresh DB' button to update the user interface.<BR><BR><IMG src="screenshot_refreshDB2.jpg"><BR></LI>
+	</OL>
+	</BLOCKQUOTE>
+<br>
+<H3>Special Data Table Customizations</H3>
+<BLOCKQUOTE>The EME provides a user interface for editing commonly accessed data tables. The EMEdb folder also stores a template metadata record used for populating additional default content (ISO19115MD_GenericMetadataTemplate.xml). Changes to these XML files can easily be shared with users. Other XML files found within the EMEdb folder should not be modified. Changes to those files could cause stability issues with the application. 
 
-    <BR><BR><IMG src="screenshot_spellcheck2.jpg"><BR><BR><BR><B>Setting Compound Element Update Behavior 
-    (Cluster Update Behavior)</B><BR>Compound element update behavior affects 
-    the way the EME updates compound elements in a metadata record. Compound 
-    elements are elements that contain other elements. For example, the contact 
-    information element is a compound element that is comprised of fields such 
-    as contact person, contact address, etc. The EME user interface does not 
-    expose the entire set of elements contained in the FGDC content standard. As 
-    such, there are some cases where only portions of a compound element are 
-    available for a user to edit them. Users may choose to specify whether or 
-    not the EME replaces an entire compound element when saving information to 
-    the record or to only save the individual elements within the compound 
-    element that were updated. The EME table allows the user to specify settings 
-    for each compound element individually. By default, all elements are set to 
-    replace the entire compound element. It is recommended that users retain 
-    this default setting unless there is a good reason to change it for 
-    particular fields. <BR><BR>This is set using the clusterUpdate field in the 
-    EME table. If you would like to replace the entire content of a compound 
-    element, select the clusterUpdate checkbox for that element. If you would 
-    like to only update individual elements within a compound element, deselect 
-    the clusterUpdate checkbox for that element. If an entire compound element 
-    is replaced by the EME, all individual components of that element are 
-    replaced. If the individual elements of a compound element are replaced 
-    instead of the entire compound element, then some elements may not be 
-    overwritten within a compound element. After this is done, you will need to 
-    close and re-open ArcCatalog for the changes to take effect. <BR><BR>One 
-    example of this is the contact information compound element. The EME allows 
-    the user to specify information for many fields of the contact information 
-    element, but there are some fields, such as hours of service, where this 
-    information is not available in the EME. In those cases, if the user 
-    deselects the clusterUpdate checkbox, the individual element (in this 
-    example hours of service) will remain stored in the compound element along 
-    with the new contact information. If the user has selected the clusterUpdate 
-    checkbox, then the hours of service would be removed and replaced by the new 
-    contact information.<BR><BR><IMG src="screenshot_cluster.jpg"><BR><BR><BR><B>Specifying a Theme 
-    Keyword Thesaurus for User-defined Keywords</B><BR>The theme keyword 
-    thesaurus information is stored in the EME table. To change this setting, 
-    you will need to modify the tag called 
-    "idinfo/keywords/theme[themekt='User']/themekt". Change the term 'User' to 
-    the desired term to be used for the keyword thesaurus (e.g., 'My Personal 
-    Thesaurus'). After this is done, you will need to close and re-open 
-    ArcCatalog for the changes to take effect.<BR><BR><IMG 
-    src="screenshot_themekey.jpg"><BR><BR><BR><B>Configuring the EME to Point to a New Database 
-    Location</B><BR>
-    Users can choose to point to a database that is stored in a 
-    different location than the default location provided by the EME. This allows the EME 
-    database to be shared by multiple users if desired. By default, the EME 
-    database is placed into the install directory on the user's machine, in a sub-directory called template (usually "C:\Program Files\Innovate! Inc\EPA Metadata Editor\template"). The EME also creates an editable copy of the EME in each user's user directory (e.g., "C:\Users\jzichichi\AppData\Roaming\Innovate! Inc\EPA Metadata Editor"). EME makes this copy so that the operational database is not write-protected.  
-	<br><br>The EME database location is specified in a setting stored in the config.xml 
-    file associated with the EME. This file is located in the install directory 
-    on your machine (usually "C:\Program Files\Innovate! Inc\EPA Metadata Editor\template). 
-	When EME starts, it looks for the database in the following locations:<ul>
-	<li>Check and use if the mdb exists where eme config file says (if one specified)
-	<li>Check and use if the mdb exists in users own area
-	<li>Otherwise make a copy of the one under template into the user's own area.
+<BR><BR><B>Data table storage location</B><BR>
+The XML data tables are stored in two places on a user's computer. During installation, back-up copies are placed in the application installation directory on your machine (usually, C:\Program Files (x86)\Innovate! Inc\EPA Metadata Editor v4.0\Eme4xSystemFiles\EMEdb). The EME also creates an editable copy of the XML data tables in each user's application data folder (e.g., "C:\Users\dparrish\AppData\Roaming\Innovate! Inc\EPA Metadata Edtior 4x\Eme4xSystemFiles\EMEdb). EME makes this copy so that the operational data are not write-protected.  
+	<br><br>When EME starts, it looks for the data tables in the following locations:<ul>	
+	<li>Check and use if the EMEdb folder exists in users own area
+	<li>Otherwise make a copy the EMEdb folder from the installation directory into the user's own area.	
 	</ul>
-	You can copy and paste the EME database to a new location and point to this new location in the EME's config.xml file.  To specify the new location where the EME is stored, change the 
-    entry called "MdbFilepathname" to your new location. You must include the 
-    full path to the database, including the database name in the entry (e.g., 
-    C:\temp\metadata.mdb). Make sure to close and re-open ArcCatalog once you 
-    have made the change.
-	 <BR><BR>It is recommended to leave a back-up of the original 
-    database in the original installation directory so that the EME has a 
-    failover database to access if the new location is unavailable. <BR><BR>
+	Changes made to the XML files located in the user's application data folder will only be seen by that user. The user can revert back to the originally installed data tables by closing the EME application and deleting the EMEdb folder located in their user directory. The next time EME is launched, a copy the EMEdb folder from the installation directory will be placed into the user's own area.
+	<br><br>Understanding this behavior will also assist in sharing data table customizations with other uses. To share on a user-by-user basis a person can copy their EMEdb folder (located in their application data folder) to the intended user's application data folder. Alternatively, if advanced users wish to make system-wide changes and override the original data, the folder could be copied into the application installation directory and subsequently deleting the EMEdb folder in each existing user's application data folder. Prior to doing this it is recommended to create a back-up of the original EMEdb folder.
+	
+    <BR><BR><B>Modifying the default metadata template</B><BR>
+	Users can auto-populate an empty metadata record using values stored in a template record by clicking the "Set Defaults From Template" button under the Edit menu item. The template record is located in the EMEdb folder and named "ISO19115MD_GenericMetadataTemplate.xml".
+	<BR><BR><IMG src="screenshot_templateMetadataRecord.jpg"><BR><BR>
+	To modify the template, open the EME Metadata Editor. By default the user interface is blank. Click "Set Defaults From Template" to populate the form and then make desired changes. Then, to save changes back to the template, click Save and navigate to the template record in the user's application data folder (e.g., "C:\Users\dparrish\AppData\Roaming\Innovate! Inc\EPA Metadata Edtior 4x\Eme4xSystemFiles\EMEdb ISO19115MD_GenericMetadataTemplate.xml"). Sharing this template is accomplished in the same manner as outlined above in the "Data table storage location" section.
+	
+	
 	
 	
 	</BLOCKQUOTE><BR><BR><BR><BR></BLOCKQUOTE></BODY></HTML>

@@ -145,7 +145,7 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.boundingBoxGroupBox = new System.Windows.Forms.GroupBox();
-            this.idInfo_extent_description_colorPnl = new System.Windows.Forms.Panel();
+            this.idInfo_extent_description_xcolorPnl = new System.Windows.Forms.Panel();
             this.idInfo_extent_geographicBoundingBox_northLatDD_lbl = new System.Windows.Forms.LinkLabel();
             this.idInfo_extent_geographicBoundingBox_southLatDD_lbl = new System.Windows.Forms.LinkLabel();
             this.idInfo_extent_geographicBoundingBox_westLongDD_lbl = new System.Windows.Forms.LinkLabel();
@@ -234,7 +234,7 @@
             this.tabPage1.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
             this.boundingBoxGroupBox.SuspendLayout();
-            this.idInfo_extent_description_colorPnl.SuspendLayout();
+            this.idInfo_extent_description_xcolorPnl.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.idInfo_citation_date_publication_colorPnl.SuspendLayout();
             this.idInfo_extent_temporalExtent_colorPnl.SuspendLayout();
@@ -532,12 +532,12 @@
             this.hierarchyLevel_MD_ScopeCode.Items.AddRange(new object[] {
             "",
             "dataset",
+            "nonGeographicDataset",
             "attribute",
             "attributeType",
             "collectionHardware",
             "collectionSession",
             "series",
-            "nonGeographicDataset",
             "dimensionGroup",
             "feature",
             "featureType",
@@ -749,12 +749,13 @@
             this.validationToolStripMenuItem.Name = "validationToolStripMenuItem";
             this.validationToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.validationToolStripMenuItem.Text = "Validation Mode";
+            this.validationToolStripMenuItem.Visible = false;
             // 
             // toolStripCboValidationType
             // 
             this.toolStripCboValidationType.Items.AddRange(new object[] {
-            "DCAT/Common Core",
-            "EPA/EDG (ISO19115)"});
+            "EPA/EDG (ISO19115)",
+            "DCAT/Common Core"});
             this.toolStripCboValidationType.Name = "toolStripCboValidationType";
             this.toolStripCboValidationType.Size = new System.Drawing.Size(150, 23);
             this.toolStripCboValidationType.SelectedIndexChanged += new System.EventHandler(this.toolStripCboValidationType_SelectedIndexChanged);
@@ -899,12 +900,12 @@
             this.idInfo_resourceConstraints_MD_Constraints_useLimitation_lbl.AutoSize = true;
             this.idInfo_resourceConstraints_MD_Constraints_useLimitation_lbl.BackColor = System.Drawing.Color.Transparent;
             this.idInfo_resourceConstraints_MD_Constraints_useLimitation_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idInfo_resourceConstraints_MD_Constraints_useLimitation_lbl.Location = new System.Drawing.Point(26, 16);
+            this.idInfo_resourceConstraints_MD_Constraints_useLimitation_lbl.Location = new System.Drawing.Point(31, 22);
             this.idInfo_resourceConstraints_MD_Constraints_useLimitation_lbl.Name = "idInfo_resourceConstraints_MD_Constraints_useLimitation_lbl";
-            this.idInfo_resourceConstraints_MD_Constraints_useLimitation_lbl.Size = new System.Drawing.Size(109, 26);
+            this.idInfo_resourceConstraints_MD_Constraints_useLimitation_lbl.Size = new System.Drawing.Size(97, 13);
             this.idInfo_resourceConstraints_MD_Constraints_useLimitation_lbl.TabIndex = 0;
             this.idInfo_resourceConstraints_MD_Constraints_useLimitation_lbl.TabStop = true;
-            this.idInfo_resourceConstraints_MD_Constraints_useLimitation_lbl.Text = "General Constraints /\r\nSystem of Records";
+            this.idInfo_resourceConstraints_MD_Constraints_useLimitation_lbl.Text = "System of Records";
             this.idInfo_resourceConstraints_MD_Constraints_useLimitation_lbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.genericOpenHelpFromLinkLabel_LinkClicked);
             // 
             // idInfo_resourceConstraints_MD_Constraints_useLimitation
@@ -1430,12 +1431,12 @@
             // 
             this.hierarchyLevel_MD_ScopeCode_lbl.AutoSize = true;
             this.hierarchyLevel_MD_ScopeCode_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hierarchyLevel_MD_ScopeCode_lbl.Location = new System.Drawing.Point(8, 8);
+            this.hierarchyLevel_MD_ScopeCode_lbl.Location = new System.Drawing.Point(20, 8);
             this.hierarchyLevel_MD_ScopeCode_lbl.Name = "hierarchyLevel_MD_ScopeCode_lbl";
-            this.hierarchyLevel_MD_ScopeCode_lbl.Size = new System.Drawing.Size(92, 13);
+            this.hierarchyLevel_MD_ScopeCode_lbl.Size = new System.Drawing.Size(79, 13);
             this.hierarchyLevel_MD_ScopeCode_lbl.TabIndex = 0;
             this.hierarchyLevel_MD_ScopeCode_lbl.TabStop = true;
-            this.hierarchyLevel_MD_ScopeCode_lbl.Text = "Type of Resource";
+            this.hierarchyLevel_MD_ScopeCode_lbl.Text = "Resource Type";
             this.hierarchyLevel_MD_ScopeCode_lbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.genericOpenHelpFromLinkLabel_LinkClicked);
             // 
             // dateStamp_btn
@@ -1620,7 +1621,7 @@
             // 
             // boundingBoxGroupBox
             // 
-            this.boundingBoxGroupBox.Controls.Add(this.idInfo_extent_description_colorPnl);
+            this.boundingBoxGroupBox.Controls.Add(this.idInfo_extent_description_xcolorPnl);
             this.boundingBoxGroupBox.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.boundingBoxGroupBox.Location = new System.Drawing.Point(3, 3);
             this.boundingBoxGroupBox.Name = "boundingBoxGroupBox";
@@ -1629,26 +1630,26 @@
             this.boundingBoxGroupBox.TabStop = false;
             this.boundingBoxGroupBox.Text = "Bounding Box";
             // 
-            // idInfo_extent_description_colorPnl
+            // idInfo_extent_description_xcolorPnl
             // 
-            this.idInfo_extent_description_colorPnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.idInfo_extent_description_colorPnl.Controls.Add(this.idInfo_extent_geographicBoundingBox_northLatDD_lbl);
-            this.idInfo_extent_description_colorPnl.Controls.Add(this.idInfo_extent_geographicBoundingBox_southLatDD_lbl);
-            this.idInfo_extent_description_colorPnl.Controls.Add(this.idInfo_extent_geographicBoundingBox_westLongDD_lbl);
-            this.idInfo_extent_description_colorPnl.Controls.Add(this.idInfo_extent_geographicBoundingBox_eastLongDD_lbl);
-            this.idInfo_extent_description_colorPnl.Controls.Add(this.idInfo_extent_description_lbl);
-            this.idInfo_extent_description_colorPnl.Controls.Add(this.idInfo_extent_updateFromFC_btn);
-            this.idInfo_extent_description_colorPnl.Controls.Add(this.idInfo_extent_description);
-            this.idInfo_extent_description_colorPnl.Controls.Add(this.idInfo_extent_description_d);
-            this.idInfo_extent_description_colorPnl.Controls.Add(this.idInfo_extent_geographicBoundingBox_westLongDD);
-            this.idInfo_extent_description_colorPnl.Controls.Add(this.idInfo_extent_geographicBoundingBox_southLatDD);
-            this.idInfo_extent_description_colorPnl.Controls.Add(this.idInfo_extent_geographicBoundingBox_northLatDD);
-            this.idInfo_extent_description_colorPnl.Controls.Add(this.idInfo_extent_geographicBoundingBox_eastLongDD);
-            this.idInfo_extent_description_colorPnl.Controls.Add(this.idInfo_extent_descriptionCB);
-            this.idInfo_extent_description_colorPnl.Location = new System.Drawing.Point(6, 18);
-            this.idInfo_extent_description_colorPnl.Name = "idInfo_extent_description_colorPnl";
-            this.idInfo_extent_description_colorPnl.Size = new System.Drawing.Size(388, 93);
-            this.idInfo_extent_description_colorPnl.TabIndex = 0;
+            this.idInfo_extent_description_xcolorPnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.idInfo_extent_description_xcolorPnl.Controls.Add(this.idInfo_extent_geographicBoundingBox_northLatDD_lbl);
+            this.idInfo_extent_description_xcolorPnl.Controls.Add(this.idInfo_extent_geographicBoundingBox_southLatDD_lbl);
+            this.idInfo_extent_description_xcolorPnl.Controls.Add(this.idInfo_extent_geographicBoundingBox_westLongDD_lbl);
+            this.idInfo_extent_description_xcolorPnl.Controls.Add(this.idInfo_extent_geographicBoundingBox_eastLongDD_lbl);
+            this.idInfo_extent_description_xcolorPnl.Controls.Add(this.idInfo_extent_description_lbl);
+            this.idInfo_extent_description_xcolorPnl.Controls.Add(this.idInfo_extent_updateFromFC_btn);
+            this.idInfo_extent_description_xcolorPnl.Controls.Add(this.idInfo_extent_description);
+            this.idInfo_extent_description_xcolorPnl.Controls.Add(this.idInfo_extent_description_d);
+            this.idInfo_extent_description_xcolorPnl.Controls.Add(this.idInfo_extent_geographicBoundingBox_westLongDD);
+            this.idInfo_extent_description_xcolorPnl.Controls.Add(this.idInfo_extent_geographicBoundingBox_southLatDD);
+            this.idInfo_extent_description_xcolorPnl.Controls.Add(this.idInfo_extent_geographicBoundingBox_northLatDD);
+            this.idInfo_extent_description_xcolorPnl.Controls.Add(this.idInfo_extent_geographicBoundingBox_eastLongDD);
+            this.idInfo_extent_description_xcolorPnl.Controls.Add(this.idInfo_extent_descriptionCB);
+            this.idInfo_extent_description_xcolorPnl.Location = new System.Drawing.Point(6, 18);
+            this.idInfo_extent_description_xcolorPnl.Name = "idInfo_extent_description_xcolorPnl";
+            this.idInfo_extent_description_xcolorPnl.Size = new System.Drawing.Size(388, 93);
+            this.idInfo_extent_description_xcolorPnl.TabIndex = 0;
             // 
             // idInfo_extent_geographicBoundingBox_northLatDD_lbl
             // 
@@ -2399,7 +2400,7 @@
             this.MaximizeBox = false;
             this.Name = "EmeLT";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.Text = "<EME 4.0 Beta/>";
+            this.Text = "<EPA Metadata Editor v4.0/>";
             this.Load += new System.EventHandler(this.EmeLT_Load);
             this.Resize += new System.EventHandler(this.EmeLT_Resize);
             this.statusStrip1.ResumeLayout(false);
@@ -2455,8 +2456,8 @@
             this.tabPage1.PerformLayout();
             this.flowLayoutPanel3.ResumeLayout(false);
             this.boundingBoxGroupBox.ResumeLayout(false);
-            this.idInfo_extent_description_colorPnl.ResumeLayout(false);
-            this.idInfo_extent_description_colorPnl.PerformLayout();
+            this.idInfo_extent_description_xcolorPnl.ResumeLayout(false);
+            this.idInfo_extent_description_xcolorPnl.PerformLayout();
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
             this.idInfo_citation_date_publication_colorPnl.ResumeLayout(false);
@@ -2520,7 +2521,7 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private System.Windows.Forms.GroupBox boundingBoxGroupBox;
-        private System.Windows.Forms.Panel idInfo_extent_description_colorPnl;
+        private System.Windows.Forms.Panel idInfo_extent_description_xcolorPnl;
         private System.Windows.Forms.Button idInfo_extent_description_d;
         private System.Windows.Forms.TextBox idInfo_extent_geographicBoundingBox_westLongDD;
         private System.Windows.Forms.TextBox idInfo_extent_geographicBoundingBox_southLatDD;

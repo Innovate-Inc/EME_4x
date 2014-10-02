@@ -596,7 +596,7 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:EmeLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:EmeLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9fecdf1152cf0a3f, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
                     "_52410AF9C84349B0E8A455E84A4A1844"
@@ -1270,9 +1270,9 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:EPA Metadata Editor v4.0 Beta"
+        "ProductName" = "8:EPA Metadata Editor v4.0"
         "ProductCode" = "8:{9D299FD9-3F18-45BE-9783-236BD995E785}"
-        "PackageCode" = "8:{83223A81-FF40-498E-AA72-D2D92D4B3A55}"
+        "PackageCode" = "8:{B16DE684-982E-4919-BCAC-7696E41FC203}"
         "UpgradeCode" = "8:{EFE50942-63DD-4CA2-9EA0-74A9CD61A9D5}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -1283,11 +1283,11 @@
         "Manufacturer" = "8:Innovate! Inc"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:https://edg.epa.gov/EME/"
-        "Title" = "8:EPA Metadata Editor v4.0 Beta Installer"
-        "Subject" = "8:EPA Metadata Editor Beta"
+        "Title" = "8:EPA Metadata Editor v4.0 Installer"
+        "Subject" = "8:EPA Metadata Editor"
         "ARPCONTACT" = "8:Dan Spinosa"
         "Keywords" = "8:EPA Metadata Editor EME"
-        "ARPCOMMENTS" = "8:EPA Metadata Editor v4.0 Beta"
+        "ARPCOMMENTS" = "8:EPA Metadata Editor v4.0"
         "ARPURLINFOABOUT" = "8:http://innovateTeam.com"
         "ARPPRODUCTICON" = "8:"
         "ARPIconIndex" = "3:0"
@@ -1394,7 +1394,7 @@
         {
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_3BAD7BBA3D4A4142BBF8EB4524F8CB41"
             {
-            "Name" = "8:EPA Metadata Editor v4.0 Beta"
+            "Name" = "8:EPA Metadata Editor v4.0"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
@@ -1408,7 +1408,7 @@
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_A3172AEC25ED4B08966FDEBB6383BCEA"
             {
-            "Name" = "8:EPA Metadata Editor v4.0 Beta"
+            "Name" = "8:EPA Metadata Editor v4.0"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"

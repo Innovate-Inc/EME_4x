@@ -23,12 +23,7 @@
 			<param name="Local" value="Help_Post_Install.html">
 			<param name="URL" value="Help_Post_Install.html">
 			<param name="ImageNumber" value="11">
-			</OBJECT>
-		<LI> <OBJECT type="text/sitemap">
-			<param name="Name" value="Using the EPA Synchronizer">
-			<param name="Local" value="Help_Synchronizer.html">
-			<param name="ImageNumber" value="11">
-			</OBJECT>
+			</OBJECT>		
 		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="Using the EME User Interface">
 			<param name="Local" value="Interface%20Features.html">
