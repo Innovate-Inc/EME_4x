@@ -99,6 +99,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_608291D34CDE4FA091267E2D73529703"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_63CA9DFDB9164439A829AFADE43DE9C4"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -118,6 +124,12 @@
         "Entry"
         {
         "MsmKey" = "8:_7640DD3FE0CA4A32A2BE694285DA4691"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_784060AD7DEC461FA6F2C0E11BD3646C"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -599,11 +611,6 @@
             "AssemblyAsmDisplayName" = "8:EmeLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9fecdf1152cf0a3f, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_52410AF9C84349B0E8A455E84A4A1844"
-                    {
-                    "Name" = "8:EmeLibrary.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:EmeLibrary.dll"
             "TargetName" = "8:"
@@ -627,6 +634,26 @@
             {
             "SourcePath" = "8:..\\EME4xWinForm\\Eme4xSystemFiles\\EMEdb\\DistributionLiability.xml"
             "TargetName" = "8:DistributionLiability.xml"
+            "Tag" = "8:"
+            "Folder" = "8:_DB8F238C472A4B459F2F4CDAA163B28F"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_608291D34CDE4FA091267E2D73529703"
+            {
+            "SourcePath" = "8:..\\EME4xWinForm\\Eme4xSystemFiles\\EMEdb\\SystemofRecords.xml"
+            "TargetName" = "8:SystemofRecords.xml"
             "Tag" = "8:"
             "Folder" = "8:_DB8F238C472A4B459F2F4CDAA163B28F"
             "Condition" = "8:"
@@ -707,6 +734,26 @@
             {
             "SourcePath" = "8:..\\EME4xWinForm\\Eme4xSystemFiles\\EMEdb\\Publisher.xml"
             "TargetName" = "8:Publisher.xml"
+            "Tag" = "8:"
+            "Folder" = "8:_6865A5485F2845359A03ECC25B314C85"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_784060AD7DEC461FA6F2C0E11BD3646C"
+            {
+            "SourcePath" = "8:..\\EME4xWinForm\\Eme4xSystemFiles\\EMEdb\\SystemofRecords.xml"
+            "TargetName" = "8:SystemofRecords.xml"
             "Tag" = "8:"
             "Folder" = "8:_6865A5485F2845359A03ECC25B314C85"
             "Condition" = "8:"

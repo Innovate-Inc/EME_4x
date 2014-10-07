@@ -410,6 +410,9 @@
     <Content Include="Eme4xSystemFiles\EMEdb\Publisher.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Eme4xSystemFiles\EMEdb\SystemofRecords.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Eme4xSystemFiles\EMEdb\xMItemplate.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

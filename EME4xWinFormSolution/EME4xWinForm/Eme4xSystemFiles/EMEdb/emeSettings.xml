@@ -60,6 +60,13 @@
 							</xs:restriction>
 						</xs:simpleType>
 					</xs:element>
+					<xs:element name="displayField">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:maxLength value="50" />
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
 				</xs:sequence>
 			</xs:complexType>
 		</xs:element>
@@ -241,6 +248,9 @@
 		<Csdgm/>
 		<DCATrequired/>
 		<EPArequired/>
+		<sourceTable>SystemofRecord</sourceTable>
+		<sourceField>SysRcrdURL</sourceField>
+		<displayField>SysRcrdName</displayField>		
 	</emeControl>
 	<emeControl>
 		<controlName>idInfo_resourceConstraints_MD_LegalConstraints_useLimitation</controlName>

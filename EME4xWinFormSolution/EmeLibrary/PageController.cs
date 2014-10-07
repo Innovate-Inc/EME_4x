@@ -23,12 +23,13 @@ namespace EmeLibrary
         private string tag;
         private string scrTable;
         private string srcField;
+        private string dspField;
         private string DCATrequiredCtrl;
         private string EPArequiredCtrl;
         private string formFieldName_;
 
 
-        public PageController(long orderedID, string tag, string srcTable, string srcField, string DCATrequiredCtrl, string EPArequiredCtrl)
+        public PageController(long orderedID, string tag, string srcTable, string srcField, string dspField, string DCATrequiredCtrl, string EPArequiredCtrl)
         :base()
         {
             //int tabNo, bool spellcheck, string cluster, bool clusterUpdate, string help
@@ -36,6 +37,7 @@ namespace EmeLibrary
             this.tag = tag;
             this.scrTable = srcTable;
             this.srcField = srcField;
+            this.dspField = dspField;
             this.DCATrequiredCtrl = DCATrequiredCtrl;
             this.EPArequiredCtrl = EPArequiredCtrl;
             this.formFieldName_ = tag;
@@ -52,13 +54,7 @@ namespace EmeLibrary
         
         /// <summary>
         /// This get called first and finds the name of the form control based on the name in the database
-        /// and stores in page controller allong with potential events to wire up. Refer to the EME table for
-        /// what Ayhan really binds.
-        /// !!!I think this must be called on form Load so that hover tips and settings are initally set.
-        /// ToDo:  Change so that the page controller contains the form control name and class property name for binding; rather than the
-        /// form control and xpath.  Xpath now stored somewhere else.
-        /// make table that is blend of old EME.xml and emeToXpath.xml. Every record will represent a from control and corresponding
-        /// isoNodes public property...will have to tack on "Xpath" string to end of control name to set corresponding propName in xmlNodeXpathtoElements class
+        /// and stores in page controller allong with potential events to wire up.        
         /// </summary>
         public static void readFromDB()
         {
@@ -87,7 +83,8 @@ namespace EmeLibrary
                 
                 //Console.WriteLine(cntrlName);
                 //Add new page controller object for each record in database
-                p = new PageController(i, cntrlName, dr["sourceTable"].ToString(), dr["sourceField"].ToString(), dr["DCATrequired"].ToString(), dr["EPArequired"].ToString());
+                p = new PageController(i, cntrlName, dr["sourceTable"].ToString(), dr["sourceField"].ToString(), dr["displayField"].ToString(),
+                    dr["DCATrequired"].ToString(), dr["EPArequired"].ToString());
 
                 i++;
             }
@@ -219,7 +216,7 @@ namespace EmeLibrary
                     if (scrTable != "")
                     {
                         //Bind system table to listbox
-                        topic.DataSource = Utils1.emeDataSet.Tables[scrTable];
+                        topic.DataSource = Utils1.emeDataSet.Tables[scrTable];                        
                         topic.DisplayMember = srcField;
                         topic.ClearSelected();
                         if (ctrl.Name == "idInfo_keywordsUser" || ctrl.Name == "idInfo_keywordsPlace")
@@ -246,8 +243,16 @@ namespace EmeLibrary
                 }
                 else if (ctrl.GetType() == typeof(ComboBox))
                 {
-
+                    //Note:
+                    //If combo boxes are bound to a data table use the comboBox.SelectedValue to bind the incoming metadata value
+                    //with the valueMember (as opposed to the Display Member).  If combo box items are not from a data table bind
+                    //then use the comboBox.SelectedItem.
+                    //Some combo boxes allow free text and additional items if not found in the list while others are tied to a domain
+                    //and should not accept additional values.
+                  
                     ComboBox boxCbo = (ComboBox)ctrl;
+
+                    //c = The inbound value from the metadata record
                     string c = (frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null) != null) ?
                         frm.localXdoc.GetType().GetProperty(ctrl.Name).GetValue(obj, null).ToString().Trim() : "";
                     ctrl.Tag = validateVal;
@@ -259,34 +264,57 @@ namespace EmeLibrary
                     {
                         DataTable subTable = Utils1.emeDataSet.Tables[scrTable].Select().CopyToDataTable();
 
+                        if (string.IsNullOrEmpty(dspField)) { dspField = srcField; } //make sure dspField has been set for Dropdown lists
+
                         if (c != "")
                         {
-                            boxCbo.Text = c;
+                            //If it has incoming value, find in drop box and select.  Othewise append the value to the drop box
+                            //Some drop boxes allow free text while others do not.  Check for this setting to determine if value
+                            //should be appended to the drop box.  Also, some drop boxes may have different dispay and value members. This 
+                            //setting should be handled in the EME Settings xml file.                            
+
+                            //boxCbo.Text = c;
                             foreach (DataRow dr in subTable.Rows)
                             {
-                                if (dr["Area"].ToString() == c.ToString())
+                                
+                                if (dr[srcField].ToString() == c.ToString())
                                 {
-                                    //Console.WriteLine("Found");
+                                //    //Console.WriteLine("Found");
                                     boxCbo.DataSource = subTable;
                                     boxCbo.ValueMember = srcField;
-                                    boxCbo.DisplayMember = srcField;
-                                    boxCbo.SelectedValue = dr[srcField].ToString();
-                                    break;
+                                //    boxCbo.DisplayMember = srcField;
+                                    boxCbo.DisplayMember = dspField;
+                                    boxCbo.SelectedValue = c;  //dr[srcField].ToString();
+                                    //break;
+                                    return;
                                 }
                             }
-                            DataRow row = subTable.NewRow();
-                            row[srcField] = c;
-                            subTable.Rows.Add(row);
-                            boxCbo.DataSource = subTable;
-                            boxCbo.ValueMember = srcField;
-                            boxCbo.DisplayMember = srcField;
-                            boxCbo.SelectedValue = c;
+                            if (boxCbo.DropDownStyle != ComboBoxStyle.DropDownList)
+                            {
+                                DataRow row = subTable.NewRow();
+                                row[srcField] = c;
+                                row[dspField] = c;
+                                subTable.Rows.InsertAt(row, 0);//Add(row);  At the row to the top row.
+                                boxCbo.DataSource = subTable;
+                                boxCbo.ValueMember = srcField;
+                                //boxCbo.DisplayMember = srcField;
+                                boxCbo.DisplayMember = dspField;
+                                boxCbo.SelectedValue = c;
+                            }
+                            else
+                            {
+                                boxCbo.DataSource = subTable;
+                                boxCbo.ValueMember = srcField;
+                                boxCbo.DisplayMember = dspField;
+                                boxCbo.SelectedIndex = -1;
+                            }
                         }
                         else
                         {
+                            //No incoming value, just databind to the table
                             boxCbo.DataSource = subTable;
-                            boxCbo.ValueMember = srcField;
-                            boxCbo.DisplayMember = srcField;
+                            boxCbo.ValueMember = srcField;                            
+                            boxCbo.DisplayMember = dspField;
                             boxCbo.SelectedIndex = -1;
                         }
                     }
@@ -377,9 +405,26 @@ namespace EmeLibrary
                 else if (ctrl.GetType() == typeof(ComboBox))
                 {
                     ComboBox boxCbo = (ComboBox)ctrl;
-                    //MessageBox.Show(boxCbo.Name + System.Environment.NewLine + "Text: " + boxCbo.Text + " SelectedText: " + boxCbo.SelectedText);
-                    frm.localXdoc.GetType().GetProperty(ctrl.Name).SetValue(obj, boxCbo.Text, null);
-                    //Console.WriteLine(boxCbo.SelectedText);
+                    string selectedCboValue = "";
+                    selectedCboValue = boxCbo.Text;
+                    
+                    if (!string.IsNullOrEmpty(selectedCboValue))
+                    {
+                        if (boxCbo.DataSource != null)
+                        {
+                            int i = boxCbo.FindStringExact(selectedCboValue);
+                            //Find the displayed value index
+                            //If -1, then just go with the display value since that combobox might allow free text
+                            if (i > -1)
+                            {
+                                DataRowView drv = (DataRowView)boxCbo.Items[i];
+                                selectedCboValue = drv[boxCbo.ValueMember.ToString()].ToString();
+                            }
+                        }
+                    }
+
+                    frm.localXdoc.GetType().GetProperty(ctrl.Name).SetValue(obj, selectedCboValue, null);
+
                 }
                 else if (ctrl.GetType() == typeof(TextBox))
                 {

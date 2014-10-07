@@ -69,6 +69,9 @@ namespace EmeLibrary
             idInfo_extent_descriptionCB.SelectedIndexChanged += new EventHandler(idInfo_extent_descriptionCB_SelectedValueChanged);
             idInfo_extent_descriptionCB.EndUpdate();
 
+            DataTable sysOfRec = Utils1.emeDataSet.Tables["SystemOfRecord"].Select().CopyToDataTable();
+            //SysRcrdName  SysRcrdUrl
+
         }
 
         public Hashtable allControls

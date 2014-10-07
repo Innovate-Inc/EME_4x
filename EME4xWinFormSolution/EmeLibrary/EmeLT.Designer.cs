@@ -582,7 +582,7 @@
             // idInfo_extent_descriptionCB
             // 
             this.idInfo_extent_descriptionCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.idInfo_extent_descriptionCB.DropDownWidth = 100;
+            this.idInfo_extent_descriptionCB.DropDownWidth = 150;
             this.idInfo_extent_descriptionCB.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idInfo_extent_descriptionCB.FormattingEnabled = true;
             this.idInfo_extent_descriptionCB.Location = new System.Drawing.Point(322, 7);
@@ -914,52 +914,6 @@
             this.idInfo_resourceConstraints_MD_Constraints_useLimitation.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idInfo_resourceConstraints_MD_Constraints_useLimitation.FormattingEnabled = true;
             this.idInfo_resourceConstraints_MD_Constraints_useLimitation.IntegralHeight = false;
-            this.idInfo_resourceConstraints_MD_Constraints_useLimitation.Items.AddRange(new object[] {
-            "EPA-1: PeoplePlus",
-            "EPA-3: Wellness Program Medical Records",
-            "EPA-9: Freedom of Information Act Request and Appeal File",
-            "EPA-17: OCEFT Criminal Investigative Index and Files",
-            "EPA-19: EPA Identification Card Record",
-            "EPA-20: Confidential Business Information Tracking System",
-            "EPA-21: External Compliance Program Discrimination Complaint Files",
-            "EPA-22: Correspondence Management System",
-            "EPA-23: EPA Credential Information Records",
-            "EPA-24: Claims Office Master Files",
-            "EPA 27: Employee Counseling and Assistance Program Records",
-            "EPA-29: EPA Travel, Other Accounts Payable, and Accounts Receivable Files",
-            "EPA-30: Inspector General Enterprise Management system (IGEMS Hotline Module)",
-            "EPA-31: Acquisition Training System",
-            "EPA-32: EPA Telecommunications Detail Records",
-            "EPA-33: Debarment and Suspension Files",
-            "EPA-34: Medical and Research Study Records of Human Volunteers",
-            "EPA-36: Research Grant, Cooperative Agreement, and Fellowship Application Files",
-            "EPA-37: ORD Peer Review Panelist Information System (PRPIS) System",
-            "EPA-38: Invention Reports Submitted to the EPA",
-            "EPA-39: Superfund Cost Recovery Accounting Information System",
-            "EPA-40: Inspector General\'s Operation and Reporting (IGOR) System Investigative F" +
-                "iles",
-            "EPA-41: Office of Administrative Services Information System (OASIS)",
-            "EPA-42: Inspector General Enterprise Management System (IGEMS) Audit, Assignment," +
-                " and Timesheet Modules",
-            "EPA-43: Time Sharing Services Management System Registration Files",
-            "EPA-44: EPA Personnel Emergency Contact Files",
-            "EPA-47: OCEFT/NETI Training Registration and Administration Records",
-            "EPA-48: Libby Asbestos Exposure Assessment Records",
-            "EPA-49: Child Care Tuition Assistance Program Records",
-            "EPA-50: OIG AutoAudit",
-            "EPA-52: EPA Central Data Exchange - Customer Registration Subsystem (CDX-CRS)",
-            "EPA-53: Integrated Grants Management System (IGMS) - Fellowship Module",
-            "EPA-54: Federal Lead-Based Paint Program System of Records (FLPPSOR)",
-            "EPA-55: Federal Retirement Benefits Calculator",
-            "EPA-56: EZHIRE",
-            "EPA-58: EPA Science Advisory Board (SAB) Database for Scientific and Technical Ex" +
-                "perts",
-            "EPA-59: Restricted Use Pesticides",
-            "EPA-60: EPA\'s Light Duty In-Use Testing Program",
-            "EPA-61: Telework",
-            "EPA/GOVT-1: Emissions Inspection and Maintenance Records for Federal Employees Pa" +
-                "rking at Federal Parking Facilities",
-            "EPA/GOVT-2: Federal Docket Management System (FDMS)"});
             this.idInfo_resourceConstraints_MD_Constraints_useLimitation.Location = new System.Drawing.Point(138, 19);
             this.idInfo_resourceConstraints_MD_Constraints_useLimitation.Name = "idInfo_resourceConstraints_MD_Constraints_useLimitation";
             this.idInfo_resourceConstraints_MD_Constraints_useLimitation.Size = new System.Drawing.Size(278, 21);

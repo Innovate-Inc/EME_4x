@@ -62,6 +62,7 @@ namespace EmeLibrary
                 emeDataSet.ReadXml(EmeUserAppDataFolder + "\\Eme4xSystemFiles\\EMEdb\\Citation.xml");
                 emeDataSet.ReadXml(EmeUserAppDataFolder + "\\Eme4xSystemFiles\\EMEdb\\DistributionLiability.xml");
                 emeDataSet.ReadXml(EmeUserAppDataFolder + "\\Eme4xSystemFiles\\EMEdb\\ProgramCode.xml");
+                emeDataSet.ReadXml(EmeUserAppDataFolder + "\\Eme4xSystemFiles\\EMEdb\\SystemofRecords.xml");
                 emeDataSet.DataSetName = "emeData";
 
                 emeDataSetEditor = emeDataSet;
