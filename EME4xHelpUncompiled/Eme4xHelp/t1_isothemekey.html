@@ -2,41 +2,54 @@
 <head>
 <link href="mystyle.css" rel="stylesheet" type="text/css" />
 <h1>EPA Metadata Editor (EME)</h1>
-<h2>Interface Element Description: Tab 1</h2>
-<blockquote>Element:<b> ISO Theme Keyword</b></blockquote>
-<blockquote>Type: text</blockquote>
-<blockquote>ISO Element Name: topicCategory</blockquote>
+<h2>Interface Element Description: Tab 1 - ISO Theme Keywords</h2>
+<blockquote> Mandatory, Repeatable element</blockquote>
 <h3>EPA Requirement/Guidance</h3>
-<blockquote>Inclusion of one or more ISO keywords is required for minimum EPA compliancy in order to comply with inter-Agency sharing initiatives.  The ISO 19115 Topic Category is a general categorization of data sets that is intended to provide data classification consistency across agencies. Select one or more of the basic ISO keywords for a general classification of your data or application.</blockquote>
-<h3>Data.gov Requirement/Guidance</h3>
-<blockquote><p>Mandatory Tags (or keywords) help users discover your resource; please include terms that would be used by technical and non-technical users.
-</p></blockquote>
-<h3>ISO Definition</h3>
-<blockquote>High-level geographic data thematic classification to assist in the grouping and search of available geographic data sets.
+<blockquote>
+  <p>Inclusion of one or more ISO keywords is required for minimum EPA compliancy which supports inter-Agency sharing initiatives.  The ISO 19115 Topic Category is a general categorization of data resources that is intended to provide data classification consistency across agencies. Select one or more of the basic ISO keywords for a general classification of your data or application.</p>
+  <p><b>Note:</b> User-defined keywords can be added to the user interface using the EME database.  They are stored in the "KeywordsISO" table. To add a new keyword to the EME database, follow these guidelines for <a href="Help_DB.html#editdb">Editing the Database</a>.</p>
 </blockquote>
-<h3>FGDC Definition</h3>
-<blockquote>Words describing key aspects of the geospatial asset. </blockquote>
 <h3>Domain</h3>
 <ul>
-<li>farming</li>
-<li>biota</li>
-<li>boundaries</li>
-<li>climatologyMeteorologyAtmosphere</li> 
-<li>economy</li>
-<li>elevation</li>
-<li>environment</li>
-<li>geoscientificInformation</li>
-<li>health</li>
-<li>imageryBaseMapsEarthCover</li> 
-<li>intelligenceMilitary</li>
-<li>inlandWaters</li>
-<li>location</li>
-<li>oceans</li>
-<li>planningCadastre</li>
-<li>society</li>
-<li>structure</li>
-<li>transportation</li>
-<li>utilitiesCommunication</li> 
-<br><br><br><br>
+<ul>
+    <li>biota</li>
+    <li>boundaries</li>
+    <li>climatologyMeteorologyAtmosphere</li>
+    <li>economy</li>
+    <li>elevation</li>
+    <li>environment</li>
+    <li>farming</li>
+    <li>geoscientificInformation</li>
+    <li>health</li>
+    <li>imageryBaseMapsEarthCover</li>
+    <li>inlandWaters</li>
+    <li>intelligenceMilitary</li>
+    <li>inlandWaters</li>
+    <li>location</li>
+    <li>oceans</li>
+    <li>planningCadastre</li>
+    <li>society</li>
+    <li>structure</li>
+    <li>transportation</li>
+    <li>utilitiesCommunication</li>
+  </ul>
+</ul>
+<h3>Metadata Standard Crosswalk</h3>
+<blockquote>
+  <p>Element type: compound</p>
+  <table border="1" cellpadding="0" width="750">
+    <tr>
+      <td width="250"><p align="center"><strong>Data.gov</strong></p></td>
+      <td width="250"><p align="center"><strong>ISO 19115</strong></p></td>
+      <td width="250"><p align="center"><strong>FGDC CSDGM</strong></p></td>
+    </tr>
+    <tr>
+      <td width="250"><p align="center"><a href="http://project-open-data.github.io/schema/#keyword" target="_blank" title="Data.gov Standard">keyword</a></p></td>
+      <td width="250"><p align="center"><a href="http://service.ncddc.noaa.gov/rdn/www/metadata-standards/documents/MI-Metadata.pdf#page=104" title="ISO 19115 Standard" target="_blank">MD_DataIdentification/descriptiveKeywords</a></p></td>
+      <td width="250"><p align="center"><a href="http://www.fgdc.gov/csdgmgraphical/ideninfo/keyword.htm" title="FGDC CSDGM Standard" target="_blank">keywords</a></p></td>
+    </tr>
+  </table>
+<BR><BR><BR><BR>
+</blockquote>
 </body>
 </html>

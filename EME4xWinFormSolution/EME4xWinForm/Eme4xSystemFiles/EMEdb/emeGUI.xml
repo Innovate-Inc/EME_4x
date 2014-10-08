@@ -137,7 +137,7 @@
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>Northern Latitude (-90 to 90)</HoverNote>
-	<HelpLink>t1_northbc.html</HelpLink>
+	<HelpLink>t1_bc.html</HelpLink>
   </emeControl>
   <emeControl>
     <controlName>idInfo_extent_geographicBoundingBox_southLatDD_lbl</controlName>
@@ -145,7 +145,7 @@
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>Southern Latitude (-90 to 90)</HoverNote>
-	<HelpLink>t1_southbc.html</HelpLink>
+	<HelpLink>t1_bc.html</HelpLink>
   </emeControl>
   <emeControl>
     <controlName>idInfo_extent_geographicBoundingBox_eastLongDD_lbl</controlName>
@@ -153,7 +153,7 @@
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>Eastern Longitude (-180 to 180)</HoverNote>
-	<HelpLink>t1_eastbc.html</HelpLink>
+	<HelpLink>t1_bc.html</HelpLink>
   </emeControl>
   <emeControl>
     <controlName>idInfo_extent_geographicBoundingBox_westLongDD_lbl</controlName>
@@ -161,7 +161,7 @@
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>Western Longitude (-180 to 180)</HoverNote>
-	<HelpLink>t1_westbc.html</HelpLink>
+	<HelpLink>t1_bc.html</HelpLink>
   </emeControl>   
   <emeControl>
     <controlName>idInfo_extent_temporalExtent</controlName>
@@ -290,7 +290,7 @@
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>Function performed by the contact</HoverNote>
-	<HelpLink>t2_contactRole.html</HelpLink>
+	<HelpLink>t2_contactHowTo.html</HelpLink>
   </emeControl> 
   <emeControl>
     <controlName>dcatProgramCode_lbl</controlName>
@@ -298,7 +298,7 @@
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>User friendly name of the primary program related to this data asset, from the Federal Program Inventory.</HoverNote>
-	<HelpLink>t2_contactProgramCode.html</HelpLink>
+	<HelpLink>t2_contactHowTo.html</HelpLink>
   </emeControl>
   <emeControl>
     <controlName>contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage_lbl</controlName>
@@ -330,7 +330,7 @@
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>Class of information to which the referencing entity applies.</HoverNote>
-	<HelpLink>t2_resourceType.html</HelpLink>
+	<HelpLink>t2_metainfo.html#typeofresource</HelpLink>
   </emeControl>
   <emeControl>
     <controlName>fileIdentifier_lbl</controlName>
@@ -338,7 +338,7 @@
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>Value that uniquely identifies this metadata record (UUID). This identifier is assigned and maintained by the custodian of the metadata record</HoverNote>
-	<HelpLink>t2_fileId.html</HelpLink>
+	<HelpLink>t2_metainfo.html#UUID</HelpLink>
   </emeControl>  
   <emeControl>
     <controlName>fileIdentifier_new</controlName>
@@ -353,7 +353,7 @@
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>Language of the metadata record</HoverNote>
-	<HelpLink>t2_language.html</HelpLink>
+	<HelpLink>t2_metainfo.html#language</HelpLink>
   </emeControl>
   <emeControl>
     <controlName>dateStamp_lbl</controlName>
@@ -361,7 +361,7 @@
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>The date that the metadata was last updated</HoverNote>
-	<HelpLink>t2_metd.html</HelpLink>
+	<HelpLink>t2_metainfo.html#lastmodified</HelpLink>
   </emeControl>
   <emeControl>
     <controlName>metadataStandardName_lbl</controlName>
@@ -369,7 +369,7 @@
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>The name of the metadata standard used to document the data set</HoverNote>
-	<HelpLink>t2_metstdn.html</HelpLink>
+	<HelpLink>t2_metainfo.html#standardname</HelpLink>
   </emeControl>
   <emeControl>
     <controlName>metadataStandardVersion_lbl</controlName>
@@ -377,7 +377,7 @@
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>Identification of the version of the metadata standard used to document the data set</HoverNote>
-	<HelpLink>t2_metstdv.html</HelpLink>
+	<HelpLink>t2_metainfo.html#standardversion</HelpLink>
   </emeControl>  
   <emeControl>
     <controlName>uc_distribution_lbl</controlName>

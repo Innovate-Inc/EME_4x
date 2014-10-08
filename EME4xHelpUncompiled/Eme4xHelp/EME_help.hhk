@@ -4,12 +4,7 @@
 <meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
 <!-- Sitemap 1.0 -->
 </HEAD><BODY>
-<UL>
-	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="4 yrs">
-		<param name="Name" value="Untitled: e:\My Help File\20070312\Interface Features.html">
-		<param name="Local" value="Interface%20Features.html">
-		</OBJECT>	
+<UL>		
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="Abstract">
 		<param name="Name" value="Untitled: e:\My Help File\20070312\Help_Tab1.html">
@@ -19,31 +14,9 @@
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="Bounding Coordinate">
-		<param name="Name" value="Untitled: e:\My Help File\20070312\Help_Tab1.html">
-		<param name="Local" value="Help_Tab1.html">
-		</OBJECT>
-	<UL>
-		<LI> <OBJECT type="text/sitemap">
-			<param name="Name" value="East">
-			<param name="Name" value="Untitled: e:\My Help File\20070312\t1_eastbc.html">
-			<param name="Local" value="t1_eastbc.html">
-			</OBJECT>
-		<LI> <OBJECT type="text/sitemap">
-			<param name="Name" value="North">
-			<param name="Name" value="Untitled: e:\My Help File\20070312\t1_northbc.html">
-			<param name="Local" value="t1_northbc.html">
-			</OBJECT>
-		<LI> <OBJECT type="text/sitemap">
-			<param name="Name" value="South">
-			<param name="Name" value="Untitled: e:\My Help File\20070312\t1_southbc.html">
-			<param name="Local" value="t1_southbc.html">
-			</OBJECT>
-		<LI> <OBJECT type="text/sitemap">
-			<param name="Name" value="West">
-			<param name="Name" value="Untitled: e:\My Help File\20070312\t1_westbc.html">
-			<param name="Local" value="t1_westbc.html">
-			</OBJECT>
-	</UL>	
+		<param name="Name" value="Untitled: e:\My Help File\20070312\t1_bcDescription.html">
+		<param name="Local" value="t1_bcDescription.html">
+		</OBJECT>		
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="Constraints">
 		<param name="Name" value="Untitled: e:\My Help File\20070312\Help_Tab2.html">
@@ -100,8 +73,8 @@
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="default">
-		<param name="Name" value="Untitled: e:\My Help File\20070312\Interface Features.html">
-		<param name="Local" value="Interface%20Features.html">
+		<param name="Name" value="Untitled: e:\My Help File\20070312\Help_InterfaceFeatures.html">
+		<param name="Local" value="Help_InterfaceFeatures.html">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="EPA Geospatial Metadata Technical Specification">
@@ -180,8 +153,8 @@
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="Open DB">
-		<param name="Name" value="Untitled: e:\My Help File\20070312\Interface Features.html">
-		<param name="Local" value="Interface%20Features.html">
+		<param name="Name" value="Untitled: e:\My Help File\20070312\Help_InterfaceFeatures.html">
+		<param name="Local" value="Help_InterfaceFeatures.html">
 		</OBJECT>	
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="Post-Installation Configuration">
@@ -209,14 +182,9 @@
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="Set Default">
-		<param name="Name" value="Untitled: e:\My Help File\20070312\Interface Features.html">
-		<param name="Local" value="Interface%20Features.html">
-		</OBJECT>	
-	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="Spell Check">
-		<param name="Name" value="Untitled: e:\My Help File\20070312\Interface Features.html">
-		<param name="Local" value="Interface%20Features.html">
-		</OBJECT>		
+		<param name="Name" value="Untitled: e:\My Help File\20070312\Help_InterfaceFeatures.html">
+		<param name="Local" value="Help_InterfaceFeatures.html">
+		</OBJECT>			
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="Title">
 		<param name="Name" value="Untitled: e:\My Help File\20070312\Help_Tab1.html">
@@ -226,28 +194,13 @@
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="Today">
-		<param name="Name" value="Untitled: e:\My Help File\20070312\Interface Features.html">
-		<param name="Local" value="Interface%20Features.html">
+		<param name="Name" value="Untitled: e:\My Help File\20070312\Help_InterfaceFeatures.html">
+		<param name="Local" value="Help_InterfaceFeatures.html">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="Update Frequency">
 		<param name="Name" value="Untitled: e:\My Help File\20070312\t1_update.html">
 		<param name="Local" value="t1_update.html">
-		</OBJECT>
-	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="Validate">
-		<param name="Name" value="Untitled: e:\My Help File\20070312\Interface Features.html">
-		<param name="Local" value="Interface%20Features.html">
-		</OBJECT>
-	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="Validation">
-		<param name="Name" value="Validation">
-		<param name="Local" value="Help_Validation.html">
-		</OBJECT>
-	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="View Metadata XML">
-		<param name="Name" value="Untitled: e:\My Help File\20070312\Interface Features.html">
-		<param name="Local" value="Interface%20Features.html">
-		</OBJECT>	
+		</OBJECT>		
 </UL>
 </BODY></HTML>

@@ -2,38 +2,67 @@
 <head>
 <link href="mystyle.css" rel="stylesheet" type="text/css" />
 <h1>EPA Metadata Editor (EME)</h1>
-<h2>Interface Element Description: Tab 2</h2>
-<blockquote>Element:<b> Online Linkage  Nest This somewhere Else</b></blockquote>
-<blockquote>Type: text</blockquote>
-<blockquote>Short Name: onlink</blockquote>
-<h3>FGDC Definition</h3>
-<blockquote>The name of an online computer resource that contains the data set. 
-</blockquote>
+<h2>Interface Element Description: Tab 2 - Linkage</h2>
+<blockquote>Optional element</blockquote>
 <h3>EPA Requirement/Guidance</h3>
-<blockquote>Online linkage is not required for EPA minimum requirements.  It is highly encouraged in order to promote reuse of and access to resources. 
-    <strong>Note </strong>- ArcCatalog often populates this field with a local path 
-    to data, or the details of an ArcSDE connection. This conflicts with the FGDC 
-    Guidance as well as Data.gov requirements.&nbsp; If local paths to data or 
-    ArcSDE connection info are truly appropriate to include in a metadata record 
-    (and in almost all cases, they are not appropriate), please place that 
-    information in another section, such as &quot;Supplemental Info&quot;.&nbsp; 
-<br><br>This element should reflect the 'Data Resource Type' classification provided in Tab 3.  For example, if the resource type is listed as 'Live Data and Services', the URL provided in this field should reflect a live data and service URL.  An example of how to document live data and services is provided below.  For more information on resource types, see the 'Data Resource Type' field in Tab 3. </blockquote>
-<blockquote>At 3.2.1, to support Data.gov requirements, we are promoting the 
-    following convention, and these linkages are mandatory if applicable. If a type 
-    of link is not applicable, please leave it blank, and please include only the 
-    URL and no other text.<br><ul>
-<li><b>Primary Linkage:</b> URL providing direct access to the downloadable distribution of a dataset.</li>
-<li><b>Secondary Linkage:</b> Endpoint of web service to access dataset. This is typically the REST endpoint for an ArcGIS Server service, but it may also be a WMS GetCapabilities URL or a SOAP WSDL endpoint.</li>
-<li><b>Linkage 3:</b> URL for accessing related documents such as technical information about a dataset, developer documentation, etc.</li>
-<li><b>Linkage 4:</b> Alternative landing page used to redirect user to a contextual, Agency-hosted “homepage” for the Dataset or API when selecting this resource from a metadata catalog. This field is not intended for an agency’s homepage (e.g. www.agency.gov), but rather if a dataset has a human-friendly hub or landing page that users should be directed to for all resources tied to the dataset. This allows agencies to better specify what a visitor receives after selecting one of the agency’s datasets on Data.gov or in third-party mashups.</li>
-<li><b>Other Linkages:</b> Any other URLs related to this resource</li>
-</blockquote></ul>
+<blockquote>
+  <p>Linkage is not required for EPA minimum requirements; however, it is highly encouraged in order to promote reuse of and access to resources.    Linkage can be found in the following elements:</p>
+</blockquote>
+<ul>
+  <li><strong><em>Distribution &gt; Contact Details</em></strong> - Provide a URL for any information about the resource distribution.</li>
+  <li><em><strong>Distribution &gt; Digital Transfer Options &gt; Online Resource</strong></em>- Provide a URL for any information about where the resource can be obtained. In some cases, more than one digital transfer option is available for any given resource. Please follow this order when adding Digital Transfer Options:
+    <blockquote>
+      <p><b>Online Resource 1:</b> URL providing direct access to the downloadable distribution of a dataset.</p>
+      <p><b>Online Resource 2:</b> Endpoint of web service to access dataset. This is typically the REST endpoint for an ArcGIS Server service, but it may also be a WMS GetCapabilities URL or a SOAP WSDL endpoint.</p>
+      <p><b>Online Resource 3:</b> URL for accessing related documents such as technical information about a dataset, developer documentation, etc.</p>
+      <p><b>Online Resource 4:</b> Alternative landing page used to redirect user to a contextual, Agency-hosted &ldquo;homepage&rdquo; for the Dataset or API when selecting this resource from a metadata catalog. This field is not intended for an agency&rsquo;s homepage (e.g. www.agency.gov), but rather if a dataset has a human-friendly hub or landing page that users should be directed to for all resources tied to the dataset. This allows agencies to better specify what a visitor receives after selecting one of the agency&rsquo;s datasets on Data.gov or in third-party mashups.</p>
+      <p><b>Other Online Resources:</b> Any other URLs related to this resource.</p>
+      <p><b>Examples:</b></p>
+    </blockquote>
+  </li>
+  <ul>
+    <blockquote>
+      <p><b>Online Resource 1 Linkage Download URL:</b><br>
+        "https://edg.epa.gov/data/Public/OEI/EPA_Facilities/EPA_Locations.zip"<br />
+        <b>Online Resource 2 Linkage Map Service:</b><br>
+      "http://geodata.epa.gov/arcgis/rest/services/OEI/EPA_Locations/MapServer"</p>
+    </blockquote>
+  </ul>
+  <li><em><strong>Contacts &gt; Resource Owner Contact Details</strong></em> - Provide a URL for any information about the resource owner.</li>
+  <li><em><strong>Contacts &gt; Resource Producer Contact Details</strong></em> - Provide a URL for any information about the resource producer.</li>
+  <li><em><strong>Contacts &gt; Metadata Author Contact Details</strong></em> - Provide a URL for any information about the metadata author.<br>
+  </li>
+</ul>
+<blockquote>
+  <p><strong>Note </strong>- ArcCatalog often populates this field with a local path 
+    to data, or the details of an ArcSDE connection. This conflicts with the FGDC and ISO 19115
+  guidance as well as Data.gov requirements. If this occurs, replace the field content with a URL.</p>
+</blockquote>
 <h3>Domain</h3>
-<blockquote>Examples:<br>
-<b>Primary Linkage Download URL:</b><br>
-"<a href="https://edg.epa.gov/data/Public/OEI/EPA_Facilities/EPA_Locations.zip">https://edg.epa.gov/data/Public/OEI/EPA_Facilities/EPA_Locations.zip</a>"<br />
-<b>Secondary Linkage Map Service:</b><br> 
-"<a href="http://geodata.epa.gov/arcgis/rest/services/OEI/EPA_Locations/MapServer">http://geodata.epa.gov/arcgis/rest/services/OEI/EPA_Locations/MapServer</a>"<br>
-<br><br><br><br>
+<blockquote>
+  <p><a name="linkagetype"></a><strong>Linkage Type</strong>:</p>
+  <ul>
+    <li><strong>download</strong> - online instructions for transferrring data from one storage device or system to another</li>
+    <li><strong>information</strong> - online information about the dataset</li>
+    <li><strong>offline access</strong> - online instructions for requesting the resource from the dataset</li>
+    <li><strong>order</strong> - online order process for obtaining the dataset</li>
+    <li><strong>search</strong> - online search interface for seeking out information about the dataset</li></ul></blockquote>
+<h3>Metadata Standard Crosswalk</h3>
+<blockquote>
+    <p>Element type: compound and text</p>
+    <table border="1" cellpadding="0" width="750">
+      <tr>
+        <td width="250"><p align="center"><strong>Data.gov</strong></p></td>
+        <td width="250"><p align="center"><strong>ISO 19115</strong></p></td>
+        <td width="250"><p align="center"><strong>FGDC CSDGM</strong></p></td>
+      </tr>
+      <tr>
+        <td width="250"><p align="center"><a href="http://project-open-data.github.io/schema/#accessURL" title="Data.gov Standard" target="_blank">accessURL</a></p></td>
+        <td width="250"><p align="center"><a href="http://service.ncddc.noaa.gov/rdn/www/metadata-standards/documents/MI-Metadata.pdf#page=45" title="ISO 19115 Standard" target="_blank">CI_OnlineResource/linkage</a></p></td>
+        <td width="250"><p align="center"><a href="http://www.fgdc.gov/csdgmgraphical/ideninfo/citat/citinfo/online.htm" title="FGDC CSDGM Standard" target="_blank">onlink</a></p></td>
+      </tr>
+  </table>
 </body>
+<BR><BR><BR><BR>
+</blockquote>
 </html>

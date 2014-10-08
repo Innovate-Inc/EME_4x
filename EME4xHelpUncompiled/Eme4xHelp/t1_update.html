@@ -2,34 +2,43 @@
 <head>
 <link href="mystyle.css" rel="stylesheet" type="text/css" />
 <h1>EPA Metadata Editor (EME)</h1>
-<h2>Interface Element Description: Tab 1</h2>
-<blockquote>Element:<b> Maintenance and Update Frequency </b></blockquote>
-<blockquote>Type: MD_MaintenanceFrequencyCode</blockquote>
-<blockquote>ISO Element Name: maintenanceAndUpdateFrequency </blockquote>
+<h2>Interface Element Description: Tab 1 - Update Frequency</h2>
+<blockquote>Optional element</blockquote>
 <h3>EPA Requirement/Guidance</h3>
-<blockquote>This element is required for EPA geospatial assets as per minimum FGDC standards. Follow FGDC guidance for implementation of this field.</blockquote>
-<h3>Data.gov Requirement/Guidance</h3>
-<blockquote><p>Optional Frequency with which the resource is published.</p></blockquote>
-<h3>ISO Definition</h3>
-<blockquote>The frequency with which modifications and deletions are made to the data after it is first produced.</blockquote>
-<h3>FGDC Definition</h3>
-<blockquote>The frequency with which changes and additions are made to the data set after the initial data set is completed.
-</blockquote>
+<blockquote>This element is the frequency with which changes and additions are made to the data resource after the initial data resource is completed.</blockquote>
 <h3>Domain</h3>
 <ul>
-<li>"Continually"</li>
-<li>"Daily"</li>
-<li>"Weekly"</li>
-<li>"Fortnightly"</li>
-<li>"Monthly"</li>
-<li>"Quarterly"</li>
-<li>"Biannually"</li>
-<li>"Annually"</li>
-<li>"Unknown"</li>
-<li>"As needed"</li>
-<li>"Irregular"</li>
-<li>"Not planned"</li>
+  <ul>
+    <li>continual</li>
+    <li>daily</li>
+    <li>weekly</li>
+    <li>fortnightly</li>
+    <li>monthly</li>
+    <li>quarterly</li>
+    <li>biannually</li>
+    <li>annually</li>
+    <li>as needed</li>
+    <li>irregular</li>
+    <li>not planned</li>
+    <li>unknown</li>
+  </ul>
 </ul>
+<h3>Metadata Standard Crosswalk</h3>
+<blockquote>
+  <p>Element type: text</p>
+  <table border="1" cellpadding="0" width="750">
+    <tr>
+      <td width="250"><p align="center"><strong>Data.gov</strong></p></td>
+      <td width="250"><p align="center"><strong>ISO 19115</strong></p></td>
+      <td width="250"><p align="center"><strong>FGDC CSDGM</strong></p></td>
+    </tr>
+    <tr>
+      <td width="250"><p align="center"><a href="http://project-open-data.github.io/schema/#accrualPeriodicity" title="Data.gov Standard" target="_blank">accrualPeriodicity</a></p></td>
+      <td width="250"><p align="center"><a href="http://service.ncddc.noaa.gov/rdn/www/metadata-standards/documents/MI-Metadata.pdf#page=134" title="ISO 19115 Standard" target="_blank">MD_MaintenanceInformation/maintenanceAndUpdateFrequency</a><a href="http://service.ncddc.noaa.gov/rdn/www/metadata-standards/documents/MI-Metadata.pdf#page=16" title="ISO 19115 Standard" target="_blank"></a></p></td>
+      <td width="250"><p align="center"><a href="http://www.fgdc.gov/csdgmgraphical/ideninfo/status/mntfreq.htm" title="FGDC CSDGM Standard" target="_blank">update</a></p></td>
+    </tr>
+  </table>
 <br><br><br><br>
+</blockquote>
 </body>
 </html>

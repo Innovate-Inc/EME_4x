@@ -1,0 +1,75 @@
+<html>
+<head>
+<link href="mystyle.css" rel="stylesheet" type="text/css" />
+<h1>EPA Metadata Editor (EME)</h1>
+
+<h2>EME User Interface Features </h2>
+<blockquote>
+  <p>The EPA Metadata Editor  allows users to specify information that corresponds to all EPA required elements identified in ISO 19115-2. <br><br>
+    
+    User interface features are described in more detail below.<br>
+    
+  </p>
+</blockquote>
+<h3>Common Features Across Tabs</h3>
+<ol>
+  <li>Inline Validation  </li>
+  <blockquote>
+    <p> EME version 4.0 was developed to show the minimum required elements needed to pass ISO schema validation, EDG validation, and Data.gov's DCAT validation. All required elements can be identified with an exclamation point next to the element name <img src="screenshot_exclamation.jpg" width="22" height="21" alt=""/>. The <a href="https://edg.epa.gov/metadata/catalog/main/home.page" title="Environmental Dataset Gateway (EDG)" target="_blank">EDG website</a> will provide the final validation. <u>Note</u>: Users can save metadata records with errors (missing required elements) and edit the record at a later time; however, metadata records with errors  will most likely not pass EDG validation when attempting to publish.</p>
+  </blockquote>
+  <li>Ordinality</li>
+<blockquote>
+  <p>The distinction between &lsquo;mandatory&rsquo;, &lsquo;mandatory if applicable&rsquo;, and &lsquo;optional&rsquo; fields as required by <a href="http://project-open-data.github.io/schema/">Data.gov's Project Open Data/DCAT metadata standard</a> is provided through the use of color-coding in the user interface. Yellow fields are considered 'mandatory', green fields are considered 'mandatory if applicable', and blue fields are considered &lsquo;optional&rsquo;.  Defaults for individual fields may be selected interactively in the user interface using buttons or drop-downs.</p>
+</blockquote>
+  <li>The 'D' or 'default' button</li>
+  <blockquote>
+    <p>The 'D' or 'default' button is located throughout the EME user interface and when clicked, automatically populates the default values stored in the EPA Metadata Editor Microsoft Access database (metadata.mdb).</p>
+    <p><img src="screenshot_d2.jpg" width="127" height="108" alt=""/></p>
+  </blockquote>
+  <li>Manual Value Override</li>
+  <blockquote>
+    <p>Once a record has been populated either by choosing the 'D' button or selecting a Contact using the drop-down list, users can manually override the field values by simply clicking in any field and deleting the existing text or modifying the existing text.</p>
+  </blockquote>
+</ol>
+<p>&nbsp;</p>
+
+<h3>Global Features</h3>
+These features can be accessed from the Edit and Tools menus.<br><br>
+<ol>
+  <li>'Open Database'
+    <blockquote>
+      <p><img src="screenshot_openDB2.jpg" width="287" height="102" alt=""/></p>
+      <p>This feature allows users to open and edit the EPA Metadata Editor Microsoft Access database (metadata.mdb).  The use of this feature requires that the user have Microsoft Access installed locally.</p>
+    </blockquote>
+  </li>
+  <li>'Default Output Format'
+    <blockquote>
+      <p><img src="screenshot_outputformat.jpg" width="440" height="112" alt=""/></p>
+      <p>This feature allows users to choose between ISO 19115 or ISO 19115-2. ISO 19115-2 extends the existing geographic metadata standard by defining the schema required for describing imagery and gridded data.    </p>
+    </blockquote>
+  </li>
+  <li>'Refresh From Database'
+    <blockquote>
+      <p><img src="screenshot_refreshDB.jpg" width="285" height="100" alt=""/></p>
+      <p>This feature is used to refresh the EME user interface defaults after edits have been made to the database. If the EME database is opened and edited from the EME user interface button, the 'Refresh From Database' option should be clicked to make sure that the defaults shown in the user interface reflect the newest edits to the database.</p>
+    </blockquote>
+  </li>
+  <li>'Set Defaults from Template'
+    <blockquote>
+      <p><img src="screenshot_set_default.jpg" width="269" height="75" alt=""/></p>
+      <p>This feature allows a user to set all defaults for the selected tab.  The editor will prompt the user to ensure that he/she would like to overwrite all information in the selected tab with default values as stored in the EPA Metadata Editor Microsoft Access database (metadata.mdb).</p>
+    </blockquote>
+  </li>
+  <li>'Clear All Values'</li>
+</ol>
+<blockquote>
+  <p><img src="screenshot_clearvalues.jpg" width="271" height="76" alt=""/></p>
+  <p>This feature allows a user to clear all values in the metadata record.<br>
+  </p>
+</blockquote>
+<ol>
+  <blockquote>&nbsp;</blockquote>
+</ol>
+<br><br><br><br>
+</body>
+</html>

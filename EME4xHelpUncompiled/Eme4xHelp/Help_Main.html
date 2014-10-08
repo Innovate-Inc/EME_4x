@@ -8,54 +8,20 @@ href="mystyle.css" type=text/css rel=stylesheet>
 <H2>Introducing the EPA Metadata Editor</H2>
 <H3>What is the EPA Metadata Editor?</H3>
 <BLOCKQUOTE>The U.S. Environmental Protection Agency (EPA) Metadata Editor 
-  (EME) is a desktop application that is intended to simplify and expedite the    process of developing geospatial metadata across the agency. The program is    built as an extension to the Environmental Systems Research Institute's (ESRI)    ArcCatalog and, as of EME version 3.1, <i>also runs as a standalone application</i>. The EME is provided as a customized metadata editing tool that allows users to create metadata that adheres to the EPA's implementation of the Federal Geographic Data Committee's (FGDC's) Content Standard for Digital Geospatial Metadata (CSDGM). <BR><BR>It is hoped that the use of the    EPA Metadata Editor will result in greater geospatial metadata consistency and compliancy agency-wide in order to provide a solid framework for sharing    assets with others. For more information and additional resources regarding    the EME, please see  <a href="https://edg.epa.gov/EME/">https://edg.epa.gov/EME/</a>. </BLOCKQUOTE>
+(EME) is both a desktop application and extension to the Environmental Systems Research Institute's (ESRI)    ArcCatalog that is intended to simplify and expedite the    process of developing geospatial metadata across the agency. The goal of the    EPA Metadata Editor is to create greater geospatial metadata consistency and compliancy agency-wide in order to provide a solid framework for sharing    assets with others. For more information and additional resources regarding    the EME, please see  <a href="https://edg.epa.gov/EME/">https://edg.epa.gov/EME/</a>. </BLOCKQUOTE>
 <H3>What's new?</H3>
-<BLOCKQUOTE>
-<p style="font-weight: bold">The latest release of EME is version 3.2.  This version includes the following updates: </p>
-<li>EME now supports Spatial Data Organization Information, Source Information, and Process Step Contact Information.</li>
-<li>EME now supports additional projections: Albers Conical Equal Area and Web Mercator Auxiliary Sphere.</li>
-<li>The EME download package now includes an EPA-specific stylesheet</li>
-<li>A warning now appears before synchronization.</li>
-<li>Bug fix: Addressed a bug associated with validation.</li>
-<li>Bug fix: Addressed a bug that stripped XML header information during export.</li>
-
-<p style="font-weight: bold">EME version 3.1.2.  was released in November, 2011 and included the following updates:</p>
-<li>Provided users with a Global Find and Replace function from the EME Toolbar</li>
-<li>Bug fix: Addressed installation issues identified in EME 3.1.1</li>
-<li>Bug fix: Addressed a bug associated with using the "Refresh From Database" Function within Tab 2</li>
-
-<p style="font-weight: bold">EME version 3.1.1 was released July 27, 2011 and included the following updates: </p>
-<li>Provides users with a Metadata Export tool</li>
-<li>Provides users with keyboard shortcuts for copy/cut/paste in the EME user interface</li>
-<li>Save and close warning has been removed from pop-up windows</li>
-<li>Provides access to EME help files directly from EME Toolbar</il>
-<li>Bug fix: Detailed attribute information is no longer erased when using the EPA synchronizer with Feature Class Export and/or  Feature Class Copy/Paste</li>
-<li>Bug fix: When user selects multiple processing steps for deletion, EME no longer only deletes the first step upon save.
-<li>Bug fix: User can now choose to open a metadata record and immediately select "Save As" without requiring that the user modify the open record first.
-</li>
-
-<p style="font-weight: bold">EME version 3.1 was the last major release (4/1/2011) and included the following updates: </p>
-<li>Provided users with an FGDC CSDGM metadata editor that works in ArcGIS version 10
-<li>Provided users with the ability to install a standalone version of the application that works outside the ArcGIS environment
-<li>Provided users with the ability to synchronize FGDC metadata within ArcGIS version 10
-<li>Provided users with the ability to include more than two online linkages in their metadata
-<li>Provided users with a 'Clear All Metadata' button to remove all content from their record
-
-<li>Provided users with an Import tool, accessible from ArcCatalog, that allows users to select the object from which they want to import metadata
-<li>The installation location of the EME database has been moved to a location that is not typically write-protected (for individuals that may have managed desktop environments)
-  <br><br>
-  EME version 3.1 also provided the following bug fixes:<br><br>
-<li>FGDC CSDGM section 6 is no longer accidentally erased from user's metadata record in special cases  
-<li>XML header information is no longer removed from user's metadata record
-<li>Processing contribution information is no longer removed from user's metadata record
-<li>Installing and using EME under different user accounts no longer generates an error when EME looks for the last_session.xml file.
+<BLOCKQUOTE> 
+  <p>EME version 4.0 was developed to support Data.gov's Project Open Data Metadata initiative in conjunction with the transition to ISO 19115 Parts 1 and 2. It is currently recommended that EME version 4.0 be used for non-spatial datasets and EME version 3.2.1 be used for spatial datasets.</p>
+  <p>EME version 4.0 is more streamlined than version 3.2.1. Some of the highlights of version 4.0 include: less data entry, ability to add multiple contacts per metadata record, and automated validation. </p>
 </BLOCKQUOTE>
-  <H3>Background</H3>
+<H3>Background</H3>
 <BLOCKQUOTE>  
 <li>EME version 2.1 was initially released in July 2007. This release was deployed with a number of key features including a configurable database, easily accessible help, an EPA validation service, and a number of interface features designed to help users easily enter information into their records. <br><br>
 <li>EME version 3 was released in October 2008, and provided a number of new capabilities, including a configurable EPA Synchronizer that allows users to control synchronization, a configurable path to the EME database, batch validation, ability to remove ESRI tags, and more.  <br><br>
 <li>EME version 3.1 was released in April 2011 in order to provide users with an ArcGIS 10-compatible version of the application. This update was required as a result of changes in the  ArcGIS 10 framework that made it incompatible with EME 3.0 and EME 2.1. Additionally, much of the functionality for supporting FGDC CSDGM metadata was removed in ArcGIS version 10.  As such, much of the underlying code base for the EME was updated to be compatible with ArcGIS version 10, and at the same time the application was released as a standalone product.  EME 3.1.1 now provides users with the ability to edit and synchronize FGDC CSDGM metadata within the ArcGIS 10 framework and to run the product as a standalone tool.<br><br>
 <li>EME version 3.1.1 was released in July 2011. It provided users with a metadata export tool, keyboard shortcuts for copy and paste, and several other minor enhancements and bug fixes.<br><br>
 <li>EME version 3.1.2 was released in September 2011. It provided users with a global find and replace function (single or batch processing) as well as key bug fixes for installing EME and "Refresh from Database" functionality.<br><br>
-<li> EME version 3.2 was released in November 2012. It adds support for several fields (Spatial Data Organization Information, Process Step Contact Information, and Source Information) and two projections (Albers Conical Equal Area and Web Mercator Auxiliary Sphere). This release also includes minor updates to the EPA stylesheet and the syncrhonization process. It fixes bugs that affected validation and XML export.</BLOCKQUOTE>
+<li> EME version 3.2 was released in November 2012. It adds support for several fields (Spatial Data Organization Information, Process Step Contact Information, and Source Information) and two projections (Albers Conical Equal Area and Web Mercator Auxiliary Sphere). This release also includes minor updates to the EPA stylesheet and the syncrhonization process. It fixes bugs that affected validation and XML export.<br>
+  <br>
+<li>EME version 3.2.1 was released in October 2014. It provides users with additional Online Linkage elements, dataset Access Constraint options, Constraint Security Classification options, and implements mandatory elements for Distribution Contact including Publisher, Contact Name, and Contact Email.</BLOCKQUOTE>
 <BR><BR><BR><BR></UL></BODY></HTML>

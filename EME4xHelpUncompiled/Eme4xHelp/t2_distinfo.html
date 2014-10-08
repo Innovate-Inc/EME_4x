@@ -3,34 +3,39 @@
 <link href="mystyle.css" rel="stylesheet" type="text/css" />
 </head><body>
 <h1>EPA Metadata Editor (EME)</h1>
-<h2>Interface Element Description: Tab 2</h2>
-<blockquote>Element:<b> Distribution Information</b></blockquote>
-<blockquote>Type: compound (Distributor Contact, Digital Transfer Options, Standard Order Process, and Distribution Format)</blockquote>
-<blockquote>ISO Element Name Name: distributionInfo</blockquote>
+<h2>Interface Element Description: Tab 2 - Distribution</h2>
+<blockquote>Mandatory element</blockquote>
 <h3>EPA Requirement/Guidance</h3>
-<blockquote>This section is required by EPA to ensure proper distribution and discovery of the resource. The ISO MD_Distribution Object provides information about where users can get data, the formats available, and the processes for ordering the data. This section is designed to support resources that are available from either a single distributor or multiple distributors. As a result, elements are grouped with a single contact. For a given Distributor, provide a single Contact and then populate corresponding sub elements (Digital Transfer Options, Standard Order Process, and Distribution Format) that pertain to that particular contact. Any given distributor could potentially have several formats available and several URLs from which to obtain the resource. This structure helps ensure that each method of obtaining the resource is directly associated with a point of contact.
-<ul>
-	<li>Distribution Information Section</li>
-	<ul>
-		<li>Distributor [0..*]</li>
-		<ul>
-			<li><a href="t2_distcnt.html">Distributor Contact</a>&nbsp;[1]			
-			<li><a href="t2_distDTO.html">Digital Transfer Options</a>&nbsp;[0..*]
-			<li><a href="t2_distSOP.html">Standard Order Process</a>&nbsp;[0..*]
-			<li><a href="t2_distFormat.html">Distribution Format</a>&nbsp;[0..*]
-		</ul>
-	</ul>
-</ul>
-
-</blockquote>
-<h3>Data.gov Requirement/Guidance</h3>
-<blockquote><p>NA</p></blockquote>
-<h3>ISO Definition</h3>
-<blockquote>Information about acquiring the resource.</blockquote>
-<h3>FGDC Definition</h3>
-<blockquote>Information about the distributor of and options for obtaining the data set.</blockquote>
+<blockquote>
+  <p>This section is required by EPA to ensure proper distribution and discovery of the resource. This section is designed to support resources that are available from either a single distributor or multiple distributors. For a given Distributor, provide a single Contact and then populate corresponding sub elements (Digital Transfer Options, Standard Order Process, and Distribution Format) that pertain to that particular contact. Any given distributor could potentially have several formats available and several URLs from which to obtain the resource. This structure helps ensure that each method of obtaining the resource is directly associated with a point of contact. <em><strong>At a minimum, one contact and one digital transfer option are required.</strong></em></p>
+  <p><strong>The required elements for  Contact and Contact Details are:</strong> Role, Organization, and E-mail.</p>
+  <p><strong>The required elements for Digital Transfer Options are:</strong> Linkage and Function.</p>
+  <p><u>Distribution Information Section  </u></p>
+  <ul>
+    <li><strong><a href="t2_distcnt.html"> Distribution Contact</a></strong> - The person or organization that should be contacted regarding accessing the data resource.</li>
+    <li><strong><a href="t2_distDTO.html">Digital Transfer Options</a></strong> -  Information about the technical means and media by which a resource is obtained from the distributor.  </li>
+    <li><strong><a href="t2_distSOP.html">Standard Order Process</a></strong> - The process by which the resource was obtained or received and other related instructions or fee information</li>
+    <li><strong><a href="t2_distFormat.html">Distribution Format</a></strong><a href="t2_distFormat.html"></a>	- Description of the computer language construct that specifies the representation of data objects in a record, file, message, storage device, or transmission channel</li></ul></blockquote>
 <h3>Domain</h3>
-<blockquote>None.</blockquote>
+<blockquote>
+  <p>See Distribution Information Sections.</p>
+</blockquote>
+<h3>Metadata Standard Crosswalk</h3>
+<blockquote>
+  <table border="1" cellpadding="0" width="750">
+    <tr>
+      <td width="250"><p align="center"><strong>Data.gov</strong></p></td>
+      <td width="250"><p align="center"><strong>ISO 19115</strong></p></td>
+      <td width="250"><p align="center"><strong>FGDC CSDGM</strong></p></td>
+    </tr>
+    <tr>
+      <td width="250"><p align="center"><a href="http://project-open-data.github.io/schema/#contactPoint" title="Data.gov Standard" target="_blank">contactPoint???</a></p></td>
+      <td width="250"><p align="center"><a href="http://service.ncddc.noaa.gov/rdn/www/metadata-standards/documents/MI-Metadata.pdf#page=109" title="ISO 19115 Standard" target="_blank">MD_Distribution<br>
+      </a></p></td>
+      <td width="250"><p align="center"><a href="http://www.fgdc.gov/csdgmgraphical/distr.htm" title="FGDC CSDGM Standard" target="_blank">distinfo</a></p></td>
+    </tr>
+  </table>
 <br><br><br><br>
+</blockquote>
 </body>
 </html>

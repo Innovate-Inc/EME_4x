@@ -3,45 +3,142 @@
 <link href="mystyle.css" rel="stylesheet" type="text/css" />
 </head><body>
 <h1>EPA Metadata Editor (EME)</h1>
-<h2>Interface Element Description: Tab 2</h2>
-<blockquote>Element:<b>Digital Transfer Options</b></blockquote>
-<blockquote>Type: compound MD_DigitalTransferOptions </blockquote>
-<blockquote>ISO Element Name: distributorTransferOptions</blockquote>
+<h2>Interface Element Description: Tab 2 - Digital Transfer Options</h2>
+<blockquote> Mandatory element</blockquote>
 <h3>EPA Requirement/Guidance</h3>
-<blockquote>This section provides information about the technical means and media by which a resource is obtained from the distributor.  The following elements are included in this section:
-<ul>
-<li><b>Units Of Distribution</b> - Tiles, layers, geographic areas, etc. in which the data is available.	
-<li><b>Transfer Size</b> - Estimated size of the transfer unit in the specified format, expressed in megabytes. Best Practices: Value greater that 0.0.
-<li><b>On Line</b> - Information about the online sources where the data/dataset may be obtained. ISO Element Name: CI_OnlineResource
-	<ul>
-		<li><b>Linkage</b> - Internet location (address) for on-line access which uses a Uniform Resource Locator address or similar addressing scheme. <b>NOTE: [WE NEED TO INCLUDE THE OLD ONLINE LINKAGE HELP HERE.  See <a href="t2_onlink.html">Onlink Page</a> </b>
-		<li><b>Function</b> - Code for function performed by the online resource (CI_OnlineFunctionCode)
-		<li><b>Protocol</b> - The connection protocol to be used such as http, ftp, etc.
-		<li><b>Application Profile</b> - Name of an application profile that can be used with the online resource.
-		<li><b>Name</b> - Name of the online resource.
-		<li><b>Description</b> - Description of the online resource that provides the resource sought.	
-	</ul>
-<li><b>Off Line</b> - Information about the offline distribution media regarding the name, density units, volumes, medium format, and medium note used to describe the transfer of data to a medium. ISO Element Name: MD_Medium
-	<ul>
-		<li><b>Name</b> - Medium name code. Type: MD_MediumNameCode Domain: cdRom, dvd, dvdRom, 3halfInchFloppy, 5quarterInchFloppy, 7trackTape, 9trackTape, 3480Cartridge, 3490Catridge, 3580Cartridge, 4mmCartridgeTape, 8mmCartridgeTape, 1quarterInchCartridgeTape, digitalLinearTape, onLine, satellite, telephoneLink, hardcopy.
-		<li><b>Density</b> - The recording density on the specified media. Best Practices: Value greater than 0.0.		
-		<li><b>Density Units</b> - The recording density units. Best Practices: densityUnits is mandatory when density is documented.
-		<li><b>Volumes</b> - Identification of the number of recorded items on the media. Type: gco:Integer, Domain: any whole number, Best Practices: Value greater than 0.
-		<li><b>Medium Format</b> - Method used to write to the medium. Type: MD_MediumFormatCode, Domain: cpio, tar, highSierra, iso9660, iso9660RockRidge, iso9660AppleHFS.
-		<li><b>Medium Note</b> - Description of limitations or requirements for using the medium.	
-	</ul>
-</ul>
-</blockquote>
-<h3>Data.gov Requirement/Guidance</h3>
-<blockquote><p>NA</p></blockquote>
-<h3>ISO Definition</h3>
-<blockquote>Provides information about the technical means and media by which a resource is obtained from the distributor.
-</blockquote>
-<h3>FGDC Definition</h3>
-<blockquote>NA
-</blockquote>
+<blockquote>
+  <p>This section provides information about the technical means and media by which a resource is obtained from the distributor.  There are two resource options: online or offline. The following elements are included in this section:</p>
+  <p><b>Units Of Distribution</b> - Tiles, layers, shapefiles, raster files, geographic areas, etc. in which the resource is available.</p>
+
+  <p><b>Transfer Size</b> - Estimated size of the transfer unit in the specified format, expressed in megabytes. Best Practices: Value greater than 0.0.</p>
+  <p><b>Online Resource</b> - Information about the online resource where the data resource may be obtained.</p>
+  <ul>
+    <li><b><a href="t2_onlink.html" title="Linkage" target="_blank">Linkage</a></b> - Internet location (address) for on-line access which uses a Uniform Resource Locator (URL) address or similar addressing scheme. <em><strong>This is a required element.</strong></em></li>
+    <li><b><a href="#function">Function</a></b> - Function performed by the online resource. <em><strong>This is a required element.</strong></em></li>
+    <li><b>Protocol</b> - The connection protocol to be used, e.g. http, ftp, etc.</li>
+    <li><b>Application Profile</b> - Name of an application profile that can be used with the online resource, e.g. Dublin Core</li>
+    <li><b>Name</b> - Name of the online resource, e.g. NODC Ocean Archive System
+    <li><b>Description</b> - Description of the online resource that provides the resource sought, e.g. &quot;This is a documentation-only accession to contain the various web pages, directories, and documents providing information to the responders to the Deepwater Horizon event.&quot;
+  </ul>
+  <p><b>Offline Resource</b> - Information about the offline distribution media regarding the medium name, density, density units, volumes, medium format, and medium note used to describe the transfer of data to a medium.</p>
+  <ul>
+    <li><b>Medium Name</b> - Medium type, e.g. cdRom, dvd, dvdRom, 3halfInchFloppy, 5quarterInchFloppy, 7trackTape, 9trackTape, 3480Cartridge, 3490Catridge, 3580Cartridge, 4mmCartridgeTape, 8mmCartridgeTape, 1quarterInchCartridgeTape, digitalLinearTape, onLine, satellite, telephoneLink, or hardcopy.</li>
+    <li><b>Density</b> - The recording density on the specified media. Best Practices: Value greater than 0.0.		
+    </li>
+    <li><b>Density Units</b> - The recording density units. Best Practices: Density Units is mandatory when density is documented.
+    </li>
+    <li><b>Volumes</b> - Identification of the number of recorded items on the media.  Best Practices: Value greater than 0.
+    </li>
+    <li><b>Medium Format</b> - Method used to write to the medium, e.g. cpio, tar, highSierra, iso9660, iso9660RockRidge, or iso9660AppleHFScdRom.</li>
+    <li><b>Medium Note</b> - Description of limitations or requirements for using the medium.	
+    </li></ul></blockquote>
 <h3>Domain</h3>
-<blockquote>None.</blockquote>
+  <blockquote>
+    <p><a name="function"></a><strong>Function</strong>:</p>
+    <ul>
+      <li><strong>download</strong> - online instructions for transferrring data from one storage device or system to another</li>
+      <li><strong>information</strong> - online information about the dataset</li>
+      <li><strong>offline access</strong> - online instructions for requesting the resource from the dataset</li>
+      <li><strong>order</strong> - online order process for obtaining the dataset</li>
+      <li><strong>search</strong> - online search interface for seeking out information about the dataset</li>
+    </ul>
+  </blockquote>
+<h3>Metadata Standard Crosswalk</h3>
+<blockquote>
+    <p>Element type: compound and text</p>
+    <table border="1" cellpadding="0" width="1020">
+      <tr>
+        <td width="250"><strong>EPA Element</strong></td>
+        <td width="250"><p align="center"><strong>Data.gov</strong></p></td>
+        <td width="250"><p align="center"><strong>ISO 19115</strong></p></td>
+        <td width="250"><p align="center"><strong>FGDC CSDGM</strong></p></td>
+      </tr>
+      <tr>
+        <td>Units Of Distribution</td>
+        <td><div align="center">N/A - The element does not exist in this standard</div></td>
+        <td><div align="center"><a href="http://service.ncddc.noaa.gov/rdn/www/metadata-standards/documents/MI-Metadata.pdf#page=106" title="ISO 19115 Standard" target="_blank">MD_DigitalTransferOptions/unitsOfDistribution</a></div></td>
+        <td><div align="center"><a href="http://www.fgdc.gov/csdgmgraphical/distr/storder/digform/traninf/fname.htm" title="FGDC CSDGM Standard" target="_blank">formname</a></div></td>
+      </tr>
+      <tr>
+        <td>Transfer Size</td>
+        <td><div align="center">N/A - The element does not exist in this standard</div></td>
+        <td><div align="center"><a href="http://service.ncddc.noaa.gov/rdn/www/metadata-standards/documents/MI-Metadata.pdf#page=106" title="ISO 19115 Standard" target="_blank">MD_DigitalTransferOptions/transferSize</a></div></td>
+        <td><div align="center"><a href="http://www.fgdc.gov/csdgmgraphical/distr/storder/digform/traninf/size.htm" title="FGDC CSDGM Standard" target="_blank">transize</a></div></td>
+      </tr>
+      <tr>
+        <td><p>Linkage</p></td>
+        <td><div align="center"><a href="http://project-open-data.github.io/schema/#accessURL" title="Data.gov Standard" target="_blank">accessURL</a></div></td>
+        <td><div align="center"><a href="http://service.ncddc.noaa.gov/rdn/www/metadata-standards/documents/MI-Metadata.pdf#page=45" title="ISO 19115 Standard" target="_blank">CI_OnlineResource/linkage</a></div></td>
+        <td><div align="center"><a href="http://www.fgdc.gov/csdgmgraphical/distr/storder/digform/option/online/compcon/netadd.htm" title="FGDC CSDGM Standard" target="_blank">networka</a></div></td>
+      </tr>
+      <tr>
+        <td>Function</td>
+        <td><div align="center"><a href="http://project-open-data.github.io/schema/#format" title="Data.gov Standard" target="_blank">format</a></div></td>
+        <td><div align="center"><a href="http://service.ncddc.noaa.gov/rdn/www/metadata-standards/documents/MI-Metadata.pdf#page=46" title="ISO 19115 Standard" target="_blank">CI_OnlineResource/function</a></div></td>
+        <td><div align="center">N/A - The element does not exist in this standard</div></td>
+      </tr>
+      <tr>
+        <td>Protocol</td>
+        <td><div align="center">N/A - The element does not exist in this standard</div></td>
+        <td><div align="center"><a href="http://service.ncddc.noaa.gov/rdn/www/metadata-standards/documents/MI-Metadata.pdf#page=45" title="ISO 19115 Standard" target="_blank">CI_OnlineResource/protocol</a></div></td>
+        <td><div align="center">N/A - The element does not exist in this standard</div></td>
+      </tr>
+      <tr>
+        <td><div align="left">Application Profile</div></td>
+        <td><div align="center">N/A - The element does not exist in this standard</div></td>
+        <td><div align="center"><a href="http://service.ncddc.noaa.gov/rdn/www/metadata-standards/documents/MI-Metadata.pdf#page=45">CI_OnlineResource/applicationProfile</a></div></td>
+        <td><div align="center">N/A - The element does not exist in this standard</div></td>
+      </tr>
+      <tr>
+        <td>Name</td>
+        <td><div align="center">N/A - The element does not exist in this standard</div></td>
+        <td><div align="center"><a href="http://service.ncddc.noaa.gov/rdn/www/metadata-standards/documents/MI-Metadata.pdf#page=46" title="ISO 19115 Standard" target="_blank">CI_OnlineResource/name</a></div></td>
+        <td><div align="center"><a href="http://www.fgdc.gov/csdgmgraphical/distr/storder/digform/option/online/compcon/netadd/netres.htm" title="FGDC CSDGM Standard" target="_blank">networkr</a></div></td>
+      </tr>
+      <tr>
+        <td>Description</td>
+        <td><div align="center">N/A - The element does not exist in this standard</div></td>
+        <td><div align="center"><a href="http://service.ncddc.noaa.gov/rdn/www/metadata-standards/documents/MI-Metadata.pdf#page=46" title="ISO 19115 Standard" target="_blank">CI_OnlineResource/description</a></div></td>
+        <td><div align="center">N/A - The element does not exist in this standard</div></td>
+      </tr>
+      <tr>
+        <td>Medium Name</td>
+        <td><div align="center">N/A - The element does not exist in this standard</div></td>
+        <td><div align="center"><a href="http://service.ncddc.noaa.gov/rdn/www/metadata-standards/documents/MI-Metadata.pdf#page=136" title="ISO 19115 Standard" target="_blank">MD_Medium/name</a></div></td>
+        <td><div align="center"><a href="http://www.fgdc.gov/csdgmgraphical/distr/storder/digform/option/offline/media.htm" title="FGDC CSDGM Standard" target="_blank">offmedia</a></div></td>
+      </tr>
+      <tr>
+        <td>Density</td>
+        <td><div align="center">N/A - The element does not exist in this standard</div></td>
+        <td><div align="center"><a href="http://service.ncddc.noaa.gov/rdn/www/metadata-standards/documents/MI-Metadata.pdf#page=136" title="ISO 19115 Standard" target="_blank">MD_Medium/density</a></div></td>
+        <td><div align="center"><a href="http://www.fgdc.gov/csdgmgraphical/distr/storder/digform/option/offline/reccap/density.htm" title="FGDC CSDGM Standard" target="_blank">recden</a></div></td>
+      </tr>
+      <tr>
+        <td>Density Units</td>
+        <td><div align="center">N/A - The element does not exist in this standard</div></td>
+        <td><div align="center"><a href="http://service.ncddc.noaa.gov/rdn/www/metadata-standards/documents/MI-Metadata.pdf#page=136" title="ISO 19115 Standard" target="_blank">MD_Medium/densityUnits</a></div></td>
+        <td><div align="center"><a href="http://www.fgdc.gov/csdgmgraphical/distr/storder/digform/option/offline/reccap/units.htm" title="FGDC CSDGM Standard" target="_blank">recdenu</a></div></td>
+      </tr>
+      <tr>
+        <td>Volumes</td>
+        <td><div align="center">N/A - The element does not exist in this standard</div></td>
+        <td><div align="center"><a href="http://service.ncddc.noaa.gov/rdn/www/metadata-standards/documents/MI-Metadata.pdf#page=136" title="ISO 19115 Standard" target="_blank">MD_Medium/volumes</a></div></td>
+        <td><div align="center">N/A - The element does not exist in this standard</div></td>
+      </tr>
+      <tr>
+        <td>Medium Format</td>
+        <td><div align="center">N/A - The element does not exist in this standard</div></td>
+        <td><div align="center"><a href="http://service.ncddc.noaa.gov/rdn/www/metadata-standards/documents/MI-Metadata.pdf#page=136" title="ISO 19115 Standard" target="_blank">MD_Medium/mediumFormat</a></div></td>
+        <td><div align="center"><a href="http://www.fgdc.gov/csdgmgraphical/distr/storder/digform/option/offline/recform.htm" title="FGDC CSDGM Standard" target="_blank">recfmt</a></div></td>
+      </tr>
+      <tr>
+        <td width="250">Medium Note</td>
+        <td width="250"><p align="center">N/A - The element does not exist in this standard</p></td>
+        <td width="250"><p align="center"><a href="http://service.ncddc.noaa.gov/rdn/www/metadata-standards/documents/MI-Metadata.pdf#page=136" title="ISO 19115 Standard" target="_blank">MD_Medium/mediumNote</a></p></td>
+        <td width="250"><p align="center"><a href="http://www.fgdc.gov/csdgmgraphical/distr/storder/digform/option/offline/compinf.htm" title="FGDC CSDGM Standard" target="_blank">compat</a></p></td>
+      </tr>
+  </table>
 <br><br><br><br>
+</blockquote>
 </body>
 </html>

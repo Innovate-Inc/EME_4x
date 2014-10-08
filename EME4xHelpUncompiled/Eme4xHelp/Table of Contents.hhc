@@ -25,19 +25,15 @@
 			<param name="ImageNumber" value="11">
 			</OBJECT>		
 		<LI> <OBJECT type="text/sitemap">
-			<param name="Name" value="Using the EME User Interface">
-			<param name="Local" value="Interface%20Features.html">
+			<param name="Name" value="EME User Interface Features">
+			<param name="Local" value="Help_InterfaceFeatures.html">
 			<param name="ImageNumber" value="11">
 			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
-			<param name="Name" value="Setting up the EME Database">
+			<param name="Name" value="Customizing the EME Database">
 			<param name="Local" value="Help_DB.html">
 			<param name="ImageNumber" value="11">
-			</OBJECT>
-		<LI> <OBJECT type="text/sitemap">
-			<param name="Name" value="Using the EPA Validator">
-			<param name="Local" value="Help_Validation.html">
-			</OBJECT>
+			</OBJECT>		
 	</UL>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="Reference Information">
@@ -98,22 +94,10 @@
 				<LI> <OBJECT type="text/sitemap">
 					<param name="Name" value="Bounding Coordinates Description">
 					<param name="Local" value="t1_bcDescription.html">
-					</OBJECT>
+					</OBJECT>				
 				<LI> <OBJECT type="text/sitemap">
-					<param name="Name" value="North Bounding Coordinates">
-					<param name="Local" value="t1_northbc.html">
-					</OBJECT>
-				<LI> <OBJECT type="text/sitemap">
-					<param name="Name" value="South Bounding Coordinates">
-					<param name="Local" value="t1_southbc.html">
-					</OBJECT>
-				<LI> <OBJECT type="text/sitemap">
-					<param name="Name" value="West Bounding Coordinates">
-					<param name="Local" value="t1_westbc.html">
-					</OBJECT>
-				<LI> <OBJECT type="text/sitemap">
-					<param name="Name" value="East Bounding Coordinates">
-					<param name="Local" value="t1_eastbc.html">
+					<param name="Name" value="Bounding Coordinates">
+					<param name="Local" value="t1_bc.html">
 					</OBJECT>
 			</UL>
 			<LI> <OBJECT type="text/sitemap">
@@ -158,15 +142,22 @@
 				<LI> <OBJECT type="text/sitemap">
 					<param name="Name" value="Distribution Contact">
 					<param name="Local" value="t2_distcnt.html">
-					</OBJECT>
-				<LI> <OBJECT type="text/sitemap">
-					<param name="Name" value="Digital Transfer Options">
-					<param name="Local" value="t2_distDTO.html">
-					<param name="ImageNumber" value="11">
+					<param name="ImageNumber" value="1">
 					</OBJECT>
 				<UL>
 					<LI> <OBJECT type="text/sitemap">
-						<param name="Name" value="Online Linkage(Remove This)">
+						<param name="Name" value="How to add a Contact">
+						<param name="Local" value="t2_ContactHowTo.html">
+						</OBJECT>
+				</UL>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Digital Transfer Options">
+					<param name="Local" value="t2_distDTO.html">
+					<param name="ImageNumber" value="1">
+					</OBJECT>
+				<UL>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Online Linkage(Update For ISO)">
 						<param name="Local" value="t2_onlink.html">
 						</OBJECT>
 				</UL>
@@ -185,7 +176,7 @@
 				</OBJECT>
 			<UL>
 				<LI> <OBJECT type="text/sitemap">
-					<param name="Name" value="General Constraints">
+					<param name="Name" value="System of Records">
 					<param name="Local" value="t2_useconstGeneral.html">
 					</OBJECT>
 				<LI> <OBJECT type="text/sitemap">
@@ -195,11 +186,7 @@
 				<LI> <OBJECT type="text/sitemap">
 					<param name="Name" value="Security Constraints">
 					<param name="Local" value="t2_secclass.html">
-					</OBJECT>				
-				<LI> <OBJECT type="text/sitemap">
-					<param name="Name" value="What todo with distLiab">
-					<param name="Local" value="t2_distliab.html">
-					</OBJECT>				
+					</OBJECT>											
 			</UL>
 			<LI> <OBJECT type="text/sitemap">
 				<param name="Name" value="Contacts">
@@ -208,24 +195,20 @@
 				</OBJECT>
 			<UL>
 				<LI> <OBJECT type="text/sitemap">
-					<param name="Name" value="Resource Owner(s)">
+					<param name="Name" value="Resource Owner">
 					<param name="Local" value="t2_resourceOwner.html">
 					</OBJECT>
 				<LI> <OBJECT type="text/sitemap">
-					<param name="Name" value="Resource Producer(s)">
+					<param name="Name" value="Resource Producer">
 					<param name="Local" value="t2_resourceProducer.html">
 					</OBJECT>
 				<LI> <OBJECT type="text/sitemap">
-					<param name="Name" value="Metadata Author(s)">
+					<param name="Name" value="Metadata Author">
 					<param name="Local" value="t2_metaAuthor.html">
-					</OBJECT>
+					</OBJECT>				
 				<LI> <OBJECT type="text/sitemap">
-					<param name="Name" value="Role Code">
-					<param name="Local" value="t2_contactRole.html">
-					</OBJECT>
-				<LI> <OBJECT type="text/sitemap">
-					<param name="Name" value="Program Code">
-					<param name="Local" value="t2_contactProgramCode.html">
+					<param name="Name" value="How to add a Contact">
+					<param name="Local" value="t2_ContactHowTo.html">
 					</OBJECT>
 			</UL>
 			<LI> <OBJECT type="text/sitemap">
@@ -236,27 +219,27 @@
 			<UL>
 				<LI> <OBJECT type="text/sitemap">
 					<param name="Name" value="Type of Resource">
-					<param name="Local" value="t2_resourceType.html">
+					<param name="Local" value="t2_metainfo.html#typeofresource">
 					</OBJECT>
 				<LI> <OBJECT type="text/sitemap">
 					<param name="Name" value="Last Modified Date">
-					<param name="Local" value="t2_metd.html">
+					<param name="Local" value=t2_metainfo.html#lastmodified">
 					</OBJECT>
 				<LI> <OBJECT type="text/sitemap">
-					<param name="Name" value="Metadata Identifier (UUID)">
-					<param name="Local" value="t2_fileId.html">
+					<param name="Name" value="Identifier (UUID)">
+					<param name="Local" value="t2_metainfo.html#uuid">
 					</OBJECT>
 				<LI> <OBJECT type="text/sitemap">
 					<param name="Name" value="Language">
-					<param name="Local" value="t2_language.html">
+					<param name="Local" value="t2_metainfo.html#language">
 					</OBJECT>
 				<LI> <OBJECT type="text/sitemap">
-					<param name="Name" value="Metadata Standard Name">
-					<param name="Local" value="t2_metstdn.html">
+					<param name="Name" value="Standard Name">
+					<param name="Local" value="t2_metainfo.html#standardname">
 					</OBJECT>
 				<LI> <OBJECT type="text/sitemap">
-					<param name="Name" value="Metadata Standard Version">
-					<param name="Local" value="t2_metstdv.html">
+					<param name="Name" value="Standard Version">
+					<param name="Local" value="t2_metainfo.html#standardversion">
 					</OBJECT>
 			</UL>
 		</UL>

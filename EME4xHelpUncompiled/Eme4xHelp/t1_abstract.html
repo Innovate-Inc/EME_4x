@@ -2,21 +2,43 @@
 <head>
 <link href="mystyle.css" rel="stylesheet" type="text/css" />
 <h1>EPA Metadata Editor (EME)</h1>
-<h2>Interface Element Description: Tab 1</h2>
-<blockquote>Element:<b> Abstract</b></blockquote>
-<blockquote>Type: text</blockquote>
-<blockquote>ISO Element Name: abstract</blockquote>
+<h2>Interface Element Description: Tab 1 - Abstract</h2>
+<blockquote>
+  <p>Mandatory element</p>
+</blockquote>
 <h3>EPA Requirement/Guidance</h3>
-<blockquote>This field is required for EPA geospatial assets as per minimum FGDC standards. Typically, this field should be used to provide a general overview about the asset.  Follow FGDC guidance for implementation of this field.</blockquote>
-<h3>Data.gov Requirement/Guidance</h3>
-<blockquote><p>Mandatory human-readable description (e.g., an abstract) with sufficient detail to enable a user to quickly understand whether the asset is of interest.
-</p></blockquote>
-<h3>ISO Definition</h3>
-<blockquote>A brief narrative summary of the resource contents.</blockquote>
-<h3>FGDC Definition</h3>
-<blockquote>A brief narrative summary of the resource.</blockquote>
+<blockquote>
+  <p>This element is  required for EPA&nbsp;data&nbsp;resources.  Typically, this element should be used to provide a brief summary of the  resource. Some of the recommended items that should be included in this field  are:  </p>
+  <blockquote>
+    <p>- general content and features<br>
+      - dataset form (GIS, CAD, image, Dbase, etc.)<br>
+      - geographic coverage (county/city name)<br>
+      - time period of content (begin and end date or single date)<br>
+      - special data characteristics or limitations</p>
+  </blockquote>
+  <p><strong>Example</strong>:<br>
+  &quot;A total of 54 GPS points were collected around the Willamette      Valley, Oregon, in the fall of 1997 and spring of 1998.  Locations      were selected at road crossings over streams and along the Mainstem      Willamette.  Attention was paid to achieving relatively even spacing      around the basin, including farthest extents, and along the Mainstem.      Points were differentially corrected and imported into a file geodatabase, attributed to indicate location, road, stream, and notes.&quot;</p>
+</blockquote>
 <h3>Domain</h3>
-<blockquote>free text</blockquote>
-<br><br><br><br>
+<blockquote>
+  <p>none</p>
+</blockquote>
+<h3>Metadata Standard Crosswalk</h3>
+<blockquote>
+  <p>Element type:  text</p>
+  <table border="1" cellpadding="0" width="750">
+    <tr>
+      <td width="250"><p align="center"><strong>Data.gov</strong></p></td>
+      <td width="250"><p align="center"><strong>ISO 19115</strong></p></td>
+      <td width="250"><p align="center"><strong>FGDC CSDGM</strong></p></td>
+    </tr>
+    <tr>
+      <td width="250"><p align="center"><a href="http://project-open-data.github.io/schema/#description" target="_blank" title="Data.gov Standard">description</a></p></td>
+      <td width="250"><p align="center"><a href="http://service.ncddc.noaa.gov/rdn/www/metadata-standards/documents/MI-Metadata.pdf#page=103" title="ISO 19115 Standard" target="_blank">MD_DataIdentification/abstract</a></p></td>
+      <td width="250"><p align="center"><a href="http://www.fgdc.gov/csdgmgraphical/ideninfo/descr/abstract.htm" target="_blank" title="FGDC CSDGM Standard">abstract</a></p></td>
+    </tr>
+  </table>
+<BR><BR><BR><BR>
+</blockquote>
 </body>
 </html>

@@ -3,29 +3,59 @@
 <link href="mystyle.css" rel="stylesheet" type="text/css" />
 </head><body>
 <h1>EPA Metadata Editor (EME)</h1>
-<h2>Interface Element Description: Tab 2</h2>
-<blockquote>Element: <b>Standard Order Process</b></blockquote>
-<blockquote>Type: compound MD_StandardOrderProcess </blockquote>
-<blockquote>ISO Element Name: distributionOrderProcess</blockquote>
+<h2>Interface Element Description: Tab 2 - Standard Order Process</h2>
+<blockquote>Optional<b></b> element</blockquote>
 <h3>EPA Requirement/Guidance</h3>
-<blockquote>The process in which the resource is obtained or received and other related instructions or fee information.  The following elements are included in this section:
-<ul>
-	<li><b>fees</b> - Fees and terms for obtaining the data/dataset. Best Practices: Include at the end the monetary unit alphabetic code as specified in ISO 4217. Common codes: United States = USD, Canada = CAD, Mexico = MXN or MXV.  Example: 45.00USD
-	<li><b>plannedAvailableDateTime</b> - Date and time the resource will be available.
-	<li><b>orderingInstructions</b> - General instructions, terms, and services provided by the data distributor.
-	<li><b>turnaround</b> - Typical time required for filing a data request. Domain: free text
-</ul>
-</blockquote>
-<h3>Data.gov Requirement/Guidance</h3>
-<blockquote><p>NA</p></blockquote>
-<h3>ISO Definition</h3>
-<blockquote>The process to follow when obtaining the data/dataset.
-</blockquote>
-<h3>FGDC Definition</h3>
-<blockquote>NA
+<blockquote>This section describes the process by which the resource was obtained or received and other related instructions or fee information.  The following elements are included in this section:
+  <blockquote>
+    <p><b>Fees</b> - Fees and terms for obtaining the data resource. Best Practices: Include at the end the monetary unit alphabetic code as specified in <a href="http://www.currency-iso.org/en/home/tables/table-a1.html" title="ISO 4217 Currency Codes" target="_blank">ISO 4217</a>. Common codes: United States = USD, Canada = CAD, Mexico = MXN or MXV.  Example: 45.00USD </p>
+    <p><b>Available Date</b> - Date and time the resource will be available.
+    </p>
+    <p><b>Ordering Instructions</b> - General instructions, terms, and services provided by the data distributor.
+    </p>
+    <p><b>Turnaround</b> - Typical time required for filing a data request.</p>
+  </blockquote>
 </blockquote>
 <h3>Domain</h3>
-<blockquote>None.</blockquote>
+<blockquote>
+  <p>None</p>
+</blockquote>
+<h3>Metadata Standard Crosswalk</h3>
+<blockquote>
+  <p>Element type: date and text</p>
+  <table border="1" cellpadding="0" width="1020">
+    <tr>
+        <td width="250"><strong>EPA Element</strong></td>
+        <td width="250"><p align="center"><strong>Data.gov</strong></p></td>
+        <td width="250"><p align="center"><strong>ISO 19115</strong></p></td>
+        <td width="250"><p align="center"><strong>FGDC CSDGM</strong></p></td>
+    </tr>
+      <tr>
+        <td>Fees</td>
+        <td><div align="center">N/A - The element does not exist in this standard</div></td>
+        <td><div align="center"><a href="http://service.ncddc.noaa.gov/rdn/www/metadata-standards/documents/MI-Metadata.pdf#page=149" title="ISO 19115 Standard" target="_blank">MD_StandardOrderProcess/fees</a><a href="http://service.ncddc.noaa.gov/rdn/www/metadata-standards/documents/MI-Metadata.pdf#page=106" title="ISO 19115 Standard" target="_blank"></a></div></td>
+        <td><div align="center"><a href="http://www.fgdc.gov/csdgmgraphical/distr/storder/fees.htm" title="FGDC CSDGM Standard" target="_blank">fees</a></div></td>
+      </tr>
+      <tr>
+        <td>Available Date</td>
+        <td><div align="center"><a href="http://project-open-data.github.io/schema/#issued" title="Data.gov Standard" target="_blank">issued</a>???</div></td>
+        <td><div align="center"><a href="http://service.ncddc.noaa.gov/rdn/www/metadata-standards/documents/MI-Metadata.pdf#page=149" title="ISO 19115 Standard" target="_blank">MD_StandardOrderProcess/plannedAvailableDateTime</a></div></td>
+        <td><div align="center">N/A - The element does not exist in this standard</div></td>
+      </tr>
+      <tr>
+        <td><p>Ordering Instructions</p></td>
+        <td><div align="center">N/A - The element does not exist in this standard</div></td>
+        <td><div align="center"><a href="http://service.ncddc.noaa.gov/rdn/www/metadata-standards/documents/MI-Metadata.pdf#page=150" title="ISO 19115 Standard" target="_blank">MD_StandardOrderProcess/orderingInstructions</a></div></td>
+        <td><div align="center"><a href="http://www.fgdc.gov/csdgmgraphical/distr/storder/ordinst.htm" title="FGDC CSDGM Standard" target="_blank">ordering</a></div></td>
+      </tr>
+      <tr>
+        <td>Turnaround</td>
+        <td><div align="center">N/A - The element does not exist in this standard</div></td>
+        <td><div align="center"><a href="http://service.ncddc.noaa.gov/rdn/www/metadata-standards/documents/MI-Metadata.pdf#page=150" title="ISO 19115 Standard" target="_blank">MD_StandardOrderProcess/turnaround</a></div></td>
+        <td><div align="center"><a href="http://www.fgdc.gov/csdgmgraphical/distr/storder/turnaro.htm" title="FGDC CSDGM Standard" target="_blank">turnarnd</a></div></td>
+      </tr>
+  </table>
 <br><br><br><br>
+</blockquote>
 </body>
 </html>

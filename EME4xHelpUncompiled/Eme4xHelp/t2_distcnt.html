@@ -3,29 +3,35 @@
 <link href="mystyle.css" rel="stylesheet" type="text/css" />
 </head><body>
 <h1>EPA Metadata Editor (EME)</h1>
-<h2>Interface Element Description: Tab 2</h2>
-<blockquote>Element:<b> Distribution Contact</b></blockquote>
-<blockquote>Type: compound</blockquote>
-<blockquote>ISO Element Name: distributorContact</blockquote>
+<h2>Interface Element Description: Tab 2 - Distribution Contact</h2>
+<blockquote>Mandatory element</blockquote>
 <h3>EPA Requirement/Guidance</h3>
-<blockquote>Provide detailed information in this field to identify the person or organization that should be contacted regarding accessing the data or asset.  Contact information within this element may or may not be the same as that listed for other sections.</blockquote>
-<h3>Data.gov Requirement/Guidance</h3>
-<blockquote>The EME Distribution Contact element includes 3 mandatory Data.gov elements: 
-<ul>
-<li><strong>Publisher</strong> - The plaintext name of the entity publishing this resource, corresponding to the FGDC contact organization.</li>
-<li><strong>Contact Name</strong> - A contact person's name for the asset, corresponding to the FGDC contact person.</li>
-<li><strong>Contact Email</strong> - A valid email address for the contact person listed above. An email address corresponding to a helpdesk or distribution list is an acceptable alternative.</li>
-</ul>
-If validation fails, the contact info may need to be edited in the <a href="Help_DB.html">EME database</a> or by editing the contact information directly in the user interface.
-</blockquote>
-<h3>ISO Definition</h3>
-<blockquote>Information on the party responsible for distribution.
-</blockquote>
-<h3>FGDC Definition</h3>
-<blockquote>The party from whom the data set may be obtained.
+<blockquote>
+  <p>Provide detailed information in this field to identify the person or organization that should be contacted regarding accessing the data resource.  Contact information within this element may or may not be the same as that listed for other sections. The minimum requirements for this element are: Role, Organization, and E-mail. </p>
+  <p><strong>Note</strong>: If an incoming metadata record previously used distributionInfo/MD_Distribution/distributorFormat  or distributionInfo/MD_Distribution/transferOptions, the content in those elements will be moved to a new record that says, &quot;Content Missing, Add A Contact&quot; in the &quot;Individual&quot; element.</p>
+  <p><img src="screenshot_dist10.jpg" width="456" height="216" alt=""/></p>
+  <p>To add a contact, follow these guidelines on: <a href="t2_contactHowTo.html">How to Add a Contact</a></p>
 </blockquote>
 <h3>Domain</h3>
-<blockquote>None.</blockquote>
+<blockquote>
+  <p>See  <a href="t2_contactHowTo.html">How to add a Contact</a> for domains.</p>
+</blockquote>
+<h3>Metadata Standard Crosswalk</h3>
+<blockquote>
+  <p>Element Type: compound and text</p>
+  <table border="1" cellpadding="0" width="750">
+    <tr>
+      <td width="250"><p align="center"><strong>Data.gov</strong></p></td>
+      <td width="250"><p align="center"><strong>ISO 19115</strong></p></td>
+      <td width="250"><p align="center"><strong>FGDC CSDGM</strong></p></td>
+    </tr>
+    <tr>
+      <td width="250"><p align="center"><a href="http://project-open-data.github.io/schema/#contactPoint" title="Data.gov Standard" target="_blank">contactPoint</a></p></td>
+      <td width="250"><p align="center"><a href="http://service.ncddc.noaa.gov/rdn/www/metadata-standards/documents/MI-Metadata.pdf#page=47" title="ISO 19115 Standard" target="_blank">MD_Distribution/distributor</a></p></td>
+      <td width="250"><p align="center"><a href="http://www.fgdc.gov/csdgmgraphical/distr/distrib.htm" title="FGDC CSDGM Standard" target="_blank">distinfo</a><a href="http://www.fgdc.gov/csdgmgraphical/distr.htm" title="FGDC CSDGM Standard" target="_blank"></a></p></td>
+    </tr>
+  </table>
 <br><br><br><br>
+</blockquote>
 </body>
 </html>

@@ -3,33 +3,83 @@
 <link href="mystyle.css" rel="stylesheet" type="text/css" />
 </head><body>
 <h1>EPA Metadata Editor (EME)</h1>
-<h2>Interface Element Description: Tab 2</h2>
-<blockquote>Element:<b> Legal Constraints</b></blockquote>
-<blockquote>Type: compound</blockquote>
-<blockquote>ISO Element Name: MD_LegalConstraints</blockquote>
+<h2>Interface Element Description: Tab 2 - Legal Constraints</h2>
+<blockquote>Optional element</blockquote>
 <h3>EPA Requirement/Guidance</h3>
 <blockquote> This section pertains to the legal restrictions or prerequisites to using the resource or accessing the metadata. The following elements are included:
-<ul>
-	<li><b>Use Limitation</b> - Statement on the fitness of use or limitations on the use of the resource or metadata. Domain: free text. EPA General Use Limitation Statement: "Please check sources, scale, accuracy, currentness and other available information. Please confirm that you are using the most recent copy of both data and metadata."
-	<li><b>Access Constraints</b> - Limitations on access to the resource or metadata to protect privacy, intellectual property, or any special limitations. Type: MD_RestrictionCode. Domian: copyright, patent, patentPending, trademark, license, intellectualPropertyRights, restricted, otherRestrictions.
-	<li><b>Use Constraints</b> - Restrictions or limitations or warnings to protect privacy, intellectual property, or other special restrictions on the resource or the metadata. Type: MD_RestrictionCode. Domian: copyright, patent, patentPending, trademark, license, intellectualPropertyRights, restricted, otherRestrictions.
-	<li><b>otherConstraints</b> - Other restrictions or legal prerequisites for accessing the resource or metadata.	Domain: free text. Best Practices: otherConstraints becomes mandatory when accessConstraints or useCosntraints are set to “otherRestrictions”.
-	
-</ul>
-<b>[THIS NEEDS TO BE RE-WORKED INTO THE ABOVE???????]</b>
-For data developed by other parties, retain use constraints information, and add the EPA General Use Constraints Statement (shown below).  For data developed in-house, determine scale, accuracy, and other limitations related to using the data.  If there are no known use constraints for the data set, use the term 'None' and provide the EPA General Use Constraints Statement (shown below).
-
-</blockquote>
-<h3>Data.gov Requirement/Guidance</h3>
-<blockquote><p>NA</p></blockquote>
-<h3>ISO Definition</h3>
-<blockquote>The legal restrictions or prerequisites to using the resource or accessing the metadata.
-</blockquote>
-<h3>FGDC Definition</h3>
-<blockquote>Restrictions and legal prerequisites for using the data set after access is granted.
+  <blockquote>
+    <p><b>Use Limitation</b> - Statement on the fitness of use or limitations on the use of the resource or metadata. If there are no known use constraints for the data resource, use the term 'None' and provide the <strong>EPA General Use Constraints Statement:</strong> <em>"Please check sources, scale, accuracy, currentness and other available information. Please confirm that you are using the most recent copy of both data and metadata."</em></p>
+    <blockquote>
+      <p><strong>Example of Use Limitation</strong>:<br>
+      &quot;Disclaimer - While every effort has been made to ensure that these data are accurate and reliable within the limits of the current state of the art, NOAA cannot assume liability for any damages caused by any errors or omissions in the data, nor as a result of the failure of the data to function on a particular system. NOAA makes no warranty, expressed or implied, nor does the fact of distribution constitute such a warranty.&quot;</p>
+      <p><strong>Example when no Use Limitation exists</strong>:<br>
+        &quot;
+      None. Please check sources, scale, accuracy, currentness and other available information. Please confirm that you are using the most recent copy of both data and metadata&quot;</p>
+    </blockquote>
+    <p><b><a href="#accessconstraints">Access Constraints</a></b> - Limitations on access to the resource or metadata to protect privacy, intellectual property, or any special limitations.</p>
+    <p><b><a href="#useconstraints">Use Constraints</a></b> - Restrictions or limitations or warnings to protect privacy, intellectual property, or other special restrictions on the resource or the metadata.</p>
+    <p><b>Other Constraints</b> - Other restrictions or legal prerequisites for accessing the resource or metadata. <strong>Best Practices</strong>: otherConstraints becomes mandatory when accessConstraints or useConstraints are set to “otherRestrictions”.</p>
+  </blockquote>
 </blockquote>
 <h3>Domain</h3>
-<blockquote>See above</blockquote>
-<br><br><br><br>
+<blockquote>
+  <p><a name="accessconstraints"></a><strong>Access Constraints:</strong></p>
+  <ul>
+    <li><strong>copyright</strong> - exclusive right to the publication, production, or sale of the rights to a literary, dramatic, musical, or artistic work, or to the use of a commercial print or label, granted by law for a specified period of time to an author, composer, artist, distributor</li>
+    <li><strong>patent</strong> - government has granted exclusive right to make, sell, use or license an invention or discovery</li>
+    <li><strong>patent pending</strong> - produced or sold information awaiting a patent</li>
+    <li><strong>trademark</strong> - a name, symbol, or other device identifying a product, officially registered and legally restricted to the use of the owner or manufacturer</li>
+    <li><strong>license</strong> - formal permission to do something</li>
+    <li><strong>intellectual property rights</strong> - rights to financial benefit from and control of distribution of non-tangible property that is a result of creativity</li>
+    <li><strong>restricted</strong> - withheld from general circulation or disclosure</li>
+    <li><strong>other restrictions</strong> - limitation not listed</li>
+  </ul>
+  <p><a name="useconstraints"></a><strong>Use Constraints:</strong></p>
+  <ul>
+    <li><strong>copyright</strong> - exclusive right to the publication, production, or sale of the rights to a literary, dramatic, musical, or artistic work, or to the use of a commercial print or label, granted by law for a specified period of time to an author, composer, artist, distributor</li>
+    <li><strong>patent</strong> - government has granted exclusive right to make, sell, use or license an invention or discovery</li>
+    <li><strong>patent pending</strong> - produced or sold information awaiting a patent</li>
+    <li><strong>trademark</strong> - a name, symbol, or other device identifying a product, officially registered and legally restricted to the use of the owner or manufacturer</li>
+    <li><strong>license</strong> - formal permission to do something</li>
+    <li><strong>intellectual property rights</strong> - rights to financial benefit from and control of distribution of non-tangible property that is a result of creativity</li>
+    <li><strong>restricted</strong> - withheld from general circulation or disclosure</li>
+    <li><strong>other restrictions</strong> - limitation not listed</li></ul></blockquote>
+<h3>Metadata Standard Crosswalk</h3>
+<blockquote>
+    <p>Element type: compound and text</p>
+    <table border="1" cellpadding="0" width="1020">
+      <tr>
+        <td width="250"><strong>EPA Element</strong></td>
+        <td width="250"><p align="center"><strong>Data.gov</strong></p></td>
+        <td width="250"><p align="center"><strong>ISO 19115</strong></p></td>
+        <td width="250"><p align="center"><strong>FGDC CSDGM</strong></p></td>
+      </tr>
+      <tr>
+        <td>Use Limitation</td>
+        <td><div align="center">N/A - The element does not exist in this standard</div></td>
+        <td><div align="center"><a href="http://service.ncddc.noaa.gov/rdn/www/metadata-standards/documents/MI-Metadata.pdf#page=132" title="ISO 19115 Standard" target="_blank">MD_LegalConstraints/useLimitation</a></div></td>
+        <td><div align="center">N/A - The element does not exist in this standard</div></td>
+      </tr>
+      <tr>
+        <td>Access Constraints</td>
+        <td><div align="center">N/A - The element does not exist in this standard</div></td>
+        <td><div align="center"><a href="http://service.ncddc.noaa.gov/rdn/www/metadata-standards/documents/MI-Metadata.pdf#page=132" title="ISO 19115 Standard" target="_blank">MD_LegalConstraint/accessConstraints</a><a href="http://service.ncddc.noaa.gov/rdn/www/metadata-standards/documents/MI-Metadata.pdf#page=132" title="ISO 19115 Standard" target="_blank"></a></div></td>
+        <td><div align="center"><a href="http://www.fgdc.gov/csdgmgraphical/ideninfo/access.htm" title="FGDC CSDGM Standard" target="_blank">accconst</a></div></td>
+      </tr>
+      <tr>
+        <td><p>Use Constraints</p></td>
+        <td><div align="center">N/A - The element does not exist in this standard</div></td>
+        <td><div align="center"><a href="http://service.ncddc.noaa.gov/rdn/www/metadata-standards/documents/MI-Metadata.pdf#page=132" title="ISO 19115 Standard" target="_blank">MD_LegalConstraints/useConstraints</a></div></td>
+        <td><div align="center"><a href="http://www.fgdc.gov/csdgmgraphical/ideninfo/usecon.htm" title="FGDC CSDGM Standard" target="_blank">useconst</a></div></td>
+      </tr>
+      <tr>
+        <td>Other Constraints</td>
+        <td><div align="center">N/A - The element does not exist in this standard</div></td>
+        <td><div align="center"><a href="http://service.ncddc.noaa.gov/rdn/www/metadata-standards/documents/MI-Metadata.pdf#page=133" title="ISO 19115 Standard" target="_blank">MD_LegalConstraint/otherConstraints</a></div></td>
+        <td><div align="center">N/A - The element does not exist in this standard</div></td>
+      </tr>
+  </table>
+<BR><BR><BR><BR>
+</blockquote>
 </body>
 </html>

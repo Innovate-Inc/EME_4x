@@ -9,50 +9,70 @@ href="mystyle.css" type=text/css rel=stylesheet>
 <BLOCKQUOTE>The EME utilizes data tables stored as Extensible Markup Language (XML) files to supply default 
   information within the user interface. By using the provided data table editor, information stored in the XML files can 
   be modified by the user to include new data or to change defaults that are 
-  used by the 'Set Default' buttons. </BLOCKQUOTE>
+used by the 'Set Default' buttons.</BLOCKQUOTE>
 <H3>Database Structure</H3>
-<BLOCKQUOTE>The data table names are structured to align closely with name of the user interface control name.
-<BR><BR>Each table has a column in it called 'default'. This column 
-  controls what is selected in the EME when the user clicks on the 'Set Default' 
-  or 'D' buttons. Users may change the defaults used by the EME by selecting the 
-  checkbox next to the entry of their choice. Note that you will need to uncheck 
-  the currently selected default when selecting a new default. </BLOCKQUOTE>
-<H3>Editing the Database</H3>
-<BLOCKQUOTE>To modify the EME data tables, take the following steps: 
-  <OL>
-    <LI>Navigate to Tools --> Open Database.
-    <LI>Locate and open a table of interest (e.g., "Contact_Info").
-	<LI>Click the "Enable Edit Mode" button.
-    <LI>Change the default by selecting a new default entry and deselecting the 
-    existing default entry.
-    <LI>Add new information by adding a new row to the table and entering your 
-    own data.
-    <LI>If you don't want anything to be selected as default for a particular 
-    field, deselect all checkboxes in the user interface.
-    <LI>Click the "End Edit Mode" button. 	
-    <LI>Close the EmeDatabase window.
-    <LI>Click on the 'Refresh DB' button to update the user interface.<BR><BR><IMG src="screenshot_refreshDB2.jpg"><BR></LI>
-	</OL>
-	</BLOCKQUOTE>
-<br>
+<BLOCKQUOTE>
+  <p>The database is structured to align closely with the flow of the 
+    user interface. Users can edit the following tables: Contact_Information, BoundingBox, KeywordsEPA, KeywordsISO, KeywordsUser, and KeywordsPlace.<BR>
+    <BR>
+    Each table has a column in it called 'default'. This column 
+    controls what is selected in the EME when the user clicks on the 'Set Default' 
+    or 'D' buttons.</p>
+</BLOCKQUOTE>
+<H3><a name="editdb"></a>Editing the Database</H3>
+<BLOCKQUOTE>
+  <p>The following example outlines how to add an additional contact to the Contact_Information table, however, the user can follow the same guidelines when editing the BoundingBox, KeywordsEPA, KeywordsISO, KeywordsUser, and KeywordsPlace tables.</p>
+  <p><strong>To add an additional contact to the preconfigured contact table:</strong></p>
+  <blockquote>
+    <p>1) Navigate to Tools --> Open Database. </p>
+    <p><img src="screenshot_openDB2.jpg" width="287" height="102" alt=""/></p>
+    <p>2) Select the table of interest, e.g. Contact_Information, BoundingBox, KeywordsEPA, KeywordsISO, KeywordsUser, or KeywordsPlace.</p>
+    <p>3) Click on the Enable Edit Mode button (the table will turn pink when in edit mode)</p>
+    <p>4) Scroll to the bottom of the table and enter the contact information.</p>
+    <p><img src="screenshot_distcnt4.jpg" width="1208" height="256" alt=""/><br>
+    </p>
+    <p>5) After adding a new contact, click on the End Edit Mode button (the table will turn back to green) and close the table.</p>
+    <p>6) The newly added contact should now display at the bottom of the list after clicking on the drop-down arrow in the Select Contact box.</p>
+    <p><strong>To set the Default contact:</strong></p>
+    <p>Setting a default contact allows the user to click on the &quot;D&quot; button to autopopulate the fields with the default contact information found in the &quot;Contact_Information&quot; table. </p>
+    <blockquote>
+      <p><img src="screenshot_distcnt2.jpg" width="108" height="62" alt=""/></p>
+      <p>1) Scroll to the far right of the table and click on the default checkbox next to the default contact record. Note that you will need to uncheck 
+        the currently selected default when selecting a new default. </p>
+      <p><img src="screenshot_distcnt5.jpg" width="639" height="228" alt=""/></p>
+      <p>2) After setting the default contact, click on the End Edit Mode button (the table will turn back to green) and close the table.</p>
+      <p>3) Choose Tools &gt; 'Refresh From Database'  to update the user interface. You will 
+        need to Refresh From Database for each tab where changes should be 
+        reflected.<BR><BR>
+      <img src="screenshot_refreshDB.jpg" width="285" height="100" alt=""/></p>
+    </blockquote>
+  </blockquote>
+</BLOCKQUOTE>
 <H3>Special Data Table Customizations</H3>
-<BLOCKQUOTE>The EME provides a user interface for editing commonly accessed data tables. The EMEdb folder also stores a template metadata record used for populating additional default content (ISO19115MD_GenericMetadataTemplate.xml). Changes to these XML files can easily be shared with users. Other XML files found within the EMEdb folder should not be modified. Changes to those files could cause stability issues with the application. 
-
-<BR><BR><B>Data table storage location</B><BR>
-The XML data tables are stored in two places on a user's computer. During installation, back-up copies are placed in the application installation directory on your machine (usually, C:\Program Files (x86)\Innovate! Inc\EPA Metadata Editor v4.0\Eme4xSystemFiles\EMEdb). The EME also creates an editable copy of the XML data tables in each user's application data folder (e.g., "C:\Users\dparrish\AppData\Roaming\Innovate! Inc\EPA Metadata Edtior 4x\Eme4xSystemFiles\EMEdb). EME makes this copy so that the operational data are not write-protected.  
-	<br><br>When EME starts, it looks for the data tables in the following locations:<ul>	
-	<li>Check and use if the EMEdb folder exists in users own area
-	<li>Otherwise make a copy the EMEdb folder from the installation directory into the user's own area.	
-	</ul>
-	Changes made to the XML files located in the user's application data folder will only be seen by that user. The user can revert back to the originally installed data tables by closing the EME application and deleting the EMEdb folder located in their user directory. The next time EME is launched, a copy the EMEdb folder from the installation directory will be placed into the user's own area.
-	<br><br>Understanding this behavior will also assist in sharing data table customizations with other uses. To share on a user-by-user basis a person can copy their EMEdb folder (located in their application data folder) to the intended user's application data folder. Alternatively, if advanced users wish to make system-wide changes and override the original data, the folder could be copied into the application installation directory and subsequently deleting the EMEdb folder in each existing user's application data folder. Prior to doing this it is recommended to create a back-up of the original EMEdb folder.
-	
-    <BR><BR><B>Modifying the default metadata template</B><BR>
-	Users can auto-populate an empty metadata record using values stored in a template record by clicking the "Set Defaults From Template" button under the Edit menu item. The template record is located in the EMEdb folder and named "ISO19115MD_GenericMetadataTemplate.xml".
-	<BR><BR><IMG src="screenshot_templateMetadataRecord.jpg"><BR><BR>
-	To modify the template, open the EME Metadata Editor. By default the user interface is blank. Click "Set Defaults From Template" to populate the form and then make desired changes. Then, to save changes back to the template, click Save and navigate to the template record in the user's application data folder (e.g., "C:\Users\dparrish\AppData\Roaming\Innovate! Inc\EPA Metadata Edtior 4x\Eme4xSystemFiles\EMEdb ISO19115MD_GenericMetadataTemplate.xml"). Sharing this template is accomplished in the same manner as outlined above in the "Data table storage location" section.
-	
-	
-	
-	
-	</BLOCKQUOTE><BR><BR><BR><BR></BLOCKQUOTE></BODY></HTML>
+<BLOCKQUOTE>
+  <p>The EME provides a user interface for editing commonly accessed data tables. The EMEdb folder also stores a template metadata record used for populating additional default content (ISO19115MD_GenericMetadataTemplate.xml). Changes to these XML files can easily be shared with users. Other XML files found within the EMEdb folder should not be modified. Changes to those files could cause stability issues with the application. <BR>
+    <BR>
+  <B>Data table storage location</B>:<br>
+  <BR>
+    The XML data tables are stored in two places on a user's computer. During installation, back-up copies are placed in the application installation directory on your machine (usually, C:\Program Files (x86)\Innovate! Inc\EPA Metadata Editor v4.0\Eme4xSystemFiles\EMEdb). The EME also creates an editable copy of the XML data tables in each user's application data folder (e.g., "C:\Users\dparrish\AppData\Roaming\Innovate! Inc\EPA Metadata Edtior 4x\Eme4xSystemFiles\EMEdb). EME makes this copy so that the operational data are not write-protected. <br>
+    <br>
+    When EME starts, it looks for the data tables in the following locations:  </p>
+  <ul>
+    <li>Check and use if the EMEdb folder exists in users own area
+    <li>Otherwise make a copy the EMEdb folder from the installation directory into the user's own area.	
+  </ul>
+  Changes made to the XML files located in the user's application data folder will only be seen by that user. The user can revert back to the originally installed data tables by closing the EME application and deleting the EMEdb folder located in their user directory. The next time EME is launched, a copy the EMEdb folder from the installation directory will be placed into the user's own area. <br>
+  <br>
+  Understanding this behavior will also assist in sharing data table customizations with other uses. To share on a user-by-user basis a person can copy their EMEdb folder (located in their application data folder) to the intended user's application data folder. Alternatively, if advanced users wish to make system-wide changes and override the original data, the folder could be copied into the application installation directory and subsequently deleting the EMEdb folder in each existing user's application data folder. <strong>Best Practice</strong>: It is recommended that the user create a back-up of the original EMEdb folder before making system-wide changes. <BR>
+  <BR>
+  <B>Modifying the default metadata template</B>:<br>
+  <BR>
+  Users can auto-populate an empty metadata record using values stored in a template record by clicking the "Set Defaults From Template" button under the Edit menu item. The template record is located in the EMEdb folder and named "ISO19115MD_GenericMetadataTemplate.xml". <BR>
+  <BR>
+  <IMG src="screenshot_templateMetadataRecord.jpg"><BR>
+  <BR>
+To modify the template, open the EME Metadata Editor. By default the user interface is blank. Click "Set Defaults From Template" to populate the form and then make desired changes. Then, to save changes back to the template, click Save and navigate to the template record in the user's application data folder (e.g., "C:\Users\dparrish\AppData\Roaming\Innovate! Inc\EPA Metadata Edtior 4x\Eme4xSystemFiles\EMEdb ISO19115MD_GenericMetadataTemplate.xml"). Sharing this template is accomplished in the same manner as outlined above in the "Data table storage location" section. </BLOCKQUOTE>
+<p><BR>
+  <BR><BR><BR>
+</p>
+</BODY></HTML>
