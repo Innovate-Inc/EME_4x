@@ -53,9 +53,7 @@
             this.contactInfo__CI_Contact__address__CI_Address__county = new System.Windows.Forms.TextBox();
             this.contactInfo__CI_Contact__address__CI_Address__electronicMailAddress_lbl = new System.Windows.Forms.Label();
             this.contactInfo__CI_Contact__address__CI_Address__electronicMailAddress = new System.Windows.Forms.TextBox();
-            this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage_lbl = new System.Windows.Forms.Label();
             this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage = new System.Windows.Forms.TextBox();
-            this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode_lbl = new System.Windows.Forms.Label();
             this.contactInfo__CI_Contact__hoursOfService = new System.Windows.Forms.TextBox();
             this.contactInfo__CI_Contact__hoursOfService_lbl = new System.Windows.Forms.Label();
             this.contactInfo__CI_Contact__contactInstructions_lbl = new System.Windows.Forms.Label();
@@ -64,6 +62,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.CI_ContactExpand_btn = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode_lbl = new System.Windows.Forms.LinkLabel();
+            this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage_lbl = new System.Windows.Forms.LinkLabel();
             this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode = new System.Windows.Forms.ComboBox();
             this.pagerLbl = new System.Windows.Forms.Label();
             this.pagerDownBtn = new System.Windows.Forms.Button();
@@ -150,7 +150,7 @@
             "processor",
             "publisher",
             "author",
-            "scienceParty"});
+            "collaborator"});
             this.role.Location = new System.Drawing.Point(85, 5);
             this.role.Margin = new System.Windows.Forms.Padding(0);
             this.role.Name = "role";
@@ -365,17 +365,6 @@
             this.contactInfo__CI_Contact__address__CI_Address__electronicMailAddress.TextChanged += new System.EventHandler(this.responsibleParty_TextChangedValidation);
             this.contactInfo__CI_Contact__address__CI_Address__electronicMailAddress.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.genericSpaciousEntryForm_MouseDoubleClick);
             // 
-            // contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage_lbl
-            // 
-            this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage_lbl.AutoSize = true;
-            this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage_lbl.Location = new System.Drawing.Point(44, 170);
-            this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage_lbl.Name = "contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage_lbl";
-            this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage_lbl.Size = new System.Drawing.Size(43, 13);
-            this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage_lbl.TabIndex = 28;
-            this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage_lbl.Text = "Linkage";
-            this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage_lbl.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
             // contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage
             // 
             this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -385,17 +374,6 @@
             this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage.Size = new System.Drawing.Size(186, 21);
             this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage.TabIndex = 9;
             this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.genericSpaciousEntryForm_MouseDoubleClick);
-            // 
-            // contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode_lbl
-            // 
-            this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode_lbl.AutoSize = true;
-            this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode_lbl.Location = new System.Drawing.Point(16, 196);
-            this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode_lbl.Name = "contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode_lbl";
-            this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode_lbl.Size = new System.Drawing.Size(70, 13);
-            this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode_lbl.TabIndex = 30;
-            this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode_lbl.Text = "Linkage Type";
-            this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode_lbl.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // contactInfo__CI_Contact__hoursOfService
             // 
@@ -482,6 +460,8 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.panel4.Controls.Add(this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode_lbl);
+            this.panel4.Controls.Add(this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage_lbl);
             this.panel4.Controls.Add(this.contactInfo__CI_Contact__address__CI_Address__deliveryPoint_lbl);
             this.panel4.Controls.Add(this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode);
             this.panel4.Controls.Add(this.contactInfo__CI_Contact__phone__CI_Telephone__voice);
@@ -500,16 +480,36 @@
             this.panel4.Controls.Add(this.contactInfo__CI_Contact__hoursOfService_lbl);
             this.panel4.Controls.Add(this.contactInfo__CI_Contact__phone__CI_Telephone__facsimile_lbl);
             this.panel4.Controls.Add(this.contactInfo__CI_Contact__address__CI_Address__administrativeArea);
-            this.panel4.Controls.Add(this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage_lbl);
             this.panel4.Controls.Add(this.contactInfo__CI_Contact__address__CI_Address__administrativeArea_lbl);
             this.panel4.Controls.Add(this.contactInfo__CI_Contact__address__CI_Address__postalCode_lbl);
-            this.panel4.Controls.Add(this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode_lbl);
             this.panel4.Controls.Add(this.contactInfo__CI_Contact__hoursOfService);
             this.panel4.Controls.Add(this.contactInfo__CI_Contact__address__CI_Address__postalCode);
             this.panel4.Location = new System.Drawing.Point(0, 22);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(419, 307);
             this.panel4.TabIndex = 35;
+            // 
+            // contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode_lbl
+            // 
+            this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode_lbl.AutoSize = true;
+            this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode_lbl.Location = new System.Drawing.Point(17, 197);
+            this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode_lbl.Name = "contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode_lbl";
+            this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode_lbl.Size = new System.Drawing.Size(72, 13);
+            this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode_lbl.TabIndex = 37;
+            this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode_lbl.TabStop = true;
+            this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode_lbl.Text = "Linkage Type";
+            this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode_lbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.genericOpenHelpFromLinkLabel_LinkClicked);
+            // 
+            // contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage_lbl
+            // 
+            this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage_lbl.AutoSize = true;
+            this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage_lbl.Location = new System.Drawing.Point(43, 171);
+            this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage_lbl.Name = "contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage_lbl";
+            this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage_lbl.Size = new System.Drawing.Size(45, 13);
+            this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage_lbl.TabIndex = 36;
+            this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage_lbl.TabStop = true;
+            this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage_lbl.Text = "Linkage";
+            this.contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage_lbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.genericOpenHelpFromLinkLabel_LinkClicked);
             // 
             // contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode
             // 
@@ -841,9 +841,7 @@
         private System.Windows.Forms.TextBox contactInfo__CI_Contact__address__CI_Address__county;
         private System.Windows.Forms.Label contactInfo__CI_Contact__address__CI_Address__electronicMailAddress_lbl;
         private System.Windows.Forms.TextBox contactInfo__CI_Contact__address__CI_Address__electronicMailAddress;
-        private System.Windows.Forms.Label contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage_lbl;
         private System.Windows.Forms.TextBox contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage;
-        private System.Windows.Forms.Label contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode_lbl;
         private System.Windows.Forms.TextBox contactInfo__CI_Contact__hoursOfService;
         private System.Windows.Forms.Label contactInfo__CI_Contact__hoursOfService_lbl;
         private System.Windows.Forms.Label contactInfo__CI_Contact__contactInstructions_lbl;
@@ -873,5 +871,7 @@
         private System.Windows.Forms.LinkLabel uc_ResponsibleParty_lbl;
         private System.Windows.Forms.LinkLabel roleCode_lbl;
         private System.Windows.Forms.LinkLabel dcatProgramCode_lbl;
+        private System.Windows.Forms.LinkLabel contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode_lbl;
+        private System.Windows.Forms.LinkLabel contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage_lbl;
     }
 }

@@ -19,27 +19,30 @@
   </ul>
   <a name="typeofresource"><p><strong><a href="#resourcetype">Type of Resource</a></strong>: The class of information to which the referencing entity applies. <strong>Best practice</strong>: EME version 4.0 will primarily be used for &quot;non-geographic datasets&quot;; however, &quot;datasets&quot; may also be selected for any data resources with a spatial component.</p>
   <a name="lastmodified"><p><strong>Last Modified</strong>: Date of the metadata creation or the last metadata update.</p>
-  <a name="uuid"><p><strong>Identifier</strong>: This element is the universally unique identifier (UUID) for  the metadata record. The UUID provides the link between the metadata associated  with a resource (e.g., feature class) in your local system to the metadata  uploaded and published with the EDG. If a computer (or person) knows the UUID  of a metadata record published with the EDG, then a generic URL + UUID can be  used to view that record (i.e., <a href="https://edg.epa.gov/metadata/catalog/search/resource/details.page?uuid=%7b0CA7A9AE-68DB-4F92-8566-2003C8BF41AB%7d">https://edg.epa.gov/metadata/catalog/search/resource/details.page?uuid={0CA7A9AE-68DB-4F92-8566-2003C8BF41AB}</a>).  Many applications leverage generic URL + UUID. For example, when services are  published, users will place the EDG UUID URL inside the MXD for each data  layer. This way you can get access to the metadata via a REST endpoint  (or web application) for a given data resource. </p>
+  <a name="uuid"><p><strong>Identifier</strong>: This element is the universally unique identifier (UUID) for  the metadata record. The UUID provides the link between the metadata associated  with a resource (e.g., feature class) in your local system to the metadata  uploaded and published with the EDG. If a computer (or person) knows the UUID  of a metadata record published with the EDG, then a generic URL + UUID can be  used to view that record (i.e., <a href="https://edg.epa.gov/metadata/catalog/search/resource/details.page?uuid=%7b0CA7A9AE-68DB-4F92-8566-2003C8BF41AB%7d" target="_blank">https://edg.epa.gov/metadata/catalog/search/resource/details.page?uuid={0CA7A9AE-68DB-4F92-8566-2003C8BF41AB}</a>).  Many applications leverage generic URL + UUID. For example, when services are  published, users will place the EDG UUID URL inside the MXD for each data  layer. This way you can get access to the metadata via a REST endpoint  (or web application) for a given data resource. </p>
   <blockquote>
-    <p><strong>	Best practice</strong>: If the user has  a new metadata record (never before published with EDG) then the user will want  to create a New Identifier by clicking on the &ldquo;New Identifier&rdquo; button. By  creating a New Identifier, the user will be able to copy that UUID and insert  it into their local metadata (and possibly also insert it into their published  data, MXD's for published services, etc).<br>
+    <p><strong>	Best practice</strong>: If the user has  a new metadata record (never before published with EDG) then the user will want  to create a New Identifier by clicking on the &ldquo;New Identifier&rdquo; button. By creating a New Identifier, the user will avoid the hassle of having to return and embed in the record the UUID assigned by the EDG after upload. (The user could possibly also get a head start on inserting links into their published  data, MXD's for published services, etc).<br>
       <br>
-      Users should be aware that if they override an existing  UUID, the link will be severed between their local metadata and the metadata  record stored at the EDG.&nbsp; If this happens, then during the publishing  process the EDG will create a new metadata record rather than changing the  existing record.</p>
+      Users should be aware that if they override an existing  UUID, the link will be severed between their local metadata and the metadata  record stored at the EDG.&nbsp; If this happens, then during the publishing  process the EDG will create a new metadata record rather than changing the existing record.</p>
     <p><img src="screenshot_fileID.jpg" width="406" height="25" alt=""/></p>
   </blockquote>
-  <a name="language"><p><strong>Language</strong>: Required for EPA geospatial assets as per minimum FGDC standards. The language code and country code are documented in the following manner:  	&#60; <a href="http://www.nationsonline.org/oneworld/language_code.htm" title="ISO 639.2" target="_blank">ISO639-2/T three letter language code</a> &#62; &#60; ; &#62; &#60; blank space &#62; &#60;<a href="http://www.nationsonline.org/oneworld/country_code_list.htm" title="ISO 3166-1" target="_blank"> ISO3166-1 three letter country code</a> &#62; Country code is given in uppercase. </p>
+  <a name="language"><p><strong>Language</strong>: Although ISO has a specific format for indicating language (described below), Data.gov references a different specification. Until these two are reconciled, EPA records should adhere to the <a href="http://tools.ietf.org/html/rfc5646" targe="_blank">RFC 5646 standard</a>. This <a href="http://rishida.net/utils/subtags/" target="_blank">language subtag lookup</a> provides a good tool for checking and verifying language codes. A language tag is comprised of either one or two parts, the language subtag (such as en for English, sp for Spanish, wo for Wolof) and the regional subtag (such as US for United States, GB for Great Britain, MX for Mexico), separated by a hyphen. Regional subtags should only be provided when needed to distinguish a language tag from another one (such as American vs. British English). </p>
+  <blockquote><strong>Example:</strong> <code>en-US</code> or if multiple languages, <code>"es-MX","wo","nv","en-US"</code></blockquote>
+
+  <p>ISO specifies that language code and country code be documented in the following manner:	&#60; <a href="http://www.nationsonline.org/oneworld/language_code.htm" title="ISO 639.2" target="_blank">ISO639-2/T three letter language code</a> &#62; &#60; ; &#62; &#60; blank space &#62; &#60;<a href="http://www.nationsonline.org/oneworld/country_code_list.htm" title="ISO 3166-1" target="_blank"> ISO3166-1 three letter country code</a> &#62; Country code is given in uppercase. </p>
   <blockquote>
     <p><strong>Example</strong>: eng; USA </p>
   </blockquote>
   <a name="standardname"><p><strong>Standard Name</strong>: The name of the metadata standard/profile use. Typically, the value for this field will be: </p>
   <ul>
-    <li>ISO 19115: "ISO 19115 Geographic information - Metadata&quot;
+    <li>ISO 19115: "ISO 19115 Geographic information - Metadata"
     <li>ISO 19115-2: "ISO 19115-2 Geographic Information - 
       Metadata - Part 2: Extensions for 
-      Imagery and Gridded Data&quot;</ul>
+      Imagery and Gridded Data"s</ul>
   <a name="standardversion"><p><strong>Standard version</strong>: The version of the metadata standard/profile used.  Typically, the value for this field will be:</p>
   <ul>
     <li>ISO 19115: "ISO 19115:2003(E)"
-    <li>ISO 19115-2: "ISO 19115-2:2009(E)&quot;</ul>
+    <li>ISO 19115-2: "ISO 19115-2:2009(E)"</ul>
 </blockquote>
 <h3>Domain</h3>
 <blockquote>
@@ -93,38 +96,38 @@
     </tr>
     <tr>
       <td>Resource Type</td>
-      <td><div align="center"><a href="http://project-open-data.github.io/schema/#format" title="Data.gov Standard" target="_blank">format???</a><a href="http://project-open-http://project-open-data.github.io/schema/#contactPoint" title="Data.gov Standard" target="_blank"></a></div></td>
-      <td><div align="center"><a href="http://service.ncddc.noaa.gov/rdn/www/metadata-standards/documents/MI-Metadata.pdf#page=56" title="ISO 19115 Standard" target="_blank">DQ_Scope/level</a><a href="http://service.ncddc.noaa.gov/rdn/www/metadata-standards/documents/MI-Metadata.pdf#page=47"></a></div></td>
+      <td><div align="center">N/A - The element does not exist in this standard</div></td>
+      <td><div align="center"><a href="https://geo-ide.noaa.gov/wiki/index.php?title=MI_Metadata" title="ISO 19115 Standard" target="_blank">MI_Metadata/hierarchyLevel</a><a href="http://service.ncddc.noaa.gov/rdn/www/metadata-standards/documents/MI-Metadata.pdf#page=47"></a></div></td>
       <td><div align="center">N/A - The element does not exist in this standard</div></td>
     </tr>
     <tr>
       <td>Last Modified</td>
       <td><div align="center">N/A - The element does not exist in this standard</div></td>
-      <td><div align="center"><a href="http://service.ncddc.noaa.gov/rdn/www/metadata-standards/documents/MI-Metadata.pdf#page=21" title="ISO 19115 Standard" target="_blank">MI_Metadata/dateStamp</a></div></td>
+      <td><div align="center"><a href="https://geo-ide.noaa.gov/wiki/index.php?title=MI_Metadata" title="ISO 19115 Standard" target="_blank">MI_Metadata/dateStamp</a></div></td>
       <td><div align="center"><a href="http://www.fgdc.gov/csdgmgraphical/metaref/date.htm" title="FGDC CSDGM Standard" target="_blank">metd</a><a href="http://www.fgdc.gov/csdgmgraphical/dataq/lineage/sinfo/scitat/citatn/origin.htm" title="FGDC CSDGM Standard" target="_blank"></a></div></td>
     </tr>
     <tr>
       <td>Identifier</td>
       <td><div align="center"><a href="http://project-open-data.github.io/schema/#identifier" title="Data.gov Standard" target="_blank">identifier</a></div></td>
-      <td><div align="center"><a href="http://service.ncddc.noaa.gov/rdn/www/metadata-standards/documents/MI-Metadata.pdf#page=20" title="ISO 19115 Standard" target="_blank">MI_Metadata/fileIdentifier</a></div></td>
-      <td><div align="center">N/A - The element does not exist in this standard???</div></td>
+      <td><div align="center"><a href="https://geo-ide.noaa.gov/wiki/index.php?title=MI_Metadata" title="ISO 19115 Standard" target="_blank">MI_Metadata/fileIdentifier</a></div></td>
+      <td><div align="center">N/A - The element does not exist in this standard</div></td>
     </tr>
     <tr>
       <td>Language</td>
       <td><div align="center"><a href="http://project-open-data.github.io/schema/#language" title="Data.gov Standard" target="_blank">language</a></div></td>
-      <td><div align="center"><a href="http://service.ncddc.noaa.gov/rdn/www/metadata-standards/documents/MI-Metadata.pdf#page=20" title="ISO 19115 Standard" target="_blank">MI_Metadata/language</a></div></td>
+      <td><div align="center"><a href="https://geo-ide.noaa.gov/wiki/index.php?title=MI_Metadata" title="ISO 19115 Standard" target="_blank">MI_Metadata/language</a></div></td>
       <td><div align="center">N/A - The element does not exist in this standard</div></td>
     </tr>
     <tr>
       <td>Standard Name</td>
       <td><div align="center">N/A - The element does not exist in this standard</div></td>
-      <td><div align="center"><a href="http://service.ncddc.noaa.gov/rdn/www/metadata-standards/documents/MI-Metadata.pdf#page=21" title="ISO 19115 Standard" target="_blank">MI_Metadata/metadataStandardName</a></div></td>
+      <td><div align="center"><a href="https://geo-ide.noaa.gov/wiki/index.php?title=MI_Metadata" title="ISO 19115 Standard" target="_blank">MI_Metadata/metadataStandardName</a></div></td>
       <td><div align="center"><a href="http://www.fgdc.gov/csdgmgraphical/metaref/stname.htm" title="FGDC CSDGM Standard" target="_blank">metstdn</a></div></td>
     </tr>
     <tr>
       <td>Standard Version</td>
       <td><div align="center">N/A - The element does not exist in this standard</div></td>
-      <td><div align="center"><a href="http://service.ncddc.noaa.gov/rdn/www/metadata-standards/documents/MI-Metadata.pdf#page=21" title="ISO 19115 Standard" target="_blank">MI_Metadata/metadataStandardVersion</a></div></td>
+      <td><div align="center"><a href="https://geo-ide.noaa.gov/wiki/index.php?title=MI_Metadata" title="ISO 19115 Standard" target="_blank">MI_Metadata/metadataStandardVersion</a></div></td>
       <td><div align="center"><a href="http://www.fgdc.gov/csdgmgraphical/metaref/stver.htm" title="FGDC CSDGM Standard" target="_blank">metstdv</a></div></td>
     </tr>
   </table>

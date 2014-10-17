@@ -10,12 +10,12 @@
 </blockquote>
 <ul>
   <li><strong><em>Distribution &gt; Contact Details</em></strong> - Provide a URL for any information about the resource distribution.</li>
-  <li><em><strong>Distribution &gt; Digital Transfer Options &gt; Online Resource</strong></em>- Provide a URL for any information about where the resource can be obtained. In some cases, more than one digital transfer option is available for any given resource. Please follow this order when adding Digital Transfer Options:
+  <li><em><strong>Distribution &gt; Digital Transfer Options &gt; Online Resource</strong></em>- Provide a URL for any information about where the resource can be obtained. In some cases, more than one digital transfer option is available for any given resource. Project Open Data regards Download URL and Web Service Endpoint as mandatory if applicable, while also requesting Data Dictionary and Homepage URL as optional elements. The order of these URLs is not important, only the function code.
     <blockquote>
-      <p><b>Online Resource 1:</b> URL providing direct access to the downloadable distribution of a dataset.</p>
-      <p><b>Online Resource 2:</b> Endpoint of web service to access dataset. This is typically the REST endpoint for an ArcGIS Server service, but it may also be a WMS GetCapabilities URL or a SOAP WSDL endpoint.</p>
-      <p><b>Online Resource 3:</b> URL for accessing related documents such as technical information about a dataset, developer documentation, etc.</p>
-      <p><b>Online Resource 4:</b> Alternative landing page used to redirect user to a contextual, Agency-hosted &ldquo;homepage&rdquo; for the Dataset or API when selecting this resource from a metadata catalog. This field is not intended for an agency&rsquo;s homepage (e.g. www.agency.gov), but rather if a dataset has a human-friendly hub or landing page that users should be directed to for all resources tied to the dataset. This allows agencies to better specify what a visitor receives after selecting one of the agency&rsquo;s datasets on Data.gov or in third-party mashups.</p>
+      <p><b>Download URL</b> - Function Code: Download. URL providing direct access to the downloadable distribution of a dataset.</p>
+      <p><b>Web Service</b> - Function Code: webService. Endpoint of web service to access dataset. This is typically the REST endpoint for an ArcGIS Server service, but it may also be a WMS GetCapabilities URL or a SOAP WSDL endpoint.</p>
+      <p><b>Data Dictionary</b> - Function Code: information. URL for accessing related documents such as technical information about a dataset, developer documentation, etc.</p>
+      <p><b>Homepage URL</b> - Function Code: search. Alternative landing page used to redirect user to a contextual, Agency-hosted &ldquo;homepage&rdquo; for the Dataset or API when selecting this resource from a metadata catalog. This field is not intended for an agency&rsquo;s homepage (e.g. www.agency.gov), but rather if a dataset has a human-friendly hub or landing page that users should be directed to for all resources tied to the dataset. This allows agencies to better specify what a visitor receives after selecting one of the agency&rsquo;s datasets on Data.gov or in third-party mashups.</p>
       <p><b>Other Online Resources:</b> Any other URLs related to this resource.</p>
       <p><b>Examples:</b></p>
     </blockquote>
@@ -57,8 +57,8 @@
         <td width="250"><p align="center"><strong>FGDC CSDGM</strong></p></td>
       </tr>
       <tr>
-        <td width="250"><p align="center"><a href="http://project-open-data.github.io/schema/#accessURL" title="Data.gov Standard" target="_blank">accessURL</a></p></td>
-        <td width="250"><p align="center"><a href="http://service.ncddc.noaa.gov/rdn/www/metadata-standards/documents/MI-Metadata.pdf#page=45" title="ISO 19115 Standard" target="_blank">CI_OnlineResource/linkage</a></p></td>
+        <td width="250"><p align="center"><a href="http://project-open-data.github.io/schema/#accessURL" title="Data.gov Standard" target="_blank">accessURL</a>, <a href="http://project-open-data.github.io/schema/#webService" title="Data.gov Standard" target="_blank">webService</a>, <a href="http://project-open-data.github.io/schema/#dataDictionary" title="Data.gov Standard" target="_blank">dataDictionary</a>,<a href="http://project-open-data.github.io/schema/#landingPage" title="Data.gov Standard" target="_blank">landingPage</a></p></td>
+        <td width="250"><p align="center"><a href="https://geo-ide.noaa.gov/wiki/index.php?title=CI_OnlineResource" title="ISO 19115 Standard" target="_blank">CI_OnlineResource/linkage</a></p></td>
         <td width="250"><p align="center"><a href="http://www.fgdc.gov/csdgmgraphical/ideninfo/citat/citinfo/online.htm" title="FGDC CSDGM Standard" target="_blank">onlink</a></p></td>
       </tr>
   </table>

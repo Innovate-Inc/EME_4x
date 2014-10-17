@@ -71,10 +71,8 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.CI_OnlineResource = new System.Windows.Forms.GroupBox();
             this.onLine__CI_OnlineResource__applicationProfile_lbl = new System.Windows.Forms.Label();
-            this.onLine__CI_OnlineResource__linkage__URL_lbl = new System.Windows.Forms.Label();
             this.onLine__CI_OnlineResource__applicationProfile_txt = new System.Windows.Forms.TextBox();
             this.onLine__CI_OnlineResource__protocol_txt = new System.Windows.Forms.TextBox();
-            this.onLine__CI_OnlineResource__function_lbl = new System.Windows.Forms.Label();
             this.onLine__CI_OnlineResource__description_lbl = new System.Windows.Forms.Label();
             this.onLine__CI_OnlineResource__name_txt = new System.Windows.Forms.TextBox();
             this.onLine__CI_OnlineResource__description_txt = new System.Windows.Forms.TextBox();
@@ -129,6 +127,8 @@
             this.MD_Dist = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.errorProvider_Distribution = new System.Windows.Forms.ErrorProvider(this.components);
+            this.onLine__CI_OnlineResource__linkage__URL_lbl = new System.Windows.Forms.LinkLabel();
+            this.onLine__CI_OnlineResource__function_lbl = new System.Windows.Forms.LinkLabel();
             this.MD_Format_pnl.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -136,6 +136,7 @@
             this.digitalTransferOptions_pnl.SuspendLayout();
             this.offline_resource_expandGxb.SuspendLayout();
             this.CI_OnlineResource.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
             this.MD_DTO.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -611,10 +612,8 @@
             // 
             this.CI_OnlineResource.BackColor = System.Drawing.Color.Transparent;
             this.CI_OnlineResource.Controls.Add(this.onLine__CI_OnlineResource__applicationProfile_lbl);
-            this.CI_OnlineResource.Controls.Add(this.onLine__CI_OnlineResource__linkage__URL_lbl);
             this.CI_OnlineResource.Controls.Add(this.onLine__CI_OnlineResource__applicationProfile_txt);
             this.CI_OnlineResource.Controls.Add(this.onLine__CI_OnlineResource__protocol_txt);
-            this.CI_OnlineResource.Controls.Add(this.onLine__CI_OnlineResource__function_lbl);
             this.CI_OnlineResource.Controls.Add(this.onLine__CI_OnlineResource__description_lbl);
             this.CI_OnlineResource.Controls.Add(this.onLine__CI_OnlineResource__name_txt);
             this.CI_OnlineResource.Controls.Add(this.onLine__CI_OnlineResource__description_txt);
@@ -644,17 +643,6 @@
             this.onLine__CI_OnlineResource__applicationProfile_lbl.TabIndex = 16;
             this.onLine__CI_OnlineResource__applicationProfile_lbl.Text = "Application Profile";
             // 
-            // onLine__CI_OnlineResource__linkage__URL_lbl
-            // 
-            this.onLine__CI_OnlineResource__linkage__URL_lbl.AutoSize = true;
-            this.onLine__CI_OnlineResource__linkage__URL_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.onLine__CI_OnlineResource__linkage__URL_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.onLine__CI_OnlineResource__linkage__URL_lbl.Location = new System.Drawing.Point(62, 22);
-            this.onLine__CI_OnlineResource__linkage__URL_lbl.Name = "onLine__CI_OnlineResource__linkage__URL_lbl";
-            this.onLine__CI_OnlineResource__linkage__URL_lbl.Size = new System.Drawing.Size(43, 13);
-            this.onLine__CI_OnlineResource__linkage__URL_lbl.TabIndex = 5;
-            this.onLine__CI_OnlineResource__linkage__URL_lbl.Text = "Linkage";
-            // 
             // onLine__CI_OnlineResource__applicationProfile_txt
             // 
             this.onLine__CI_OnlineResource__applicationProfile_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -674,17 +662,6 @@
             this.onLine__CI_OnlineResource__protocol_txt.Size = new System.Drawing.Size(279, 21);
             this.onLine__CI_OnlineResource__protocol_txt.TabIndex = 1;
             this.onLine__CI_OnlineResource__protocol_txt.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.genericSpaciousEntryForm_MouseDoubleClick);
-            // 
-            // onLine__CI_OnlineResource__function_lbl
-            // 
-            this.onLine__CI_OnlineResource__function_lbl.AutoSize = true;
-            this.onLine__CI_OnlineResource__function_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.onLine__CI_OnlineResource__function_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.onLine__CI_OnlineResource__function_lbl.Location = new System.Drawing.Point(61, 49);
-            this.onLine__CI_OnlineResource__function_lbl.Name = "onLine__CI_OnlineResource__function_lbl";
-            this.onLine__CI_OnlineResource__function_lbl.Size = new System.Drawing.Size(48, 13);
-            this.onLine__CI_OnlineResource__function_lbl.TabIndex = 13;
-            this.onLine__CI_OnlineResource__function_lbl.Text = "Function";
             // 
             // onLine__CI_OnlineResource__description_lbl
             // 
@@ -786,6 +763,8 @@
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.panel7.Controls.Add(this.onLine__CI_OnlineResource__function_lbl);
+            this.panel7.Controls.Add(this.onLine__CI_OnlineResource__linkage__URL_lbl);
             this.panel7.Location = new System.Drawing.Point(11, 13);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(400, 62);
@@ -1356,6 +1335,30 @@
             // 
             this.errorProvider_Distribution.ContainerControl = this;
             // 
+            // onLine__CI_OnlineResource__linkage__URL_lbl
+            // 
+            this.onLine__CI_OnlineResource__linkage__URL_lbl.AutoSize = true;
+            this.onLine__CI_OnlineResource__linkage__URL_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.onLine__CI_OnlineResource__linkage__URL_lbl.Location = new System.Drawing.Point(52, 9);
+            this.onLine__CI_OnlineResource__linkage__URL_lbl.Name = "onLine__CI_OnlineResource__linkage__URL_lbl";
+            this.onLine__CI_OnlineResource__linkage__URL_lbl.Size = new System.Drawing.Size(43, 13);
+            this.onLine__CI_OnlineResource__linkage__URL_lbl.TabIndex = 1;
+            this.onLine__CI_OnlineResource__linkage__URL_lbl.TabStop = true;
+            this.onLine__CI_OnlineResource__linkage__URL_lbl.Text = "Linkage";
+            this.onLine__CI_OnlineResource__linkage__URL_lbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.genericOpenHelpFromLinkLabel_LinkClicked);
+            // 
+            // onLine__CI_OnlineResource__function_lbl
+            // 
+            this.onLine__CI_OnlineResource__function_lbl.AutoSize = true;
+            this.onLine__CI_OnlineResource__function_lbl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.onLine__CI_OnlineResource__function_lbl.Location = new System.Drawing.Point(48, 36);
+            this.onLine__CI_OnlineResource__function_lbl.Name = "onLine__CI_OnlineResource__function_lbl";
+            this.onLine__CI_OnlineResource__function_lbl.Size = new System.Drawing.Size(48, 13);
+            this.onLine__CI_OnlineResource__function_lbl.TabIndex = 6;
+            this.onLine__CI_OnlineResource__function_lbl.TabStop = true;
+            this.onLine__CI_OnlineResource__function_lbl.Text = "Function";
+            this.onLine__CI_OnlineResource__function_lbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.genericOpenHelpFromLinkLabel_LinkClicked);
+            // 
             // uc_distribution
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -1383,6 +1386,8 @@
             this.offline_resource_expandGxb.PerformLayout();
             this.CI_OnlineResource.ResumeLayout(false);
             this.CI_OnlineResource.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.MD_DTO.ResumeLayout(false);
@@ -1461,7 +1466,6 @@
         private System.Windows.Forms.TextBox md_SOP_AvailableDate_txt;
         private System.Windows.Forms.TextBox md_SOP_Fees_txt;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label onLine__CI_OnlineResource__function_lbl;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.ComboBox onLine__CI_OnlineResource__function_txt;
         private System.Windows.Forms.Label onLine__CI_OnlineResource__description_lbl;
@@ -1469,7 +1473,6 @@
         private System.Windows.Forms.Label onLine__CI_OnlineResource__name_lbl;
         private System.Windows.Forms.TextBox onLine__CI_OnlineResource__name_txt;
         private System.Windows.Forms.Label onLine__CI_OnlineResource__protocol_lbl;
-        private System.Windows.Forms.Label onLine__CI_OnlineResource__linkage__URL_lbl;
         private System.Windows.Forms.TextBox onLine__CI_OnlineResource__protocol_txt;
         private System.Windows.Forms.TextBox onLine__CI_OnlineResource__linkage__URL_txt;
         private System.Windows.Forms.Label md_digitalTransferOptions_transferSize_lbl;
@@ -1506,5 +1509,7 @@
         private System.Windows.Forms.LinkLabel md_distributionFormat_lbl;
         private System.Windows.Forms.LinkLabel md_digitalTranferOptions_lbl;
         private System.Windows.Forms.LinkLabel md_standardOrderProcess_lbl;
+        private System.Windows.Forms.LinkLabel onLine__CI_OnlineResource__function_lbl;
+        private System.Windows.Forms.LinkLabel onLine__CI_OnlineResource__linkage__URL_lbl;
     }
 }

@@ -22,22 +22,27 @@
 		<param name="Name" value="Untitled: e:\My Help File\20070312\Help_Tab2.html">
 		<param name="Local" value="Help_Tab2.html">
 		</OBJECT>
-	<UL>
+	<UL>		
 		<LI> <OBJECT type="text/sitemap">
-			<param name="Name" value="Access">
-			<param name="Name" value="Untitled: e:\My Help File\20070312\t2_accconst.html">
-			<param name="Local" value="t2_accconst.html">
-			</OBJECT>
-		<LI> <OBJECT type="text/sitemap">
-			<param name="Name" value="Use">
+			<param name="Name" value="Legal">
 			<param name="Name" value="Untitled: e:\My Help File\20070312\t2_useconst.html">
 			<param name="Local" value="t2_useconst.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Security">
+			<param name="Name" value="Untitled: e:\My Help File\20070312\t2_secclass.html">
+			<param name="Local" value="t2_secclass.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="System of Records">
+			<param name="Name" value="Untitled: e:\My Help File\20070312\t2_useconstGeneral.html">
+			<param name="Local" value="t2_useconstGeneral.html">
 			</OBJECT>
 	</UL>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="Contact Information">
-		<param name="Name" value="Untitled: e:\My Help File\20070312\Help_Tab2.html">
-		<param name="Local" value="Help_Tab2.html">		
+		<param name="Name" value="Untitled: e:\My Help File\20070312\t2_contactGeneral.html">
+		<param name="Local" value="t2_contactGeneral.html">		
 		</OBJECT>
 	<UL>
 		<LI> <OBJECT type="text/sitemap">
@@ -46,23 +51,33 @@
 			<param name="Local" value="t2_distcnt.html">
 			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
-			<param name="Name" value="Metadata Author(s)">
-			<param name="Name" value="Untitled: e:\My Help File\20070312\t2_metaAuthor.html">
-			<param name="Local" value="t2_metaAuthor.html">
+			<param name="Name" value="Metadata Author">
+			<param name="Name" value="Untitled: e:\My Help File\20070312\t2_contactGeneral.html">
+			<param name="Local" value="t2_contactGeneral.html">
 			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
-			<param name="Name" value="Resource Owner(s)">
-			<param name="Name" value="Untitled: e:\My Help File\20070312\t2_resourceOwner.html">
-			<param name="Local" value="t2_resourceOwner.html">
+			<param name="Name" value="Program Code">
+			<param name="Name" value="Untitled: e:\My Help File\20070312\t2_contactHowTo.html#programcode">
+			<param name="Local" value="t2_contactHowTo.html#programcode">
 			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
-			<param name="Name" value="Resource Producer(s)">
-			<param name="Name" value="Untitled: e:\My Help File\20070312\t2_resourceProducer.html">
-			<param name="Local" value="t2_resourceProducer.html">
+			<param name="Name" value="Resource Owner">
+			<param name="Name" value="Untitled: e:\My Help File\20070312\t2_contactGeneral.html">
+			<param name="Local" value="t2_contactGeneral.html">
 			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Resource Producer">
+			<param name="Name" value="Untitled: e:\My Help File\20070312\t2_contactGeneral.html">
+			<param name="Local" value="t2_contactGeneral.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Role Code">
+			<param name="Name" value="Untitled: e:\My Help File\20070312\t2_contactHowTo.html#role">
+			<param name="Local" value="t2_contactHowTo.html#role">
+			</OBJECT>		
 	</UL>
 	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="CSDGM">
+		<param name="Name" value="Data.gov">
 		<param name="Name" value="Untitled: e:\My Help File\20070312\Help_Ref_Docs.html">
 		<param name="Local" value="Help_Ref_Docs.html">
 		</OBJECT>	
@@ -77,12 +92,17 @@
 		<param name="Local" value="Help_InterfaceFeatures.html">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="EDG">
+		<param name="Name" value="Untitled: e:\My Help File\20070312\Help_Ref_Docs.html">
+		<param name="Local" value="Help_Ref_Docs.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="EPA Geospatial Metadata Technical Specification">
 		<param name="Name" value="Untitled: e:\My Help File\20070312\Help_Ref_Docs.html">
 		<param name="Local" value="Help_Ref_Docs.html">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="EPA Metadata Editor Version 3.0">
+		<param name="Name" value="EPA Metadata Editor Version 4.0">
 		<param name="Name" value="Untitled: e:\My Help File\20070312\Help_Main.html">
 		<param name="Local" value="Help_Main.html">
 		</OBJECT>
@@ -90,22 +110,7 @@
 		<param name="Name" value="FGDC">
 		<param name="Name" value="Untitled: e:\My Help File\20070312\Help_Ref_Docs.html">
 		<param name="Local" value="Help_Ref_Docs.html">
-		</OBJECT>
-	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="GDG">
-		<param name="Name" value="Untitled: e:\My Help File\20070312\Help_Ref_Docs.html">
-		<param name="Local" value="Help_Ref_Docs.html">
-		</OBJECT>
-	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="Geospatial One-Stop">
-		<param name="Name" value="Untitled: e:\My Help File\20070312\Help_Ref_Docs.html">
-		<param name="Local" value="Help_Ref_Docs.html">
-		</OBJECT>
-	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="GOS">
-		<param name="Name" value="Untitled: e:\My Help File\20070312\Help_Ref_Docs.html">
-		<param name="Local" value="Help_Ref_Docs.html">
-		</OBJECT>
+		</OBJECT>		
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="Installation">
 		<param name="Name" value="Installation">
@@ -138,12 +143,7 @@
 			<param name="Name" value="Untitled: d:\20081017\GDG\Help\EME_Help_Source\EME_Help_Source\t1_userthemekey.html">
 			<param name="Local" value="t1_userthemekey.html">
 			</OBJECT>
-	</UL>
-	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="NSDI">
-		<param name="Name" value="Untitled: e:\My Help File\20070312\Help_Ref_Docs.html">
-		<param name="Local" value="Help_Ref_Docs.html">
-		</OBJECT>
+	</UL>	
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="Online Linkage">
 		<param name="Name" value="Untitled: e:\My Help File\20070312\Help_Tab1.html">
@@ -157,9 +157,9 @@
 		<param name="Local" value="Help_InterfaceFeatures.html">
 		</OBJECT>	
 	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="Post-Installation Configuration">
-		<param name="Name" value="Untitled: e:\My Help File\20070312\Help_Getting_Started.html">
-		<param name="Local" value="Help_Getting_Started.html">
+		<param name="Name" value="Post-Installation">
+		<param name="Name" value="Untitled: e:\My Help File\20070312\Help_Post_Install.html">
+		<param name="Local" value="Help_Post_Install.html">
 		</OBJECT>		
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="Publication">

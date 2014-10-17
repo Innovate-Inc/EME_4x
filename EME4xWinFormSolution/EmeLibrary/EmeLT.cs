@@ -823,12 +823,29 @@ namespace EmeLibrary
                     uc_extentTemporal tmp = (uc_extentTemporal)ctrl;
                     temporalElement__EX_TemporalExtent tmporal = tmp.temporalElement;
                     if (tmp.temporalElement.TimeInstant == null && tmp.temporalElement.TimePeriod == null)
-                    {
+                    { 
+                        
                         errorProvider1.SetError(ctrl, "This is a required element");
                     }
                     else
                     {
-                        errorProvider1.SetError(ctrl, "");
+                        //Need to refator to make blinky disappear after an entry is made in one of the required fields.  
+                        //Right now unknow is written of left blank, causing it to validate correctly.
+                        if (tmp.temporalElement.TimeInstant != null)
+                        {
+                            if (!string.IsNullOrEmpty(tmp.temporalElement.TimeInstant.extent__TimeInstant__timePosition))
+                            {
+                                errorProvider1.SetError(ctrl, "");
+                            }
+                        }
+                        if (tmp.temporalElement.TimePeriod != null)
+                        {
+                            if (!string.IsNullOrEmpty(tmp.temporalElement.TimePeriod.extent__TimePeriod__beginPosition) &&
+                                !string.IsNullOrEmpty(tmp.temporalElement.TimePeriod.extent__TimePeriod__endPosition))
+                            {
+                                errorProvider1.SetError(ctrl, "");
+                            }
+                        }
                     }
 
                 }
@@ -1288,7 +1305,8 @@ namespace EmeLibrary
             { }
             
         }
-               
+              
+                               
 
     }
 }

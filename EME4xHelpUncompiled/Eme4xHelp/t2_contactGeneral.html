@@ -8,14 +8,18 @@
 <h3>EPA Requirement/Guidance</h3>
 <blockquote>
   <p>This section provides detailed information on the person or organization that should be contacted regarding the resource. Contact information within this element may or may not be the same in each section and can be repeated within each section.
-  <em><strong>At a minimum, one Metadata Author is required.</strong></em> </p>
+  <em><strong>At a minimum, one Metadata Author and one Resource Owner are required.</strong></em> </p>
   <p><strong>The required elements for  Resource Owner (if added), Resource Producer (if added), and Metadata Author are:</strong> Role, Organization,  and E-mail.  </p>
   <p>To add a contact, follow these guidelines on: <a href="t2_contactHowTo.html">How to Add a Contact</a></p>
   <p><u>Contacts Section: </u></p>
   <ul>
-  <li><strong><a href="t2_resourceOwner.html">Resource Owner</a></strong> - The owner(s) of the resource.</li>
-<li><strong><a href="t2_resourceProducer.html">Resource Producer</a></strong> - Those who created/produced the resource.</li>
-<li><strong><a href="t2_metaAuthor.html">Metadata Author</a></strong> - The metadata author(s) responsible for the metadata information.</li></ul></blockquote>
+  <li><strong>Resource Owner</strong> - The owner(s) of the resource. <strong>This element is mandatory per Data.gov requirements.</strong></li>
+<li><strong>Resource Producer</strong> - Those who created/produced the resource.</li>
+<li><strong>Metadata Author</strong> - The metadata author(s) responsible for the metadata information. <strong>This element is mandatory per ISO requirements</strong></li>
+</ul>
+<p><u>Note:</u> the Distribution Section also contains a potential Contact.  A Distribution section is not mandatory, but if one is present, a Distribution Contact is required.  More information on that element is available at the link below.</p>
+<ul><li><strong><a href="t2_distcnt.html">Distribution Contact</a></strong> - person or organization that should be contacted regarding accessing the resource. <strong>This element is mandatory if applicable per EPA requirements</strong></li>
+</ul></blockquote>
 <h3>Domain</h3>
 <blockquote>
   <p>See individual sections.</p>
@@ -31,22 +35,28 @@
       </tr>
       <tr>
         <td>Resource Owner</td>
-        <td><div align="center"><a href="http://project-open-http://project-open-data.github.io/schema/#contactPoint" title="Data.gov Standard" target="_blank">contactPoint???</a></div></td>
-        <td><div align="center"><a href="http://service.ncddc.noaa.gov/rdn/www/metadata-standards/documents/MI-Metadata.pdf#page=47">Cl_ResponsibleParty</a></div></td>
+        <td><div align="center"><a href="http://project-open-data.github.io/schema/#contactPoint" title="Data.gov Standard" target="_blank">contactPoint</a>, <a href="http://project-open-data.github.io/schema/#publisher" title="Data.gov Standard" target="_blank">publisher</a>, <a href="http://project-open-data.github.io/schema/#mbox" title="Data.gov Standard" target="_blank">mbox</a></div></td>
+        <td><div align="center"><a href="https://geo-ide.noaa.gov/wiki/index.php?title=MD_DataIdentification" target="_blank">MD_DataIdentification/pointOfContact</a></div></td>
         <td><div align="center">N/A - The element does not exist in this standard</div></td>
       </tr>
       <tr>
         <td>Resource Producer</td>
-        <td><div align="center"><a href="http://project-open-http://project-open-data.github.io/schema/#contactPoint" title="Data.gov Standard" target="_blank">contactPoint???</a></div></td>
-        <td><div align="center"><a href="http://service.ncddc.noaa.gov/rdn/www/metadata-standards/documents/MI-Metadata.pdf#page=47">Cl_ResponsibleParty</a></div></td>
+        <td><div align="center">N/A - The element does not exist in this standard</div></td>
+        <td><div align="center"><a href="https://geo-ide.noaa.gov/wiki/index.php?title=CI_Citation" target="_blank">CI_Citation/citedResponsibleParty</a></div></td>
         <td><div align="center"><a href="http://www.fgdc.gov/csdgmgraphical/dataq/lineage/sinfo/scitat/citatn/origin.htm" title="FGDC CSDGM Standard" target="_blank">origin</a></div></td>
       </tr>
       <tr>
         <td><p>Metadata Author</p></td>
-        <td><div align="center"><a href="http://project-open-http://project-open-data.github.io/schema/#contactPoint" title="Data.gov Standard" target="_blank">contactPoint???</a><a href="http://project-open-data.github.io/schema/#accessLevelComment" title="Data.gov Standard" target="_blank"></a></div></td>
-        <td><div align="center"><a href="http://service.ncddc.noaa.gov/rdn/www/metadata-standards/documents/MI-Metadata.pdf#page=126">MD_Identifier/authority</a><a href="http://service.ncddc.noaa.gov/rdn/www/metadata-standards/documents/MI-Metadata.pdf#page=147" title="ISO 19115 Standard" target="_blank"></a></div></td>
+        <td><div align="center">N/A - The element does not exist in this standard</div></td>
+        <td><div align="center"><a href="https://geo-ide.noaa.gov/wiki/index.php?title=MI_Metadata" target="_blank">MI_Metadata/contact</a></div></td>
         <td><div align="center"><a href="http://www.fgdc.gov/csdgmgraphical/metaref/mcntact.htm" title="FGDC CSDGM Standard" target="_blank">metc</a></div></td>
       </tr>
+	  <tr>
+	  <td><p>Distribution Contact</p></td>
+      <td><div align="center">N/A - The element does not exist in this standard</div></td>
+      <td><div align="center"><a href="https://geo-ide.noaa.gov/wiki/index.php?title=MD_Distribution" title="ISO 19115 Standard" target="_blank">MD_Distribution/distributor</a></div></td>
+      <td><div align="center"><a href="http://www.fgdc.gov/csdgmgraphical/distr/distrib.htm" title="FGDC CSDGM Standard" target="_blank">distinfo</a></div></td>
+    </tr>
     </table>
 <BR><BR><BR><BR>
 </blockquote>

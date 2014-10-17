@@ -265,7 +265,7 @@
     <TabNum>2</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
-	<HelpLink>t2_metaAuthor.html</HelpLink>
+	<HelpLink>t2_contactGeneral.html</HelpLink>
     <HoverNote>Author(s) of the metadata</HoverNote>	
   </emeControl>   
   <emeControl>
@@ -273,7 +273,7 @@
     <TabNum>2</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
-	<HelpLink>t2_resourceOwner.html</HelpLink>
+	<HelpLink>t2_contactGeneral.html</HelpLink>
     <HoverNote>The owner(s) of the resource</HoverNote>
   </emeControl>
   <emeControl>
@@ -281,7 +281,7 @@
     <TabNum>2</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
-	<HelpLink>t2_resourceProducer.html</HelpLink>
+	<HelpLink>t2_contactGeneral.html</HelpLink>
     <HoverNote>Who created/produced the resource</HoverNote>
   </emeControl>
   <emeControl>
@@ -290,7 +290,7 @@
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>Function performed by the contact</HoverNote>
-	<HelpLink>t2_contactHowTo.html</HelpLink>
+	<HelpLink>t2_contactHowTo.html#role</HelpLink>
   </emeControl> 
   <emeControl>
     <controlName>dcatProgramCode_lbl</controlName>
@@ -298,7 +298,7 @@
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>User friendly name of the primary program related to this data asset, from the Federal Program Inventory.</HoverNote>
-	<HelpLink>t2_contactHowTo.html</HelpLink>
+	<HelpLink>t2_contactHowTo.html#programcode</HelpLink>
   </emeControl>
   <emeControl>
     <controlName>contactInfo__CI_Contact__onlineResource__CI_OnlineResource__linkage_lbl</controlName>
@@ -306,7 +306,7 @@
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>Provide the Internet location (URL) for access to on-line hosted resources.</HoverNote>
-	<HelpLink></HelpLink>
+	<HelpLink>t2_onlink.html</HelpLink>
   </emeControl>
   <emeControl>
     <controlName>contactInfo__CI_Contact__onlineResource__CI_OnlineResource__functionCode_lbl</controlName>
@@ -314,7 +314,7 @@
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>Choose a value for the function performed by the Linkage (online resource).</HoverNote>
-	<HelpLink></HelpLink>
+	<HelpLink>t2_onlink.html</HelpLink>
   </emeControl>
   <emeControl>
     <controlName>metadataInformation_lbl</controlName>
@@ -503,6 +503,7 @@
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
     <HoverNote>Internet location (address) for on-line access which uses a URL</HoverNote>
+	<HelpLink>t2_onlink.html</HelpLink>
   </emeControl>
   <emeControl>
     <controlName>onLine__CI_OnlineResource__protocol_lbl</controlName>
@@ -537,7 +538,8 @@
     <TabNum>3</TabNum>
     <FGDC_Def></FGDC_Def>
     <EPARequirementGuidance></EPARequirementGuidance>
-    <HoverNote>Function performed by the resource.</HoverNote>
+    <HoverNote>Function performed by the resource linkage URL.</HoverNote>
+	<HelpLink>t2_onlink.html</HelpLink>
   </emeControl>
   <emeControl>
     <controlName>offLine__MD_Medium__name_lbl</controlName>

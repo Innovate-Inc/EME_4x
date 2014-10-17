@@ -1,4 +1,4 @@
-<html>
+﻿<html>
 <head>
 <link href="mystyle.css" rel="stylesheet" type="text/css" />
 <h1>EPA Metadata Editor (EME)</h1>
@@ -8,12 +8,12 @@
 </blockquote>
 <h3>EPA Requirement/Guidance</h3>
 <blockquote>
-  <p>These elements include the North, South, East, and West bounding coordinates of the data resource, expressed in latitude in decimal degrees referenced to WGS 84. It is recommended that a Bounding Box Description be included with the Bounding Box coordinates.</p>
+  <p>These elements include the North, South, East, and West bounding coordinates of the data resource, expressed in latitude in decimal degrees referenced to WGS 84. The recommended way to populate these elements is to select a choice from the quick pick list next to the default button.  If you populate these values manually, it is recommended that a Bounding Box Description be included with the Bounding Box coordinates.</p>
   <p>For North and South bounding coordinates: -90.0 &lt;=  Bounding Coordinate &lt;= 90.0<br>
 For East and West bounding coordinates: -180.0 &lt;= East Bounding Coordinate &lt;= 180.0 </p>
   <p>When editing a metadata record from the ArcCatalog interface, the user has the option of updating the bounding box coordinates and description based off of the geographic extent of the selected feature class. To use the feature class extent, click on the globe button and the coordinates and description will autopopulate.</p>
   <p><img src="screenshot_BoundingBoxArcCatalog.jpg" width="406" height="123" alt=""/></p>
-  <p><strong>Note:</strong> Bounding box coordinates can be added to the EME database. They are stored in the "BoundingBox" table. To add a new set of bounding box coordinates to the EME database, follow these guidelines for <a href="Help_DB.html#editdb">Editing the Database</a>.</p>
+  <p><strong>Note:</strong> Bounding box coordinates can be added to the EME database. They are stored in the "BoundingBox" table. To add a new set of bounding box coordinates to the EME database, follow these guidelines for <a href="Help_DB.html#editdb">Editing the Database</a>.</p>
 </blockquote>
 <h3>Domain</h3>
 <blockquote>
@@ -30,10 +30,10 @@ For East and West bounding coordinates: -180.0 &lt;= East Bounding Coordinate &l
     </tr>
     <tr>
       <td width="250"><p align="center"><a href="http://project-open-data.github.io/schema/#spatial" title="Data.gov Standard" target="_blank">spatial</a></p></td>
-      <td width="250"><p align="center"><a href="http://service.ncddc.noaa.gov/rdn/www/metadata-standards/documents/MI-Metadata.pdf#page=68" title="ISO 19115 Standard" target="_blank">EX_GeographicBoundingBox/northBoundingLatitude</a></p>
-      <p align="center"><a href="http://service.ncddc.noaa.gov/rdn/www/metadata-standards/documents/MI-Metadata.pdf#page=67" title="ISO 19115 Standard" target="_blank">EX_GeographicBoundingBox/southBoundingLatitude</a></p>
-      <p align="center"><a href="http://service.ncddc.noaa.gov/rdn/www/metadata-standards/documents/MI-Metadata.pdf#page=67" title="ISO 19115 Standard" target="_blank">EX_GeographicBoundingBox/eastBoundingLatitude</a></p>
-      <p align="center"><a href="http://service.ncddc.noaa.gov/rdn/www/metadata-standards/documents/MI-Metadata.pdf#page=67" title="ISO 19115 Standard" target="_blank">EX_GeographicBoundingBox/westBoundingLatitude</a></p></td>
+      <td width="250"><p align="center"><a href="https://geo-ide.noaa.gov/wiki/index.php?title=EX_GeographicBoundingBox" title="ISO 19115 Standard" target="_blank">EX_GeographicBoundingBox/northBoundingLatitude</a></p>
+      <p align="center"><a href="https://geo-ide.noaa.gov/wiki/index.php?title=EX_GeographicBoundingBox" title="ISO 19115 Standard" target="_blank">EX_GeographicBoundingBox/southBoundingLatitude</a></p>
+      <p align="center"><a href="https://geo-ide.noaa.gov/wiki/index.php?title=EX_GeographicBoundingBox" title="ISO 19115 Standard" target="_blank">EX_GeographicBoundingBox/eastBoundingLatitude</a></p>
+      <p align="center"><a href="https://geo-ide.noaa.gov/wiki/index.php?title=EX_GeographicBoundingBox" title="ISO 19115 Standard" target="_blank">EX_GeographicBoundingBox/westBoundingLatitude</a></p></td>
       <td width="250"><p align="center"><a href="http://www.fgdc.gov/csdgmgraphical/ideninfo/sptldo.htm" title="FGDC CSDGM Standard" target="_blank">spatial domain</a></p></td>
     </tr>
   </table>

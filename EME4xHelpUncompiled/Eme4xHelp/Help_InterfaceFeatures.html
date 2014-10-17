@@ -19,16 +19,25 @@
   </blockquote>
   <li>Ordinality</li>
 <blockquote>
-  <p>The distinction between &lsquo;mandatory&rsquo;, &lsquo;mandatory if applicable&rsquo;, and &lsquo;optional&rsquo; fields as required by <a href="http://project-open-data.github.io/schema/">Data.gov's Project Open Data/DCAT metadata standard</a> is provided through the use of color-coding in the user interface. Yellow fields are considered 'mandatory', green fields are considered 'mandatory if applicable', and blue fields are considered &lsquo;optional&rsquo;.  Defaults for individual fields may be selected interactively in the user interface using buttons or drop-downs.</p>
+  <p>The distinction between 'mandatory', 'mandatory if applicable', and 'optional' fields as required by <a href="http://project-open-data.github.io/schema/">Data.gov's Project Open Data/DCAT metadata standard</a> is provided through the use of color-coding in the user interface. Yellow fields are considered 'mandatory', green fields are considered 'mandatory if applicable', and blue fields are considered 'optional'.  Defaults for individual fields may be selected interactively in the user interface using buttons or drop-downs.</p>
 </blockquote>
   <li>The 'D' or 'default' button</li>
   <blockquote>
-    <p>The 'D' or 'default' button is located throughout the EME user interface and when clicked, automatically populates the default values stored in the EPA Metadata Editor Microsoft Access database (metadata.mdb).</p>
+    <p>The 'D' or 'default' button is located throughout the EME user interface and when clicked, automatically populates the default values stored in the EPA Metadata Editor template XML files.</p>
     <p><img src="screenshot_d2.jpg" width="127" height="108" alt=""/></p>
   </blockquote>
   <li>Manual Value Override</li>
   <blockquote>
     <p>Once a record has been populated either by choosing the 'D' button or selecting a Contact using the drop-down list, users can manually override the field values by simply clicking in any field and deleting the existing text or modifying the existing text.</p>
+  </blockquote>
+  <li>Multiple Values</li>
+    <blockquote>
+    <p>Many sections in ISO Metadata can be repeated if necessary to allow for multiple values. Contact information is the most common example. If a section may be repeated, you will see a plus and x icon.  Clicking the plus icon adds new sections, while the x deletes the current section. Next to these icons are two arrows enclosing a pair of numbers - the first number is the index of the currently shown section, while the second is the total number of sections. In the example below, the first out of three Resource Owners is selected. The arrows may be used to cycle through the individual sections.</p>
+    <p><img src="screenshot_multiplevalues.png" width="448" height="37" alt=""/></p>
+  </blockquote>
+  <li>Minimized Sections</li>
+    <blockquote>
+    <p>Many sections in the interface have been minimzed to save space. This icon <img src="screenshot_minimized.png" width="22" height="21" alt=""/> indicates that a section has been minimized.  Clicking on the icon will expand the section for editing.</p>
   </blockquote>
 </ol>
 <p>&nbsp;</p>
@@ -39,13 +48,13 @@ These features can be accessed from the Edit and Tools menus.<br><br>
   <li>'Open Database'
     <blockquote>
       <p><img src="screenshot_openDB2.jpg" width="287" height="102" alt=""/></p>
-      <p>This feature allows users to open and edit the EPA Metadata Editor Microsoft Access database (metadata.mdb).  The use of this feature requires that the user have Microsoft Access installed locally.</p>
+      <p>This feature allows users to open and edit the template content using the new built-in data table editor.</p>
     </blockquote>
   </li>
   <li>'Default Output Format'
     <blockquote>
-      <p><img src="screenshot_outputformat.jpg" width="440" height="112" alt=""/></p>
-      <p>This feature allows users to choose between ISO 19115 or ISO 19115-2. ISO 19115-2 extends the existing geographic metadata standard by defining the schema required for describing imagery and gridded data.    </p>
+      <p><img src="screenshot_outputformat.png" width="464" height="112" alt=""/></p>
+      <p>This feature allows users to choose between ISO 19115 or ISO 19115-2. ISO 19115-2 extends the existing geographic metadata standard by defining the schema required for describing imagery and gridded data and is the default.</p>
     </blockquote>
   </li>
   <li>'Refresh From Database'
@@ -57,7 +66,7 @@ These features can be accessed from the Edit and Tools menus.<br><br>
   <li>'Set Defaults from Template'
     <blockquote>
       <p><img src="screenshot_set_default.jpg" width="269" height="75" alt=""/></p>
-      <p>This feature allows a user to set all defaults for the selected tab.  The editor will prompt the user to ensure that he/she would like to overwrite all information in the selected tab with default values as stored in the EPA Metadata Editor Microsoft Access database (metadata.mdb).</p>
+      <p>This feature allows a user to set all defaults for the selected tab.  The editor will prompt the user to ensure that he/she would like to overwrite all information in the selected tab with default values as stored in the template XML files.</p>
     </blockquote>
   </li>
   <li>'Clear All Values'</li>

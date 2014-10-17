@@ -10,7 +10,7 @@
   <blockquote>
     <p><b><a href="#uselimitation">Use Limitation/Access Level</a></b> -  Degree to which this resource could be made available to the public, regardless of whether it is currently available to the public. This element is mandatory. <strong>Best practices</strong>: If a member of the public can walk into your agency and obtain a data resource, that entry is public even if there are no files online. A restricted public data resource is one only available under certain conditions or to certain audiences (such as researchers who sign a waiver). A non-public data resource is one that could never be made available to the public for privacy, security, or other reasons as determined by your agency. <strong>This element is Mandatory.</strong></p>
     <p><b><a href="#classification">Classification</a></b> -  Name of the handling restrictions on the resource or the metadata.<strong> This element is Mandatory.</strong></p>
-    <p><b><a href="#usernote">User Note/Access Level Comment</a></b> - An explanation of the classification level applied to the resource or metadata. Free text is ok, but if applicable, please choose from the standard list of categories for why access to a dataset might be restricted.</p>
+    <p><b><a href="#usernote">User Note/Access Level Comment</a></b> - An explanation of the classification level applied to the resource or metadata. <strong> This element is Mandatory only if Access Level is not "public".</strong> Free text is OK if Access Level is "public", but otherwise please choose from the standard list of categories for why access to a dataset might be restricted.</p>
     <p><b>Classification System</b> - Name of the security classification system.</p>
     <p><b>Handling Description</b> - Additional information regarding security restrictions on handling the resource or metadata.</p>
   </blockquote>
@@ -58,31 +58,31 @@
       <tr>
         <td>Use Limitation/Access Level</td>
         <td><div align="center"><a href="http://project-open-data.github.io/schema/#accessLevel" title="Data.gov Standard" target="_blank">accessLevel</a></div></td>
-        <td><div align="center"><a href="http://service.ncddc.noaa.gov/rdn/www/metadata-standards/documents/MI-Metadata.pdf#page=147" title="ISO 19115 Standard" target="_blank">MD_SecurityConstraints</a><a href="http://service.ncddc.noaa.gov/rdn/www/metadata-standards/documents/MI-Metadata.pdf#page=147" title="ISO 19115 Standard" target="_blank">/useLimitation</a></div></td>
+        <td><div align="center"><a href="https://geo-ide.noaa.gov/wiki/index.php?title=MD_SecurityConstraints" title="ISO 19115 Standard" target="_blank">MD_SecurityConstraints/useLimitation</a></div></td>
         <td><div align="center">N/A - The element does not exist in this standard</div></td>
       </tr>
       <tr>
         <td>Classification</td>
         <td><div align="center">N/A - The element does not exist in this standard</div></td>
-        <td><div align="center"><a href="http://service.ncddc.noaa.gov/rdn/www/metadata-standards/documents/MI-Metadata.pdf#page=147" title="ISO 19115 Standard" target="_blank">MD_SecurityConstraints/classification</a></div></td>
+        <td><div align="center"><a href="https://geo-ide.noaa.gov/wiki/index.php?title=MD_SecurityConstraints" title="ISO 19115 Standard" target="_blank">MD_SecurityConstraints/classification</a></div></td>
         <td><div align="center"><a href="http://www.fgdc.gov/csdgmgraphical/ideninfo/secrty/sclas.htm" title="FGDC CSDGM Standard" target="_blank">secclass</a></div></td>
       </tr>
       <tr>
         <td><p>User Note/Comment</p></td>
         <td><div align="center"><a href="http://project-open-data.github.io/schema/#accessLevelComment" title="Data.gov Standard" target="_blank">accessLevelComment</a></div></td>
-        <td><div align="center"><a href="http://service.ncddc.noaa.gov/rdn/www/metadata-standards/documents/MI-Metadata.pdf#page=147" title="ISO 19115 Standard" target="_blank">MD_SecurityConstraints/userNote</a></div></td>
+        <td><div align="center"><a href="https://geo-ide.noaa.gov/wiki/index.php?title=MD_SecurityConstraints" title="ISO 19115 Standard" target="_blank">MD_SecurityConstraints/userNote</a></div></td>
         <td><div align="center"><a href="http://www.fgdc.gov/csdgmgraphical/ideninfo/usecon.htm" title="FGDC CSDGM Standard" target="_blank">useconst</a></div></td>
       </tr>
       <tr>
         <td>Classification System</td>
         <td><div align="center">N/A - The element does not exist in this standard</div></td>
-        <td><div align="center"><a href="http://service.ncddc.noaa.gov/rdn/www/metadata-standards/documents/MI-Metadata.pdf#page=147" title="ISO 19115 Standard" target="_blank">MD_SecurityConstraints/classificationSystem</a></div></td>
+        <td><div align="center"><a href="https://geo-ide.noaa.gov/wiki/index.php?title=MD_SecurityConstraints" title="ISO 19115 Standard" target="_blank">MD_SecurityConstraints/classificationSystem</a></div></td>
         <td><div align="center"><a href="http://www.fgdc.gov/csdgmgraphical/ideninfo/secrty/ssys.htm" title="FGDC CSDGM Standard" target="_blank">secsys</a></div></td>
       </tr>
       <tr>
         <td>Handling Description</td>
         <td><div align="center">N/A - The element does not exist in this standard</div></td>
-        <td><div align="center"><a href="#accessconstraints" title="ISO 19115 Standard" target="_blank">MD_SecurityConstraints</a>/<a href="http://service.ncddc.noaa.gov/rdn/www/metadata-standards/documents/MI-Metadata.pdf#page=148" title="ISO 19115 Standard" target="_blank">handlingDescription</a></div></td>
+        <td><div align="center"><a href="https://geo-ide.noaa.gov/wiki/index.php?title=MD_SecurityConstraints" title="ISO 19115 Standard" target="_blank">MD_SecurityConstraints/handlingDescription</a></div></td>
         <td><div align="center"><a href="http://www.fgdc.gov/csdgmgraphical/ideninfo/secrty/shndldsc.htm" title="FGDC CSDGM Standard" target="_blank">sechandl</a></div></td>
       </tr>
     </table>

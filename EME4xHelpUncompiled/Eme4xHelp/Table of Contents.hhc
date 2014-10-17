@@ -157,7 +157,7 @@
 					</OBJECT>
 				<UL>
 					<LI> <OBJECT type="text/sitemap">
-						<param name="Name" value="Online Linkage(Update For ISO)">
+						<param name="Name" value="Online Linkage">
 						<param name="Local" value="t2_onlink.html">
 						</OBJECT>
 				</UL>
@@ -196,15 +196,15 @@
 			<UL>
 				<LI> <OBJECT type="text/sitemap">
 					<param name="Name" value="Resource Owner">
-					<param name="Local" value="t2_resourceOwner.html">
+					<param name="Local" value="t2_contactGeneral.html">
 					</OBJECT>
 				<LI> <OBJECT type="text/sitemap">
 					<param name="Name" value="Resource Producer">
-					<param name="Local" value="t2_resourceProducer.html">
+					<param name="Local" value="t2_contactGeneral.html">
 					</OBJECT>
 				<LI> <OBJECT type="text/sitemap">
 					<param name="Name" value="Metadata Author">
-					<param name="Local" value="t2_metaAuthor.html">
+					<param name="Local" value="t2_contactGeneral.html">
 					</OBJECT>				
 				<LI> <OBJECT type="text/sitemap">
 					<param name="Name" value="How to add a Contact">
@@ -223,7 +223,7 @@
 					</OBJECT>
 				<LI> <OBJECT type="text/sitemap">
 					<param name="Name" value="Last Modified Date">
-					<param name="Local" value=t2_metainfo.html#lastmodified">
+					<param name="Local" value="t2_metainfo.html#lastmodified">
 					</OBJECT>
 				<LI> <OBJECT type="text/sitemap">
 					<param name="Name" value="Identifier (UUID)">
