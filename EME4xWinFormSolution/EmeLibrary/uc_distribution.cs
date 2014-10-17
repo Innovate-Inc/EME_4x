@@ -699,23 +699,7 @@ namespace EmeLibrary
         private void add_DTO_Click(object sender, EventArgs e)
         {
             add_DTO();
-
-            //MD_DigitalTransferOptions md_DTO = new MD_DigitalTransferOptions();
-            //if (_digitalTransferOptions.Count == 0)
-            //{
-            //    _digitalTransferOptions = new List<MD_DigitalTransferOptions>();
-            //    _digitalTransferOptions_idx = 0;
-            //    _digitalTransferOptions.Add(md_DTO);
-            //}
-            //else
-            //{
-            //    bind_MD_DTO_Class(_digitalTransferOptions[_digitalTransferOptions_idx]);
-            //    _digitalTransferOptions.Add(md_DTO);
-            //    //_distributionFormat_idx++;
-            //    _digitalTransferOptions_idx = _digitalTransferOptions.Count - 1;
-            //}
-            //adjustPagers(MD_DTO, _digitalTransferOptions);
-            //bind_MD_DTO_Fields(_digitalTransferOptions[_digitalTransferOptions_idx]);      
+                           
         }
         private void add_DTO()
         {

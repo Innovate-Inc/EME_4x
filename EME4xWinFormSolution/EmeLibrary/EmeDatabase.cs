@@ -204,7 +204,7 @@ namespace EmeLibrary
                 
                 //It appears as if I can apply all changes here.  Need to check for the true/false in the default field. 
                 //It does not appear to be applying "False" when a new record is created.  If default is not checked, it should be false.
-                //Think I resolved it by adjusting the schema in the xml file!!!!!!!!!!!!!!!!!!
+                //Resolved issue by adjusting the schema in the xml file
 
                 button1.Focus();
                 

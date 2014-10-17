@@ -495,28 +495,7 @@ namespace EmeLibrary
                 else
                 {
                     saveXmlChanges();
-                }
-                //else
-                //{
-                //    PageController.PageSaver(this);
-
-                //    string outPutFormat = toolStripComboBox1.SelectedItem.ToString();
-                //    XmlDocument xmlDocToSave = localXdoc.saveChangestoRecord(outPutFormat);
-                //    xmlDocToSave.PreserveWhitespace = false;
-
-                //    StringWriter sw = new StringWriter();
-                //    XmlTextWriter xw = new XmlTextWriter(sw);
-                //    xmlDocToSave.WriteTo(xw);
-                //    OnSaveEvent(new SaveEventArgs(sw.ToString()));
-                //    this.Hide();
-                                        
-                //    //XmlTextWriter xw = new XmlTextWriter(filename, new UTF8Encoding(false));
-                //    //xw.Formatting = Formatting.Indented;
-                //    //xmlDocToSave.Save(xw);
-                //    //MessageBox.Show("Saved: " + filename);
-                    
-                //    //MessageBox.Show(filename);
-                //}
+                }                
             }
             else
             {

@@ -88,28 +88,7 @@ namespace EmeLibrary
             rp_expander_btn.Text = collapsedSymbol;            
             CI_ContactExpand_btn.Text = collapsedSymbol;
 
-            //_incomingRPList = new List<CI_ResponsibleParty>();
             
-            //Start instance of the eme dataset
-            //if (Utils1.emeDataSet == null)
-            //{
-            //    Utils1.setEmeDataSets();
-            //}
-            //MessageBox.Show(dcatProgramCode.DataSource.ToString());
-            //if (dcatProgramCode.DataSource == null)
-            //{
-            //    DataTable subTable2 = new DataTable();
-            //    subTable2 = Utils1.emeDataSet.Tables["ProgramCode"].Select().CopyToDataTable();
-            //    //dcatProgramCode.DataSource = subTable2;
-            //    //dcatProgramCode.DisplayMember = "programName";
-            //    //dcatProgramCode.ValueMember = "pCode";
-            //}
-            
-            
-            //codeListValuesDataSet.Tables["CI_RoleCode"].Select("cSource = 'ISO19115'").CopyToDataTable();
-            //comboBox1.DataSource = subTable; //Utils1.codeListValuesDataSet.Tables["CI_RoleCode"].Select("cSource=ISO19115").CopyToDataTable();
-            //comboBox1.ValueMember = "cStdValue";
-            //comboBox1.DisplayMember = "cDisplayValue";
 
         }
 
