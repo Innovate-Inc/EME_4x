@@ -860,7 +860,7 @@
 								<gco:CharacterString>*template*</gco:CharacterString>
 							</gmd:unitsOfDistribution>
 							<gmd:transferSize>
-								<gco:CharacterString>*template*</gco:CharacterString>
+								<gco:Real>*template*</gco:Real>
 							</gmd:transferSize>
 							<gmd:onLine>
 								<gmd:CI_OnlineResource>
