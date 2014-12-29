@@ -82,19 +82,19 @@
   <BoundingBox>
     <orderedId>20</orderedId>
 	<Area>Region 2</Area>
-	<westbc>-83.675177</westbc>
-	<eastbc>-74.700062</eastbc>
-	<northbc>42.267327</northbc>
-	<southbc>36.541623</southbc>
+	<westbc>-79.762590</westbc>
+	<eastbc>-64.512674</eastbc>
+	<northbc>45.015865</northbc>
+	<southbc>17.623468</southbc>
 	<default>false</default>
   </BoundingBox>
   <BoundingBox>
 	<orderedId>30</orderedId>
 	<Area>Region 3</Area>
-	<westbc>-79.763235</westbc>
-	<eastbc>-71.869987</eastbc>
-	<northbc>45.006139</northbc>
-	<southbc>38.956682</southbc>
+	<westbc>-83.675395</westbc>
+	<eastbc>-74.689502</eastbc>
+	<northbc>42.516072</northbc>
+	<southbc>36.540759</southbc>
 	<default>false</default>
   </BoundingBox>
   <BoundingBox>
@@ -145,10 +145,10 @@
   <BoundingBox>
 	<orderedId>90</orderedId>
 	<Area>Region 9</Area>
-	<westbc>-160.242406</westbc>
-	<eastbc>-109.045615</eastbc>
-	<northbc>42.002192</northbc>
-	<southbc>18.921786</southbc>
+	<westbc>144.552</westbc>
+	<eastbc>-106.793</eastbc>
+	<northbc>42.258</northbc>
+	<southbc>-14.459</southbc>
 	<default>false</default>
   </BoundingBox>
   <BoundingBox>
